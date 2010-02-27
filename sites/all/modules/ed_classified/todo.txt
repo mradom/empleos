@@ -1,0 +1,25 @@
+- (done) Add contact links in link hook (just use user contact page)
+- limit length of body form field to current limit lenght so people know length limit while editing
+- optionally, don't allow posting to non-leaf taxonomy term (in form validate)
+- Use radio buttons or checkboxes for taxonomy selection (show grid?)
+- Add "more..." link in recent/popular block; simple page/pager combo to display 'em
+
+- Views integration - expose our custom data (expiration time) to views
+   http://drupal.org/node/42609
+
+- Add checkbox on ad creation, to allow people to contact you via your contact info
+- add link if contact via website is permitted - take them user contact form
+- add a block at bottom of any ad or category: "create an ad for this category" or somesuch
+- Add a block at bottom of any ad or category: "suggest a new category"
+- Auto-add submission guidelines on install, or somehow add length and expiration info to edit form
+- if location api/module available and the user has a location defined, 
+  populate the location field from the user record!!!
+
+- change column names to classified_xxx (prefix with classified_ to prevent collisions with other node data)
+
+- default expiration time by category (if set)
+
+- Notification emails: periodically send email to ad 'owner' (creator) with list of all current ads, by expiration date, 
+  with links to each ad (and link to delete, or renew.)
+
+- Need way to automatically extend or renew batches of ads (all, some, expired, etc.)

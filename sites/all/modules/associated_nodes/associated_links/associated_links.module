@@ -1,0 +1,57 @@
+<?php
+// $id$
+
+function associated_links_block($op = 'list', $delta = 0, $edit = array()) {
+  switch ($op) {
+    case 'list' :
+      $blocks = array();
+      $associations = associated_nodes_associations();
+      foreach ($associations as $key => $association) {
+        $blocks[$key] = array(
+          'info' => t("Associated Links") . " : " . t($association['name']),
+        );
+      }
+      return $blocks;
+    case 'view' :
+      if (arg(0) == 'node' && is_numeric(arg(1))) {
+        $associated_nodes = associated_nodes_get_all(arg(1));
+        if (isset($associated_nodes[$delta])) {
+	        $aid = $associated_nodes[$delta]['aid'];
+	        $name = $associated_nodes[$delta]['name'];
+	        $nodes = array();
+	        foreach ($associated_nodes[$delta]['nodes'] as $nid => $weight) {
+	          $nodes[] = $nid;
+	        }
+	        if (count($nodes) > 0) {
+		        $block = array(
+		          'subject' => t($name),
+		          'content' => associated_links_get_links($nodes),
+		        );
+		        return $block;
+	        }
+        }
+      }
+      break;
+  }
+}
+
+function associated_links_get_links($nodes) {
+  $place_holders = array();
+  foreach ($nodes as $nid) {
+    $place_holders[] = "%d";
+  }
+  $q = "SELECT * FROM {node} WHERE nid IN (".implode(", ", $place_holders).")";
+  $result = db_query($q, $nodes);
+
+  $links = array();
+  while ($node = db_fetch_object($result)) {
+    $links[$node->nid] = l($node->title, 'node/'. $node->nid, $node->comment_count ? array('title' => format_plural($node->comment_count, '1 comment', '@count comments')) : '');
+  }
+  
+  $items = array();
+  foreach ($nodes as $nid) {
+    $items[] = $links[$nid];
+  }
+  
+  return theme('node_list', $items);
+}

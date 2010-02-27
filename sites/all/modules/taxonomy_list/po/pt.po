@@ -1,0 +1,188 @@
+# $Id: pt.po,v 1.1.2.1 2008/04/04 01:23:51 nancyw Exp $
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  taxonomy_list.module,v 1.10 2007/03/08 04:23:09 boogiebug
+#  taxonomy_list.info,v 1.2 2006/12/07 05:35:50 boogiebug
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2008-03-25 11:58-0400\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: doomed <doomed@drupal.org>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: taxonomy_list.module:26
+msgid "The Taxonomy List module adds pages that list all terms in a vocabulary (category). In addition, when the Taxonomy Image module is installed, these lists can include an image for each term."
+msgstr "O módulo Taxonomy List adiciona páginas que listam os termos de um determinado vocabulário (categoria). Além disso, se o módulo Taxonomy Image também estiver instalado, as listas geradas podem incluir uma imagem para cada termo"
+
+#: taxonomy_list.module:46 taxonomy_list.info:0
+msgid "Taxonomy List"
+msgstr "Taxonomy List"
+
+#: taxonomy_list.module:47
+msgid "Customize how Taxonomy List displays terms on vocabulary pages."
+msgstr "Configure a forma como o Taxonomy List mostra os termos nas páginas dos vocabulários."
+
+#: taxonomy_list.module:56
+msgid ""
+msgstr ""
+
+#: taxonomy_list.module:151
+msgid "Home"
+msgstr "Início"
+
+#: taxonomy_list.module:264
+msgid "Add to \"@name\""
+msgstr "Adicionar a \"@name\""
+
+#: taxonomy_list.module:269
+msgid "Edit \"@name\""
+msgstr "Editar \"@name\""
+
+#: taxonomy_list.module:277
+msgid "Taxonomy list settings"
+msgstr "Taxonomy List - configurações"
+
+#: taxonomy_list.module:380
+msgid "search for term"
+msgstr "procurar termo"
+
+#: taxonomy_list.module:382
+msgid "search for content using this term"
+msgstr "procurar conteúdo usando este termo"
+
+#: taxonomy_list.module:406
+msgid "<p>The taxonomy_list module enable the URL to browse into each vocabulary, using the format of :</p>"
+msgstr "<p>O módulo taxonomy_list permite que o URL navegue por cada vocabulário, usando o formato:</p>"
+
+#: taxonomy_list.module:407
+msgid "<code>\"taxonomy/vocabulary/&lt;vid&gt;\"</code>"
+msgstr "<code>\"taxonomy/vocabulary/&lt;vid&gt;\"</code>"
+
+#: taxonomy_list.module:408
+msgid "<p>Together with the taxonomy_image.module, the list can be displayed with a image icon.</p>"
+msgstr "<p>Juntamente com o módulo taxonomy_image.module, a lista pode incluir uma imagem/ícone.</p>"
+
+#: taxonomy_list.module:422
+msgid "Vocabulary separator"
+msgstr "Separador de Vocabulário"
+
+#: taxonomy_list.module:425
+msgid "This is the character that separates multiple vocabulary names in the page title."
+msgstr "Este é o caractere que separa múltiplos vocabulários no título da página."
+
+#: taxonomy_list.module:432
+msgid "List Mode"
+msgstr "Listagem"
+
+#: taxonomy_list.module:435
+msgid "Hierarchical - Subcategories as a table inside their parent's cell."
+msgstr "Hierárquico - subcategorias numa tabela dentro da célula mãe."
+
+#: taxonomy_list.module:436
+msgid "Flat - All terms are listed as the same level in the grid."
+msgstr "Flat - Todos os termos são listados ao mesmo nível na grelha."
+
+#: taxonomy_list.module:438
+msgid "How Taxonomy List displays the list of terms."
+msgstr "Como o módulo Taxonomy List mostra a lista de termos."
+
+#: taxonomy_list.module:445
+msgid "Terms per row"
+msgstr "Termos por linha"
+
+#: taxonomy_list.module:448
+msgid "Number of terms to be displayed on the same row."
+msgstr "Número de termos que vão aparecer na mesma linha."
+
+#: taxonomy_list.module:453
+msgid "Add administration links"
+msgstr "Adicionar links administrativos"
+
+#: taxonomy_list.module:455
+msgid "Should I add administration links (e.g. \"edit term\") to the display for authorized users?"
+msgstr "Devo adicionar links administrativos (ex: \"edit term\") no final da lista? (só se aplica a utilizadores autorizados)"
+
+#: taxonomy_list.module:460
+msgid "Count content"
+msgstr "Contagem do conteúdo"
+
+#: taxonomy_list.module:466
+msgid "No count."
+msgstr "Não contar."
+
+#: taxonomy_list.module:467
+msgid "Count all content types."
+msgstr "Contar todos os tipos de conteúdo."
+
+#: taxonomy_list.module:468
+msgid "Count by content type."
+msgstr "Contar por tipo de conteúdo."
+
+#: taxonomy_list.module:469
+msgid "Count by type, don't show zero counts."
+msgstr "Contar por tipo, não mostrar aqueles que estão a zero."
+
+#: taxonomy_list.module:473
+msgid "Count content types"
+msgstr "Contar tipos de conteúdo"
+
+#: taxonomy_list.module:476
+msgid "How Taxonomy List counts the content types for terms."
+msgstr "Como o módulo Taxonomy List faz a contagem dos tipos de conteúdo / termos."
+
+#: taxonomy_list.module:483
+msgid "Hide terms with no content"
+msgstr "Esconder termos sem conteúdo"
+
+#: taxonomy_list.module:485
+msgid "Do not show the term if there is no content using the term."
+msgstr "Não mostrar o termo, se não houver conteúdo a usar esse termo."
+
+#: taxonomy_list.module:491
+msgid "Taxonomy Image"
+msgstr "Taxonomy Image"
+
+#: taxonomy_list.module:492
+msgid "The taxonomy Image module is available."
+msgstr "O módulo Taxonomy Image está disponível."
+
+#: taxonomy_list.module:499;515
+msgid "Show taxonomy image?"
+msgstr "Mostrar imagem?"
+
+#: taxonomy_list.module:501;517
+msgid "Display the taxonomy image?"
+msgstr "Mostrar a imagem?"
+
+#: taxonomy_list.module:505
+msgid "Note that Taxonomy Image already provides a wrapper &lt;div&gt;, which may be styled individually."
+msgstr "Atenção: O módulo Taxonomy Image fornece o seu wrapper &lt;div&gt;, que pode ser configurado individualmente na folha de estilos."
+
+#: taxonomy_list.module:509
+msgid "Term path (e.g. taxonomy/term/xxx)."
+msgstr "Caminho para o termo (ex: taxonomy/term/xxx)."
+
+#: taxonomy_list.module:510
+msgid "Full size image."
+msgstr "Imagem em tamanho completo (full size)."
+
+#: taxonomy_list.module:34
+msgid "administer taxonomy_list"
+msgstr "administrar o taxonomy_list"
+
+#: taxonomy_list.module:0
+msgid "taxonomy_list"
+msgstr "taxonomy_list"
+
+#: taxonomy_list.info:0
+msgid "List terms under a specific vocabulary"
+msgstr "Listar termos de um vocabulário específico"
+

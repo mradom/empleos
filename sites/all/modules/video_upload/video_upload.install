@@ -1,0 +1,27 @@
+<?php
+
+/* $Id: video_upload.install,v 1.1.2.1 2008/04/30 21:47:48 jhedstrom Exp $ */
+
+/**
+ * @file
+ * Install/Uninstall hooks
+ */
+
+/**
+ * Implementation of hook_install()
+ */
+function video_upload_install() {
+  $success = true;
+  if ($success) {
+    drupal_set_message(t('Video Upload successfully installed, and can be configured <a href="!url">here</a>.', array('!url' => url('admin/settings/video_upload'))));
+  }
+}
+
+/**
+ * Implementation of hook_uninstall()
+ */
+function video_upload_uninstall() {
+  variable_del('video_upload_youtube_developer_key');
+  variable_del('video_upload_youtube_username');
+  variable_del('video_upload_youtube_password');
+}

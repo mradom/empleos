@@ -1,0 +1,12 @@
+; $Id: video_upload.info,v 1.1.2.1 2008/04/30 21:47:48 jhedstrom Exp $
+name = Video Upload Field
+description = Upload a video to 3rd Party provider
+package = CCK
+dependencies = content
+
+
+; Information added by drupal.org packaging script on 2008-10-29
+version = "5.x-1.0-beta2"
+project = "video_upload"
+datestamp = "1225319127"
+

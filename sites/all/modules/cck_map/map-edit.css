@@ -1,0 +1,39 @@
+/* $Id: map-edit.css,v 1.2 2007/11/15 04:02:39 beeradb Exp $ */  
+.cck-location-map-fieldset .mapArea{
+  float: left;
+  clear: none;
+}
+
+.cck-location-map-fieldset #current_map_image{
+  float: left;
+}
+.current_map_group {
+  display: block;
+} 
+
+.mapFieldGrouping{
+	display: inline;
+	float: left;
+	padding-left: 20px;
+	width: 280px;
+}
+
+
+.current_map_icon .form-item{
+  width: 200px;
+  float: left;
+  display: inline;
+}
+
+.current_map_icon span{
+  display: inline;
+  margin-top: 20px;
+  float: left;
+  clear: none;
+}
+
+.cck-map-editControls{
+  padding-top: 10px;
+  display: block;
+  clear: left;
+}
