@@ -1,0 +1,10 @@
+; $Id: sphinx_suggestion.info,v 1.1.2.1 2008/09/25 19:26:19 johsw Exp $
+name = Sphinx suggestion module
+description = "This module provides search term suggestions"
+package = "Search"
+version = "0.01"
+; Information added by drupal.org packaging script on 2008-09-25
+version = "5.x-1.1"
+project = "sphinx"
+datestamp = "1222371323"
+

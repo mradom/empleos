@@ -1,0 +1,347 @@
+/**** CSS HOME NUEVO ****/
+
+
+/*FIXES UTILES*/
+.dupfix {
+	float:left;
+	width:1px;
+	height:0px;
+	line-height:0px;
+	visibility:hidden;
+}
+ul, ol {
+	position:relative;
+}
+/*CLEARFIX*/
+.clearfix:after {
+	content:".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+}
+.clearfix {
+	display:inline-block;
+}
+* html .clearfix {
+	height:1%;
+}
+.clearfix {
+	display:block;
+}
+
+/*CAJA OPINION*/
+.ContNyG {
+	position:relative;
+	width:658px;
+	margin-bottom:10px;
+	float:left;
+}
+
+/*- Solapas -*/
+.ContNyG .SolCont {
+	position:relative;
+	z-index:400;
+	background: url(../img/bg_tab.gif) bottom repeat-x;
+	overflow:hidden;
+	height:40px;
+	float:left;
+	width:auto;
+	top:1px;
+	margin-top:10px;
+	padding-right:5px;
+}
+
+.ContNyG .Sol li {
+	float:left;
+	height:40px;
+	overflow:hidden;
+	display:block
+
+}
+.ContNyG .Sol li a {
+	float:left;
+	font:bold 12px Arial;
+	color:#FFF;
+	display:block;
+	height:30px;
+	line-height:20px;
+	overflow:hidden;
+	cursor:pointer;
+	text-align:center;
+	padding:0 10px;
+	margin:10px 0 5px 5px;
+	
+}
+.ContNyG .Sol li a:hover {
+	text-decoration:none;
+	color:#fff;
+	height:30px;
+	background:transparent url(../img/bg_tab_hover.png);
+	margin-top:10px;
+	line-height:20px;
+	-moz-border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+	-moz-box-shadow: 0 1px 3px rgba(0,0,5,1);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,5,1);
+}
+.ContNyG .Sol li.Act {
+	background:#fff;
+	border:1px solid #3077a4;
+	border-bottom:none;
+	height:40px;
+	-moz-border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+}
+.ContNyG .Sol li.Act a {
+	color:#333;
+	height:40px;
+	-moz-border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+	
+}
+.ContNyG .Sol li.Act a:hover{
+	background:none;
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+}
+.ContNyG .Sol li#S_Opi2.Act a, 
+.ContNyG .Sol li#S_Opi3.Act a, 
+.ContNyG .Sol li#S_Opi4.Act a, 
+.ContNyG .Sol li#S_Opi5.Act a {
+	color:#333;
+}
+.ContNyG .Sol li a, .ContNyG .Sol li.Act a {
+	width:auto;
+}
+.ContNyG .Sol li#S_Opi1, 
+.ContNyG .Sol li#S_Opi2, 
+.ContNyG .Sol li#S_Opi3, 
+{
+	padding-right:2px;
+}
+
+.ContNyG .Sol li#S_Opi1.Act, 
+.ContNyG .Sol li#S_Opi2.Act, 
+.ContNyG .Sol li#S_Opi3.Act, 
+{
+	padding-right:2px;
+}
+
+.ContNyG .Sol li#S_Opi1 a, .ContNyG .Sol li#S_Opi1.Act a {
+	width:auto;
+	padding:0 5px;
+}
+.ContNyG .ContInf {
+	position:relative;
+	border:1px solid #3077a4;
+	width:658px;
+	clear:both;
+	padding:10px;
+	float:left;
+}
+.ContNyG .ContInf h1{
+	padding-top:7px;
+	display:block;
+	font:bold 13px Arial;
+	color:#669933;
+
+}
+.ContNyG .ContInf h2{
+	font:bold 12px arial;
+	color:#333;
+}
+.ContNyG .ContInf h2 span{
+	padding:5px;
+	background:#FFCC33;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	display: inline-block;
+	
+	}
+.ContNyG .ContInf p{
+		font:10px arial;
+		color:#333;
+}
+.ContNyG .ContInf h3{
+	font:11px arial;
+	color: #336600;
+}
+
+
+/* GUIAS */
+.ContNyG .ContInf #Opi2 .scroller li a.Cat, 
+.ContNyG .ContInf #Opi3 .scroller li a.Cat{
+	display:block;
+	float:left;
+	height:15px;
+}
+.ContNyG .ContInf #Opi2 .scroller li a.Cat span,
+.ContNyG .ContInf #Opi3 .scroller li a.Cat span{
+	float:left;
+	/*dispaly:block;*/
+}
+
+.ContNyG .ContInf #Opi2 .scroller li a .Not,
+.ContNyG .ContInf #Opi3 .scroller li a .Not{ 
+	background:#eef9fb;
+	color:#333
+}
+.ContNyG .ContInf #Opi2 .scroller li a:hover .Not,
+.ContNyG .ContInf #Opi3 .scroller li a:hover .Not{ 
+	background:#b9e1f9;
+}
+
+/* SliderFotos */
+.ContNyG .ContInf .Box .SliderFotos {
+	position:relative;
+}
+.ContNyG .ContInf .Box .NotPag {
+	margin:0 auto;
+	width:32px;
+	position:relative;
+	top:8px;
+	left:2px;
+	font-size:0;
+}
+.ContNyG .ContInf .Box .NotPag span {
+	background: #CFF1FC;
+	width:5px;
+	height:5px;
+	float:left;
+	display:block;
+	margin:0 2px;
+}
+.ContNyG .ContInf .Box .NotPag .NotAct {
+	background: #098EC1;
+}
+.ContNyG .ContInf .Box .Ant {
+	margin-right:10px;
+}
+.ContNyG .ContInf .Box .Ant, .ContNyG .ContInf .Box .Sig {
+	width:24px;
+	height:24px;
+	display:block;
+	margin-top:110px;
+}
+.ContNyG .ContInf .Box .Ant {
+	float:left;
+	background: url(../img/arrow_to_left.png)top no-repeat;
+	height:21px;
+	width:23px;
+}
+.ContNyG .ContInf .Box .Ant:hover {
+	background-position: 1px -21px;
+}
+.ContNyG .ContInf .Box .Sig {
+	float:right;
+	background: url(../img/arrow_to_right.png)top no-repeat;
+	height:21px;
+	width:23px;
+}
+.ContNyG .ContInf .Box .Sig:hover { 
+	background-position: 1px -21px ;
+}
+.ContNyG .ContInf #Opi2 .Ant,
+.ContNyG .ContInf #Opi3 .Ant,
+.ContNyG .ContInf #Opi4 .Ant,
+.ContNyG .ContInf #Opi5 .Ant{
+	background-image: url(../img/arrow_to_left.png);
+}
+.ContNyG .ContInf #Opi2 .Sig,
+.ContNyG .ContInf #Opi3 .Sig,
+.ContNyG .ContInf #Opi4 .Sig,
+.ContNyG .ContInf #Opi5 .Sig{
+background-image: url(../img/arrow_to_right.png);
+}
+.ContNyG .ContInf .Box {
+	position:relative;
+}
+.ContNyG .ContInf .Box .scroller {
+	width:600px;
+	overflow:hidden;
+	padding:0;
+	position:relative;
+	left:0;
+}
+.ContNyG .ContInf .Box .scroller .content {
+	width:10000px;
+}
+.ContNyG .ContInf .Box .scroller .section {
+	float:left;
+	width:600px;
+	overflow:hidden;
+	background:none;
+	padding:0;
+}
+.ContNyG .ContInf .Box .scroller ul {
+	position:static;
+}
+.ContNyG .ContInf .Box .scroller li {
+	float:right;
+	width:145px;
+	margin-right:5px;
+}
+.ContNyG .ContInf .Box .scroller li.FloR {
+	float:left;
+
+}
+.ContNyG .ContInf .Box .scroller li img {
+	width:143px;
+	height:98px;
+	border:1px solid #CCCCCC;
+	float:left;
+	background: url(../img/slide/c_none.gif) no-repeat ;
+}
+.ContNyG .ContInf .Box .scroller li a .Not {
+	height:100px;
+	background:#eef9fb ;
+	color: #666633;
+	padding:0 5px;
+	clear:both;
+}
+.ContNyG .ContInf .Box .scroller li a:hover .Not {
+	height:100px;
+	background: #B9E1F9;
+	color: #666633;
+	padding:0 5px;
+	clear:both;
+}
+.ContNyG .ContInf .Box .scroller li a .Not_b {
+	height:198px;
+	width:143px;
+	background: url(../img/slide/bnt_consultoras.jpg) no-repeat;
+	overflow:hidden;
+	border:1px solid #CCCCCC;
+	padding:0;
+	clear:both;
+}
+.ContNyG .ContInf .Box .scroller li a:hover .Not_b{
+	background-position: 0 -198px ;
+	border:1px solid #CCCCCC;
+	clear:both;
+}
+
+
+/*.ContNyG .ContInf .Box .scroller li .Not p {
+	font-size:11px;
+	line-height:13px;
+}
+.ContNyG .ContInf .Box .scroller li a.Cat {
+	padding-bottom:5px;
+	font-size:11px
+}
+.ContNyG .ContInf .Box .scroller li a {
+	display:block;
+	cursor:pointer;
+}
+.ContNyG .ContInf .Box .scroller li a:hover {
+	text-decoration:none;
+}
+.ContNyG .ContInf .Box .scroller li a:hover .Not {
+	background-position:bottom;
+}
+.ContNyG .ContInf .Box .scroller li a.Cat:hover {
+	text-decoration:underline;
+}
+*/

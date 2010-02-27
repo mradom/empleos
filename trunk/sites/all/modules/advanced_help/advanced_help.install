@@ -1,0 +1,51 @@
+<?php
+// $Id: advanced_help.install,v 1.3.2.1 2008/08/20 00:18:18 ff1 Exp $
+/**
+ * @file advanced_help.install
+ * Contains install and update functions for advanced_help.
+ */
+
+function advanced_help_install() {
+  drupal_set_message('Installing advanced_help.');
+
+  switch ($GLOBALS['db_type']) {
+    case 'mysql':
+    case 'mysqli':
+      db_query("CREATE TABLE {advanced_help_index} (
+        sid int(10) unsigned NOT NULL default '0',
+        module varchar(255) NOT NULL default '',
+        topic varchar(255) NOT NULL default '',
+        language varchar(12) NOT NULL default '',
+        PRIMARY KEY  (sid),
+        KEY language (language)
+      ) /*!40100 DEFAULT CHARACTER SET utf8 */");
+      break;
+
+    case 'pgsql':
+      db_query("CREATE TABLE {advanced_help_index} (
+        sid integer NOT NULL default '0',
+        module varchar(255) NOT NULL default '',
+        topic varchar(255) NOT NULL default '',
+        language varchar(12) NOT NULL default '',
+        PRIMARY KEY  (sid),
+      )");
+      break;
+  }
+}
+
+function advanced_help_uninstall() {
+  drupal_set_message('Uninstalling advanced_help.');
+
+  switch ($GLOBALS['db_type']) {
+    case 'mysql':
+    case 'mysqli':
+      db_query("DROP TABLE {advanced_help_index}");
+      break;
+
+    case 'pgsql':
+      db_query("DROP TABLE {advanced_help_index}");
+      break;
+  }
+
+  variable_del('advanced_help_last_cron');
+}
