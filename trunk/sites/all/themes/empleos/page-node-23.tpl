@@ -33,7 +33,9 @@
 <?php include("include/col_derecha.php");?>
     <!--------CENTRAL colum-------->
     <DIV id="central_column">
-		<?php include("include/resultado_busqueda.php");?>
+    ====================================================================
+		<?php include("sites/all/themes/empleos/block-block4.tpl.php");?>
+    ====================================================================
     </DIV>
     <!----END SLIDE---->
     <!-----banners-minibox---->
