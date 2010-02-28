@@ -1,8 +1,7 @@
 <?php 
 /*
  * Muestra un listado de rubros
- * HECHO: falta cmabiar de color la cantidad de items de la categoria
- * FIXME: test
+ * TODO: Ver mas deberia ir a una nueva pagina con la lista completa de rubros y avisos
  * */
 
 ?>
