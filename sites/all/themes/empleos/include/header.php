@@ -8,7 +8,7 @@
     		<!----login---->
             <?php if (!$user->uid) {   ?>                                                       
 				<div id="login"><ul class="log"><li><a href="?q=user">Ingresar  </a> </li> I&nbsp;
-					<li><a href="?q=user/register/usuario">  Registrarse</a></li>I&nbsp;
+					<li><a href="?q=user/register/persona">  Registrarse</a></li>I&nbsp;
 					<li><a href="?q=user/me">  Mi cuenta</a></li> I&nbsp;<li><a href="#">Contacto  </a> </li>
 					<li class="destacar"><a href="?q=user/register/empleador"><span style="color:#FFF">Ingreso Empleadores</span></a>&nbsp;&nbsp;&nbsp;<a href="?q=contacto">C&oacute;mo publico un aviso?  </a> </li></ul>
 				</div>				<?php }                                                                           
@@ -16,8 +16,8 @@
 				<div id="login"><ul class="log"><li><a href="?q=user/me">Hola <strong><?php print $user->name; ?></strong></li> I&nbsp;
 					<li><a href="?q=user/me">  Mi cuenta</a></li> I&nbsp;
 					<li><a href="?q=logout"> Salir</a></li>I&nbsp;
-					<li><a href="#">Contacto  </a> </li>
-					<li class="destacar"><a href="?q=user/register/empleador"><span style="color:#FFF">Ingreso Empleadores</span></a>&nbsp;&nbsp;&nbsp;<a href="?q=contacto">C&oacute;mo publico un aviso?  </a> </li></ul>
+					<li><a href="#">Contacto </a> </li>
+					<li class="destacar"><a href="?q=user/register/empleador"><span style="color:#FFF">Ingreso Empleadores</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="?q=contacto">C&oacute;mo publico un aviso?  </a> </li></ul>
 				</div>
 				<?php  }
 				  //$output .= t('<p class="user-info">Hola !user, bienvenido.</p>', array('!user' => theme('username', $user)));
@@ -43,7 +43,7 @@
         				<div class="pasos">
 							<ul id="pasos">
 								<li id="b-01">
-									<a href="?q=user/register"><span>tramites</span></a>
+									<a href="?q=user/register/persona"><span>tramites</span></a>
 								</li>
             					<li id="b-02">
             						<a href="?q=estaciones"><span>estaciones</span></a>
