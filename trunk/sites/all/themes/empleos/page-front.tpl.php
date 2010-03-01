@@ -2,32 +2,7 @@
 <body>
 <div id="wrapper">
   <!----HEADER---->
-  <div id="header">
-    <!----Banner Topsite---->
-    <?php include("include/user-login.php");?>
-    <div class="banner top"> <!--  Topsite -->
-    	<img src="sites/all/themes/empleos/img/footer50.jpg"></img>
-    </div>
-    <div id="logo"><a href="?q=principal"><img src="sites/all/themes/empleos/img/logo.jpg"></a> </div>
-    <div style="clear: both;"></div>
-    <!----menu---->
-	<?php include("include/menu.php"); ?>
-    <!----browser---->
-    <div id="browser">
-      <div class="white right">
-        <h1 style="margin: 10px 10% 0pt;">&iquest;Primera vez en empleoslavoz?</h1>
-        <h3 style="margin: 0pt 12%; text-align: center;">Registrate de forma f&aacute;cil y segura en s&oacute;lo 3 pasos</h3>
-        <div class="pasos">
-          <ul id="pasos">
-            <li id="b-01"><a href="?q=user/register"><span>tramites</span></a></li>
-            <li id="b-02"><a href="#"><span>estaciones</span></a></li>
-            <li id="b-03"><a href="#"><span>estaciones</span></a></li>
-          </ul>
-        </div>
-      </div>
-	<?php include("include/buscador.php");?>
-    </div>
-    </div>
+    <?php include("include/header.php");?>
     <!------MIDDLE------>
     <div id="midle">
       <!------RIGHT colum------>
@@ -46,7 +21,7 @@
         			<a title="empleos destacados" href="javascript://" class="tab-item tab-active">Ofertas de empleos destacados</a>
         		</li>
         	</ul>
-        </div> -->
+        </div> --> 
         <div style="display: block;" class="tab-content">
             <h1 class="tab" title="empleos destacados">Ofertas de empleos destacados</h1>
             <div class="widget">
@@ -358,4 +333,5 @@
     <!--FOOTER-->
     <?php include("include/footer.php");?>
 </div>
-</body></html>
+</body>
+</html>
