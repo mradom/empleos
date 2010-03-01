@@ -6,57 +6,18 @@ switch ($node->type) {
 		include 'page-aviso.tpl.php';
 		break;
 	case 'aviso':
-		include 'page-aviso.tpl.php';
+		include 'page-aviso.tpl.php'; 
 		break;		
 	case 'faq':
 		include 'page-faq.tpl.php';
-		break;
+		break; 
 	default:
 		?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html><head>
-<?php print $head ?>
-<?php print $scripts ?>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>empleoslavoz.com.ar</title>
-<link href="sites/all/themes/empleos/css/style_layout.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="sites/all/themes/empleos/css/tabs.css">
-<link rel="stylesheet" type="text/css" href="sites/all/themes/empleos/css/IN-noticias.css">
-<script language="JavaScript" src="sites/all/themes/empleos/js/tabs.js" type="text/javascript"></script>
-<script language="javascript" src="sites/all/themes/empleos/js/prototype.js" type="text/javascript"></script>
-<script language="javascript" src="sites/all/themes/empleos/js/effects.js" type="text/javascript"></script>
-<script language="javascript" src="sites/all/themes/empleos/js/glider.js" type="text/javascript"></script>
-<script language="javascript" src="sites/all/themes/empleos/js/scriptPag.js" type="text/javascript"></script>
-
-</head>
-
-<div firebugversion="1.5.0" style="display: none;" id="_firebugConsole"></div><body>
+<?php include("include/head.php");?>
+<body> 
 <div id="wrapper">
   <!----HEADER---->
-  <div id="header">
-  <?php include("include/user-login.php");?>
-    <!----Banner Topsite---->
-    <div class="banner top"> Topsite</div>
-    <div id="logo"><a href="?q=principal"><img src="sites/all/themes/empleos/img/logo.jpg"></a> </div>
-    <div style="clear: both;"></div>
-    <!----menu---->
-	<?php include("include/menu.php"); ?>
-    <!----browser---->
-    <div id="browser">
-      <div class="white right">
-        <h1 style="margin: 10px 10% 0pt;">&iquest;Primera vez en empleoslavoz?</h1>
-        <h3 style="margin: 0pt 12%; text-align: center;">Registrate de forma f&aacute;cil y segura en s&oacute;lo 3 pasos</h3>
-        <div class="pasos">
-          <ul id="pasos">
-            <li id="b-01"><a href="http://www.portalesverticales.com.ar/caci/empleos/%E2%80%9D#%E2%80%9D"><span>tramites</span></a></li>
-            <li id="b-02"><a href="http://www.portalesverticales.com.ar/caci/empleos/%E2%80%9D#%E2%80%9D"><span>estaciones</span></a></li>
-            <li id="b-03"><a href="http://www.portalesverticales.com.ar/caci/empleos/%E2%80%9D#%E2%80%9D"><span>estaciones</span></a></li>
-          </ul>
-        </div>
-      </div>
-	<?php include("include/buscador.php");?>
-    </div>
-    </div>
+    <?php include("include/header.php");?>
     <!------MIDDLE------>
     <div id="midle">
       <!------RIGHT colum------>
