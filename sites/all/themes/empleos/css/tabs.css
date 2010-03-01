@@ -7,9 +7,10 @@ http://labs.silverorange.com/archives/2003/september/simplecsstabs
 
 */
 #tab-container{
-	margin:10px 0;
+	margin:0;
 	float:left;
 	clear:both;
+	margin:10px 0;
 }
 .tab-content {
 	background:#fff;
@@ -17,7 +18,7 @@ http://labs.silverorange.com/archives/2003/september/simplecsstabs
 	color: black;
 	padding:10px;
 	width:658px;
-	float:left;	
+	float:left;
 }
 
 
@@ -50,7 +51,7 @@ http://labs.silverorange.com/archives/2003/september/simplecsstabs
 	padding:0 10px;
 	text-align: center;
 	font:bold 12px/25px arial;
-	color:#fff;
+	color:#3077a4;
 	height:30px;
 	-moz-border-radius: 5px 5px 0 0;
 	-webkit-border-radius: 5px 5px 0 0;
@@ -62,7 +63,7 @@ http://labs.silverorange.com/archives/2003/september/simplecsstabs
 .tab-header ul.tab-list span,
 .tab-header ul.tab-list a.tab-active,
 .tab-header ul.tab-list a.tab-active:hover {
-	background: #FFF;
+	background: #fff;
 	color: black;
 	margin-top:0;
 	height:40px;
@@ -75,17 +76,19 @@ http://labs.silverorange.com/archives/2003/september/simplecsstabs
 
 /* a link in a background tab */
 .tab-header ul.tab-list a {
-	background: none;
+	background: #EAFEFF;
 	text-decoration:none;
 	height:30px;
 	margin-top:10px;
 	margin-right:5px;
+	border:1px solid #3077a4;
+	border-bottom:none;
 }
 
 /* hover on a background tab */
 .tab-header ul.tab-list a:hover {
 	height:30px;
-	background: #3077a4;
+	background: #FFCC00;
 	margin-top:10px;
 	line-height:25px;
 	text-decoration:none;
