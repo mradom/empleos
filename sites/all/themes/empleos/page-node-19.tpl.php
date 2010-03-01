@@ -4,6 +4,7 @@
   		<!----HEADER---->
 		<?php //include("include/header.php");?>
 <div id="header">
+<?php include("include/user-login.php");?>
     <!----Banner Topsite---->
     <div class="banner top"> Topsite</div>
     <div id="logo"><a href="?q=principal"><img src="sites/all/themes/empleos/img/logo.jpg"></a> </div>

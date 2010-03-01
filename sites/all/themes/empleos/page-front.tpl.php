@@ -4,6 +4,7 @@
   <!----HEADER---->
   <div id="header">
     <!----Banner Topsite---->
+    <?php include("include/user-login.php");?>
     <div class="banner top"> <!--  Topsite -->
     	<img src="sites/all/themes/empleos/img/footer50.jpg"></img>
     </div>
