@@ -1268,7 +1268,16 @@ function user_register_submit($form_id, $form_values) {
   //the unset below is needed to prevent these form values from being saved as user data
   unset($form_values['form_token'], $form_values['submit'], $form_values['op'], $form_values['notify'], $form_values['form_id'], $form_values['affiliates'], $form_values['destination']);
 
+  if (arg(2) == "empresa"){
+  	$roles = array('5' => '5');
+  }
+  
+  if (arg(2) == "persona"){
+  	$roles = array('7' => '7');
+  }
+
   $merge_data = array('pass' => $pass, 'init' => $mail, 'roles' => $roles);
+  
   if (!$admin) {
     // Set the user's status because it was not displayed in the form.
     $merge_data['status'] = variable_get('user_register', 1) == 1;

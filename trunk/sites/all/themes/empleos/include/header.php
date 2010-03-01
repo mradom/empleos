@@ -1,3 +1,4 @@
+<?php include("include/user-login.php");?>
 		<!----HEADER---->
 		<div id="header">
 			<!----Banner Topsite---->

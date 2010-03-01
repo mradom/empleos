@@ -1,3 +1,5 @@
+
+<?php /*
 <!-- 
 Aca poner el codigo html de login
  -->
@@ -13,3 +15,5 @@ Aca poner el codigo html de login
 	<a href="?q=user/register/empleador">Registro de Empleadores</a>
 </p>
 </div>
+
+*/ ?>

@@ -4,6 +4,7 @@
   		<!----HEADER---->
 		<?php //include("include/header.php");?>
 <div id="header">
+<?php include("include/user-login.php");?>
     <!----Banner Topsite---->
     <div class="banner top"> Topsite</div>
     <div id="logo"><a href="?q=principal"><img src="sites/all/themes/empleos/img/logo.jpg"></a> </div>
@@ -33,39 +34,7 @@
 <?php include("include/col_derecha.php");?>
     <!--------CENTRAL colum-------->
     <DIV id="central_column">
-      <div id="center"><div id="squeeze"><div class="right-corner"><div class="left-corner">
-      				<?php if ($arrURL[1]==$user->uid) {?>
-					<ul>
-						<li><a href="?q=user/<?php print arg(1); ?>/edit">Editar perfil</a></li>
-					</ul>
-					 <?php } ?>
-      		<!--  <table>
-      			<tr>
-      				<td><a href="?q=node/add/cv"></a></td>
-      				<td><a href="?q=node/addp-educacion"></a></td>
-      				<td><a href="?q=node/add/p-experiencia-laboral"></a>Mi Menu</td>
-      				<td><a href="?q=node/add/p-"></a>Mi Menu</td>
-      				<td><a href="?q=node/add/p-experiencia-laboral"></a>Mi Menu</td>
-      				<td><a href="?q=node/add/p-experiencia-laboral"></a>Mi Menu</td>
-      				<td>Mi Menu</td>
-      			</tr>
-      		</table> -->
-          <?php if ($breadcrumb): print $breadcrumb; endif; ?>
-          <?php if ($mission): print '<div id="mission">'. $mission .'</div>'; endif; ?>
-
-          <?php if ($tabs): print '<div id="tabs-wrapper" class="clear-block">'; endif; ?>
-          <?php if ($title): print '<h2'. ($tabs ? ' class="with-tabs"' : '') .'>'. $title .'</h2>'; endif; ?>
-          <?php if ($tabs): print $tabs .'</div>'; endif; ?>
-
-          <?php if (isset($tabs2)): print $tabs2; endif; ?>
-
-          <?php if ($help): print $help; endif; ?>
-          <?php if ($messages): print $messages; endif; ?>
-          <?php print $content ?>
-          <span class="clear"></span>
-          <?php print $feed_icons ?>
-          <div id="footer"><?php print $footer_message ?></div>
-      </div></div></div></div>
+		<?php print $content;?>
     </DIV>
     <!----END SLIDE---->
     <!-----banners-minibox---->
@@ -81,11 +50,11 @@
     <H3 class="small"> Un portal de <BR>
       <A href="http://www.lavoz.com.ar/" target="_blank"> <IMG src="./Resulados de busqueda_files/pie_lavoz.gif" width="110" height="14"> </A> </H3>
     <UL>
-      <LI> <A href="#">Aviso legal</A> </LI>
-      <LI> <A href="#">Contacto</A> </LI>
-      <LI> <A href="#">Privacidad</A> </LI>
-      <LI> <A href="#" target="_blank">C&oacute;mo publicar</A> </LI>
-      <LI> <A href="#">Mapa del sitio</A> </LI>
+      <LI> <A href="http://www.portalesverticales.com.ar/caci/empleos/aviso-legal.html">Aviso legal</A> </LI>
+      <LI> <A href="http://www.portalesverticales.com.ar/caci/empleos/contacto.html">Contacto</A> </LI>
+      <LI> <A href="http://www.portalesverticales.com.ar/caci/empleos/privacidad.html">Privacidad</A> </LI>
+      <LI> <A href="http://www.portalesverticales.com.ar/caci/empleos/publicar.html" target="_blank">Cómo publicar</A> </LI>
+      <LI> <A href="http://www.portalesverticales.com.ar/caci/empleos/site-map.html">Mapa del sitio</A> </LI>
       <LI> <A href="javascript:alert('Presione la combinación de teclas CTRL+D para agregar BuscaGuia como sitio Favorito.')" id="lnk1"><SPAN>InmueblesLaVoz</SPAN> como página de inicio</A> </LI>
     </UL>
     <UL class="logos">
