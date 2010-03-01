@@ -1,27 +1,10 @@
 <?php include("include/head.php");?>
-<BODY>
-	<DIV id="wrapper">
-  		<!----HEADER---->
-		<?php //include("include/header.php");?>
-<div id="header">
-<?php include("include/user-login.php");?>
-    <!----Banner Topsite---->
-    <div class="banner top"> Topsite</div>
-    <div id="logo"><a href="?q=principal"><img src="sites/all/themes/empleos/img/logo.jpg"></a> </div>
-    <div style="clear: both;"></div>
-    <!----menu---->
-    <div class="menu top">
-      <ul>
-        <li><a class="active" href="buscar.html">Buscar</a></li>
-        <li><a href="empresas.html">Empresas</a></li>
-        <li><a href="consultoras.html">Consultoras</a></li>
-        <li><a href="facs.html">Preguntas frecuentes</a></li>
-      </ul>
-    </div>
-    <div class="inside" id="browser"> </div>
-  </div>
-  <!------MIDDLE------>
-  <DIV id="midle">
+<body>
+<div id="wrapper">
+  <!----HEADER---->
+    <?php include("include/header.php");?>
+    <!------MIDDLE------>
+    <div id="midle">
     <!----banners box---->
     <DIV class="content_banners" style="margin-bottom:10px;">
       <UL>

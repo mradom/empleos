@@ -1,27 +1,10 @@
 <?php include("include/head.php");?>
-<BODY>
-	<DIV id="wrapper">
-  		<!----HEADER---->
-		<?php //include("include/header.php");?>
-<div id="header">
-<?php include("include/user-login.php");?>
-    <!----Banner Topsite---->
-    <div class="banner top"> Topsite</div>
-    <div id="logo"><a href="?q=principal"><img src="sites/all/themes/empleos/img/logo.jpg"></a> </div>
-    <div style="clear: both;"></div>
-    <!----menu---->
-    <div class="menu top">
-      <ul>
-        <li><a class="active" href="buscar.html">Buscar</a></li>
-        <li><a href="empresas.html">Empresas</a></li>
-        <li><a href="consultoras.html">Consultoras</a></li>
-        <li><a href="facs.html">Preguntas frecuentes</a></li>
-      </ul>
-    </div>
-    <div class="inside" id="browser"> </div>
-  </div>
-  <!------MIDDLE------>
-  <DIV id="midle">
+<body>
+<div id="wrapper">
+  <!----HEADER---->
+    <?php include("include/header.php");?>
+    <!------MIDDLE------>
+    <div id="midle">
     <!----banners box---->
     <DIV class="content_banners" style="margin-bottom:10px;">
       <UL>
@@ -34,7 +17,11 @@
 <?php include("include/col_derecha.php");?>
     <!--------CENTRAL colum-------->
     <DIV id="central_column">
-		<?php print $content;?>
+    
+    
+        <?php include("include/user-login.php");?>
+    
+
     </DIV>
     <!----END SLIDE---->
     <!-----banners-minibox---->
@@ -53,9 +40,9 @@
       <LI> <A href="http://www.portalesverticales.com.ar/caci/empleos/aviso-legal.html">Aviso legal</A> </LI>
       <LI> <A href="http://www.portalesverticales.com.ar/caci/empleos/contacto.html">Contacto</A> </LI>
       <LI> <A href="http://www.portalesverticales.com.ar/caci/empleos/privacidad.html">Privacidad</A> </LI>
-      <LI> <A href="http://www.portalesverticales.com.ar/caci/empleos/publicar.html" target="_blank">Cómo publicar</A> </LI>
+      <LI> <A href="http://www.portalesverticales.com.ar/caci/empleos/publicar.html" target="_blank">CÃ³mo publicar</A> </LI>
       <LI> <A href="http://www.portalesverticales.com.ar/caci/empleos/site-map.html">Mapa del sitio</A> </LI>
-      <LI> <A href="javascript:alert('Presione la combinación de teclas CTRL+D para agregar BuscaGuia como sitio Favorito.')" id="lnk1"><SPAN>InmueblesLaVoz</SPAN> como página de inicio</A> </LI>
+      <LI> <A href="javascript:alert('Presione la combinaciÃƒÂ³n de teclas CTRL+D para agregar BuscaGuia como sitio Favorito.')" id="lnk1"><SPAN>InmueblesLaVoz</SPAN> como pÃƒÂ¡gina de inicio</A> </LI>
     </UL>
     <UL class="logos">
       <LI class="certifica"> <A href="http://www.certifica.com/" target="_blank"> <SPAN>Certifica.com</SPAN> </A> </LI>
