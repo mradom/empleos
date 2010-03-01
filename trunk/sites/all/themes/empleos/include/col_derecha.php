@@ -18,6 +18,6 @@
         </div>
         <div class="box side">
         <?php include("sites/all/themes/empleos/block-block3.tpl.php"); ?>
-           <div class="arrow"><a href="#">Ver mas</a></div>
+           <div class="arrow"><a href="/?q=categorias">Ver más</a></div>
         </div>
       </div>
