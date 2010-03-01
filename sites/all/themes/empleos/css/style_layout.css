@@ -38,19 +38,19 @@ select, input {
 /*----FONTS----*/
 @font-face {
  font-family:"Junction";
- src: url("../img/Junction.otf") format("opentype");
+ src: url("img/Junction.otf") format("opentype");
 }
 @font-face {
  font-family:"CABNDWebBold";
- src: url("../img/CABNDWebBold.otf") format("opentype");
+ src: url("img/CABNDWebBold.otf") format("opentype");
 }
 p {
 	font:11p/14px tahoma;
 }
-span.orange, a.orange {
+.orange, a.orange {
 	color:#F90
 }
-span.blue, a.blue {
+.blue, a.blue {
 	color:#1C77A8
 }
 p.grey,  span.grey{
@@ -114,7 +114,7 @@ span.underline{ text-decoration: underline}
 	float:right;
 }
 .menu.top {
-	margin-top:50px;
+	margin-top:15px;
 	clear:right
 }
 .menu ul li {
@@ -267,14 +267,29 @@ li#b-02 a:hover {
 li#b-03 a:hover {
 	background: url(../img/pasos_hover.png) -232px no-repeat;
 }
-/*---main - login-------------------------------------------aun no use estas clases*/
-/*main.login a {
-	font:normal 10px/12px Arial, Helvetica, sans-serif;
-	color:#3077a4;
+/*---------login----------*/
+#header ul.log { 
+	float:right;
+	color: #2D71B5;
+	font-family:arial;
 }
-main.login a span {
-	font-weight:bold
-}*/
+ul.log li{ 
+	display: inline-block;
+	*display:inline;
+	margin-right:10px;
+	padding-top:6px;
+}
+ul.log li a, ul.log li a:hover{
+	color: #2D71B5;
+}
+ul.log li.destacar{
+	background: url(../img/login.png) no-repeat;
+	float: right;
+	text-align:center;
+	padding-top:5px;
+	width:252px;
+	height:20px;
+}
 /*----tags----*/
 ul.tags {
 	float:left;
@@ -324,6 +339,7 @@ ul.tags li.final {
 	margin-right:45px;
 	background: #F7F7F7;
 	float:left;
+	margin-top:10px
 }
 /*rectangle*/
 .banner.rectangle {
@@ -579,19 +595,21 @@ div.datos{
 	padding:0;
 	float:left
 }
-div.datos h2 {
+div.datos h2, div.datos h2 a {
 	font:bold 12px/18px tahoma;
 	max-width:420px;
 }
 #gratis div.datos, #simple div.datos{
 	width:635px;
 }
-#simple div.datos h2, #gratis div.datos h2{
+#simple .datos h2, #gratis .datos h2{
 	font:11px/18px tahoma;
 	max-width:635px;
+	color:#333;
 }
-div.datos p.grey {
-	max-width:250px;
+#simple .datos h2 a, #gratis .datos h2 a{
+	color:#333;
+	font:bold 11px/18px tahoma;
 }
 p.line {
 	border-bottom:1px solid #eee;
@@ -692,7 +710,7 @@ p.line {
 	height: 24px
 }
 #footer ul.logos li.certifica a {
-	background: url(../img/logo_certifica.gif) no-repeat;
+	background: url(logo_certifica.gif) no-repeat;
 	width: 102px;
 }
 #footer ul.logos li.certifica a:HOVER {
