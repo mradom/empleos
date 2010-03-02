@@ -1,19 +1,12 @@
-
-<?php /*
-<!-- 
-Aca poner el codigo html de login
- -->
-
-<div class="login_form">
-<?php
-   print drupal_render($form); // this displays the login form.
-?>
-<p>
-	<a href="?q=user/register/usuario">Registro de Usuario</a>
-</p>
-<p>
-	<a href="?q=user/register/empleador">Registro de Empleadores</a>
-</p>
+<div>
+	<!-- <form id="form1" name="logonform" method="post" action="clasific.asp"> -->
+		<form id="user-login" method="post" accept-charset="UTF-8" action="?q=user">
+			Usuario: <input type="text" class="form-text required" tabindex="1" value="" size="60" id="edit-name" name="name" maxlength="60"><br />
+			Contrase&ntilde;a: <input type="password" class="form-text required" tabindex="2" size="60" id="edit-pass" name="pass"><br />
+			<input type="hidden" value="user_login" id="edit-user-login" name="form_id">
+			<input type="submit" class="form-submit" tabindex="3" value="Ingresar" id="edit-submit" name="op"><br />
+		</form>
+		<a href="?q=user/register/persona">Registrarme como persona</a> | 
+		<a href="?q=user/register/empresa">Registrarme como Empresa</a> | 
+		<a href="?q=user/password">Olvid&eacute; mi clave</a>
 </div>
-
-*/ ?>

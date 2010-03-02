@@ -1,9 +1,5 @@
-dasda<?php
+<?php
 	global $user;
-	/*echo "<pre>";
-	print_r($user);
-	echo "</pre>";
-	die();*/
 	?>
 	<a href="?q=user/<?php echo $user->uid; ?>/edit">Editar datos de mi cuenta</a></br>
 	<?php
