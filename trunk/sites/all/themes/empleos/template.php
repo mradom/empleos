@@ -114,3 +114,21 @@ function phptemplate_user_register($form) {
 function phptemplate_user_edit($form) {
     return _phptemplate_callback('user_edit', array('form' => $form));
 }
+
+function phptemplate_user_pass($user, $form = array(), $form1 = array()) {
+  // Display form:
+  $form['name'] = array('#type' => 'textfield',
+    '#title' => t('Username or e-mail address'),
+    '#size' => 60,
+    '#maxlength' => max(USERNAME_MAX_LENGTH, EMAIL_MAX_LENGTH),
+    '#required' => TRUE,
+  );
+  $form['submit'] = array('#type' => 'submit',
+    '#value' => t('E-mail new password'),
+    '#weight' => 2,
+  );
+  
+  $form['submit_login'] = array('#type' => 'submit', '#value' => t('Log in'), '#weight' => 2, '#attributes' => array('tabindex' => '3'));
+
+  return _phptemplate_callback('user_pass', array('form' => $form));
+}

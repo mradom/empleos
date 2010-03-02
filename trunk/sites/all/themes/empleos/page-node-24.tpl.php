@@ -17,17 +17,11 @@
 <?php include("include/col_derecha.php");?>
     <!--------CENTRAL colum-------->
     <DIV id="central_column">
-        <?php //include("include/user-login.php");?>
-    	<?php print $content;?>
+		<?php include("include/listarubros.php");?>
     </DIV>
     <!----END SLIDE---->
     <!-----banners-minibox---->
-    <DIV class=" content_banners">
-      <DIV class="banner minibox" style="margin-right:26px"> Minibox 1 </DIV>
-      <DIV class="banner minibox" style="margin-right:27px"> Minibox 2 </DIV>
-      <DIV class="banner minibox" style="margin-right:27px"> Minibox 3 </DIV>
-      <DIV class="banner minibox"> Minibox 4 </DIV>
-    </DIV>
+	<?php include("include/banners-central.php");?>
   </DIV>
   <!--FOOTER-->
   <DIV id="footer">
@@ -39,7 +33,7 @@
       <LI> <A href="http://www.portalesverticales.com.ar/caci/empleos/privacidad.html">Privacidad</A> </LI>
       <LI> <A href="http://www.portalesverticales.com.ar/caci/empleos/publicar.html" target="_blank">Cómo publicar</A> </LI>
       <LI> <A href="http://www.portalesverticales.com.ar/caci/empleos/site-map.html">Mapa del sitio</A> </LI>
-      <LI> <A href="javascript:alert('Presione la combinaciÃ³n de teclas CTRL+D para agregar BuscaGuia como sitio Favorito.')" id="lnk1"><SPAN>InmueblesLaVoz</SPAN> como pÃ¡gina de inicio</A> </LI>
+      <LI> <A href="javascript:alert('Presione la combinación de teclas CTRL+D para agregar BuscaGuia como sitio Favorito.')" id="lnk1"><SPAN>InmueblesLaVoz</SPAN> como página de inicio</A> </LI>
     </UL>
     <UL class="logos">
       <LI class="certifica"> <A href="http://www.certifica.com/" target="_blank"> <SPAN>Certifica.com</SPAN> </A> </LI>

@@ -35,4 +35,4 @@ AND n.type = 'e_aviso'";
 }
 ?>
 </ul>
-<div class="arrow"><a href="?q=categorias">Ver m&aacute;s</a></div>
+<div class="arrow"><a href="?q=rubros">Ver m&aacute;s</a></div>
