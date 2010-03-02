@@ -12,7 +12,7 @@ while($fila = mysql_fetch_object($rs)){
 	<li>
 		<div>
 			<?php print theme('imagecache','logo_empresa_52_34',$empresa->picture,$empresa->picture,$empresa->name);?>
-			<a href="?q=avisosporempresa" ><?php echo $empresa->name;?></a>
+			<a href="?q=avisosporempresa/<?php echo $empresa->uid;?>" ><?php echo $empresa->name;?></a>
 		</div>
 	</li>
 <?php } ?>
