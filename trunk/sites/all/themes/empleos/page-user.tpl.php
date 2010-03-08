@@ -1,51 +1,48 @@
-<?php include("include/head.php");?>
+<?php 
+global $user;
+include("include/head.php");?>
 <body>
 <div id="wrapper">
   <!----HEADER---->
     <?php include("include/header.php");?>
     <!------MIDDLE------>
     <div id="midle">
-    <!----banners box---->
-    <DIV class="content_banners" style="margin-bottom:10px;">
-      <UL>
-        <LI class="banner box">Box1</LI>
-        <LI class="banner box">Box2</LI>
-        <LI class="banner box" style="margin-right:0">Box3</LI>
-      </UL>
-    </DIV>
+
     <!------RIGHT colum------>
-<?php include("include/col_derecha.php");?>
+   	  <div id="right_column">
+        <!----banner box---->
+        <div class="banner boxes"><img src="sites/all/themes/empleos/img/banner/login.jpg"></div>  
+      </div>
+
     <!--------CENTRAL colum-------->
     <DIV id="central_column">
-        <?php //include("include/user-login.php");?>
-    	<?php print $content;?>
-    </DIV>
-    <!----END SLIDE---->
-    <!-----banners-minibox---->
-    <DIV class=" content_banners">
-      <DIV class="banner minibox" style="margin-right:26px"> Minibox 1 </DIV>
-      <DIV class="banner minibox" style="margin-right:27px"> Minibox 2 </DIV>
-      <DIV class="banner minibox" style="margin-right:27px"> Minibox 3 </DIV>
-      <DIV class="banner minibox"> Minibox 4 </DIV>
-    </DIV>
+      <?php
+	       If (arg(0)=='user') {
+              If (!$user->uid) include ('user-login.php');
+			  If (arg(1)=='register' and arg(2)=='persona'  ) include ('register-persona.php'); //    registracion de personas			  
+			  If (arg(1)=='register' and arg(2)=='empleador') include ('register-empleador.php'); //    registracion de personas
+			  if ($user->uid) print '<div style="border: 1px solid #ccc ;">'.$content.'</div>';			   
+		   }
+	  ?>
+		
+
+
+		 
+    <div class=" content_banners">
+        <div class="banner minibox" style="margin-right:26px">
+          Minibox 1 </div>
+        <div class="banner minibox" style="margin-right:27px">
+          Minibox 2 </div>
+        <div class="banner minibox" style="margin-right:27px">
+          Minibox 3 </div>
+        <div class="banner minibox">
+
+          Minibox 4 </div>
+      </div>
   </DIV>
+  </DIV>  
   <!--FOOTER-->
-  <DIV id="footer">
-    <H3 class="small"> Un portal de <BR>
-      <A href="http://www.lavoz.com.ar/" target="_blank"> <IMG src="./Resulados de busqueda_files/pie_lavoz.gif" width="110" height="14"> </A> </H3>
-    <UL>
-      <LI> <A href="http://www.portalesverticales.com.ar/caci/empleos/aviso-legal.html">Aviso legal</A> </LI>
-      <LI> <A href="http://www.portalesverticales.com.ar/caci/empleos/contacto.html">Contacto</A> </LI>
-      <LI> <A href="http://www.portalesverticales.com.ar/caci/empleos/privacidad.html">Privacidad</A> </LI>
-      <LI> <A href="http://www.portalesverticales.com.ar/caci/empleos/publicar.html" target="_blank">Cómo publicar</A> </LI>
-      <LI> <A href="http://www.portalesverticales.com.ar/caci/empleos/site-map.html">Mapa del sitio</A> </LI>
-      <LI> <A href="javascript:alert('Presione la combinaciÃ³n de teclas CTRL+D para agregar BuscaGuia como sitio Favorito.')" id="lnk1"><SPAN>InmueblesLaVoz</SPAN> como pÃ¡gina de inicio</A> </LI>
-    </UL>
-    <UL class="logos">
-      <LI class="certifica"> <A href="http://www.certifica.com/" target="_blank"> <SPAN>Certifica.com</SPAN> </A> </LI>
-      <LI class="bureau"> <A href="http://www.iabargentina.com.ar/" target="_blank"> <SPAN>Internet Advertising Bureau</SPAN> </A> </LI>
-    </UL>
-  </DIV>
+    <?php include("include/footer.php");?>
 </DIV>
 </BODY>
 </HTML>

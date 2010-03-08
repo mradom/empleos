@@ -6,13 +6,7 @@
     <!------MIDDLE------>
     <div id="midle">
     <!----banners box---->
-    <DIV class="content_banners" style="margin-bottom:10px;">
-      <UL>
-        <LI class="banner box">Box1</LI>
-        <LI class="banner box">Box2</LI>
-        <LI class="banner box" style="margin-right:0">Box3</LI>
-      </UL>
-    </DIV>
+    <?php include("include/banners-boxes.php");?>
     <!------RIGHT colum------>
 <?php include("include/col_derecha.php");?>
     <!--------CENTRAL colum-------->
