@@ -1,22 +1,23 @@
 <?php
   global $user;
 ?>
-		<!----HEADER---->
 		<div id="header">
 			<!----Banner Topsite---->
 			<div class="banner top"> Topsite</div>
     		<!----login---->
 				<?php include("user-login.php"); ?>
                <!----logo---->
-    			<div id="logo">
-    				<a href="?q=principal">
-    					<img src="sites/all/themes/empleos/img/logo.jpg">
-    				</a>
-    			</div>
-    			<div style="clear: both;"></div>
-    			<!----menu---->
-				<?php include("menu.php");?>
-    			<!----browser---->
+               <div id="logo">
+    				<a href="?q=principal"><img src="sites/all/themes/empleos/img/logo.jpg"></a>
+    		   </div>
+    		   <div style="clear: both;"></div>
+    		   <!----menu---->
+			   <?php include("menu.php");?>
+               
+               <?php If ($user->uid) { ?><div id="browser" class="inside"> </div><?php } ?>
+
+               <?php If (!$user->uid) { ?>
+                <!----browser---->
     			<div id="browser">
                 <?php include("buscador.php");?>
       				<div class="white right">
@@ -25,10 +26,10 @@
         				<div class="pasos">
 							<ul id="pasos">
 								<li id="b-01">
-									<a href="?q=user/register/persona"><span>tramites</span></a>
+									<a href="?q=user/register/persona"><span>registrate</span></a>
 								</li>
             					<li id="b-02">
-            						<a href="?q=estaciones"><span>estaciones</span></a>
+            						<a href="?q=estaciones"><span>tu cv</span></a>
             					</li>
 								<li id="b-03">
 									<a href="?q=estaciones"><span>estaciones</span></a>
@@ -37,4 +38,5 @@
 						</div>
 					</div>
     			</div>
-    	</div>
+        <?php } ?>
+   	</div>		
