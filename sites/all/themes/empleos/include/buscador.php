@@ -26,7 +26,7 @@
             		}
             	?>
             </select>
-            <input name="buscar" class="btn_buscar" value="" alt="Buscar" type="submit">
+            <input name="buscar" class="button" style="margin-left:60px; padding-left:15px; padding-right:15px;" value="Buscar ahora" alt="Buscar" type="submit">
           </form>
         </div>
       </div>

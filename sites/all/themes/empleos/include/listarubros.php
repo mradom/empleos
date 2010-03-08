@@ -1,6 +1,6 @@
 <?php 
 /*
- * Muestra un listado de rubros
+ * Muestra un listado de rubros en columna central
  * TODO: Ver porque repite algunas categorias
  * FIXME: test
  * */

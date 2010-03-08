@@ -44,4 +44,3 @@ if(!$user->uid){?>
 		</ul>
 	</div>
 <?php }?>
-<br><br>
