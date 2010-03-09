@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @file
+ *
+ * Provides 'me' aliases install and uninstall routines.
+ */
+
+/**
+ * Implementation of hook_install().
+ */
+function publicador_install() {
+  //db_query("UPDATE {system} SET weight = 1000 WHERE name = 'me'");
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function publicador_uninstall() {
+  //$vars = array(
+  //  'me_aliases',
+  //);
+
+  foreach ($vars as $var) {
+    //variable_del($var);
+  }
+}
+
+/**
+ * Implementation of hook_update_N().
+ */
+function publicador_update_5101() {
+  //return array(update_sql("UPDATE {system} SET weight = 1000 WHERE name = 'me'"));
+}
