@@ -1,34 +1,8 @@
 <?php include("head.php");?>
 <BODY> 
 <DIV id="wrapper"> 
-  <!----HEADER----> 
-  <DIV id="header"> 
-    <!----Banner Topsite----> 
-    <DIV class="banner top"> Topsite</DIV> 
-    <!----login----> 
-    <DIV id="login"> 
-      <UL class="log"> 
-        <LI><A href="http://www.portalesverticales.com.ar/caci/empleos/form-login.html">Ingresar </A> &nbsp;I</LI> 
-        <LI><A href="http://www.portalesverticales.com.ar/caci/empleos/form-login.html">Registrarse</A>&nbsp;I</LI> 
-        <LI><A href="./Forms_files/Forms.htm">Mi cuenta</A>&nbsp;I</LI> 
-        <LI><A href="http://www.portalesverticales.com.ar/caci/empleos/form.html#">Contacto</A> </LI> 
-        <LI class="destacar"><SPAN style="color:#FFF">Ingreso Empleadores</SPAN>&nbsp;&nbsp;&nbsp;<A href="http://www.portalesverticales.com.ar/caci/empleos/form.html#">¿C&oacute;mo publico un aviso? </A> </LI> 
-      </UL> 
-    </DIV> 
-    <!----logo----> 
-    <DIV id="logo"><A href="?q=principal"><IMG src="sites/all/themes/empleos/img/logo.jpg"></A> </DIV> 
-    <DIV style="clear:both"></DIV> 
-    <!----menu----> 
-    <DIV class="menu top"> 
-      <UL> 
-        <LI><A href="http://www.portalesverticales.com.ar/caci/empleos/buscar.html" class="active">Buscar</A></LI> 
-        <LI><A href="http://www.portalesverticales.com.ar/caci/empleos/empresas.html">Empresas</A></LI> 
-        <LI><A href="http://www.portalesverticales.com.ar/caci/empleos/consultoras.html">Consultoras</A></LI> 
-        <LI><A href="http://www.portalesverticales.com.ar/caci/empleos/facs.html">Preguntas frecuentes</A></LI> 
-      </UL> 
-    </DIV> 
-    <DIV id="browser" class="inside"> </DIV> 
-  </DIV> 
+  <!----HEADER---->
+  <?php include("header.php");?>
   <!------MIDDLE------> 
   <DIV id="midle"> 
     <DIV class="box top"> 
@@ -95,40 +69,14 @@
 			}
 			?>
 				      </TBODY> 
-				</TABLE> 
-				<?php print $content;?>
+				</TABLE>
+				<div class="mycv">
+				<?php print custom_p_educacion() ?>
+				</div> 
 			<?php
   			//print "<div class='mycv'>".$content."</div>";
   		}else{
   	?>
-     <TABLE class="tablaGris" border="0" cellpadding="0" cellspacing="1"> 
-      <TBODY> 
-        <TR> 
-          <TD class="techo" width="16%">Per&iacute;odo</TD> 
-          <TD class="techo" width="16%">Empresa</TD> 
-          <TD class="techo" width="18%">Ramo o actividad</TD> 
-          <TD class="techo" width="18%">Area o Sector</TD> 
-          <TD class="techo" width="22%">Tipo de puesto o jerarqu&iacute;a</TD> 
-          <TD class="techo" width="10%">&nbsp;</TD> 
-        </TR> 
-        <TR> 
-          <TD>03.1974 - Presente</TD> 
-          <TD>arcor</TD> 
-          <TD>Telecomunicaciones</TD> 
-          <TD>Comercial / Ventas</TD> 
-          <TD>Jefe / Supervisor / Responsable</TD> 
-          <TD><A href="http://www.portalesverticales.com.ar/caci/empleos/form.html#" title="editar"><DIV class="arrow editar" style=" margin-right:10px;"></DIV></A> <A href="http://www.portalesverticales.com.ar/caci/empleos/form.html#" title="borrar"><DIV class="arrow cancel"></DIV></A> </TD> 
-        </TR> 
-        <TR> 
-          <TD>03.1974 - Presente</TD> 
-          <TD>arcor</TD> 
-          <TD>Telecomunicaciones</TD> 
-          <TD>Comercial / Ventas</TD> 
-          <TD>Jefe / Supervisor / Responsable</TD> 
-          <TD><A href="http://www.portalesverticales.com.ar/caci/empleos/form.html#" title="editar"><DIV class="arrow editar" style=" margin-right:10px;"></DIV></A> <A href="http://www.portalesverticales.com.ar/caci/empleos/form.html#" title="borrar"><DIV class="arrow cancel"></DIV></A> </TD> 
-        </TR> 
-      </TBODY> 
-    </TABLE> 
     <!----FORM----> 
     <DIV class="mycv"> 
     <FORM method="post" accept-charset="UTF-8" action="http://www.portalesverticales.com.ar/caci/empleos/form.html?q=user"> 
@@ -218,21 +166,6 @@
   </DIV> 
   <?php } ?>
   <!--FOOTER--> 
-  <DIV id="footer"> 
-    <H3 class="small"> Un portal de <BR> 
-      <A href="http://www.lavoz.com.ar/" target="_blank"> <IMG src="./Forms_files/pie_lavoz.gif" width="110" height="14"> </A> </H3> 
-    <UL> 
-      <LI> <A href="http://www.portalesverticales.com.ar/caci/empleos/aviso-legal.html">Aviso legal</A> </LI> 
-      <LI> <A href="http://www.portalesverticales.com.ar/caci/empleos/contacto.html">Contacto</A> </LI> 
-      <LI> <A href="http://www.portalesverticales.com.ar/caci/empleos/privacidad.html">Privacidad</A> </LI> 
-      <LI> <A href="http://www.portalesverticales.com.ar/caci/empleos/publicar.html" target="_blank">C&oacute;mo publicar</A> </LI> 
-      <LI> <A href="http://www.portalesverticales.com.ar/caci/empleos/site-map.html">Mapa del sitio</A> </LI> 
-      <LI> <A href="javascript:alert('Presione la combinaci&oacute;n de teclas CTRL+D para agregar BuscaGuia como sitio Favorito.')" id="lnk1"><SPAN>InmueblesLaVoz</SPAN> como p&aacute;gina de inicio</A> </LI> 
-    </UL> 
-    <UL class="logos"> 
-      <LI class="certifica"> <A href="http://www.certifica.com/" target="_blank"> <SPAN>Certifica.com</SPAN> </A> </LI> 
-      <LI class="bureau"> <A href="http://www.iabargentina.com.ar/" target="_blank"> <SPAN>Internet Advertising Bureau</SPAN> </A> </LI> 
-    </UL> 
-  </DIV> 
+<?php include("footer.php");?>
 </DIV> 
 </DIV></BODY></HTML>
