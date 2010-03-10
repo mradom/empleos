@@ -27,23 +27,7 @@ body {
 	padding:0;
 	font:11px/14px tahoma;
 }
-form {
-	font:10px arial;
-}
-select, input {
-	border:1px solid #b8ddf1;
-	font:11px  tahoma;
-	background:#F0FDFF;
-}
 /*----FONTS----*/
-@font-face {
- font-family:"Junction";
- src: url("img/Junction.otf") format("opentype");
-}
-@font-face {
- font-family:"CABNDWebBold";
- src: url("img/CABNDWebBold.otf") format("opentype");
-}
 p {
 	font:11p/14px tahoma;
 }
@@ -53,15 +37,19 @@ p {
 .blue, a.blue {
 	color:#1C77A8
 }
-p.grey,  span.grey{
+p.grey, span.grey, .grey {
 	color:#999;
 }
-span.upper{ text-transform:uppercase}
-p.coment{
+span.upper {
+	text-transform:uppercase
+}
+p.coment {
 	font:11px/14px tahoma;
 	color:#999;
 }
-span.underline{ text-decoration: underline}
+span.underline {
+	text-decoration: underline
+}
 /*-----BODY-------*/
 #wrapper {
 	width:990px;
@@ -106,7 +94,6 @@ span.underline{ text-decoration: underline}
 /*------------HEADER-----------*/
 
 /*--menu--*/
-
 .menu {
 	width:auto;
 	height:40px;
@@ -114,7 +101,7 @@ span.underline{ text-decoration: underline}
 	float:right;
 }
 .menu.top {
-	margin-top:15px;
+	margin-top:20px;
 	clear:right
 }
 .menu ul li {
@@ -140,7 +127,6 @@ span.underline{ text-decoration: underline}
 	float: left;
 	color:#FFF;
 	height:40px;
-	text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
 	text-decoration:none;
 }
 .menu.top ul li a.active, .menu.top ul li a:hover.active {
@@ -150,8 +136,43 @@ span.underline{ text-decoration: underline}
 	cursor: default;
 	color:#FFFFFF;
 	height:40px;
-	text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
 	text-decoration:none;
+}
+/*-------menu-submenu------*/
+.menu.submenu {
+	background:#fff;
+	float:left;
+	height:30px;
+	width:990px;
+	margin-top:10px;
+}
+.menu ul.submenu li {
+	height:27px;
+	margin-right:2px;
+}
+.menu ul.submenu li a {
+	padding:0 10px;
+	height:25px;
+	font: 11px/12px tahoma;
+	background:#eafbff;
+	color:#666;
+	line-height:25px;
+	border: solid 1px #c8e8f0;
+	-moz-border-radius:7px 7px 0 0;
+	-moz-border-radius:7px 7px 0 0;
+}
+.menu ul.submenu li a:hover {
+	background:#ffefb1;
+	float: left;
+	color:#666;
+	height:25px;
+	border:1px solid #ffd085;
+}
+.menu.submenu ul.submenu li a.active, .menu.submenu ul.submenu li a:hover.active {
+	background: #FFC02F;
+	color:#666;
+	height:25px;
+	border:1px solid #ffd085;
 }
 /*--browser--*/
 #browser {
@@ -163,11 +184,13 @@ span.underline{ text-decoration: underline}
 	padding-bottom:10px;
 	margin-bottom:10px;
 }
-#browser.inside {
+#browser.inside, .line-submenu {
 	height:5px;
+	width:970px;
 	padding:0 10px;
 	background:#3077a4;
 	margin:0;
+	float:left;
 }
 #browser .white.left {
 	width:580px;
@@ -199,7 +222,7 @@ span.underline{ text-decoration: underline}
 	font:bold 11px tahoma;
 	color: #FF9900;
 }
-#browser .white.left h2.datos{
+#browser .white.left h2.datos {
 	font:bold 12px/18px tahoma;
 	position:absolute;
 	bottom:10px;
@@ -217,7 +240,7 @@ span.underline{ text-decoration: underline}
 .btn_buscar a:hover {
 	background-position: 0px -21px;
 }
-.btn_busquedaA a{
+.btn_busquedaA a {
 	position: absolute;
 	bottom:0;
 	right:0;
@@ -229,6 +252,26 @@ span.underline{ text-decoration: underline}
 	color:#FFF;
 	padding:5px 10px;
 	padding-bottom:0px;
+}
+.btn_gral {
+	width:auto;
+	height:23px;
+	background:url(../img/bg_btn_orange.png) repeat-x;
+	padding:0 5px;
+	border:1px solid #FF9900;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	margin-bottom:10px
+}
+.btn_gral a {
+	color:#FFF;
+	font-weight:bold;
+	line-height:20px;
+	cursor:pointer;
+	text-decoration:none;
+}
+.btn_gral:hover {
+	background: url(../img/bg_btn_orange_hover.png) repeat-x;
 }
 /*---stpes---*/
 .pasos {
@@ -268,23 +311,26 @@ li#b-03 a:hover {
 	background: url(../img/pasos_hover.png) -232px no-repeat;
 }
 /*---------login----------*/
-#header ul.log { 
+#header ul.log {
 	float:right;
 	color: #2D71B5;
 	font-family:arial;
+ *width:510px;
+	height:22px;
 }
-ul.log li{ 
+ul.log li {
 	display: inline-block;
-	*display:inline;
+ *display: inline;
 	margin-right:10px;
 	padding-top:6px;
+	float:left
 }
-ul.log li a, ul.log li a:hover{
+ul.log li a, ul.log li a:hover {
 	color: #2D71B5;
 }
-ul.log li.destacar{
+ul.log li.destacar {
 	background: url(../img/login.png) no-repeat;
-	float: right;
+	float:left;
 	text-align:center;
 	padding-top:5px;
 	width:252px;
@@ -336,10 +382,8 @@ ul.tags li.final {
 .banner.box {
 	width:300px;
 	height:100px;
-	margin-right:45px;
 	background: #F7F7F7;
 	float:left;
-	margin-top:10px
 }
 /*rectangle*/
 .banner.rectangle {
@@ -359,8 +403,7 @@ ul.tags li.final {
 }
 /*------------MIDDLE-----------*/
 /*----siderbar ---rigth--------*/
-.box.side {
-	width:278px;
+.box {
 	height:auto;
 	border:1px solid #3077a4;
 	background: url(../img/bg_box.gif) top repeat-x;
@@ -368,11 +411,16 @@ ul.tags li.final {
 	margin-bottom:10px;
 	padding:10px;
 }
+.box.side {
+	width:278px;
+}
 .bar_blue {
-	width:300px;
 	height:25px;
 	float:left;
 	background:url(../img/bg_blue.gif) repeat-x;
+}
+#right_column .bar_blue {
+	width:300px;
 }
 .corner_blue {
 	min-width:6px;
@@ -407,35 +455,33 @@ li.side div.brand {
 	float:left;
 	padding-top:2px;
 }
-ul.brands li.side {
+ul.brands li {
 	border-bottom:1px dotted #CCCCCC;
-	width:275px;
 	height:38px;
 	float:left;
 	display:block;
 	clear:both
 }
-ul.brands li.side.last {
+ul.brands li.side {
+	width:275px;
+}
+ul.brands li.last {
 	border-bottom:none
 }
-ul.brands li.side a {
+ul.brands li a {
 	padding:0 0 0 10px;
 	line-height:38px;
 }
-/*-----------heraders-forms---------------*/
-.box.top{
-	width:970px;
-	padding:10px;
-	background:#fff url(../img/bg_box_top.jpg) bottom no-repeat;
-	min-height:116px;
-	float:left;
+/*----siderbar ---central--------*/
+.box.center {
+	width:648px;
 }
-.box.top p{ 
-	float:right; 
-	max-width:550px;
-	line-height:18px; 
+#central_column .bar_blue {
+	width:680px;
 }
-
+ul.brands li.cent {
+	width:625px;
+}
 /*-----------tabs-box----------------*/
 ul.left {
 	width:325px;
@@ -482,23 +528,8 @@ p.date {
 	color:#C9C9C9;
 	float:right;
 }
-/*---------------forms------------------*/
-#browser .content_form {
-	width:250px;
-	height:auto;
-	float:right;
-	margin:10px 20px 0 0;
-}
-select.home, input.home {
-	width:250px;
-	padding:.1em;
-	margin-bottom:5px;
-}
-
-form.nueva_busqueda{ width:660px; margin:0 auto; padding-top:10px;}
-form.nueva_busqueda input, form.nueva_busqueda select{ width:200px; margin-right:10px;}
 /*-----------Arrows-btn & rss----------------*/
-div.arrow  {
+div.arrow {
 	width:auto;
 	height:20px;
 	float:right;
@@ -510,11 +541,26 @@ div.arrow  {
 	font:11px/22px tahoma;
 	vertical-align:middle;
 }
-div.arrow.lupa{ background:url(../img/lupa.png) 0 0 no-repeat}
+div.arrow.lupa {
+	background:url(../img/lupa.png) 0 0 no-repeat
+}
+div.arrow.back {
+	background: url(../img/arrow_back.png) 0 0 no-repeat
+}
+div.arrow.editar {
+	float:left;
+	background: url(../img/btn_editar.png) 0 0 no-repeat
+}
+div.arrow.cancel {
+	float:left;
+	background: url(../img/btn_cancel.png) 0 0 no-repeat
+}
 div.arrow a {
 	color: #2D71B5;
-	}
-.box.central div.arrow a{ text-decoration:underline}
+}
+.box.central div.arrow a {
+	text-decoration:underline
+}
 div.arrow:hover {
 	background-position:1px -20px;
 }
@@ -570,26 +616,42 @@ div.results {
 #gold #destacado, #simple, #gratis {
 	float: left;
 }
-#simple p.coment, #gold p.coment, #destacado p.coment{ padding:10px; float:left; width:98%}
-#gold >div, #destacado >div, #simple >div, #gratis >div{
+#simple p.coment, #gold p.coment, #destacado p.coment {
+	padding:10px;
+	float:left;
+	width:98%
+}
+#gold >div, #destacado >div, #simple >div, #gratis >div {
 	width:638px;
 	height:97px;
 	padding:10px;
 	float:left;
-	border-bottom: 1px dotted  #9CC8DC;
+	border-bottom: 1px dotted #9CC8DC;
 	margin-bottom: 2px;
 	position:relative
 }
-#gratis >div{ height:auto}
-#gold >div {background: url(../img/bg_gold.gif) repeat-x top;}
-#destacado >div {background: url(../img/bg_destacado.gif) repeat-x top;}
-#simple >div {background: url(../img/bg_simple.gif) repeat-x top;}
-
-#gold >div:hover {background: url(../img/bg_gold_hover.gif) repeat-x top;}
-#destacado >div:hover {background: url(../img/bg_destacado_hover.gif) repeat-x top;}
-#simple >div:hover {background: url(../img/bg_simple_hover.gif) repeat-x top;}
-
-div.datos{
+#gratis >div {
+	height:auto
+}
+#gold >div {
+	background: url(../img/bg_gold.gif) repeat-x top;
+}
+#destacado >div {
+	background: url(../img/bg_destacado.gif) repeat-x top;
+}
+#simple >div {
+	background: url(../img/bg_simple.gif) repeat-x top;
+}
+#gold >div:hover {
+	background: url(../img/bg_gold_hover.gif) repeat-x top;
+}
+#destacado >div:hover {
+	background: url(../img/bg_destacado_hover.gif) repeat-x top;
+}
+#simple >div:hover {
+	background: url(../img/bg_simple_hover.gif) repeat-x top;
+}
+div.datos {
 	font:11px/18px tahoma;
 	width:540px;
 	padding:0;
@@ -599,15 +661,15 @@ div.datos h2, div.datos h2 a {
 	font:bold 12px/18px tahoma;
 	max-width:420px;
 }
-#gratis div.datos, #simple div.datos{
+#gratis div.datos, #simple div.datos {
 	width:635px;
 }
-#simple .datos h2, #gratis .datos h2{
+#simple .datos h2, #gratis .datos h2 {
 	font:11px/18px tahoma;
 	max-width:635px;
 	color:#333;
 }
-#simple .datos h2 a, #gratis .datos h2 a{
+#simple .datos h2 a, #gratis .datos h2 a {
 	color:#333;
 	font:bold 11px/18px tahoma;
 }
@@ -631,15 +693,15 @@ p.line {
 	background-position: 0 -16px;
 	cursor:pointer
 }
-#gold >#titles_bar, #destacado >#titles_bar, #simple >#titles_bar, #gratis >#titles_bar{
+#gold >#titles_bar, #destacado >#titles_bar, #simple >#titles_bar, #gratis >#titles_bar {
 	padding:5px 10px 10px 10px;
 	height:10px;
 	background:#eeeded;
 	font: bold 11px Arial, Helvetica, sans-serif;
 	color:#666;
 	border:none
-	}
-#titles_bar img{
+}
+#titles_bar img {
 	width:12px;
 	height:12px;
 	float:left;
@@ -687,7 +749,6 @@ p.line {
 #footer ul li a {
 	font: 10px/11px Tahoma, Arial, Helvetica, sans-serif;
 	color: #afafaf;
-	text-decoration: none;
 }
 #footer ul li a:hover {
 	text-decoration: underline;
@@ -710,12 +771,12 @@ p.line {
 	height: 24px
 }
 #footer ul.logos li.certifica a {
-	background: url(logo_certifica.gif) no-repeat;
+	background: url(../img/logo_certifica.gif) no-repeat;
 	width: 102px;
 }
 #footer ul.logos li.certifica a:HOVER {
 	background: url(../img/logo_certifica.gif) no-repeat;
-	text-decoration: underline;
+	text-decoration:none;
 	width: 102px;
 }
 #footer ul.logos li.bureau a {
@@ -723,8 +784,8 @@ p.line {
 	width: 76px;
 }
 #footer ul.logos li.bureau a:HOVER {
-	background:url(../img/caci/img/logo_bureau.gif) no-repeat;
-	text-decoration: underline;
+	background: url(../img/logo_bureau.gif) no-repeat;
+	text-decoration: none;
 	width: 76px;
 }
 #footer ul.logos li a span {

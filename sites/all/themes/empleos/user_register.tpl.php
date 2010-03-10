@@ -2,7 +2,6 @@
 Aca poner el formulario de registro
  -->
 <div class="login_form">
-	<form action="/empleos/?q=user/register/empleador"  accept-charset="UTF-8" method="post" id="user-register">
 		<div>
 			<div class="form-item" id="edit-name-wrapper">
  				<label for="edit-name">Usuario: <span class="form-required" title="This field is required.">*</span></label>
@@ -26,5 +25,4 @@ Aca poner el formulario de registro
 			<input type="submit" name="op" id="edit-submit" value="Registrarme"  class="form-submit" />
 		</div>
 		<input type="hidden" name="tipo_usuario" id="tipo_usuario" value="<?php echo arg(2);?>"  />
-	</form>
 </div>
