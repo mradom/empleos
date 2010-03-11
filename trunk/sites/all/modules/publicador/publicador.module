@@ -20,7 +20,6 @@ function publicador_menu($may_cache) {
   global $user;
 	$nid = arg(1);
   $items = array();
-  print_r($may_cache);
   if ($may_cache) {
     $items[] = array(
       'path' => 'admin/publicador',
