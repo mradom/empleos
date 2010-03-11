@@ -192,112 +192,189 @@ function phptemplate_node_form($form) {
 }*/
   
 function custom_p_educacion() {
-return drupal_get_form('custom_p_educacion_form');
+	return drupal_get_form('custom_p_educacion_form');
 }
 function custom_p_educacion_form() {
-	$form['title'] = array(
+	$form['miform']['title'] = array(
 		'#type'  => 'textfield',
 		'#title' => 'Titulo',
 		);
+
+	/* FIELDSET */
 		
-	$form['educacion']['asociar'] = array(
+	$form['miform']['educacion'] = array(
     	'#type' => 'fieldset',
     	'#title' => t('Datos del instituto'),
     	'#collapsible' => FALSE,
     	'#collapsed' => FALSE,
     	'#weight' => 0,
-    	'#parents' => array('publicador'),
 	);
+	
+	/* Inicio de taxonomias */
 		
 	$instituto = taxonomy_form(6);
-	$form['educacion']['taxonomy[6]'] = array(
+	$form['miform']['educacion']['taxonomy[6]'] = array(
     	'#type' => 'select', 
     	'#title' => t($instituto["#title"]), 
     	'#default_value' => $instituto["#default_value"], 
     	'#options' => $instituto["#options"],
+		'#parents' => array('educacion'),
+	);
+		
+	$area = taxonomy_form(5);
+	$form['miform']['educacion']['taxonomy[5]'] = array(
+    	'#type' => 'select', 
+    	'#title' => t($area["#title"]), 
+    	'#default_value' => $area["#default_value"], 
+    	'#options' => $area["#options"],
 		//'#parents' => array('publicador'),
 	);
 		
-	$instituto = taxonomy_form(5);
-	$form['educacion']['taxonomy[5]'] = array(
+	$nivel = taxonomy_form(3);
+	$form['miform']['educacion']['taxonomy[3]'] = array(
     	'#type' => 'select', 
-    	'#title' => t($instituto["#title"]), 
-    	'#default_value' => $instituto["#default_value"], 
-    	'#options' => $instituto["#options"],
+    	'#title' => t($nivel["#title"]), 
+    	'#default_value' => $nivel["#default_value"], 
+    	'#options' => $nivel["#options"],
 		//'#parents' => array('publicador'),
 	);
 		
-	$instituto = taxonomy_form(3);
-	$form['educacion']['taxonomy[3]'] = array(
+	$estado = taxonomy_form(4);
+	$form['miform']['educacion']['taxonomy[4]'] = array(
     	'#type' => 'select', 
-    	'#title' => t($instituto["#title"]), 
-    	'#default_value' => $instituto["#default_value"], 
-    	'#options' => $instituto["#options"],
-		//'#parents' => array('publicador'),
-	);
-		
-	$instituto = taxonomy_form(4);
-	$form['educacion']['taxonomy[4]'] = array(
-    	'#type' => 'select', 
-    	'#title' => t($instituto["#title"]), 
-    	'#default_value' => $instituto["#default_value"], 
-    	'#options' => $instituto["#options"],
-		//'#parents' => array('publicador'),
-	);
-		
-	$instituto = taxonomy_form(7);
-	$form['taxonomy[7]'] = array(
-    	'#type' => 'select', 
-    	'#title' => t($instituto["#title"]), 
-    	'#default_value' => $instituto["#default_value"], 
-    	'#options' => $instituto["#options"],
-		//'#parents' => array('publicador'),
-	);
-		
-	$instituto = taxonomy_form(9);
-	$form['taxonomy[9]'] = array(
-    	'#type' => 'select', 
-    	'#title' => t($instituto["#title"]), 
-    	'#default_value' => $instituto["#default_value"], 
-    	'#options' => $instituto["#options"],
-		//'#parents' => array('publicador'),
-	);
-		
-	$instituto = taxonomy_form(8);
-	$form['taxonomy[8]'] = array(
-    	'#type' => 'select', 
-    	'#title' => t($instituto["#title"]), 
-    	'#default_value' => $instituto["#default_value"], 
-    	'#options' => $instituto["#options"],
-		//'#parents' => array('publicador'),
-	);
-		
-	$instituto = taxonomy_form(10);
-	$form['taxonomy[10]'] = array(
-    	'#type' => 'select', 
-    	'#title' => t($instituto["#title"]), 
-    	'#default_value' => $instituto["#default_value"], 
-    	'#options' => $instituto["#options"],
+    	'#title' => t($estado["#title"]), 
+    	'#default_value' => $estado["#default_value"], 
+    	'#options' => $estado["#options"],
 		//'#parents' => array('publicador'),
 	);
 	
-	/*$form['taxonomy1'] = array(
-		taxonomy_form(9),
-		taxonomy_form(5),
-		taxonomy_form(4),
-		taxonomy_form(8),
-		taxonomy_form(7),
-		taxonomy_form(3),
-		taxonomy_form(10),
-	);*/
-	$form['submit'] = array(
+	/* Fin taxonomias */
+	/* Fieldset - Datos de la carrera */
+	
+	$form['miform']['especificaciones'] = array(
+    	'#type' => 'fieldset',
+    	'#title' => t('Detalles de la carrera'),
+    	'#collapsible' => FALSE,
+    	'#collapsed' => FALSE,
+    	'#weight' => 1,
+	);
+	
+	$form['miform']['especificaciones']['field_ttulo_o_certificacin[0][value]'] = array(
+    	'#type' => 'textfield',
+    	'#title' => t('Titulo o certificacion'),
+    	'#required' => TRUE,
+	    '#tree' => FALSE,
+		'#parents' => array('especificaciones'),
+	);
+	
+	$form['miform']['especificaciones']['field_otra_institucin[0][value]'] = array(
+    	'#type' => 'textfield',
+    	'#title' => t('Otra institucion'),
+    	'#required' => TRUE,
+	    '#tree' => FALSE,
+		'#parents' => array('especificaciones'),
+	);
+	
+	$form['miform']['especificaciones']['field_descripcin[0][value]]'] = array(
+    	'#type' => 'textfield',
+    	'#title' => t('Descripcion'),
+    	'#required' => TRUE,
+	    '#tree' => FALSE,
+		'#parents' => array('especificaciones'),
+	);
+	
+	$form['miform']['especificaciones']['field_promedio[0][value]'] = array(
+    	'#type' => 'textfield',
+    	'#title' => t('Promedio'),
+    	'#required' => TRUE,
+	    '#tree' => FALSE,
+		'#parents' => array('especificaciones'),
+	);
+	
+	$form['miform']['especificaciones']['field_materias_de_la_carrera[0][value]'] = array(
+    	'#type' => 'textfield',
+    	'#title' => t('Cantidad de materias de la carrera'),
+    	'#required' => TRUE,
+	    '#tree' => FALSE,
+		'#parents' => array('especificaciones'),
+	);
+	
+	$form['miform']['especificaciones']['field_materias_aprobadas[0][value]'] = array(
+    	'#type' => 'textfield',
+    	'#title' => t('Cantidad de materias aprobadas'),
+    	'#required' => TRUE,
+	    '#tree' => FALSE,
+		'#parents' => array('especificaciones'),
+	);
+	
+	/* FIN DEL FIELDSET - Datos de la carrera */
+	/* Inicio Fieldset periodos */
+	
+	$form['miform']['periodos'] = array(
+    	'#type' => 'fieldset',
+    	'#title' => t('Fechas'),
+    	'#collapsible' => FALSE,
+    	'#collapsed' => FALSE,
+    	'#weight' => 2,
+	);
+	/* Inicio taxonomias */
+	
+	$mes_inicio = taxonomy_form(7);
+	
+	$form['miform']['periodos']['taxonomy[7]'] = array(
+    	'#type' => 'select', 
+    	'#title' => t($mes_inicio["#title"]), 
+    	'#default_value' => $mes_inicio["#default_value"], 
+    	//'#options' => $mes_inicio['#options'],
+		'#options' => array("1","2","3"),
+		'#parents' => array('periodos'),
+	);
+		
+	$ano_inicio = taxonomy_form(9);
+	$form['miform']['periodos']['taxonomy[9]'] = array(
+    	'#type' => 'select', 
+    	'#title' => t($ano_inicio["#title"]), 
+    	'#default_value' => $ano_inicio["#default_value"], 
+    	'#options' => $ano_inicio["#options"],
+		'#parents' => array('periodos'),
+	);
+		
+	$mes_fin = taxonomy_form(8);
+	$form['miform']['periodos']['taxonomy[8]'] = array(
+    	'#type' => 'select', 
+    	'#title' => t($mes_fin["#title"]), 
+    	'#default_value' => $mes_fin["#default_value"], 
+    	'#options' => $mes_fin["#options"],
+		'#parents' => array('periodos'),
+	);
+		
+	$ano_fin = taxonomy_form(10);
+	$form['miform']['periodos']['taxonomy[10]'] = array(
+    	'#type' => 'select', 
+    	'#title' => t($ano_fin["#title"]), 
+    	'#default_value' => $ano_fin["#default_value"], 
+    	'#options' => $ano_fin["#options"],
+		'#parents' => array('periodos'),
+	);
+	
+	/* Fin taxonomias */
+
+	$form['miform']['submit'] = array(
 		'#type'  => 'submit',
 		'#value' => 'Grabar',
-		);
+		'#weight' => 10,
+		'#prefix' => '<div style="width: 680px;" class="bloque puntos"><div class="datos button">',
+		'#suffix' => '</div></div>', 
+	);	
 	return $form;
 }
 
 function custom_p_educacion_form_submit($form_id, $form) {
+	echo "<pre>";
+	print_r($form_id);
+	print_r($form);
+	echo "</pre>";
+	die();
 	global $user;
 	$form_id = 'p-educacion_node_form';
 	$node = array(

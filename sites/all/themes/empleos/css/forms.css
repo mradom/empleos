@@ -64,7 +64,7 @@ div.mycv{
 	float:left;
 	margin-top:10px;
 }
-div.bloque{
+div.bloque, fieldset{
 	margin-bottom:10px;
 	float:left;
 }
@@ -84,7 +84,7 @@ div.bloque{
 	margin-top:15px;
 	padding-left:300px;
 }
-.mycv input.button{
+.mycv input.button, .mycv form-submit{
 	height:23px;
 	width:80px;
 	background:url(../img/bg_btn_orange.png) repeat-x;
@@ -96,7 +96,7 @@ div.bloque{
 	cursor:pointer
 }
 .mycv input.button:hover{ background: url(../img/bg_btn_orange_hover.png) repeat-x;}
-.itemTitle{ 
+.itemTitle, fieldset legend{ 
 	font:bold 11px/20px tahoma;
 	display: block;
 	padding-left:50px;

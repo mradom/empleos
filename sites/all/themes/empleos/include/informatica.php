@@ -18,7 +18,7 @@
   	<?php 
   		global $user;
   		if ($user->uid){
-			$view = views_get_view('mi_educacion');
+			$view = views_get_view('conocimientosinformaticos');
 			$vista = views_build_view('items', $view, false, false);
 			?>
 				<TABLE class="tablaGris" border="0" cellpadding="0" cellspacing="1"> 
@@ -71,7 +71,8 @@
 				      </TBODY> 
 				</TABLE>
 				<div class="mycv">
-				<?php print custom_p_educacion() ?>
+				<?php //print custom_p_educacion() ?>
+				<?php print $content;?>
 				</div> 
 			<?php
   			//print "<div class='mycv'>".$content."</div>";

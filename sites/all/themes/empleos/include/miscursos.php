@@ -18,8 +18,8 @@
   	<?php 
   		global $user;
   		if ($user->uid){
-			$view = views_get_view('mi_educacion');
-			$vista = views_build_view('items', $view, false, false);
+			$view = views_get_view('mis_cursos');
+			$vista = views_build_view('items', $view, false, false, 5);
 			?>
 				<TABLE class="tablaGris" border="0" cellpadding="0" cellspacing="1"> 
 				      <TBODY> 
