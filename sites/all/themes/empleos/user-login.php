@@ -16,7 +16,7 @@
         <input type="hidden" value="user_login" id="edit-user-login" name="form_id">
         <input type="submit" class="button" tabindex="3" value="Ingresar" id="edit-submit" name="op">
       </div>
-      <div style="margin-top:10px; text-align:center"><strong>Olvidaste tu contrase&ntilde;a?</strong> >> <a href="#">ingresa aqu&iacute;</a></div>
+      <div style="margin-top:10px; text-align:center"><strong>Olvidaste tu contrase&ntilde;a?</strong> &gt;&gt; <a href="#">ingresa aqu&iacute;</a></div>
     </div>
   </form>
 </div>
@@ -27,7 +27,6 @@
     <div class="itemTitle grey" style="padding-left:10px;">A&uacute;n no te resgistraste?</div>
     <ul style="padding:0 10px;">
       <li class="blue"><strong>Registrarte en empleoslavoz te permitir&aacute;:</strong></li>
-      <br>
       <li class="bulet_o"> Cargar tu curr&iacute;culum y que todas las empresas que realicen b&uacute;squedas en nuestra accedan a &eacute;l</li>
       <li class="bulet_o"> Postularte a miles de ofertas de trabajo</li>
       <li class="bulet_o"> Recibir ofertas laborales en tu e-mail</li>
