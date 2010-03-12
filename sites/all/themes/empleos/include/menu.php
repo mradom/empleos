@@ -1,5 +1,6 @@
 <?php 
  //echo '[[[[[[[[[[[[[[[[[[[['.arg(0)."-".arg(1).']]]]]]]]]]]]]]]]]]]]]]]]]<br>';
+ // prueba de svn
  $uri_request_id = $_SERVER['REQUEST_URI'];
  $section = explode("/", $uri_request_id);
  //print_r($section);

@@ -1,3 +1,3 @@
 <?php
-	include("include/miscursos.php");
+	include("include/mi_cursos.php");
 ?>

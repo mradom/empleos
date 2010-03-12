@@ -1,3 +1,3 @@
 <?php
-	include("include/misidiomas.php");
+	include("include/mi_idiomas.php");
 ?>
