@@ -1,7 +1,7 @@
 <?php
 	global $user;
 	?>
-	<a href="?q=user/<?php echo $user->uid; ?>/edit">Editar datos de mi cuenta</a></br>
+	<a href="?q=user/<?php echo $user->uid; ?>/edit">Editar datos de mi cuenta</a>
 	<?php
 	if(in_array("empresa",$user->roles)){
 		?>

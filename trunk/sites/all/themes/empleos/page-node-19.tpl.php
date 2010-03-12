@@ -1,3 +1,4 @@
+<html>
 <?php include("include/head.php");?>
 <body>
 <div id="wrapper">
@@ -15,9 +16,8 @@
   </DIV>
   <!-----banners-minibox---->
   <?php include("include/banners-central.php");?>
-</DIV>
-<!--FOOTER-->
+  </div>
 <?php include("include/footer.php");?>
-</DIV>
-</BODY>
-</HTML>
+</div>
+</body>
+</html>

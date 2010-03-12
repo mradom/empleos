@@ -1,3 +1,3 @@
 <?php
-	include("include/informatica.php");
+	include("include/mi_informatica.php");
 ?>

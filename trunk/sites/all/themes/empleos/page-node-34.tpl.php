@@ -1,3 +1,3 @@
 <?php
-	include("include/otrosconocimientos.php");
+	include("include/mi_otrosconocimientos.php");
 ?>
