@@ -3,10 +3,10 @@
 	$is_principal = split('[?&]', $url); 
 switch ($node->type) {
 	case 'e_aviso':
-		include 'page-aviso.tpl.php';
+		include 'page-e_aviso.tpl.php';
 		break;
 	case 'aviso':
-		include 'page-aviso.tpl.php'; 
+		include 'page-e_aviso.tpl.php'; 
 		break;		
 	case 'faq':
 		include 'page-faq.tpl.php';

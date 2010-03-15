@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 
-/*--------RESET-------------*/
+/*-----------RESET-------------*/
 body, html, div, blockquote, img, label, p, h1, h2, h3, h4, h5, h6, pre, ul, ol, li, dl, dt, dd, form, a, fieldset, input, th, td {
 	margin:0;
 	padding:0;
@@ -50,6 +50,7 @@ p.coment {
 span.underline {
 	text-decoration: underline
 }
+.stg{ font-weight:bold}
 /*-----BODY-------*/
 #wrapper {
 	width:990px;
@@ -92,7 +93,6 @@ span.underline {
 	float:right
 }
 /*------------HEADER-----------*/
-
 /*--menu--*/
 .menu {
 	width:auto;
@@ -138,14 +138,16 @@ span.underline {
 	height:40px;
 	text-decoration:none;
 }
-/*-------menu-submenu------*/
+/*-------menu-submenu-------*/
+/*---------------------------cambie esta clase---------------*/
 .menu.submenu {
 	background:#fff;
 	float:left;
 	height:30px;
 	width:990px;
-	margin-top:10px;
+	margin-bottom:10px;
 }
+/*-------------------------fin--cambie esta clase---------------*/
 .menu ul.submenu li {
 	height:27px;
 	margin-right:2px;
@@ -174,6 +176,55 @@ span.underline {
 	height:25px;
 	border:1px solid #ffd085;
 }
+/*----------------------------NUEVAS CLASES----------------------submenu-------*/
+ul.submenu li.btns{	
+	padding:0;
+	height:20px;
+	overflow:hidden;
+}
+ul.submenu li.btns a{ 
+	background:none;
+	border:0;
+}
+ul.submenu li.btns a:hover{ 
+	background:none;
+	border:0;
+	text-decoration:underline;
+}
+li.btns.ant { background:url(../img/arrow_back.png) no-repeat 0 0;}
+li.btns.ant:hover{background:url(../img/arrow_back.png) no-repeat -1px -20px; text-decoration:underline;}
+li.btns.sig { 
+	float:right; 
+	background:url(../img/arrow.png) no-repeat 28px 0; }
+li.btns.sig:hover{ 
+	background:url(../img/arrow.png) no-repeat 29px -20px; text-decoration:underline;
+}
+/*--*/
+.contentBoxTips{
+	width:300px;
+	float:left;
+	position:relative;
+	margin:10px 0;
+}
+.contentBoxTips .ico{
+	position:absolute;
+	top:-15px;
+	left:30px;
+}
+.box.tips{
+	width:278px;
+	background:#fff url(../img/bg_box.gif) top repeat-x;
+	padding:10px;
+	padding-top:30px;
+	border:1px solid #999;
+	float:none;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	color: #828282;
+}
+
+/*--------------------------FIN--NUEVAS CLASES-------------------submenu-------*/
+
 /*--browser--*/
 #browser {
 	background: #3077a4;
@@ -261,7 +312,7 @@ span.underline {
 	border:1px solid #FF9900;
 	-moz-border-radius:2px;
 	-webkit-border-radius:2px;
-	margin-bottom:10px
+	margin-bottom:10px;
 }
 .btn_gral a {
 	color:#FFF;
@@ -379,7 +430,7 @@ ul.tags li.final {
 	background:#F7F7F7;
 }
 /*box*/
-.banner.box {
+.banner.boxes {
 	width:300px;
 	height:100px;
 	background: #F7F7F7;
@@ -411,6 +462,7 @@ ul.tags li.final {
 	margin-bottom:10px;
 	padding:10px;
 }
+.box.top{ border:0}
 .box.side {
 	width:278px;
 }
@@ -472,14 +524,14 @@ ul.brands li a {
 	padding:0 0 0 10px;
 	line-height:38px;
 }
-/*----siderbar ---central--------*/
+/*----siderbar ---center--------*/
 .box.center {
-	width:648px;
+	width:658px;
 }
 #central_column .bar_blue {
 	width:680px;
 }
-ul.brands li.cent {
+ul.brands li.center {
 	width:625px;
 }
 /*-----------tabs-box----------------*/
@@ -502,7 +554,7 @@ li.destacado {
 li.destacado:hover {
 	background: #E0FBFE;
 }
-li.destacado div.brand, #gold div div.brand, #destacado div div.brand {
+li.destacado div.brand, #gold div.brand, #destacado div.brand, div.resumen div.brand{
 	width:86px;
 	background: url(../img/destacados/noname.jpg) no-repeat;
 	height:53px;
@@ -597,6 +649,7 @@ div.rss a:hover {
 	margin-bottom:10px;
 	padding:10px;
 }
+
 div.results {
 	float:left;
 	width:658px;
@@ -693,7 +746,7 @@ p.line {
 	background-position: 0 -16px;
 	cursor:pointer
 }
-#gold >#titles_bar, #destacado >#titles_bar, #simple >#titles_bar, #gratis >#titles_bar {
+#gold >#titles_bar, #destacado >#titles_bar, #simple >#titles_bar, #gratis >#titles_bar{
 	padding:5px 10px 10px 10px;
 	height:10px;
 	background:#eeeded;
@@ -708,6 +761,32 @@ p.line {
 	margin-right:10px;
 	vertical-align:middle
 }
+/*-----FICHA------*/
+.box.central.ficha{ background:#fff;}
+.titleFicha{ 
+	width:300px;
+	padding:5px 0;
+}
+.low{ height:15px;}
+.low a{line-height:normal}
+.line_dot{ 
+	background:url(../img/line_dot.png);
+	height:5px;
+}
+div.resumen{
+	background:url(../img/bg_destacado.gif) repeat-x;
+	padding:10px;
+	float:left;
+	width:638px;
+}
+ul.resumen{
+	line-height:18px;
+	float:left;
+}
+ul.resumen li.lnk{ padding-left:260px;}
+div.resumen p.date{padding:0}
+
+
 /*---FOOTER---*/
 #footer {
 	clear: both;
