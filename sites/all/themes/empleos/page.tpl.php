@@ -1,6 +1,11 @@
 <?php 
 	$url = $_SERVER['QUERY_STRING']; // PATH COMPLETO
 	$is_principal = split('[?&]', $url); 
+	
+	// print '[[[[[[[[[[[[[[[['.$node->type.']]]]]]]]]]]]]]]]';
+	
+	// break;
+	
 switch ($node->type) {
 	case 'e_aviso':
 		include 'page-e_aviso.tpl.php';
@@ -46,23 +51,14 @@ switch ($node->type) {
       </div>
       <!--------CENTRAL colum-------->
       <div id="central_column">
-      <div id="center"><div id="squeeze"><div class="right-corner"><div class="left-corner">
-          <?php if ($breadcrumb): print $breadcrumb; endif; ?>
-          <?php if ($mission): print '<div id="mission">'. $mission .'</div>'; endif; ?>
-
-          <?php if ($tabs): print '<div id="tabs-wrapper" class="clear-block">'; endif; ?>
-          <?php if ($title): print '<h2'. ($tabs ? ' class="with-tabs"' : '') .'>'. $title .'</h2>'; endif; ?>
-          <?php if ($tabs): print $tabs .'</div>'; endif; ?>
-
-          <?php if (isset($tabs2)): print $tabs2; endif; ?>
-
-          <?php if ($help): print $help; endif; ?>
-          <?php if ($messages): print $messages; endif; ?>
+      <DIV class="box central" style="background:none">
+      <!-- aca deberiamos ver que ponemos dependiendo del tipo de nodo  -->
+      ======================================
+      <div id="center">
           <?php print $content ?>
-          <span class="clear"></span>
-          <?php print $feed_icons ?>
-          <div id="footer"><?php print $footer_message ?></div>
-      </div></div></div></div>
+          </DIV>
+     =====================================
+    </div>
 	</div>
       <!----END SLIDE---->
       <!-----banners-minibox---->
