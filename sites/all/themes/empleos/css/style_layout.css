@@ -279,18 +279,6 @@ li.btns.sig:hover{
 	bottom:10px;
 	left:50px;
 }
-.btn_buscar {
-	background: url(../img/btn_buscador_home.gif) top no-repeat;
-	width:118px;
-	height:21px;
-	overflow:hidden;
-	margin-top:5px;
-	cursor:pointer;
-	border:none
-}
-.btn_buscar a:hover {
-	background-position: 0px -21px;
-}
 .btn_busquedaA a {
 	position: absolute;
 	bottom:0;
@@ -313,6 +301,10 @@ li.btns.sig:hover{
 	-moz-border-radius:2px;
 	-webkit-border-radius:2px;
 	margin-bottom:10px;
+	color:#FFF;
+	font-weight:bold;
+	cursor:pointer;
+	text-decoration:none;
 }
 .btn_gral a {
 	color:#FFF;
@@ -505,14 +497,17 @@ li.side div.brand {
 	width:52px;
 	height:34px;
 	float:left;
-	padding-top:2px;
+	margin-top:2px;
+	background:url(../img/empresas/no-name.jpg) no-repeat;	
 }
 ul.brands li {
-	border-bottom:1px dotted #CCCCCC;
-	height:38px;
-	float:left;
-	display:block;
-	clear:both
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #cccccc;
+	height: 38px;
+	float: left;
+	display: block;
+	clear: both;
 }
 ul.brands li.side {
 	width:275px;

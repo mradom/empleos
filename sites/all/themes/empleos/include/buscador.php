@@ -1,4 +1,5 @@
       <div class="white left">
+      <h2 class="datos"><span class="underline">1668</span> empleos en <span class="underline">3542</span> empresas</h2>
         <div class="title">
           <h1>&iquest;Qu&eacute; empleo busc&aacute;s?</h1>
           <h3>Conoc&eacute; la manera m&aacute;s r&aacute;pida de encontrar 
@@ -7,7 +8,7 @@
         <div style="clear: both;"></div>
         <div class="content_form">
           <form action="/empleos/?q=buscar" method="POST" id="buscador">
-            <input class="home" style="padding: 0.2em; width: 243px;" name="key" value="" type="text">
+            <input class="home" style="padding: 0.2em; width: 250px;" name="key" value="Buscar por palabras clave" type="text">
             <select name="rubro" class="home">
             <option value="0" selected="selected">&Aacute;rea / Rubro</option>
             	<?php 
@@ -26,7 +27,8 @@
             		}
             	?>
             </select>
-            <input name="buscar" class="button" style="margin-left:60px; padding-left:15px; padding-right:15px;" value="Buscar ahora" alt="Buscar" type="submit">
+            <input name="buscar" class="btn_gral" style="margin-left:60px; padding:0 15px 3px 15px;" value="Buscar Ahora" alt="Buscar" type="submit" dir="ltr">
           </form>
+          <div class="btn_busquedaA"><a href="#">B&uacute;squeda avanzada</a></div>
         </div>
       </div>
