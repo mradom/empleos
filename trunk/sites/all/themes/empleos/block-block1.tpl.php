@@ -26,7 +26,7 @@ AND n.type = 'e_aviso'";
 			$sql = "SELECT COUNT(n.nid) AS total FROM node AS n INNER JOIN term_node AS tn ON tn.nid = n.nid WHERE n.type = 'e_aviso' AND tn.tid = $value->tid";
 			$rs = db_query($sql);
 			$total_nodos = mysql_fetch_object($rs);
-			echo "<li class='side'>&gt; <a href='?q=taxonomy/term/$value->tid'>".$value->name." <span>(".$total_nodos->total.")</span>"."</a></li>";
+			echo "<li class='side'>&gt; <a href='?q=taxonomy/term/$value->tid'>".$value->name." "."</a><span>(".$total_nodos->total.")</span></li>";
 			$i++;	
 		}	
 	}else{
