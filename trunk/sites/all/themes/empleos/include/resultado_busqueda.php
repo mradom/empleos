@@ -5,12 +5,20 @@ $zona = $_POST["zona"];
 
 $sql_query = "";
 
+
+
+
 $sql = "SELECT nr.nid FROM node_revisions AS nr
 INNER JOIN node AS n ON n.nid = nr.nid
 WHERE nr.body LIKE '%".$key."%' or nr.title like '%".$key."%' AND n.status = 1";
 
 $base_query = "SELECT n.nid FROM node AS n ";
 $inner_join = " INNER JOIN workflow_node AS w ON w.nid = n.nid ";
+
+$inner_join2 = " INNER JOIN pub_publicacion AS z ON z.nid = n.nid ";
+// en el cid esta el tipo
+// abajo deberia estar ordenado por CID desc y desde ASC
+
 $where = "WHERE n.type = 'e_aviso' AND n.status = 1 ";
 if($key != ""){
 	$inner_join =  $inner_join . " INNER JOIN node_revisions AS nr ON nr.nid = n.nid ";

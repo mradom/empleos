@@ -16,7 +16,7 @@
         <input type="hidden" value="user_login" id="edit-user-login" name="form_id">
         <input type="submit" class="button" tabindex="3" value="Ingresar" id="edit-submit" name="op">
       </div>
-      <div style="margin-top:10px; text-align:center"><strong>Olvidaste tu contrase&ntilde;a?</strong> &gt;&gt; <a href="#">ingresa aqu&iacute;</a></div>
+      <div style="margin-top:10px; text-align:center"><strong>Olvidaste tu contrase&ntilde;a?</strong> &gt;&gt; <a href="?q=user/password">ingresa aqu&iacute;</a></div>
     </div>
   </form>
 </div>

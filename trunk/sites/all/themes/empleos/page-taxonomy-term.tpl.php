@@ -12,8 +12,14 @@
     <?php include("include/col_derecha.php");?>
     <!--------CENTRAL colum-------->
     <div id="central_column">
-    <?php $titulo = taxonomy_get_term(arg(2)); echo $titulo->name ?>
+       <div class="box central ficha">
+        <?php 
+        $titulo = taxonomy_get_term(arg(2)); 
+        $vocablo = taxonomy_get_vocabulary($titulo->vid);
+        echo '<DIV class="results"><P>'.$vocablo->name.' - '.'<SPAN class="orange">'.$titulo->name.'</SPAN></P></DIV>'; 
+        ?>
 		<?php print $content;?>
+	   </div>
     </div>
   <!-----banners-minibox---->
   <?php include("include/banners-central.php");?>

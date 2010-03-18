@@ -12,7 +12,18 @@
     <?php include("include/col_derecha.php");?>
     <!--------CENTRAL colum-------->
     <DIV id="central_column">
-      <?php print "<div class='mycv'>".$content."</div>"; ?>
+          <?php
+	       If (arg(0)=='user') {
+			  If (arg(1)=='password') print $content; 
+              If (!$user->uid and arg(1)<>'password' and arg(1) <>'register') include ('user-login.php');
+			  //if (!$user->uid) print '<div style="border: 1px solid #ccc ;">'.$content.'</div>';			   
+			  If (arg(1)=='register' and arg(2)=='persona'  ) print '<div style="border: 1px solid #cbb ;">'.$content.'</div><br>'; //    registracion de personas			  
+			  If (arg(1)=='register' and arg(2)=='empleador') print '<div style="border: 1px solid #ccc ;">'.$content.'</div><br>'; //include ('include/register-empleador.php'); //    registracion de personas
+			  if ($user->uid) { print '<div style="border: 1px solid #ccc ;">'.$content.'</div><pre>';
+			     print_r($content).'</pre>'; }	
+			  //print $content;
+		   }
+	     ?>
   </DIV>
   <!-----banners-minibox---->
   <?php include("include/banners-central.php");?>
