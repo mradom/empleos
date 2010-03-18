@@ -14,6 +14,7 @@
     <DIV id="central_column">
       <?php include("include/resultado_busqueda.php");?>
   </DIV>
+  <?php include("include/buscador-mini.php");?>
   <!-----banners-minibox---->
   <?php include("include/banners-central.php");?>
   </div>

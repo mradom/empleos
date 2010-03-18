@@ -279,6 +279,20 @@ li.btns.sig:hover{
 	bottom:10px;
 	left:50px;
 }
+
+.btn_buscar {
+	background: url(../img/btn_buscador_home.gif) top no-repeat;
+	width:118px;
+	height:21px;
+	overflow:hidden;
+	margin-top:5px;
+	cursor:pointer;
+	border:none
+}
+.btn_buscar a:hover {
+	background-position: 0px -21px;
+}
+
 .btn_busquedaA a {
 	position: absolute;
 	bottom:0;

@@ -7,12 +7,12 @@
         </div>
         <div style="clear: both;"></div>
         <div class="content_form">
-          <form action="/empleos/?q=buscar" method="POST" id="buscador">
-            <input class="home" style="padding: 0.2em; width: 250px;" name="key" value="Buscar por palabras clave" type="text">
+          <form action="?q=buscar" method="POST" id="buscador">
+            <input class="home" style="padding: 0.2em; width: 250px;" name="key" value="Buscar por palabras clave" type="text" onFocus="if(this.value=='Buscar por palabras clave')this.value='';">
             <select name="rubro" class="home">
             <option value="0" selected="selected">&Aacute;rea / Rubro</option>
             	<?php 
-            		$area = taxonomy_get_tree("1");
+            		$area = taxonomy_get_tree(get_vocabulary_by_id('Area'));
             		foreach($area as $value){
             			echo "<option value='$value->tid'>$value->name</option>";
             		}
@@ -21,7 +21,7 @@
             <select name="zona" class="home">
             	<option value="0" selected="selected">Zona geogr&aacute;fica</option>
             	<?php 
-            		$pronvincias = taxonomy_get_tree("17");
+            		$pronvincias = taxonomy_get_tree(get_vocabulary_by_id('Provincias'));
             		foreach($pronvincias as $value){
             			echo "<option value='$value->tid'>$value->name</option>";
             		}

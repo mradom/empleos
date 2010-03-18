@@ -89,10 +89,13 @@ function phptemplate_menu_local_tasks() {
   return $output;
 }
 
-/**
-   * This snippet catches the default login form and looks for an
-   * user_login.tpl.php file in the theme folder
-   */
+/** Trae el vid de un vocabulario si le pasamos en nombre **/ 
+function get_vocabulary_by_id($name) {
+ $result = db_query("SELECT vid FROM {vocabulary} WHERE name = '%s'", $name);
+ $vname = db_fetch_object($result)->vid;
+ return $vname;
+}
+
 /**
  * Aca le decimos a Drupal que queremos invocar a otro archivo cuando llame a user_login
  * El archivo que vamos a usar el user_login.tpl.php
