@@ -13,7 +13,7 @@
     <!--------CENTRAL colum-------->
     <DIV id="central_column">
           <div class="bar_blue"><div class="corner_blue _2"></div>
-          <div class="corner_blue">Listado de Rubros</div></div>
+          <div class="corner_blue">Listado de Empresas</div></div>
         	<div class="box center">
 		    <?php include("include/lista_empresa.php");?>
 		    </div>
