@@ -19,12 +19,6 @@ foreach($nodo->taxonomy as $value){
 	if ($value->vid == 17){$localidad = $value->tid; break;}
 }
 ?>
-<!-- Aca va el camino del aviso  -->
-<ul class="tags">
-	<li><h1><a href="#">Buscar &gt;</a></h1></li>
-	<li><h1><a href="#">Gerencia General / Alta Gerencia &gt;</a></h1></li>
-	<li class="final">gerente de ventas</li>
-</ul>
 <!-- Ficha  -->
 <div class="box central ficha">
 	<div class="btn_gral low" style="float: right"><a href="?q=job/apply/<?php echo $nodo->nid;?>">Postularse a	este trabajo</a></div>

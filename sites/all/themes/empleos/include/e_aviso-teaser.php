@@ -1,13 +1,4 @@
 <?php 
-             ?>
-             <div>
-             <!-- Aca va el camino del aviso  -->
-			 <ul class="tags">
-		 		<li><h1><a href="#">Buscar &gt;</a></h1></li>
-	 			<li><h1><a href="#">Gerencia General / Alta Gerencia &gt;</a></h1></li>
- 				<li class="final">gerente de ventas</li>
-			 </ul>
-             <?php
         			$nodo = node_load($node->nid);
         			$gold = "0";
         			$destacado = "0";
