@@ -1,7 +1,9 @@
       <!-----Banner Middle---->
+      <!--  
         <div class="banner middle">
 			<img src="sites/all/themes/empleos/img/normal_banner-communicator.jpg"></img>
 		</div>
+		-->
         <!-----Tabs de Empleos destacados---->
         <div id="tab-container">
         <!-- <div id="tab-container-header" class="tab-header">
