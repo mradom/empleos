@@ -4,14 +4,17 @@
         			$destacado = "0";
         			$simple = "0";
         			$gratis = "0";
+        			$b_area=get_vocabulary_by_id('Area');
+					$b_ramo=get_vocabulary_by_id('Ramo o Actividad');
+					$b_localidad=get_vocabulary_by_id('Provincias');
         			foreach($nodo->taxonomy as $value){
-        				if ($value->vid == 1){$area = $value->tid; break;}
+        				if ($value->vid == $b_area){$area = $value->tid; break;}
         			}
         			foreach($nodo->taxonomy as $value){
-        				if ($value->vid == 11){$sector = $value->tid; break;}
+        				if ($value->vid == $b_ramo){$sector = $value->tid; break;}
         			}
         			foreach($nodo->taxonomy as $value){
-        				if ($value->vid == 17){$localidad = $value->tid; break;}
+        				if ($value->vid == $b_localidad){$localidad = $value->tid; break;}
         			}
 					switch ($nodo->_workflow) {
 					    case 3:
@@ -46,6 +49,7 @@
         		?>
         			<?php 
         				if($nodo->_workflow == 3 or $nodo->_workflow == 4){
+        				// tipo gold=3 y destacado=4
         			?>
 		          <DIV>
 		            <DIV class="brand">
@@ -69,6 +73,7 @@
 		          </DIV>
 		          <?php }
 		          		if($nodo->_workflow == 5){
+		          		// tipo basico
 		          	?>
 						<div>
 			            <div class="datos">
@@ -89,6 +94,7 @@
 		          	<?php
 		          		}
 		          		if($nodo->_workflow == 6){
+		          			// tipo free
 		          			?>
 							<div class="datos">
 					            <h2><strong>Ejecutivo de Ventas l </strong> Importante Empresa de Servicios de Salud l <span class="grey">Sector: Gerencia l Córdoba</span></h2>

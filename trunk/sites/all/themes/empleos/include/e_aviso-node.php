@@ -3,20 +3,25 @@
 //print_r($node);
 //echo '</pre>';
 $nodo = node_load($node->nid);
+$b_area=get_vocabulary_by_id('Area');
+$b_ramo=get_vocabulary_by_id('Ramo o Actividad');
+$b_jerarquia=get_vocabulary_by_id('Jerarquia');
+$b_disponibilidad=get_vocabulary_by_id('Disponibilidad');
+$b_localidad=get_vocabulary_by_id('Provincias');
 foreach($nodo->taxonomy as $value){
-	if ($value->vid == 1){$area = $value->tid; break;}
+	if ($value->vid == $b_area){$area = $value->tid; break;}
 }
 foreach($nodo->taxonomy as $value){
-	if ($value->vid == 11){$ramo = $value->tid; break;}
+	if ($value->vid == $b_ramo){$ramo = $value->tid; break;}
 }
 foreach($nodo->taxonomy as $value){
-	if ($value->vid == 12){$jerarquia = $value->tid; break;}
+	if ($value->vid == $b_jerarquia){$jerarquia = $value->tid; break;}
 }
 foreach($nodo->taxonomy as $value){
-	if ($value->vid == 15){$disponibilidad = $value->tid; break;}
+	if ($value->vid == $b_disponibilidad){$disponibilidad = $value->tid; break;}
 }
 foreach($nodo->taxonomy as $value){
-	if ($value->vid == 17){$localidad = $value->tid; break;}
+	if ($value->vid == $b_localidad){$localidad = $value->tid; break;}
 }
 ?>
 <!-- Ficha  -->
