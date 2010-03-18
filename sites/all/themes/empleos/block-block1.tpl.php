@@ -1,14 +1,14 @@
 <?php 
 /*
  * Muestra un listado de rubros
- * TODO: Ver mas deberia ir a una nueva pagina con la lista completa de rubros y avisos
+ * TODO: deberia tener en cuenta los publicados, y las fechas
  * */
 
 ?>
 
 <ul>
 <?php 
-$areas = taxonomy_get_tree(1,0,0);
+$areas = taxonomy_get_tree(get_vocabulary_by_id('Area'),0,0);
 //print_r($areas);
 $limit = 20;
 $i = 1;
