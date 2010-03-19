@@ -1,13 +1,13 @@
 <?php
-//echo '<pre>';
-//print_r($node);
-//echo '</pre>';
+echo '<pre>';
+print_r($node);
+echo '</pre>';
 $nodo = node_load($node->nid);
-$b_area=get_vocabulary_by_id('Area');
-$b_ramo=get_vocabulary_by_id('Ramo o Actividad');
-$b_jerarquia=get_vocabulary_by_id('Jerarquia');
-$b_disponibilidad=get_vocabulary_by_id('Disponibilidad');
-$b_localidad=get_vocabulary_by_id('Provincias');
+$b_area=get_vocabulary_by_name('Area');
+$b_ramo=get_vocabulary_by_name('Ramo o Actividad');
+$b_jerarquia=get_vocabulary_by_name('Jerarquia');
+$b_disponibilidad=get_vocabulary_by_name('Disponibilidad');
+$b_localidad=get_vocabulary_by_name('Provincias');
 foreach($nodo->taxonomy as $value){
 	if ($value->vid == $b_area){$area = $value->tid; break;}
 }
