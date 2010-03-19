@@ -8,7 +8,7 @@
 
 <ul>
 <?php 
-$areas = taxonomy_get_tree(get_vocabulary_by_id('Area'),0,0);
+$areas = taxonomy_get_tree(get_vocabulary_by_name('Area'),0,0);
 //print_r($areas);
 $limit = 20;
 $i = 1;

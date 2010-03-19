@@ -12,7 +12,7 @@
             <select name="rubro" class="home">
             <option value="0" selected="selected">&Aacute;rea / Rubro</option>
             	<?php 
-            		$area = taxonomy_get_tree(get_vocabulary_by_id('Area'));
+            		$area = taxonomy_get_tree(get_vocabulary_by_name('Area'));
             		foreach($area as $value){
             			echo "<option value='$value->tid'>$value->name</option>";
             		}
@@ -21,7 +21,7 @@
             <select name="zona" class="home">
             	<option value="0" selected="selected">Zona geogr&aacute;fica</option>
             	<?php 
-            		$pronvincias = taxonomy_get_tree(get_vocabulary_by_id('Provincias'));
+            		$pronvincias = taxonomy_get_tree(get_vocabulary_by_name('Provincias'));
             		foreach($pronvincias as $value){
             			echo "<option value='$value->tid'>$value->name</option>";
             		}

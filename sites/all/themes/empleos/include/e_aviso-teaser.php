@@ -4,9 +4,9 @@
         			$destacado = "0";
         			$simple = "0";
         			$gratis = "0";
-        			$b_area=get_vocabulary_by_id('Area');
-					$b_ramo=get_vocabulary_by_id('Ramo o Actividad');
-					$b_localidad=get_vocabulary_by_id('Provincias');
+        			$b_area=get_vocabulary_by_name('Area');
+					$b_ramo=get_vocabulary_by_name('Ramo o Actividad');
+					$b_localidad=get_vocabulary_by_name('Provincias');
         			foreach($nodo->taxonomy as $value){
         				if ($value->vid == $b_area){$area = $value->tid; break;}
         			}

@@ -90,11 +90,18 @@ function phptemplate_menu_local_tasks() {
 }
 
 /** Trae el vid de un vocabulario si le pasamos en nombre **/ 
-function get_vocabulary_by_id($name) {
+function get_vocabulary_by_name($name) {
  $result = db_query("SELECT vid FROM {vocabulary} WHERE name = '%s'", $name);
  $vname = db_fetch_object($result)->vid;
  return $vname;
 }
+
+function get_page_by_id($nid) {
+ $result = db_query("SELECT title FROM {node} WHERE type = 'page' and nid = '%s'", $nid);
+ $vname = db_fetch_object($result)->title;
+ return $vname;
+}
+
 
 /**
  * Aca le decimos a Drupal que queremos invocar a otro archivo cuando llame a user_login
