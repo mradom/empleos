@@ -1,0 +1,135 @@
+<?php
+// $Id: taxonomy_image_node_display.module,v 1.1.2.9 2009/02/13 22:50:12 nancyw Exp $
+
+/**
+ * @file
+ *   Display taxonomy images in nodes where and when you want them.
+ */
+
+/**
+ * Implementation of hook_nodeapi().
+ */
+function taxonomy_image_node_display_nodeapi(&$node, $op, $teaser = NULL, $page = NULL) {
+  if ($op == 'view') {
+    if ($teaser == TRUE && ! variable_get('taxonomy_image_node_view_teaser', TRUE)) {
+      return;
+    }
+    // If we are using the block module, then don't default to showing on a page.
+    if ($page == TRUE && ! variable_get('taxonomy_image_node_view_page', !module_exists('taxonomy_image_blocks'))) {
+      return;
+    }
+
+    $preset = variable_get('taxonomy_image_node_preset', 'ORIGINAL');
+    $valid_nodes = array_filter(variable_get('taxonomy_image_node_view', array())); 
+    if (isset($valid_nodes[$node->type]) && isset($node->taxonomy)) {
+      $images = array();
+      $view_link = variable_get('taxonomy_image_node_view_link', TRUE);
+      foreach ($node->taxonomy as $tid => $term) {
+        $image = taxonomy_image_display($tid, array('hspace' => 3), $preset, array('wrapper' => FALSE));
+        if ($view_link && $image) {
+          $image = theme('taxonomy_image_display', $image, $term);
+        }
+        $images[] = $image;
+      }
+      $node->content['taxonomy_image'] = array(
+        '#value' => implode("\n", $images),
+        '#weight' => variable_get('taxonomy_image_node_view_weight', -5),
+      );
+    }
+  }
+}
+
+/*
+ * Theming function to allow overrides at theme level
+ */
+function theme_taxonomy_image_display($image, $term) {
+  $name = variable_get('taxonomy_image_node_show_name', 1) ? $term->name : NULL;
+  return l($image, 'taxonomy/term/'. $term->tid, array('class' => 'taxonomy_image_links'), NULL, NULL, FALSE, TRUE) . $name;
+}
+
+/**
+ * Implementation of hook_menu.
+ */
+function taxonomy_image_node_display_menu() {
+  $items = array();
+
+  // Add a tab to the Admin Settings
+    $items[] = array(
+      'path' => 'admin/settings/taxonomy_image/node_display',
+      'title' => 'Node Display',
+      'callback' => 'drupal_get_form',
+      'callback arguments' => array('taxonomy_image_node_display_form'),
+      'access' => user_access('administer site configuration'),
+      'description' => 'Configure Taxonomy_image Node_display functionality.',
+      'type' => MENU_LOCAL_TASK,
+      'weight' => 1,
+      );
+
+  return $items;
+}
+
+function taxonomy_image_node_display_form() {
+  drupal_add_css(drupal_get_path('module', 'taxonomy_image') .'/taxonomy_image.css');
+  $form = array();
+  
+  $form['taxonomy_image_node_view'] = array(
+    '#type' => 'checkboxes',
+    '#title' => t('Display taxonomy images on tagged nodes'),
+    '#options' => array_map('check_plain', node_get_types('names')),
+    '#default_value' => variable_get('taxonomy_image_node_view', array()),
+    '#description' => t('Show images in the selected content types.'),
+    '#prefix' => '<div class="taxonomy_image_checkboxes">',
+    '#suffix' => '</div><div class="clear-block"></div>',
+    );
+
+  $form['taxonomy_image_node_view_teaser'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Show Taxonomy Image in node teaser view'),
+    '#default_value' => variable_get('taxonomy_image_node_view_teaser', TRUE),
+    );
+
+  // If we have the blocks module, then default to FALSE for page view.
+  $form['taxonomy_image_node_view_page'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Show Taxonomy Image in node page view'),
+    '#default_value' => variable_get('taxonomy_image_node_view_page', !module_exists('taxonomy_image_blocks')),
+    );
+
+  $form['taxonomy_image_node_view_link'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Link displayed Taxonomy Image to taxonomy/term/n page'),
+    '#default_value' => variable_get('taxonomy_image_node_view_link', TRUE),
+    '#prefix' => '<div class="clear-block"></div>',
+    );
+
+  $form['taxonomy_image_node_show_name'] = array(
+    '#type' => 'radios',
+    '#title' => t('Link style'),
+    '#options' => array(0 => t('Image only'), 1 => t('Image and name')),
+    '#default_value' => variable_get('taxonomy_image_node_show_name', 1),
+    '#description' => t('For the selected content types, this determines how the taxonomy links will be displayed.'),
+    '#prefix' => '<div class="taxonomy_image_radios">',
+    '#suffix' => '</div>',
+      );
+
+  if (module_exists('imagecache')) {
+    $form['taxonomy_image_node_preset'] = array(
+      '#type' => 'radios',
+      '#title' => t('Imagecache Preset'),
+      '#options' => drupal_map_assoc(_taxonomy_image_presets()),
+      '#default_value' => variable_get('taxonomy_image_node_preset', 'ORIGINAL'),
+      '#prefix' => '<div class="taxonomy_image_radios">',
+      '#suffix' => '</div>',
+      );
+  }
+
+  $form['taxonomy_image_node_view_weight'] = array(
+    '#type' => 'weight',
+    '#title' => t('Display weight of taxonomy images'),
+    '#description' => t('Determines where the images will be displayed. Less than zero will place it before the content; greater than zero, after.'),
+    '#default_value' => variable_get('taxonomy_image_node_view_weight', -5),
+    '#prefix' => '<div class="clear-block"></div>',
+    );
+
+  return system_settings_form($form);
+}

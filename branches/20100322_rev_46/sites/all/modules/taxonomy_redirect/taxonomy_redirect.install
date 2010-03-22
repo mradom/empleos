@@ -1,0 +1,60 @@
+<?php
+// $Id: taxonomy_redirect.install,v 1.1.4.2 2008/09/26 01:16:13 agileware Exp $
+
+/**
+ * Implementation of hook_install().
+ */
+function taxonomy_redirect_install() {
+  switch ($GLOBALS['db_type']) {
+    case 'mysqli':
+    case 'mysql':
+      db_query("CREATE TABLE if not exists {taxonomy_redirect} (
+        vid int(10) unsigned NOT NULL default '0',
+        module varchar(255) NOT NULL default '',
+        path text NOT NULL,
+        tid int(10) unsigned default NULL,
+        separator_replace varchar(1) default '',
+        remove_text varchar(250) default NULL,
+        filter int(4) default '1',
+        key (vid)
+      ) TYPE=MyISAM /*!40100 DEFAULT CHARACTER SET utf8 */");
+      break;
+    default:
+      break;
+  }
+}
+
+/**
+ * hook_update #1
+ */
+function taxonomy_redirect_update_1() {
+  return _system_update_utf8(array('taxonomy_redirect'));
+}
+
+/**
+ * hook_update #2
+ */
+function taxonomy_redirect_update_2() {
+  $ret = array();
+
+  $ret[] = update_sql("UPDATE {taxonomy_redirect} SET path = concat(path, '/!tid') WHERE path NOT LIKE '%/!tid'");
+
+  return $ret;
+}
+
+/**
+ * hook_update #3
+ */
+function taxonomy_redirect_update_3() {
+  $ret = array();
+
+  $ret[] = update_sql("ALTER TABLE {taxonomy_redirect} CHANGE `path` `path` TEXT NOT NULL");
+
+  $ret[] = update_sql("ALTER TABLE {taxonomy_redirect}
+                       ADD (tid int(10) unsigned default NULL,
+                            separator_replace varchar(1) default '',
+                            remove_text varchar(250) default NULL,
+                            filter int(4) default '1')");
+
+  return $ret;
+}
