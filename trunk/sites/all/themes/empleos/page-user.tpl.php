@@ -1,3 +1,7 @@
+<?php 
+			  If (arg(2)=='edit' and arg(3)=='Empresa') { include 'page-edit-empresa.php';  return;}
+?>
+
 <html>
 <?php include("include/head.php");?>
 <body>
@@ -6,13 +10,10 @@
   <?php include("include/header.php");?>
   <!------MIDDLE------>
   <div id="midle">
-	<?php include("include/buscador-banner.php"); ?>
-	<!-----submenu-----> 
-	<?php if(arg(0) == "user" and arg(2) == "edit" and arg(3) == "Empleado"){include("include/submenu-usuarios.php");}?>
     <!----banners boxes---->
     <?php // include("include/banners-boxes.php");?>
     <!------RIGHT colum------>
-    <?php include("include/col_derecha.php");?>
+    <?php include("include/col_derecha-mini.php");?>
     <!--------CENTRAL colum-------->
     <DIV id="central_column">
           <?php
@@ -21,7 +22,7 @@
               If (!$user->uid and arg(1)<>'password' and arg(1) <>'register') include ('user-login.php');
 			  //if (!$user->uid) print '<div style="border: 1px solid #ccc ;">'.$content.'</div>';			   
 			  If (arg(1)=='register' and arg(2)=='persona'  ) print '<div style="border: 1px solid #cbb ;">'.$content.'</div><br>'; //    registracion de personas			  
-			  If (arg(1)=='register' and arg(2)=='empleador') print '<div style="border: 1px solid #ccc ;">'.$content.'</div><br>'; //include ('include/register-empleador.php'); //    registracion de personas
+			  If (arg(1)=='register' and arg(2)=='empleador') print '<div style="border: 1px solid #ccc ;">'.$content.'</div><br>'; //include ('include/register-empleador.php'); //    registracion de personas 
 			  if ($user->uid) { print '<div style="border: 1px solid #ccc ;">'.$content.'</div>';
 			     // print '<pre>';
 			     // print_r($content);
