@@ -11,7 +11,6 @@
 		?>
 			<p><a href="?q=user/<?php echo $user->uid; ?>/edit/Empleado">Editar Datos de CV</a></p>
 		<?php
-	}
-	//echo "<a href='?q=node/add'>Mi curriculum</a>";
+	} 
    print drupal_render($form); // this displays the login form.
 ?>
