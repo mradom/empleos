@@ -6,10 +6,13 @@
   <?php include("include/header.php");?>
   <!------MIDDLE------>
   <div id="midle">
+	<?php include("include/buscador-banner.php"); ?>
+	<!-----submenu-----> 
+	<?php if(arg(0) == "user" and arg(2) == "edit" and arg(3) == "Empleado"){include("include/submenu-usuarios.php");}?>
     <!----banners boxes---->
     <?php // include("include/banners-boxes.php");?>
     <!------RIGHT colum------>
-    <?php include("include/col_derecha-mini.php");?>
+    <?php include("include/col_derecha.php");?>
     <!--------CENTRAL colum-------->
     <DIV id="central_column">
           <?php

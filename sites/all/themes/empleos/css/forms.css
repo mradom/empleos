@@ -180,3 +180,33 @@ li.bulet_o{background:url(../img/bullet_orange.gif)0 5px no-repeat; padding-left
 	float:left;
 	margin-right:10px;
 }
+
+#step1{
+	background: transparent url(../img/bg_box_top1.jpg) repeat scroll 0% 0%;
+}
+
+#step2{
+	background: transparent url(../img/bg_box_top2.jpg) repeat scroll 0% 0%;
+}
+#step3{
+	background: transparent url(../img/bg_box_top3.jpg) repeat scroll 0% 0%;
+}
+#step4{
+	background: transparent url(../img/bg_box_top4.jpg) repeat scroll 0% 0%;
+}
+#step5{
+	background: transparent url(../img/bg_box_top5.jpg) repeat scroll 0% 0%;
+}
+
+#step6{
+	background: transparent url(../img/bg_box_top6.jpg) repeat scroll 0% 0%;
+}
+#step7{
+	background: transparent url(../img/bg_box_top7.jpg) repeat scroll 0% 0%;
+}
+#step8{
+	background: transparent url(../img/bg_box_top8.jpg) repeat scroll 0% 0%;
+}
+#step9{
+	background: transparent url(../img/bg_box_top9.jpg) repeat scroll 0% 0%;
+}
