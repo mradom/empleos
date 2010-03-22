@@ -57,7 +57,7 @@
 				          <TD><?php print $educacion->field_ttulo_o_certificacin[0]["value"];?></TD> 
 				          <TD><?php print $nivel;?></TD> 
 				          <TD><?php print $estado;?></TD>
-				          <TD><A href="?q=node/<?php echo $educacion->nid; ?>/edit" title="editar"><DIV class="arrow editar" style=" margin-right:10px;"></DIV></A> <A href="http://www.portalesverticales.com.ar/caci/empleos/form.html#" title="borrar"><DIV class="arrow cancel"></DIV></A> </TD> 
+				          <TD><A href="node/<?php print $educacion->nid ?>/edit" title="editar"><DIV class="arrow editar" style=" margin-right:10px;"></DIV></A> <A href="http://www.portalesverticales.com.ar/caci/empleos/form.html#" title="borrar"><DIV class="arrow cancel"></DIV></A> </TD> 
 				        </TR> 
 				<?php
 				

@@ -6,13 +6,7 @@
   <?php include("header.php");?>
   <!------MIDDLE------> 
   <DIV id="midle"> 
-    <DIV class="box top"> 
-      <P><STRONG>Ingresar tu curriculum</STRONG> te permitir&aacute; postularte a todas las b&uacute;squedas de empleos que se publiquen en el sitio y, si as&iacute; lo dese&aacute;s, las empresas y consultoras que accedan a nuestra base de datos en busca de candidatos podr&aacute;n consultarlo.
-        El proceso de ingreso del curr&iacute;culum est&aacute; dividido en pasos.<BR> 
-        Al finalizar la carga de tus datos presion&aacute; el bot&oacute;n &quot;guardar&quot; al final de la p&aacute;gina antes de ir al paso siguiente.Los &iacute;tems <SPAN style="color:#248CC4; font-weight:bold">destacados en celeste</SPAN> son obligatorios.</P> 
-      <DIV><IMG style=" padding-left:100px;" src="sites/all/themes/empleos/img/10pasos.png"></DIV> 
-      <DIV><IMG style=" padding-left:150px " src="sites/all/themes/empleos/img/1paso.png"></DIV> 
-    </DIV>
+	<?php include("buscador-banner.php"); ?>
     <!-----submenu-----> 
 	<?php include("submenu-usuarios.php");?> 
      <!-----tabla-----> 
@@ -72,7 +66,7 @@
 				      </TBODY> 
 				</TABLE>
 				<div class="mycv">
-				<?php print custom_p_educacion() ?>
+				<?php print $content; ?>
 				</div> 
 			<?php
   			//print "<div class='mycv'>".$content."</div>";

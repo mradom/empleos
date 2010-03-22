@@ -379,6 +379,10 @@ function custom_p_educacion_form() {
 	return $form;
 }
 
+function custom_p_educacion_form_validate(){
+	return true;
+}
+
 function custom_p_educacion_form_submit($form_id, $form) {
 	echo "<pre>";
 	print_r($form_id);

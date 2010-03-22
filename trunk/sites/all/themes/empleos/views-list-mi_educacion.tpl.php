@@ -66,5 +66,3 @@
 <div class="view-field view-data-delete">
   <?php print $delete?>
 </div>
-??????
-

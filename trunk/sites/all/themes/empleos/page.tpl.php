@@ -5,6 +5,7 @@
 	// print '[[[[[[[[[[[[[[[['.$node->type.']]]]]]]]]]]]]]]]';
 	
 	// break;
+	//echo $node->type;
 	
 switch ($node->type) {
 	case 'e_aviso':
@@ -15,9 +16,10 @@ switch ($node->type) {
 		break;		
 	case 'faq':
 		include 'page-faq.tpl.php';
-		break; 
+		break; 		
 	default:
 		?>
+<html>
 <?php include("include/head.php");?>
 <body> 
 <div id="wrapper">
