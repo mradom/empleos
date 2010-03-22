@@ -118,7 +118,56 @@ input.req, select.req{border:1px solid #3399cc;
 }
 label.check{ margin-right:10px;}
 input.check{ background:none; border:0}
-
+/*------CAMBIOS 22/03--------*/
+.mycv .form-item label{/*----igual a las class .item .req---*/
+	text-align:right;
+	width:250px;
+	margin-right:20px;
+	font-weight:bold;
+	color:#1C77A8;
+	display:inline-block;
+	margin-bottom:10px;
+}
+.mycv .form-item select{
+	width:280px;
+	size:60;	
+}
+.mycv .form-item input, .mycv textarea{
+	width:280px;	
+}
+.mycv .form-item div.description, .mycv ul.tips, .mycv p{
+	color:#999;
+	width:280px;
+	margin:0 0 10px 275px;
+	}
+.mycv p a{
+	text-decoration:underline
+}
+label span.form-required{
+	color:#F96;	
+}
+.mycv fieldset legend{
+	width:600px;
+	color:#f96;
+}
+input.form-submit{
+	height:23px;
+	width:80px;
+	background:url(../img/bg_btn_orange.png) repeat-x;
+	padding:0 5px 2px 5px;
+	border:1px solid #FF9900;
+	color:#FFF;
+	font-weight:bold;
+	cursor:pointer;
+	margin:10px 0 20px 0;
+	display:inline;
+}
+input.form-submit:hover{
+	background: url(../img/bg_btn_orange_hover.png) repeat-x;
+}
+	
+	
+/*------fin de cambios 22/03-------*/
 /*-----login------*/
 .mycv.log{
 	width:310px;
@@ -179,34 +228,4 @@ li.bulet_o{background:url(../img/bullet_orange.gif)0 5px no-repeat; padding-left
 .referencias td img {
 	float:left;
 	margin-right:10px;
-}
-
-#step1{
-	background: transparent url(../img/bg_box_top1.jpg) repeat scroll 0% 0%;
-}
-
-#step2{
-	background: transparent url(../img/bg_box_top2.jpg) repeat scroll 0% 0%;
-}
-#step3{
-	background: transparent url(../img/bg_box_top3.jpg) repeat scroll 0% 0%;
-}
-#step4{
-	background: transparent url(../img/bg_box_top4.jpg) repeat scroll 0% 0%;
-}
-#step5{
-	background: transparent url(../img/bg_box_top5.jpg) repeat scroll 0% 0%;
-}
-
-#step6{
-	background: transparent url(../img/bg_box_top6.jpg) repeat scroll 0% 0%;
-}
-#step7{
-	background: transparent url(../img/bg_box_top7.jpg) repeat scroll 0% 0%;
-}
-#step8{
-	background: transparent url(../img/bg_box_top8.jpg) repeat scroll 0% 0%;
-}
-#step9{
-	background: transparent url(../img/bg_box_top9.jpg) repeat scroll 0% 0%;
 }
