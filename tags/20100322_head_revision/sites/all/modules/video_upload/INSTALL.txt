@@ -1,0 +1,19 @@
+; $Id: INSTALL.txt,v 1.1.2.1 2008/04/30 21:47:48 jhedstrom Exp $
+
+1) Download the Zend GData client library:
+
+   http://framework.zend.com/releases/ZendGdata-1.5.1/ZendGdata-1.5.1.tar.gz
+
+2) a) Extract the tar archive, and move the subdirectory Zend into this directory. For example:
+
+        mv ~/downloads/ZendGdata-1.5.1/library/Zend/ /path/to/drupal/modules/video_upload/
+
+   -or-
+
+   b) Install the libary somewhere in the existing PHP include_path of the server
+
+3) Enable the Video Upload module via admin/build/modules
+
+4) Browse to admin/settings/video_upload and complete the necessary fields
+
+5) Add a video upload field to a content type and start uploading video

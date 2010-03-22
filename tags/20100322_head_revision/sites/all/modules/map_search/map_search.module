@@ -1,0 +1,556 @@
+<?php
+// $Id: map_search.module,v 1.1 2008/07/30 03:17:51 olivercoleman Exp $
+
+
+/**
+* @file
+* Provides functions and a page to search for points or paths defined in ccp_maps by proximity. (see README.txt)
+*
+* Author: Oliver Coleman, oliver@e-geek.com.au
+* http://e-geek.com.au
+* http://enviro-geek.net
+*/
+
+if (module_exists('content')) include_once drupal_get_path('module', 'content') .'/content.module';
+if (module_exists('location')) include_once drupal_get_path('module', 'location') .'/location.inc';
+
+/**
+ * Implementation of hook_perm().
+ */
+function map_search_perm() {
+  return array('configure map search', 'perform map search');
+}
+
+
+/**
+ * Implementation of hook_help().
+ */
+function map_search_help($section='') {
+  switch ($section) {
+    case 'admin/settings/map_search':
+      $output = t('Configure the map search page.');
+      return $output;
+  }
+}
+
+
+/**
+ * Implementation of hook_menu().
+ */
+function map_search_menu($may_cache) {
+  $items = array();
+  
+  if ($may_cache) {
+    $items[] = array(
+      'path' => 'admin/settings/map_search_admin',
+      'title' => t('Map search'),
+      'description' => t('Configure map searches.'),
+      'callback' => 'drupal_get_form',
+      'callback arguments' => array('map_search_admin'),
+      'access' => user_access('configure map search'),
+      'type' => MENU_NORMAL_ITEM
+    );
+  } else {
+    $search_access = user_access('perform map search');
+    
+    $items[] = array(
+      'path' => variable_get('map_search_path', t('map_search')),
+      'title' => variable_get('map_search_title', t('Search for a map')),
+      'callback' => 'map_search',
+      #'callback arguments' => array('map_search'),
+      'access' => $search_access,
+      'type' => MENU_CALLBACK
+    );
+  }
+  return $items;
+}
+
+
+/**
+ * Form for Admin Settings
+ */
+function map_search_admin() {
+  $types = content_types();
+  
+  #drupal_set_message('<pre>'.print_r($types, true).'</pre>');
+  
+  $map_fields = array();
+  foreach($types as $type) {
+    foreach($type['fields'] as $field) {
+      if ($field['type'] == 'map_location')
+        $map_fields[$type['type'].':'.$field['field_name']] = $type['type'].':'.$field['field_name'];
+    }
+  }
+  
+  $form['map_search_cckfield'] = array(
+    '#type' => 'select',
+    '#title' => t('CCK Map field to search'),
+    '#options' => $map_fields,
+    '#default_value' => variable_get('map_search_cckfield', null)
+  );
+  
+  $form['map_search_path'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Path for search page'),
+    '#default_value' => variable_get('map_search_path', t('map_search'))
+  );
+  
+  $form['map_search_title'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Title for search page'),
+    '#default_value' => variable_get('map_search_title', t('Search for a map'))
+  );
+  
+  $form['map_search_header'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Header text for search page'),
+    '#default_value' => variable_get('map_search_header', '')
+  );
+  
+  $form['map_search_results_header'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Text to go above search results'),
+    '#description' => t('Can include HTML. This won\'t be shown if there are 0 results.
+                          $state, $suburb, $postcode, $lat and $lon will be replaced with their respective values.'),
+    '#default_value' => variable_get('map_search_results_header', '')
+  );
+
+  
+  $form['map_search_node_title_header'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Header for node title column'),
+    '#default_value' => variable_get('map_search_node_title_header', '')
+  );
+  
+  $form['map_search_postcode_error'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Postcode not found message'),
+    '#default_value' => variable_get('map_search_postcode_error', '')
+  );
+  
+  $form['map_search_footer'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Footer text for search page'),
+    '#default_value' => variable_get('map_search_footer', '')
+  );
+  
+  $form['map_search_location_spec'] = array(
+    '#type' => 'select',
+    '#title' => t('Search location specification type'),
+    '#options' => array(
+      'postcode' => t('By postcode'),
+      'lonlat' => t('By longitude and latitude')
+    ),
+    '#default_value' => variable_get('map_search_location_spec', '')
+  );
+  
+  $form['map_search_dist_unit'] = array(
+    '#type' => 'select',
+    '#title' => t('Distance unit'),
+    '#options' => array(
+      'km' => t('km'),
+      'miles' => t('miles')
+    ),
+    '#default_value' => variable_get('map_search_dist_unit', '')
+  );
+  
+  $form['map_search_postcode_country'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Country for postcode search'),
+    '#default_value' => variable_get('map_search_postcode_country', ''),
+    '#description' => t('The country code (2 letter) to use if postcode search is used. Leaving empty will cause a country selector to be displayed on the search page')
+  );
+  
+  $form['map_search_ordering_type'] = array(
+    '#type' => 'select',
+    '#title' => t('How map points will be ordered into a path'),
+    '#options' => array(
+      'delta' => t('Order of creation'),
+      'auto' => t('Automatic from distances'),
+      'title' => t('Marker title')
+    ),
+    '#default_value' => variable_get('map_search_ordering_type', ''),
+    '#description' => t('<i>Order of creation</i> simply orders map points by the order they were created in. <i>Automatic from distances</i> forms the shortest open path from the points. <i>Marker title</i> will sort the points by their title in alphabetical order.')
+  );
+  
+  $form['map_search_result_additions'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Additional result info for each row'),
+    '#description' => t('PHP code that evaluates to or returns a value (not necessarily a string) to add to each result row. 
+                          Multiple columns may be added by including '. htmlspecialchars('</td><td>'). ' pairs
+                          Variables available are $distance (the distance in km for that row) and $node.'),
+    '#default_value' => variable_get('map_search_result_additions', '')
+  );
+  
+  $form['map_search_result_additions_title'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Title for additional result info'),
+    '#default_value' => variable_get('map_search_result_additions_title', '')
+  );
+  
+    $form['map_search_inclusion_conditions'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Search inclusion conditions'),
+    '#description' => t('PHP code that is used to determine which nodes should be included in the search.
+                          The code is evaluated on a per node basis and should evaluate to or return true or false, for include or exclude respectively.
+                          Variables available are $node.'),
+    '#default_value' => variable_get('map_search_inclusion_conditions', '')
+  );
+  
+  return system_settings_form($form);
+}
+
+/**
+ * Display the search page
+ */
+function map_search() {
+  $content_type_field = variable_get('map_search_cckfield', null);
+  if (!isset($content_type_field)) {
+    return array(
+      'error' => array(
+        '#value' => 'Error: a cck_map field has not been selected. Check the '. l('Map search settings', 'admin/settings/map_search'). '.'
+      )
+    );
+  }
+  
+  $output = '<div class="map_searchheader">'. variable_get('map_search_header', ''). '</div>';
+  
+  $output .= '<form method="POST" class="map_search">';
+  
+  $location_spec_type = variable_get('map_search_location_spec', 'postcode');
+  if ($location_spec_type == 'postcode') {
+    $country_code = variable_get('map_search_postcode_country', null);
+    if (!isset($country_code) || strlen($country_code) != 2) {
+      return 'Error: country code for postcode search is not valid. Check the '. l('Map search settings', 'admin/settings/map_search'). '.';
+    }
+    if (isset($_POST['postcode']))
+      $postcode = (int) $_POST['postcode'];
+    $output .= "<label>Post code:</label>
+               <input type='textfield' name='postcode' value='$postcode' />";
+  } else {
+    if (isset($_POST['lat']))
+      $lat = (float) $_POST['lat'];
+    if (isset($_POST['lon']))
+      $lon = (float) $_POST['lon'];
+    $output .= "<label>Latitude:</label>
+               <input type='textfield' name='lat' value='$lat' />
+               <label>Longitude:</label>
+               <input type='textfield' name='lon' value='$lon' />";
+  }
+
+  $output .= '<input type="submit" value="Go!" />
+            </form>';
+  
+  if (isset($postcode)) {
+    $location = location_get_postalcode_data(array('country' => $country_code, 'postal_code' => $postcode));
+    if (isset($location)) { 
+      $suburb = $location['city'];
+      $state = $location['province'];
+      $lat = $location['lat'];
+      $lon = $location['lon'];
+      //drupal_set_message('<pre>'.print_r($location, true).'</pre>');
+    }
+  }
+  
+  if (isset($lat) && isset($lon)){
+    $content_type_field = explode(":", $content_type_field); //[0]=content type, [1]=field name
+    
+    $routes = array();
+    $distances = array();
+    
+    $nodes = db_query('SELECT * FROM {node} WHERE type = "%s" AND status = "1"', $content_type_field[0]);
+    #calculate distance between given postcode and all routes
+    while ($node = db_fetch_object($nodes)) {
+      if (!($inc_cond = variable_get('map_search_inclusion_conditions', false)) ||
+          eval_inclusion_conditions($inc_cond, $node)) {
+        $route = db_query('SELECT rs.dist, rs.course, 
+                            f.'.$content_type_field[1].'_lat lat, f.'.$content_type_field[1].'_lon lon 
+                            FROM {content_'.$content_type_field[1].'} f LEFT JOIN {map_search} rs USING (delta)
+                            WHERE f.vid = "%d" AND rs.nid = "%d" AND rs.field = "%s" ORDER BY rs.weight ASC', $node->vid, $node->nid, $content_type_field[1]); #get all route data
+        
+        #find shortest distance to route
+        $distance_min = INF;
+        $rp1 = null;
+        while ($rp2 = db_fetch_object($route)) {
+          $dist_rp2_loc = earth_distance($rp2->lon, $rp2->lat, $lon, $lat);
+          if (isset($rp1)) {
+            $dist_rp1_rp2 = $rp1->dist;
+            $crs_rp1_rp2 = $rp1->course;
+            //$dist_rp1_loc = earth_distance($rp1->lon, $rp1->lat, $lon, $lat);
+            $crs_rp1_loc = earth_course($rp1->lon, $rp1->lat, $lon, $lat, $dist_rp1_loc);
+            $dist_xt = abs(cross_track_distance($dist_rp1_loc, $crs_rp1_rp2, $crs_rp1_loc, ($rp1->lat + $rp2->lat) / 2));
+            $dist_at = along_track_distance($dist_rp1_loc, $dist_xt, ($rp1->lat + $rp2->lat) / 2);
+            //if courses are more than 90 deg divergent then distance along track will be negative
+            $crs_diff = abs($crs_rp1_rp2 - $crs_rp1_loc);
+            if ($crs_diff > M_PI) 
+              $crs_diff = 2*M_PI - $crs_diff;
+            if ($crs_diff > 0.5*M_PI) 
+              $dist_at = -$dist_at;
+              
+            /*drupal_set_message( '$dist_rp1_rp2 '.$dist_rp1_rp2.'<br />'.
+                                '$dist_rp1_loc '.$dist_rp1_loc.'<br />'.
+                                '$dist_rp2_loc '.$dist_rp2_loc.'<br />'.
+                                '$crs_rp1_rp2 '.$crs_rp1_rp2.'<br />'.
+                                '$crs_rp1_loc '.$crs_rp1_loc.'<br />'.
+                                '$dist_xt '.$dist_xt.'<br />'.
+                                '$dist_at '.$dist_at);*/
+            
+            //if distance along track isn't outside of track segment
+            if ($dist_at >= 0 && $dist_at <= $dist_rp1_rp2) {
+              $dist = $dist_xt;
+            } else {
+              $dist = min($dist_rp1_loc, $dist_rp2_loc);
+            }
+            
+            $distance_min = min($dist, $distance_min);
+          }
+          $rp1 = $rp2;
+          $dist_rp1_loc = $dist_rp2_loc;
+        }
+        $routes[] = array('distance' => $distance_min, 'node' => $node);
+        $distances[] = $distance_min;
+      }
+    }
+    
+    #sort routes by distance
+    array_multisort($distances, $routes);
+    
+    $dist_unit = variable_get('map_search_dist_unit', 'km');
+    $dist_unit_data = array('km' => array('unit' => t('km'), 'factor' => 1000),
+                            'miles' => array('unit' => t('miles'), 'factor' => 1609.344));
+    
+    if ($srheader = variable_get('map_search_results_header', false))
+      $output .= eval_search_result_header($srheader, $state, $suburb, $postcode, $lat, $lon);
+    $output .= '  <table class="routes-result">';
+    $output .= '    <tr><th>'. variable_get('map_search_node_title_header', t('Title')). '</th>';
+    $output .= '        <th>'. t('Approx. '). $dist_unit_data[$dist_unit]['unit']. ($location_spec_type == 'postcode' ? t(' from '). $postcode : ''). '</th>';
+    $output .= '        <th>'. variable_get('map_search_result_additions_title', ''). '</th></tr>';
+    #display first 10
+    for ($i = 0; $i < min(10, count($routes)) ; $i++) {
+      $node = $routes[$i]['node'];
+      $distance = $routes[$i]['distance'];
+      
+      $output .= '    <tr><td>'. l($node->title, "node/". $node->nid). '</td>';
+      $output .= '        <td>'. round($distance/$dist_unit_data[$dist_unit]['factor']). '</td>';
+      if ($addition = variable_get('map_search_result_additions', false))
+        $output .= '        <td>'. eval_addition($addition, $distance, $node). '</td>';
+      $output .= '    </tr>';
+    }
+    $output .= '</table>';
+  } else if (isset($postcode)) {
+    $output .= variable_get('map_search_postcode_error', 
+                            '<p style="error">Sorry, we couldn\'t find this post code. Please check it and try again.</p>');
+  }
+  $output .= '<div class="map_searchfooter">'. variable_get('map_search_footer', ''). '</div>';
+
+  
+  return $output;
+}
+
+function eval_inclusion_conditions($inc_cond, &$node) {
+  return eval($inc_cond);
+}
+
+function eval_search_result_header($header, $state, $suburb, $postcode, $lat, $lon) {
+  $header = str_replace('"', '\"', $header);
+  $header = str_replace('\""', '\"', $header);
+  eval("\$header = \"$header\";");
+  return $header;
+}
+
+function eval_addition($addition, $distance, &$node) {
+  return eval($addition);
+}
+
+
+/**
+ * Implementation of hook_nodeapi().
+ *
+ * Update route data when relevant map markers change
+ */
+function map_search_nodeapi(&$node, $op, $teaser, $page) {
+  $content_type_field = variable_get('map_search_cckfield', null);
+  if (!isset($content_type_field)) return;
+  $content_type_field = explode(":", $content_type_field); //[0]=content type, [1]=field name
+  
+  if ($node->type == $content_type_field[0]) {
+    switch ($op) {
+      case 'insert':
+        update_route_data($node, $content_type_field[1]);
+        break;
+    
+      case 'update':
+        update_route_data($node, $content_type_field[1]);
+        break;
+    
+      case 'delete':
+        //remove any existing route data from db
+        db_query('DELETE FROM {map_search} WHERE nid = "%d" AND field = "%s"', $node->nid, $content_type_field[1]);
+        break;
+    }
+  }
+}
+
+
+function update_route_data(&$node, $field_name) {
+  $points = $node->$field_name;
+  unset($points['maplat']);
+  unset($points['maplon']);
+  unset($points['mapzoom']);
+  unset($points['maptype']);
+  unset($points['markerTitle']);
+  unset($points['markerDescription']);
+  unset($points['itemcount']);
+  $points_count = count($points);
+  
+  $ordering_type = variable_get('map_search_ordering_type', 'delta');
+  switch ($ordering_type) {
+    case 'auto':
+      if ($points_count > 2) {
+        //calculate distances between all points in route, and determine closest two (stored in $route)
+        $distances = array();
+        $min_distance = INF;
+        $remaining = array(); //used later
+        for ($i1 = 0; $i1 < $points_count; $i1++) {
+          $remaining[] = $i1;
+          for ($i2 = $i1+1; $i2 < $points_count; $i2++) {
+            $distance = earth_distance($points[$i1]['lon'], $points[$i1]['lat'], $points[$i2]['lon'], $points[$i2]['lat']);
+            $distances[$i1][$i2] = $distance;
+            $distances[$i2][$i1] = $distance;
+            if ($distance < $min_distance){
+              $min_distance = $distance;
+              $end_point0 = $i1;
+              $end_point1 = $i2;
+            }
+          }
+        }
+ 
+        //starting from closest two points, form a route by finding the next closest point to either of the current end points of the route.
+        $route = array(); //[this point] => next point
+        $route[$end_point0] = $end_point1; //start with closest
+        unset($remaining[$end_point0]);
+        unset($remaining[$end_point1]);
+        while (!empty($remaining)) {
+          //find closest remaining points for both current end points
+          $ep0_cd = INF; //closest distance
+          $ep0_cp = null; //closest point index
+          $ep1_cd = INF;
+          $ep1_cp = null;
+          foreach($remaining as $rem_point) {
+            $d0 = $distances[$end_point0][$rem_point];
+            $d1 = $distances[$end_point1][$rem_point];
+            if ($d0 < $ep0_cd) {
+              $ep0_cd = $d0;
+              $ep0_cp = $rem_point;
+            }
+            if ($d1 < $ep1_cd) {
+              $ep1_cd = $d1;
+              $ep1_cp = $rem_point;
+            }
+          }
+        
+          if ($ep0_cd < $ep1_cd) { //if point is closest to end point 0
+            $route[$ep0_cp] = $end_point0;
+            $end_point0 = $ep0_cp; //end point is the point just added to route
+            unset($remaining[$end_point0]);
+          } else { //point is closest to end point 1
+            $route[$end_point1] = $ep1_cp; //add new point to route end 1
+            $end_point1 = $ep1_cp; //end point is the point just added to route
+            unset($remaining[$end_point1]);
+          }
+        }
+        
+        //create ordering from route
+        $ordered_route[] = $end_point0;
+        $ordered_route_dist = array();
+        for ($i = 0; $i < $points_count-1; $i++) {
+          $ordered_route[] = $route[$ordered_route[$i]];
+          $ordered_route_dist[] = $distances[$ordered_route[$i]][$ordered_route[$i+1]];
+        }
+        
+      }
+      break; //case auto
+  } //switch ordering type
+  
+  
+  //remove any existing route data from db
+  db_query('DELETE FROM {map_search} WHERE nid = "%d" AND field = "%s"', $node->nid, $field_name);
+  
+  //calculate distances between points in route
+  if (!isset($ordered_route_dist)) {
+    $ordered_route_dist = array();
+    for ($i = 0; $i < $points_count-1; $i++) {
+      $point = $points[$ordered_route[$i]];
+      $point_next = $points[$ordered_route[$i+1]];
+      $ordered_route_dist[] = earth_distance($point['lon'], $point['lat'], $point_next['lon'], $point_next['lat']);
+    }
+  }
+  //insert new data into db
+  for ($i = 0; $i < $points_count; $i++) {
+    $point = $points[$ordered_route[$i]];
+    if ($i < $points_count-1) {
+      $point_next = $points[$ordered_route[$i+1]];
+      $dist = $ordered_route_dist[$i];
+      $course = earth_course($point['lon'], $point['lat'], $point_next['lon'], $point_next['lat'], $dist);
+    } else {
+      $dist = null;
+      $course = null;
+    }
+    db_query('INSERT INTO {map_search} (nid, field, delta, weight, dist, course) 
+                VALUES (%d, "%s", %d, %d, %d, %f);',
+                $node->nid, $field_name, $ordered_route[$i], $i, $dist, $course);
+   }
+}
+
+
+/**
+ * Estimate the (initial) course from point1 to point2
+ * If distance (in meters) between points is not given a more complex formula is used
+*/
+function earth_course($longitude1, $latitude1, $longitude2, $latitude2, $distance=null) {
+  $long1 = deg2rad($longitude1);
+  $lat1 = deg2rad($latitude1);
+  $long2 = deg2rad($longitude2);
+  $lat2 = deg2rad($latitude2);
+  if (isset($distance)) {
+    $distance = dist2angle($distance, ($lat1 + $lat2) / 2);
+    $acos_input = (sin($lat2)-sin($lat1)*cos($distance))/(sin($distance)*cos($lat1));
+    if ($acos_input < -1)
+      $acos_input = -1;
+    else if ($acos_input > 1)
+      $acos_input = 1;
+    if (sin($long2-$long1) < 0) {
+      $course = acos($acos_input);
+    } else {
+      $course =  2*M_PI-acos($acos_input);
+    }
+  } else {
+    $atan2_1 = sin($long1-$long2)*cos($lat2);
+    $atan2_2 = cos($lat1)*sin($lat2)-sin($lat1)*cos($lat2)*cos($long1-$long2);
+    $y = atan2($atan2_1, $atan2_2);
+    $course = proper_mod($y, 2*M_PI);
+  }
+  return $course;
+}
+
+function cross_track_distance($dist_ac, $crs_ab, $crs_ac, $lat) {
+  return angle2dist(asin(sin(dist2angle($dist_ac, $lat))*sin($crs_ac-$crs_ab)), $lat);
+}
+
+function along_track_distance($dist_ac, $dist_xt, $lat) {
+  $dist_ac = dist2angle($dist_ac, $lat);
+  $dist_xt = dist2angle($dist_xt, $lat);
+  return angle2dist(acos(cos($dist_ac)/cos($dist_xt)), $lat);
+}
+
+function proper_mod($y, $x) {
+  return $y-$x*floor($y/$x);
+}
+
+function dist2angle($dist, $lat) {
+  return $dist/earth_radius($lat);
+}
+
+function angle2dist($angle, $lat) {
+  return $angle*earth_radius($lat);
+}

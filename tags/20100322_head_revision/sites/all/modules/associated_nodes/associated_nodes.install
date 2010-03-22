@@ -1,0 +1,75 @@
+<?php
+// $id$
+
+function associated_nodes_install() {
+  switch ($GLOBALS['db_type']) {
+    case 'mysql':
+    case 'mysqli':
+      db_query("CREATE TABLE {associated_nodes_association} (
+        aid int(10) unsigned NOT NULL default 0,
+        name  VARCHAR(128) NOT NULL default '',
+        number int(5) unsigned NOT NULL default 0,
+        published_only int(1) unsigned NOT NULL default 1,
+        PRIMARY KEY pk (aid)
+      ) TYPE=MyISAM /*!40100 DEFAULT CHARACTER SET utf8 */;");
+      
+      db_query("CREATE TABLE {associated_nodes_nodetype} (
+        aid int(10) unsigned NOT NULL default 0,
+        type  VARCHAR(32) NOT NULL default '',
+        PRIMARY KEY pk (aid, type)
+      ) TYPE=MyISAM /*!40100 DEFAULT CHARACTER SET utf8 */;");
+      
+      db_query("CREATE TABLE {associated_nodes_criterion} (
+        aid int(10) unsigned NOT NULL default 0,
+        type VARCHAR(32) NOT NULL default '',
+        element VARCHAR(128) NOT NULL default '',
+        weight float NOT NULL default 0,
+        PRIMARY KEY pk (aid, type, element)
+      ) TYPE=MyISAM /*!40100 DEFAULT CHARACTER SET utf8 */;");
+
+      db_query("CREATE TABLE {associated_nodes_cache} (
+        aid int(10) unsigned NOT NULL default 0,
+        nid int(10) unsigned NOT NULL default 0,
+        associated_nid int(10) unsigned NOT NULL default 0,
+        score float unsigned NOT NULL default 0,
+        PRIMARY KEY pk (aid, nid, associated_nid)
+      ) TYPE=MyISAM /*!40100 DEFAULT CHARACTER SET utf8 */;");
+      break;
+    case 'pgsql':
+      db_query("CREATE TABLE {associated_nodes_association} (
+        aid integer NOT NULL default 0,
+        name  varchar(128) NOT NULL default '',
+        number integer NOT NULL default 0,
+        published_only smallint NOT NULL default 1,
+        PRIMARY KEY (aid)
+      )");
+      
+      db_query("CREATE TABLE {associated_nodes_nodetype} (
+        aid integer NOT NULL default 0,
+        type  varchar(32) NOT NULL default '',
+        PRIMARY KEY (aid, type)
+      )");
+      
+      db_query("CREATE TABLE {associated_nodes_criterion} (
+        aid integer NOT NULL default 0,
+        type varchar(32) NOT NULL default '',
+        element varchar(128) NOT NULL default '',
+        weight real NOT NULL default 0,
+        PRIMARY KEY (aid, type, element)
+      )");
+      
+      db_query("CREATE TABLE {associated_nodes_cache} (
+        aid integer NOT NULL default 0,
+        nid integer NOT NULL default 0,
+        associated_nid integer NOT NULL default 0,
+        score real NOT NULL default 0,
+        PRIMARY KEY (aid, nid, associated_nid)
+      )");
+      break;
+  }
+  drupal_set_message(t("The module Associated Nodes has been installed.")." ".l(t("Click here"), "admin/settings/associated-nodes")." ".t("to configure it."));
+}
+
+function associated_nodes_uninstall() {
+  db_query("DROP TABLE {associated_nodes_nodetype}, {associated_nodes_criterion}, {associated_nodes_association}, {associated_nodes_cache}");
+}

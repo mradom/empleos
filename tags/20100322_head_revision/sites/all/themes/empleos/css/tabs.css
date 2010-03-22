@@ -1,0 +1,102 @@
+/*
+
+Example CSS file for creating tabs using tabs.js.
+Created by Rob Allen (rob at akrabat dot com)
+Based on the CSS code from Silverorange Labs at :
+http://labs.silverorange.com/archives/2003/september/simplecsstabs
+
+*/
+#tab-container{
+	margin:0;
+	float:left;
+	clear:both;
+	margin:10px 0;
+}
+.tab-content {
+	background:#fff;
+	border:1px solid #3077a4; 
+	color: black;
+	padding:10px;
+	width:658px;
+	float:left;
+}
+
+
+.tab-header {
+	position: relative;
+	height:40px;
+	width:170px; /* a width is required for Opera, older Mozilla browsers, and Konqueror browsers */
+	/*background:;*/ 
+}
+
+.tab-header ul.tab-list {
+	padding:0;
+	position: absolute;
+	z-index:1;
+	width:350px; /* a width is required for Opera, older Mozilla browsers, and Konqueror browsers */
+}
+
+.tab-header ul.tab-list li  {
+	display: inline;
+	list-style: none;
+	margin: 0;
+}
+
+.tab-header ul.tab-list a,
+.tab-header ul.tab-list span,
+.tab-header ul.tab-list a.tab-active {
+	width: auto;
+	display: block;
+	float: left;
+	padding:0 10px;
+	text-align: center;
+	font:bold 12px/25px arial;
+	color:#3077a4;
+	height:30px;
+	-moz-border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+
+}
+
+.tab-header ul.tab-list span,
+.tab-header ul.tab-list a.tab-active,
+.tab-header ul.tab-list a.tab-active:hover {
+	background: #fff;
+	color: black;
+	margin-top:0;
+	height:40px;
+	line-height:45px;
+	border:1px solid #3077a4;
+	border-bottom:none;
+	-moz-box-shadow:none;
+	-webkit-box-shadow: none;
+}
+
+/* a link in a background tab */
+.tab-header ul.tab-list a {
+	background: #EAFEFF;
+	text-decoration:none;
+	height:30px;
+	margin-top:10px;
+	margin-right:5px;
+	border:1px solid #3077a4;
+	border-bottom:none;
+}
+
+/* hover on a background tab */
+.tab-header ul.tab-list a:hover {
+	height:30px;
+	background: #FFCC00;
+	margin-top:10px;
+	line-height:25px;
+	text-decoration:none;
+	-moz-border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+}
+
+.tab  /* the heading that became the li */
+{
+	display: none;
+}

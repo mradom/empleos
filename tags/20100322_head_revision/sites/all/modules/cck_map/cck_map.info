@@ -1,0 +1,13 @@
+; $Id: cck_map.info,v 1.1 2007/11/13 01:09:32 beeradb Exp $
+name = cck_map
+description = Allows for the placement of a google map + location markers
+package = CCK
+dependencies = content
+
+
+
+; Information added by drupal.org packaging script on 2008-01-09
+version = "5.x-3.3"
+project = "cck_map"
+datestamp = "1199847904"
+

@@ -1,0 +1,44 @@
+<?php
+// $Id: map_search.install,v 1.1 2008/07/30 03:17:51 olivercoleman Exp $
+
+/**
+ * Create tables on install
+ */
+function map_search() {
+  switch ($GLOBALS['db_type']) {
+    case 'mysql':
+    case 'mysqli':
+      db_query("CREATE TABLE {map_search} (
+        nid int unsigned NOT NULL, 
+        field varchar(32) NOT NULL,
+        delta int unsigned NOT NULL, 
+        weight int unsigned NOT NULL, 
+        dist int unsigned NOT NULL,
+        course decimal(10,9) NOT NULL
+        ) /*!40100 DEFAULT CHARACTER SET utf8 */;"
+      );
+      break;
+    case 'pgsql':
+      db_query("CREATE TABLE {map_search} (
+        nid int unsigned NOT NULL, 
+        field varchar(32) NOT NULL, 
+        delta int unsigned NOT NULL, 
+        weight int unsigned NOT NULL, 
+        dist int unsigned NOT NULL,
+        course decimal(10,9) NOT NULL
+        );"
+      );
+      break;
+    default:
+      drupal_set_message(t('Map Search install: unsupported database.'), 'error');
+  }
+}
+
+/**
+ * Remove tables on uninstall.
+ */
+function map_search_uninstall() {
+  db_query("DROP TABLE {map_search}");
+  db_query("DELETE FROM {variable} WHERE name LIKE 'map_search_%'");
+  cache_clear_all('variables', 'cache');
+}

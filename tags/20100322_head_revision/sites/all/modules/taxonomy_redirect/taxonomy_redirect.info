@@ -1,0 +1,10 @@
+; $Id: taxonomy_redirect.info,v 1.1.2.2 2008/09/26 01:16:13 agileware Exp $
+name = Taxonomy redirect
+description = Allows the admin to override where taxonomy term links go.
+dependencies = taxonomy
+package = Taxonomy
+; Information added by drupal.org packaging script on 2008-09-26
+version = "5.x-1.3"
+project = "taxonomy_redirect"
+datestamp = "1222392319"
+
