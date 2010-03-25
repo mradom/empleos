@@ -1,8 +1,0 @@
-; $Id: menu_per_role.info,v 1.1 2007/01/06 17:59:43 fago Exp $
-name = Menu Per Role
-description = Allows restricting access to menu items per role.
-; Information added by drupal.org packaging script on 2009-06-27
-version = "5.x-1.x-dev"
-project = "menu_per_role"
-datestamp = "1246061858"
-

@@ -1,8 +1,0 @@
-; $Id: remember_me.info,v 1.6.2.1 2009/05/17 18:45:34 nickl Exp $
-name = "Remember me"
-description = "Adds a ''Remember me'' checkbox to login forms."
-; Information added by drupal.org packaging script on 2009-05-25
-version = "5.x-2.2"
-project = "remember_me"
-datestamp = "1243275270"
-

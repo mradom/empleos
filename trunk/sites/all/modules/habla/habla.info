@@ -1,9 +1,0 @@
-name = "Hab.la Live Chat"
-description = Add hab.la live chat to your Drupal website.
-version = "5.x-1.0"
-project = "habla"
-; Information added by drupal.org packaging script on 2008-06-11
-version = "5.x-1.0"
-project = "habla"
-datestamp = "1213168211"
-

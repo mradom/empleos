@@ -1,9 +1,0 @@
-; $Id: taxonomy_list.info,v 1.1.2.1 2008/03/25 16:01:29 nancyw Exp $
-name = Taxonomy List
-description = List terms under a specific vocabulary
-dependencies = taxonomy
-; Information added by drupal.org packaging script on 2009-02-12
-version = "5.x-1.5"
-project = "taxonomy_list"
-datestamp = "1234453281"
-

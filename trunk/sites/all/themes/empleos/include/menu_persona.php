@@ -1,1 +1,0 @@
-<h3>Menu de personas</h3>
