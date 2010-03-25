@@ -1,0 +1,12 @@
+; $Id: cck_button.info,v 1.1 2007/06/20 02:13:25 ericdes Exp $
+name = Button
+description = Add to button to a form.
+
+dependencies = content
+package = CCK
+version = "5.x-1.0-dev"
+; Information added by drupal.org packaging script on 2007-06-20
+version = "5.x-1.x-dev"
+project = "cck_button"
+datestamp = "1182341233"
+

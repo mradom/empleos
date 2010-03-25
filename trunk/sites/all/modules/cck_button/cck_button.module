@@ -1,0 +1,303 @@
+<?php
+/* $Id: cck_button.module,v 1.1 2007/06/20 02:13:25 ericdes Exp $ */
+
+/**
+  * Implementation of hook_field_info().
+  */
+function cck_button_field_info() {
+  return array(
+    'cck_button' => array('label' => t('Button')),
+  );
+}
+
+
+ /**
+ * Implementation of hook_widget_info().
+ */
+function cck_button_widget_info() {
+  return array(
+    'cck_button' => array(
+      'label' => t('Button'),
+      'field types' => array('cck_button'),
+    ),
+  );
+}
+
+
+/**
+ * Implementation of hook_field_settings().
+ */
+ function cck_button_field_settings($op, $field) {
+  switch ($op) {
+    case 'database columns':
+      $columns = array(
+        'button_enabled' => array('type' => 'tinyint', 'not null' => TRUE),
+        'button_label' => array('type' => 'varchar', 'length' => 255, 'not null' => TRUE),  
+        'button_html' => array('type' => 'longtext', 'not null' => TRUE),  # Don't set to false, otherwise problem occurs on line 442 in content.module
+        'button_php' => array('type' => 'longtext', 'not null' => TRUE),   # Don't set to false, otherwise problem occurs on line 442 in content.module 
+      );
+      return $columns;
+  
+    case 'form':
+      $form = array();  
+      // Hide field 'multiple' in Data settings (creating a new form with same argument that will merge):
+      $form['multiple'] = array('#type' => 'hidden', '#value' => '0'); 
+      
+      return $form;       
+  };
+}
+
+
+/**
+ * Implementation of hook_widget_settings().
+ */
+function cck_button_widget_settings($op, $widget) {
+  switch ($op) {
+    case 'form':
+      $form = array();
+      
+      # I'm not able to use a fieldset type here because of the way the 'save' function works, so I'll code it manually with markups:
+      $form['fieldset_1'] = array(
+        '#type' => 'markup',
+        '#value' => '<fieldset id="button_label_text"><legend>' . t('Button label') . '</legend>',
+      );  
+      $form['button_label_text'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Label on button'),
+        '#default_value' => $widget['button_label_text'] ? $widget['button_label_text'] : t('Submit'),
+        '#required' => TRUE,
+        '#maxlength' => 255,
+      );
+      
+      $form['button_label_text_allow_change'] = array(
+        '#type' => 'checkbox',
+        '#title' => t('Allow editors to change the label on this button?'),   
+        '#default_value' => $widget['button_label_text_allow_change'] ? $widget['button_label_text_allow_change'] : '0',   
+        '#description' => 'Check if you allow editors to change the label on this button.',
+        '#suffix' => '</fieldset>', # Close fieldset_1 
+      ); 
+      
+      $default_code = 'type="button"' . "\n" . 'class="cck-button"' . "\n";
+      $form['fieldset_2'] = array(
+        '#type' => 'markup',
+        '#value' => '<fieldset id="button_label_text"><legend>' . t('Attributes in &lt;input&gt; tag') . '</legend>',
+      );  
+      $form['button_input_html'] = array(
+        '#type' => 'textarea',
+        '#title' => t('List the attributes within the &lt;input&gt; tag that will build the button'),
+        '#default_value' => isset($widget['button_input_html']) ? $widget['button_input_html'] : $default_code,
+        '#description' => 'Omit the attribule "value" that will be added programmatically with the button label entered above.',         
+        '#rows' => 6,
+        '#tree' => TRUE,        
+        '#required' => FALSE,
+      );
+      
+      $form['button_input_html_allow_change'] = array(
+        '#type' => 'checkbox',
+        '#title' => t('Allow editors to change the HTML for this button?'),
+        '#default_value' => $widget['button_input_html_allow_change'] ? $widget['button_input_html_allow_change'] : '0',   
+        '#description' => 'Check if you allow editors to change the HTML for this button.',
+        '#suffix' => '</fieldset>', # Close fieldset_2 
+      ); 
+      
+      $default_code =
+'// Sample code (show how to handle a click event with jQuery):
+drupal_add_js( 
+      \'$(document).ready(function() {  
+            $("input.cck-button").toggle(function() { 
+                  $label = $(this).val();
+                  $(this).val("Click me!");
+            }, function() {
+                  $(this).val($label).fadeIn("slow");
+            } );
+       } ); \',
+       \'inline\'
+);
+';
+
+      $form['fieldset_3'] = array(
+        '#type' => 'markup',
+        '#value' => '<fieldset id="button_label_text"><legend>' . t('PHP code') . '</legend>',
+      );  
+      $form['button_execute_php'] = array(
+        '#type' => 'textarea',
+        '#title' => t('PHP code to program the button'),
+        '#default_value' => isset($widget['button_execute_php']) ? $widget['button_execute_php'] : $default_code,
+        '#description' => t('This is a place to enter your PHP code to program this button.') . ' ' . t('Should not include &lt;?php ?&gt; delimiters.'),         
+        '#rows' => 14,
+        '#tree' => TRUE,        
+        '#required' => FALSE,
+      );
+      
+      $default_code = '# Enter PHP code here:"' . "\n";  
+      $form['button_execute_php_allow_change'] = array(
+        '#type' => 'checkbox',
+        '#title' => t('Allow editors to change the PHP code for this button.'),
+        '#default_value' => $widget['button_execute_php_allow_change'] ? $widget['button_execute_php_allow_change'] : '0',   
+        '#description' => t('Check if you allow editors to change the PHP code for this button.'),
+        '#suffix' => '</fieldset>', # Close fieldset_3 
+      ); 
+      
+      $form['notice'] = array(
+        '#type' => 'markup',
+        '#value' => t('<strong>Notice:</strong> The Button CCK module is not compatible with the normal default value setup below'),
+      ); 
+      
+      return $form;
+
+    case 'save':
+      return array(
+        'button_label_text', 
+        'button_label_text_allow_change', 
+        'button_input_html',
+        'button_input_html_allow_change',
+        'button_execute_php',
+        'button_execute_php_allow_change',
+      );
+  }
+}
+
+
+/**
+ * Implementation of hook_widget().
+ */
+function cck_button_widget($op, &$node, $field, &$items) {
+  switch ($op) {   
+    case 'form':
+      $form = array();
+    
+      $form[$field['field_name']] = array(
+        '#tree' => TRUE, 
+        '#weight' => $field['widget']['weight'],
+        '#type' => 'fieldset',
+        '#title' => $field['widget']['label'],
+        '#description' => '<input type="button" value="' . ((isset($items[0]['button_label']) && ($items[0]['button_label'])) ? $items[0]['button_label'] : $field['widget']['button_label_text']) . '">',  # Display the button
+      );
+      
+      if (!$field['required']) { 
+        // Editor can disable the button   
+        $form[$field['field_name']][0]['button_enabled'] = array(
+          '#type' => 'checkbox',
+          '#title' => t('Enable button'),
+          '#default_value' => isset($items[0]['button_enabled']) ? $items[0]['button_enabled'] : '1',  
+        );
+      } else {
+        $form[$field['field_name']][0]['button_enabled'] = array( 
+          '#type' => 'hidden',               
+          '#value' => '1',  
+        );  
+      };     
+      if ($field['widget']['button_label_text_allow_change']) {
+        // Editor can change the button text
+        $form[$field['field_name']][0]['button_label'] = array(
+          '#type' => 'textfield',
+          '#title' => t('Label on button'),
+          '#default_value' =>  (isset($items[0]['button_label']) && ($items[0]['button_label'])) ? $items[0]['button_label'] : $field['widget']['button_label_text'],
+          '#required' => TRUE,
+          '#maxlength' => 255,
+        );      
+      } else {
+        $form[$field['field_name']][0]['button_label'] = array(
+          '#type' => 'hidden',               
+          '#value' => $field['widget']['button_label_text'],
+        );  
+      };
+      
+      if ($field['widget']['button_input_html_allow_change']) {
+        // Editor can change the button text
+        $form[$field['field_name']][0]['button_html'] = array(
+          '#type' => 'textarea',
+          '#title' =>  t('Attributes in &lt;input&gt; tag'),
+          '#default_value' =>  (isset($items[0]['button_html']) && ($items[0]['button_html'] != NULL)) ? $items[0]['button_html'] : $field['widget']['button_input_html'], 
+          '#description' => t('List the attributes within the &lt;input&gt; tag that will build the button.') . ' ' . t('Omit the attribule "value" that will be added programmatically with the button label entered above.'), 
+        ); 
+      } else {
+        $form[$field['field_name']][0]['button_html'] = array(
+          '#type' => 'hidden',               
+          '#value' => $field['widget']['button_input_html'],
+        );  
+      };
+      
+      $default_value = '// This PHP code will execute when ....' . "\n";
+      if ($field['widget']['button_execute_php_allow_change']) {
+        // Editor can change the button text
+        $form[$field['field_name']][0]['button_php'] = array(
+          '#type' => 'textarea',
+          '#title' =>  t('PHP code to program the button'),  
+          '#default_value' =>  (isset($items[0]['button_php']) && ($items[0]['button_php'] != NULL)) ? $items[0]['button_php'] : $field['widget']['button_execute_php'],
+          '#description' => t('This is a place to enter your PHP code to program this button.') . ' ' . t('Should not include &lt;?php ?&gt; delimiters.'),   
+        );      
+      } else {
+        $form[$field['field_name']][0]['button_php'] = array(
+          '#type' => 'hidden',               
+          '#value' => $field['widget']['button_execute_php'],
+        );  
+      };
+
+      
+      return $form;
+     
+  }
+}  
+
+
+  
+/**
+ * Implementation of hook_field().
+ */
+
+function cck_button_field($op, &$node, $field, &$node_field, $teaser, $page) {
+  switch ($op) {
+    case 'view':     
+      foreach ($node_field as $delta => $item) {
+        $node_field[$delta]['view'] = content_format($field, $item, 'cck_button', $node);
+      }
+      return theme('field', $node, $field, $node_field, $teaser, $page);
+  }
+}  
+
+  
+/**
+ * Implementation of hook_field_formatter_info().
+ *
+ */
+function cck_button_field_formatter_info() {
+  return array(
+    'default' => array(
+      'label' => 'Button representation',
+      'field types' => array('cck_button'),
+    ),
+  );
+}
+
+
+/**
+ * Implementation of hook_field_formatter().
+ *
+ */
+function cck_button_field_formatter($field, $item, $formatter, $node) {
+  
+  if (!isset($item['button_label'])) {
+    return '';
+  }
+
+  switch ($formatter) {
+    case 'default':
+      if (!$item['button_enabled']) {
+        $text = 'Disabled';
+        return $text;
+      };
+      $tags = $item['button_html'] ? str_replace(array("\r\n", "\r", "\n"), ' ', $item['button_html']) : '';
+      $text = '<input ' . $tags . ' value="' . $item['button_label'] . '">';
+      if ($item['button_php']) {
+        $text .= drupal_eval('<?php ' . $item['button_php'] . ' ?>');
+      };
+          
+      
+  }
+
+  return $text;
+
+}
+
+

@@ -1,0 +1,8 @@
+name = Publicador
+description = Manage the publication of nodes
+; Information added by drupal.org packaging script on 2009-03-31
+version = "5.x-2.0"
+project = "Publicador"
+datestamp = "1238466931"
+dependencies = workflow
+package = "Personal"

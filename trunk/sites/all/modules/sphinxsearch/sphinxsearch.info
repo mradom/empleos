@@ -1,0 +1,11 @@
+; $Id: sphinxsearch.info,v 1.1.2.2 2008/08/20 03:35:11 markuspetrux Exp $
+name = "sphinxsearch"
+description = "Sphinx search integration for Drupal, based on XMLPipe source type and support for main+delta index scheme."
+package = "sphinxsearch"
+core = "5.x"
+
+; Information added by drupal.org packaging script on 2008-11-07
+version = "5.x-1.4"
+project = "sphinxsearch"
+datestamp = "1226084735"
+

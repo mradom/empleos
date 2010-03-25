@@ -1,0 +1,533 @@
+<?php
+// $Id: share.module,v 1.27.2.17 2008/12/02 00:13:37 greenskin Exp $
+
+/**
+ * @file
+ * Provides a popup that modules can put their links/forms related to sharing
+ *
+ * This module allows the creation of Share popups which provides tabs for each
+ * enabled module which utilizes the hooks provided by Share, these tabs then
+ * contain link/forms provided by the module. Share popups can be created and
+ * set to appear on different pages as well as set which tabs will be shown and
+ * the style of the popup.
+ *
+ * Written by greenSkin.
+ */
+
+$path = drupal_get_path('module', 'share');
+  require_once("$path/share_class.inc");
+
+/*******************************************************************************
+ * Hook Functions (Drupal)
+ ******************************************************************************/
+
+/**
+ * Implementation of hook_perm().
+ */
+function share_perm() {
+  return array('administer share', 'use share');
+}
+
+/**
+ * Implementation of hook_menu().
+ */
+function share_menu($may_cache) {
+  $items = array();
+  if ($may_cache) {
+    $items[] = array(
+      'path' => 'admin/build/share',
+      'title' => t('Share'),
+      'description' => t('Manage Share popups'),
+      'callback' => 'share_admin_page',
+      'access' => user_access('administer share')
+    );
+    $items[] = array(
+      'path' => 'admin/build/share/list',
+      'title' => t("List"),
+      'type' => MENU_DEFAULT_LOCAL_TASK,
+      'weight' => -1,
+    );
+    $items[] = array(
+      'path' => 'admin/build/share/add/share',
+      'title' => t('Add Share'),
+      'callback' => 'drupal_get_form',
+      'callback arguments' => array('share_popup_form'),
+      'type' => MENU_LOCAL_TASK,
+      'access' => share_add_access()
+    );
+  } else {
+    if (arg(0) == 'admin' && arg(1) == 'build' && arg(2) == 'share') {
+      $path = drupal_get_path('module', 'share');
+      require_once("$path/share_admin.inc");
+
+      if (is_numeric(arg(3)) && arg(4) == 'delete') {
+        $share = share_popup_load(arg(3));
+        $items[] = array(
+          'path' => 'admin/build/share/'. arg(3) .'/delete',
+          'title' => t('Share'),
+          'callback' => 'drupal_get_form',
+          'callback arguments' => array('share_popup_delete_form', $share),
+          'type' => MENU_CALLBACK
+        );
+      }
+    }
+    if (is_numeric($share_id = arg(3))) {
+      $module = db_result(db_query("SELECT `module` FROM {share} WHERE `share_id` = %d", $share_id));
+      $title = t('Share: @module', array('@module' => $module));
+      $items[] = array(
+        'path' => 'admin/build/share/'. $share_id .'/edit',
+        'title' => $title,
+        'callback' => 'drupal_get_form',
+        'callback arguments' => array('share_popup_form', $share_id, $module),
+        'type' => MENU_CALLBACK
+      );
+      $items[] = array(
+        'path' => 'admin/build/share/'. $share_id .'/disable',
+        'title' => $title,
+        'callback' => 'share_popup_status',
+        'callback arguments' => array('disable', $share_id, TRUE),
+        'type' => MENU_CALLBACK
+      );
+      $items[] = array(
+        'path' => 'admin/build/share/'. $share_id .'/enable',
+        'title' => $title,
+        'callback' => 'share_popup_status',
+        'callback arguments' => array('enable', $share_id, TRUE),
+        'type' => MENU_CALLBACK
+      );
+    }
+
+    // Share page
+    if (is_numeric($arg1 = arg(1)) && is_numeric($arg2 = arg(2))) {
+      $items[] = array(
+        'path' => 'share',
+        'title' => t("Share"),
+        'description' => t("Share this page"),
+        'callback' => 'share_page',
+        'callback arguments' => array($arg1, $arg2),
+        'type' => MENU_CALLBACK,
+        'access' => node_access('view', node_load($arg2))
+      );
+    }
+  }
+  return $items;
+}
+
+/**
+ * Implementation of hook_link().
+ */
+function share_link($type, $node = NULL, $teaser = FALSE) {
+  $links = array();
+
+  if ($node->type && ($popups = share_get_popups('link', $node->type))) {
+    $settings = array();
+    foreach ($popups as $popup) {
+      $share = share_popup_load($popup->share_id, $popup->module);
+      if (!$share->visible($teaser)) {
+        continue;
+      }
+      if ($share->module == 'share') {
+        $settings[] = array(
+          'nid' => $node->nid,
+          'shareID' => $share->share_id,
+          'popup' => $share->render($node, 'popup')
+        );
+      }
+      $share_clone = drupal_clone($share);
+      $node_clone = drupal_clone($node);
+      $share_link = module_invoke($share->module, 'share_render', 'link', $share_clone, $node_clone);
+      if (!empty($share_link)) {
+        $links += $share_link;
+      }
+    }
+    if (!empty($settings)) {
+      drupal_add_js(array('share' => $settings), 'setting');
+    }
+  }
+
+  return $links;
+}
+
+function share_nodeapi(&$node, $op, $a3 = NULL, $a4 = NULL) {
+  switch ($op) {
+    case 'view':
+      if ($popups = share_get_popups('node', $node->type)) {
+        foreach ($popups as $popup) {
+          $share = share_popup_load($popup->share_id, $popup->module);
+          if (!$share->visible($a3, $a4)) {
+            continue;
+          }
+          $share_clone = drupal_clone($share);
+          $node_clone = drupal_clone($node);
+          $share_content = module_invoke($share->module, 'share_render', 'node', $share_clone, $node_clone);
+          if (!empty($share_content)) {
+            $node->content += $share_content;
+          }
+        }
+      }
+      break;
+  }
+}
+
+/**
+ * Implementation of hook_block().
+ */
+function share_block($op = 'list', $delta = 0, $edit = array()) {
+  switch ($op) {
+    case 'list':
+      $blocks = array();
+
+      if ($popups = share_get_popups('block')) {
+        foreach ($popups as $popup) {
+          $blocks[$popup->share_id]['info'] = $popup->label;
+        }
+      }
+
+      return $blocks;
+    case 'view':
+      if (arg(0) == 'node' && is_numeric($nid = arg(1))) {
+        $node = node_load($nid);
+        $share_id = $delta;
+        if ($share = share_popup_load($share_id)) {
+          if ($share->visible(FALSE, TRUE)) {
+            $share_clone = drupal_clone($share);
+            $node_clone = drupal_clone($node);
+            $share_content = module_invoke($share->module, 'share_render', 'block', $share_clone, $node_clone);
+            $block['subject'] = $share->name;
+            $block['content'] = $share_content;
+            return $block;
+          }
+        }
+      }
+  }
+}
+
+/*******************************************************************************
+ * Hook Functions (Share)
+ ******************************************************************************/
+
+/**
+ * Implementation of hook_share().
+ */
+function share_share($op, $args) {
+  switch ($op) {
+    case 'insert':
+      db_query("INSERT INTO {share_share} (`share_id`, `name`, `effects`) VALUES (%d, '%s', %d)",
+        $share_id, $args['name'], $args['effects']);
+      foreach (module_implements('share_info') as $module) {
+        db_query("INSERT INTO {share_tabs} (`share_id`, `id`, `title`, `enabled`, `weight`, `module`) VALUES (%d, '%s', '%s', %d, %d, '%s')",
+          $share_id, $args[$module .'_id'], $args[$module .'_title'], $args[$module .'_enabled'], $args[$module .'_weight'], $args[$module .'_module']);
+
+        $args['share_id'] = $share_id;
+        module_invoke($module, 'share_tab', 'insert', $args);
+      }
+      break;
+    case 'update':
+      db_query("UPDATE {share_share} SET `name` = '%s', `effects` = %d WHERE `share_id` = %d",
+        $args['name'], $args['effects'], $args['share_id']);
+      foreach (module_implements('share_info') as $module) {
+        db_query("UPDATE {share_tabs} SET `title` = '%s', `enabled` = %d, `weight` = %d, `module` = '%s' WHERE `share_id` = %d AND `id` = '%s'",
+          $args[$module .'_title'], $args[$module .'_enabled'], $args[$module .'_weight'], $args[$module .'_module'], $args['share_id'], $args[$module .'_id']);
+        if (!db_affected_rows()) {
+          db_query("INSERT INTO {share_tabs} (`share_id`, `id`, `title`, `enabled`, `weight`, `module`) VALUES (%d, '%s', '%s', %d, %d, '%s')",
+            $args['share_id'], $args[$module .'_id'], $args[$module .'_title'], $args[$module .'_enabled'], $args[$module .'_weight'], $args[$module .'_module']);
+        }
+
+        module_invoke($module, 'share_tab', 'update', $args);
+      }
+      break;
+    case 'delete':
+      db_query("DELETE FROM {share_share} WHERE `share_id` = %d", $share_id);
+      db_query("DELETE FROM {share_tabs} WHERE `share_id` = %d", $share_id);
+      break;
+  }
+}
+
+/**
+ * Implementation of hook_share_render().
+ */
+function share_share_render($op, $share, $node = NULL) {
+  switch ($op) {
+    case 'link':
+      $links = array();
+      if (user_access('use share')) {
+        $links['share_'. $share->share_id .'_'. $node->nid] = array(
+          'title' => $share->name,
+          'href' => 'share/'. $share->share_id .'/'. $node->nid,
+          'attributes' => array('id' => 'share-'. $share->share_id .'-'. $node->nid, 'class' => 'share-link')
+        );
+        share_add_js('link');
+      }
+      return $links;
+    case 'node':
+      $content = array();
+      if (user_access('use share')) {
+        $content['share_'. $share->share_id .'_'. $node->nid] = array(
+          '#value' => $share->render($node),
+          '#weight' => $share->weight
+        );
+      }
+      return $content;
+    case 'block':
+      $tabs = array();
+      foreach ($share->tabs as $id => $tab) {
+        if ($tab->enabled) {
+          $tabs[$id] = array(
+            'title' => check_plain($tab->title),
+            'content' => $share->render_tab($tab, $node)
+          );
+        }
+      }
+      return theme('share_block', $tabs);
+  }
+}
+
+/*******************************************************************************
+ * Callback Functions, Forms, and Tables
+ ******************************************************************************/
+
+function share_page($share_id, $nid) {
+  $share = share_popup_load($share_id);
+  $node = node_load($nid);
+  $tabs = array();
+  foreach ($share->tabs as $tab) {
+    if ($tab->enabled) {
+      $tabs[$tab->id] = $share->render_tab($tab, $node);
+    }
+  }
+  $content = node_view($node, FALSE, FALSE, FALSE);
+
+  return theme('share_page', $tabs, $content);
+}
+
+/*******************************************************************************
+ * Module and Helper Functions
+ ******************************************************************************/
+
+function share_popup_load($share_id, $module = NULL) {
+  static $shares = array();
+
+  if ($shares[$share_id]) {
+    return $shares[$share_id];
+  }
+
+  if ($module == NULL) {
+    $module = db_result(db_query("SELECT module FROM {share} WHERE `share_id` = %d", $share_id));
+  }
+
+  switch ($module) {
+    case 'share':
+      $share = new share;
+      $share->load($share_id);
+      $shares[$share_id] = $share;
+      break;
+    default:
+      $share = new $module;
+      $share->load($share_id);
+      $shares[$share_id] = $share;
+      break;
+  }
+  return $shares[$share_id];
+}
+
+function share_popup_new($args) {
+  $share_id = db_next_id('{share}_share_id');
+  if (!isset($args['category_terms'])) {
+    $args['category_terms'] = array();
+  }
+
+  $node_types = array_filter($args['node_types']);
+  db_query("INSERT INTO {share} (`share_id`, `module`, `label`, `node_types`, `category_terms`, `where`, `view`, `status`, `weight`) VALUES (%d, '%s', '%s', '%s', '%s', '%s', %d, %d, %d)",
+    $share_id, $args['module'], $args['label'], serialize($node_types), serialize($args['category_terms']), $args['where'], $args['view'], $args['status'], $args['weight']);
+
+  // invoke hook_share, 'insert'
+  module_invoke($args['module'], 'share', 'insert', $args);
+
+  return $share_id;
+}
+
+function share_popup_save($args) {
+  $node_types = array_filter($args['node_types']);
+  if (!isset($args['category_terms'])) {
+    $args['category_terms'] = array();
+  }
+  db_query("UPDATE {share} SET `module` = '%s', `label` = '%s', `node_types` = '%s', `category_terms` = '%s', `where` = '%s', `view` = %d, `status` = %d, `weight` = %d WHERE `share_id` = '%s'",
+    $args['module'], $args['label'], serialize($node_types), serialize($args['category_terms']), $args['where'], $args['view'], $args['status'], $args['weight'], $args['share_id']);
+
+  // invoke hook_share, 'update'
+  module_invoke($args['module'], 'share', 'update', $args);
+}
+
+function share_popup_delete($share_id, $module = NULL) {
+  if ($module) {
+    // invoke hook_share, 'delete'
+    module_invoke($module, 'share', 'delete', array('share_id' => $share_id));
+  } else {
+    db_query("DELETE FROM {share_share} WHERE `share_id` = %d", $share_id);
+    db_query("DELETE FROM {share_tabs} WHERE `share_id` = %d", $share_id);
+    foreach (module_implements('share') as $module) {
+      // invoke hook_share, 'delete'
+      module_invoke($module, 'share', 'delete', array('share_id' => $share_id));
+    }
+  }
+  db_query("DELETE FROM {share} WHERE `share_id` = %d", $share_id);
+}
+
+function share_add_access() {
+  if (!user_access('administer share')) {
+    return FALSE;
+  }
+
+  $tabs = module_invoke_all('share_info');
+  if (empty($tabs)) {
+    return FALSE;
+  }
+  return TRUE;
+}
+
+function share_get_popups($where = NULL, $node_type = NULL, $module = NULL) {
+  static $shares = array();
+
+  $id = $where . $node_type . $module;
+  $where_query = array();
+  if ($where) {
+    $where_query[] = "`where` = '%s'";
+    $vars[] = $where;
+  }
+  if ($node_type) {
+    $where_query[] = "(`node_types` = '%%%s%%' OR `node_types` = '%s')";
+    $vars[] = $node_type;
+    $vars[] = 'a:0:{}';
+  }
+  if ($module) {
+    $where_query[] = "`module` = '%s'";
+    $vars[] = $module;
+  }
+  $where_query = implode(' AND ', $where_query);
+
+  $result = db_query("SELECT * FROM {share} WHERE $where_query", $vars);
+  while ($data = db_fetch_object($result)) {
+    $share = $data;
+    $shares[$id][] = $share;
+  }
+
+  return $shares[$id];
+}
+
+function share_add_js($where = 'node') {
+  static $share = FALSE;
+  static $share_link = FALSE;
+  static $share_block = FALSE;
+
+  switch ($where) {
+    case 'block':
+      if ($share_block == FALSE) {
+        drupal_add_js(drupal_get_path('module', 'share') .'/js/share_block.js');
+        $share_block = TRUE;
+      }
+      break;
+    case 'link':
+      if ($share_link == FALSE) {
+        drupal_add_js(drupal_get_path('module', 'share') .'/js/share_link.js');
+        $share_link = TRUE;
+      }
+      break;
+    case 'node':
+      if ($share == FALSE) {
+        drupal_add_js(drupal_get_path('module', 'share') .'/js/share.js');
+        $share = TRUE;
+      }
+      break;
+  }
+}
+
+function share_add_css($where = 'node') {
+  static $share = FALSE;
+  static $share_block = FALSE;
+
+  switch ($where) {
+    case 'block':
+      if ($share_block == FALSE) {
+        drupal_add_css(drupal_get_path('module', 'share') .'/css/share_block.css');
+        $share_block = TRUE;
+      }
+      break;
+    case 'link':
+    case 'node':
+      if ($share == FALSE) {
+        drupal_add_css(drupal_get_path('module', 'share') .'/css/share.css');
+        $share = TRUE;
+      }
+      break;
+  }
+}
+
+/*******************************************************************************
+ * Theme Functions
+ ******************************************************************************/
+
+function theme_share_popup_tabs($tabs, $nid) {
+  $output = '<ul class="share-menu">';
+  foreach ($tabs as $value) {
+    if ($output == '<ul class="share-menu">') {
+      $output.= '<li class="share-'. $value['id'] .'-'. $nid .'"><a href="" class="share-tab-'. $value['id'] .' selected"><span>'. $value['name'] .'</span></a></li>';
+    } else {
+      $output.= '<li class="share-'. $value['id'] .'-'. $nid .'"><a href="" class="share-tab-'. $value['id'] .'"><span>'. $value['name'] .'</span></a></li>';
+    }
+  }
+  $output.= '</ul>';
+  return $output;
+}
+
+function theme_share_popup_content($content, $nid) {
+  $output = '';
+  foreach ($content as $value) {
+    if ($output == '') {
+      $output.= '<div class="share-'. $value['id'] .' share-'. $value['id'] .'-'. $nid .'">'. $value['content'] .'</div>';
+    } else {
+      $output.= '<div class="share-'. $value['id'] .' share-'. $value['id'] .'-'. $nid .'" style="display: none;">'. $value['content'] .'</div>';
+    }
+  }
+  return $output;
+}
+
+function theme_share_popup($data) {
+  share_add_js();
+  share_add_css();
+
+  $output = '<div class="share-popup" style="display: none;">';
+  $output.= '<div class="share-header">'. l(t('Close'), '', array('class' => 'share-close')) . $data['tabs'] .'</div>';
+  $output.= '<div class="share-content">'. $data['content'] .'</div>';
+  $output.= '</div>';
+  return $output;
+}
+
+function theme_share_page($tabs, $content) {
+  drupal_add_css(drupal_get_path('module', 'share') .'/css/share_page.css');
+
+  $output = '<div id="share-tabs">';
+  foreach ($tabs as $id => $tab) {
+    $output .= '<div id="share-'. $id .'" class="share-tab">'. $tab .'</div>';
+  }
+  $output .= '<div class="clear-block"></div></div>';
+  $output .= $content;
+  return $output;
+}
+
+function theme_share_block($tabs) {
+  share_add_js('block');
+  share_add_css('block');
+
+  $output = '<div class="share-block">';
+  $num = count($tabs);
+  $count = 1;
+  foreach ($tabs as $id => $tab) {
+    $output .= '<div class="share-block-tab'. (($count == $num) ? ' share-block-tab-last' : (($count == 1) ? ' share-block-tab-first' : '')) .'">';
+    $output .= '<h2>'. $tab['title'] .'</h2>';
+    $output .= '<div class="share-block-tab-content">'. $tab['content'] .'</div>';
+    $output .= '</div>';
+    $count++;
+  }
+  $output .= '</div>';
+  return $output;
+}

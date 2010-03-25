@@ -1,0 +1,13 @@
+; $Id: associated_nodes_cck.info,v 1.2.4.2 2009/03/12 14:46:02 jfberroyer Exp $
+name = "Associated Nodes CCK"
+description = "Associate nodes base on CCK fields"
+title = "Associated Nodes CCK"
+project = "associated_nodes"
+package = "Associated Nodes"
+dependencies = associated_nodes content
+
+; Information added by drupal.org packaging script on 2009-04-14
+version = "5.x-1.2"
+project = "associated_nodes"
+datestamp = "1239697204"
+

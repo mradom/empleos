@@ -1,0 +1,69 @@
+$Id: CHANGELOG,v 1.1.2.12 2008/05/27 19:01:27 jhedstrom Exp $
+
+DRUPAL-5, 2008-05-27
+--------------------
+- Changed admin paths to use 'video-upload' instead of 'video_upload'
+- Fixed a bug involving the status update and conflicts with other CCK
+  field types.
+
+
+DRUPAL-5, 2008-05-23
+--------------------
+- Created custom handlers for onsubmit and oncomplete to override the
+  upload.js handlers to account for the bug described in #260792
+- Modified the admin listing to display local video that has been
+  removed from YouTube, and thus orphaned, as described in #261182
+
+
+DRUPAL-5, 2008-05-09
+--------------------
+- Fixed improperly formatted calls to the t() function in
+  zend_gdata.inc
+
+
+DRUPAL-5, 2008-05-07
+--------------------
+- Added new display formatter, thumbnail as link
+- Fixed bug in which taxonomy terms longer than 25 characters in
+  length would cause YouTube to reject the video
+- Slight css changes to the video_upload admin page
+
+
+DRUPAL-5, 2008-05-05
+--------------------
+- Added autoplay and related video display options
+- Added initial thumbnail display configuration and output
+- Added Zend_Gdata_App_HttpException handling for failed connections
+- fixed authentication bug
+
+DRUPAL-5, 2008-05-02
+--------------------
+- Added a js progress bar to preview/submit button functionality
+- Added node token support for the default description field
+- Fixed a bug in which the jquery was failing on pages where a search
+  form was present
+- Re-ordering of logic in _video_upload_widget_form() for better error
+  handling
+- Added widget configuration options for YouTube synchronization of
+  title, keywords and description
+
+
+DRUPAL-5, 2008-05-01
+--------------------
+- Fixed a YouTube category bug, only to find an actual bug in the API.
+- Fixed widget_info hook bug
+- Added a video admin page/form for tracking all videos, and deleting
+  orphaned videos
+- Abstracted video status numbers into constants for easier
+  readability
+
+
+DRUPAL-5, 2008-04-30
+--------------------
+- Field name is now automatically sent to YouTube as a "developer tag"
+
+
+DRUPAL-5, 2008-04-29
+--------------------
+- Video status checking, updating and deleting now enabled for node
+  deletes, and on cron

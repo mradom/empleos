@@ -1,0 +1,10 @@
+; $Id: taxonomy_image.info,v 1.1.2.1.2.3 2008/03/03 02:02:51 nancyw Exp $
+name = Taxonomy Image
+description = Upload and associate images with taxonomy terms.
+dependencies = taxonomy
+package = Taxonomy Image
+; Information added by drupal.org packaging script on 2009-04-12
+version = "5.x-1.6"
+project = "taxonomy_image"
+datestamp = "1239546097"
+

@@ -1,0 +1,11 @@
+; $Id: share_sharethis.info,v 1.1.2.1 2008/11/27 01:55:51 greenskin Exp $
+name = ShareThis
+description = "Provides the ability to use ShareThis."
+package = Share
+dependencies = share
+
+; Information added by drupal.org packaging script on 2008-12-17
+version = "5.x-2.0-alpha10"
+project = "share"
+datestamp = "1229529324"
+

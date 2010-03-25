@@ -1,0 +1,75 @@
+<?php
+// $Id: share.install,v 1.3.2.5 2008/12/01 21:03:46 greenskin Exp $
+
+function share_install() {
+  switch ($GLOBALS['db_type']) {
+    case 'mysqli':
+    case 'mysql':
+      db_query("CREATE TABLE IF NOT EXISTS {share} (
+        `share_id` int(10) unsigned NOT NULL auto_increment,
+        `module` varchar(255) NOT NULL default 'share',
+        `label` varchar(255) NOT NULL default '',
+        `node_types` varchar(255) NOT NULL default '',
+        `category_terms` text NOT NULL default '',
+        `where` enum('block','link','node') NOT NULL default 'link',
+        `view` int(1) unsigned NOT NULL default 1,
+        `status` int(1) unsigned NOT NULL default 1,
+        `weight` int NOT NULL default '0',
+        PRIMARY KEY (`share_id`)
+      ) /*!40100 DEFAULT CHARACTER SET utf8 */;");
+      db_query("CREATE TABLE IF NOT EXISTS {share_share} (
+        `share_id` int(10) unsigned NOT NULL,
+        `name` varchar(255) NOT NULL default '',
+        `effects` int(1) unsigned NOT NULL default '1',
+        KEY (`share_id`)
+      ) /*!40100 DEFAULT CHARACTER SET utf8 */;");
+      db_query("CREATE TABLE IF NOT EXISTS {share_tabs} (
+        `share_id` int(10) unsigned NOT NULL,
+        `id` varchar(255) NOT NULL default '',
+        `title` varchar(255) NOT NULL default '',
+        `enabled` int(1) NOT NULL default '1',
+        `weight` int(2) NOT NULL default '0',
+        `module` varchar(255) NOT NULL default '',
+        KEY (`share_id`)
+      ) /*!40100 DEFAULT CHARACTER SET utf8 */;");
+      break;
+  }
+  drupal_set_message(t('Share installed successfully.'));
+}
+
+function share_uninstall() {
+  db_query("DROP TABLE IF EXISTS {share}, {share_share}, {share_tabs}");
+  variable_del('share_sharethis_tabs');
+  variable_del('share_sharethis_services');
+  variable_del('share_sharethis_publisher');
+  variable_del('share_sharethis_code');
+}
+
+function share_update_5000() {
+  $ret = array();
+
+  switch ($GLOBALS['db_type']) {
+    case 'mysqli':
+    case 'mysql':
+      $ret[] = update_sql("ALTER TABLE {share} CHANGE `where` `where` enum('block','links','nodes') NOT NULL default 'links'");
+      break;
+  }
+
+  return $ret;
+}
+
+function share_update_5001() {
+  $ret = array();
+
+  switch ($GLOBALS['db_type']) {
+    case 'mysqli':
+    case 'mysql':
+      $ret[] = update_sql("ALTER TABLE {share} ADD `weight` int NOT NULL default '0'");
+      $ret[] = update_sql("ALTER TABLE {share} CHANGE `type` `module` varchar(255) NOT NULL default 'share'");
+      $ret[] = update_sql("UPDATE {share} SET `module` = '%s' WHERE `module` = '%s'", 'share_sharethis', 'sharethis');
+      $ret[] = update_sql("ALTER TABLE {share} CHANGE `where` `where` enum('block','link','node') NOT NULL default 'link'");
+      break;
+  }
+
+  return $ret;
+}

@@ -1,0 +1,26 @@
+<?php
+// $Id: link_codes.install,v 1.2 2008/07/27 00:47:12 greenskin Exp $
+
+/**
+ * Implementation of hook_install
+ */
+function link_codes_install() {
+  switch ($GLOBALS['db_type']) {
+    case 'mysqli':
+    case 'mysql':
+      db_query("CREATE TABLE IF NOT EXISTS {share_link_codes} (
+        `share_id` int(10) unsigned NOT NULL,
+        `codes` varchar(255) NOT NULL default '',
+        KEY (`share_id`)
+      ) /*!40100 DEFAULT CHARACTER SET utf8 */;");
+    break;
+  }
+  drupal_set_message(t('Link Codes installed successfully.'));
+}
+
+/**
+ * Implementation of hook_uninstall
+ */
+function link_codes_uninstall() {
+  
+}

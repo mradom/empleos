@@ -1,0 +1,11 @@
+name = Search Index Cloud
+description = "The module produces a tag cloud from stored search terms, based on term occurrences and various limits. The tag cloud is displayed in a dedicated block."
+dependencies = search
+version = "5.x-1.1"
+project = "searchcloud"
+package = "Other"
+; Information added by drupal.org packaging script on 2008-08-01
+version = "5.x-7.1-1"
+project = "searchcloud"
+datestamp = "1217583035"
+
