@@ -29,7 +29,7 @@
     </DIV>
     <div id="browser" class="inside"> </div>
   <!-----banners-minibox---->
-  <?php include("include/banners-central.php");?>
+  <?php include("include/banners-central.php");?> 
   </div>
 <?php include("include/footer.php");?>
 </div>

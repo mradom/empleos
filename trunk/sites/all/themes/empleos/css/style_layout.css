@@ -326,7 +326,7 @@ li.btns.sig:hover{
 	font-weight:bold;
 	line-height:20px;
 	cursor:pointer;
-	text-decoration:none;
+	text-decoration:none; 
 }
 .btn_gral:hover {
 	background: url(../img/bg_btn_orange_hover.png) repeat-x;
