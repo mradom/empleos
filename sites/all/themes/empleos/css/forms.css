@@ -152,7 +152,7 @@ label span.form-required{
 }
 input.form-submit{
 	height:23px;
-	width:80px;
+	width:80px; 
 	background:url(../img/bg_btn_orange.png) repeat-x;
 	padding:0 5px 2px 5px;
 	border:1px solid #FF9900;
