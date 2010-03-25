@@ -1,0 +1,41 @@
+<?php
+// $Id: share_sharethis.install,v 1.1.2.3 2008/12/17 15:42:16 greenskin Exp $
+
+function share_sharethis_install() {
+  switch ($GLOBALS['db_type']) {
+    case 'mysqli':
+    case 'mysql':
+      db_query("CREATE TABLE IF NOT EXISTS {share_sharethis} (
+        `share_id` int(10) unsigned NOT NULL,
+        `icon` varchar(255) NOT NULL default '',
+        `buttonText` varchar(255) NOT NULL default '',
+        `popup` int(1) unsigned NOT NULL default '0',
+        `offsetTop` int(1) unsigned NOT NULL,
+        `offsetLeft` int(1) unsigned NOT NULL,
+        `onclick` text NOT NULL,
+        KEY (`share_id`)
+      ) /*!40100 DEFAULT CHARACTER SET utf8 */;");
+      break;
+  }
+  db_query("UPDATE {system} SET `weight` = %d WHERE `name` = '%s' AND `type` = '%s'", 1, 'share_sharethis', 'module');
+  drupal_set_message(t('ShareThis installed successfully.'));
+}
+
+function share_sharethis_uninstall() {
+  $result = db_query("SELECT share_id FROM {share_sharethis}");
+  while ($data = db_fetch_object($result)) {
+    share_popup_delete($data->share_id, 'share_sharethis');
+  }
+  db_query("DROP TABLE IF EXISTS {share_sharethis}");
+  variable_del('share_sharethis_tabs');
+  variable_del('share_sharethis_services');
+  variable_del('share_sharethis_publisher');
+  variable_del('share_sharethis_code');
+}
+
+function share_sharethis_update_5000() {
+  $ret = array();
+  $ret[] = update_sql("UPDATE {system} SET `weight` = %d WHERE `name` = '%s' AND `type` = '%s'", 1, 'share_sharethis', 'module');
+  $ret[] = update_sql("UPDATE {share} SET `module` = '%s' WHERE `module` = '%s'", 'share_sharethis', 'sharethis');
+  return $ret;
+}

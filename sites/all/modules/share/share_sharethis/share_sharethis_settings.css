@@ -1,0 +1,15 @@
+/* $Id: share_sharethis_settings.css,v 1.1.2.1 2008/12/01 21:03:49 greenskin Exp $ */
+
+#share-sharethis-settings,
+#share-sharethis-settings-view {
+  width: 46%;
+  padding: 10px;
+  float: left;
+}
+#share-sharethis-settings-view {
+  float: right;
+}
+#share-sharethis-settings-services .form-item .form-item {
+  width: 50%;
+  float: left;
+}

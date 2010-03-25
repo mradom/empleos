@@ -1,0 +1,11 @@
+; $Id: multistep.info,v 1.1 2008/12/15 15:48:01 vkareh Exp $
+name = Multistep
+description = Adds multistep functionality to CCK content types.
+dependencies = content fieldgroup
+package = "CCK"
+
+; Information added by drupal.org packaging script on 2009-03-07
+version = "5.x-1.2"
+project = "multistep"
+datestamp = "1236456334"
+

@@ -1,0 +1,33 @@
+<?php
+// $Id: cck_map.theme,v 1.1 2007/11/13 01:09:04 beeradb Exp $
+function theme_cck_map($node, $field, $items, $teaser, $page){
+	//note: these javascript files should probably remain in tact, edit at your own peril.
+	drupal_add_js("/maps.google.com/maps?file=api&v=2&key=".variable_get('cck_map_key', ''));
+	drupal_add_js(drupal_get_path('module', 'cck_map') .'/cck_map.js');
+
+
+	$ouptut = '';
+	$prefix = str_replace("_", "-", $field['field_name']);
+	$jsPrefix = str_replace("-", "_", $field['field_name']);
+
+	if($field['widget']['label'])
+		$output .= "<h3>".$field['widget']['label']."</h3>";
+	
+	//the $prefix."mapArea" div is targetted by the javascript to insert the map element in. You need an element with this id for the map to display properly.
+	$output .= "<div id='".$prefix."mapArea'  class='mapArea' style=\"width: ".$field['widget']['mapx']."px; height: ".$field['widget']['mapy']."px\"></div>";
+	$items[0]['maplat'] ? $lat = $items[0]['maplat'] : $lat = 0;
+	$items[0]['maplon'] ? $lon = $items[0]['maplon'] : $lon = 0;
+	$items[0]['mapzoom'] ? $zoom = $items[0]['mapzoom'] : $zoom = 0;
+	$items[0]['maptype'] ? $mapType = $items[0]['maptype'] : $mapType = '';
+	$items[0]['points'] ? $points = $items[0]['points'] : $points = '';
+	//google maps doesn't like relative urls for marker images. This totally sucks and I hope to fix it. I appologize.
+	$tld = $_SERVER['SERVER_NAME'];
+
+	
+	$output .= "<script type=\"text/javascript\" language=\"javascript\">var {$jsPrefix}map;{$jsPrefix}map = new gmapClientController('{$prefix}',".$lat.", ".$lon.", ".$zoom.", '".$mapType."', '".$points."', '".$tld."');</script>";
+	
+	return $output;
+	
+}
+
+?>

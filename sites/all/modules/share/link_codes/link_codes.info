@@ -1,0 +1,10 @@
+; $Id: link_codes.info,v 1.1 2008/06/27 01:28:19 greenskin Exp $
+name = Link Codes
+description = "Adds a tab in the Share popup which provides various types of link codes for the viewed node."
+dependencies = share
+package = Share
+; Information added by drupal.org packaging script on 2008-12-17
+version = "5.x-2.0-alpha10"
+project = "share"
+datestamp = "1229529324"
+

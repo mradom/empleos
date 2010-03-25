@@ -1,0 +1,17 @@
+/* $Id: share_page.css,v 1.1.2.3 2008/11/07 00:25:08 greenskin Exp $ */
+
+#share-tabs {
+  border-bottom: 1px solid #CCCCCC;
+}
+.share-tab {
+  width: 30%;
+  float: left;
+  overflow: hidden;
+  padding: 0px 15px 0px 0px;
+}
+.share-tab .form-text {
+  width: 98%;
+}
+.share-tab .form-textarea {
+  width: 99%;
+}

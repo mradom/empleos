@@ -1,0 +1,293 @@
+<?php
+// $Id: share_sharethis.module,v 1.1.2.4 2008/12/01 23:49:57 greenskin Exp $
+
+/**
+ * @file
+ * Provides the ability to use ShareThis
+ *
+ * This module allows the creation of ShareThis links/popups using the Share
+ * module as a base which allows for multiple ShareThis links/popups with
+ * different customizations.
+ *
+ * Written by greenSkin.
+ */
+
+$path = drupal_get_path('module', 'share_sharethis');
+  require_once("$path/share_sharethis_class.inc");
+
+/*******************************************************************************
+ * Hook Functions (Drupal)
+ ******************************************************************************/
+
+/**
+ * Implementation of hook_perm().
+ */
+function share_sharethis_perm() {
+  return array('use sharethis');
+}
+
+function share_sharethis_menu($may_cache) {
+  $items = array();
+
+  if ($may_cache) {
+    $items[] = array(
+      'path' => 'admin/build/share/add/sharethis',
+      'title' => t('Add ShareThis'),
+      'callback' => 'drupal_get_form',
+      'callback arguments' => array('share_popup_form', NULL, 'share_sharethis'),
+      'type' => MENU_LOCAL_TASK,
+      'access' => user_access('administer share')
+    );
+  }
+
+  return $items;
+}
+
+/**
+ * Implementation of hook_form_alter().
+ */
+function share_sharethis_form_alter($form_id, &$form) {
+  if ($form_id == 'share_popup_form' && $form['module']['#value'] == 'share_sharethis') {
+    $share = $form['_share']['#value'];
+    unset($form['share']);
+
+    // GLOBAL
+    $form['sharethis']['global'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Global'),
+      '#description' => t('These settings apply to all ShareThis popups.'),
+      '#collapsible' => TRUE,
+      '#collapsed' => (!variable_get('share_sharethis_services', FALSE)) ? FALSE : TRUE
+    );
+    $form['sharethis']['global']['popup']['#theme'] = 'share_sharethis_settings';
+    $form['sharethis']['global']['popup']['tabs'] = array(
+      '#type' => 'checkboxes',
+      '#title' => t('Choose your tabs'),
+      '#default_value' => $share->tabs,
+      '#options' => array('web' => t('Social Web'), 'post' => t('Post'), 'email' => t('Send/Email')),
+      '#required' => TRUE
+    );
+    $services = share_sharethis_services();
+    $form['sharethis']['global']['popup']['services'] = array(
+      '#type' => 'checkboxes',
+      '#title' => t('Choose Your Social Web Services'),
+      '#default_value' => $share->services,
+      '#options' => $services
+    );
+    $form['sharethis']['global']['popup']['services_order'] = array(
+      '#type' => 'textarea',
+      '#default_value' => implode(',', $share->services),
+      '#prefix' => '<div style="display: none;">',
+      '#suffix' => '</div>'
+    );
+    $form['sharethis']['global']['popup']['share'] = array(
+      '#type' => 'value',
+      '#value' => $share
+    );
+    $form['sharethis']['global']['advanced'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Advanced settings'),
+      '#description' => t('Only use these settings if you know what you are doing.'),
+      '#collapsible' => TRUE,
+      '#collapsed' => TRUE
+    );
+    $form['sharethis']['global']['advanced']['publisher'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Publisher ID'),
+      '#description' => t('Specify your publisher id to track clicks for ShareThis.'),
+      '#default_value' => $share->publisher
+    );
+    $form['sharethis']['global']['advanced']['code'] = array(
+      '#type' => 'textarea',
+      '#title' => t('ShareThis Code'),
+      '#description' => t('If set, this takes precedence over other ShareThis settings and skips validation for those settings. Javascript code provided by ShareThis. You can generate your own code !here.', array('!here' => l(t('here'), 'http://sharethis.com/publisher?type=stapi'))),
+      '#default_value' => $share->code
+    );
+
+    // Non-Global
+    $form['sharethis']['icon'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Icon path'),
+      '#description' => t('Specify a path for a custom icon to use.'),
+      '#default_value' => $share->icon
+    );
+    $form['sharethis']['button_text'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Button text'),
+      '#default_value' => $share->buttonText
+    );
+    $form['sharethis']['popup'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Popup window'),
+      '#description' => t('If set, the popup will show in a new window.'),
+      '#default_value' => $share->popup
+    );
+    $form['sharethis']['offset']['top'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Offset top'),
+      '#description' => t('Changes the vertical positioning of the ShareThis widget in relation to the button link.'),
+      '#default_value' => $share->offset['top']
+    );
+    $form['sharethis']['offset']['left'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Offset left'),
+      '#description' => t('Changes the horizontal positiong of the ShareThis widget in relation to the button link .'),
+      '#default_value' => $share->offset['left']
+    );
+    $form['sharethis']['onclick'] = array(
+      '#type' => 'textarea',
+      '#title' => t('Code to execute on-click.'),
+      '#description' => t('Allows for execution of a custom function when button is clicked.'),
+      '#default_value' => $share->onclick
+    );
+    $form['#validate']['share_sharethis_popup_form_validate'] = array();
+  }
+}
+
+/*******************************************************************************
+ * Hook Functions (Share)
+ ******************************************************************************/
+
+/**
+ * Implementation of hook_share().
+ */
+function share_sharethis_share($op, $args) {
+  switch ($op) {
+    case 'insert':
+      $services = empty($args['services_order']) ? $args['services'] : explode(',', $args['services_order']);
+      db_query("INSERT INTO {share_sharethis} (`share_id`, `icon`, `buttonText`, `popup`, `offsettop`, `offsetleft`, `onclick`) VALUES (%d, '%s', '%s', %d, %d, %d, '%s')",
+        $share_id, $args['icon'], $args['button_text'], $args['popup'], $args['top'], $args['left'], $args['onclick']);
+      variable_set('share_sharethis_tabs', $args['tabs']);
+      variable_set('share_sharethis_services', $services);
+      variable_set('share_sharethis_publisher', $args['publisher']);
+      variable_set('share_sharethis_code', $args['code']);
+      break;
+    case 'update':
+      $services = empty($args['services_order']) ? $args['services'] : explode(',', $args['services_order']);
+      db_query("UPDATE {share_sharethis} SET `icon` = '%s', `buttonText` = '%s', `popup` = %d, `offsettop` = %d, `offsetleft` = %d, `onclick` = '%s' WHERE `share_id` = %d",
+        $args['icon'], $args['button_text'], $args['popup'], $args['top'], $args['left'], $args['onclick'], $args['share_id']);
+      variable_set('share_sharethis_tabs', $args['tabs']);
+      variable_set('share_sharethis_services', $services);
+      variable_set('share_sharethis_publisher', $args['publisher']);
+      variable_set('share_sharethis_code', $args['code']);
+      break;
+    case 'delete':
+      db_query("DELETE FROM {share_sharethis} WHERE `share_id` = %d", $args['share_id']);
+      break;
+  }
+}
+
+/**
+ * Implementation of hook_share_render().
+ */
+function share_sharethis_share_render($op, $share, $node = NULL) {
+  switch ($op) {
+    case 'link':
+      $links = array();
+      if (user_access('use sharethis') && $node) {
+        $links['share_'. $share->share_id .'_'. $node->nid] = array(
+          'title' => $share->render($node),
+          'html' => TRUE
+        );
+      }
+      return $links;
+    case 'node':
+      $content = array();
+      if (user_access('use sharethis') && $node) {
+        $content['share_'. $share->share_id .'_'. $node->nid] = array(
+          '#value' => $share->render($node),
+          '#weight' => $share->weight
+        );
+      }
+      return $content;
+    case 'block':
+      return $share->render($node);
+  }
+}
+
+/*******************************************************************************
+ * Callback Functions, Forms, and Tables
+ ******************************************************************************/
+
+function share_sharethis_popup_form_validate($form_id, $form_values, $form) {
+  switch ($form_values['module']) {
+    case 'share_sharethis':
+      if (empty($form_values['code'])) {
+        $service_set = FALSE;
+        foreach ($form_values['services'] as $service) {
+          if ($service) {
+            $service_set = TRUE;
+          }
+        }
+        if (!$service_set && $form_values['tabs']['web']) {
+          form_set_error('services', t('At least one service has to been selected.'));
+        }
+        if (!$form_values['publisher']) {
+          form_set_value($form['sharethis']['advanced']['publisher'], 'd4a10265-492e-4646-82f0-bb513c7ca25f');
+        }
+      }
+      break;
+  }
+}
+
+/*******************************************************************************
+ * Module and Helper Functions
+ ******************************************************************************/
+
+function share_sharethis_services() {
+  $options = array(
+    'reddit' => t('reddit'),
+    'digg' => t('digg'),
+    'facebook' => t('Facebook'),
+    'myspace' => t('MySpace'),
+    'delicious' => t('del.icio.us'),
+    'stumbleupon' => t('StumbleUpon'),
+    'technorati' => t('Technorati'),
+    'google_bmarks' => t('Google Bookmarks'),
+    'yahoo_bmarks' => t('Yahoo Bookmarks'),
+    'yahoo_myweb' => t('Yahoo! My Web'),
+    'windows_live' => t('Windows Live'),
+    'propeller' => t('Propeller'),
+    'slashdot' => t('Slashdot'),
+    'newsvine' => t('newsvine'),
+    'n4g' => t('N4G'),
+    'mixx' => t('Mixx'),
+    'blinklist' => t('blinklist'),
+    'furl' => t('Furl'),
+    'magnolia' => t('ma.gnolia'),
+    'mister_wong' => t('Mister Wong'),
+    'blogmarks' => t('BlogMarks'),
+    'faves' => t('Faves'),
+    'current%' => t('Current'),
+    'simpy' => t('Simpy'),
+    'meneame' => t('Meneame'),
+    'yigg' => t('Yigg'),
+    'oknotizie' => t('OKNOtizie'),
+    'fresqui' => t('Fresqui'),
+    'diigo' => t('Diigo'),
+    'care2' => t('Care2'),
+    'funp' => t('funP'),
+    'kirtsy' => t('Kirtsy'),
+    'hugg' => t('Hugg')
+  );
+  return $options;
+}
+
+/*******************************************************************************
+ * Theme Functions
+ ******************************************************************************/
+
+function theme_share_sharethis_settings($form) {
+  drupal_add_js(drupal_get_path('module', 'share_sharethis') .'/share_sharethis_settings.js');
+  drupal_add_css(drupal_get_path('module', 'share_sharethis') .'/share_sharethis_settings.css');
+
+  $share = $form['share']['#value'];
+
+  $output = '<div id="share-sharethis-settings">'. drupal_render($form['tabs']);
+  $output.= '<div id="share-sharethis-settings-services">'. drupal_render($form['services']) .'</div>';
+  $output.= drupal_render($form['services_order']);
+  $output.= '<div style="clear: both;"></div></div>';
+  // $output.= '<div id="sharethis-settings-view">'. $share->render((object)array('title' => t('Settings'))) .'</div>';
+  $output.= '<div style="clear: both;">'. drupal_render($form) .'</div>';
+  return $output;
+}

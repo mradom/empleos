@@ -1,0 +1,100 @@
+<?php
+// $Id: link_codes.module,v 1.3.2.3 2008/11/27 01:55:51 greenskin Exp $
+
+/**
+ * @file
+ * One line description of the module.
+ *
+ * More specific description of the module.
+ *
+ * Credits, URL if available.
+ */
+
+/*******************************************************************************
+ * Hook Functions (Drupal)
+ ******************************************************************************/
+
+
+
+/*******************************************************************************
+ * Hook Functions (Share)
+ ******************************************************************************/
+
+/**
+ * Implementation of hook_share_info().
+ */
+function link_codes_share_info() {
+  $info = array(
+    'id' => 'link_codes',
+    'title' => t('Link codes'),
+    'enabled' => TRUE,
+    'weight' => 0
+  );
+  return $info;
+}
+
+/**
+ * Implementation of hook_share_tab().
+ */
+function link_codes_share_tab($op, $args, $node = NULL) {
+  switch ($op) {
+    case 'load':
+      if ($codes = db_result(db_query("SELECT codes FROM {share_link_codes} WHERE `share_id` = %d", $args->share_id))) {
+        $codes = unserialize($codes);
+        return array('codes' => $codes);
+      }
+      break;
+    case 'settings':
+      $defaults = ($args->codes) ? array_values($args->codes) : array('direct', 'html');
+      $form['link_codes_type'] = array(
+        '#type' => 'checkboxes',
+        '#title' => t('Types'),
+        '#description' => t('Provide generated link code(s) that point to the node.'),
+        '#default_value' => array_filter($defaults),
+        '#options' => array('direct' => t('Direct URL'), 'html' => t('HTML code'), 'forum' => t('Forum code'))
+      );
+      return $form;
+    case 'validate':
+      $codes = array_filter($args['link_codes_type']);
+      if (empty($codes)) {
+        form_set_error('link_codes_type', t('At least one link code type has to be enabled.'));
+      }
+      break;
+    case 'insert':
+      db_query("INSERT INTO {share_link_codes} (`share_id`, `codes`) VALUES (%d, '%s')",
+        $args['share_id'], serialize($args['link_codes_type']));
+      break;
+    case 'update':
+      db_query("UPDATE {share_link_codes} SET `codes` = '%s' WHERE `share_id` = %d",
+        serialize($args['link_codes_type']), $args['share_id']);
+      break;
+    case 'process':
+      $output = '';
+      foreach ($args->codes as $code) {
+        if ($code) {
+          $output.= link_codes_generate($code, $node);
+        }
+      }
+      return $output;
+  }
+}
+
+/*******************************************************************************
+ * Callback Functions, Forms, and Tables
+ ******************************************************************************/
+
+function link_codes_generate($op, $node) {
+  $alias = drupal_get_path_alias('node/'.$node->nid);
+  switch ($op) {
+    case "direct":
+      return '<div class="share_link_code form-item"><label for="direct_url">Direct URL</label><input id="direct_url" class="link-codes-direct link-codes" name="direct_url" type="text" onClick="this.focus(); this.select();" value="http://'.$_SERVER['HTTP_HOST'].base_path().$alias.'" size="40" /></div>';
+    case "html":
+      return '<div class="share_link_code form-item"><label for="html_code">HTML Code</label><input id="html_code" class="link-codes-html link-codes" name="html_code" type="text" onClick="this.focus(); this.select();" value="&lt;a href=&quot;http://'.$_SERVER['HTTP_HOST'].base_path().$alias.'&quot;&gt;Click Here To view '.$node->title.'!&lt;/a&gt;" size="40" /></div>';
+    case "forum":
+      return '<div class="share_link_code form-item"><label for="forum_code">Forum Code</label><input id="forum_code" class="link-codes-forum link-codes" name="forum_code" type="text" onClick="this.focus(); this.select();" value="[url=http://'.$_SERVER['HTTP_HOST'].base_path().$alias.']Click Here To view '.$node->title.'![/url]" size="40" /></div>';
+  }
+}
+
+/*******************************************************************************
+ * Module and Helper Functions
+ ******************************************************************************/
