@@ -84,6 +84,15 @@ div.bloque, fieldset{
 	margin-top:15px;
 	padding-left:300px;
 }
+
+.mycv .required{
+	border:1px solid #2233cc
+}
+
+.mycv .error{
+	border:1px solid #ff0000
+}
+
 .mycv input.button, .mycv form-submit{
 	width:auto;
 	height:23px;
@@ -129,12 +138,14 @@ input.check{ background:none; border:0}
 	margin-bottom:10px;
 }
 .mycv .form-item select{
-	width:280px;
+	width:360px;
 	size:60;	
 }
 .mycv .form-item input, .mycv textarea{
-	width:280px;	
+	width:360px;	
 }
+
+/*------ojo cambio de 280 a 360 y description lo ordenaba al medio-------*/
 .mycv .form-item div.description, .mycv ul.tips, .mycv p{
 	color:#999;
 	width:280px;
