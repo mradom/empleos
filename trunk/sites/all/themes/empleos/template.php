@@ -423,44 +423,24 @@ function phptemplate_p_idiomas_node_form(&$form, $form_state, $form_id) {
     $form['taxonomy']['#type'] = '';
     $form['body_filter'] = '';
     
-    $form['body_filter']['body']['#title'] = 'Descripcion';
-    $form['body_filter']['body']['#rows'] = 10;
-    $form['body_filter']['body']['#cols'] = 80;    
-    
-    $form['body_filter']['format']['format']['guidelines']['#value'] = '';
-    $form['body_filter']['format'][2]['#value'] = '';
-    
     $form['preview']="" ;
     $form['submit']['#value']="Guardar" ;
     
-    firep($form['submit'], 'Formulario');
-        
-	//print '<pre>';
-	//print_r($form);
-	//print '</pre>';
+    //firep($form['submit'], 'Formulario');
+        	
     $miform  = '';
-    //$miform .= drupal_render($form);
-    
     
     $miform .= drupal_render($form['ini']);
     $miform .= drupal_render($form['intro']);
 	$miform .= drupal_render($form['title']);
-	$miform .= drupal_render($form['field_en_calidad_de']);
-	$miform .= drupal_render($form['field_lugar']);
-  	$miform .= drupal_render($form['field_nota']);
-	$miform .= drupal_render($form['field_numero_de_certificado']);
-	$miform .= drupal_render($form['field_numero_de_examen']);
-	$miform .= drupal_render($form['field_web_0']);
+	$miform .= drupal_render($form['taxonomy'][get_vocabulary_by_name('Idiomas')]);
+	
+	$miform .= drupal_render($form['field_nivel_oral']);
+	$miform .= drupal_render($form['field_nivel_escrito']);
+	$miform .= drupal_render($form['field_nivel_de_lectura']);
+	$miform .= drupal_render($form['field_ltima_vez_aplicado']);
 	
 	$miform .= drupal_render($form['body_filter']);
-	
-	
-	$miform .= drupal_render($form['group_omar_mmmmmm']);
-	
-	$miform .= drupal_render($form['taxonomy'][get_vocabulary_by_name('Mes de Inicio')]);
-	$miform .= drupal_render($form['taxonomy'][get_vocabulary_by_name('Ano de inicio')]);	
-	$miform .= drupal_render($form['taxonomy'][get_vocabulary_by_name('Mes de Finalizacion')]);
-	$miform .= drupal_render($form['taxonomy'][get_vocabulary_by_name('Ano de Fin')]);
 	
 	$miform .= drupal_render($form['submit']);
 	$miform .= drupal_render($form['delete']);
@@ -488,6 +468,8 @@ function phptemplate_p_cursos_node_form(&$form, $form_state, $form_id) {
 	// le pongo el weight bien bajo para que lo ponga primero
 	$form['intro']['#weight']  = -40;
 	
+	
+	$form['title']['#title']='Curso';
     $form['taxonomy']['#type'] = '';
     $form['body_filter'] = '';
     
@@ -531,73 +513,6 @@ function phptemplate_p_cursos_node_form(&$form, $form_state, $form_id) {
 }
 
 function phptemplate_p_informatica_node_form(&$form, $form_state, $form_id) {
-	//print '<pre>';
-	//print_r($form);
-	//print '</pre>';  
-	
-	$form['intro']['#value']  = t('<h3>Comienzo de formulario de informatica</h3>');
-	// Lo pongo dentro de un div para poder temearlo
-	$form['intro']['#prefix']  = '<div class="xxx">';
-	$form['intro']['#suffix']  = '</div>';
-	// le pongo el weight bien bajo para que lo ponga primero
-	$form['intro']['#weight']  = -40;
-	
-    $form['title']['#title'] = 'Titulaso';
-    $form['body_filter']['body']['#title'] = 'Cuerpo';
-    
-    $form['preview']="" ;
-
-  return drupal_render($form);
-}
-
-function phptemplate_p_otros_conocimientos_node_form(&$form, $form_state, $form_id) {
-	//print '<pre>';
-	//print_r($form);
-	//print '</pre>';  
-	
-	$form['intro']['#value']  = t('<h3>Comienzo de formulario de informatica</h3>');
-	// Lo pongo dentro de un div para poder temearlo
-	$form['intro']['#prefix']  = '<div class="xxx">';
-	$form['intro']['#suffix']  = '</div>';
-	// le pongo el weight bien bajo para que lo ponga primero
-	$form['intro']['#weight']  = -40;
-	
-    $form['title']['#title'] = 'Titulaso';
-    $form['body_filter']['body']['#title'] = 'Cuerpo';
-    
-    $form['preview']="" ;
-
-  return drupal_render($form);
-}
-
-function phptemplate_p_experiencia_laboral_node_form(&$form, $form_state, $form_id) {
-	//print '<pre>';
-	//print_r($form);
-	//print '</pre>';  
-	
-	$form['intro']['#value']  = t('<h3>Comienzo de formulario de experiencia laboral</h3>');
-	// Lo pongo dentro de un div para poder temearlo
-	$form['intro']['#prefix']  = '<div class="xxx">';
-	$form['intro']['#suffix']  = '</div>';
-	// le pongo el weight bien bajo para que lo ponga primero
-	$form['intro']['#weight']  = -40;
-	
-    $form['title']['#title'] = 'Titulaso';
-    $form['body_filter']['body']['#title'] = 'Cuerpo';
-    
-    $form['body_filter']['format']['format']['guidelines']['#value'] = '';
-    $form['body_filter']['format'][2]['#value'] = '';
-    
-    $form['preview']="" ;
-
-  return drupal_render($form);
-}
-
-
-function phptemplate_p_referencia_node_form(&$form, $form_state, $form_id) {
-	//print '<pre>';
-	//print_r($form);
-	//print '</pre>';  
 	$form['ini']['#prefix']  = '<div class="mycv">';
 	$form['ini']['#value']  = ' ';
 	$form['ini']['#weight']  = -99;	
@@ -606,45 +521,276 @@ function phptemplate_p_referencia_node_form(&$form, $form_state, $form_id) {
 	$form['fin']['#value']  = ' ';
 	$form['fin']['#weight']  = 99;
 	
-	$form['intro']['#value']  = t('<h3>Comienzo de formulario de referencia</h3>');
+	
+	$form['intro']['#value']  = '<legend>Inform&aacute;tica:</legend>';
 	// Lo pongo dentro de un div para poder temearlo
-	$form['intro']['#prefix']  = '<div class="xxx">';
-	$form['intro']['#suffix']  = '</div>';
+	$form['intro']['#prefix']  = '<fieldset>';
+	$form['intro']['#suffix']  = '</fieldset>';
 	// le pongo el weight bien bajo para que lo ponga primero
 	$form['intro']['#weight']  = -40;
 	
-    $form['title']['#title'] = 'Titulaso';
-    $form['body_filter']['body']['#title'] = 'Cuerpo';
+	
+	$form['title']['#title']='Recurso';
+    $form['taxonomy']['#type'] = '';
+    $form['body_filter'] = '';
     
-    //$form['body_filter']['format']['format']['guidelines']['#value'] = '';
-    //$form['body_filter']['format'][2]['#value'] = '';
+    $form['body_filter']['body']['#title'] = 'Descripcion';
+    $form['body_filter']['body']['#rows'] = 10;
+    $form['body_filter']['body']['#cols'] = 80;    
+    
+    $form['body_filter']['format']['format']['guidelines']['#value'] = '';
+    $form['body_filter']['format'][2]['#value'] = '';
     
     $form['preview']="" ;
+    $form['submit']['#value']="Guardar" ;
+    
+    firep($form['submit'], 'Formulario');
+        
+    $miform  = '';
+    
+    $miform .= drupal_render($form['ini']);
+    $miform .= drupal_render($form['intro']);
+	$miform .= drupal_render($form['title']);
+	$miform .= drupal_render($form['taxonomy'][get_vocabulary_by_name('Tipo de Software')]);
+	$miform .= drupal_render($form['field_detalle']);
+	$miform .= drupal_render($form['field_nivel']);
+	
+	$miform .= drupal_render($form['body_filter']);
+	
+	$miform .= drupal_render($form['submit']);
+	$miform .= drupal_render($form['delete']);
+	$miform .= drupal_render($form['fin']);
+	$miform .= drupal_render($form);
+  return $miform;
+}
 
-  return drupal_render($form);
+function phptemplate_p_otros_conocimientos_node_form(&$form, $form_state, $form_id) {
+
+	$form['ini']['#prefix']  = '<div class="mycv">';
+	$form['ini']['#value']  = ' ';
+	$form['ini']['#weight']  = -99;	
+	
+	$form['fin']['#prefix']  = '</div>';
+	$form['fin']['#value']  = ' ';
+	$form['fin']['#weight']  = 99;
+	
+	
+	$form['intro']['#value']  = '<legend>Otros Conocimientos:</legend>';
+	// Lo pongo dentro de un div para poder temearlo
+	$form['intro']['#prefix']  = '<fieldset>';
+	$form['intro']['#suffix']  = '</fieldset>';
+	// le pongo el weight bien bajo para que lo ponga primero
+	$form['intro']['#weight']  = -40;
+	
+	
+	$form['title']['#title']='Tipo';
+    $form['taxonomy']['#type'] = '';
+    $form['body_filter'] = '';
+    
+    $form['body_filter']['body']['#title'] = 'Descripci&oacute;n';
+    $form['body_filter']['body']['#rows'] = 10;
+    $form['body_filter']['body']['#cols'] = 80;    
+    
+    $form['body_filter']['format']['format']['guidelines']['#value'] = '';
+    $form['body_filter']['format'][2]['#value'] = '';
+    
+    $form['preview']="" ;
+    $form['submit']['#value']="Guardar" ;
+    
+    firep($form['submit'], 'Formulario');
+        
+    $miform  = '';
+    
+    $miform .= drupal_render($form['ini']);
+    $miform .= drupal_render($form['intro']);
+    
+    $miform .= drupal_render($form['title']);
+	$miform .= drupal_render($form['field_nombre']);
+	
+	$miform .= drupal_render($form['field_descripcion']);
+	
+	$miform .= drupal_render($form['submit']);
+	$miform .= drupal_render($form['delete']);
+	$miform .= drupal_render($form['fin']);
+	$miform .= drupal_render($form);
+  return $miform;
+}
+
+function phptemplate_p_experiencia_laboral_node_form(&$form, $form_state, $form_id) {
+
+	$form['ini']['#prefix']  = '<div class="mycv">';
+	$form['ini']['#value']  = ' ';
+	$form['ini']['#weight']  = -99;	
+	
+	$form['fin']['#prefix']  = '</div>';
+	$form['fin']['#value']  = ' ';
+	$form['fin']['#weight']  = 99;
+	
+	
+	$form['intro']['#value']  = '<legend>Experiencia Laboral:</legend>';
+	// Lo pongo dentro de un div para poder temearlo
+	$form['intro']['#prefix']  = '<fieldset>';
+	$form['intro']['#suffix']  = '</fieldset>';
+	// le pongo el weight bien bajo para que lo ponga primero
+	$form['intro']['#weight']  = -40;
+	
+	
+	$form['title']['#title']='Tipo';
+    $form['taxonomy']['#type'] = 'Experiencia';
+    $form['body_filter'] = '';
+    
+    $form['body_filter']['body']['#title'] = 'Descripci&oacute;n';
+    $form['body_filter']['body']['#rows'] = 10;
+    $form['body_filter']['body']['#cols'] = 80;    
+    
+    $form['body_filter']['format']['format']['guidelines']['#value'] = '';
+    $form['body_filter']['format'][2]['#value'] = '';
+    
+    $form['preview']="" ;
+    $form['submit']['#value']="Guardar" ;
+    
+    firep($form['submit'], 'Formulario');
+        
+    $miform  = '';
+    
+    $miform .= drupal_render($form['ini']);
+    $miform .= drupal_render($form['intro']);
+    
+    $miform .= drupal_render($form['title']);
+	
+    $miform .= drupal_render($form['field_nombre']);
+	
+	$miform .= drupal_render($form['field_empresa']);
+	$miform .= drupal_render($form['taxonomy'][get_vocabulary_by_name('Actividad')]);
+	$miform .= drupal_render($form['taxonomy'][get_vocabulary_by_name('Area')]);
+	$miform .= drupal_render($form['taxonomy'][get_vocabulary_by_name('Jerarquia')]);
+	$miform .= drupal_render($form['field_nombre_del_puesto']);
+	$miform .= drupal_render($form['field_dotacion_total_de_la_empr']);
+	$miform .= drupal_render($form['field_descripcin_de_tareas']);
+	
+	$miform .= drupal_render($form['submit']);
+	$miform .= drupal_render($form['delete']);
+	$miform .= drupal_render($form['fin']);
+	$miform .= drupal_render($form);
+  return $miform;
+}
+
+
+function phptemplate_p_referencia_node_form(&$form, $form_state, $form_id) {
+
+	$form['ini']['#prefix']  = '<div class="mycv">';
+	$form['ini']['#value']  = ' ';
+	$form['ini']['#weight']  = -99;	
+	
+	$form['fin']['#prefix']  = '</div>';
+	$form['fin']['#value']  = ' ';
+	$form['fin']['#weight']  = 99;
+	
+	
+	$form['intro']['#value']  = '<legend>Referencia Laboral:</legend>';
+	// Lo pongo dentro de un div para poder temearlo
+	$form['intro']['#prefix']  = '<fieldset>';
+	$form['intro']['#suffix']  = '</fieldset>';
+	// le pongo el weight bien bajo para que lo ponga primero
+	$form['intro']['#weight']  = -40;
+	
+	
+	$form['title']['#title']='Persona';
+    $form['body_filter'] = '';
+    
+    $form['body_filter']['body']['#title'] = 'Descripci&oacute;n';
+    $form['body_filter']['body']['#rows'] = 10;
+    $form['body_filter']['body']['#cols'] = 80;    
+    
+    $form['body_filter']['format']['format']['guidelines']['#value'] = '';
+    $form['body_filter']['format'][2]['#value'] = '';
+    
+    $form['preview']="" ;
+    $form['submit']['#value']="Guardar" ;
+    
+    firep($form['submit'], 'Formulario');
+        
+    $miform  = '';
+    
+    $miform .= drupal_render($form['ini']);
+    $miform .= drupal_render($form['intro']);
+    
+    $miform .= drupal_render($form['title']);
+	
+	$miform .= drupal_render($form['field_empresa_0']);
+	$miform .= drupal_render($form['field_titulo_o_cargo']);
+	$miform .= drupal_render($form['field_telefono']);
+	$miform .= drupal_render($form['field_email']);
+	
+	$miform .= drupal_render($form['submit']);
+	$miform .= drupal_render($form['delete']);
+	$miform .= drupal_render($form['fin']);
+	$miform .= drupal_render($form);
+  return $miform;
 }
 
 function phptemplate_p_objetivo_laboral_node_form(&$form, $form_state, $form_id) {
-	//print '<pre>';
-	//print_r($form);
-	//print '</pre>';  
+	$form['ini']['#prefix']  = '<div class="mycv">';
+	$form['ini']['#value']  = ' ';
+	$form['ini']['#weight']  = -99;	
 	
-	$form['intro']['#value']  = t('<h3>Comienzo de formulario de objetivo laboral</h3>');
+	$form['fin']['#prefix']  = '</div>';
+	$form['fin']['#value']  = ' ';
+	$form['fin']['#weight']  = 99;
+	
+	
+	$form['intro']['#value']  = '<legend>Objetivo Laboral:</legend>';
 	// Lo pongo dentro de un div para poder temearlo
-	$form['intro']['#prefix']  = '<div class="xxx">';
-	$form['intro']['#suffix']  = '</div>';
+	$form['intro']['#prefix']  = '<fieldset>';
+	$form['intro']['#suffix']  = '</fieldset>';
 	// le pongo el weight bien bajo para que lo ponga primero
 	$form['intro']['#weight']  = -40;
 	
-    $form['title']['#title'] = 'Titulaso';
-    $form['body_filter']['body']['#title'] = 'Cuerpo';
+	
+	$form['title']['#title']='Persona';
+    $form['body_filter'] = '';
+    $form['taxonomy']['#type'] = '';
     
-    //$form['body_filter']['format']['format']['guidelines']['#value'] = '';
-    //$form['body_filter']['format'][2]['#value'] = '';
+    $form['body_filter']['body']['#title'] = 'Descripci&oacute;n';
+    $form['body_filter']['body']['#rows'] = 10;
+    $form['body_filter']['body']['#cols'] = 80;    
+    
+    $form['body_filter']['format']['format']['guidelines']['#value'] = '';
+    $form['body_filter']['format'][2]['#value'] = '';
     
     $form['preview']="" ;
-
-  return drupal_render($form);
+    $form['submit']['#value']="Guardar" ;
+    
+    firep($form['submit'], 'Formulario');
+        
+    $miform  = '';
+    
+    $miform .= drupal_render($form['ini']);
+    $miform .= drupal_render($form['intro']);
+    
+    $miform .= drupal_render($form['title']);
+    
+	$miform .= drupal_render($form['taxonomy'][get_vocabulary_by_name('Ramo o Actividad')]);
+	$miform .= drupal_render($form['taxonomy'][get_vocabulary_by_name('Area')]);
+	$miform .= drupal_render($form['taxonomy'][get_vocabulary_by_name('Jerarquia')]);
+	
+	$miform .= drupal_render($form['taxonomy'][get_vocabulary_by_name('Disponibilidad')]);
+	$miform .= drupal_render($form['field_detalle_de_disponibilidad']);
+	
+	
+	$miform .= drupal_render($form['field_titulo_o_cargo']);
+	$miform .= drupal_render($form['field_dispuesto_a_ubicarme_en_o']);
+	$miform .= drupal_render($form['field_dispuesto_a_ubicarme_en_0']);
+	
+	$miform .= drupal_render($form['taxonomy'][get_vocabulary_by_name('Sueldo Pretendido')]);
+	
+	$miform .= drupal_render($form['field_objetivo']);
+		
+	$miform .= drupal_render($form['submit']);
+	$miform .= drupal_render($form['delete']);
+	$miform .= drupal_render($form['fin']);
+	$miform .= drupal_render($form);
+  return $miform;
 }
 
 function phptemplate_p_educacion_node_form(&$form, $form_state, $form_id) {
