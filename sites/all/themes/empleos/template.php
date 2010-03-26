@@ -122,7 +122,106 @@ function phptemplate_user_register($form) {
  * Lo mismo en este caso, aca le decimos que queremos cargar el user_register.tpl.php para hacer el formulario de registro 
  **/
 function phptemplate_user_edit($form) {
-    return _phptemplate_callback('user_edit', array('form' => $form));
+	global $user;
+	$form['ini']['#prefix']  = '<div class="mycv">';
+	$form['ini']['#value']  = ' ';
+	$form['ini']['#weight']  = -99;	
+	
+	$form['fin']['#prefix']  = '</div>';
+	$form['fin']['#value']  = ' ';
+	$form['fin']['#weight']  = 99;
+	
+	
+	$form['intro']['#value']  = '<legend>Mis datos:</legend>';
+	// Lo pongo dentro de un div para poder temearlo
+	$form['intro']['#prefix']  = '<fieldset>';
+	$form['intro']['#suffix']  = '</fieldset>';
+	// le pongo el weight bien bajo para que lo ponga primero
+	$form['intro']['#weight']  = -40;
+	
+    $form['taxonomy']['#type'] = '';
+        
+    $form['preview']="" ;
+    $form['submit']['#value']="Guardar" ;
+    
+    firep($form['submit'], 'Formulario');
+     
+    $miform  = '';
+    
+    $miform .= drupal_render($form['ini']);
+    $miform .= drupal_render($form['intro']);
+	$miform .= drupal_render($form['title']);
+	
+	$form['Empleado']['#title']='';
+	$form['Empresa']['#title']='';
+	$form['Empresa']['profile_empresa_consultora']='';
+	
+	if (in_array('empresa', array_values($user->roles))){
+		$miform .= drupal_render($form['Empresa']['profile_empresa_apellido']);
+		$miform .= drupal_render($form['Empresa']['profile_empresa_nombre']);
+		$miform .= drupal_render($form['Empresa']['profile_empresa_sexo']);
+		$miform .= drupal_render($form['Empresa']['profile_empresa_fecha_naciemiento']);
+		$miform .= drupal_render($form['Empresa']['profile_empresa_estado_civil']);
+
+		$form['grupo']['#value']  = '<legend>Empresa:</legend>';
+		// Lo pongo dentro de un div para poder temearlo
+		$form['grupo']['#prefix']  = '<fieldset>';
+		$form['grupo']['#suffix']  = '</fieldset>';
+		// le pongo el weight bien bajo para que lo ponga primero
+		$form['grupo']['#weight']  = -40;
+		$miform .= drupal_render($form['grupo']);
+		
+		$miform .= drupal_render($form['Empresa']['profile_empresa_empresa_nombre']);
+		$miform .= drupal_render($form['Empresa']['profile_empresa_razon_social']);
+		$miform .= drupal_render($form['Empresa']['profile_empresa_responsable']);
+		$miform .= drupal_render($form['Empresa']['profile_empresa_cuil_cuit']);
+		$miform .= drupal_render($form['Empresa']['profile_empl_puesto']);
+		$miform .= drupal_render($form['Empresa']['profile_empresa_telefono1']);
+		$miform .= drupal_render($form['Empresa']['profile_empresa_interno1']);
+		$miform .= drupal_render($form['Empresa']['profile_empresa_telefono2']);
+		$miform .= drupal_render($form['Empresa']['profile_empresa_interno2']);
+		$miform .= drupal_render($form['Empresa']['profile_empresa_web']);
+		
+		$miform .= drupal_render($form['Empresa']['profile_empresa_ramoactividad']);
+		$miform .= drupal_render($form['Empresa']['profile_empresa_ramoactividad2']);
+		
+		$miform .= drupal_render($form['Empresa']['profile_empresa_calle']);
+		$miform .= drupal_render($form['Empresa']['profile_empresa_numero']);
+		$miform .= drupal_render($form['Empresa']['profile_empresa_piso']);
+		$miform .= drupal_render($form['Empresa']['profile_empresa_dpto_ofi']);
+		$miform .= drupal_render($form['Empresa']['profile_empresa_cp']);
+		$miform .= drupal_render($form['Empresa']['profile_empresa_provincia']);
+		
+		$miform .= drupal_render($form['Empresa']['profile_empresa_dotacion']);
+		$miform .= drupal_render($form['Empresa']['profile_empresa_descripcion']);
+		
+	 } else {
+	 	$miform .= drupal_render($form['Empleado']['profile_empl_apellido']);
+		$miform .= drupal_render($form['Empleado']['profile_empl_nombre']);
+		$miform .= drupal_render($form['Empleado']['profile_empl_sexo']);
+		$miform .= drupal_render($form['Empleado']['profile_empl_fecha_nacimiento']);
+		$miform .= drupal_render($form['Empleado']['profile_empl_estado_civil']);
+		$miform .= drupal_render($form['Empleado']['profile_tipo_doc']);
+		$miform .= drupal_render($form['Empleado']['profile_empl_num_doc']);
+		$miform .= drupal_render($form['Empleado']['profile_empl_calle']);
+		$miform .= drupal_render($form['Empleado']['profile_empl_dir_numero']);
+		$miform .= drupal_render($form['Empleado']['profile_empl_dir_piso']);
+		$miform .= drupal_render($form['Empleado']['profile_empl_dir_dpto']);
+		$miform .= drupal_render($form['Empleado']['profile_empl_cp']);
+		$miform .= drupal_render($form['Empleado']['profile_empl_provincia']);
+		$miform .= drupal_render($form['Empleado']['profile_empl_telefono']);
+		$miform .= drupal_render($form['Empleado']['profile_empl_tel_alternativo']);	
+     }
+	
+	
+	$miform .= drupal_render($form['submit']);
+	$miform .= drupal_render($form['delete']);
+	$miform .= drupal_render($form['fin']);
+	$miform .= drupal_render($form);
+  return $miform;	
+	
+	
+    return _phptemplate_callback('user_edit', array('form' => $miform));
 }
 
 function phptemplate_user_pass($user, $form = array(), $form1 = array()) {
@@ -142,6 +241,15 @@ function phptemplate_user_pass($user, $form = array(), $form1 = array()) {
 
   return _phptemplate_callback('user_pass', array('form' => $form));
 }
+
+
+function phptemplate_user_profile($account, $fields = array()) {
+  // Pass to phptemplate, including translating the parameters to an associative array. The element names are the names that the variables
+  // will be assigned within your template.
+  /* potential need for other code to extract field info */
+  return _phptemplate_callback('user_profile', array('account' => $account, 'fields' => $fields));
+  }
+
 
 /**
  * views template to output a view.
