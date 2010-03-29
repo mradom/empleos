@@ -21,6 +21,7 @@ Si ten&eacute;s conocimientos, al ingresar los datos consider&aacute; que los &i
 				          <TD class="techo" width="40%">Programa</TD> 
 				          <TD class="techo" width="20%">Tipo</TD>
 				          <TD class="techo" width="16%">Nivel</TD>  
+				          <TD class="techo" width="6%"></TD>
 				        </TR> 
 			<?php
 			foreach($vista["items"] as $item){
@@ -38,6 +39,7 @@ Si ten&eacute;s conocimientos, al ingresar los datos consider&aacute; que los &i
 			                   } else { print '<TD><A href="?q=node/'.$row->nid.'/edit" title="editar">'.$row->title.'</A></TD>';  } ?> 
 				    	  <TD><?php print $tipo;?></TD> 
 				    	  <TD><?php print $row->field_nivel[0]['value'];?></TD>
+				    	  <TD><a href="?q=node/<?php print $row->nid; ?>/edit" title="editar"><div class="arrow editar" style="margin-left:5px"></div></a><a href="?q=node/<?php print $row->nid; ?>/delete" title="borrar"><div class="arrow cancel"></div></a></TD>
 				        </TR> 
 				<?php
 				

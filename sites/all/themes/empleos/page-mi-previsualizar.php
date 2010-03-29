@@ -1,5 +1,6 @@
 <html>
 <?php include("include/head.php");?>
+<?php include("sites/all/themes/empleos/include/varios.php");?>
 <body>
 <div id="wrapper">
   <!----HEADER---->
@@ -9,11 +10,12 @@
   <div id="midle">
     <?php include("include/mi_previsualizar_encabezado.php");?> 
     <!------RIGHT colum------>
-     
+	<?php Form_ayuda(''); ?> 
     <!--------CENTRAL colum-------->
     <DIV id="central_column">
-	  <?php print $content;?>
-	  aca hay que poner el preview
+      <div style="border: 1px solid #ccc; padding:10px;">
+	  <?php include("include/cv_previsualizar.php");?>
+	  </div>
     </DIV>
   <!-----banners-minibox---->
   <?php include("include/banners-central.php");?>

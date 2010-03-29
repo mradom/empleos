@@ -128,7 +128,7 @@ input.req, select.req{border:1px solid #3399cc;
 label.check{ margin-right:10px;}
 input.check{ background:none; border:0}
 /*------CAMBIOS 22/03--------*/
-.mycv .form-item label{/*----igual a las class .item .req---*/
+.mycv .form-item label {/*----igual a las class .item .req---*/
 	text-align:right;
 	width:250px;
 	margin-right:20px;
@@ -137,15 +137,45 @@ input.check{ background:none; border:0}
 	display:inline-block;
 	margin-bottom:10px;
 }
-.mycv .form-item select{
+.mycv .form-item select {
 	width:360px;
 	size:60;	
 }
+
+.mycv .form-item .container-inline{
+	color:#CCAAAA;
+    width:360px;
+	margin-left:273px;
+	margin-bottom:10px;	
+}
+
+.mycv .form-item .container-inline .form-select{
+    width:360px;
+    margin-bottom:5px;
+}
+
+.mycv .form-item .form-radios{
+    width:300px;
+    margin-left:180px;
+}
+
+.mycv .form-item .form-radios .form-item .option .form-radio{
+    width:205px;
+    text-align:left;
+}
+.mycv .form-item .form-radios .form-item .option {
+    width:300px;
+    text-align:left;
+    display:inline;
+    }
+    
+
+
 .mycv .form-item input, .mycv textarea{
 	width:360px;	
 }
 
-/*------ojo cambio de 280 a 360 y description lo ordenaba al medio-------*/
+/*------ojo cambio de 280 a 360 y description -------*/
 .mycv .form-item div.description, .mycv ul.tips, .mycv p{
 	color:#999;
 	width:280px;
