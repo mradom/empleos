@@ -33,6 +33,7 @@
     </ul>
   </div>
   <div class="bloque puntos" style="width:300px"></div>
-  <div class="btn_gral" style="float:left; margin-left:60px;"><a href="?q=user/register/persona">Regristrarse como Persona</a></div>
-  <div class="btn_gral" style="float:left; margin-left:60px;"><a href="?q=user/register/empleador">Regristrarse como Empresa</a></div>
+   <div class="blue" style="padding-left:11px; margin:10px 0 30px 0;"><strong>Regristrate como:</strong></div>
+  <div class="btn_gral" style="float:left; margin-left:80px;"><a href="?q=user/register/persona">Persona</a></div>
+  <div class="btn_gral" style="float:left; margin-left:30px;"><a href="?q=user/register/empleador">Empresa</a></div>
 </div>

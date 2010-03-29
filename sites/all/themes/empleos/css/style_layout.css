@@ -195,9 +195,9 @@ li.btns.ant { background:url(../img/arrow_back.png) no-repeat 0 0;}
 li.btns.ant:hover{background:url(../img/arrow_back.png) no-repeat -1px -20px; text-decoration:underline;}
 li.btns.sig { 
 	float:right; 
-	background:url(../img/arrow.png) no-repeat 28px 0; }
+	background:url(../img/arrow.png) no-repeat 0 0 ; }
 li.btns.sig:hover{ 
-	background:url(../img/arrow.png) no-repeat 29px -20px; text-decoration:underline;
+	background:url(../img/arrow.png) no-repeat -1px -20px; text-decoration:underline;
 }
 /*--*/
 .contentBoxTips{
@@ -320,7 +320,7 @@ li.btns.sig:hover{
     cursor:pointer;
     display:inline;
 }
-.btn_gral a {
+.btn_gral a  {
     color:#FFF;
     font-weight:bold;
     cursor:pointer;
