@@ -18,10 +18,11 @@
 				      <TBODY> 
 				        <TR> 
 				          <TD class="techo" width="20%">Empresa</TD>
-				          <TD class="techo" width="24%">T&iacute;tulo/Cargo</TD> 				          
-				          <TD class="techo" width="20%">Nompre</TD>
-				          <TD class="techo" width="16%">Tel&eacute;fono</TD>
-				          <TD class="techo" width="20%">Email</TD>  
+				          <TD class="techo" width="20%">T&iacute;tulo/Cargo</TD> 				          
+				          <TD class="techo" width="18%">Nompre</TD>
+				          <TD class="techo" width="15%">Tel&eacute;fono</TD>
+				          <TD class="techo" width="20%">Email</TD>
+				          <TD class="techo" width="7%"></TD>  
 				        </TR> 
 			<?php
 			foreach($vista["items"] as $item){
@@ -38,6 +39,7 @@
 				          <TD><?php print $node->title;?></TD>
 				          <TD><?php print $row->field_telefono[0]['value'];?></TD> 
 				          <TD><?php print $row->field_email[0]['email'];?></TD>
+				          <TD><a href="?q=node/<?php print $row->nid; ?>/edit" title="editar"><div class="arrow editar" style="margin-left:5px"></div></a><a href="?q=node/<?php print $row->nid; ?>/delete" title="borrar"><div class="arrow cancel"></div></a></TD>
 				        </TR> 
 				<?php
 				

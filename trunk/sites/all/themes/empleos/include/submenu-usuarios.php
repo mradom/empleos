@@ -1,6 +1,18 @@
+<?php 
+    if(arg(3) == "Empleado"){ $ant="#"; $sig="?q=mieducacion/me";} 
+    if(($node->type=='p_educacion') or (arg(2)=='p-educacion') or ($node->nid == 28)){$ant="?q=user/me/edit/Empleado"; $sig="?q=micursos/me"; }
+    if(($node->type=='p_cursos') or (arg(2)=='p-cursos') or ($node->nid == 31)){$ant="?q=mieducacion/me"; $sig="?q=miidiomas/me";  } 
+	if(($node->type=='p_idiomas') or (arg(2)=='p-idiomas') or ($node->nid == 33)){$ant="?q=micursos/me"; $sig="?q=miinformatica/me";  }         
+    if(($node->type=='p_informatica') or (arg(2)=='p-informatica') or ($node->nid == 32)){$ant="?q=miidiomas/me"; $sig="?q=miotrosconocimientos/me";  }  
+    if(($node->type=='p_otros_conocimientos') or (arg(2)=='p-otros-conocimientos') or ($node->nid == 34)){$ant="?q=miinformatica/me"; $sig="?q=miexperiencialaboral/me";  }
+    if(($node->type=='p_experiencia_laboral') or (arg(2)=='p-experiencia-laboral') or ($node->nid == 35)){$ant="?q=miotrosconocimientos/me"; $sig="?q=mireferencia/me";  }
+    if(($node->type=='p_referencia') or (arg(2)=='p-referencia') or ($node->nid == 51)){$ant="?q=miexperiencialaboral/me"; $sig="?q=miobjetivolaboral/me";  }
+    if(($node->type=='p_objetivo_laboral') or (arg(2)=='p-objetivo-laboral') or ($node->nid == 36)){$ant="?q=mireferencia/me"; $sig="?q=miprevisualizar/me";  }
+    if($node->nid == 55){$ant="?q=miobjetivolaboral/me"; $sig="#";  } 
+?>    
     <DIV class="menu submenu"> 
       <UL class="submenu">
-        <li class="btns ant" style="padding-left:15px"><a href="<?php btn_ant();?>">ant</a></li> 
+        <li class="btns ant" style="padding-left:15px"><a href="<?php print $ant;?>">ant</a></li> 
         <li><A href="?q=user/me/edit/Empleado" <?php if(arg(3) == "Empleado"){ echo "class='active'";}?>>Datos de contacto</A></LI> 
         <li><A href="?q=mieducacion/me" <?php if(($node->type=='p_educacion') or (arg(2)=='p-educacion') or ($node->nid == 28)){ echo "class='active'";}?>>Educaci&oacute;n</A></LI> 
         <li><A href="?q=micursos/me" <?php if(($node->type=='p_cursos') or (arg(2)=='p-cursos') or ($node->nid == 31)){ echo "class='active'";}?>>Cursos</A></LI> 
@@ -11,22 +23,8 @@
         <li><A href="?q=mireferencia/me" <?php if(($node->type=='p_referencia') or (arg(2)=='p-referencia') or ($node->nid == 51)){ echo "class='active'";}?>>Referencias</A></LI> 
         <li><A href="?q=miobjetivolaboral/me" <?php if(($node->type=='p_objetivo_laboral') or (arg(2)=='p-objetivo-laboral') or ($node->nid == 36)){ echo "class='active'";}?>>Objetivo laboral</A></LI> 
         <li><A href="?q=miprevisualizar/me" <?php if($node->nid == 55){ echo "class='active'";}?>>Previsualizar</A></LI> 
-        <li class="btns sig" style="padding-right:15px"><a href="<?php btn_sig();?>">sig</a></li>
+        <li class="btns sig" style="padding-right:15px"><a href="<?php print $sig;?>">sig</a></li>
       </UL> 
       <DIV class="line-submenu"></DIV> 
     </DIV>
     
-<?php    
-
-
-
-
-Function btn_ant(){
-     return '#';
-}
-
-Function btn_sig(){
-     return '#'; 
-}
-?>
-

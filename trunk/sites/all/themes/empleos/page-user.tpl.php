@@ -11,6 +11,7 @@
   <?php include("include/header.php");?>
   <!------MIDDLE------>
   <div id="midle">
+    <?php if (arg(0)=='user' and arg(1)==$user->uid and arg(2)=='edit') include("include/mi_datos_encabezado.php");?> 
     <!----banners boxes---->
     <?php // include("include/banners-boxes.php");?>
     <!------RIGHT colum------>

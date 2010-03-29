@@ -307,36 +307,33 @@ li.btns.sig:hover{
 	padding-bottom:0px;
 }
 .btn_gral {
-	width:80px;
-	height:21px;
-	background:url(../img/bg_btn_orange.png) repeat-x;
-	padding:0 5px;
-	border:1px solid #FF9900;
-	-moz-border-radius:2px;
-	-webkit-border-radius:2px;
-	margin-bottom:10px;
-	color:#FFF;
-	font-weight:bold;
-	cursor:pointer;
-	text-decoration:none;
-	display:inline;
+    max-width:100px;
+    background:url(../img/bg_btn_orange.png) repeat-x;
+    padding:0 10px;
+    border:1px solid #FF9900;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    border-radius:2px;
+    margin-bottom:10px;
+    color:#FFF;
+    font-weight:bold;
+    cursor:pointer;
+    display:inline;
 }
 .btn_gral a {
-	color:#FFF;
-	font-weight:bold;
-	line-height:20px;
-	cursor:pointer;
-	text-decoration:none; 
+    color:#FFF;
+    font-weight:bold;
+    cursor:pointer;
+    line-height:22px;
+    text-decoration:none;
 }
 .btn_gral:hover {
-	background: url(../img/bg_btn_orange_hover.png) repeat-x;
+    background: url(../img/bg_btn_orange_hover.png) repeat-x;
 }
-.btn_gral.maxW a{
-	width:70px;
-	text-align:center;
-	display:inline;
-	line-height:20px;
-	}
+
+.btn_gral.b{
+    padding:4px 10px;
+}
 /*---stpes---*/
 .pasos {
 	height:auto;

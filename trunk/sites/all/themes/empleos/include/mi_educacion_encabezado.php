@@ -1,7 +1,7 @@
 <div class="box top" style="background: url(sites/all/themes/empleos/img/bg_box_top2.jpg)">
 <p><strong>Detall&aacute; tus estudios</strong> empezando desde el colegio
 secundario en adelante. Si no ten&eacute;s estudios, dej&aacute; el formulario en
-blanco y continu&aacute con el siguiente paso. <br>
+blanco y continu&aacute; con el siguiente paso. <br>
 Si ten&eacute;s estudios, al ingresarlos consider&aacute; que los &iacute;tems destacados en
 <span style="color: #248CC4; font-weight: bold">celeste</span> son
 obligatorios.</p>
@@ -22,11 +22,11 @@ if ($user->uid){
 	<TBODY>
 		<TR>
 			<TD class="techo" width="16%">Per&iacute;odo</TD>
-			<TD class="techo" width="16%">Instituto</TD>
+			<TD class="techo" width="26%">Instituto</TD>
 			<TD class="techo" width="18%">Carrera</TD>
 			<TD class="techo" width="18%">Nivel</TD>
-			<TD class="techo" width="22%">Estado</TD>
-			<TD class="techo" width="10%">&nbsp;</TD>
+			<TD class="techo" width="12%">Estado</TD>
+			<TD class="techo" width="7%">&nbsp;</TD>
 		</TR>
 		<?php
 		foreach($vista["items"] as $item){
@@ -77,7 +77,7 @@ if ($user->uid){
 			<TD><?php print $row->field_ttulo_o_certificacin[0]["value"];?></TD>
 			<TD><?php print $nivel;?></TD>
 			<TD><?php print $estado;?></TD>
-			<TD></TD>
+			<TD><a href="?q=node/<?php print $row->nid; ?>/edit" title="editar"><div class="arrow editar" style="margin-left:5px"></div></a><a href="?q=node/<?php print $row->nid; ?>/delete" title="borrar"><div class="arrow cancel"></div></a></TD>
 		</TR>
 		<?php
 

@@ -1,4 +1,5 @@
 <html>
+<?php include("sites/all/themes/empleos/include/varios.php");?>
 <?php include("include/head.php");?>
 <body>
 <div id="wrapper">
@@ -9,23 +10,11 @@
   <div id="midle">
     <?php include("include/mi_educacion_encabezado.php");?> 
     <!------RIGHT colum------>
-    <?php if (arg(1)=='add' or arg(2)=='edit') { ?>
-    <div id="right_column">
-	   <div class="contentBoxTips">
-	   <div class="ico"><img src="sites/all/themes/empleos/img/help.png"></div>
-	   <div class="box tips">
-	   <h3 class="orange">Ayuda</h3><br>
-	   <p>Beautiful and free icon sets always come in handy. <br>
-	Used properly and moderately, <strong>icons can be helpful</strong> to provide users with memorable metaphors and illustrations that would provide a visual support for otherwise unspectacular text blocks.</p>
-	   </div>
-	   </div>
-    </div>
-    <?php } ?>
-    <?php // No tiene ... include("include/mi_idiomas_encabezado.php");?> 
+	<?php Form_ayuda('Educacion'); ?> 
     <!--------CENTRAL colum-------->
     <DIV id="central_column">
 	  <?php print $content;?>
-	  	  <?php if (arg(1)<>'add' and arg(2)<>'edit' and arg(2)<>'delete') print "<div class='btn_gral'><a href='?q=node/add/p-educacion'>Agregar</a></div></br></br>";?>
+	  	  <?php if (arg(1)<>'add' and arg(2)<>'edit' and arg(2)<>'delete') print "<div class='btn_gral b'><a href='?q=node/add/p-educacion'>Agregar</a></div></br></br>";?>
     </DIV>
     <div id="browser" class="inside"> </div>
   <!-----banners-minibox---->

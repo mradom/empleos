@@ -19,7 +19,8 @@
 				        <TR> 
 				          <TD class="techo" width="25%"></TD>
 				          <TD class="techo" width="25%">Nombre</TD> 
-				          <TD class="techo" width="50%">Descripcion</TD> 
+				          <TD class="techo" width="40%">Descripcion</TD>
+				          <TD class="techo" width="7%"></TD> 
 				        </TR> 
 			<?php
 			foreach($vista["items"] as $item){
@@ -37,6 +38,7 @@
 			                   } else { print '<TD><A href="?q=node/'.$row->nid.'/edit" title="editar">'.$row->title.'</A></TD>';  } ?> 
 				    	  <TD><?php print $row->field_nombre[0]['value'];?></TD> 
 				    	  <TD><?php print $row->field_descripcion[0]['value'];?></TD>
+				    	  <TD><a href="?q=node/<?php print $row->nid; ?>/edit" title="editar"><div class="arrow editar" style="margin-left:5px"></div></a><a href="?q=node/<?php print $row->nid; ?>/delete" title="borrar"><div class="arrow cancel"></div></a></TD>
 				        </TR> 
 				<?php
 				

@@ -1,7 +1,6 @@
     <div class="box top" style="background:url(sites/all/themes/empleos/img/bg_box_top7.jpg)">
-      <p><strong>Ingres&aacute; tu experiencia laboral.</strong> Si no ten&eacute;s experiencia laboral dej&aacute; el formulario en blanco y continu&aacute; con el siguiente paso. Si ten&eacute;s experiencia, al ingresarla consider&aacute; que los &iacute;tems destacados en <span style="color:#248CC4; font-weight:bold">celeste </span> son obligatorios. Empez&aacute; cargando tu experiencia m&aacute;s reciente y luego cronol&oacute;gicamente, las anteriores.<br> 
+      <p><strong>Ingres&aacute; tu experiencia laboral.</strong> Si no ten&eacute;s experiencia laboral dej&aacute; el formulario en blanco y continu&aacute; con el siguiente paso. Si ten&eacute;s experiencia, al ingresarla consider&aacute; que los &iacute;tems destacados en <span style="color:#248CC4; font-weight:bold">celeste </span> son obligatorios. Empez&aacute; cargando tu experiencia m&aacute;s reciente y luego cronol&oacute;gicamente, las anteriores.</p><br> 
       <div><img style=" padding-left:100px;" src="sites/all/themes/empleos/img/10pasos.png"></div>
-
       <div><img style=" padding-left:150px " src="sites/all/themes/empleos/img/7paso.png"></div>
     </div>
     <!-----submenu-----> 
@@ -16,12 +15,13 @@
 				<TABLE class="tablaGris" border="0" cellpadding="0" cellspacing="1"> 
 				      <TBODY> 
 				        <TR> 
-				          <TD class="techo" width="20%">Fecha</TD> 
-				          <TD class="techo" width="18%"></TD>
-				          <TD class="techo" width="16%">Empresa</TD> 
-				          <TD class="techo" width="16%">Area</TD> 
-				          <TD class="techo" width="16%">Jerarquia</TD> 
-				          <TD class="techo" width="16%">Puesto</TD>  
+				          <TD class="techo" width="18%">Fecha</TD> 
+				          <TD class="techo" width="15%"></TD>
+				          <TD class="techo" width="15%">Empresa</TD> 
+				          <TD class="techo" width="15%">Area</TD> 
+				          <TD class="techo" width="15%">Jerarquia</TD> 
+				          <TD class="techo" width="15%">Puesto</TD>  
+				          <TD class="techo" width="7%"></TD>
 				        </TR> 
 			<?php
 			foreach($vista["items"] as $item){
@@ -62,6 +62,7 @@
 				          <TD><?php print $area;?></TD> 
 				          <TD><?php print $jerarquia;?></TD> 
 				          <TD><?php print $row->field_nombre_del_puesto[0]['value'];?></TD>
+				          <TD><a href="?q=node/<?php print $row->nid; ?>/edit" title="editar"><div class="arrow editar" style="margin-left:5px"></div></a><a href="?q=node/<?php print $row->nid; ?>/delete" title="borrar"><div class="arrow cancel"></div></a></TD>
 				        </TR> 
 				<?php
 				

@@ -1,4 +1,5 @@
 <?php 
+   global $ayuda;
 	$url = $_SERVER['QUERY_STRING']; // PATH COMPLETO
 	$is_principal = split('[?&]', $url); 
 	
