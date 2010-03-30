@@ -1,7 +1,7 @@
 <?php
-echo '<pre>';
-print_r($node);
-echo '</pre>';
+//echo '<pre>';
+//print_r($node);
+//echo '</pre>';
 $nodo = node_load($node->nid);
 $b_area=get_vocabulary_by_name('Area');
 $b_ramo=get_vocabulary_by_name('Ramo o Actividad');

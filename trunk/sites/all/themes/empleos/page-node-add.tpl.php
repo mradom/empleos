@@ -24,7 +24,9 @@ switch (arg(2)) {
 	case 'p-objetivo-laboral':
 		include 'page-mi-objetivo-laboral.php';
 		return;				
-		default:
+	default:
+		print $content;
+		break;
 }
 		?>
 
