@@ -119,7 +119,7 @@ function phptemplate_user_register($form) {
 }
 
 /*
- * Lo mismo en este caso, aca le decimos que queremos cargar el user_register.tpl.php para hacer el formulario de registro 
+ * Lo mismo en este caso, aca le decimos que queremos cargar el user_edit.tpl.php para hacer el formulario de registro 
  **/
 function phptemplate_user_edit($form) {
 	global $user;
@@ -296,8 +296,8 @@ function phptemplate_views_view_list_mi_educacion($view, $nodes, $type) {
   }
 }
 
-  
-function phptemplate_p_idiomas_node_form(&$form) {
+function phptemplate_p_idiomas_node_form(&$form, $form_state, $form_id) {  
+	//function phptemplate_p_idiomas_node_form(&$form) {
 
 	$form['ini']['#prefix']  = '<div class="mycv">';
 	$form['ini']['#value']  = ' ';
@@ -342,8 +342,6 @@ function phptemplate_p_idiomas_node_form(&$form) {
 	$miform .= drupal_render($form['fin']);
 	$miform .= drupal_render($form);
   return $miform;
-  
-	
 }
 
 function phptemplate_p_cursos_node_form(&$form) {
@@ -760,25 +758,174 @@ function phptemplate_p_educacion_node_form(&$form) {
   
 }
 
-
-
-
 function phptemplate_node_delete_confirm(&$form, $form_state, $form_id) {
   $form['actions']['cancel']['#prefix']  = '<div class="btn_gral maxW">';
   $form['actions']['cancel']['#suffix']  = '</div>';
   $form['description']['#value'] = 'Si ud. borra los datos, estos no se podran recuperar.';
-  
   $miform  = "";
   $miform .= drupal_render($form);
   
   if ($form['#id'] == 'node-delete-confirm') {
   	//print '*********************************************************************';
   }
-  
   return $miform;
-  
-  
+}
 
+function phptemplate_e_aviso_node_form(&$form) {
+	
+	//echo "<pre>"; print_r($form); echo "</pre>";
+	
+$html = '<ul style="height: 30px;" class="ui-tabs-nav"> 
+        <li class="ui-tabs-selected"><a href="#fragment-1"><span>Descripcion del puesto:</span></a></li> 
+        <li><a href="#fragment-2"><span>Requisitos</span></a></li> 
+        <li><a href="#fragment-3"><span>Datos de la Empresa</span></a></li> 
+    </ul>';
+
+	$form['ini']['#prefix']  = '<div class="mycv" id="aviso"><div id="tabs">'.$html;
+	$form['ini']['#value']  = ' ';
+	$form['ini']['#weight']  = -99;	
+	
+	$form['fin']['#prefix']  = '</div></div>';
+	$form['fin']['#value']  = ' ';
+	$form['fin']['#weight']  = 99;
+	
+	//$form['intro']['#value']  = '<legend>Descripcion del puesto:</legend>';
+	// Lo pongo dentro de un div para poder temearlo
+	$form['intro']['#prefix']  = '<fieldset>';
+	$form['intro']['#suffix']  = '</fieldset>';
+	// le pongo el weight bien bajo para que lo ponga primero
+	$form['intro']['#weight']  = -40;
+	
+	$form['title']['#title']='Puesto';
+	
+    $form['taxonomy']['#type'] = '';
+    
+    $form['body_filter']['body']['#title'] = 'Descripcion del puesto y tareas';
+    $form['body_filter']['body']['#rows'] = 10;
+    $form['body_filter']['body']['#cols'] = 80;    
+    
+    $form['body_filter']['format']['format']['guidelines']['#value'] = '';
+    $form['body_filter']['format'][2]['#value'] = '';
+    
+    $form['preview']="" ;
+    //$form['submit']['#value']="Siguiente" ;
+    
+    $form['workflow'] = "";
+    
+    $form['taxonomy'][get_vocabulary_by_name("provincias")]['#title'] = "Lugar de residencia";
+    $form['field_remuneracin']['key']['title'] = "Indicar remuneración pretendida";
+    
+    ######## CREACION DE TABS #######
+	
+	$form['group_descripcion_del_puesto']['#prefix'] = "<div id='fragment-1' class='ui-tabs-panel'>";
+	$form['group_descripcion_del_puesto']['#suffix'] = "</div>";
+	
+	$form['group_requisitos']['#prefix'] = "<div id='fragment-2' class='ui-tabs-panel'>"; // ui-tabs-hide
+	$form['group_requisitos']['#suffix'] = "</div>";
+	
+	$form['group_datos_de_la_empresa']['#prefix'] = "<div id='fragment-3' class='ui-tabs-panel'>";
+	$form['group_datos_de_la_empresa']['#suffix'] = "</div>";
+    
+    ######## REQUISITOS #########
+    
+    // Paso el taxonomy al grupo que yo quiero -- Nivel de Estudio
+    $form['group_requisitos']['taxonomy'][get_vocabulary_by_name('Nivel de Estudio')] = $form['taxonomy'][get_vocabulary_by_name('Nivel de Estudio')];
+    $form['group_requisitos']['taxonomy'][get_vocabulary_by_name('Nivel de Estudio')]['#weight'] = 90;
+    $form['taxonomy'][get_vocabulary_by_name('Nivel de Estudio')] = "";
+    
+    //Paso el taxonomy al grupo que yo quiero -- Area de estudios
+    $form['group_requisitos']['taxonomy'][get_vocabulary_by_name('Area de estudios')] = $form['taxonomy'][get_vocabulary_by_name('Area de estudios')];
+    $form['group_requisitos']['taxonomy'][get_vocabulary_by_name('Area de estudios')]['#weight'] = 91;
+    $form['taxonomy'][get_vocabulary_by_name('Area de estudios')] = "";
+    
+    //Paso el taxonomy al grupo que yo quiero -- Idiomas
+    $form['group_requisitos']['taxonomy'][get_vocabulary_by_name('idiomas')] = $form['taxonomy'][get_vocabulary_by_name('idiomas')];
+    $form['group_requisitos']['taxonomy'][get_vocabulary_by_name('idiomas')]['#weight'] = 92;
+    $form['taxonomy'][get_vocabulary_by_name('idiomas')] = "";
+    
+    //$form['group_requisitos']['field_lugar_de_residencia'] = $form['field_lugar_de_residencia'];
+    //$form['field_lugar_de_residencia'] = "";
+    
+    ####### DATOS DE LA EMPRESA ########
+    
+    //Paso el taxonomy al grupo que yo quiero -- Ramo o actividad
+    $form['group_datos_de_la_empresa']['taxonomy'][get_vocabulary_by_name('Ramo o Actividad')] = $form['taxonomy'][get_vocabulary_by_name('Ramo o Actividad')];
+    $form['group_datos_de_la_empresa']['taxonomy'][get_vocabulary_by_name('Ramo o Actividad')]['#weight'] = 92;
+    $form['taxonomy'][get_vocabulary_by_name('Ramo o Actividad')] = "";
+    
+    //Paso el taxonomy al grupo que yo quiero -- Provincias
+    $form['group_datos_de_la_empresa']['taxonomy'][get_vocabulary_by_name('Provincias')] = $form['taxonomy'][get_vocabulary_by_name('Provincias')];
+    $form['group_datos_de_la_empresa']['taxonomy'][get_vocabulary_by_name('Provincias')]['#weight'] = 92;
+    $form['taxonomy'][get_vocabulary_by_name('Provincias')] = "";
+    
+    //Paso el taxonomy al grupo que yo quiero -- Area
+    $form['group_datos_de_la_empresa']['taxonomy'][get_vocabulary_by_name('area')] = $form['taxonomy'][get_vocabulary_by_name('area')];
+    $form['group_datos_de_la_empresa']['taxonomy'][get_vocabulary_by_name('area')]['#weight'] = 92;
+    $form['taxonomy'][get_vocabulary_by_name('area')] = "";
+    
+    $form['group_datos_de_la_empresa']['field_logo']['new']['field_logo_upload']['#title'] = "Seleccione el logo de su empresa";
+    $form['group_datos_de_la_empresa']['field_logo']['new']['field_logo_upload']['#description'] = "Extensiones permitidas: jpg jpeg png gif";
+    $form['group_datos_de_la_empresa']['field_logo']['#description'] = "";
+    $form['group_datos_de_la_empresa']['field_logo']['new']['upload']['#value'] = "subir";
+    
+    ####### DESCRIPCION DEL PUESTO ########
+    
+    //Paso el taxonomy al grupo que yo quiero -- Jerarquia
+    $form['group_descripcion_del_puesto']['taxonomy'][get_vocabulary_by_name('Jerarquia')] = $form['taxonomy'][get_vocabulary_by_name('Jerarquia')];
+    $form['group_descripcion_del_puesto']['taxonomy'][get_vocabulary_by_name('Jerarquia')]['#weight'] = 92;
+    $form['taxonomy'][get_vocabulary_by_name('Jerarquia')] = "";
+    
+    //Paso el taxonomy al grupo que yo quiero -- Lugar de residencia
+    $form['group_descripcion_del_puesto']['taxonomy'][get_vocabulary_by_name('Lugar de residencia')] = $form['taxonomy'][get_vocabulary_by_name('Lugar de residencia')];
+    $form['group_descripcion_del_puesto']['taxonomy'][get_vocabulary_by_name('Lugar de residencia')]['#weight'] = 92;
+    $form['taxonomy'][get_vocabulary_by_name('Lugar de residencia')] = "";
+    
+    $form['group_descripcion_del_puesto']['title'] = $form['title'];
+    $form['title'] = "";
+    
+    $form['group_descripcion_del_puesto']['body_filter'] = $form['body_filter'];
+    $form['body_filter'] = "";
+    
+    //$form['group_descripcion_del_puesto']['field_cantidad_vacantes'] = $form['#node']->field_cantidad_vacantes;
+    //$form['#node']->field_cantidad_vacantes == ""; 
+    
+    $form["field_remuneracin"]['#weight'] = 93;
+    
+    //firep($form['submit'], 'Formulario');
+
+    $miform  = '';
+    
+    $miform .= drupal_render($form['ini']);
+    $miform .= drupal_render($form['intro']);
+    
+	$miform .= drupal_render($form['group_descripcion_del_puesto']);
+	$miform .= drupal_render($form['group_descripcion_del_puesto']['title']);
+	$miform .= drupal_render($form['group_descripcion_del_puesto']['field_cantidad_de_vacantes']);
+	$miform .= drupal_render($form['group_descripcion_del_puesto']['taxonomy'][get_vocabulary_by_name('Jerarquia')]);
+	
+	$miform .= drupal_render($form['group_requisitos']);
+	$miform .= drupal_render($form['group_requisitos']['field_lugar_de_residencia']);
+	
+	$miform .= drupal_render($form['taxonomy'][get_vocabulary_by_name('provincias')]);
+	$miform .= drupal_render($form['taxonomy'][get_vocabulary_by_name('area')]);
+	$miform .= drupal_render($form['group_requisitos']);
+	
+	//$miform .= drupal_render($form['body_filter']);
+	$miform .= drupal_render($form['group_datos_de_la_empresa']);
+	$miform .= drupal_render($form['submit']);
+	$miform .= drupal_render($form['delete']);
+	$miform .= drupal_render($form['fin']);
+	$miform .= drupal_render($form['type']);
+	$miform .= drupal_render($form['nid']);
+	$miform .= drupal_render($form['vid']);
+	$miform .= drupal_render($form['changed']);
+	$miform .= drupal_render($form['form_token']);
+	$miform .= drupal_render($form['form_id']);
+	$miform .= drupal_render($form['field_logo-attach-url']);
+	$miform .= drupal_render($form);
+	//echo "<pre>"; print_r($form['taxonomy'][get_vocabulary_by_name('Jerarquia')]);echo "</pre>";
+	firep($miform, "Mi form");
+	return $miform;
 }
 
 function phptemplate_form_alter(&$form, $form_state, $form_id){
@@ -851,7 +998,3 @@ function phptemplate_form_alter(&$form, $form_state, $form_id){
     $form = $miform;
     return $form;
 }
-
-
-
-
