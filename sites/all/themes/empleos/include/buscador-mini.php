@@ -27,8 +27,7 @@
             		}
             	?>
             	</select>
-                <input style="margin:15px 35%; margin-bottom:0;" name="buscar" type="submit" class="btn_buscar" value="" alt="Buscar" />
-                
+                <input style="margin:10px 0 0 260px" name="buscar" type="submit" class="btn_gral" value="Buscar" alt="Buscar" />
               </form>
             </div>
 

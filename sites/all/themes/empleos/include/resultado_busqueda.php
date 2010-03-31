@@ -65,7 +65,7 @@ $rs = db_query($sql);
           		</DIV>
           		<P>Se econtraron <SPAN class="orange"><?php echo mysql_num_rows($rs);?> ofertas de trabajo:</SPAN> en el &aacute;rea: <SPAN class="orange"> GERENCIA GENERAL</SPAN></P>
 			</DIV>
-        ---Gold results--
+        <!--Gold results-->
         <?php 
         	$gold = "0";
         	$destacado = "0";
@@ -93,7 +93,8 @@ $rs = db_query($sql);
 					        echo "<div id='gold'>";
 					        if($gold == "0"){
 					        	echo "<div id='titles_bar'><img src='sites/all/themes/empleos/img/gold.gif'>Avisos Gold</div>";
-					        	$gold = 1;	
+					        	$gold = 1;
+					       
 					        }
 					        break;
 					    case 4:
