@@ -86,7 +86,7 @@ div.bloque, fieldset{
 }
 
 .mycv .required{
-	border:1px solid #2233cc
+	border:1px solid #1C77A8
 }
 
 .mycv .error{
@@ -193,7 +193,7 @@ label span.form-required{
 }
 .mycv fieldset legend{
 	width:600px;
-	color:#f93;
+	color:#f90;
 }
 input.form-submit{
 	height:23px;
@@ -229,13 +229,13 @@ li.bulet_o{background:url(../img/bullet_orange.gif)0 5px no-repeat; padding-left
 	width:100%;
 	background-color:#c8e8f0;
 	float:left;
-	margin-top:10px;
+	margin-bottom:10px;
 }
 .tablaGris tr, .tablaAviso tr {
 	background-color:#fff;
 }
 .tablaGris td {
-	padding:5px;
+	padding:3px 5px;
 	vertical-align:middle;
 	font:11px/14px Tahoma, Arial;
 }

@@ -759,7 +759,7 @@ function phptemplate_p_educacion_node_form(&$form) {
 }
 
 function phptemplate_node_delete_confirm(&$form, $form_state, $form_id) {
-  $form['actions']['cancel']['#prefix']  = '<div class="btn_gral maxW">';
+  $form['actions']['cancel']['#prefix']  = '<div class="btn_gral b">';
   $form['actions']['cancel']['#suffix']  = '</div>';
   $form['description']['#value'] = 'Si ud. borra los datos, estos no se podran recuperar.';
   $miform  = "";

@@ -197,7 +197,7 @@ li.btns.sig {
 	float:right; 
 	background:url(../img/arrow.png) no-repeat 0 0 ; }
 li.btns.sig:hover{ 
-	background:url(../img/arrow.png) no-repeat -1px -20px; text-decoration:underline;
+	background:url(../img/arrow.png) no-repeat 1px -20px; text-decoration:underline;
 }
 /*--*/
 .contentBoxTips{
@@ -614,11 +614,21 @@ div.arrow.back {
 }
 div.arrow.editar {
 	float:left;
-	background: url(../img/btn_editar.png) 0 0 no-repeat
+	height:15px;
+	width:13px;
+	background: url(../img/btn_editar.png) 0 0 no-repeat;
+	margin:0 0 0 10px;
 }
 div.arrow.cancel {
 	float:left;
-	background: url(../img/btn_cancel.png) 0 0 no-repeat
+	height:15px;
+	width:13px;
+	background: url(../img/btn_cancel.png) 0 0 no-repeat;
+	margin:0;
+	padding:0;
+}
+div.arrow.cancel:hover, div.arrow.editar:hover {
+	background-position:1px -15px;
 }
 div.arrow a {
 	color: #2D71B5;
@@ -798,7 +808,20 @@ ul.resumen{
 }
 ul.resumen li.lnk{ padding-left:260px;}
 div.resumen p.date{padding:0}
-
+div.resumen.prev{
+	width:660px;
+	background:none;
+	padding-top:0
+}
+.foto{
+	width:120px;
+	background:#deF;
+	padding:2px;
+	border:1px solid #bde;
+	height:120px;
+	margin:4px 30px 0 0;
+	float:left;
+}
 
 /*---FOOTER---*/
 #footer {
