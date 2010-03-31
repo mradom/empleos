@@ -23,18 +23,20 @@ firep($user, 'User');
 
 				if (in_array('empresa', array_values($user->roles))) {
 				  	 if ($user->uid) { 
-						print '<div style="border: 1px solid #ccc ;">';
-			  	 	 	print 'es empresa<br>';
-			  	 	 	print '<a href="?q=/job/applications">Mis Aplicaciones</a><br>';		  	 	 	
-			  	 	    print '</div>';
+						//print '<div style="border: 1px solid #ccc ;">';
+			  	 	 	print 'Empresa<br>';
+			  	 	 	print '<a href="?q=/job/applications">Mis Aplicaciones</a><br>';
+			  	 	 	print '<br>&nbsp;<br>&nbsp;<br>&nbsp;';		  	 	 	
+			  	 	    //print '</div>';
 			  		 }
 			  	 } else {
 			  	 	 if ($user->uid) { 
-			  	 	 	print '<div style="border: 1px solid #ccc ;">';
-			  	 	 	print 'es persona<br>';
+			  	 	 	//print '<div style="border: 1px solid #ccc ;">';
+			  	 	 	print 'Persona<br>';
 			  	 	 	print 'Bienvenido '.$fields['Empleado']['profile_empl_apellido']['value'].', '.$fields['Empleado']['profile_empl_nombre']['value'].'<br>';
 			  	 	 	print '<a href="?q=/job/applications">Mis Aplicaciones</a><br>';	  	 	 	
-			  	 	    print '</div>';
+			  	 	    //print '</div>';
+			  	 	    print '<br>&nbsp;<br>&nbsp;<br>&nbsp;';
 			  		 } 
 			  	 }
 ?>

@@ -13,7 +13,7 @@
 	<?php Form_ayuda(''); ?> 
     <!--------CENTRAL colum-------->
     <DIV id="central_column">
-      <div style="border: 1px solid #ccc; padding:10px;">
+      <!--<div style="border: 1px solid #ccc; padding:10px;">-->
 	  <?php include("include/cv_previsualizar.php");?>
 	  </div>
     </DIV>
