@@ -242,6 +242,9 @@ li.btns.sig:hover{
 	margin:0 0 10px 0 ;
 	float:left;
 }
+.line-submenu.mi{/*------poner esto en el menu de las paginas de mi-educacion y etc-----*/
+	margin:0
+	}
 #browser .white.left {
 	width:580px;
 	height:220px;
@@ -278,20 +281,6 @@ li.btns.sig:hover{
 	bottom:10px;
 	left:50px;
 }
-
-.btn_buscar {
-	background: url(../img/btn_buscador_home.gif) top no-repeat;
-	width:118px;
-	height:21px;
-	overflow:hidden;
-	margin-top:5px;
-	cursor:pointer;
-	border:none
-}
-.btn_buscar a:hover {
-	background-position: 0px -21px;
-}
-
 .btn_busquedaA a {
 	position: absolute;
 	bottom:0;
