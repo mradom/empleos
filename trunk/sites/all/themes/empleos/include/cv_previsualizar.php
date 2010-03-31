@@ -3,7 +3,8 @@ global $user;
 global $user_profile;
         // Previsualizar --------------------------------------------------------------------------------------------
   		if ($user->uid){
-  			Print '<div style="text-align:right;"><a href="?q=cv_print/me" target="_blanc">Imprimir</a></div>';
+  			Print '<div class="share"><img src="sites/all/themes/empleos/img/icoImprimir.png" width="16" height="16" border=0 alt="Imprimir" style="margin-right:7px;"> <a href="?q=cv_print/me" target="_blanc">Imprimir</a>&nbsp;&nbsp; <img src="sites/all/themes/empleos/img/icoRecomendar.png" width="16" height="16" border=0 alt="Recomendar este aviso" style="margin-right:7px;"> <a href="#">Enviar a un amigo</a>
+      </div>';
   			Print '<div class="itemTitle" style="padding-left:10px; clear:both"><a class="orange" href="?q=/user/me/edit/Empleado">Datos Personales</a></div>';
   			$usuario = user_load(array('uid' => $user->uid));
   			
@@ -13,7 +14,7 @@ global $user_profile;
 
   			print '<div class="resumen prev" style="position:relative">';
             print ' <p class="date">15-03-2010</p>';
-            print ' <div class="foto"><img src="/"></div>';
+            print ' <div class="foto"></div>';
             print '<ul class="resumen">';
             print ' <li class="stg"><span class="blue">Apellido: </span>'.$usuario->profile_empl_apellido.'</li>';
             print ' <li><span class="blue">Nombre: </span>'.$usuario->profile_empl_nombre  .'</li>';
@@ -31,27 +32,11 @@ global $user_profile;
             print ' <li><span class="blue">Telefono Alternativo: </span>'.$usuario->profile_empl_tel_alternativo.'</li>';
             print ' </ul>';
             print ' </div>';
-  			
-  			//print 'Apellido:'.$usuario->profile_empl_apellido.'<br>';
-  			//print 'Nombre  : '.$usuario->profile_empl_nombre  .'<br>';
-  			//print 'Sexo    : '.$usuario->profile_empl_sexo    .'<br>';
-  			//print 'Fecha de Nacimiento: '.$usuario->profile_empl_fecha_nacimiento['day'].'/'.$usuario->profile_empl_fecha_nacimiento['month'].'/'.$usuario->profile_empl_fecha_nacimiento['year'].'<br>';
-  			//print 'Estado Civil: '.$usuario->profile_empl_estado_civil.'<br>';
-  			//print '&nbsp;<br>';
-  			
-  			//print 'Tipo de Documento: '.$usuario->profile_tipo_doc.'<br>';
-  			//print 'N&uacute;mero de Documento: '.$usuario->profile_empl_num_doc.'<br>';
-  			//print 'Direci&oacute;n: '.$usuario->profile_empl_calle.' '.$usuario->profile_empl_dir_numero.', '.$usuario->profile_empl_dir_piso.' '.$usuario->profile_empl_dir_dpto.'<br>';
-  			//print 'C&oacute;digo Postal: '.$usuario->profile_empl_cp.'<br>';
-  			//print 'Provincia: '.$usuario->profile_empl_provincia.'<br>';
-  			//print 'Telefono: '.$usuario->profile_empl_telefono.'<br>';
-  		//	print 'Telefono Alternativo: '.$usuario->profile_empl_tel_alternativo.'<br>';
-  			
+ 			
   			
   			// Educacion --------------------------------------------------------------------------------------------
   			$view = views_get_view('mis_educacion');
 			$vista = views_build_view('items', $view, false, false);
-			//Print '&nbsp;<br>&nbsp;<br><h3><a href="?q=/node/add/p-educacion">Educacion</a></h3><br>';
 			Print '<div class="itemTitle" style="padding-left:10px; clear:both"><a class="orange" href="?q=/node/add/p-educacion">Educacion</a></div>';
 			?>
 			<TABLE class="tablaGris" border="0" cellpadding="0" cellspacing="1">
@@ -122,7 +107,6 @@ global $user_profile;
   			// Cursos --------------------------------------------------------------------------------------------
 			$view = views_get_view('mis_cursos');
 			$vista = views_build_view('items', $view, false, false);
-			//Print '&nbsp;<br>&nbsp;<br><h3><a href="?q=/node/add/p-cursos">Cursos</a></h3><br>';
 			Print '<div class="itemTitle" style="padding-left:10px; clear:both"><a class="orange" href="?q=/node/add/p-cursos">Cursos</a></h3</div>';
 			?>
 				<TABLE class="tablaGris" border="0" cellpadding="0" cellspacing="1"> 
@@ -155,8 +139,7 @@ global $user_profile;
 			// Idiomas ------------------------------------------------------------------------------------------
 			$view = views_get_view('mis_idiomas');
 			$vista = views_build_view('items', $view, false, false);
-			//Print '&nbsp;<br>&nbsp;<br><h3><a href="?q=/node/add/p-idiomas">idiomas</a></h3><br>';
-			Print '<div class="itemTitle" style="padding-left:10px; clear:both"><a class="orange" href="?q=/node/add/p-idiomas">idiomas</a></div>';
+			Print '<div class="itemTitle" style="padding-left:10px; clear:both"><a class="orange" href="?q=/node/add/p-idiomas">Idiomas</a></div>';
 			?>
 				<TABLE class="tablaGris" border="0" cellpadding="0" cellspacing="1"> 
 				      <TBODY> 
@@ -196,7 +179,7 @@ global $user_profile;
 			// Informatica ------------------------------------------------------------------------------------------
 			$view = views_get_view('mis_informatica');
 			$vista = views_build_view('items', $view, false, false);
-			Print '&nbsp;<br>&nbsp;<br><h3><a href="?q=/node/add/p-informatica">Informatica</a></h3><br>';
+			Print '<div class="itemTitle" style="padding-left:10px; clear:both"><a class="orange" href="?q=/node/add/p-informatica">Informatica</a></div>';
 			?>
 				<TABLE class="tablaGris" border="0" cellpadding="0" cellspacing="1"> 
 				      <TBODY> 
@@ -230,7 +213,6 @@ global $user_profile;
 			// Otros Conocimientos ------------------------------------------------------------------------------------------			
 			$view = views_get_view('mis_otros_conocimientos');
 			$vista = views_build_view('items', $view, false, false);
-			//Print '&nbsp;<br>&nbsp;<br><h3><a href="?q=/node/add/p-otros-conocimientos">Otros Conocimientos</a></h3><br>';
 			Print '<div class="itemTitle" style="padding-left:10px; clear:both"><a class="orange" href="?q=/node/add/p-otros-conocimientos">Otros Conocimientos</a></div>';
 			?>
 				<TABLE class="tablaGris" border="0" cellpadding="0" cellspacing="1"> 
@@ -258,7 +240,6 @@ global $user_profile;
 			// Experiencia Laboral ------------------------------------------------------------------------------------------
 			$view = views_get_view('mis_experiencia_laboral');
 			$vista = views_build_view('items', $view, false, false);
-			//Print '&nbsp;<br>&nbsp;<br><h3><a href="?q=/node/add/p-experiencia-laboral">Experiencia Laboral</a></h3><br>';
 			Print '<div class="itemTitle" style="padding-left:10px; clear:both"><a class="orange" href="?q=/node/add/p-experiencia-laboral">Experiencia Laboral</a></div>';
 			
 			?>
@@ -317,7 +298,6 @@ global $user_profile;
 			// Referencia Laboral ------------------------------------------------------------------------------------------			
 			$view = views_get_view('mis_referencia_laboral');
 			$vista = views_build_view('items', $view, false, false);
-			//Print '&nbsp;<br>&nbsp;<br><h3><a href="?q=/node/add/p-referencia">Referencia Laboral</a></h3><br>';
 			Print '<div class="itemTitle" style="padding-left:10px; clear:both"><a class="orange" href="?q=/node/add/p-referencia">Referencia Laboral</a></div>';
 			
 			?>
