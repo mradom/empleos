@@ -202,20 +202,19 @@ li.btns.sig:hover{
 /*--*/
 .contentBoxTips{
 	width:300px;
-	float:left;
 	position:relative;
 	margin:10px 0;
 }
 .contentBoxTips .ico{
 	position:absolute;
-	top:-15px;
-	left:30px;
+	top:-10px;
+	right:30px;
 }
 .box.tips{
 	width:278px;
 	background:#fff url(../img/bg_box.gif) top repeat-x;
 	padding:10px;
-	padding-top:30px;
+	padding-top:15px;
 	border:1px solid #999;
 	float:none;
 	-moz-border-radius:3px;
@@ -240,7 +239,7 @@ li.btns.sig:hover{
 	width:970px;
 	padding:0 10px;
 	background:#3077a4;
-	margin:0;
+	margin:0 0 10px 0 ;
 	float:left;
 }
 #browser .white.left {
@@ -808,6 +807,7 @@ ul.resumen{
 }
 ul.resumen li.lnk{ padding-left:260px;}
 div.resumen p.date{padding:0}
+ul.requisitos li{ margin-bottom:1.2em;}
 div.resumen.prev{
 	width:660px;
 	background:none;
@@ -815,12 +815,30 @@ div.resumen.prev{
 }
 .foto{
 	width:120px;
-	background:#deF;
+	background:#deF url(../img/foto.jpg);
 	padding:2px;
 	border:1px solid #bde;
 	height:120px;
 	margin:4px 30px 0 0;
 	float:left;
+}
+.share{
+	text-align:right;
+	float:right;
+	margin-bottom:10px;
+}
+.share img{ 
+	width:16px;
+	height:16px;
+	margin-right:7px;
+}
+.ampliar{
+	width:637px;
+	padding:10px;
+	margin-bottom:10px;
+	float:left;
+	background:#F0FBFF;
+	position:relative
 }
 
 /*---FOOTER---*/

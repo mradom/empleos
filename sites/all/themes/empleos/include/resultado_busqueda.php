@@ -1,4 +1,4 @@
-<?php 
+<!--<?php 
 $key = $_POST["key"];
 $rubro = $_POST["rubro"];
 $zona = $_POST["zona"];
@@ -38,7 +38,7 @@ $where = $where . " ORDER BY w.sid, n.created DESC  ";
 $sql = $base_query.$inner_join.$where;
 $rs = db_query($sql);
 ?>
-      <!--------Poner aca camino de links -------->
+      ------Poner aca camino de links ------
       <UL class="tags">
         <li><H1><A href="?q=buscar">Buscar</A></H1></LI>
         <?php 
@@ -54,7 +54,7 @@ $rs = db_query($sql);
         		?><li><h1><a href="?q=buscar/<?php echo $key;?>"><?php echo $key;?></a></h1></li><?php
         	}?>
       </UL>
-      <!----LISTA DE RESULTADOS---->
+      --LISTA DE RESULTADOS--
 		<DIV class="box central" style="background:none">
 			<DIV class="results">
           		<DIV class="rss redes">
@@ -65,7 +65,7 @@ $rs = db_query($sql);
           		</DIV>
           		<P>Se econtraron <SPAN class="orange"><?php echo mysql_num_rows($rs);?> ofertas de trabajo:</SPAN> en el &aacute;rea: <SPAN class="orange"> GERENCIA GENERAL</SPAN></P>
 			</DIV>
-        <!-----Gold results---->
+        ---Gold results--
         <?php 
         	$gold = "0";
         	$destacado = "0";
@@ -181,4 +181,4 @@ $rs = db_query($sql);
         		<div><p>No se encontraron resultados de acuerdo a su criterio de busqueda.</p><p>Por favor intente con otro criterio</p></div>
         		<?php
         	}
-        ?>
+        ?>-->

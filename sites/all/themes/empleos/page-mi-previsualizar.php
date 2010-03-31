@@ -10,10 +10,11 @@
   <div id="midle">
     <?php include("include/mi_previsualizar_encabezado.php");?> 
     <!------RIGHT colum------>
-	<?php Form_ayuda(''); ?> 
+    <div id="right_colum">
+	<?php Form_ayuda(''); ?>
+	</div>
     <!--------CENTRAL colum-------->
     <DIV id="central_column">
-      <!--<div style="border: 1px solid #ccc; padding:10px;">-->
 	  <?php include("include/cv_previsualizar.php");?>
 	  </div>
     </DIV>
