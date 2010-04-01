@@ -1,4 +1,4 @@
-<!--<?php 
+<?php 
 $key = $_POST["key"];
 $rubro = $_POST["rubro"];
 $zona = $_POST["zona"];
@@ -38,7 +38,7 @@ $where = $where . " ORDER BY w.sid, n.created DESC  ";
 $sql = $base_query.$inner_join.$where;
 $rs = db_query($sql);
 ?>
-      ------Poner aca camino de links ------
+<!--      ------Poner aca camino de links -------->
       <UL class="tags">
         <li><H1><A href="?q=buscar">Buscar</A></H1></LI>
         <?php 
@@ -54,7 +54,7 @@ $rs = db_query($sql);
         		?><li><h1><a href="?q=buscar/<?php echo $key;?>"><?php echo $key;?></a></h1></li><?php
         	}?>
       </UL>
-      --LISTA DE RESULTADOS--
+<!--      --LISTA DE RESULTADOS---->
 		<DIV class="box central" style="background:none">
 			<DIV class="results">
           		<DIV class="rss redes">
@@ -65,13 +65,13 @@ $rs = db_query($sql);
           		</DIV>
           		<P>Se econtraron <SPAN class="orange"><?php echo mysql_num_rows($rs);?> ofertas de trabajo:</SPAN> en el &aacute;rea: <SPAN class="orange"> GERENCIA GENERAL</SPAN></P>
 			</DIV>
-        <!--Gold results-->
-        <?php 
+       <!--Gold results-->
+       <?php 
         	$gold = "0";
         	$destacado = "0";
         	$simple = "0";
         	$gratis = "0";
-        	
+        	$otro = 0;
         	if(mysql_num_rows($rs) > 0){
         	    while($fila = mysql_fetch_object($rs)){
         			$nodo = node_load($fila->nid);
@@ -88,20 +88,22 @@ $rs = db_query($sql);
         			foreach($nodo->taxonomy as $value){
         				if ($value->vid == 17){$localidad = $value->tid; break;}
         			}
+        			if ($otro==1) { print '</div>'; $otro=0;} 
 					switch ($nodo->_workflow) {
 					    case 3:
 					        echo "<div id='gold'>";
 					        if($gold == "0"){
 					        	echo "<div id='titles_bar'><img src='sites/all/themes/empleos/img/gold.gif'>Avisos Gold</div>";
+					        	$otro = 1;	
 					        	$gold = 1;
-					       
-					        }
+				        }
 					        break;
 					    case 4:
 					        echo "<div id='destacado'>";
 					        if($destacado == "0"){
 					        	echo "<div id='titles_bar'><img src='sites/all/themes/empleos/img/destacado.gif'>Avisos Destacados</div>";
 					        	$destacado = 1;
+					        	$otro = 1;
 					        }
 					        break;
 					    case 5:
@@ -109,6 +111,7 @@ $rs = db_query($sql);
 					        if($simple == "0"){
 					        	echo "<div id='titles_bar'><img src='sites/all/themes/empleos/img/simple.gif'>Avisos Simples</div>";
 					        	$simple = 1;
+					        	$otro = 1;
 					        }
 					        break;
 					    case 6:
@@ -116,6 +119,7 @@ $rs = db_query($sql);
 					        if($gratis == "0"){
 					        	echo "<div id='titles_bar'>Avisos Gratuitos</div>";
 					        	$gratis = 1;
+					        	$otro = 1;
 					        }
 					        break;
 					}
@@ -173,13 +177,15 @@ $rs = db_query($sql);
 					        </div>
 		          			<?php
 		          		}
+	
 		          ?>
 		         </div>
         			<?php
+        			
         		}
         	}else{
         		?>
         		<div><p>No se encontraron resultados de acuerdo a su criterio de busqueda.</p><p>Por favor intente con otro criterio</p></div>
         		<?php
         	}
-        ?>-->
+        ?>
