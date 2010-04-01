@@ -214,7 +214,6 @@ function phptemplate_user_edit($form) {
 		$miform .= drupal_render($form['picture']);	
      }
 	
-	
 	$miform .= drupal_render($form['submit']);
 	$miform .= drupal_render($form['delete']);
 	$miform .= drupal_render($form['fin']);
@@ -780,6 +779,7 @@ $html = '<ul style="height: 30px;" class="ui-tabs-nav">
         <li class="ui-tabs-selected"><a href="#fragment-1"><span>Descripcion del puesto:</span></a></li> 
         <li><a href="#fragment-2"><span>Requisitos</span></a></li> 
         <li><a href="#fragment-3"><span>Datos de la Empresa</span></a></li> 
+        <li><a href="#fragment-4"><span>Publicacion</span></a></li> 
     </ul>';
 
 	$form['ini']['#prefix']  = '<div class="mycv" id="aviso"><div id="tabs">'.$html;
@@ -814,7 +814,7 @@ $html = '<ul style="height: 30px;" class="ui-tabs-nav">
     $form['workflow'] = "";
     
     $form['taxonomy'][get_vocabulary_by_name("provincias")]['#title'] = "Lugar de residencia";
-    $form['field_remuneracin']['key']['title'] = "Indicar remuneración pretendida";
+    $form['field_remuneracion']['key']['title'] = "Indicar remuneración pretendida";
     
     ######## CREACION DE TABS #######
 	
@@ -826,6 +826,9 @@ $html = '<ul style="height: 30px;" class="ui-tabs-nav">
 	
 	$form['group_datos_de_la_empresa']['#prefix'] = "<div id='fragment-3' class='ui-tabs-panel'>";
 	$form['group_datos_de_la_empresa']['#suffix'] = "</div>";
+	
+	$form['group_publicacion']['#prefix'] = "<div id='fragment-4' class='ui-tabs-panel'>";
+	$form['group_publicacion']['#suffix'] = "</div>";
     
     ######## REQUISITOS #########
     
@@ -869,6 +872,10 @@ $html = '<ul style="height: 30px;" class="ui-tabs-nav">
     $form['group_datos_de_la_empresa']['field_logo']['#description'] = "";
     $form['group_datos_de_la_empresa']['field_logo']['new']['upload']['#value'] = "subir";
     
+    //$form['group_datos_de_la_empresa']['field_empresa_1'] = $form['field_empresa_1'];
+    //field_descripcion_0
+    //$form['field_empresa_1'] = "";
+    
     ####### DESCRIPCION DEL PUESTO ########
     
     //Paso el taxonomy al grupo que yo quiero -- Jerarquia
@@ -890,9 +897,11 @@ $html = '<ul style="height: 30px;" class="ui-tabs-nav">
     //$form['group_descripcion_del_puesto']['field_cantidad_vacantes'] = $form['#node']->field_cantidad_vacantes;
     //$form['#node']->field_cantidad_vacantes == ""; 
     
-    $form["field_remuneracin"]['#weight'] = 93;
+    $form["field_remuneracion"]['#weight'] = 93;
     
-    //firep($form['submit'], 'Formulario');
+	####### PUBLICACION ########
+	//$form['group_publicacion']['field_']
+    
 
     $miform  = '';
     
@@ -909,10 +918,17 @@ $html = '<ul style="height: 30px;" class="ui-tabs-nav">
 	
 	$miform .= drupal_render($form['taxonomy'][get_vocabulary_by_name('provincias')]);
 	$miform .= drupal_render($form['taxonomy'][get_vocabulary_by_name('area')]);
-	$miform .= drupal_render($form['group_requisitos']);
+	
+	$miform .= drupal_render($form['group_datos_de_la_empresa']);
+	$miform .= drupal_render($form['group_datos_de_la_empresa']['field_empresa_1']);
+	$miform .= drupal_render($form['group_datos_de_la_empresa']['field_logo']);
+	
+	$miform .= drupal_render($form['group_publicacion']);
+	$miform .= drupal_render($form['group_publicacion']['field_fecha_desde']);
+	$miform .= drupal_render($form['group_publicacion']['field_fecha_hasta']);
 	
 	//$miform .= drupal_render($form['body_filter']);
-	$miform .= drupal_render($form['group_datos_de_la_empresa']);
+
 	$miform .= drupal_render($form['submit']);
 	$miform .= drupal_render($form['delete']);
 	$miform .= drupal_render($form['fin']);
@@ -924,8 +940,8 @@ $html = '<ul style="height: 30px;" class="ui-tabs-nav">
 	$miform .= drupal_render($form['form_id']);
 	$miform .= drupal_render($form['field_logo-attach-url']);
 	$miform .= drupal_render($form);
-	//echo "<pre>"; print_r($form['taxonomy'][get_vocabulary_by_name('Jerarquia')]);echo "</pre>";
-	firep($miform, "Mi form");
+	//echo "<pre>"; print_r($form);echo "</pre>";
+	firep($form['field_empresa_1'], "Mi form");
 	return $miform;
 }
 
