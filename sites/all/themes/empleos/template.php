@@ -144,7 +144,7 @@ function phptemplate_user_edit($form) {
     $form['preview']="" ;
     // $form['submit']['#value']="Guardar" ;
     
-    firep($form, 'Formulario');
+    firep($user->roles, 'Formulario');
      
     $miform  = '';
     
@@ -156,7 +156,7 @@ function phptemplate_user_edit($form) {
 	$form['Empresa']['#title']='';
 	$form['Empresa']['profile_empresa_consultora']='';
 	
-	if (in_array('empresa', array_values($user->roles))){
+	if (arg(3)=='Empresa' and in_array('empresa', array_values($user->roles))){
 		$miform .= drupal_render($form['Empresa']['profile_empresa_apellido']);
 		$miform .= drupal_render($form['Empresa']['profile_empresa_nombre']);
 		$miform .= drupal_render($form['Empresa']['profile_empresa_sexo']);
@@ -195,7 +195,8 @@ function phptemplate_user_edit($form) {
 		$miform .= drupal_render($form['Empresa']['profile_empresa_dotacion']);
 		$miform .= drupal_render($form['Empresa']['profile_empresa_descripcion']);
 		
-	 } else {
+	 }
+	 if (arg(3)=='Empleado' and in_array('authenticated user', array_values($user->roles))){
 	 	$miform .= drupal_render($form['Empleado']['profile_empl_apellido']);
 		$miform .= drupal_render($form['Empleado']['profile_empl_nombre']);
 		$miform .= drupal_render($form['Empleado']['profile_empl_sexo']);
@@ -211,6 +212,15 @@ function phptemplate_user_edit($form) {
 		$miform .= drupal_render($form['Empleado']['profile_empl_provincia']);
 		$miform .= drupal_render($form['Empleado']['profile_empl_telefono']);
 		$miform .= drupal_render($form['Empleado']['profile_empl_tel_alternativo']);
+		$miform .= drupal_render($form['picture']);	
+     }
+	 if (arg(3)=='' ){
+	 	$form['account']['#title']='';
+	 	$form['locale']='';
+	 	$form['comment_settings']['#title']='';
+		$miform .= drupal_render($form['account']['mail']);
+		$miform .= drupal_render($form['account']['pass']);
+		$miform .= drupal_render($form['comment_settings']['signature']);
 		$miform .= drupal_render($form['picture']);	
      }
 	
