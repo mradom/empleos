@@ -24,7 +24,7 @@ if(!$user->uid){?>
 	<div id="login">
 		<ul class="log">
 			<li>
-				<a href="?q=user/me">Hola <strong><?php print $user->name; ?></strong></a> |&nbsp;
+				<a href="?q=user/me/edit">Hola <strong><?php print $user->name; ?></strong></a> |&nbsp;
 			</li>
 			<li>
 				<a href="?q=user/me">Mi cuenta</a> |&nbsp;
