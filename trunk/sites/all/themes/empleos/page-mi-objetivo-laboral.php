@@ -10,7 +10,9 @@
   <div id="midle">
     <?php include("include/mi_objetivo_laboral_encabezado.php");?> 
     <!------RIGHT colum------>
-	<?php Form_ayuda('Objetivo Laboral'); ?> 
+    <div id="right_colum">
+	<?php Form_ayuda('Objetivo Laboral'); ?>
+	</div> 
     <!--------CENTRAL colum-------->
     <DIV id="central_column">
 	  <?php print $content;?>

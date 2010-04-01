@@ -10,7 +10,9 @@
   <div id="midle">
     <?php include("include/mi_educacion_encabezado.php");?> 
     <!------RIGHT colum------>
-	<?php Form_ayuda('Educacion'); ?> 
+    <div id="right_colum">
+	<?php Form_ayuda('Educacion'); ?>
+	</div> 
     <!--------CENTRAL colum-------->
     <DIV id="central_column">
 	  <?php print $content;?>

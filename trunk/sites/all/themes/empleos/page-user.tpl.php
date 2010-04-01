@@ -11,7 +11,8 @@
   <?php include("include/header.php");?>
   <!------MIDDLE------>
   <div id="midle">
-    <?php if (arg(0)=='user' and arg(1)==$user->uid and arg(2)=='edit') include("include/mi_datos_encabezado.php");?> 
+    <?php if (arg(0)=='user' and arg(1)==$user->uid and arg(2)=='edit' and arg(3)=='Empleado') include("include/mi_datos_encabezado.php");?>
+    <?php if (arg(0)=='user' and arg(1)==$user->uid and arg(2)=='edit' and arg(3)=='Empresa')  include("include/mi_empresa_encabezado.php");?> 
     <!----banners boxes---->
     <?php // include("include/banners-boxes.php");?>
     <!------RIGHT colum------>

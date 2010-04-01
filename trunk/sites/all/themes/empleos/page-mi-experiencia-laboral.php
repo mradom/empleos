@@ -10,7 +10,9 @@
   <div id="midle">
     <?php include("include/mi_experiencia_laboral_encabezado.php");?> 
     <!------RIGHT colum------>
-	<?php Form_ayuda('Experiencia Laboral'); ?> 
+    <div id="right_colum">
+	<?php Form_ayuda('Experiencia Laboral'); ?>
+	</div> 
     <!--------CENTRAL colum-------->
     <DIV id="central_column">
 	  <?php print $content;?>

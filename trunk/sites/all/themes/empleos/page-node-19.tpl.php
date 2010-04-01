@@ -9,7 +9,9 @@
     <!----banners boxes---->
     <?php include("include/banners-boxes.php");?>
     <!------RIGHT colum------>
+    <div id="right_colum">
     <?php include("include/col_derecha.php");?>
+    </div>
     <!--------CENTRAL colum-------->
     <DIV id="central_column">
       <?php include("include/resultado_busqueda.php");?>

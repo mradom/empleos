@@ -10,11 +10,13 @@
   <div id="midle">
     <?php include("include/mi_informatica_encabezado.php");?> 
     <!------RIGHT colum------>
-	<?php Form_ayuda('Informatica'); ?> 
+    <div id="right_colum">
+	<?php Form_ayuda('Informatica'); ?>
+	</div> 
     <!--------CENTRAL colum-------->
     <DIV id="central_column">
 	  <?php print $content;?>
-	  <?php if (arg(1)<>'add' and arg(2)<>'edit' and arg(2)<>'delete') print "<div class='btn_gral a'><a href='?q=node/add/p-informatica'>Agregar</a></div><br>";?>
+	  <?php if (arg(1)<>'add' and arg(2)<>'edit' and arg(2)<>'delete') print "<div class='btn_gral b'><a href='?q=node/add/p-informatica'>Agregar</a></div><br>";?>
     </DIV>
   <!-----banners-minibox---->
   <?php include("include/banners-central.php");?>
