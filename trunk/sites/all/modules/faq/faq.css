@@ -30,7 +30,10 @@
 .faq-dl-hide-answer {
   padding-bottom: 15px;
 }
-
+div.faq-question.faq-dt-hide-answer a{
+	  color:#1C77A8;
+	  font-weight:bold
+	}
 img.faq-tax-image {
   float: left;
   padding: 0px 3px 0px 3px;
@@ -39,3 +42,17 @@ img.faq-tax-image {
 div.faq-category-header, div.faq-qa-header {
   overflow: auto;
 }
+div.faq-qa-header{
+	border-bottom:1px solid #F90;
+	max-width:675px;
+	}
+div.faq-qa-header h5.faq-header a{
+	color:#F90;
+	font-size:11px;
+	line-height:18px;
+	}
+
+
+
+
+

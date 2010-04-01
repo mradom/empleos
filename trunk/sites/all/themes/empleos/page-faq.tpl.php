@@ -13,11 +13,11 @@
     <!--------CENTRAL colum-------->
     <DIV id="central_column">
       <div id="center"><div id="squeeze"><div class="right-corner"><div class="left-corner">
-          <?php if ($breadcrumb): print $breadcrumb; endif; ?>
+          <?php if ($breadcrumb): print "+".$breadcrumb."+"; endif; ?>
           <?php if ($mission): print '<div id="mission">'. $mission .'</div>'; endif; ?>
 
           <?php if ($tabs): print '<div id="tabs-wrapper" class="clear-block">'; endif; ?>
-          <?php if ($title): print '<h2'. ($tabs ? ' class="with-tabs"' : '') .'>'. $title .'</h2>'; endif; ?>
+          <?php if ($title): print '<h2 class="blue hTitle"'. ($tabs ? ' class="with-tab"' : '') .'>'. $title .'</h2>'; endif; ?>
           <?php if ($tabs): print $tabs .'</div>'; endif; ?>
 
           <?php if (isset($tabs2)): print $tabs2; endif; ?>
