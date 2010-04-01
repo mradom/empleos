@@ -3,6 +3,7 @@
 <?php //print $scripts ?>
   	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   	<title>empleoslavoz.com.ar</title>
+  	<link REL="SHORTCUT ICON" href="favicon.ico">
   	<link rel="stylesheet" type="text/css" href="sites/all/themes/empleos/css/style_layout.css">
   	<link rel="stylesheet" type="text/css" href="sites/all/themes/empleos/css/forms.css">
   	<link rel="stylesheet" type="text/css" href="sites/all/themes/empleos/css/tabs.css">
