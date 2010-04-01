@@ -14,7 +14,13 @@ obligatorios.</p>
 <div><img style="padding-left: 150px" src="sites/all/themes/empleos/img/2paso.png"></div>
 </div>
 <!-----submenu----->
-<?php include("include/submenu-usuarios.php");?>
+<?php 
+  if (in_array('empresa', array_values($user->roles))) {
+      include("include/submenu-empresa.php");
+  } else {
+  	  include("include/submenu-usuarios.php");
+  }
+?>
 <!-----tabla----->
 <?php 
 firep($fields, 'Fields');

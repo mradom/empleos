@@ -144,7 +144,7 @@ function phptemplate_user_edit($form) {
     $form['preview']="" ;
     // $form['submit']['#value']="Guardar" ;
     
-    //firep($form['submit'], 'Formulario');
+    firep($form, 'Formulario');
      
     $miform  = '';
     
@@ -210,7 +210,8 @@ function phptemplate_user_edit($form) {
 		$miform .= drupal_render($form['Empleado']['profile_empl_cp']);
 		$miform .= drupal_render($form['Empleado']['profile_empl_provincia']);
 		$miform .= drupal_render($form['Empleado']['profile_empl_telefono']);
-		$miform .= drupal_render($form['Empleado']['profile_empl_tel_alternativo']);	
+		$miform .= drupal_render($form['Empleado']['profile_empl_tel_alternativo']);
+		$miform .= drupal_render($form['picture']);	
      }
 	
 	
