@@ -51,6 +51,9 @@ span.underline {
 	text-decoration: underline
 }
 .stg{ font-weight:bold}
+.hTitle{
+	font:24px/30px tahoma;
+	}
 /*-----BODY-------*/
 #wrapper {
 	width:990px;
