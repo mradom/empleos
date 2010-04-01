@@ -7,14 +7,7 @@
 	
 	// break;
 
-	
-switch ($node->type) {
-	case 'e_aviso':
-		include 'page-e_aviso.tpl.php';
-		return;
-	case 'aviso':
-		include 'page-e_aviso.tpl.php'; 
-		return;		
+switch ($node->type) {	
 	case 'faq':
 		include 'page-faq.tpl.php';
 		return;
@@ -41,14 +34,13 @@ switch ($node->type) {
 		return; 		
 	case 'p_objetivo_laboral':
 		include 'page-mi-objetivo-laboral.php';
-		return;
-		
-		default:
+		return;		 		
+	case 'e_aviso':
+		include 'page-e-aviso.tpl.php';
+		return;		
+	default:
 }
-
-
-
-		?>
+?>
 <html>
 <?php include("include/head.php");?>
 <body>

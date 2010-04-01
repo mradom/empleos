@@ -1,5 +1,6 @@
-<?php 
-        			$nodo = node_load($node->nid);
+<?php
+//echo "<pre>"; print_r($node->links); echo "</pre>"; 
+     	  			$nodo = node_load($node->nid);
         			$gold = "0";
         			$destacado = "0";
         			$simple = "0";
@@ -72,7 +73,7 @@
 		            </DIV>
 		          </DIV>
 		          <?php }
-		          		if($nodo->_workflow == 5){
+		          	if($nodo->_workflow == 5){
 		          		// tipo basico
 		          	?>
 						<div>
@@ -97,11 +98,12 @@
 		          			// tipo free
 		          			?>
 							<div class="datos">
-					            <h2><strong>Ejecutivo de Ventas l </strong> Importante Empresa de Servicios de Salud l <span class="grey">Sector: Gerencia l Córdoba</span></h2>
-					            <p><a href="#" class="right">&gt;&gt;Ver oferta de trabajo</a></p>
-					            <p class="grey">Fecha de publicación: 15-01-2010</p>
+					            <h2><strong><?php echo $nodo->title;?></strong> Importante Empresa de Servicios de Salud | <span class="grey">Sector: <?php echo $nodo->taxonomy[$sector]->name;?></span></h2>
+					            <p><a href="?q=node/<?php echo $nodo->nid;?>" class="right">&gt;&gt;Ver oferta de trabajo</a></p>
+					            <p class="grey">Fecha de publicaci&oacute;n: <?php print date('d-m-Y',$nodo->created); ?></P>
 					        </div>
 		          			<?php
 		          		}
 		          ?>
+		          <a href="?q=<?php echo $node->links['job_apply']['href']?>">Ver postulantes para este aviso</a>
 		         </div>

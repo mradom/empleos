@@ -23,6 +23,9 @@ switch (arg(2)) {
 		return;
 	case 'p-objetivo-laboral':
 		include 'page-mi-objetivo-laboral.php';
+		return;		
+	case 'e-aviso':
+		include 'page-e-aviso.tpl.php';
 		return;				
 	default:
 		print $content;
