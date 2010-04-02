@@ -2,11 +2,11 @@
   <h3 class="small"> Un portal de <br>
     <a href="http://www.lavoz.com.ar/" target="_blank"> <img src="sites/all/themes/empleos/img/pie_lavoz.gif" height="14" width="110"> </a> </h3>
   <ul>
-    <li> <a href="http://www.portalesverticales.com.ar/caci/empleos/aviso-legal.html">Aviso legal</a> </li>
-    <li> <a href="http://www.portalesverticales.com.ar/caci/empleos/contacto.html">Contacto</a> </li>
-    <li> <a href="http://www.portalesverticales.com.ar/caci/empleos/privacidad.html">Privacidad</a> </li>
-    <li> <a href="http://www.portalesverticales.com.ar/caci/empleos/publicar.html" target="_blank">C&oacute;mo publicar</a> </li>
-    <li> <a href="http://www.portalesverticales.com.ar/caci/empleos/site-map.html">Mapa del sitio</a> </li>
+    <li> <a href="?q=avisolegal">Aviso legal</a> </li>
+    <li> <a href="?q=contact">Contacto</a> </li>
+    <li> <a href="?q=privacidad">Privacidad</a> </li>
+    <li> <a href="?q=faq" target="_blank">C&oacute;mo publicar</a> </li>
+    <li> <a href="?q=mapadelsitio">Mapa del sitio</a> </li>
     <li> <a href="javascript:alert('Presione%20la%20combinaci%C3%B3n%20de%20teclas%20CTRL+D%20para%20agregar%20Empleos%20como%20sitio%20Favorito.')" id="lnk1"><span>EmpleosLaVoz</span> como p&aacute;gina de inicio</a> </li>
   </ul>
   <ul class="logos">

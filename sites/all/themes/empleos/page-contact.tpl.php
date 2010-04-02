@@ -9,15 +9,16 @@
     <!----banners boxes---->
     <?php include("include/banners-boxes.php");?>
     <!------RIGHT colum------>
+    <div id="right_colum">
     <?php include("include/col_derecha-mini.php");?>
+    </div>
     <!--------CENTRAL colum-------->
     <DIV id="central_column">
-      <div id="center"><div id="squeeze"><div class="right-corner"><div class="left-corner">
-          <?php //if ($breadcrumb): print "+".$breadcrumb."+"; endif; ?>
-          <?php if ($title): print '<h2 class="blue hTitle"'. ($tabs ? ' class="with-tab"' : '') .'>'. $title .'</h2>'; endif; ?>
-          <?php print $content ?>
-          
-      </div></div></div></div>
+      <?php
+        if (arg(1)=='') { print 'Listado<br><br>';}
+        if (arg(1)=='info') { print 'Info<br><br>';} 
+        print $content;
+      ?>
   </DIV>
   <!-----banners-minibox---->
   <?php include("include/banners-central.php");?>

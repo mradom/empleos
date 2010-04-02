@@ -16,7 +16,7 @@ if(!$user->uid){?>
 				<a href="?q=user/register/empleador">
 					<span style="color:#FFF">Registro Empleadores</span>
 				</a>&nbsp;&nbsp;&nbsp;
-				<a href="?q=contacto">C&oacute;mo publico un aviso?</a>
+				<a href="?q=faq">C&oacute;mo publico un aviso?</a>
 			</li>
 		</ul>
 	</div>
@@ -39,7 +39,7 @@ if(!$user->uid){?>
 				<a href="?q=user/register/empleador">
 					<span style="color:#FFF">Ingreso Empleadores</span>
 				</a>&nbsp;&nbsp;&nbsp;&nbsp;
-				<a href="?q=contacto">C&oacute;mo publico un aviso?</a>
+				<a href="?q=faq">C&oacute;mo publico un aviso?</a>
 			</li>
 		</ul>
 	</div>

@@ -123,6 +123,9 @@ function phptemplate_user_register($form) {
  **/
 function phptemplate_user_edit($form) {
 	global $user;
+	
+	firep($user, 'Formulario');
+	
 	$form['ini']['#prefix']  = '<div class="mycv">';
 	$form['ini']['#value']  = ' ';
 	$form['ini']['#weight']  = -99;	
@@ -143,8 +146,6 @@ function phptemplate_user_edit($form) {
         
     $form['preview']="" ;
     // $form['submit']['#value']="Guardar" ;
-    
-    firep($user->roles, 'Formulario');
      
     $miform  = '';
     
@@ -218,6 +219,7 @@ function phptemplate_user_edit($form) {
 	 	$form['account']['#title']='';
 	 	$form['locale']='';
 	 	$form['comment_settings']['#title']='';
+	  	$form['contact']='';
 		$miform .= drupal_render($form['account']['mail']);
 		$miform .= drupal_render($form['account']['pass']);
 		$miform .= drupal_render($form['comment_settings']['signature']);
@@ -767,6 +769,59 @@ function phptemplate_p_educacion_node_form(&$form) {
   return $miform;
   
 }
+
+function phptemplate_contact_mail_page(&$form) {
+		
+	$form['ini']['#prefix']  = '<div class="mycv">';
+	$form['ini']['#value']  = ' ';
+	$form['ini']['#weight']  = -99;	
+	
+	$form['fin']['#prefix']  = '</div>';
+	$form['fin']['#value']  = ' ';
+	$form['fin']['#weight']  = 99;
+	
+	
+	$form['intro']['#value']  = '<legend>Contacto:</legend>';
+	// Lo pongo dentro de un div para poder temearlo
+	$form['intro']['#prefix']  = '<fieldset>';
+	$form['intro']['#suffix']  = '</fieldset>';
+	// le pongo el weight bien bajo para que lo ponga primero
+	$form['intro']['#weight']  = -40;
+	
+    $form['taxonomy']['#type'] = '';
+    $form['body_filter'] = '';
+    
+    $form['body_filter']['body']['#title'] = 'Texto';
+    $form['body_filter']['body']['#rows'] = 10;
+    $form['body_filter']['body']['#cols'] = 80;    
+    
+    $form['body_filter']['format']['format']['guidelines']['#value'] = '';
+    $form['body_filter']['format'][2]['#value'] = '';
+    
+    $form['preview']="" ;
+    $form['contact_information']['#value']="" ;
+        
+    $miform  = '';
+    
+    $miform .= drupal_render($form['ini']);
+    $miform .= drupal_render($form['intro']);
+	$miform .= drupal_render($form['title']);
+	$miform .= drupal_render($form['name']);
+	
+	$miform .= drupal_render($form['mail']);
+	$miform .= drupal_render($form['subject']);
+	$miform .= drupal_render($form['cid']);
+	$miform .= drupal_render($form['message']);
+	$miform .= drupal_render($form['copy']);
+	
+	$miform .= drupal_render($form['submit']);
+	$miform .= drupal_render($form['delete']);
+	$miform .= drupal_render($form['fin']);
+	$miform .= drupal_render($form);
+  return $miform;
+  
+}
+
 
 function phptemplate_node_delete_confirm(&$form, $form_state, $form_id) {
   $form['actions']['cancel']['#prefix']  = '<div class="btn_gral b">';
