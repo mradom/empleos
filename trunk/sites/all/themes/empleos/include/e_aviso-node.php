@@ -93,7 +93,7 @@ foreach($nodo->taxonomy as $value){
 		<?php }
 		?>
         <div style="clear:both"></div>
-        <div class="arrow">Otras ofertas de trabajo en <a href="?q=term/<?php print $area;?>"><?php print $nodo->taxonomy[$area]->name; ?></a></div>
+        <div class="arrow">Otras ofertas de trabajo en <a href="?q=taxonomy/term/<?php print $area;?>"><?php print $nodo->taxonomy[$area]->name; ?></a></div>
 	
 	
     	
