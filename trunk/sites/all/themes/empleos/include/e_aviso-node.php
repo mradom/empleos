@@ -47,7 +47,7 @@ foreach($nodo->taxonomy as $value){
 		<li><span class="blue">Area:</span> <?php echo $nodo->taxonomy[$area]->name;?></li>
 		<li><span class="blue">Disponibilidad:</span> <?php echo $nodo->taxonomy[$disponibilidad]->name;?></li>		
 		<li><span class="blue">Salario:</span> <?php echo $nodo->taxonomy[$pretendido]->name;?></li>
-		<li><span class="blue">Vacantes:</span> <?php echo '******';?></li>
+		<li><span class="blue">Vacantes:</span> <?php echo $nodo->field_cantidad_de_vacantes[0]['value'];?></li>
 	</ul>
 	<div style="clear: both"></div>
 	<p class="rigth"><a class="orange right" href="#">&gt;&gt;Ver mas avisos de esta empresa</a></p>
@@ -59,6 +59,7 @@ foreach($nodo->taxonomy as $value){
 	<!--  Descripcion del empleo -->
 	<p><span class="blue stg">Descripci&oacute;n del empleo:</span><br>
 	<?php echo $nodo->body;?>
+	<br>&nbsp;<br>
 	</p>
 	<!--  Descripcion del empleo end -->
 	</div>
@@ -80,7 +81,7 @@ foreach($nodo->taxonomy as $value){
 	</div>
 	<div class="bloque puntos" style="width:655px"></div>
 	    <ul class="tags">
-          <li>Fecha de publicaci&oacute;n: <span class="dark"><?php print date('d-m-Y',$nodo->created);?></span> l </li>
+          <li>Fecha de publicaci&oacute;n: <span class="dark"> <?php print date('d-m-Y',$nodo->created);?></span> l </li>
           <li>N de aviso:<span class="dark"><?php print $nodo->vid; ?></span> l </li>
           <li>Visitas: <span class="dark">231</span></li>
         </ul>
@@ -92,7 +93,7 @@ foreach($nodo->taxonomy as $value){
 		<?php }
 		?>
         <div style="clear:both"></div>
-        <div class="arrow">Otras ofertas de trabajo en <a href="?q=term/<?php print $nodo->taxonomy[$area]->vid;?>"><?php print $nodo->taxonomy[$area]->name; ?></a></div>
+        <div class="arrow">Otras ofertas de trabajo en <a href="?q=term/<?php print $area;?>"><?php print $nodo->taxonomy[$area]->name; ?></a></div>
 	
 	
     	
