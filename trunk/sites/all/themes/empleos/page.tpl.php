@@ -37,7 +37,9 @@ switch ($node->type) {
 		return;		 		
 	case 'e_aviso':
 		include 'page-e-aviso.tpl.php';
-		return;		
+		return;
+	
+		
 	default:
 }
 ?>
@@ -47,6 +49,7 @@ switch ($node->type) {
 <div id="wrapper">
   <!----HEADER---->
   <?php include("include/header.php");?>
+  <div id="browser" class="inside"> </div>  
   <!------MIDDLE------>
   <div id="midle">
     <!----banners boxes---->
@@ -54,11 +57,15 @@ switch ($node->type) {
     <!------RIGHT colum------>
     <?php include("include/col_derecha.php");?>
     <!--------CENTRAL colum-------->
-    <DIV id="central_column">
-    ------------------------------++--+++-------------------------------
-       <?php print $content; ?>
-    -------------------------------------------------------------       
-  </DIV>
+    <DIV id="central_column" style="border:1px solid #cccccc ;">
+		
+        
+      <?php //if ($breadcrumb): print "+".$breadcrumb."+"; endif; ?>
+          <?php if ($title): print '<h2 class="blue hTitle"'. ($tabs ? ' class="with-tab"' : '') .'>'. $title .'</h2>'; endif; ?>
+          <?php print $content ?>
+          
+        
+    </DIV>
   <!-----banners-minibox---->
   <?php include("include/banners-central.php");?>
   </div>
