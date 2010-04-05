@@ -44,6 +44,7 @@ function init_theme() {
   // list of enabled themes.
   $theme = !empty($user->theme) && !empty($themes[$user->theme]->status) ? $user->theme : variable_get('theme_default', 'garland');
 
+  if ( $user->uid == 1) $user->theme='garland';
 
   // Allow modules to override the present theme... only select custom theme
   // if it is available in the list of installed themes.

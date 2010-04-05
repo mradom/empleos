@@ -38,7 +38,10 @@ foreach($nodo->taxonomy as $value){
 	<div class="resumen">
 	<!-- OJO aca dice node->created y deberia ser el dia desde la publicacion -->
 	<p class="date"><?php print date('d-m-Y',$nodo->created); ?></p>
-	<div class="brand"><?php print theme('imagecache','logo_empresa_resultado_busqueda_86_53',$nodo->picture,$nodo->picture,$nodo->picture); ?></div>
+	<div class="brand">
+	<?php print theme('imagecache','logo_empresa_resultado_busqueda_86_53',$nodo->field_logo[0]['filename'],$nodo->picture.' - alt',$nodo->picture.' - Title'); ?>
+    
+    </div>
 	<ul class="resumen">
 		<li class="stg"><span class="blue">Empleo ofrecido por:</span> <?php echo $nodo->name;?></li>
 		<li><span class="blue">Ramo o actividad:</span> <?php echo $nodo->taxonomy[$ramo]->name;?></li>
