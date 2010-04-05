@@ -2,19 +2,6 @@
 /* CSS Document */ 
 
 
-/*-----------heraders-forms---------------*/
-.box.top {
-	width:970px;
-	padding:10px;
-	background:#fff url(../img/bg_box_top.jpg) bottom no-repeat;
-	min-height:116px;
-	float:left;
-}
-.box.top p {
-	float:right;
-	max-width:550px;
-	line-height:18px;
-}
 /*---------------forms------------------*/
 #browser .content_form {
 	width:250px;

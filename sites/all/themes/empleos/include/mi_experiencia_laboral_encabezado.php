@@ -1,5 +1,9 @@
     <div class="box top" style="background:url(sites/all/themes/empleos/img/bg_box_top7.jpg)">
-      <p><strong>Ingres&aacute; tu experiencia laboral.</strong> Si no ten&eacute;s experiencia laboral dej&aacute; el formulario en blanco y continu&aacute; con el siguiente paso. Si ten&eacute;s experiencia, al ingresarla consider&aacute; que los &iacute;tems destacados en <span style="color:#248CC4; font-weight:bold">celeste </span> son obligatorios. Empez&aacute; cargando tu experiencia m&aacute;s reciente y luego cronol&oacute;gicamente, las anteriores.</p><br> 
+      <p>
+      <strong>Ingres&aacute; tu experiencia laboral.</strong> Empez&aacute; cargando tu experiencia m&aacute;s reciente y luego, cronol&oacute;gicamente, las anteriores.</br>
+Si no ten&eacute;s experiencia laboral dej&aacute; el formulario en blanco y continu&aacute; con el siguiente paso.
+</br> Si ten&eacute;s experiencia, al ingresarla consider&aacute; que los &iacute;tems destacados en <span style="color:#248CC4; font-weight:bold">celeste </span> son obligatorios.
+      </p><br> 
       <div><img style=" padding-left:100px;" src="sites/all/themes/empleos/img/10pasos.png"></div>
       <div><img style=" padding-left:150px " src="sites/all/themes/empleos/img/7paso.png"></div>
     </div>

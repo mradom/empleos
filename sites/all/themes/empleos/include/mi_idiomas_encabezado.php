@@ -1,6 +1,9 @@
     <div class="box top" style="background:url(sites/all/themes/empleos/img/bg_box_top4.jpg)">
-      <p><strong>Detall&aacute; tus conocimientos de idiomas.</strong> Si no ten&eacute;s conocimientos de idiomas, dej&aacute; el formulario en blanco y continu&aacute; con el siguiente paso. <br>
-Si ten&eacute;s conocimientos, al ingresar los datos consider&aacute; que los &iacute;tems destacados en <span style="color:#248CC4; font-weight:bold">celeste</span> son obligatorios. </p>
+      <p><strong>Detall&aacute; tus conocimientos en idiomas</strong>, especificando el nivel de lectura, habla y escritura.</br>
+      Si no ten&eacute;s conocimientos en idiomas, dej&aacute; el formulario en blanco y continu&aacute; con el siguiente paso.</br> 
+Si ten&eacute;s conocimientos, al ingresar los datos consider&aacute; que los &iacute;tems destacados en <span style="color:#248CC4; font-weight:bold">celeste</span> son obligatorios.
+   
+     </p>
 
       <div><img style=" padding-left:100px;" src="sites/all/themes/empleos/img/10pasos.png"></div>
       <div><img style=" padding-left:150px " src="sites/all/themes/empleos/img/4paso.png"></div>
