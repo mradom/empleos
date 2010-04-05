@@ -1,5 +1,9 @@
     <div class="box top" style="background:url(sites/all/themes/empleos/img/bg_box_top6.jpg)">
-      <p>Si quer&eacute;s, pod&eacute;s detallar <strong>otros conocimientos</strong> que poseas, cursos que realizaste o hobbies. Al ingresar los datos consider&aacute; que los &iacute;tems destacados en <span style="color:#248CC4; font-weight:bold">celeste </span>son obligatorios. </p>
+      <p>
+      Si quer&eacute;s, pod&eacute;s detallar  <strong>otros conocimientos</strong>, hobbies o actividades de tiempo libre que realices o poseas y que no est&eacute;n incluidos en los campos anteriores.
+      </br> Al ingresar los datos consider&aacute; que los &iacute;tems destacados en <span style="color:#248CC4; font-weight:bold">celeste </span>son obligatorios.
+      
+       </p>
       <div><img style=" padding-left:100px;" src="sites/all/themes/empleos/img/10pasos.png"></div>
 
       <div><img style=" padding-left:150px " src="sites/all/themes/empleos/img/6paso.png"></div>

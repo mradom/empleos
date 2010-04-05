@@ -1,6 +1,8 @@
     <div class="box top" style="background:url(sites/all/themes/empleos/img/bg_box_top9.jpg)">
-      <p>En este formulario, pod&eacute;s <strong>ingresar tu Objetivo Laboral</strong> a corto plazo (c&oacute;mo proyect&aacute;s tu carrera profesional en los pr&oacute;ximos 6-12 meses).<br>
-     Record&aacute; que los &iacute;tems <span style="color:#248CC4; font-weight:bold">destacados en celeste</span> son obligatorios.</p>
+      <p>
+      En este paso, pod&eacute;s <strong>ingresar tu Objetivo Laboral</strong> a corto plazo, explicitando c&oacute;mo proyect&aacute;s tu carrera profesional o laboral en los pr&oacute;ximos 6 a 12 meses.
+      </br> Record&aacute; que los &iacute;tems destacados en <span style="color:#248CC4; font-weight:bold">destacados en celeste</span> son obligatorios.
+     </p>
 
       <div><img style=" padding-left:100px;" src="sites/all/themes/empleos/img/10pasos.png"></div>
       <div><img style=" padding-left:150px " src="sites/all/themes/empleos/img/9paso.png"></div>

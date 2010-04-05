@@ -2,16 +2,14 @@
 global $user;
 global $user_profile;
 ?>
-<div class="box top" style="background: url(sites/all/themes/empleos/img/bg_box_top2.jpg)">
-<p><strong>Detall&aacute; tus estudios</strong> empezando desde el colegio
-secundario en adelante. Si no ten&eacute;s estudios, dej&aacute; el formulario en
-blanco y continu&aacute; con el siguiente paso. <br>
-Si ten&eacute;s estudios, al ingresarlos consider&aacute; que los &iacute;tems destacados en
-<span style="color: #248CC4; font-weight: bold">celeste</span> son
-obligatorios.</p>
+<div class="box top" style="background: url(sites/all/themes/empleos/img/bg_box_top0.jpg)">
+<p style="float:left">En solo 10 pasos <strong>carga y actualiza </strong>permanentemente tus datos aumentando tus oportunidades<br>
+ de conseguir el empleo que buscas.<br>
+Si lo deseas, las empresas y consultoras que accedan a nuestra base de datos<br> en busca de candidatos podran consultar tu curriculum.
+</p>
 
-<div><img style="padding-left: 100px;" src="sites/all/themes/empleos/img/10pasos.png"></div>
-<div><img style="padding-left: 150px" src="sites/all/themes/empleos/img/2paso.png"></div>
+
+
 </div>
 <!-----submenu----->
 <?php 
