@@ -20,7 +20,7 @@
 			<TD class="techo" width="7%">&nbsp;</TD>
 		</TR>
 		<?php
-	$view = views_get_view('mis_avisos');
+	$view = views_get_view('mis_avisos_no_publicados');
 	$vista = views_build_view('items', $view, false, false);
 		foreach($vista["items"] as $item){
 			$row = node_load(array('nid' => $item->nid));
