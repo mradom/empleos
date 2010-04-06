@@ -82,6 +82,7 @@ span.underline {
 	width:680px;
 	float:left;
 	padding:0;
+	margin-bottom:10px;
 }
 #right_column {
 	width:300px;
@@ -532,7 +533,7 @@ ul.brands li a {
 	padding:0 0 0 10px;
 	line-height:38px;
 }
-/*----siderbar ---center--------*/
+/*----bar ---center--------*/
 .box.center {
 	width:658px;
 }
@@ -625,7 +626,8 @@ div.arrow.editar {
 	height:15px;
 	width:13px;
 	background:transparent url(../img/btn_editar.png) 0 0 no-repeat;
-	margin:0 0 0 10px;
+	padding-left:0;
+	margin:0 25px 0 0;
 }
 div.arrow.cancel {
 	float:left;
