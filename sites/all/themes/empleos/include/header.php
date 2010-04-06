@@ -25,19 +25,24 @@
     			<div id="browser">
                 <?php include("buscador.php");?>
       				<div class="white right">
-                    <ul id="adver">					
-                                <li>
-                                    <a href="#"><img src="sites/all/themes/empleos/img/banners-empleos/03.jpg" /></a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="sites/all/themes/empleos/img/banners-empleos/01.jpg" /></a>
-                                </li>					
-                                <li>
-                                    <a href="#"><img src="sites/all/themes/empleos/img/banners-empleos/02.jpg"/></a>
-                                </li>								
-                            </ul>        
-                    </div>
-					</div>
+                       <?php if (!$user->uid) {
+                            print '<h1 style="margin-top:10px; text-align:center">&iquest;Primera vez en empleoslavoz?</h1>'; 
+        					print '<h3 style=" text-align:center; margin:0 12%">Registrate de forma f&aacute;cil y segura en s&oacute;lo 3 pasos</h3>'; 
+        					print '<div class="pasos">';
+          					print '<ul id="pasos">'; 
+							print '<li id="b-01"><a href="form.html"><span>registrate</span></a></li>'; 
+							print '<li id="b-02"><a href=”#”><span>carga tu cv</span></a></li>';
+							print '<li id="b-03"><a href=”#”><span>postulate</span></a></li>';
+							print '</ul></div>';
+					   } else {
+
+                            print '<ul id="adver">'; 
+							print '<li><a href="#"><img src="sites/all/themes/empleos/img/banners-empleos/03.jpg" /></a></li>';
+							print '<li><a href="#"><img src="sites/all/themes/empleos/img/banners-empleos/01.jpg" /></a></li>';
+							print '<li><a href="#"><img src="sites/all/themes/empleos/img/banners-empleos/02.jpg"/></a></li>';
+                            print '</ul>';
+					   }?>
+							</div>
     			</div>
         <?php } ?>
    	</div>		
