@@ -1006,7 +1006,7 @@ $html = '<ul style="height: 30px;" class="ui-tabs-nav">
 	$miform .= drupal_render($form['field_logo-attach-url']);
 	$miform .= drupal_render($form);
 	//echo "<pre>"; print_r($form);echo "</pre>";
-	firep($form['field_empresa_1'], "Mi form");
+	//firep($form['field_empresa_1'], "Mi form");
 	return $miform;
 }
 
