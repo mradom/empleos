@@ -11,7 +11,7 @@
     <?php include("include/mi_educacion_encabezado.php");?> 
     <!------RIGHT colum------>
     <div id="right_colum">
-	<?php Form_ayuda('Educacion'); ?>
+	<?php Form_ayuda('Ayuda', 'Educacion'); ?>
 	</div> 
     <!--------CENTRAL colum-------->
     <DIV id="central_column">

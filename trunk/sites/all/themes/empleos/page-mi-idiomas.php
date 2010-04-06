@@ -10,7 +10,7 @@
   <div id="midle">
     <?php include("include/mi_idiomas_encabezado.php");?> 
     <!------RIGHT colum------>
-	<?php Form_ayuda('Idiomas'); ?> 
+	<?php Form_ayuda('Ayuda', 'Idiomas'); ?> 
     <!--------CENTRAL colum-------->
     <DIV id="central_column">
 	  <?php print $content;?>
