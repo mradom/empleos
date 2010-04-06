@@ -1,0 +1,22 @@
+
+/* Listen */
+
+ul#adver{
+}
+
+ul#adver li img{
+	width:380px;
+	height:220px;
+}
+
+.fade{
+padding:0;
+}
+
+.fade p{
+	margin-bottom: 2em;
+	text-align: center;
+	width: 100%;
+	background: #fff;
+}
+	
