@@ -11,7 +11,7 @@
     <?php include("include/mi_experiencia_laboral_encabezado.php");?> 
     <!------RIGHT colum------>
     <div id="right_colum">
-	<?php Form_ayuda('Experiencia Laboral'); ?>
+	<?php Form_ayuda('Ayuda', 'Experiencia Laboral'); ?>
 	</div> 
     <!--------CENTRAL colum-------->
     <DIV id="central_column">

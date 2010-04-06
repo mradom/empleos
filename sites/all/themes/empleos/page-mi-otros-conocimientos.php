@@ -11,7 +11,7 @@
     <?php include("include/mi_otros_conocimientos_encabezado.php");?> 
     <!------RIGHT colum------>
     <div id="right_colum">
-	<?php Form_ayuda('Otros Conocimientos'); ?>
+	<?php Form_ayuda('Ayuda', 'Otros Conocimientos'); ?>
 	</div> 
     <!--------CENTRAL colum-------->
     <DIV id="central_column">

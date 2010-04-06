@@ -11,7 +11,7 @@
     <?php include("include/mi_referencia_encabezado.php");?> 
     <!------RIGHT colum------>
     <div id="right_colum">
-    <?php Form_ayuda('Referencia'); ?>
+    <?php Form_ayuda('Ayuda', 'Referencia'); ?>
     </div> 
     <!--------CENTRAL colum-------->
     <DIV id="central_column">

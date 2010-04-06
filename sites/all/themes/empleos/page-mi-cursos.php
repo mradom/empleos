@@ -11,7 +11,7 @@
     <?php include("include/mi_cursos_encabezado.php");?> 
     <!------RIGHT colum------>
     <div id="right_colum">
-	<?php Form_ayuda('Cursos'); ?>
+	<?php Form_ayuda('Ayuda', 'Cursos'); ?>
 	</div>    
     <!--------CENTRAL colum-------->
     <DIV id="central_column">
