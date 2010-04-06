@@ -7,9 +7,9 @@ Si no ten&eacute;s experiencia laboral dej&aacute; el formulario en blanco y con
       <div><img style=" padding-left:100px;" src="sites/all/themes/empleos/img/10pasos.png"></div>
       <div><img style=" padding-left:150px " src="sites/all/themes/empleos/img/7paso.png"></div>
     </div>
-    <!-----submenu-----> 
+    <!-- -submenu--- --> 
 	<?php include("submenu-usuarios.php");?> 
-     <!-----tabla-----> 
+     <!-- -tabla--- --> 
   	<?php 
   		global $user;
   		if ($user->uid){

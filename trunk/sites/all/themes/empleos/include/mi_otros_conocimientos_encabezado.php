@@ -9,9 +9,9 @@
       <div><img style=" padding-left:150px " src="sites/all/themes/empleos/img/6paso.png"></div>
     </div>
 
-    <!-----submenu-----> 
+    <!-- -submenu--- --> 
 	<?php include("submenu-usuarios.php");?> 
-     <!-----tabla-----> 
+     <!-- -tabla--- --> 
   	<?php 
   		global $user;
   		if ($user->uid){

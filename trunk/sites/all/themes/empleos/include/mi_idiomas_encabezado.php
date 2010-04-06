@@ -9,9 +9,9 @@ Si ten&eacute;s conocimientos, al ingresar los datos consider&aacute; que los &i
       <div><img style=" padding-left:150px " src="sites/all/themes/empleos/img/4paso.png"></div>
     </div>
 
-    <!-----submenu-----> 
+    <!-- -submenu--- --> 
 	<?php include("submenu-usuarios.php");?> 
-     <!-----tabla-----> 
+     <!-- -tabla--- --> 
   	<?php 
   		global $user;
   		if ($user->uid){

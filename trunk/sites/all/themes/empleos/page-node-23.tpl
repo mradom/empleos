@@ -1,11 +1,11 @@
 <?php include("include/head.php");?>
 <body>
 <div id="wrapper">
-  <!----HEADER---->
+  <!-- HEADER-- -->
     <?php include("include/header.php");?>
-    <!------MIDDLE------>
+    <!-- --MIDDLE---- -->
     <div id="midle">
-    <!----banners box---->
+    <!-- banners box-- -->
     <DIV class="content_banners" style="margin-bottom:10px;">
       <UL>
         <LI class="banner boxes">Box1</LI>
@@ -13,13 +13,13 @@
         <LI class="banner boxes" style="margin-right:0">Box3</LI>
       </UL>
     </DIV>
-    <!------RIGHT colum------>
+    <!-- --RIGHT colum---- -->
 <?php include("include/col_derecha.php");?>
-    <!--------CENTRAL colum-------->
+    <!-- ----CENTRAL colum------ -->
     <DIV id="central_column">
 		<?php include("sites/all/themes/empleos/block-block4.tpl.php");?>
     </DIV>
-    <!-----banners-minibox---->
+    <!-- -banners-minibox-- -->
 	<?php include("include/banners-central.php");?>
   </DIV>
   <!--FOOTER-->

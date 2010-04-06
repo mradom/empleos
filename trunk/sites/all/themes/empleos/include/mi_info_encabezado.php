@@ -8,8 +8,8 @@
 
     </div>
 
-    <!-----submenu-----> 
+    <!-- -submenu--- --> 
 	<?php //include("submenu-usuarios.php");?> 
-     <!-----tabla-----> 
+     <!-- -tabla--- --> 
      <div id="browser" class="inside"> </div>  
   	

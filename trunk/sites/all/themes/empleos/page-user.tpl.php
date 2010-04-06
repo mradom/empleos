@@ -7,18 +7,18 @@
 <?php include("include/head.php");?>
 <body>
 <div id="wrapper">
-  <!----HEADER---->
+  <!-- HEADER-- -->
   <?php include("include/header.php");?>
-  <!------MIDDLE------>
+  <!-- --MIDDLE---- -->
   <div id="midle">
     <?php if (arg(0)=='user' and arg(1)==$user->uid and arg(2)=='edit' and arg(3)=='') include("include/mi_info_encabezado.php");?>
     <?php if (arg(0)=='user' and arg(1)==$user->uid and arg(2)=='edit' and arg(3)=='Empleado') include("include/mi_datos_encabezado.php");?>
     <?php if (arg(0)=='user' and arg(1)==$user->uid and arg(2)=='edit' and arg(3)=='Empresa')  include("include/mi_empresa_encabezado.php");?> 
-    <!----banners boxes---->
+    <!-- banners boxes-- -->
     <?php // include("include/banners-boxes.php");?>
-    <!------RIGHT colum------>
+    <!-- --RIGHT colum---- -->
     <?php //include("include/col_derecha-mini.php");?>
-    <!--------CENTRAL colum-------->
+    <!-- ----CENTRAL colum------ -->
     <DIV id="central_column">
           <?php
 			  If (arg(1)=='password') print $content; 
@@ -31,7 +31,7 @@
 			  } 
   ?>
   </DIV>
-  <!-----banners-minibox---->
+  <!-- -banners-minibox-- -->
   <?php include("include/banners-central.php");?>
   </div>
 <?php include("include/footer.php");?>

@@ -1,5 +1,5 @@
       <div id="right_column">
-        <!----banner rectangle---->
+        <!-- banner rectangle-- -->
         <div class="banner rectangle">
         	<!--  <img src="sites/all/themes/empleos/img/post_creative-genius-headphone-toy.jpg"></img> -->
 <!--/* OpenX Javascript Tag v2.8.5 */-->

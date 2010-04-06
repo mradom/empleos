@@ -6,9 +6,9 @@
       <div><img style=" padding-left:100px;" src="sites/all/themes/empleos/img/10pasos.png"></div>
       <div><img style=" padding-left:150px " src="sites/all/themes/empleos/img/1paso.png"></div>
     </div>
-    <!-----submenu-----> 
+    <!-- -submenu--- --> 
 	<?php include("submenu-empresa.php");?> 
-     <!-----tabla-----> 
+     <!-- -tabla--- --> 
 <TABLE class="tablaGris" border="0" cellpadding="0" cellspacing="1">
 	<TBODY>
 	<?php 

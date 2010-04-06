@@ -2,11 +2,11 @@
 <?php include("include/head.php");?>
 <body>
 <div id="wrapper">
-  <!----HEADER---->
+  <!-- HEADER-- -->
   <?php include("include/header.php");?>
-  <!------MIDDLE------>
+  <!-- --MIDDLE---- -->
   <div id="midle">
-    <!----banners boxes---->
+    <!-- banners boxes-- -->
     <?php //include("include/banners-boxes.php");?>
     <!-- banner faq -->
     <div class="box top" style="background: url(sites/all/themes/empleos/img/bg_box_top_faq.jpg)">
@@ -18,9 +18,9 @@ Escribinos o envianos tus sugerencias a <a class="blue stg" href="#"	>empleoslav
 
 	
 </div>
-    <!------RIGHT colum------>
+    <!-- --RIGHT colum---- -->
     <?php include("include/col_derecha.php");?>
-    <!--------CENTRAL colum-------->
+    <!-- ----CENTRAL colum------ -->
     <DIV id="central_column">
       <div id="center">
       <div id="squeeze">
@@ -37,7 +37,7 @@ Escribinos o envianos tus sugerencias a <a class="blue stg" href="#"	>empleoslav
       </div>
   </DIV>
 
-  <!-----banners-minibox---->
+  <!-- -banners-minibox-- -->
   <?php include("include/banners-central.php");?>
   </div>
   
