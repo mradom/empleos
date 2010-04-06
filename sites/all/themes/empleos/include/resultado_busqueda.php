@@ -38,7 +38,7 @@ $where = $where . " ORDER BY w.sid, n.created DESC  ";
 $sql = $base_query.$inner_join.$where;
 $rs = db_query($sql);
 ?>
-<!--      ------Poner aca camino de links -------->
+<!--      ------Poner aca camino de links ------ -->
       <UL class="tags">
         <li><H1><A href="?q=buscar">Buscar</A></H1></LI>
         <?php 
@@ -54,7 +54,7 @@ $rs = db_query($sql);
         		?><li><h1><a href="?q=buscar/<?php echo $key;?>"><?php echo $key;?></a></h1></li><?php
         	}?>
       </UL>
-<!--      --LISTA DE RESULTADOS---->
+<!--      --LISTA DE RESULTADOS-- -->
 		<DIV class="box central" style="background:none">
 			<DIV class="results">
           		<DIV class="rss redes">

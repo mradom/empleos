@@ -1,4 +1,4 @@
-<!----BUSQUEDA SIMPLE---->
+<!-- BUSQUEDA SIMPLE-- -->
     <div id='tab-container'>
 
       <div class="tab-content">

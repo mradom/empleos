@@ -2,15 +2,15 @@
 <?php include("include/head.php");?>
 <body>
 <div id="wrapper">
-  <!----HEADER---->
+  <!-- HEADER-- -->
   <?php include("include/header.php");?>
-  <!------MIDDLE------>
+  <!-- --MIDDLE---- -->
   <div id="midle">
-    <!----banners boxes---->
+    <!-- banners boxes-- -->
     <?php include("include/banners-boxes.php");?>
-    <!------RIGHT colum------>
+    <!-- --RIGHT colum---- -->
     <?php include("include/col_derecha.php");?>
-    <!--------CENTRAL colum-------->
+    <!-- ----CENTRAL colum------ -->
     <div id="central_column">
        <div class="box central ficha">
         <?php 
@@ -21,7 +21,7 @@
 		<?php print $content;?>
 	   </div>
     </div>
-  <!-----banners-minibox---->
+  <!-- -banners-minibox-- -->
   <?php include("include/banners-central.php");?>
   </div>
 <?php include("include/footer.php");?>

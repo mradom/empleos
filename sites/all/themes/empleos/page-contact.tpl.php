@@ -2,17 +2,17 @@
 <?php include("include/head.php");?>
 <body>
 <div id="wrapper">
-  <!----HEADER---->
+  <!-- HEADER-- -->
   <?php include("include/header.php");?>
-  <!------MIDDLE------>
+  <!-- --MIDDLE---- -->
   <div id="midle">
-    <!----banners boxes---->
+    <!-- banners boxes-- -->
     <?php include("include/banners-boxes.php");?>
-    <!------RIGHT colum------>
+    <!-- --RIGHT colum---- -->
     <div id="right_colum">
     <?php include("include/col_derecha-mini.php");?>
     </div>
-    <!--------CENTRAL colum-------->
+    <!-- ----CENTRAL colum------ -->
     <DIV id="central_column">
       <?php
         if (arg(1)=='') { print 'Listado<br><br>';}
@@ -20,7 +20,7 @@
         print $content;
       ?>
   </DIV>
-  <!-----banners-minibox---->
+  <!-- -banners-minibox-- -->
   <?php include("include/banners-central.php");?>
   </div>
 <?php include("include/footer.php");?>

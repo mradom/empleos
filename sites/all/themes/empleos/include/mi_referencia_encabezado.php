@@ -8,9 +8,9 @@ Record&aacyte; que los &iacute;tems destacados en <span style="color:#248CC4; fo
 
       <div><img style=" padding-left:150px " src="sites/all/themes/empleos/img/8paso.png"></div>
     </div>
-    <!-----submenu-----> 
+    <!-- -submenu--- --> 
 	<?php include("submenu-usuarios.php");?> 
-     <!-----tabla-----> 
+     <!-- -tabla--- --> 
   	<?php 
   		global $user;
   		if ($user->uid){

@@ -11,7 +11,7 @@ Si lo deseas, las empresas y consultoras que accedan a nuestra base de datos<br>
 
 
 </div>
-<!-----submenu----->
+<!-- -submenu--- -->
 <?php 
   if (in_array('empresa', array_values($user->roles))) {
       include("include/submenu-empresa.php");
@@ -19,7 +19,7 @@ Si lo deseas, las empresas y consultoras que accedan a nuestra base de datos<br>
   	  include("include/submenu-usuarios.php");
   }
 ?>
-<!-----tabla----->
+<!-- -tabla--- -->
 <?php 
 firep($fields, 'Fields');
 firep($user, 'User');

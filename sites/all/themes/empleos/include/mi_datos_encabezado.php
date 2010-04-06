@@ -9,7 +9,7 @@ Al finalizar la carga de los datos requeridos en cada paso,  presion&aacute; el 
 
     </div>
 
-    <!-----submenu-----> 
+    <!-- -submenu--- --> 
 	<?php include("submenu-usuarios.php");?> 
-     <!-----tabla-----> 
+     <!-- -tabla--- --> 
   	

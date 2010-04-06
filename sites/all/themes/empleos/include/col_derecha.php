@@ -1,9 +1,9 @@
       <div id="right_column">
-        <!----banner rectangle---->
+        <!-- banner rectangle-- -->
         <div class="banner rectangle">
         	<img src="sites/all/themes/empleos/img/post_creative-genius-headphone-toy.jpg"></img>
         </div>
-        <!----bar areas---->
+        <!-- bar areas-- -->
         <div class="bar_blue">
           <div class="corner_blue _2"></div>
           <div class="corner_blue">Ofertas de trabajo por &Aacute;rea / Rubro</div>

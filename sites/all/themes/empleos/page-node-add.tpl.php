@@ -37,15 +37,15 @@ switch (arg(2)) {
 <?php include("include/head.php");?>
 <body>
 <div id="wrapper">
-  <!----HEADER---->
+  <!-- HEADER-- -->
   <?php include("include/header.php");?>
-  <!------MIDDLE------>
+  <!-- --MIDDLE---- -->
   <div id="midle">
-    <!----banners boxes---->
+    <!-- banners boxes-- -->
     <?php include("include/banners-boxes.php");?>
-    <!------RIGHT colum------>
+    <!-- --RIGHT colum---- -->
     <?php include("include/col_derecha.php");?>
-    <!--------CENTRAL colum-------->
+    <!-- ----CENTRAL colum------ -->
     <DIV id="central_column">
           <div class="bar_blue"><div class="corner_blue _2"></div>
           <div class="corner_blue">Listado de Rubros</div></div>
@@ -53,7 +53,7 @@ switch (arg(2)) {
 		    <?php include("include/lista_rubros.php");?>
 		    </div>
   </DIV>
-  <!-----banners-minibox---->
+  <!-- -banners-minibox-- -->
   <?php include("include/banners-central.php");?>
   </div>
 <?php include("include/footer.php");?>

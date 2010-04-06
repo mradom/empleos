@@ -10,9 +10,9 @@ Si haz realizado o dictado cursos, al ingresarlos consider&aacute; que los &iacu
       <div><img style=" padding-left:150px " src="sites/all/themes/empleos/img/3paso.png"></div>
     </div>
 
-    <!-----submenu-----> 
+    <!-- -submenu--- --> 
 	<?php include("submenu-usuarios.php");?> 
-     <!-----tabla-----> 
+     <!-- -tabla--- --> 
   	<?php 
   		global $user;
   		if ($user->uid){

@@ -2,18 +2,18 @@
 <?php include("include/head.php");?>
 <body>
 <div id="wrapper">
-  <!----HEADER---->
+  <!-- HEADER-- -->
   <?php include("include/header.php");?>
-  <!------MIDDLE------>
+  <!-- --MIDDLE---- -->
   <div id="midle">
     <?php include("include/mi_avisos_encabezado.php");?> 
-    <!------RIGHT colum------>
-    <!--------CENTRAL colum-------->
+    <!-- --RIGHT colum---- -->
+    <!-- ----CENTRAL colum------ -->
     <DIV id="central_column">
 	  <?php //print $content;?>
     </DIV>
     <div id="browser" class="inside"> </div>
-  <!-----banners-minibox---->
+  <!-- -banners-minibox-- -->
   <?php include("include/banners-central.php");?> 
   </div>
 <?php include("include/footer.php");?>

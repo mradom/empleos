@@ -8,7 +8,7 @@
 
     </div>
 
-    <!-----submenu-----> 
+    <!-- -submenu--- --> 
 	<?php include("submenu-empresa.php");?> 
-     <!-----tabla-----> 
+     <!-- -tabla--- --> 
   	
