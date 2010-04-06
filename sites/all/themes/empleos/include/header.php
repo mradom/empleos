@@ -8,6 +8,7 @@
 		<div id="header">
 			<!----Banner Topsite---->
 			<div class="banner top"> Topsite</div>
+			<div class="clearfix"></div>
     		<!----login---->
 				<?php include("user-login.php"); ?>
                <!----logo---->
@@ -43,6 +44,6 @@
                             print '</ul>';
 					   }?>
 							</div>
-    			</div>
+  
         <?php } ?>
    	</div>		
