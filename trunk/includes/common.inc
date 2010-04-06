@@ -114,7 +114,8 @@ function drupal_set_html_head($data = NULL) {
  * Retrieve output to be displayed in the head tag of the HTML page.
  */
 function drupal_get_html_head() {
-  $output = "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n";
+  //$output = "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n";
+  $output='';
   return $output . drupal_set_html_head();
 }
 

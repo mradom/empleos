@@ -1,8 +1,8 @@
 <?php
   global $user;
-    //drupal_add_js('sites/all/themes/empleos/js/jquery.innerfade.js', 'empleos');
-    //drupal_add_js('sites/all/themes/empleos/js/jquery.innerfade.page.js', 'empleos');
-    //drupal_add_css('sites/all/themes/empleos/css/fade.css', 'module', 'all');
+    drupal_add_js('sites/all/themes/empleos/js/jquery.innerfade.js', 'theme');
+    drupal_add_js('sites/all/themes/empleos/js/jquery.innerfade.page.js', 'theme');
+    drupal_add_css('sites/all/themes/empleos/css/fade.css', 'theme', 'all');
 
 ?>
 		<div id="header">
