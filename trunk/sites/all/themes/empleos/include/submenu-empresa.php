@@ -12,7 +12,7 @@
         <li><A href="?q=user/me/edit/Empresa" <?php if(arg(3) == "Empresa"){ echo "class='active'";}?>>Datos de la Empresa</A></LI> 
         <li><A href="?q=node/add/e-aviso" <?php if(($node->type=='e_aviso') or (arg(2)=='e-aviso')){ echo "class='active'";}?>>Publicar Aviso</A></LI> 
         <li><A href="?q=misavisos" <?php if(($node->type=='p_educacion') or (arg(0)=='misavisos')){ echo "class='active'";}?>>Avisos Publicados</A></LI>
-        <li><A href="?q=postulantes" <?php if(arg(1) == "98"){ echo "class='active'";}?>>Postulaciones</A></LI>
+        <li><A href="?q=postulantes" <?php if(arg(1) == "106"){ echo "class='active'";}?>>Postulaciones</A></LI>
         <li><A href="?q=mieducacion/me" <?php if(($node->type=='p_educacion') or (arg(2)=='p-educacion') or ($node->nid == 28)){ echo "class='active'";}?>>Estado de Cuenta</A></LI>
         
         <li class="btns sig" style="width:20px; margin-right:5px"><a href="<?php print $sig;?>"></a></li>
