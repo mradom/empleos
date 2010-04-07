@@ -65,7 +65,7 @@ switch ($node->type) {
           <?php print $content ?>
           
         
-    </DIV>
+    </div>
   <!-- -banners-minibox-- -->
   <?php include("include/banners-central.php");?>
   </div>

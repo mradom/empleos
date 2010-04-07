@@ -18,7 +18,7 @@
           <?php print $content ?>
           
       </div></div></div></div>
-  </DIV>
+  </div>
   <!-- -banners-minibox-- -->
   <?php include("include/banners-central.php");?>
   </div>

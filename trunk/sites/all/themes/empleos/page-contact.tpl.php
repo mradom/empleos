@@ -19,7 +19,7 @@
         if (arg(1)=='info') { print 'Info<br><br>';} 
         print $content;
       ?>
-  </DIV>
+  </div>
   <!-- -banners-minibox-- -->
   <?php include("include/banners-central.php");?>
   </div>

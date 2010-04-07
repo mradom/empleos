@@ -17,7 +17,7 @@
         	<div class="box center">
 		    <?php include("include/lista_rubros.php");?>
 		    </div>
-  </DIV>
+  </div>
   <!-- -banners-minibox-- -->
   <?php include("include/banners-central.php");?>
   </div>

@@ -16,7 +16,7 @@
         <?php 
         $titulo = taxonomy_get_term(arg(2)); 
         $vocablo = taxonomy_get_vocabulary($titulo->vid);
-        echo '<DIV class="results"><P>'.$vocablo->name.' - '.'<SPAN class="orange">'.$titulo->name.'</SPAN></P></DIV>'; 
+        echo '<DIV class="results"><P>'.$vocablo->name.' - '.'<SPAN class="orange">'.$titulo->name.'</SPAN></P></div>'; 
         ?>
 		<?php print $content;?>
 	   </div>

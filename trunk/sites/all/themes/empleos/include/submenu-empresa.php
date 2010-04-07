@@ -17,6 +17,6 @@
         
         <li class="btns sig" style="width:20px; margin-right:5px"><a href="<?php print $sig;?>"></a></li>
       </UL> 
-      <DIV class="line-submenu"></DIV> 
-    </DIV>
+      <DIV class="line-submenu"></div> 
+    </div>
     
