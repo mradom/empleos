@@ -27,6 +27,6 @@
         <li><A href="?q=miprevisualizar/me" <?php if($node->nid == 55){ echo "class='active'";}?>>Previsualizar</A></li> 
         <li class="btns sig" style="width:20px; margin-right:5px"><a href="<?php print $sig;?>"></a></li>
       </UL> 
-      <DIV class="line-submenu"></DIV> 
-    </DIV>
+      <DIV class="line-submenu"></div> 
+    </div>
     

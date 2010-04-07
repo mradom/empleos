@@ -4,4 +4,4 @@
         <LI class="banner boxes" style="margin-right: 45px;">Box2</LI>
         <LI class="banner boxes">Box3</LI>
       </UL>
-    </DIV>
+    </div>

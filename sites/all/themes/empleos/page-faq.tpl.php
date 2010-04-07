@@ -35,7 +35,7 @@ Escribinos o envianos tus sugerencias a <a class="blue stg" href="#"	>empleoslav
       </div>
       </div>
       </div>
-  </DIV>
+  </div>
 
   <!-- -banners-minibox-- -->
   <?php include("include/banners-central.php");?>

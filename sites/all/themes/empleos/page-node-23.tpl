@@ -12,18 +12,18 @@
         <LI class="banner boxes">Box2</LI>
         <LI class="banner boxes" style="margin-right:0">Box3</LI>
       </UL>
-    </DIV>
+    </div>
     <!-- --RIGHT colum---- -->
 <?php include("include/col_derecha.php");?>
     <!-- ----CENTRAL colum------ -->
     <DIV id="central_column">
 		<?php include("sites/all/themes/empleos/block-block4.tpl.php");?>
-    </DIV>
+    </div>
     <!-- -banners-minibox-- -->
 	<?php include("include/banners-central.php");?>
-  </DIV>
+  </div>
   <!--FOOTER-->
   <?php include("include/footer.php");?>
-</DIV>
+</div>
 </BODY>
 </HTML>

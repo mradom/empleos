@@ -13,7 +13,7 @@
     <!-- ----CENTRAL colum------ -->
     <DIV id="central_column">
       <?php include("page-front-temp.php");?>
-  </DIV>
+  </div>
   <!-- -banners-minibox-- -->
   <?php include("include/banners-central.php");?>
   </div>

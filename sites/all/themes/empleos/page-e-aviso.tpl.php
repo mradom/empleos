@@ -22,7 +22,7 @@
   </script>
 	<?php print $content;?>
 	  <?php if (arg(1)<>'add' and arg(2)<>'edit' and arg(2)<>'delete' and arg(2)<>'') print "<a href='?q=node/add/p-objetivo-laboral'>Agregar</a>";?>
-    </DIV>
+    </div>
   <!-- -banners-minibox-- -->
   <?php include("include/banners-central.php");?>
   </div>
