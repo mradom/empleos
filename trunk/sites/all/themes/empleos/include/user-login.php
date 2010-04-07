@@ -10,7 +10,7 @@ if(!$user->uid){?>
 				<a href="?q=user/register/persona">Registrarse</a> |&nbsp;
 			</li>
 			<li>
-				<a href="#">Contacto</a>
+				<a href="?q=contact">Contacto</a>
 			</li>
 			<li class="destacar">
 				<a href="?q=user/register/empleador">
@@ -33,7 +33,7 @@ if(!$user->uid){?>
 				<a href="?q=logout">Salir</a> |&nbsp;
 			</li>
 			<li>
-				<a href="#">Contacto</a>
+				<a href="?q=contact">Contacto</a>
 			</li>
 			<li class="destacar">
 				<a href="?q=user/register/empleador">
