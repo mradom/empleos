@@ -6,7 +6,7 @@
     if($node->nid == 55){$ant="?q=miobjetivolaboral/me"; $sig="#";  } 
 ?>    
     <DIV class="menu submenu"> 
-      <UL class="submenu">
+      <UL class="submenu e">
         <!--<li class="btns ant" style="width:24px; margin-left:5px"><a href="<?php print $ant;?>"></a></li> -->
         <li><A href="?q=user/me" <?php if(arg(0) == "user" and arg(1)==$user->uid and arg(2)==''){ echo "class='active'";}?>>Home</A></LI>
         <li><A href="?q=user/me/edit/Empresa" <?php if(arg(3) == "Empresa"){ echo "class='active'";}?>>Datos de la Empresa</A></LI> 
