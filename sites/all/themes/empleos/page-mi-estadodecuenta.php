@@ -4,9 +4,10 @@
 <div id="wrapper">
   <!-- HEADER-- -->
   <?php include("include/header.php");?>
+  <div id="browser" class="inside"> </div>
   <!-- --MIDDLE---- -->
   <div id="midle">
-    <?php include("include/mi_avisos_publicados_encabezado.php");?> 
+    <?php include("include/mi_estadodecuenta_encabezado.php");?> 
     <!-- --RIGHT colum---- -->
     <!-- ----CENTRAL colum------ -->
     <DIV id="central_column">
