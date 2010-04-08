@@ -123,9 +123,11 @@ input.req, select.req{border:1px solid #3399cc;
 	display:inline-block;
 	margin-bottom:10px;
 }
-.mycv .form-item .form-radios,.mycv textarea, .mycv .form-item label.option{
+.mycv .form-item .form-radios,.mycv textarea{
     width:360px;
-   	margin:0 0 10px 273px;
+}
+.mycv .form-item label.option,.mycv textarea {
+	margin:0 0 10px 273px;
 }
 .mycv .form-item label.option{
 	font:11px tahoma;
