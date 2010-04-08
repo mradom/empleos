@@ -2,26 +2,24 @@
 <?php include("include/head.php");?>
 <body>
 <div id="wrapper">
-  <!-- HEADER-- -->
+  <!-- HEADER -->
   <?php include("include/header.php");?>
-  <!-- --MIDDLE---- -->
+  <!-- MIDDLE -->
   <div id="midle">
-    <!-- banners boxes-- -->
     <?php include("include/banners-boxes.php");?>
-    <!-- --RIGHT colum---- -->
+    <!-- RIGHT -->
     <?php include("include/col_derecha.php");?>
-    <!-- ----CENTRAL colum------ -->
+    <!-- CENTRAL -->
     <DIV id="central_column">
           <div class="bar_blue"><div class="corner_blue _2"></div>
           <div class="corner_blue">Listado de Empresas</div></div>
         	<div class="box center">
-		    <?php include("include/lista_empresa.php");?>
+		     <?php include("include/lista_empresa.php");?>
 		    </div>
+    <?php include("include/banners-central.php");?>
+    </div>
   </div>
-  <!-- -banners-minibox-- -->
-  <?php include("include/banners-central.php");?>
-  </div>
-<?php include("include/footer.php");?>
+  <?php include("include/footer.php");?>
 </div>
 </body>
 </html>
