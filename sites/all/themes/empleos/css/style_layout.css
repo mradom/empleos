@@ -170,6 +170,10 @@ span.underline {
 	-moz-border-radius:7px 7px 0 0;
 	-moz-border-radius:7px 7px 0 0;
 }
+.menu ul.submenu.e li a{
+	background:#ffefb1;
+	border:1px solid #ffd085;
+	} 
 .menu ul.submenu li a:hover {
 	background:#ffefb1;
 	float: left;
@@ -177,12 +181,21 @@ span.underline {
 	height:25px;
 	border:1px solid #ffd085;
 }
+.menu ul.submenu.e li a:hover{
+	background:#eafbff;
+	border: solid 1px #c8e8f0;
+	}
 .menu.submenu ul.submenu li a.active, .menu.submenu ul.submenu li a:hover.active {
 	background: #FFC02F;
 	color:#666;
 	height:25px;
 	border:1px solid #ffd085;
 }
+.menu.submenu ul.submenu li a.active, .menu.submenu ul.submenu li a:hover.active{
+	background:#1C77A8;
+	border:1px solid #ffd085;
+	color:#fff;
+	}
 /*----------------------------NUEVAS CLASES----------------------submenu-------*/
 ul.submenu li.btns{	
 	padding:0;
