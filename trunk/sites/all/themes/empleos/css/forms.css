@@ -112,10 +112,7 @@ input.req, select.req{border:1px solid #3399cc;
 }
 .puntos{ border-top:1px dotted #C1DAF4 ;
 }
-/*------esto creo q se puede sacar
-label.check{ margin-right:10px;}
-input.check{ background:none; border:0}
-*/
+
 /*------CAMBIOS 29/03--------*/
 .mycv .form-item label {/*----igual a las class .item .req---*/
 	text-align:right;
@@ -126,16 +123,16 @@ input.check{ background:none; border:0}
 	display:inline-block;
 	margin-bottom:10px;
 }
-.mycv .form-item .form-radios, .mycv .form-item .form-checkboxes{
+.mycv .form-item .form-radios,.mycv textarea, .mycv .form-item label.option{
     width:360px;
    	margin:0 0 10px 273px;
 }
-.mycv .form-item .form-radios label.option{
-     text-align:left;
-     width:auto;
-}
-.mycv .form-item label.option input.form-radio{
+.mycv .form-item label.option{
+	font:11px tahoma;
+	color:#333;
 	text-align:left;
+	}
+.mycv .form-item label.option input{
 	width:auto;
 	margin-right:7px;
 	}
@@ -143,10 +140,8 @@ input.check{ background:none; border:0}
 	color:#CCAAAA;
     width:360px;
     margin-left:273;
-	margin-bottom:10px;
-	
+	margin-bottom:10px;	
 }
-
 .mycv .form-item .container-inline .form-select{
     width:360px;
     margin-bottom:5px;
@@ -155,9 +150,6 @@ input.check{ background:none; border:0}
 	width:360px;
 	size:60;	
 }
-.mycv .form-item .form-checkboxes label.option{
-	text-align:left;
-	}
 .mycv .form-item .form-checkboxes label.option input{
 	width:auto;
 	margin-right:7px;
@@ -165,7 +157,6 @@ input.check{ background:none; border:0}
 .mycv .form-item input, .mycv textarea{
 	width:360px;	
 }
-
 /*------ojo cambio de 280 a 360 y description -------*/
 .mycv .form-item div.description, .mycv ul.tips, .mycv p{
 	color:#999;
@@ -184,7 +175,7 @@ label span.form-required{
 }
 input.form-submit{
 	height:23px;
-	width:80px; 
+	max-width:200px; 
 	background:url(../img/bg_btn_orange.png) repeat-x;
 	padding:0 5px 2px 5px;
 	border:1px solid #FF9900;
@@ -197,7 +188,6 @@ input.form-submit{
 input.form-submit:hover{
 	background: url(../img/bg_btn_orange_hover.png) repeat-x;
 }
-	
 	
 /*------fin de cambios 22/03-------*/
 /*-----login------*/
