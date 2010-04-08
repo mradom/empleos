@@ -11,7 +11,7 @@
     <?php include("include/mi_previsualizar_encabezado.php");?> 
     <!-- RIGHT -->
     <div id="right_colum">
-	<?php Form_ayuda('Ayuda', 'Previsualizar'); ?>
+	  <?php Form_ayuda('Ayuda', 'Previsualizar'); ?>
 	</div>
     <!-- CENTRAL -->
     <div id="central_column">
