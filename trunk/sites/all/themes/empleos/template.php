@@ -921,6 +921,11 @@ $html = '<ul style="height: 30px;" class="ui-tabs-nav">
     $form['group_requisitos']['taxonomy'][get_vocabulary_by_name('idiomas')]['#weight'] = 92;
     $form['taxonomy'][get_vocabulary_by_name('idiomas')] = "";
     
+    //Paso el taxonomy al grupo que yo quiero -- Idiomas
+    $form['group_requisitos']['taxonomy'][get_vocabulary_by_name('disponibilidad')] = $form['taxonomy'][get_vocabulary_by_name('disponibilidad')];
+    $form['group_requisitos']['taxonomy'][get_vocabulary_by_name('disponibilidad')]['#weight'] = 92;
+    $form['taxonomy'][get_vocabulary_by_name('disponibilidad')] = "";
+    
     //$form['group_requisitos']['field_lugar_de_residencia'] = $form['field_lugar_de_residencia'];
     //$form['field_lugar_de_residencia'] = "";
     
@@ -1088,4 +1093,10 @@ function phptemplate_form_alter(&$form, $form_state, $form_id){
 
     $form = $miform;
     return $form;
+}
+
+function phptemplate_search_form($form) {
+	//echo "<pre>"; print_r($form); echo "</pre>";
+	return drupal_render($form);
+  //return _phptemplate_callback('search_theme_form', array('form' => $form), array('search-theme-form'));
 }
