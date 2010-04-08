@@ -198,6 +198,15 @@ function phptemplate_user_edit($form) {
 		
 	 }
 	 if (arg(3)=='Empleado' and in_array('authenticated user', array_values($user->roles))){
+		 
+		$form['Empleado']['profile_empl_apellido']['#required']=1;
+		$form['Empleado']['profile_empl_nombre']['#required']=1;
+		$form['Empleado']['profile_empl_sexo']['#required']=1;
+		$form['Empleado']['profile_empl_fecha_nacimiento']['#required']=1;
+		$form['Empleado']['profile_tipo_doc']['#required']=1;
+		$form['Empleado']['profile_empl_num_doc']['#required']=1;
+		$form['Empleado']['profile_empl_telefono']['#required']=1;
+		
 	 	$miform .= drupal_render($form['Empleado']['profile_empl_apellido']);
 		$miform .= drupal_render($form['Empleado']['profile_empl_nombre']);
 		$miform .= drupal_render($form['Empleado']['profile_empl_sexo']);

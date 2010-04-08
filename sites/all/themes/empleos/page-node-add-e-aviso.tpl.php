@@ -2,15 +2,15 @@
 <?php include("include/head.php");?>
 <body>
 <div id="wrapper">
-  <!-- HEADER-- -->
+  <!-- HEADER -->
   <?php include("include/header.php");?>
-  <!-- --MIDDLE---- -->
+  <!-- MIDDLE -->
   <div id="browser" class="inside"> </div>  
   <div id="midle">
     <?php include("include/mi_avisos_encabezado.php");?> 
-    <!-- --RIGHT colum---- -->
+    <!-- RIGHT -->
     <?php // No tiene ... include("include/mi_idiomas_encabezado.php");?> 
-    <!-- ----CENTRAL colum------ -->
+    <!-- CENTRAL -->
     <DIV id="central_column">
   <script>
   $(document).ready(function() {
@@ -19,9 +19,8 @@
   </script>
 	<?php print $content;?>
 	  <?php if (arg(1)<>'add' and arg(2)<>'edit' and arg(2)<>'delete') print "<a href='?q=node/add/p-objetivo-laboral'>Agregar</a>";?>
+    <?php include("include/banners-central.php");?>
     </div>
-  <!-- -banners-minibox-- -->
-  <?php include("include/banners-central.php");?>
   </div>
 <?php include("include/footer.php");?>
 </div>
