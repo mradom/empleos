@@ -1,18 +1,16 @@
 <?php 
+global $pager_total_items;
+
 $key = $_POST["key"];
 $rubro = $_POST["rubro"];
 $zona = $_POST["zona"];
 
 $sql_query = "";
 
+$base_query = "SELECT * FROM node_revisions AS nr
+INNER JOIN node AS n ON n.nid = nr.nid ";
+// ojo tiene que ser select * si o si para que funcione el paginador
 
-
-
-$sql = "SELECT nr.nid FROM node_revisions AS nr
-INNER JOIN node AS n ON n.nid = nr.nid
-WHERE nr.body LIKE '%".$key."%' or nr.title like '%".$key."%' AND n.status = 1";
-
-$base_query = "SELECT n.nid FROM node AS n ";
 $inner_join = " INNER JOIN workflow_node AS w ON w.nid = n.nid ";
 
 $inner_join2 = " INNER JOIN pub_publicacion AS z ON z.nid = n.nid ";
@@ -20,9 +18,9 @@ $inner_join2 = " INNER JOIN pub_publicacion AS z ON z.nid = n.nid ";
 // abajo deberia estar ordenado por CID desc y desde ASC
 
 $where = "WHERE n.type = 'e_aviso' AND n.status = 1 ";
-if($key != ""){
-	$inner_join =  $inner_join . " INNER JOIN node_revisions AS nr ON nr.nid = n.nid ";
-	$where = $where."AND n.title LIKE '%".$key."%' AND nr.body LIKE '%".$key."%' ";
+
+if($key != "" and $key != 'Buscar por palabras clave'){
+	$where = $where."AND n.title LIKE '%".$key."%' or nr.body LIKE '%".$key."%' ";
 }
 if($rubro > 0){
 	$inner_join = $inner_join . " INNER JOIN term_node AS tn1 ON tn1.nid = n.nid ";
@@ -36,26 +34,23 @@ if($zona > 0){
 $where = $where . " ORDER BY w.sid, n.created DESC  ";
 
 $sql = $base_query.$inner_join.$where;
-$rs = db_query($sql);
+    //$rs = db_query($sql);
+
+	$nodes_per_page = 10; 
+	$rs = pager_query($sql,$nodes_per_page,0);
+
+
 ?>
 <!--      ------Poner aca camino de links ------ -->
       <UL class="tags">
         <li><H1><A href="?q=buscar">Buscar</A></H1></LI>
-        <?php 
-        	if(isset($rubro)){
-        		?><li><h1><a href="?q=buscar/<?php echo $rubro;?>"><?php echo $rubro;?> / </a></h1></li><?php
-        	}?>
-        <?php 
-        	if(isset($zona)){
-        		?><li><h1><a href="?q=buscar/<?php echo $zona;?>"><?php echo $zona;?> / </a></h1></li><?php
-        	}?>
-        <?php 
-        	if(isset($key)){
-        		?><li><h1><a href="?q=buscar/<?php echo $key;?>"><?php echo $key;?></a></h1></li><?php
-        	}?>
+        <?php  	if(isset($rubro)) print '<li><h1><a href="?q=buscar/'.$rubro.'">$rubro / </a></h1></li>';
+                if(isset($zona )) print '<li><h1><a href="?q=buscar/'.$zona.'">$zona / </a></h1></li>';
+                if(isset($key  )) print '<li><h1><a href="?q=buscar/'.$key.'">$key</a></h1></li>';
+			?>
       </UL>
 <!--      --LISTA DE RESULTADOS-- -->
-		<DIV class="box central" style="background:none">
+	  <DIV class="box central" style="background:none">
 			<DIV class="results">
           		<DIV class="rss redes">
           			<A href="#">Compartir</A>
@@ -63,7 +58,7 @@ $rs = db_query($sql);
           		<DIV class="rss">
           			<A href="#">RSS</A>
           		</div>
-          		<P>Se econtraron <SPAN class="orange"><?php echo mysql_num_rows($rs);?> ofertas de trabajo:</SPAN> en el &aacute;rea: <SPAN class="orange"> GERENCIA GENERAL</SPAN></P>
+          		<P>Se econtraron <SPAN class="orange"><?php echo $pager_total_items[0];?> ofertas de trabajo:</SPAN> en el &aacute;rea: <SPAN class="orange"> GERENCIA GENERAL</SPAN></P>
 			</div>
        <!--Gold results-->
        <?php 
@@ -88,7 +83,7 @@ $rs = db_query($sql);
         			foreach($nodo->taxonomy as $value){
         				if ($value->vid == 17){$localidad = $value->tid; break;}
         			}
-        			if ($otro==1) { print '</div>'; $otro=0;} 
+        			if ($otro==1) { print '</div><!-- fin tipo -->'; $otro=0;} 
 					switch ($nodo->_workflow) {
 					    case 3:
 					        echo "<div id='gold'>";
@@ -122,70 +117,127 @@ $rs = db_query($sql);
 					        	$otro = 1;
 					        }
 					        break;
+						default:
+					        echo "<div id='gratis'>";
+					        if($gratis == "0"){
+					        	echo "<div id='titles_bar'>Avisos</div>";
+					        	$gratis = 1;
+					        	$otro = 1;
+					        }
+					        break;	
 					}
-        		?>
-        			<?php 
-        				if($nodo->_workflow == 3 or $nodo->_workflow == 4){
-        			?>
-		          <div>
-		            <DIV class="brand">
-		            	<?php print theme('imagecache','logo_empresa_resultado_busqueda_86_53',$nodo->picture,$nodo->picture,$nodo->picture); ?>
-		            </div>
-		            <a href="?q=job/apply/<?php echo $nodo->nid;?>"><div class="btn_postulate"></div></a>
-		            <DIV class="datos">
-		              <H2><SPAN class="orange"><a href="?q=taxonomy/term/<?php echo $nodo->taxonomy[$area]->tid;?>"><?php echo $nodo->taxonomy[$area]->name;?></a></SPAN> | <SPAN class="upper"><?php echo $nodo->name;?></SPAN></H2>
-		              <P class="line">
-		              	<SPAN class="orange">Sector:</SPAN> <a href="?q=taxonomy/term/<?php echo $nodo->taxonomy[$sector]->tid;?>"><?php echo $nodo->taxonomy[$sector]->name;?></a> | 
-		              <a href="?q=taxonomy/term/<?php echo $nodo->taxonomy[$localidad]->tid?>"><?php echo $nodo->taxonomy[$localidad]->name;?></a><BR>
-		                <?php //echo $nodo->teaser;?>
-		                <?php if (strlen($nodo->teaser) > 215){
-						  echo substr($nodo->teaser,0,215).'...';
-						}else{
-						  echo substr($nodo->teaser,0,215);
-						}?></p>
-		              <P><A class="orange right" href="?q=node/<?php echo $nodo->nid;?>">&gt;&gt;Ver oferta de trabajo</A></P>
-		              <P class="grey">Fecha de publicaci&oacute;n: <?php print date('d-m-Y',$nodo->created); ?></P>
-		            </div>
-		          </div>
-		          <?php }
-		          		if($nodo->_workflow == 5){
-		          	?>
-						<div>
-			            <div class="datos">
-			              <H2><SPAN><a href="?q=taxonomy/term/<?php echo $nodo->taxonomy[$area]->tid;?>"><?php echo $nodo->taxonomy[$area]->name;?></a></SPAN> | <SPAN class="upper"><?php echo $nodo->name;?></SPAN></H2>
-		                  <P class="line">
-		              	  <SPAN class="orange">Sector:</SPAN> <a href="?q=taxonomy/term/<?php echo $nodo->taxonomy[$sector]->tid;?>"><?php echo $nodo->taxonomy[$sector]->name;?></a> | 
-		                  <a href="?q=taxonomy/term/<?php echo $nodo->taxonomy[$localidad]->tid?>"><?php echo $nodo->taxonomy[$localidad]->name;?></a><BR>
-		                <?php //echo $nodo->teaser;?>
-		                <?php if (strlen($nodo->teaser) > 215){
-						  echo substr($nodo->teaser,0,215).'...';
-						}else{
-						  echo substr($nodo->teaser,0,215);
-						}?></p>
-			              <P><a class="right" href="?q=node/<?php echo $nodo->nid;?>">&gt;&gt;Ver oferta de trabajo</A></P>
-			              <p class="grey">Fecha de publicaci&oacute;n: <?php print date('d-m-Y',$nodo->created); ?></P>
-			            </div>
-			          </div>
-		          	<?php
+
+        			if($nodo->_workflow == 3 or $nodo->_workflow == 4){
+   					    print '<!-- ini destacado -->';
+						// gold y destacado
+						  print '<div>';
+						  // logo de la empresa
+						  print '<div class="brand">';
+						  // print theme('imagecache','logo_empresa_resultado_busqueda_86_53',$nodo->picture,$nodo->picture,$nodo->picture);
+						  print '</div>';
+						  // boton de postulacion
+					  print '<a href="?q=job/apply/'.$nodo->nid.'"><div class="btn_postulate"></div></a>';
+						  // encabezado
+						  print '<div class="datos">'; 
+							print '<h2><a class="orange" href="?q=taxonomy/term/';
+							print $nodo->taxonomy[$area]->tid;
+							print '">'.$nodo->taxonomy[$area]->name.'</a> | <span class="upper">';
+							print $nodo->name.'</span></h2>';
+							print '<p class="line">'; 
+							 print '<span class="orange">Sector:</span> <a href="?q=taxonomy/term/';
+							 print $nodo->taxonomy[$sector]->tid;
+							 print '">'.$nodo->taxonomy[$sector]->name.'</a> | <a href="?q=taxonomy/term/';
+							 print $nodo->taxonomy[$localidad]->tid;
+							 print '">'.$nodo->taxonomy[$localidad]->name.'</a><br>'; 
+							 print '</p>';
+							// texto hasta 215 caracteres
+							print '<p>';
+							if (strlen($nodo->teaser) > 215){
+							  print substr($nodo->teaser,0,215).'...';
+							 }else{
+							  print substr($nodo->teaser,0,215);
+							 }
+							print '</p>';
+							// ver oferta de trabajo
+							print '<p><a class="orange right" href="?q=node/';
+							 print $nodo->nid;
+							 print '">&gt;&gt;Ver oferta de trabajo</a></p>';
+							// fecha de creacion
+							print '<p class="grey">Fecha de publicaci&oacute;n: ';
+							 print date('d-m-Y',$nodo->created);
+							 print '</p>';
+						  print '</div>';
+						print '</div>';
+						print '<!-- fin destacado -->';
+					    }
+		          	  if($nodo->_workflow == 5){
+		          	    // simple
+						print '<!-- ini simple -->';
+						print '<div>';
+						  // encabezado
+						  print '<div class="datos">'; 
+							print '<h2><span><a href="?q=taxonomy/term/';
+							print $nodo->taxonomy[$area]->tid;
+							print '">'.$nodo->taxonomy[$area]->name.'</a></span> | <span class="upper">';
+							print $nodo->name.'</span></h2>';
+							print '<p class="line">'; 
+							 print '<span class="orange">Sector:</span> <a href="?q=taxonomy/term/';
+							 print $nodo->taxonomy[$sector]->tid;
+							 print '">'.$nodo->taxonomy[$sector]->name.'</a> | <a href="?q=taxonomy/term/';
+							 print $nodo->taxonomy[$localidad]->tid;
+							 print '">'.$nodo->taxonomy[$localidad]->name.'</a><BR>'; 
+							 print '</p>';
+							// texto hasta 215 caracteres
+							print '<p>';
+							if (strlen($nodo->teaser) > 215){
+							  print substr($nodo->teaser,0,215).'...';
+							 }else{
+							  print substr($nodo->teaser,0,215);
+							 }
+							print '</p>';
+							// ver oferta de trabajo
+							print '<p><a class="orange right" href="?q=node/';
+							 print $nodo->nid;
+							 print '">&gt;&gt;Ver oferta de trabajo</a></p>';
+							// fecha de creacion
+							print '<p class="grey">Fecha de publicaci&oacute;n: ';
+							 print date('d-m-Y',$nodo->created);
+							 print '</p>';
+						  print '</div>';
+						  print '</div>';
+						print '<!-- fin simple -->';
 		          		}
-		          		if($nodo->_workflow == 6){
-		          			?>
-							<div class="datos">
-					            <h2><strong>Ejecutivo de Ventas l </strong> Importante Empresa de Servicios de Salud l <span class="grey">Sector: Gerencia l Córdoba</span></h2>
-					            <p><a href="#" class="right">&gt;&gt;Ver oferta de trabajo</a></p>
-					            <p class="grey">Fecha de publicación: 15-01-2010</p>
-					        </div>
-		          			<?php
+	                  if($nodo->_workflow == 6){
+						print '<!-- ini free -->';
+		          	    // free
+						print '<div>';
+						  // encabezado
+						  print '<div class="datos">'; 
+							print '<h2><strong><a href="?q=taxonomy/term/';
+							print $nodo->taxonomy[$area]->tid;
+							print '">'.$nodo->taxonomy[$area]->name.'</a></strong> | <span class="upper">';
+							print $nodo->name.'</span></h2>';
+							// ver oferta de trabajo
+							print '<p><a class="orange right" href="?q=node/';
+							 print $nodo->nid;
+							 print '">&gt;&gt;Ver oferta de trabajo</a></p>';
+							// fecha de creacion
+							print '<p class="grey">Fecha de publicaci&oacute;n: ';
+							 print date('d-m-Y',$nodo->created);
+							 print '</p>';
+						  print '</div>';
+						  print '</div>';
+						print '<!-- fin free -->';
 		          		}
-	
-		          ?>
-		         </div>
-        			<?php
-        			
-        		}
-        	}else{
-        		?>
-        		<div><p>No se encontraron resultados de acuerdo a su criterio de busqueda.</p><p>Por favor intente con otro criterio</p></div>
-        		<?php
+				}
+                 // aca cierro el div del tipo de aviso
+		         print '</div>';
+       			 if ($otro==1) { print '</div>'; $otro=0;} 
+            
+        		
+        	} else {
+        		print '<div><p>No se encontraron resultados de acuerdo a su criterio de busqueda.</p><p>Por favor intente con otro criterio</p></div>';
         	}
+			     print '<div>'.theme('pager', NULL, $nodes_per_page).'</div>';	
         ?>
+</div>
