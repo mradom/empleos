@@ -35,7 +35,7 @@ Record&aacyte; que los &iacute;tems destacados en <span style="color:#248CC4; fo
 				//print '</pre>';
 
 				?>
-				        <TR> 
+				        <TR class="<?php if ($node->nid == $row->nid) print arg(2);?>"> 
 				          <?php if ($node->nid == $row->nid) { print '<TD>'.$row->field_empresa_0[0]['value'].'</TD>';
 			                   } else { print '<TD><A href="?q=node/'.$row->nid.'/edit" title="editar">'.$row->field_empresa_0[0]['value'].'</A></TD>';  } ?>
 				          <TD><?php print $row->field_titulo_o_cargo[0]['value'];?></TD> 				          

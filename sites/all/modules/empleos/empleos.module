@@ -1,0 +1,117 @@
+<?php
+// $Id: empleos.module,v 1.0 2009/10/01 09:00:00 Francisco Piantoni Exp $
+
+define('EMPLEOS_PERM_ADMINISTER',  'administer empleos');
+define('EMPLEOS_PAGE_LIMIT',       'empleos_page_limit');
+define('EMPLEOS_PAGE_TYPE',        'empleos_page_type');
+define('EMPLEOS_VIEW_NEWS_PROFILE','empleos_view_news_profile');
+
+
+function empleos_menu($may_cache) {
+  $items = array();
+
+  if ($may_cache) {
+	$items[] = array(
+      'title'              => 'Empleos',
+      'path'               => 'admin/settings/empleos',
+      'description'        => 'Settings for Empleos',
+      'callback'           => 'drupal_get_form',
+      'callback arguments' => 'empleos_settings',
+      'type'               => MENU_NORMAL_ITEM,
+      'access'             => user_access(EMPLEOS_PERM_ADMINISTER)
+    );
+	
+	$items[] = array(
+	  'title'    			=> 'Buscador de empleos',
+      'path'     			=> 'buscar2',
+      'callback' 			=> 'empleos_buscar2',
+	  'access'   			=> TRUE
+    );
+	
+	
+	$items[] = array(
+	  'title'    			=> 'Rubros',
+      'path'     			=> 'rubro',
+      'callback' 			=> 'empleos_rubro',
+	  'access'   			=> TRUE
+    );
+	
+	
+	$items[] = array(
+	  'title'    			=> 'Consultoras',
+      'path'     			=> 'consultora',
+      'callback' 			=> 'empleos_consultora',
+	  'access'   			=> TRUE
+    );
+	
+	
+	$items[] = array(
+	  'title'    			=> 'Empresas',
+      'path'     			=> 'empresa',
+      'callback' 			=> 'empleos_empresa',
+	  'access'   			=> TRUE
+    );
+	}
+	
+  return $items;
+}
+
+function empleos_buscar2() {
+   drupal_set_message('Paso por aca.','error');
+   return '============================================';
+}
+
+function empleos_rubro() {
+   return '============================================';
+}
+function empleos_empresa() {
+   return '============================================';
+}
+
+function empleos_consultora() {
+   return '============================================';
+}
+
+
+function empleos_settings() {
+  $set = 'page';
+  $form[$set] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Empleos Page Settings'),
+    '#collapsible' => true,
+    '#collapsed' => false,
+  );
+  $form[$set][EMPLEOS_PAGE_LIMIT] = array(
+    '#type' => 'textfield',
+    '#title' => t('Empleos Page Limit'),
+    '#default_value' => variable_get(EMPLEOS_PAGE_LIMIT, 10),
+    '#description' => t('Cuantos items se muestran por pagina.'),
+  );
+  
+  $form[$set][EMPLEOS_VIEW_NEWS_PROFILE] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Ver novedades en el profile'),
+    '#default_value' => variable_get(EMPLEOS_VIEW_NEWS_PROFILE, 1),
+    '#description' => t('Muestra las novedades en el profile de los usuarios registrados.'),
+  );
+  
+
+  $set = 'types';
+  $form[$set] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Indexar estos tipos de nodos'),
+    '#collapsible' => true,
+    '#collapsed' => false,
+  );
+  foreach (_node_types_natcasesort() as $type) {
+    $form[$set][EMPLEOS_NODE_TYPE . $type->type] = array(
+      '#type' => 'checkbox',
+      '#title' => $type->name,
+      '#return_value' => 1,
+      '#default_value' => variable_get(EMPLEOS_NODE_TYPE . $type->type, 0),
+    );
+  }
+
+  return system_settings_form($form);
+}
+

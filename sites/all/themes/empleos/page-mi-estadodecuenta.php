@@ -13,7 +13,6 @@
     <DIV id="central_column">
 	  <?php //print $content;?>
     </div>
-    <div id="browser" class="inside"> </div>
   <!-- -banners-minibox-- -->
   <?php include("include/banners-central.php");?> 
   </div>

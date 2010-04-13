@@ -33,18 +33,9 @@ Si haz realizado o dictado cursos, al ingresarlos consider&aacute; que los &iacu
 			<?php
 			foreach($vista["items"] as $item){
 				$row = node_load(array('nid' => $item->nid));
-				//print '<pre>';
-				//print_r($node);
-				//print '</pre>';
-					//$idioma = "";
-					//foreach($row->taxonomy as $taxo){
-					//	if($taxo->vid == "2"){
-					//		$idioma = $taxo->name;
-					//		break;
-					//	}
-					//}
+
 				?>
-				        <TR> 
+				        <TR class="<?php if ($node->nid == $row->nid) print arg(2);?>"> 
 				          <?php if ($node->nid == $row->nid) { print '<TD>'.$row->title.'</TD>';
 			                   } else { print '<TD><A href="?q=node/'.$row->nid.'/edit" title="editar">'.$row->title.'</A></TD>';  } ?> 
 				          <TD><?php print $row->field_en_calidad_de[0]['value'];?></TD>

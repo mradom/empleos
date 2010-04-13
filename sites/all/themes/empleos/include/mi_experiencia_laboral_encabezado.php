@@ -58,7 +58,7 @@ Si no ten&eacute;s experiencia laboral dej&aacute; el formulario en blanco y con
 						if($taxo->vid == "12"){	$jerarquia = $taxo->name; break;}
 					}
 				?>
-				        <TR> 
+				        <TR class="<?php if ($node->nid == $row->nid) print arg(2);?>"> 
 				          <?php if ($node->nid == $row->nid) { print '<TD>'.$a_ini.'-'.$m_ini.' - '.$a_fin.'-'.$m_fin.'</TD>';
 			                   } else { print '<TD><A href="?q=node/'.$row->nid.'/edit" title="editar">'.$a_ini.'-'.$m_ini.' - '.$a_fin.'-'.$m_fin.'</A></TD>';  } ?> 
 				          <TD><?php print $row->title;?></TD>

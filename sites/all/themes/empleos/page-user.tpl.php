@@ -31,6 +31,7 @@
 			  } 
   ?>
   </div>
+  <?php //if ($messages): print $messages; endif; ?>
   <!-- -banners-minibox-- -->
   <?php include("include/banners-central.php");?>
   </div>

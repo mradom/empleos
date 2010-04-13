@@ -12,8 +12,8 @@
     <!-- CENTRAL -->
     <div id="central_column">
 		<?php include("sites/all/themes/empleos/block-block4.tpl.php");?>
-        <?php include("include/banners-central.php");?>
-    </div>
+    </div>        
+    <?php include("include/banners-central.php");?>
    </div>
   <?php include("include/footer.php");?>
 </div>

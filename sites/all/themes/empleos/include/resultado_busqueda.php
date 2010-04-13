@@ -36,19 +36,24 @@ $where = $where . " ORDER BY w.sid, n.created DESC  ";
 $sql = $base_query.$inner_join.$where;
     //$rs = db_query($sql);
 
-	$nodes_per_page = 10; 
+	$nodes_per_page = variable_get(EMPLEOS_PAGE_LIMIT, 20);
+	$nodes_per_page = 2;
+	
 	$rs = pager_query($sql,$nodes_per_page,0);
 
 
 ?>
 <!--      ------Poner aca camino de links ------ -->
+	  <div style="float: left;">
       <UL class="tags">
         <li><H1><A href="?q=buscar">Buscar</A></H1></LI>
         <?php  	if(isset($rubro)) print '<li><h1><a href="?q=buscar/'.$rubro.'">$rubro / </a></h1></li>';
                 if(isset($zona )) print '<li><h1><a href="?q=buscar/'.$zona.'">$zona / </a></h1></li>';
                 if(isset($key  )) print '<li><h1><a href="?q=buscar/'.$key.'">$key</a></h1></li>';
+				print '<li>['.$nodes_per_page.']</li>';
 			?>
       </UL>
+      </div>
 <!--      --LISTA DE RESULTADOS-- -->
 	  <DIV class="box central" style="background:none">
 			<DIV class="results">
@@ -70,10 +75,7 @@ $sql = $base_query.$inner_join.$where;
         	if(mysql_num_rows($rs) > 0){
         	    while($fila = mysql_fetch_object($rs)){
         			$nodo = node_load($fila->nid);
-        			$gold = "0";
-        			$destacado = "0";
-        			$simple = "0";
-        			$gratis = "0";
+
         			foreach($nodo->taxonomy as $value){
         				if ($value->vid == 1){$area = $value->tid; break;}
         			}
@@ -83,47 +85,61 @@ $sql = $base_query.$inner_join.$where;
         			foreach($nodo->taxonomy as $value){
         				if ($value->vid == 17){$localidad = $value->tid; break;}
         			}
-        			if ($otro==1) { print '</div><!-- fin tipo -->'; $otro=0;} 
 					switch ($nodo->_workflow) {
 					    case 3:
-					        echo "<div id='gold'>";
-					        if($gold == "0"){
-					        	echo "<div id='titles_bar'><img src='sites/all/themes/empleos/img/gold.gif'>Avisos Gold</div>";
+        			        //if ( ($otro==1) and ($tipo <> 3) ) { print '</div><!-- fin tipo -->'; $otro=0; } 						
+						    if($gold == "0"){
+					        	echo "<div id='gold'><div id='titles_bar'><img src='sites/all/themes/empleos/img/gold.gif'>Avisos Gold</div>";
 					        	$otro = 1;	
 					        	$gold = 1;
-				        }
+								$tipo = 3;
+				        	} else {
+							echo "<div id='gold'>"; 
+							}
 					        break;
 					    case 4:
-					        echo "<div id='destacado'>";
+        			        //if ( ($otro==1) and ($tipo <> 4) ) { print '</div><!-- fin tipo -->'; $otro=0; } 												
 					        if($destacado == "0"){
-					        	echo "<div id='titles_bar'><img src='sites/all/themes/empleos/img/destacado.gif'>Avisos Destacados</div>";
+					        	echo "<div id='destacado'><div id='titles_bar'><img src='sites/all/themes/empleos/img/destacado.gif'>Avisos Destacados</div>";
 					        	$destacado = 1;
 					        	$otro = 1;
-					        }
+								$tipo = 4;
+					        } else { 
+							echo "<div id='destacado'>"; 
+							}
 					        break;
 					    case 5:
-					        echo "<div id='simple'>";
+        			        //if ( ($otro==1) and ($tipo <> 5) ) { print '</div><!-- fin tipo -->'; $otro=0; } 												
 					        if($simple == "0"){
-					        	echo "<div id='titles_bar'><img src='sites/all/themes/empleos/img/simple.gif'>Avisos Simples</div>";
+					        	echo "<div id='simple'><div id='titles_bar'><img src='sites/all/themes/empleos/img/simple.gif'>Avisos Simples</div>";
 					        	$simple = 1;
 					        	$otro = 1;
-					        }
+								$tipo = 5;								
+					        } else {
+					        echo "<div id='simple'>"; 
+							}
 					        break;
 					    case 6:
-					        echo "<div id='gratis'>";
+        			        //if ( ($otro==1) and ($tipo <> 6) ) { print '</div><!-- fin tipo -->'; $otro=0; } 												
 					        if($gratis == "0"){
-					        	echo "<div id='titles_bar'>Avisos Gratuitos</div>";
+					        	echo "<div id='gratis'><div id='titles_bar'>Avisos Gratuitos</div>";
 					        	$gratis = 1;
 					        	$otro = 1;
-					        }
+								$tipo = 6;								
+					        } else {
+					        echo "<div id='gratis'>"; 
+							}
 					        break;
 						default:
-					        echo "<div id='gratis'>";
+        			        //if ( ($otro==1) and ($tipo <> 9) ) { print '</div><!-- fin tipo -->'; $otro=0; } 												
 					        if($gratis == "0"){
-					        	echo "<div id='titles_bar'>Avisos</div>";
+					        	echo "<div id='gratis'><div id='titles_bar'>Avisos</div>";
 					        	$gratis = 1;
 					        	$otro = 1;
-					        }
+								$tipo = 9;								
+							} else {
+					        echo "<div id='gratis'>" ;
+							}
 					        break;	
 					}
 
@@ -136,7 +152,7 @@ $sql = $base_query.$inner_join.$where;
 						  // print theme('imagecache','logo_empresa_resultado_busqueda_86_53',$nodo->picture,$nodo->picture,$nodo->picture);
 						  print '</div>';
 						  // boton de postulacion
-					  print '<a href="?q=job/apply/'.$nodo->nid.'"><div class="btn_postulate"></div></a>';
+					      print '<a href="?q=job/apply/'.$nodo->nid.'"><div class="btn_postulate"></div></a>';
 						  // encabezado
 						  print '<div class="datos">'; 
 							print '<h2><a class="orange" href="?q=taxonomy/term/';
@@ -168,6 +184,7 @@ $sql = $base_query.$inner_join.$where;
 							 print '</p>';
 						  print '</div>';
 						print '</div>';
+						print '</div>';						
 						print '<!-- fin destacado -->';
 					    }
 		          	  if($nodo->_workflow == 5){
@@ -205,6 +222,7 @@ $sql = $base_query.$inner_join.$where;
 							 print '</p>';
 						  print '</div>';
 						  print '</div>';
+						print '</div>';						  
 						print '<!-- fin simple -->';
 		          		}
 	                  if($nodo->_workflow == 6){
@@ -227,17 +245,18 @@ $sql = $base_query.$inner_join.$where;
 							 print '</p>';
 						  print '</div>';
 						  print '</div>';
+						print '</div>';						  
 						print '<!-- fin free -->';
 		          		}
 				}
                  // aca cierro el div del tipo de aviso
 		         print '</div>';
-       			 if ($otro==1) { print '</div>'; $otro=0;} 
+       			 //if ($otro==1) { print '</div><!-- fin todo -->'; $otro=0;} 
             
         		
         	} else {
         		print '<div><p>No se encontraron resultados de acuerdo a su criterio de busqueda.</p><p>Por favor intente con otro criterio</p></div>';
         	}
-			     print '<div>'.theme('pager', NULL, $nodes_per_page).'</div>';	
+			     print '<div style="float: right; ">'.theme('pager', NULL, $nodes_per_page).'</div>';	
         ?>
-</div>
+</div><!--fin listado-->

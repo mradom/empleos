@@ -1,0 +1,9 @@
+; $Id: empleos.info,v 1.0 2009/10/01 09:00:00 Francisco Piantoni Exp $
+name = Empleos
+description = Empleos - La Voz del Interior
+package = Other
+core = 5.x
+
+version = "5.x-1.0"
+project = "Empleos"
+datestamp = "1229018427"

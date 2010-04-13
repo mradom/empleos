@@ -16,8 +16,8 @@
         	<div class="box center">
 		      <?php include("include/lista_rubros.php");?>
 		    </div>
-      <?php include("include/banners-central.php");?>
-      </div>
+    </div>
+    <?php include("include/banners-central.php");?>
   </div>
   <?php include("include/footer.php");?>
 </div>

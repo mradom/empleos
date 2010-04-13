@@ -40,7 +40,7 @@ Si ten&eacute;s conocimientos, al ingresar los datos consider&aacute; que los &i
 						}
 					}
 				?>
-				        <TR> 
+				        <TR class="<?php if ($node->nid == $row->nid) print arg(2);?>"> 
 				          <?php if ($node->nid == $row->nid) { print '<TD>'.$row->title.'</TD>';
 			                   } else { print '<TD><A href="?q=node/'.$row->nid.'/edit" title="editar">'.$row->title.'</A></TD>';  } ?> 
 				          <TD><?php print $idioma;?></TD>

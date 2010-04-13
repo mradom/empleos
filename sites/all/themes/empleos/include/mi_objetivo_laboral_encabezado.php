@@ -44,7 +44,7 @@
 				foreach($row->taxonomy as $taxo){ if($taxo->vid == get_vocabulary_by_name('Sueldo Pretendido')){ $sueldo = $taxo->name; break; 	} 	}
 				
 				?>
-				        <TR> 
+				        <TR class="<?php if ($node->nid == $row->nid) print arg(2);?>"> 
 				          <?php if ($node->nid == $row->nid) { print '<TD>'.$row->title.'</TD>';
 			                   } else { print '<TD><A href="?q=node/'.$row->nid.'/edit" title="editar">'.$row->title.'</A></TD>';  } ?>
 				          <TD><?php print $jerarquia;?></TD> 				          
