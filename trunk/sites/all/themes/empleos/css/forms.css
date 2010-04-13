@@ -213,6 +213,18 @@ li.bulet_o{background:url(../img/bullet_orange.gif)0 5px no-repeat; padding-left
 .tablaGris tr, .tablaAviso tr {
 	background-color:#fff;
 }
+.tablaGris tr:hover {
+	background-color:#CCC;
+}
+
+.tablaGris tr.edit {
+	background-color:#FF6;
+}
+
+.tablaGris tr.delete {
+	background-color:#F90;
+}
+
 .tablaGris td {
 	padding:3px 5px;
 	vertical-align:middle;

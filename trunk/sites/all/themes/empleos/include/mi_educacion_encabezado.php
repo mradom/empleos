@@ -68,7 +68,7 @@ if ($user->uid){
 			}
 
 			?>
-		<TR>
+		<TR class="<?php if ($node->nid == $row->nid) print arg(2);?>">
 		<?php if ($node->nid == $row->nid) { print '<TD>'.$a_ini.'-'.$m_ini.' - '.$a_fin.'-'.$m_fin.'</TD>';
 		} else { print '<TD><A href="?q=node/'.$row->nid.'/edit" title="editar">'.$a_ini.'-'.$m_ini.' - '.$a_fin.'-'.$m_fin.'</A></TD>';  } ?>
 			<TD><?php print $instituto;?></TD>

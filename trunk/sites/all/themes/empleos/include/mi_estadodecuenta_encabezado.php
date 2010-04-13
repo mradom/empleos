@@ -25,7 +25,7 @@
 		foreach($vista["items"] as $item){
 			$row = node_load(array('nid' => $item->nid));
 			?>
-		<TR>
+		<TR class="<?php if ($node->nid == $row->nid) print arg(2);?>">
 		<?php 
 		/*if ($node->nid == $row->nid) { 
 			print '<TD>'.$a_ini.'-'.$m_ini.' - '.$a_fin.'-'.$m_fin.'</TD>';

@@ -96,6 +96,13 @@ function get_vocabulary_by_name($name) {
  return $vname;
 }
 
+/** Trae el vid de un vocabulario si le pasamos en nombre **/ 
+function get_term_by_id($tid) {
+ $result = db_query("SELECT name FROM {term_data} WHERE tid = '%s'", $tid);
+ $vname = db_fetch_object($result)->name;
+ return $vname;
+}
+
 function get_page_by_id($nid) {
  $result = db_query("SELECT title FROM {node} WHERE type = 'page' and nid = '%s'", $nid);
  $vname = db_fetch_object($result)->title;
@@ -1100,3 +1107,4 @@ function phptemplate_search_form($form) {
 	return drupal_render($form);
   //return _phptemplate_callback('search_theme_form', array('form' => $form), array('search-theme-form'));
 }
+
