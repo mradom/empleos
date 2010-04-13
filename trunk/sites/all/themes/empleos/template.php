@@ -125,6 +125,10 @@ function phptemplate_user_register($form) {
     return _phptemplate_callback('user_register', array('form' => $form));
 }
 
+function phptemplate_user_register_form(&$form) {
+	return $form;
+}
+
 /*
  * Lo mismo en este caso, aca le decimos que queremos cargar el user_edit.tpl.php para hacer el formulario de registro 
  **/

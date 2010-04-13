@@ -5,24 +5,6 @@
        	<!--  <img src="sites/all/themes/empleos/img/post_creative-genius-headphone-toy.jpg"></img> -->
 <!--/* OpenX Javascript Tag v2.8.5 */-->
 
-<!--/*
-  * The backup image section of this tag has been generated for use on a
-  * non-SSL page. If this tag is to be placed on an SSL page, change the
-  *   'http://www.wenui.com/openx/openx-2.8.5/www/delivery/...'
-  * to
-  *   'https://www.wenui.com/openx/openx-2.8.5/www/delivery/...'
-  *
-  * This noscript section of this tag only shows image banners. There
-  * is no width or height in these banners, so if you want these tags to
-  * allocate space for the ad before it shows, you will need to add this
-  * information to the <img> tag.
-  *
-  * If you do not want to deal with the intricities of the noscript
-  * section, delete the tag (from <noscript>... to </noscript>). On
-  * average, the noscript tag is called from less than 1% of internet
-  * users.
-  */-->
-
 <script type='text/javascript'><!--//<![CDATA[
    var m3_u = (location.protocol=='https:'?'https://www.wenui.com/openx/openx-2.8.5/www/delivery/ajs.php':'http://www.wenui.com/openx/openx-2.8.5/www/delivery/ajs.php');
    var m3_r = Math.floor(Math.random()*99999999999);
@@ -37,7 +19,7 @@
    if (document.context) document.write ("&context=" + escape(document.context));
    if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
    document.write ("'><\/scr"+"ipt>");
-//]]>--></script><noscript><a href='http://www.wenui.com/openx/openx-2.8.5/www/delivery/ck.php?n=a38cbf0b&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.wenui.com/openx/openx-2.8.5/www/delivery/avw.php?campaignid=3&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a38cbf0b' border='0' alt='' /></a></noscript>
+//]]>--></script><noscript><a href='http://www.wenui.com/openx/openx-2.8.5/www/delivery/ck.php?n=a38cbf0b&amp;cb=7576576' target='_blank'><img src='http://www.wenui.com/openx/openx-2.8.5/www/delivery/avw.php?campaignid=3&amp;cb=67657645&amp;n=a38cbf0b' border='0' alt='' /></a></noscript>
         </div>
         
         <!-- bar areas-- -->
