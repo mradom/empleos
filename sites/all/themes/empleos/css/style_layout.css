@@ -68,7 +68,7 @@ span.underline {
 	position:relative;
 }
 #midle {
-	margin-top:10px;
+	margin:10px 0;
 }
 #logo {
 	width:285px;
@@ -452,6 +452,10 @@ ul.tags li.final {
 	float:left;
 	margin:0 auto;
 }
+.content_banners.boxes{
+	width:990px;
+	margin:10px 0;
+	}
 /*top*/
 #header .banner.top {
 	width:990px;
@@ -890,11 +894,11 @@ div.resumen.prev{
 /*---FOOTER---*/
 #Footer {
 	float:left;
-	background:#262626;
+	background:#E2E2E2 url(../img/bg-footer.png) bottom repeat-x;
 	margin:0;
 	padding:0;
-	width:950px;
-	padding:0 20px;
+	width:960px;
+	padding:0 20px 0 10px;
 	-moz-border-radius: 10px 10px 0 0 ;
 	-webkit-border-radius: 10px 10px 0 0 ;
 	border-radius: 10px 10px 0 0 ;
@@ -910,30 +914,30 @@ div.resumen.prev{
 	margin:0;
 }
 #Footer li a {
-	color: #9c9c9c;
-	padding:0 5px;
+	color:#666;
+	padding:0 0 2px 7px;
 	text-decoration:none;
 	display:block;
 
 }
 #Footer li a:hover {
 	color:#F3F3F3;
-	background:#1b1b1b;
-	padding:0 5px;
+	background:#444;
+	padding:0 0 2px 7px;
 	-moz-border-radius:3px;
 	-webkit-border-radius:3px;
 }
 #Footer h2 {
 	font: bold 13px tahoma;
-	color:#999;
+	color:#666;
 	padding:5px;
 	margin:0;
 }
 #Footer h2:hover { 
 	padding:4px; 
-	background:#262626;
+	background:#444;
 	color:#F3F3F3;
-	border:1px solid #393939;
+	border:1px solid #f2f2f2;
 	-moz-border-radius:3px;
 	-webkit-border-radius:3px;
 }
@@ -943,10 +947,16 @@ div.resumen.prev{
 	float:left;
 	padding:10px 5px;
 }
+#footer div.logos{
+	margin:15px 0 0 0;
+}
+#footer div.logos img{
+	margin-left:5px;
+}
 .footer {
 	padding:0;
 	margin:0;
-	background:#1b1b1b;
+	background: #333;
 	width:990px;
 	float:left
 }
@@ -954,10 +964,14 @@ div.resumen.prev{
 	float:left;
 	margin-right:10px;
 }
-.footer .logos{
+.footer div.logos{
 	height:26px;
 	float:right;
 	margin:7px 10px 0 0 ;
+}
+.footer img:hover, #footer img:hover {
+	filter: alpha(opacity=70); 
+	opacity: .7
 }
 .footer_resize {
 	margin:0 auto;
@@ -989,7 +1003,8 @@ p.clr, .clr {
 	padding:0;
 	margin:0;
 }
-
+<<<<<<< .mine
+=======
 /*
 
 mensajes del sistema ...
@@ -1050,4 +1065,4 @@ div#page .pager a:hover {
   list-style-type: none;
   margin: 0px 0px 0px 20px;
   padding: 0px;
-}
+}>>>>>>> .theirs

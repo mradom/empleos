@@ -1,4 +1,9 @@
 <div id="Footer">
+	<div class="logos right">
+    <a title="Rss" href="#" target="_blank"><img src="sites/all/themes/empleos/img/rss-ico.gif" width="23" height="22" /></a>
+    <a title="Facebook" target="_blank" href="#"><img src="sites/all/themes/empleos/img/face-ico.gif" width="23" height="22" /></a>
+    <a title="Tweeter" target="_blank" href="#"><img src="sites/all/themes/empleos/img/tweet-ico.gif" width="23" height="22" /></a>
+    </div>
     <div class="left">
       <h2>EmpleosLaVoz </h2>
       <ul>
@@ -44,7 +49,7 @@
     <p class="leftt">&copy; 2010 Todos los derechos reservados. &nbsp;&nbsp;<a href="#">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="?q=avisolegal">Aviso legal</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="?q=privacidad">Privacidad</a> 
  </a></p>
 <div class="logos">
-<a title="Certifica" href="http://www.certifica.com/" target="_blank"><img src="sites/all/themes/empleos/img/logo-certifica.jpg" width="73" height="26" /></a>
+<a title="Certifica" href="http://www.certifica.com/" target="_blank"><img src="sites/all/themes/empleos/img/logo-certifica.jpg" width="87" height="25" /></a>
 <a title="Direcci&oacute;n Nacional de Protecci&oacute;n de Datos Personales" href="http://www.jus.gov.ar/dnpdp/" target="_blank"><img src="sites/all/themes/empleos/img/logo-dnp.jpg" width="125" height="26" /></a>
 <a title="IAB Argentina" href="http://www.iabargentina.com.ar/" target="_blank"><img src="sites/all/themes/empleos/img/logo-iab.jpg" width="45" height="26" /></a>
 </div> 

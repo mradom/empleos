@@ -1,7 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language ?>" lang="<?php print $language ?>">
 <?php include("include/head.php");?>
 <body>
-<div style="padding:10px;">
+	<div style="padding:10px;">
 <?php
 global $user;
 global $user_profile;
