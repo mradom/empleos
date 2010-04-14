@@ -990,3 +990,64 @@ p.clr, .clr {
 	margin:0;
 }
 
+/*
+
+mensajes del sistema ...
+*/
+.messages {
+  background-color: #fff;
+  border: 1px solid #b8d3e5;
+}
+
+.preview {
+  background-color: #fcfce8;
+  border: 1px solid #e5e58f;
+}
+
+div.status {
+  color: #3a3;
+  border-color: #c7f2c8;
+}
+
+.pager a,
+.pager strong.pager-current {
+  padding:0.5em;
+}
+
+.pager {
+  padding:10px 0px 3px;
+}
+
+.pager div {
+  padding:0em;
+  display:inline;
+}
+
+.pager strong,
+.pager a,
+.pager a:link,
+.pager a:visited {
+  margin:0px 0.15em 0px 0.15em;
+  background-color:#fff;
+  border:1px solid #3077a4;
+  font-weight: bold;
+}
+
+div#page .pager a:hover {
+  text-decoration:none;
+  color:#fff;
+  background-color:#3077a4;
+  font-weight: bold;
+}
+
+.pager strong {
+  background-color:#3077a4;
+  color:#fff;
+  font-weight: bold;
+}
+
+.taxonomy_tree ul {
+  list-style-type: none;
+  margin: 0px 0px 0px 20px;
+  padding: 0px;
+}
