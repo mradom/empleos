@@ -10,7 +10,7 @@
     <div class="box top" style="background: url(sites/all/themes/empleos/img/bg_box_top_faq.jpg)">
 	<p style="margin-top:50px; padding-right:80px;">Estas son las <strong>preguntas m&aacute;s frecuentes</strong> que tienen nuestros postulantes.</br>
 Hac&eacute; click sobre la que te interese y te daremos la respuesta online.<br>
-Escribinos o envianos tus sugerencias a <a class="blue stg" href="#"	>empleoslavoz@lavozdelinterior.com.ar</a>
+Escribinos o envianos tus sugerencias a <a class="blue stg" href="#">empleoslavoz@lavozdelinterior.com.ar</a>
 </p></div>
     <!-- RIGHT -->
       <?php include("include/col_derecha-mini.php");?>

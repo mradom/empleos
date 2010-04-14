@@ -21,7 +21,7 @@
   * average, the noscript tag is called from less than 1% of internet
   * users.
   */-->
-
+<!--
 <script type='text/javascript'><!--//<![CDATA[
    var m3_u = (location.protocol=='https:'?'https://www.wenui.com/openx/openx-2.8.5/www/delivery/ajs.php':'http://www.wenui.com/openx/openx-2.8.5/www/delivery/ajs.php');
    var m3_r = Math.floor(Math.random()*99999999999);
@@ -37,6 +37,6 @@
    if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
    document.write ("'><\/scr"+"ipt>");
 //]]>--></script><noscript><a href='http://www.wenui.com/openx/openx-2.8.5/www/delivery/ck.php?n=a38cbf0b&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.wenui.com/openx/openx-2.8.5/www/delivery/avw.php?campaignid=3&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a38cbf0b' border='0' alt='' /></a></noscript>
-
+-->
         </div>
       </div>

@@ -4,7 +4,7 @@
     drupal_add_js('sites/all/themes/empleos/js/jquery.innerfade.page.js', 'theme');
     drupal_add_css('sites/all/themes/empleos/css/fade.css', 'theme', 'all');
 
-?>
+?>      <!-- ini -->
 		<div id="header">
 			<!-- Banner Topsite-- -->
 			<div class="banner top"> Topsite</div>
@@ -50,4 +50,6 @@
 					   }?>
       			</div>
         <?php } ?>
-   	</div>		
+   	</div>
+
+<!-- fin -->
