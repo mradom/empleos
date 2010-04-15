@@ -3,9 +3,9 @@
 <?php include("include/head.php");?>
 <body>
 <div id="wrapper">
-  <!-- HEADER-- -->
+  <!-- HEADER -->
   <?php include("include/header.php");?>
-  <!-- --MIDDLE---- -->
+  <!-- MIDDLE -->
   <div id="midle">
     <!-- banner -->
     <?php //include("include/banners-boxes.php");?>
