@@ -1,6 +1,7 @@
 <div class="box top" style="background: url(sites/all/themes/empleos/img/bg_box_top2.jpg)">
-<p><strong>Detall&aacute; tus estudios</strong> a partir del nivel secundario. Si no ten&eacute;s estudios, dej&aacute; el formulario en blanco y continu&aacute; con el siguiente paso.<br> 
-Si ten&eacute;s estudios, al registrarlos consider&aacute; que los &iacute;tems destacados en <span style="color: #248CC4; font-weight: bold">celeste</span> son obligatorios.
+<p>En el paso n&uacute;mero 2 podr&aacute;s ingresar los <strong>detalles de tu formaci&oacute;n educativa</strong> en los diferentes niveles formales (primarios, secundarios, terciarios, universitarios, posgrado). <br />
+Para ciertos puestos de trabajo, es imprescindible el contar con cierto nivel educativo o tener una formaci&oacute;n en cierta &aacute;rea de estudio; por ello, resulta estrat&eacute;gico ingresarlos en esta instancia. <br />
+Record&aacute; que los &iacute;tems destacados con asterisco <span class="stg orange">(*)</span> son obligatorios.
 
 </p>
 

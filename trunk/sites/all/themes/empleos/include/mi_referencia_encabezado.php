@@ -1,8 +1,11 @@
     <div class="box top" style="background:url(sites/all/themes/empleos/img/bg_box_top8.jpg)">
       <p>
-  Ingres&aacute; tus <strong>referencias laborales.</strong> es decir los datos de aquellas personas que pueden dar informaci&oacute;n acerca de tu desempe&ntilde;o laboral en experiencias actuales o anteriores.</br>
-  Si no ten&eacute;s ninguna persona de referencia, dej&aacute; el formulario en blanco y continu&aacute; con el siguiente paso.
-Record&aacyte; que los &iacute;tems destacados en <span style="color:#248CC4; font-weight:bold">celeste</span> son obligatorios.
+  El paso 8 te posibilita explicitar los datos de aquellas personas que pueden dar <strong>referencias de tus actuales o anteriores experiencias de trabajo</strong>.<br />
+Recuerda que las personas que consignes podr&iacute;an ser contactadas por tus potenciales empleadores para consultas sobre tus funciones, desempe&ntilde;o, relaciones en el &aacute;mbito de trabajo, puntos d&eacute;biles, etc. <br />
+
+Los &iacute;tems destacados con asterisco <span class="stg orange">(*)</span> son obligatorios.<br />
+Si decid&iacute;s dejar esta parte del formulario en blanco pod&eacute;s continuar con el siguiente paso. 
+
  </p>
       <div><img style=" padding-left:100px;" src="sites/all/themes/empleos/img/10pasos.png"></div>
 
