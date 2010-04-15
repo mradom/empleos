@@ -99,10 +99,11 @@ div.bloque, fieldset{
 	border:1px solid #FFECC6;
 	border-bottom:1px solid #FFDF71;
 	margin-bottom:10px;
-	background:url(../img/bg_titles.png) repeat-x;
+	/*background:url(../img/bg_titles.png) repeat-x;*/
+	background: #FC0;
 	height:20px;
-	-moz-border-radius:7px;
-	-webkit-border-radius:7px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
 }
 .item.req{ 
 	font-weight:bold;
@@ -159,7 +160,6 @@ input.req, select.req{border:1px solid #3399cc;
 .mycv .form-item input, .mycv textarea{
 	width:360px;	
 }
-/*------ojo cambio de 280 a 360 y description -------*/
 .mycv .form-item div.description, .mycv ul.tips, .mycv p{
 	color:#999;
 	width:280px;
@@ -186,6 +186,7 @@ input.form-submit{
 	cursor:pointer;
 	margin:10px 0 20px 0;
 	display:inline;
+	
 }
 input.form-submit:hover{
 	background: url(../img/bg_btn_orange_hover.png) repeat-x;
@@ -214,7 +215,7 @@ li.bulet_o{background:url(../img/bullet_orange.gif)0 5px no-repeat; padding-left
 	background-color:#fff;
 }
 .tablaGris tr:hover {
-	background-color:#CCC;
+	background-color: #EBEBEB;
 }
 
 .tablaGris tr.edit {
