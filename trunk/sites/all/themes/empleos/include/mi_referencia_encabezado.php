@@ -11,9 +11,9 @@ Si decid&iacute;s dejar esta parte del formulario en blanco pod&eacute;s continu
 
       <div><img style=" padding-left:150px " src="sites/all/themes/empleos/img/8paso.png"></div>
     </div>
-    <!-- -submenu--- --> 
+    <!-- submenu --> 
 	<?php include("submenu-usuarios.php");?> 
-     <!-- -tabla--- --> 
+     <!-- tabla --> 
   	<?php 
   		global $user;
   		if ($user->uid){

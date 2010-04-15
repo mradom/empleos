@@ -1,16 +1,17 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language ?>" lang="<?php print $language ?>">
 <?php include("include/head.php");?>
 <body>
 <div id="wrapper">
-  <!-- HEADER-- -->
+  <!-- HEADER -->
   <?php include("include/header.php");?>
-  <!-- --MIDDLE---- -->
+  <!-- MIDDLE -->
   <div id="browser" class="inside"> </div>  
   <div id="midle">
 	<?php if (arg(2)<>'') include("include/mi_avisos_encabezado.php");?>  
-    <!-- --RIGHT colum---- -->
+    <!-- RIGHT -->
     <?php // No tiene ... include("include/mi_idiomas_encabezado.php");?> 
-    <!-- ----CENTRAL colum------ -->
+    <!-- CENTRAL -->
     <DIV id="central_column">
   <script>
   $(document).ready(function() {
@@ -23,7 +24,6 @@
 	<?php print $content;?>
 	  <?php if (arg(1)<>'add' and arg(2)<>'edit' and arg(2)<>'delete' and arg(2)<>'') print "<a href='?q=node/add/p-objetivo-laboral'>Agregar</a>";?>
     </div>
-  <!-- -banners-minibox-- -->
   <?php include("include/banners-central.php");?>
   </div>
 <?php include("include/footer.php");?>

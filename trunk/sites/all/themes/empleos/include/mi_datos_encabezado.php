@@ -10,7 +10,7 @@ Los &iacute;tems destacados con asterisco <span class="orange stg">(*)</span> so
 
     </div>
 
-    <!-- -submenu--- --> 
+    <!-- submenu --> 
 	<?php include("submenu-usuarios.php");?> 
-     <!-- -tabla--- --> 
+     <!-- tabla --> 
   	
