@@ -161,7 +161,7 @@ input.req, select.req{border:1px solid #3399cc;
 }
 .mycv .form-item div.description, .mycv ul.tips, .mycv p{
 	color:#999;
-	width:280px;
+	max-width:360px;
 	margin:0 0 10px 275px;
 	}
 .mycv p a{
@@ -190,8 +190,11 @@ input.form-submit{
 input.form-submit:hover{
 	background: url(../img/bg_btn_orange_hover.png) repeat-x;
 }
-	
-/*------fin de cambios 22/03-------*/
+.mycv fieldset div.picture{
+	width:85px;
+	margin-left:273px;
+	margin-bottom:10px;
+}
 /*-----login------*/
 .mycv.log{
 	width:310px;
