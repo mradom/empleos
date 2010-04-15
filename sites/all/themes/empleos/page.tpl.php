@@ -48,16 +48,15 @@ switch ($node->type) {
 <?php include("include/head.php");?>
 <body>
 <div id="wrapper">
-  <!-- HEADER-- -->
+  <!-- HEADER -->
   <?php include("include/header.php");?>
   <div id="browser" class="inside"> </div>  
-  <!-- --MIDDLE---- -->
+  <!-- MIDDLE -->
   <div id="midle">
-    <!-- banners boxes-- -->
     <?php include("include/banners-boxes.php");?>
-    <!-- --RIGHT colum---- -->
+    <!-- RIGHT -->
     <?php include("include/col_derecha.php");?>
-    <!-- ----CENTRAL colum------ -->
+    <!-- CENTRAL -->
     <DIV id="central_column" style="border:1px solid #cccccc ;">
 		
         
