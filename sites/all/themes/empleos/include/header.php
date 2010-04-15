@@ -17,9 +17,9 @@
     		   <!-- menu -->
 			   <?php include("menu.php");?>
                
-               <?php If (($user->uid) and ((arg(0)<>'node') and (arg(1)<>19)) or(arg(1)==25)) { ?><div id="browser" class="inside"> </div><?php } ?>
+               <?php If (($user->uid) and (arg(0)<>'buscar') or(arg(1)==25)) { ?><div id="browser" class="inside"> </div><?php } ?>
 
-               <?php If ((!$user->uid) or (((arg(0)=='node') and (arg(1)==19)) and ($user->uid))) { ?>
+               <?php If ((!$user->uid) or ((arg(0)=='buscar') and ($user->uid))) { ?>
                 <!-- browser -->
     			<div id="browser">
                 <?php include("buscador.php");?>

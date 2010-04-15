@@ -46,7 +46,7 @@
 <div class="footer">
   <div class="footer_resize">
   <a href="http://www.lavoz.com.ar/" target="_blank" title="La Voz del Interior"><img style="margin-top:7px;" src="sites/all/themes/empleos/img/pie_lavoz.jpg" width="87" height="26" /></a>
-    <p class="leftt">&copy; 2010 Todos los derechos reservados. &nbsp;&nbsp;<a href="#">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="?q=avisolegal">Aviso legal</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="?q=privacidad">Privacidad</a> 
+    <p class="leftt">&copy; 2010 Todos los derechos reservados. &nbsp;&nbsp;<a href="?q=principal">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="?q=avisolegal">Aviso legal</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="?q=privacidad">Privacidad</a> 
  </a></p>
 <div class="logos">
 <a title="Certifica" href="http://www.certifica.com/" target="_blank"><img src="sites/all/themes/empleos/img/logo-certifica.jpg" width="87" height="25" /></a>
