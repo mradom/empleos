@@ -29,7 +29,7 @@ body {
 }
 /*----FONTS----*/
 p {
-	font:11p/14px tahoma;
+	font:11px/14px tahoma;
 }
 .orange, a.orange {
 	color:#F90
@@ -319,7 +319,6 @@ li.btns.sig:hover{
     border:1px solid #FF9900;
     -moz-border-radius:2px;
     -webkit-border-radius:2px;
-    border-radius:2px;
     margin-bottom:10px;
     color:#FFF;
     font-weight:bold;
@@ -347,7 +346,6 @@ li.btns.sig:hover{
 	background:#FF9900;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
-	border-radius:5px;
 	cursor:pointer;
 	display:inline-block;
 }
@@ -404,12 +402,12 @@ li#b-03 a:hover {
 	float:right;
 	color: #2D71B5;
 	font-family:arial;
- *width:510px;
+ 	*width:510px;
 	height:22px;
 }
 ul.log li {
 	display: inline-block;
- *display: inline;
+    *display: inline;
 	margin-right:10px;
 	padding-top:6px;
 	float:left
@@ -623,7 +621,7 @@ p.job {
 	float:left;
 }
 p.date {
-	font:10px/12px/ verdana;
+	font:10px/12px verdana;
 	padding-top:5px;
 	color:#C9C9C9;
 	float:right;
@@ -901,7 +899,6 @@ div.resumen.prev{
 	padding:0 20px 0 10px;
 	-moz-border-radius: 10px 10px 0 0 ;
 	-webkit-border-radius: 10px 10px 0 0 ;
-	border-radius: 10px 10px 0 0 ;
 }
 
 #Footer ul {
@@ -969,7 +966,7 @@ div.resumen.prev{
 	float:right;
 	margin:7px 10px 0 0 ;
 }
-.footer img:hover, #footer img:hover {
+.footer img:hover, #footer img:hover { /*----ver como hacer para validar-----*/
 	filter: alpha(opacity=70); 
 	opacity: .7
 }
@@ -1003,10 +1000,8 @@ p.clr, .clr {
 	padding:0;
 	margin:0;
 }
-<<<<<<< .mine
-=======
-/*
 
+/*
 mensajes del sistema ...
 */
 .messages {
@@ -1065,4 +1060,4 @@ div#page .pager a:hover {
   list-style-type: none;
   margin: 0px 0px 0px 20px;
   padding: 0px;
-}>>>>>>> .theirs
+}
