@@ -1,6 +1,8 @@
    <div class="box top" style="background:url(sites/all/themes/empleos/img/bg_box_top5.jpg)">
-      <p><strong>Ingres&aacute; tus conocimientos de inform&aacute;tica</strong> detallando el tipo de programa, el nombre del mismo y tu nivel. Si no ten&eacute;s conocimientos de inform&aacute;tica dej&aacute; el formulario en blanco y continu&aacute; con el siguiente paso. <br>
-Si ten&eacute;s conocimientos, al ingresar los datos consider&aacute; que los &iacute;tems destacados en <span style="color:#248CC4; font-weight:bold">celeste </span>son obligatorios. </p>
+      <p>En el paso 5 podr&aacute;s describir tus capacidades y habilidades en el manejo de herramientas y programas inform&aacute;ticos. Gran parte de los oficios y puestos de trabajo requieren alg&uacute;n tipo y nivel de <strong>conocimiento de software o equipos inform&aacute;ticos</strong> para el desempe&ntilde;o de funciones. Por ello, no olvides detallar y actualizar tus datos al respecto. <br />
+Los &iacute;tems destacados con asterisco <span class="stg orange">(*)</span> son obligatorios.<br />
+Si no manejas ninguna herramienta o programa inform&aacute;tico, dej&aacute; el formulario en blanco y contin&aacute; con el siguiente paso.
+ </p>
 
       <div><img style=" padding-left:100px;" src="sites/all/themes/empleos/img/10pasos.png"></div>
       <div><img style=" padding-left:150px " src="sites/all/themes/empleos/img/5paso.png"></div>

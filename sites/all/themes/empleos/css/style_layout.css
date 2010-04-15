@@ -638,7 +638,7 @@ p.date {
 }
 .box.top p {
 	float:right;
-	max-width:550px;
+	width:500px;
 	line-height:18px;
 }
 /*-----------Arrows-btn & rss----------------*/

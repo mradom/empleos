@@ -1,8 +1,10 @@
     <div class="box top" style="background:url(sites/all/themes/empleos/img/bg_box_top7.jpg)">
       <p>
-      <strong>Ingres&aacute; tu experiencia laboral.</strong> Empez&aacute; cargando tu experiencia m&aacute;s reciente y luego, cronol&oacute;gicamente, las anteriores.</br>
-Si no ten&eacute;s experiencia laboral dej&aacute; el formulario en blanco y continu&aacute; con el siguiente paso.
-</br> Si ten&eacute;s experiencia, al ingresarla consider&aacute; que los &iacute;tems destacados en <span style="color:#248CC4; font-weight:bold">celeste </span> son obligatorios.
+      El paso 7 te permite ingresar informaci&oacute;n importante sobre tus actuales o anteriores <strong>experiencias de trabajo</strong>.<br />
+ Dado que es muy importante para las empresas conocer qu&eacute; tipo experiencia laboral has tenido, no olvides ser lo m&aacute;s preciso posible al momento de cargar los datos correspondientes.<br />
+ Si no posees experiencia laboral dej&aacute;, el formulario en blanco y contin&aacute; con el siguiente paso.
+
+
       </p><br> 
       <div><img style=" padding-left:100px;" src="sites/all/themes/empleos/img/10pasos.png"></div>
       <div><img style=" padding-left:150px " src="sites/all/themes/empleos/img/7paso.png"></div>

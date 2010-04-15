@@ -1,8 +1,9 @@
     <div class="box top" style="background:url(sites/all/themes/empleos/img/bg_box_top6.jpg)">
       <p>
-      Si quer&eacute;s, pod&eacute;s detallar  <strong>otros conocimientos</strong>, hobbies o actividades de tiempo libre que realices o poseas y que no est&eacute;n incluidos en los campos anteriores.
-      </br> Al ingresar los datos consider&aacute; que los &iacute;tems destacados en <span style="color:#248CC4; font-weight:bold">celeste </span>son obligatorios.
-      
+      En esta parte de tu CV en empleoslavoz.com.ar podr&aacute;s incluir <strong>todos aquellos conocimientos, habilidades, hobbies o actividades de tiempo libre</strong> que puedan ayudar a las empresas o consultoras interesadas a tener un perfil m&aacute;s completo de tu personalidad y de tus intereses.<br />
+Incluso, este espacio puede servirte para ingresar aquellas actividades de formaci&oacute;n que consideres importantes para tu experiencia pero que posiblemente no se relacionen directamente con el perfil principal de tu b&uacute;squeda.<br />
+
+Los &iacute;tems destacados con asterisco <span class="stg orange">(*)</span> son obligatorios.
        </p>
       <div><img style=" padding-left:100px;" src="sites/all/themes/empleos/img/10pasos.png"></div>
 

@@ -1,7 +1,8 @@
     <div class="box top" style="background:url(sites/all/themes/empleos/img/bg_box_top4.jpg)">
-      <p><strong>Detall&aacute; tus conocimientos en idiomas</strong>, especificando el nivel de lectura, habla y escritura.</br>
-      Si no ten&eacute;s conocimientos en idiomas, dej&aacute; el formulario en blanco y continu&aacute; con el siguiente paso.</br> 
-Si ten&eacute;s conocimientos, al ingresar los datos consider&aacute; que los &iacute;tems destacados en <span style="color:#248CC4; font-weight:bold">celeste</span> son obligatorios.
+      <p>Este paso te permite completar los detalles de tus <strong>conocimientos en otros idiomas</strong>, especificando tu nivel de desempe&ntilde;o en habilidades escritas, auditivas y de escritura. <br />
+Este tipo de informaci&oacute;n puede ser muy &uacute;til para aquellos puestos que requieran el contacto con escritos o personas que utilizan otro idioma distinto del espa&ntilde;ol. <br /> 
+Record&aacute; que los &iacute;tems destacados con asterisco <span class="stg orange">(*)</span> son obligatorios.<br />
+Si no ten&eacute;s conocimiento en idiomas, dej&aacute; el formulario en blanco y contin&aacute; con el siguiente paso.
    
      </p>
 
