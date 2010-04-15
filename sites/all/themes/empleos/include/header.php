@@ -6,21 +6,21 @@
 
 ?>      <!-- ini -->
 		<div id="header">
-			<!-- Banner Topsite-- -->
+			<!-- Banner Topsite -->
 			<div class="banner top"> Topsite</div>
 			<div class="clearfix"></div>
-    		<!-- login-- -->
+    		<!-- login -->
 				<?php include("user-login.php"); ?>
-               <!-- logo-- -->
+               <!-- logo -->
                <div id="logo"><a href="?q=principal"><img src="sites/all/themes/empleos/img/logo.jpg"></a></div>
     		   <div style="clear: both;"></div>
-    		   <!-- menu-- -->
+    		   <!-- menu -->
 			   <?php include("menu.php");?>
                
                <?php If (($user->uid) and ((arg(0)<>'node') and (arg(1)<>19)) or(arg(1)==25)) { ?><div id="browser" class="inside"> </div><?php } ?>
 
                <?php If ((!$user->uid) or (((arg(0)=='node') and (arg(1)==19)) and ($user->uid))) { ?>
-                <!-- browser-- -->
+                <!-- browser -->
     			<div id="browser">
                 <?php include("buscador.php");?>
       				<div class="white right">

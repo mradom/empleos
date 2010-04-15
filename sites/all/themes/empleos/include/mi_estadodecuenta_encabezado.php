@@ -6,9 +6,9 @@
    
       
     </div>
-    <!-- -submenu--- --> 
+    <!-- submenu --> 
 	<?php include("submenu-empresa.php");?> 
-     <!-- -tabla--- --> 
+     <!-- tabla --> 
 <TABLE class="tablaGris" border="0" cellpadding="0" cellspacing="1">
 	<TBODY>
 		<TR>

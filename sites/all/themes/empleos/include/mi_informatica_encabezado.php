@@ -8,9 +8,9 @@ Si no manejas ninguna herramienta o programa inform&aacute;tico, dej&aacute; el 
       <div><img style=" padding-left:150px " src="sites/all/themes/empleos/img/5paso.png"></div>
     </div>
 
-    <!-- -submenu--- --> 
+    <!-- submenu --> 
 	<?php include("submenu-usuarios.php");?> 
-     <!-- -tabla--- --> 
+     <!-- tabla --> 
   	<?php 
   		global $user;
   		if ($user->uid){

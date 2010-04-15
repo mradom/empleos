@@ -43,7 +43,7 @@ $sql = $base_query.$inner_join.$where;
 
 
 ?>
-<!--      ------Poner aca camino de links ------ -->
+<!-- Poner aca camino de links -->
 	  <div style="float: left;">
       <UL class="tags">
         <li><H1><A href="?q=buscar">Buscar</A></H1></LI>
@@ -54,7 +54,7 @@ $sql = $base_query.$inner_join.$where;
 			?>
       </UL>
       </div>
-<!--      --LISTA DE RESULTADOS-- -->
+<!-- LISTA DE RESULTADOS -->
 	  <DIV class="box central" style="background:none">
 			<DIV class="results">
           		<DIV class="rss redes">
@@ -65,7 +65,7 @@ $sql = $base_query.$inner_join.$where;
           		</div>
           		<P>Se econtraron <SPAN class="orange"><?php echo $pager_total_items[0];?> ofertas de trabajo:</SPAN> en el &aacute;rea: <SPAN class="orange"> GERENCIA GENERAL</SPAN></P>
 			</div>
-       <!--Gold results-->
+       <!-- Gold results -->
        <?php 
         	$gold = "0";
         	$destacado = "0";
@@ -259,4 +259,4 @@ $sql = $base_query.$inner_join.$where;
         	}
 			     print '<div style="float: right; ">'.theme('pager', NULL, $nodes_per_page).'</div>';	
         ?>
-</div><!--fin listado-->
+</div><!-- fin listado -->

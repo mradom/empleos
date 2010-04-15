@@ -1,6 +1,4 @@
-<!-- 
-Aca poner el formulario de registro
- -->
+
 <div class="login_form">
 		<div>
 			<div class="form-item" id="edit-name-wrapper">

@@ -2,9 +2,9 @@
 <?php include("include/head.php");?>
 <body>
 <div id="wrapper">
-  <!-- HEADER-- -->
+  <!-- HEADER -->
   <?php include("include/header.php");?>
-  <!-- --MIDDLE---- -->
+  <!-- MIDDLE -->
   <div id="midle">
     <!-- banners -->
     <?php include("include/banners-boxes.php");?>

@@ -1,7 +1,7 @@
 <?php 
  global $user;
-			  //If (arg(2)=='edit' and arg(3)=='Empresa') { include 'page-edit-empresa.php';  return;}
 ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language ?>" lang="<?php print $language ?>">
 <?php include("include/head.php");?>
 <body>

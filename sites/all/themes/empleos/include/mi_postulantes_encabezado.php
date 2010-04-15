@@ -4,9 +4,9 @@
       </br> las empresas y consultoras que accedan a nuestra base de datos en busca de candidatos podr&aacute;n consultarlo.
         Al finalizar la carga de tus datos presion&aacute; el bot&oacute;n &quot;guardar&quot; al final de la p&aacute;gina antes de ir al paso siguiente.</p>
     </div>
-    <!-- -submenu--- --> 
+    <!-- submenu --> 
 	<?php include("submenu-empresa.php");?> 
-     <!-- -tabla--- --> 
+     <!-- tabla --> 
 <TABLE class="tablaGris" border="0" cellpadding="0" cellspacing="1">
 	<TBODY>
 	<?php 
