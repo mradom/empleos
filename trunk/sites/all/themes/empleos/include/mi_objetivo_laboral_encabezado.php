@@ -1,7 +1,9 @@
     <div class="box top" style="background:url(sites/all/themes/empleos/img/bg_box_top9.jpg)">
-      <p>
-      En este paso, pod&eacute;s <strong>ingresar tu Objetivo Laboral</strong> a corto plazo, explicitando c&oacute;mo proyect&aacute;s tu carrera profesional o laboral en los pr&oacute;ximos 6 a 12 meses.
-      </br> Record&aacute; que los &iacute;tems destacados en <span style="color:#248CC4; font-weight:bold">destacados en celeste</span> son obligatorios.
+      <p>En el paso 9 pod&eacute;s expresar <strong>tus objetivos, intereses y pretensiones laborales.</strong> <br />
+Dado que se trata de informaci&oacute;n que permite inferir caracter&iacute;sticas personales del postulante, esta secci&oacute;n merece atenci&oacute;n y esmero en su preparaci&oacute;n y redacci&oacute;n. <br />
+
+Los &iacute;tems destacados con asterisco <span class="stg orange">(*)</span> son obligatorios.<br />
+
      </p>
 
       <div><img style=" padding-left:100px;" src="sites/all/themes/empleos/img/10pasos.png"></div>
