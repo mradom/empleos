@@ -25,7 +25,7 @@ form.nueva_busqueda input, form.nueva_busqueda select {
 	margin-right:10px;
 }
 
-/*-----------General---------------*/
+/*-----------General------------*/
 form {
 	font:11px/14px tahoma;
 	color:#666
@@ -44,7 +44,7 @@ select:hover, input:hover, textarea:hover{
 select, input{
 	padding:2px;
 }
-/*------------------de zona jobs-----------------*/
+/*------------forms--------------*/
 
 div.mycv{
 	width:680px;
@@ -96,11 +96,10 @@ div.bloque, fieldset{
 	font:bold 11px/20px tahoma;
 	display: block;
 	padding-left:50px;
-	border:1px solid #FFECC6;
-	border-bottom:1px solid #FFDF71;
+	border:1px solid #F93;
+	border-bottom:1px solid #f93;
 	margin-bottom:10px;
-	/*background:url(../img/bg_titles.png) repeat-x;*/
-	background: #FC0;
+	background:url(../img/bg_titles.png) repeat-x;
 	height:20px;
 	-moz-border-radius:3px;
 	-webkit-border-radius:3px;
@@ -173,7 +172,7 @@ label span.form-required{
 }
 .mycv fieldset legend{
 	width:600px;
-	color:#f90;
+	color:#FA8605;
 }
 input.form-submit{
 	height:23px;
