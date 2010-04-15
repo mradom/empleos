@@ -141,8 +141,8 @@ input.req, select.req{border:1px solid #3399cc;
 .mycv .form-item .container-inline{
 	color:#CCAAAA;
     width:360px;
-    margin-left:273;
-	margin-bottom:10px;	
+    margin-left:273px;
+	margin-bottom:10px;
 }
 .mycv .form-item .container-inline .form-select{
     width:360px;
@@ -150,7 +150,7 @@ input.req, select.req{border:1px solid #3399cc;
 }
 .mycv .form-item select {
 	width:360px;
-	size:60;	
+	size:60px;	
 }
 .mycv .form-item .form-checkboxes label.option input{
 	width:auto;

@@ -116,14 +116,14 @@ ul, ol {
 }
 .ContNyG .Sol li#S_Opi1, 
 .ContNyG .Sol li#S_Opi2, 
-.ContNyG .Sol li#S_Opi3, 
+.ContNyG .Sol li#S_Opi3 
 {
 	padding-right:2px;
 }
 
 .ContNyG .Sol li#S_Opi1.Act, 
 .ContNyG .Sol li#S_Opi2.Act, 
-.ContNyG .Sol li#S_Opi3.Act, 
+.ContNyG .Sol li#S_Opi3.Act 
 {
 	padding-right:2px;
 }
