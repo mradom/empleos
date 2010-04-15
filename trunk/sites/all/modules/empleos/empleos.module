@@ -22,9 +22,9 @@ function empleos_menu($may_cache) {
     );
 	
 	$items[] = array(
-	  'title'    			=> 'Buscador de empleos',
-      'path'     			=> 'buscar2',
-      'callback' 			=> 'empleos_buscar2',
+	  'title'    			=> 'Buscador',
+      'path'     			=> 'buscar',
+      'callback' 			=> 'empleos_buscar',
 	  'access'   			=> TRUE
     );
 	
@@ -51,19 +51,31 @@ function empleos_menu($may_cache) {
       'callback' 			=> 'empleos_empresa',
 	  'access'   			=> TRUE
     );
+
+	$items[] = array(
+	  'title'    			=> 'Test',
+      'path'     			=> 'test',
+      'callback' 			=> 'empleos_test',
+	  'access'   			=> TRUE
+    );
+
 	}
 	
   return $items;
 }
 
-function empleos_buscar2() {
-   drupal_set_message('Paso por aca.','error');
+function empleos_test() {
+   return '============================================';
+}
+
+function empleos_buscar() {
    return '============================================';
 }
 
 function empleos_rubro() {
    return '============================================';
 }
+
 function empleos_empresa() {
    return '============================================';
 }
@@ -104,11 +116,11 @@ function empleos_settings() {
     '#collapsed' => false,
   );
   foreach (_node_types_natcasesort() as $type) {
-    $form[$set][EMPLEOS_NODE_TYPE . $type->type] = array(
+    $form[$set][EMPLEOS_PAGE_TYPE . $type->type] = array(
       '#type' => 'checkbox',
       '#title' => $type->name,
       '#return_value' => 1,
-      '#default_value' => variable_get(EMPLEOS_NODE_TYPE . $type->type, 0),
+      '#default_value' => variable_get(EMPLEOS_PAGE_TYPE . $type->type, 0),
     );
   }
 
