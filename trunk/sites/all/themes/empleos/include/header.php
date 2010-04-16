@@ -12,12 +12,12 @@
     		<!-- login -->
 				<?php include("user-login.php"); ?>
                <!-- logo -->
-               <div id="logo"><a href="?q=principal"><img src="sites/all/themes/empleos/img/logo.jpg"></a></div>
+               <div id="logo"><a title="Home" href="?q=principal"><img src="sites/all/themes/empleos/img/logo.jpg"></a></div>
     		   <div style="clear: both;"></div>
     		   <!-- menu -->
 			   <?php include("menu.php");?>
                
-               <?php If (($user->uid) and (arg(0)<>'buscar') or(arg(1)==25)) { ?><div id="browser" class="inside"> </div><?php } ?>
+               <?php If (($user->uid) and (arg(0)<>'buscar') or(arg(0)=='rubro')) { ?><div id="browser" class="inside"> </div><?php } ?>
 
                <?php If ((!$user->uid) or ((arg(0)=='buscar') and ($user->uid))) { ?>
                 <!-- browser -->

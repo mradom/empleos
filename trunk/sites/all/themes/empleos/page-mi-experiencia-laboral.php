@@ -7,7 +7,6 @@
   <!-- HEADER -->
   <?php include("include/header.php");?>
   <!-- MIDDLE -->
-  <div id="browser" class="inside"> </div>  
   <div id="midle">
     <?php include("include/mi_experiencia_laboral_encabezado.php");?> 
     <!-- RIGHT -->

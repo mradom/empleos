@@ -12,11 +12,15 @@
 <title><?php print $head_title ?></title>
 <?php print $scripts ?>
 <!-- fin auto scripts -->
-<script type="text/javascript" src="/empleos/sites/all/modules/jquery_ui/jquery.ui/ui/ui.tabs.js"></script>
 <script type="text/javascript" src="/empleos/sites/all/modules/jquery_ui/jquery.ui/ui/ui.core.js"></script>
+<script type="text/javascript" src="/empleos/sites/all/modules/jquery_ui/jquery.ui/ui/ui.tabs.js"></script>
 <script type="text/javascript" src="/empleos/sites/all/modules/jquery_ui/jquery.ui/ui/jquery.ui.all.js"></script>
 <script type="text/javascript" src="/empleos/sites/all/modules/jquery_ui/jquery.ui/ui/ui.datepicker.js"></script>
 <script type="text/javascript" src="/empleos/sites/all/modules/jquery_update/compat.js"></script>
 <script type="text/javascript" src="/empleos/sites/all/themes/empleos/js/jquery.innerfade.js"></script>
 <script type="text/javascript" src="/empleos/sites/all/themes/empleos/js/jquery.innerfade.page.js"></script>
+<script type="text/javascript" src="/empleos/sites/all/themes/empleos/js/prototype.js" ></script>
+<script type="text/javascript" src="/empleos/sites/all/themes/empleos/js/effects.js" ></script>
+<script type="text/javascript" src="/empleos/sites/all/themes/empleos/js/glider.js" ></script>
+<script type="text/javascript" src="/empleos/sites/all/themes/empleos/js/scriptPag.js" ></script>
 </head>
