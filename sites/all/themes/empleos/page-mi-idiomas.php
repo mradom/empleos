@@ -7,7 +7,6 @@
   <!-- HEADER -->
   <?php include("include/header.php");?>
   <!-- MIDDLE -->
-  <div id="browser" class="inside"> </div>  
   <div id="midle">
     <?php include("include/mi_idiomas_encabezado.php");?> 
     <!-- RIGHT -->

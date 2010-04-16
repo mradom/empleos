@@ -59,6 +59,28 @@ function empleos_menu($may_cache) {
 	  'access'   			=> TRUE
     );
 
+	$items[] = array(
+	  'title'    			=> 'Nota',
+      'path'     			=> 'nota',
+      'callback' 			=> 'empleos_nota',
+	  'access'   			=> TRUE
+    );
+	
+	$items[] = array(
+	  'title'    			=> 'Busqueda avanzada',
+      'path'     			=> 'avanzada',
+      'callback' 			=> 'empleos_avanzada',
+	  'access'   			=> TRUE
+    );
+	
+	$items[] = array(
+	  'title'    			=> 'Mapa del sitio',
+      'path'     			=> 'mapadelsitio',
+      'callback' 			=> 'empleos_mapadelsitio',
+	  'access'   			=> TRUE
+    );
+	
+	
 	}
 	
   return $items;
@@ -81,6 +103,16 @@ function empleos_empresa() {
 }
 
 function empleos_consultora() {
+   return '============================================';
+}
+
+function empleos_mapadelsitio() {
+   return '============================================';
+}
+function empleos_avanzada() {
+   return '============================================';
+}
+function empleos_nota() {
    return '============================================';
 }
 

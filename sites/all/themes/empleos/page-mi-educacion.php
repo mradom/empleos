@@ -6,8 +6,7 @@
 <div id="wrapper">
   <!-- HEADER -->
   <?php include("include/header.php");?>
-  <!-- MIDDLE -->
-  <div id="browser" class="inside"> </div>  
+  <!-- MIDDLE --> 
   <div id="midle">
     <?php include("include/mi_educacion_encabezado.php");?> 
     <!-- RIGHT colum -->
