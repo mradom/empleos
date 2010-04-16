@@ -13,24 +13,25 @@
     <?php if (arg(0)=='user' and arg(1)==$user->uid and arg(2)=='edit' and arg(3)=='') include("include/mi_info_encabezado.php");?>
     <?php if (arg(0)=='user' and arg(1)==$user->uid and arg(2)=='edit' and arg(3)=='Empleado') include("include/mi_datos_encabezado.php");?>
     <?php if (arg(0)=='user' and arg(1)==$user->uid and arg(2)=='edit' and arg(3)=='Empresa')  include("include/mi_empresa_encabezado.php");?> 
-    <?php // include("include/banners-boxes.php");?>
     <!-- RIGHT -->
     <?php include("include/col_derecha-mini.php");?>
     <!-- CENTRAL -->
+    <!-- ini central -->
     <div id="central_column">
           <?php
 			  If (arg(1)=='password') print $content; 
               If (!$user->uid and arg(1)<>'password' and arg(1) <>'register') include ('user-login.php');
-			  //if (!$user->uid) print '<div style="border: 1px solid #ccc ;">'.$content.'</div>';			   
-			  If (arg(1)=='register' and arg(2)=='persona'  ) print '<div style="border: 1px solid #cbb ;">'.$content.'</div><br>'; //    registracion de personas			  
-			  If (arg(1)=='register' and arg(2)=='empleador') print '<div style="border: 1px solid #ccc ;">'.$content.'</div><br>'; //include ('include/register-empleador.php'); //    registracion de personas
+			  If (arg(1)=='register' and arg(2)=='persona'  ) print '<div style="border: 1px solid #cbb ;">'.$content.'</div><br />'; 
+			  If (arg(1)=='register' and arg(2)=='empleador') print '<div style="border: 1px solid #ccc ;">'.$content.'</div><br />';
 			  if ($user->uid and arg(1)==$user->uid){
 			  	 print $content;
 			  } 
   ?>
+  <!-- fin central -->
   </div>
-  <?php //if ($messages): print $messages; endif; ?>
+  <!-- paso 2 -->
   <?php include("include/banners-central.php");?>
+  <!-- paso 3 -->
   </div>
 <?php include("include/footer.php");?>
 </div>
