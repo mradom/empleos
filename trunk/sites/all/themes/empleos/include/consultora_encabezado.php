@@ -1,5 +1,4 @@
 <div class="box top" style="background: url(sites/all/themes/empleos/img/bg_box_top_consultoras.jpg)">
-<p style="margin-top:50px; padding-right:80px;">Estas son las <strong>las v&iacute;as de contacto</strong> mas frecuentes</br>
-Bla bla bla....ste texto lo hace Cande....<br>
-Escribinos o envianos tus sugerencias a <a class="blue stg" href="#">empleoslavoz@lavozdelinterior.com.ar</a>
+<p style="margin-top:50px;">Empleoslavoz.com.ar te ofrece un listado de las consultoras que canalizan la demanda de puestos de trabajo de diferentes empresas. <br />
+&#161;No pierdas tiempo y comenz&aacute; a buscar entre estas opciones!
 </p></div>

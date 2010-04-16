@@ -502,10 +502,7 @@ ul.tags li.final {
 	margin-bottom:10px;
 	padding:10px;
 }
-.box.top{ 
-	border:0;
-	height:125px;
-}
+
 .box.side {
 	width:278px;
 }
@@ -626,10 +623,13 @@ p.date {
 	color:#C9C9C9;
 	float:right;
 }
-/*-----------heraders-forms---------------*/
+/*-----------encabzados---------------*/
 .box.top {
-	width:970px;
+	border:0;
+	height:125px;
+	width:960px;
 	padding:10px;
+	padding-right:20px;
 	background:#fff url(../img/bg_box_top.jpg) bottom no-repeat;
 	min-height:116px;
 	float:left;
