@@ -1,5 +1,3 @@
 <div class="box top" style="background: url(sites/all/themes/empleos/img/bg_box_top_empresas.jpg)">
-<p style="margin-top:50px; padding-right:80px;">Estas son las <strong>las v&iacute;as de contacto</strong> mas frecuentes</br>
-Bla bla bla....ste texto lo hace Cande....<br>
-Escribinos o envianos tus sugerencias a <a class="blue stg" href="#">empleoslavoz@lavozdelinterior.com.ar</a>
+<p style="margin-top:50px;">Estas son las <strong>empresas y compa&ntilde;&iacute;as m&aacute;s importantes</strong> que anuncian en empleoslavoz.com.ar sus vacantes laborales con sus respectivos conocimientos. Si te interesa encontrar empleo entre alguna de ellas, esta es la secci&oacute;n ideal para canalizar tu b&uacute;squeda. 
 </p></div>
