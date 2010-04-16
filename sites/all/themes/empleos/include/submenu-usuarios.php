@@ -11,8 +11,8 @@
     //if(($node->type=='p_objetivo_laboral') or (arg(2)=='p-objetivo-laboral') or ($node->nid == 36)){$ant="?q=mireferencia/me"; $sig="?q=miprevisualizar/me";  }
     //if($node->nid == 55){$ant="?q=miobjetivolaboral/me"; $sig="#";  } 
 ?>    
-    <DIV class="menu submenu"> 
-      <UL class="submenu">
+    <div class="menu submenu"> 
+      <ul class="submenu">
         <!--<li class="btns ant" style="width:24px; margin-left:5px"><a href="<?php print $ant;?>"></a></li> -->
         <li><A title="Home" href="?q=user/me" <?php if(arg(0) == "user" and arg(1)==$user->uid and arg(2)==''){ echo "class='active'";}?>>Home</A></LI>
         <li><A title="Datos de contacto" href="?q=user/me/edit/Empleado" <?php if(arg(3) == "Empleado"){ echo "class='active'";}?>>Datos de contacto</A></LI> 
@@ -26,7 +26,7 @@
         <li><A title="Objetivo laboral" href="?q=miobjetivolaboral/me" <?php if(($node->type=='p_objetivo_laboral') or (arg(2)=='p-objetivo-laboral') or ($node->nid == 36)){ echo "class='active'";}?>>Objetivo laboral</A></LI> 
         <li><A title="Previsualizar CV" href="?q=miprevisualizar/me" <?php if($node->nid == 55){ echo "class='active'";}?>>Previsualizar</A></li> 
         <!--<li class="btns sig" style="width:20px; margin-right:5px"><a href="<?php print $sig;?>"></a></li>-->
-      </UL> 
-      <DIV class="line-submenu"></div> 
+      </ul> 
+      <div class="line-submenu"></div> 
     </div>
     
