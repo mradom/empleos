@@ -1,5 +1,7 @@
-function e(a){return document.getElementById(a);}//Shortcut
+function e(a){return document.getElementById(a);}
+
 //SLIDER HORIZONTAL ESPECIALES - Ajax Puntitos
+
 var Dots=3;//Cantidad de paginas que posee el slider
 var PosDot=1;//Variable que guarda la posicion del Dot
 var Dots2=3;//Cantidad de paginas que posee el slider2
@@ -70,18 +72,13 @@ function ChangeDot3(div){
 	}
 }
 
-/********/
-
 /*SOLAPAS*/
-
-
 function SolChange(div,div2,div3){
 	for(i=1;i<=3;i++){e('S_Opi'+i).className='clearfix';}
 	e(div2).className='Act clearfix';
 	for(i=1;i<=3;i++){e('Opi'+i).style.display='none';}
 	e(div).style.display='block';
 }
-/********/
 
 /*ERROR*/
 function Error(div){
