@@ -23,9 +23,9 @@
             <li><span class="stg">Tel&eacute;fono: &nbsp;</span>+54 351 4757000  <span class="stg">Fax: </span>+54 351 4757286</li>
           </ul>
     </div>
-    <div class="btn_contactos"><img src="/sites/all/themes/empleos/img/icoRecomendar.png"><a href="/?q=contact/info">Informaci&oacute;n General</a></div>
-    <div class="btn_contactos"><img src="/sites/all/themes/empleos/img/icoRecomendar.png"><a href="/?q=contact/ventas">Comercial</a></div>
-    <div class="btn_contactos"><img src="/sites/all/themes/empleos/img/icoRecomendar.png"><a href="/?q=contact/tecnico">T&eacute;cnico</a></div>
+    <div class="btn_contactos"><img src="/sites/all/themes/empleos/img/icoRecomendar.png"><a href="/contact/info">Informaci&oacute;n General</a></div>
+    <div class="btn_contactos"><img src="/sites/all/themes/empleos/img/icoRecomendar.png"><a href="/contact/ventas">Comercial</a></div>
+    <div class="btn_contactos"><img src="/sites/all/themes/empleos/img/icoRecomendar.png"><a href="/contact/tecnico">T&eacute;cnico</a></div>
       <?php
         //}
         //if (arg(1)<>"") {

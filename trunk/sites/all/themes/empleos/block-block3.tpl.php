@@ -10,7 +10,7 @@ while($fila = mysql_fetch_object($rs)){
 	//die();
 	echo "<li class='side brands'><div class='brand'>";
 	print theme('imagecache','logo_empresa_52_34',$empresa->picture,$empresa->picture,$empresa->name);
-	echo "</div><a href='/?q=empresa/$empresa->uid'>$empresa->name</a></li>";
+	echo "</div><a href='/empresa/$empresa->uid'>$empresa->name</a></li>";
 }
 ?>
 </ul>
