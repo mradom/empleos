@@ -464,6 +464,7 @@ function favorite_nodes_delete_page() {
   $nid = arg(2);
 
   favorite_nodes_delete($nid);
+  // FRANCISCO
   // borrado para que vuelva al mismo nodo y no a user
   //$node = node_load($nid);
   //$type = node_get_types('name', $node);

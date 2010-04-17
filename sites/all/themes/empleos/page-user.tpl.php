@@ -36,6 +36,9 @@
 			  if ($user->uid and arg(1)==$user->uid){
 			  	 print $content;
 			  } 
+				if (arg(0)=='user' and arg(1) != $user->uid and is_null(arg(2))){
+					include("include/perfil.php");
+				}
   ?>
   <!-- fin central -->
   </div>

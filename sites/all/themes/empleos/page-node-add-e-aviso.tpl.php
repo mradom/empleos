@@ -15,8 +15,10 @@
     <DIV id="central_column">
   <script>
   $(document).ready(function() {
-    $("#tabs").tabs();
-  });
+	    $("#tabs").tabs();
+	    $("#edit-field-fecha-desde-0-value-date").datepicker({dateFormat: "d/mm/yy", });
+	    $("#edit-field-fecha-hasta-0-value-date").datepicker({dateFormat: "d/mm/yy", });
+	  });
   </script>
 	<?php print $content;?>
 	  <?php if (arg(1)<>'add' and arg(2)<>'edit' and arg(2)<>'delete') print "<a href='/?q=node/add/p-objetivo-laboral'>Agregar</a>";?>

@@ -1016,6 +1016,19 @@ $html = '<ul style="height: 30px;" class="ui-tabs-nav">
 	$miform .= drupal_render($form['group_publicacion']);
 	$miform .= drupal_render($form['group_publicacion']['field_fecha_desde']);
 	$miform .= drupal_render($form['group_publicacion']['field_fecha_hasta']);
+	$form['group_publicacion']['field_tipo_de_aviso']['#children'] = '<div class="form-item" id="edit-field-tipo-de-aviso-key-wrapper">
+ <label for="edit-field-tipo-de-aviso-key">Tipo de aviso: <span class="form-required" title="Este campo es obligatorio.">*</span></label>
+ <select name="field_tipo_de_aviso[key]" class="form-select required" id="edit-field-tipo-de-aviso-key" >
+ <option value="1" selected="selected">Gratuito</option>
+ <option value="2">Simple</option>
+ <option value="3">Destacado</option>
+ <option value="4">Gold</option>
+ </select>
+</div>
+	';
+	$miform .= drupal_render($form['group_publicacion']['field_tipo_de_aviso']);
+	
+	//echo "<pre>";print_r($form['group_publicacion']['field_tipo_de_aviso']); echo "</pre>";
 	
 	//$miform .= drupal_render($form['body_filter']);
 
@@ -1107,8 +1120,13 @@ function phptemplate_form_alter(&$form, $form_state, $form_id){
 }
 
 function phptemplate_search_form($form) {
-	//echo "<pre>"; print_r($form); echo "</pre>";
+	foreach($form['advanced']['type']['#options'] as $key => $value){
+		if($key != "e_aviso"){
+			$form['advanced']['type'][$key] = "";
+		}
+	}
+	echo "<pre>"; print_r($form['advanced']['type']['e_aviso']); echo "</pre>";
+	//$form['advanced']['type']['#options'] = array("e_aviso" => "Aviso");
 	return drupal_render($form);
   //return _phptemplate_callback('search_theme_form', array('form' => $form), array('search-theme-form'));
 }
-
