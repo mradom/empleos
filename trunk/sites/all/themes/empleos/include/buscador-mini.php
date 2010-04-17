@@ -30,10 +30,10 @@
                 <input style="margin:10px 0 0 260px" name="buscar" type="submit" class="btn_gral" value="Buscar" alt="Buscar" />
               </form>
             </div>
-
            <div class="arrow lupa"><a href="#">B&uacute;squeda avanzada</a></div> 
           </div>
         </div>
       </div>
       <script type="text/javascript" src="/sites/all/themes/empleos/js/tabs.js"></script>
     </div>
+    

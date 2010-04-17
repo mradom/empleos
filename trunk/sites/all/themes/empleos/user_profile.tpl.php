@@ -27,7 +27,6 @@ print '<div>';
 				if (in_array('empresa', array_values($user->roles))) {
 				  	 if ($user->uid) { 
  						print '<div><a href="/?q=user/me/edit"><img title="Cambiar logo" src="http://localhost/empleos/'.$user->picture.'"></a><div>';
-
 						//print '<div style="border: 1px solid #ccc ;">';
 			  	 	 	print 'Empresa<br>';
 			  	 	 	print '<a href="/?q=/job/applications">Mis Aplicaciones</a><br>';

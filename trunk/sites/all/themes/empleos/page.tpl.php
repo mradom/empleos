@@ -38,8 +38,6 @@ switch ($node->type) {
 	case 'e_aviso':
 		include 'page-e-aviso.tpl.php';
 		return;
-	
-		
 	default:
 }
 ?>
