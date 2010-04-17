@@ -12,7 +12,7 @@
     		<!-- login -->
 				<?php include("user-login.php"); ?>
                <!-- logo -->
-               <div id="logo"><a title="Home" href="?q=principal"><img src="sites/all/themes/empleos/img/logo.jpg"></a></div>
+               <div id="logo"><a title="Home" href="/?q=principal"><img src="/sites/all/themes/empleos/img/logo.jpg"></a></div>
     		   <div style="clear: both;"></div>
     		   <!-- menu -->
 			   <?php include("menu.php");?>
@@ -36,15 +36,15 @@
 					   } else {
                            if (in_array('Empresa', array_values($user->roles))){
                             print '<ul id="adver">'; 
-							print '<li><a href="#"><img src="sites/all/themes/empleos/img/banners-empleos/04.jpg" /></a></li>';
-							print '<li><a href="#"><img src="sites/all/themes/empleos/img/banners-empleos/05.jpg" /></a></li>';
-							print '<li><a href="#"><img src="sites/all/themes/empleos/img/banners-empleos/06.jpg"/></a></li>';
+							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/04.jpg" /></a></li>';
+							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/05.jpg" /></a></li>';
+							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/06.jpg"/></a></li>';
                             print '</ul>';
 						} else {
 							print '<ul id="adver">'; 
-							print '<li><a href="#"><img src="sites/all/themes/empleos/img/banners-empleos/03.jpg" /></a></li>';
-							print '<li><a href="#"><img src="sites/all/themes/empleos/img/banners-empleos/01.jpg" /></a></li>';
-							print '<li><a href="#"><img src="sites/all/themes/empleos/img/banners-empleos/02.jpg"/></a></li>';
+							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/03.jpg" /></a></li>';
+							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/01.jpg" /></a></li>';
+							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/02.jpg"/></a></li>';
                             print '</ul>';
 						}
 					   }?>

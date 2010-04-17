@@ -31,7 +31,7 @@ foreach($nodo->taxonomy as $value){
 ?>
 <!-- Ficha  -->
 <div class="box central ficha">
-	<div class="btn_gral low" style="float: right"><a href="?q=job/apply/<?php echo $nodo->nid;?>">Postularse</a></div>
+	<div class="btn_gral low" style="float: right"><a href="/?q=job/apply/<?php echo $nodo->nid;?>">Postularse</a></div>
 	<div class="titleFicha">Oferta de trabajo para:<span class="upper orange stg"> <?php echo $nodo->title;?></span></div>
 	<div class="line_dot"></div>
 	<!-- Resumen -->
@@ -90,13 +90,13 @@ foreach($nodo->taxonomy as $value){
         </ul>
 		<?php 
 		if ($node->links['favorite_nodes_in']['title']<>'in favorites') { ?>
-			<div class="btn_gral low" style="float: right"><a href="?q=favorite_nodes/add/<?php echo $nodo->nid;?>">+ Mis Favoritos</a></div>
+			<div class="btn_gral low" style="float: right"><a href="/?q=favorite_nodes/add/<?php echo $nodo->nid;?>">+ Mis Favoritos</a></div>
 		<?php }	else   { ?>
-			<div class="btn_gral low" style="float: right"><a href="?q=favorite_nodes/delete/<?php echo $nodo->nid;?>">- Mis Favoritos</a></div>
+			<div class="btn_gral low" style="float: right"><a href="/?q=favorite_nodes/delete/<?php echo $nodo->nid;?>">- Mis Favoritos</a></div>
 		<?php }
 		?>
         <div style="clear:both"></div>
-        <div class="arrow">Otras ofertas de trabajo en <a href="?q=taxonomy/term/<?php print $area;?>"><?php print $nodo->taxonomy[$area]->name; ?></a></div>
+        <div class="arrow">Otras ofertas de trabajo en <a href="/?q=taxonomy/term/<?php print $area;?>"><?php print $nodo->taxonomy[$area]->name; ?></a></div>
 	
 	
     	

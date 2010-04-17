@@ -1,11 +1,11 @@
-   <div class="box top" style="background:url(sites/all/themes/empleos/img/bg_box_top5.jpg)">
+   <div class="box top" style="background:url(/sites/all/themes/empleos/img/bg_box_top5.jpg)">
       <p>En el paso 5 podr&aacute;s describir tus capacidades y habilidades en el manejo de herramientas y programas inform&aacute;ticos. Gran parte de los oficios y puestos de trabajo requieren alg&uacute;n tipo y nivel de <strong>conocimiento de software o equipos inform&aacute;ticos</strong> para el desempe&ntilde;o de funciones. Por ello, no olvides detallar y actualizar tus datos al respecto. <br />
 Los &iacute;tems destacados con asterisco <span class="stg orange">(*)</span> son obligatorios.<br />
 Si no manejas ninguna herramienta o programa inform&aacute;tico, dej&aacute; el formulario en blanco y contin&aacute; con el siguiente paso.
  </p>
 
-      <div><img style=" padding-left:100px;" src="sites/all/themes/empleos/img/10pasos.png"></div>
-      <div><img style=" padding-left:150px " src="sites/all/themes/empleos/img/5paso.png"></div>
+      <div><img style=" padding-left:100px;" src="/sites/all/themes/empleos/img/10pasos.png"></div>
+      <div><img style=" padding-left:150px " src="/sites/all/themes/empleos/img/5paso.png"></div>
     </div>
 
     <!-- submenu --> 
@@ -38,10 +38,10 @@ Si no manejas ninguna herramienta o programa inform&aacute;tico, dej&aacute; el 
 				?>
 				        <TR class="<?php if ($node->nid == $row->nid) print arg(2);?>"> 
 				          <?php if ($node->nid == $row->nid) { print '<TD>'.$row->title.'</TD>';
-			                   } else { print '<TD><A href="?q=node/'.$row->nid.'/edit" title="editar">'.$row->title.'</A></TD>';  } ?> 
+			                   } else { print '<TD><A href="/?q=node/'.$row->nid.'/edit" title="editar">'.$row->title.'</A></TD>';  } ?> 
 				    	  <TD><?php print $tipo;?></TD> 
 				    	  <TD><?php print $row->field_nivel[0]['value'];?></TD>
-				    	  <TD><a href="?q=node/<?php print $row->nid; ?>/edit" title="editar"><div class="arrow editar" style="margin-left:5px"></div></a><a href="?q=node/<?php print $row->nid; ?>/delete" title="borrar"><div class="arrow cancel"></div></a></TD>
+				    	  <TD><a href="/?q=node/<?php print $row->nid; ?>/edit" title="editar"><div class="arrow editar" style="margin-left:5px"></div></a><a href="/?q=node/<?php print $row->nid; ?>/delete" title="borrar"><div class="arrow cancel"></div></a></TD>
 				        </TR> 
 				<?php
 				

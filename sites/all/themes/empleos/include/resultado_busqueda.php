@@ -46,10 +46,10 @@ $sql = $base_query.$inner_join.$where;
 <!-- Poner aca camino de links -->
 	  <div style="float: left;">
       <UL class="tags">
-        <li><H1><A href="?q=buscar">Buscar</A></H1></LI>
-        <?php  	if(isset($rubro)) print '<li><h1><a href="?q=buscar/'.$rubro.'">$rubro / </a></h1></li>';
-                if(isset($zona )) print '<li><h1><a href="?q=buscar/'.$zona.'">$zona / </a></h1></li>';
-                if(isset($key  )) print '<li><h1><a href="?q=buscar/'.$key.'">$key</a></h1></li>';
+        <li><H1><A href="/?q=buscar">Buscar</A></H1></LI>
+        <?php  	if(isset($rubro)) print '<li><h1><a href="/?q=buscar/'.$rubro.'">$rubro / </a></h1></li>';
+                if(isset($zona )) print '<li><h1><a href="/?q=buscar/'.$zona.'">$zona / </a></h1></li>';
+                if(isset($key  )) print '<li><h1><a href="/?q=buscar/'.$key.'">$key</a></h1></li>';
 				print '<li>['.$nodes_per_page.']</li>';
 			?>
       </UL>
@@ -152,17 +152,17 @@ $sql = $base_query.$inner_join.$where;
 						  // print theme('imagecache','logo_empresa_resultado_busqueda_86_53',$nodo->picture,$nodo->picture,$nodo->picture);
 						  print '</div>';
 						  // boton de postulacion
-					      print '<a href="?q=job/apply/'.$nodo->nid.'"><div class="btn_postulate"></div></a>';
+					      print '<a href="/?q=job/apply/'.$nodo->nid.'"><div class="btn_postulate"></div></a>';
 						  // encabezado
 						  print '<div class="datos">'; 
-							print '<h2><a class="orange" href="?q=taxonomy/term/';
+							print '<h2><a class="orange" href="/?q=taxonomy/term/';
 							print $nodo->taxonomy[$area]->tid;
 							print '">'.$nodo->taxonomy[$area]->name.'</a> | <span class="upper">';
 							print $nodo->name.'</span></h2>';
 							print '<p class="line">'; 
-							 print '<span class="orange">Sector:</span> <a href="?q=taxonomy/term/';
+							 print '<span class="orange">Sector:</span> <a href="/?q=taxonomy/term/';
 							 print $nodo->taxonomy[$sector]->tid;
-							 print '">'.$nodo->taxonomy[$sector]->name.'</a> | <a href="?q=taxonomy/term/';
+							 print '">'.$nodo->taxonomy[$sector]->name.'</a> | <a href="/?q=taxonomy/term/';
 							 print $nodo->taxonomy[$localidad]->tid;
 							 print '">'.$nodo->taxonomy[$localidad]->name.'</a><br>'; 
 							 print '</p>';
@@ -175,7 +175,7 @@ $sql = $base_query.$inner_join.$where;
 							 }
 							print '</p>';
 							// ver oferta de trabajo
-							print '<p><a class="orange right" href="?q=node/';
+							print '<p><a class="orange right" href="/?q=node/';
 							 print $nodo->nid;
 							 print '">&gt;&gt;Ver oferta de trabajo</a></p>';
 							// fecha de creacion
@@ -193,14 +193,14 @@ $sql = $base_query.$inner_join.$where;
 						print '<div>';
 						  // encabezado
 						  print '<div class="datos">'; 
-							print '<h2><span><a href="?q=taxonomy/term/';
+							print '<h2><span><a href="/?q=taxonomy/term/';
 							print $nodo->taxonomy[$area]->tid;
 							print '">'.$nodo->taxonomy[$area]->name.'</a></span> | <span class="upper">';
 							print $nodo->name.'</span></h2>';
 							print '<p class="line">'; 
-							 print '<span class="orange">Sector:</span> <a href="?q=taxonomy/term/';
+							 print '<span class="orange">Sector:</span> <a href="/?q=taxonomy/term/';
 							 print $nodo->taxonomy[$sector]->tid;
-							 print '">'.$nodo->taxonomy[$sector]->name.'</a> | <a href="?q=taxonomy/term/';
+							 print '">'.$nodo->taxonomy[$sector]->name.'</a> | <a href="/?q=taxonomy/term/';
 							 print $nodo->taxonomy[$localidad]->tid;
 							 print '">'.$nodo->taxonomy[$localidad]->name.'</a><BR>'; 
 							 print '</p>';
@@ -213,7 +213,7 @@ $sql = $base_query.$inner_join.$where;
 							 }
 							print '</p>';
 							// ver oferta de trabajo
-							print '<p><a class="orange right" href="?q=node/';
+							print '<p><a class="orange right" href="/?q=node/';
 							 print $nodo->nid;
 							 print '">&gt;&gt;Ver oferta de trabajo</a></p>';
 							// fecha de creacion
@@ -231,12 +231,12 @@ $sql = $base_query.$inner_join.$where;
 						print '<div>';
 						  // encabezado
 						  print '<div class="datos">'; 
-							print '<h2><strong><a href="?q=taxonomy/term/';
+							print '<h2><strong><a href="/?q=taxonomy/term/';
 							print $nodo->taxonomy[$area]->tid;
 							print '">'.$nodo->taxonomy[$area]->name.'</a></strong> | <span class="upper">';
 							print $nodo->name.'</span></h2>';
 							// ver oferta de trabajo
-							print '<p><a class="orange right" href="?q=node/';
+							print '<p><a class="orange right" href="/?q=node/';
 							 print $nodo->nid;
 							 print '">&gt;&gt;Ver oferta de trabajo</a></p>';
 							// fecha de creacion

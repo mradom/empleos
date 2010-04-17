@@ -1,4 +1,4 @@
-    <div class="box top" style="background:url(sites/all/themes/empleos/img/bg_box_top4.jpg)">
+    <div class="box top" style="background:url(/sites/all/themes/empleos/img/bg_box_top4.jpg)">
       <p>Este paso te permite completar los detalles de tus <strong>conocimientos en otros idiomas</strong>, especificando tu nivel de desempe&ntilde;o en habilidades escritas, auditivas y de escritura. <br />
 Este tipo de informaci&oacute;n puede ser muy &uacute;til para aquellos puestos que requieran el contacto con escritos o personas que utilizan otro idioma distinto del espa&ntilde;ol. <br /> 
 Record&aacute; que los &iacute;tems destacados con asterisco <span class="stg orange">(*)</span> son obligatorios.<br />
@@ -6,8 +6,8 @@ Si no ten&eacute;s conocimiento en idiomas, dej&aacute; el formulario en blanco 
    
      </p>
 
-      <div><img style=" padding-left:100px;" src="sites/all/themes/empleos/img/10pasos.png"></div>
-      <div><img style=" padding-left:150px " src="sites/all/themes/empleos/img/4paso.png"></div>
+      <div><img style=" padding-left:100px;" src="/sites/all/themes/empleos/img/10pasos.png"></div>
+      <div><img style=" padding-left:150px " src="/sites/all/themes/empleos/img/4paso.png"></div>
     </div>
 
     <!-- submenu --> 
@@ -43,13 +43,13 @@ Si no ten&eacute;s conocimiento en idiomas, dej&aacute; el formulario en blanco 
 				?>
 				        <TR class="<?php if ($node->nid == $row->nid) print arg(2);?>"> 
 				          <?php if ($node->nid == $row->nid) { print '<TD>'.$row->title.'</TD>';
-			                   } else { print '<TD><A href="?q=node/'.$row->nid.'/edit" title="editar">'.$row->title.'</A></TD>';  } ?> 
+			                   } else { print '<TD><A href="/?q=node/'.$row->nid.'/edit" title="editar">'.$row->title.'</A></TD>';  } ?> 
 				          <TD><?php print $idioma;?></TD>
 				          <TD><?php print $row->field_nivel_oral[0]['value'];?></TD> 
 				          <TD><?php print $row->field_nivel_escrito[0]['value'];?></TD> 
 				          <TD><?php print $row->field_nivel_de_lectura[0]['value'];?></TD>
 				          <TD><?php print $row->field_ltima_vez_aplicado[0]['value'];?></TD>
-						  <TD><a href="?q=node/<?php print $row->nid; ?>/edit" title="editar"><div class="arrow editar" style="margin-left:5px"></div></a><a href="?q=node/<?php print $row->nid; ?>/delete" title="borrar"><div class="arrow cancel"></div></a></TD>				          
+						  <TD><a href="/?q=node/<?php print $row->nid; ?>/edit" title="editar"><div class="arrow editar" style="margin-left:5px"></div></a><a href="/?q=node/<?php print $row->nid; ?>/delete" title="borrar"><div class="arrow cancel"></div></a></TD>				          
 				        </TR> 
 				<?php
 				

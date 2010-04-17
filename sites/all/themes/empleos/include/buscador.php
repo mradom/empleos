@@ -7,7 +7,7 @@
 	</div>
 	<div style="clear: both;"></div>
 	<div class="content_form">
-	  <form action="?q=buscar" method="POST" id="buscador">
+	  <form action="/?q=buscar" method="POST" id="buscador">
 		<input class="home" style="padding: 0.2em; width: 250px;" name="key" value="Buscar por palabras clave" type="text" onFocus="if(this.value=='Buscar por palabras clave')this.value='';">
 		<select name="rubro" class="home">
 		<option value="0" selected="selected">&Aacute;rea / Rubro</option>
@@ -29,6 +29,6 @@
 		</select>
 		<input name="buscar" class="btn_gral" style="margin-left:60px; padding:0 15px 3px 15px;" value="Buscar Ahora" alt="Buscar" type="submit" dir="ltr">
 	  </form>
-	  <div class="btn_busquedaA"><a href="?q=avanzada">B&uacute;squeda avanzada</a></div>
+	  <div class="btn_busquedaA"><a href="/?q=avanzada">B&uacute;squeda avanzada</a></div>
 	</div>
 </div>

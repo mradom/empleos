@@ -8,7 +8,7 @@
   <!-- MIDDLE -->
   <div id="midle">
     <?php //include("include/banners-boxes.php");?>
-    <div class="box top" style="background: url(sites/all/themes/empleos/img/bg_box_top_faq.jpg)">
+    <div class="box top" style="background: url(/sites/all/themes/empleos/img/bg_box_top_faq.jpg)">
 	<p style="margin-top:50px;">A continuaci&oacute;n se presentan una serie de preguntas y respuestas que los usuarios de empleoslavoz.com.ar suelen realizar de un modo frecuentes entre nuestros usuarios.<br>
  Si a&uacute;n te quedan dudas o consultas, podes comunicarte con nosotros a trav&eacute;s de las v&iacute;as que se detallan en la secci&oacute;n &#34;Contacto&#34;. 
 </p></div>

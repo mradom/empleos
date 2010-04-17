@@ -1,13 +1,13 @@
-    <div class="box top" style="background:url(sites/all/themes/empleos/img/bg_box_top6.jpg)">
+    <div class="box top" style="background:url(/sites/all/themes/empleos/img/bg_box_top6.jpg)">
       <p>
       En esta parte de tu CV en empleoslavoz.com.ar podr&aacute;s incluir <strong>todos aquellos conocimientos, habilidades, hobbies o actividades de tiempo libre</strong> que puedan ayudar a las empresas o consultoras interesadas a tener un perfil m&aacute;s completo de tu personalidad y de tus intereses.<br />
 Incluso, este espacio puede servirte para ingresar aquellas actividades de formaci&oacute;n que consideres importantes para tu experiencia pero que posiblemente no se relacionen directamente con el perfil principal de tu b&uacute;squeda.<br />
 
 Los &iacute;tems destacados con asterisco <span class="stg orange">(*)</span> son obligatorios.
        </p>
-      <div><img style=" padding-left:100px;" src="sites/all/themes/empleos/img/10pasos.png"></div>
+      <div><img style=" padding-left:100px;" src="/sites/all/themes/empleos/img/10pasos.png"></div>
 
-      <div><img style=" padding-left:150px " src="sites/all/themes/empleos/img/6paso.png"></div>
+      <div><img style=" padding-left:150px " src="/sites/all/themes/empleos/img/6paso.png"></div>
     </div>
 
     <!-- submenu --> 
@@ -40,10 +40,10 @@ Los &iacute;tems destacados con asterisco <span class="stg orange">(*)</span> so
 				?>
 				        <TR class="<?php if ($node->nid == $row->nid) print arg(2);?>"> 
 				          <?php if ($node->nid == $row->nid) { print '<TD>'.$row->title.'</TD>';
-			                   } else { print '<TD><A href="?q=node/'.$row->nid.'/edit" title="editar">'.$row->title.'</A></TD>';  } ?> 
+			                   } else { print '<TD><A href="/?q=node/'.$row->nid.'/edit" title="editar">'.$row->title.'</A></TD>';  } ?> 
 				    	  <TD><?php print $row->field_nombre[0]['value'];?></TD> 
 				    	  <TD><?php print $row->field_descripcion[0]['value'];?></TD>
-				    	  <TD><a href="?q=node/<?php print $row->nid; ?>/edit" title="editar"><div class="arrow editar" style="margin-left:5px"></div></a><a href="?q=node/<?php print $row->nid; ?>/delete" title="borrar"><div class="arrow cancel"></div></a></TD>
+				    	  <TD><a href="/?q=node/<?php print $row->nid; ?>/edit" title="editar"><div class="arrow editar" style="margin-left:5px"></div></a><a href="/?q=node/<?php print $row->nid; ?>/delete" title="borrar"><div class="arrow cancel"></div></a></TD>
 				        </TR> 
 				<?php
 				

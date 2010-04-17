@@ -3,9 +3,9 @@ global $user;
 global $user_profile;
         // Previsualizar --------------------------------------------------------------------------------------------
   		if ($user->uid){
-  			Print '<div class="share"><img src="sites/all/themes/empleos/img/icoImprimir.png" width="16" height="16" border=0 alt="Imprimir" style="margin-right:7px;"> <a href="?q=cv_print/me" target="_blanc">Imprimir</a>&nbsp;&nbsp; <img src="sites/all/themes/empleos/img/icoRecomendar.png" width="16" height="16" border=0 alt="Recomendar este aviso" style="margin-right:7px;"> <a href="#">Enviar a un amigo</a>
+  			Print '<div class="share"><img src="/sites/all/themes/empleos/img/icoImprimir.png" width="16" height="16" border=0 alt="Imprimir" style="margin-right:7px;"> <a href="/?q=cv_print/me" target="_blanc">Imprimir</a>&nbsp;&nbsp; <img src="/sites/all/themes/empleos/img/icoRecomendar.png" width="16" height="16" border=0 alt="Recomendar este aviso" style="margin-right:7px;"> <a href="#">Enviar a un amigo</a>
       </div>';
-  			Print '<div class="itemTitle" style="padding-left:10px; clear:both"><a class="orange" href="?q=/user/me/edit/Empleado">Datos Personales</a></div>';
+  			Print '<div class="itemTitle" style="padding-left:10px; clear:both"><a class="orange" href="/?q=/user/me/edit/Empleado">Datos Personales</a></div>';
   			$usuario = user_load(array('uid' => $user->uid));
   			
   			//print '<pre>';
@@ -37,7 +37,7 @@ global $user_profile;
   			// Educacion --------------------------------------------------------------------------------------------
   			$view = views_get_view('mis_educacion');
 			$vista = views_build_view('items', $view, false, false);
-			Print '<div class="itemTitle" style="padding-left:10px; clear:both"><a class="orange" href="?q=/node/add/p-educacion">Educacion</a></div>';
+			Print '<div class="itemTitle" style="padding-left:10px; clear:both"><a class="orange" href="/?q=/node/add/p-educacion">Educacion</a></div>';
 			?>
 			<TABLE class="tablaGris" border="0" cellpadding="0" cellspacing="1">
 				<TBODY>
@@ -93,7 +93,7 @@ global $user_profile;
 				?>
 			<TR>
 			<?php if ($node->nid == $row->nid) { print '<TD>'.$a_ini.'-'.$m_ini.' - '.$a_fin.'-'.$m_fin.'</TD>';
-			} else { print '<TD><A href="?q=node/'.$row->nid.'/edit" title="editar">'.$a_ini.'-'.$m_ini.' - '.$a_fin.'-'.$m_fin.'</A></TD>';  } ?>
+			} else { print '<TD><A href="/?q=node/'.$row->nid.'/edit" title="editar">'.$a_ini.'-'.$m_ini.' - '.$a_fin.'-'.$m_fin.'</A></TD>';  } ?>
 				<TD><?php print $instituto;?></TD>
 				<TD><?php print $row->field_ttulo_o_certificacin[0]["value"];?></TD>
 				<TD><?php print $nivel;?></TD>
@@ -107,7 +107,7 @@ global $user_profile;
   			// Cursos --------------------------------------------------------------------------------------------
 			$view = views_get_view('mis_cursos');
 			$vista = views_build_view('items', $view, false, false);
-			Print '<div class="itemTitle" style="padding-left:10px; clear:both"><a class="orange" href="?q=/node/add/p-cursos">Cursos</a></h3</div>';
+			Print '<div class="itemTitle" style="padding-left:10px; clear:both"><a class="orange" href="/?q=/node/add/p-cursos">Cursos</a></h3</div>';
 			?>
 				<TABLE class="tablaGris" border="0" cellpadding="0" cellspacing="1"> 
 				      <TBODY> 
@@ -125,7 +125,7 @@ global $user_profile;
 				?>
 				        <TR> 
 				          <?php if ($node->nid == $row->nid) { print '<TD>'.$row->title.'</TD>';
-			                   } else { print '<TD><A href="?q=node/'.$row->nid.'/edit" title="editar">'.$row->title.'</A></TD>';  } ?> 
+			                   } else { print '<TD><A href="/?q=node/'.$row->nid.'/edit" title="editar">'.$row->title.'</A></TD>';  } ?> 
 				          <TD><?php print $row->field_en_calidad_de[0]['value'];?></TD>
 				          <TD><?php print $row->field_lugar[0]['value'];?></TD>
 				          <TD><?php print $row->field_ubicacion[0]['value'];?></TD>				          
@@ -139,7 +139,7 @@ global $user_profile;
 			// Idiomas ------------------------------------------------------------------------------------------
 			$view = views_get_view('mis_idiomas');
 			$vista = views_build_view('items', $view, false, false);
-			Print '<div class="itemTitle" style="padding-left:10px; clear:both"><a class="orange" href="?q=/node/add/p-idiomas">Idiomas</a></div>';
+			Print '<div class="itemTitle" style="padding-left:10px; clear:both"><a class="orange" href="/?q=/node/add/p-idiomas">Idiomas</a></div>';
 			?>
 				<TABLE class="tablaGris" border="0" cellpadding="0" cellspacing="1"> 
 				      <TBODY> 
@@ -164,7 +164,7 @@ global $user_profile;
 				?>
 				        <TR> 
 				          <?php if ($node->nid == $row->nid) { print '<TD>'.$row->title.'</TD>';
-			                   } else { print '<TD><A href="?q=node/'.$row->nid.'/edit" title="editar">'.$row->title.'</A></TD>';  } ?> 
+			                   } else { print '<TD><A href="/?q=node/'.$row->nid.'/edit" title="editar">'.$row->title.'</A></TD>';  } ?> 
 				          <TD><?php print $idioma;?></TD>
 				          <TD><?php print $row->field_nivel_oral[0]['value'];?></TD> 
 				          <TD><?php print $row->field_nivel_escrito[0]['value'];?></TD> 
@@ -179,7 +179,7 @@ global $user_profile;
 			// Informatica ------------------------------------------------------------------------------------------
 			$view = views_get_view('mis_informatica');
 			$vista = views_build_view('items', $view, false, false);
-			Print '<div class="itemTitle" style="padding-left:10px; clear:both"><a class="orange" href="?q=/node/add/p-informatica">Informatica</a></div>';
+			Print '<div class="itemTitle" style="padding-left:10px; clear:both"><a class="orange" href="/?q=/node/add/p-informatica">Informatica</a></div>';
 			?>
 				<TABLE class="tablaGris" border="0" cellpadding="0" cellspacing="1"> 
 				      <TBODY> 
@@ -201,7 +201,7 @@ global $user_profile;
 				?>
 				        <TR> 
 				          <?php if ($node->nid == $row->nid) { print '<TD>'.$row->title.'</TD>';
-			                   } else { print '<TD><A href="?q=node/'.$row->nid.'/edit" title="editar">'.$row->title.'</A></TD>';  } ?> 
+			                   } else { print '<TD><A href="/?q=node/'.$row->nid.'/edit" title="editar">'.$row->title.'</A></TD>';  } ?> 
 				    	  <TD><?php print $tipo;?></TD> 
 				    	  <TD><?php print $row->field_nivel[0]['value'];?></TD>
 				        </TR> 
@@ -213,7 +213,7 @@ global $user_profile;
 			// Otros Conocimientos ------------------------------------------------------------------------------------------			
 			$view = views_get_view('mis_otros_conocimientos');
 			$vista = views_build_view('items', $view, false, false);
-			Print '<div class="itemTitle" style="padding-left:10px; clear:both"><a class="orange" href="?q=/node/add/p-otros-conocimientos">Otros Conocimientos</a></div>';
+			Print '<div class="itemTitle" style="padding-left:10px; clear:both"><a class="orange" href="/?q=/node/add/p-otros-conocimientos">Otros Conocimientos</a></div>';
 			?>
 				<TABLE class="tablaGris" border="0" cellpadding="0" cellspacing="1"> 
 				      <TBODY> 
@@ -228,7 +228,7 @@ global $user_profile;
 				?>
 				        <TR> 
 				          <?php if ($node->nid == $row->nid) { print '<TD>'.$row->title.'</TD>';
-			                   } else { print '<TD><A href="?q=node/'.$row->nid.'/edit" title="editar">'.$row->title.'</A></TD>';  } ?> 
+			                   } else { print '<TD><A href="/?q=node/'.$row->nid.'/edit" title="editar">'.$row->title.'</A></TD>';  } ?> 
 				    	  <TD><?php print $row->field_nombre[0]['value'];?></TD> 
 				    	  <TD><?php print $row->field_descripcion[0]['value'];?></TD>
 				        </TR> 
@@ -240,7 +240,7 @@ global $user_profile;
 			// Experiencia Laboral ------------------------------------------------------------------------------------------
 			$view = views_get_view('mis_experiencia_laboral');
 			$vista = views_build_view('items', $view, false, false);
-			Print '<div class="itemTitle" style="padding-left:10px; clear:both"><a class="orange" href="?q=/node/add/p-experiencia-laboral">Experiencia Laboral</a></div>';
+			Print '<div class="itemTitle" style="padding-left:10px; clear:both"><a class="orange" href="/?q=/node/add/p-experiencia-laboral">Experiencia Laboral</a></div>';
 			
 			?>
 				<TABLE class="tablaGris" border="0" cellpadding="0" cellspacing="1"> 
@@ -283,7 +283,7 @@ global $user_profile;
 				?>
 				        <TR> 
 				          <?php if ($node->nid == $row->nid) { print '<TD>'.$a_ini.'-'.$m_ini.' - '.$a_fin.'-'.$m_fin.'</TD>';
-			                   } else { print '<TD><A href="?q=node/'.$row->nid.'/edit" title="editar">'.$a_ini.'-'.$m_ini.' - '.$a_fin.'-'.$m_fin.'</A></TD>';  } ?> 
+			                   } else { print '<TD><A href="/?q=node/'.$row->nid.'/edit" title="editar">'.$a_ini.'-'.$m_ini.' - '.$a_fin.'-'.$m_fin.'</A></TD>';  } ?> 
 				          <TD><?php print $row->title;?></TD>
 				          <TD><?php print $row->field_empresa[0]['value'];?></TD>				          
 				          <TD><?php print $area;?></TD> 
@@ -298,7 +298,7 @@ global $user_profile;
 			// Referencia Laboral ------------------------------------------------------------------------------------------			
 			$view = views_get_view('mis_referencia_laboral');
 			$vista = views_build_view('items', $view, false, false);
-			Print '<div class="itemTitle" style="padding-left:10px; clear:both"><a class="orange" href="?q=/node/add/p-referencia">Referencia Laboral</a></div>';
+			Print '<div class="itemTitle" style="padding-left:10px; clear:both"><a class="orange" href="/?q=/node/add/p-referencia">Referencia Laboral</a></div>';
 			
 			?>
 				<TABLE class="tablaGris" border="0" cellpadding="0" cellspacing="1"> 
@@ -316,7 +316,7 @@ global $user_profile;
 				?>
 				        <TR> 
 				          <?php if ($node->nid == $row->nid) { print '<TD>'.$row->field_empresa_0[0]['value'].'</TD>';
-			                   } else { print '<TD><A href="?q=node/'.$row->nid.'/edit" title="editar">'.$row->field_empresa_0[0]['value'].'</A></TD>';  } ?>
+			                   } else { print '<TD><A href="/?q=node/'.$row->nid.'/edit" title="editar">'.$row->field_empresa_0[0]['value'].'</A></TD>';  } ?>
 				          <TD><?php print $row->field_titulo_o_cargo[0]['value'];?></TD> 				          
 				          <TD><?php print $node->title;?></TD>
 				          <TD><?php print $row->field_telefono[0]['value'];?></TD> 
