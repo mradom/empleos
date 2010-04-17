@@ -2,7 +2,7 @@
 <?php 
 $sql = "SELECT u.* FROM users AS u
 INNER JOIN users_roles AS ur ON ur.uid = u.uid
-WHERE STATUS = 1 AND ur.rid = 5";
+WHERE STATUS = 1 AND ur.rid = 5 limit 7";
 $rs = db_query($sql);
 while($fila = mysql_fetch_object($rs)){
 	$empresa = user_load(array('uid' => $fila->uid));

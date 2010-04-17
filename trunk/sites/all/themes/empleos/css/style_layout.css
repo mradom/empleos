@@ -624,6 +624,15 @@ p.date {
 	float:right;
 }
 /*-----------encabzados---------------*/
+.box.top1 {
+	border:0;
+	height:10px;
+	width:960px;
+	padding:10px;
+	padding-right:20px;
+	min-height:8px;
+	float:left;
+}
 .box.top {
 	border:0;
 	height:125px;

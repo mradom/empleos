@@ -17,9 +17,9 @@
     		   <!-- menu -->
 			   <?php include("menu.php");?>
                
-               <?php If (($user->uid) and (arg(0)<>'buscar') or(arg(0)=='rubro')) { ?><div id="browser" class="inside"> </div><?php } ?>
+               <?php If ((arg(0)<>'buscar') and (arg(0)<>'principal')) { ?><div id="browser" class="inside"> </div><?php } ?>
 
-               <?php If ((!$user->uid) or ((arg(0)=='buscar') and ($user->uid))) { ?>
+               <?php If ( (arg(0)=='principal') or (arg(0)=='buscar') ) { ?>
                 <!-- browser -->
     			<div id="browser">
                 <?php include("buscador.php");?>

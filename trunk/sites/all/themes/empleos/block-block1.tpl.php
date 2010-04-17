@@ -10,7 +10,7 @@
 <?php 
 $areas = taxonomy_get_tree(get_vocabulary_by_name('Area'),0,0);
 //print_r($areas);
-$limit = 20;
+$limit = 17;
 $i = 1;
 foreach($areas as $value){
 	if($i <= $limit){
