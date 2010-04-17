@@ -134,19 +134,19 @@
                   <div class="section">
                     <ul class="clearfix">
                       <!-- box1 -->
-                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/?q=nota/99" title="Quieren proteger mercados y edificios hist&oacute;ricos" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="n1" class="alignnone size-full wp-image-886">
+                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/nota/99" title="Quieren proteger mercados y edificios hist&oacute;ricos" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="n1" class="alignnone size-full wp-image-886">
                         <div class="Not" id="Not2"> <span>Noticias</span> </div>
                         </a> </li>
                       <!-- box2 -->
-                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/?q=nota/99" title="Quieren proteger mercados y edificios hist&oacute;ricos" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="n1" class="alignnone size-full wp-image-886">
+                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/nota/99" title="Quieren proteger mercados y edificios hist&oacute;ricos" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="n1" class="alignnone size-full wp-image-886">
                         <div class="Not" id="Not2"> <span>Noticias</span> </div>
                         </a> </li>
                       <!-- box3 -->
-                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/?q=nota/99" title="Quieren proteger mercados y edificios hist&oacute;ricos" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="n1" class="alignnone size-full wp-image-886">
+                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/nota/99" title="Quieren proteger mercados y edificios hist&oacute;ricos" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="n1" class="alignnone size-full wp-image-886">
                         <div class="Not" id="Not2"> <span>Noticias</span> </div>
                         </a> </li>
                       <!-- box4 -->
-                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/?q=nota/99" title="Quieren proteger mercados y edificios hist&oacute;ricos" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="n1" class="alignnone size-full wp-image-886">
+                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/nota/99" title="Quieren proteger mercados y edificios hist&oacute;ricos" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="n1" class="alignnone size-full wp-image-886">
                         <div class="Not" id="Not2"> <span>Noticias</span> </div>
                         </a> </li>
                     </ul>
@@ -155,19 +155,19 @@
                   <div class="section">
                     <ul class="clearfix">
                       <!-- box1 -->
-                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/?q=nota/99" title="Quieren proteger mercados y edificios hist&oacute;ricos" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="n1" class="alignnone size-full wp-image-886">
+                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/nota/99" title="Quieren proteger mercados y edificios hist&oacute;ricos" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="n1" class="alignnone size-full wp-image-886">
                         <div class="Not" id="Not2"> <span>Noticias</span> </div>
                         </a> </li>
                       <!-- box2 -->
-                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/?q=nota/99" title="Quieren proteger mercados y edificios hist&oacute;ricos" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="n1" class="alignnone size-full wp-image-886">
+                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/nota/99" title="Quieren proteger mercados y edificios hist&oacute;ricos" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="n1" class="alignnone size-full wp-image-886">
                         <div class="Not" id="Not2"> <span>Noticias</span> </div>
                         </a> </li>
                       <!-- box3 -->
-                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/?q=nota/99" title="Quieren proteger mercados y edificios hist&oacute;ricos" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="n1" class="alignnone size-full wp-image-886">
+                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/nota/99" title="Quieren proteger mercados y edificios hist&oacute;ricos" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="n1" class="alignnone size-full wp-image-886">
                         <div class="Not" id="Not2"> <span>Noticias</span> </div>
                         </a> </li>
                       <!-- box4 -->
-                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/?q=nota/99" title="Quieren proteger mercados y edificios hist&oacute;ricos" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="n1" class="alignnone size-full wp-image-886">
+                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/nota/99" title="Quieren proteger mercados y edificios hist&oacute;ricos" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="n1" class="alignnone size-full wp-image-886">
                         <div class="Not" id="Not2"> <span>Noticias</span> </div>
                         </a> </li>
                     </ul>
@@ -176,19 +176,19 @@
                   <div class="section">
                     <ul class="clearfix">
                       <!-- box1 -->
-                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/?q=nota/99" title="Quieren proteger mercados y edificios hist&oacute;ricos" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="n1" class="alignnone size-full wp-image-886">
+                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/nota/99" title="Quieren proteger mercados y edificios hist&oacute;ricos" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="n1" class="alignnone size-full wp-image-886">
                         <div class="Not" id="Not2"> <span>Noticias</span> </div>
                         </a> </li>
                       <!-- box2 -->
-                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/?q=nota/99" title="Quieren proteger mercados y edificios hist&oacute;ricos" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="n1" class="alignnone size-full wp-image-886">
+                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/nota/99" title="Quieren proteger mercados y edificios hist&oacute;ricos" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="n1" class="alignnone size-full wp-image-886">
                         <div class="Not" id="Not2"> <span>Noticias</span> </div>
                         </a> </li>
                       <!-- box3 -->
-                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/?q=nota/99" title="Quieren proteger mercados y edificios hist&oacute;ricos" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="n1" class="alignnone size-full wp-image-886">
+                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/nota/99" title="Quieren proteger mercados y edificios hist&oacute;ricos" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="n1" class="alignnone size-full wp-image-886">
                         <div class="Not" id="Not2"> <span>Noticias</span> </div>
                         </a> </li>
                       <!-- box4 -->
-                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/?q=nota/99" title="Quieren proteger mercados y edificios hist&oacute;ricos" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="n1" class="alignnone size-full wp-image-886">
+                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/nota/99" title="Quieren proteger mercados y edificios hist&oacute;ricos" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="n1" class="alignnone size-full wp-image-886">
                         <div class="Not" id="Not2"> <span>Noticias</span> </div>
                         </a> </li>
                     </ul>
@@ -210,19 +210,19 @@
                   <div class="section">
                     <ul class="clearfix">
                       <!-- box1 -->
-                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/?q=nota/99" title="casas" class="LinkNot"> <img src="/sites/all/themes/empleos/img/f_1.jpg" alt="" title="consultora" class="alignnone size-full wp-image-886" height="25%" width="25%">
+                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/nota/99" title="casas" class="LinkNot"> <img src="/sites/all/themes/empleos/img/f_1.jpg" alt="" title="consultora" class="alignnone size-full wp-image-886" height="25%" width="25%">
                         <div class="Not" id="Not2"> <span>Formaci&oacute;n</span> </div>
                         </a> </li>
                       <!-- box2 -->
-                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/?q=nota/99" title="Formaci&oacute;n" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="consultora" class="alignnone size-full wp-image-886" height="25%" width="25%">
+                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/nota/99" title="Formaci&oacute;n" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="consultora" class="alignnone size-full wp-image-886" height="25%" width="25%">
                         <div class="Not" id="Not2"> <span>Formaci&oacute;n</span> </div>
                         </a> </li>
                       <!-- box3 -->
-                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/?q=nota/99" title="Formaci&oacute;n" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="consultora" class="alignnone size-full wp-image-886" height="25%" width="25%">
+                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/nota/99" title="Formaci&oacute;n" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="consultora" class="alignnone size-full wp-image-886" height="25%" width="25%">
                         <div class="Not" id="Not2"> <span>Formaci&oacute;n</span> </div>
                         </a> </li>
                       <!-- box4 -->
-                     <li class="FloR"> <a target="_top" href="http://localhost/empleos/?q=nota/99" title="Formaci&oacute;n" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="consultora" class="alignnone size-full wp-image-886" height="25%" width="25%">
+                     <li class="FloR"> <a target="_top" href="http://localhost/empleos/nota/99" title="Formaci&oacute;n" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="consultora" class="alignnone size-full wp-image-886" height="25%" width="25%">
                         <div class="Not" id="Not2"> <span>Formaci&oacute;n</span> </div>
                         </a> </li>
                     </ul>
@@ -231,19 +231,19 @@
                   <div class="section">
                     <ul class="clearfix">
                       <!-- box1 -->
-                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/?q=nota/99" title="casas" class="LinkNot"> <img src="/sites/all/themes/empleos/img/f_1.jpg" alt="" title="consultora" class="alignnone size-full wp-image-886" height="25%" width="25%">
+                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/nota/99" title="casas" class="LinkNot"> <img src="/sites/all/themes/empleos/img/f_1.jpg" alt="" title="consultora" class="alignnone size-full wp-image-886" height="25%" width="25%">
                         <div class="Not" id="Not2"> <span>Formaci&oacute;n</span> </div>
                         </a> </li>
                       <!-- box2 -->
-                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/?q=nota/99" title="Formaci&oacute;n" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="consultora" class="alignnone size-full wp-image-886" height="25%" width="25%">
+                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/nota/99" title="Formaci&oacute;n" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="consultora" class="alignnone size-full wp-image-886" height="25%" width="25%">
                         <div class="Not" id="Not2"> <span>Formaci&oacute;n</span> </div>
                         </a> </li>
                       <!-- box3 -->
-                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/?q=nota/99" title="Formaci&oacute;n" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="consultora" class="alignnone size-full wp-image-886" height="25%" width="25%">
+                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/nota/99" title="Formaci&oacute;n" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="consultora" class="alignnone size-full wp-image-886" height="25%" width="25%">
                         <div class="Not" id="Not2"> <span>Formaci&oacute;n</span> </div>
                         </a> </li>
                       <!-- box4 -->
-                     <li class="FloR"> <a target="_top" href="http://localhost/empleos/?q=nota/99" title="casas" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="consultora" class="alignnone size-full wp-image-886" height="25%" width="25%">
+                     <li class="FloR"> <a target="_top" href="http://localhost/empleos/nota/99" title="casas" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="consultora" class="alignnone size-full wp-image-886" height="25%" width="25%">
                         <div class="Not" id="Not2"> <span>casas</span> </div>
                         </a> </li>
                     </ul>
@@ -252,19 +252,19 @@
                   <div class="section">
                     <ul class="clearfix">
                       <!-- box1 -->
-                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/?q=nota/99" title="casas" class="LinkNot"> <img src="/sites/all/themes/empleos/img/f_1.jpg" alt="" title="consultora" class="alignnone size-full wp-image-886" height="25%" width="25%">
+                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/nota/99" title="casas" class="LinkNot"> <img src="/sites/all/themes/empleos/img/f_1.jpg" alt="" title="consultora" class="alignnone size-full wp-image-886" height="25%" width="25%">
                         <div class="Not" id="Not2"> <span>Formaci&oacute;n</span> </div>
                         </a> </li>
                       <!-- box2 -->
-                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/?q=nota/99" title="casas" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="consultora" class="alignnone size-full wp-image-886" height="25%" width="25%">
+                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/nota/99" title="casas" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="consultora" class="alignnone size-full wp-image-886" height="25%" width="25%">
                         <div class="Not" id="Not2"> <span>casas</span> </div>
                         </a> </li>
                       <!-- box3 -->
-                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/?q=nota/99" title="casas" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="consultora" class="alignnone size-full wp-image-886" height="25%" width="25%">
+                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/nota/99" title="casas" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="consultora" class="alignnone size-full wp-image-886" height="25%" width="25%">
                         <div class="Not" id="Not2"> <span>casas</span> </div>
                         </a> </li>
                       <!-- box4 -->
-                     <li class="FloR"> <a target="_top" href="http://localhost/empleos/?q=nota/99" title="casas" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="consultora" class="alignnone size-full wp-image-886" height="25%" width="25%">
+                     <li class="FloR"> <a target="_top" href="http://localhost/empleos/nota/99" title="casas" class="LinkNot"> <img src="/sites/all/themes/empleos/img/n_1.jpg" alt="" title="consultora" class="alignnone size-full wp-image-886" height="25%" width="25%">
                         <div class="Not" id="Not2"> <span>casas</span> </div>
                         </a> </li>
                     </ul>
@@ -285,15 +285,15 @@
                   <div class="section">
                     <ul class="clearfix">
                       <!-- box1 -->
-                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/?q=nota/99" title="Consultoras" class="LinkNot"> <img src="/sites/all/themes/empleos/img/c1.gif" alt="" title="colonial" class="alignnone size-full wp-image-886" height="100%" width="100%">
+                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/nota/99" title="Consultoras" class="LinkNot"> <img src="/sites/all/themes/empleos/img/c1.gif" alt="" title="colonial" class="alignnone size-full wp-image-886" height="100%" width="100%">
                         <div class="Not" id="Not2"> <span>countries</span> </div>
                         </a> </li>
                       <!-- box2 -->
-                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/?q=nota/99" title="Consultoras" class="LinkNot"> <img src="/sites/all/themes/empleos/img/c1.gif" alt="" title="colonial" class="alignnone size-full wp-image-886" height="100%" width="100%">
+                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/nota/99" title="Consultoras" class="LinkNot"> <img src="/sites/all/themes/empleos/img/c1.gif" alt="" title="colonial" class="alignnone size-full wp-image-886" height="100%" width="100%">
                         <div class="Not" id="Not2"> <span>countries</span> </div>
                         </a> </li>
                       <!-- box3 -->
-                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/?q=nota/99" title="Consultoras" class="LinkNot"> <img src="/sites/all/themes/empleos/img/c1.gif" alt="" title="colonial" class="alignnone size-full wp-image-886" height="100%" width="100%">
+                      <li class="FloR"> <a target="_top" href="http://localhost/empleos/nota/99" title="Consultoras" class="LinkNot"> <img src="/sites/all/themes/empleos/img/c1.gif" alt="" title="colonial" class="alignnone size-full wp-image-886" height="100%" width="100%">
                         <div class="Not" id="Not2"> <span>countries</span> </div>
                         </a> </li>
                       <!-- box4 -->
