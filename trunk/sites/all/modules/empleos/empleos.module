@@ -25,7 +25,8 @@ function empleos_menu($may_cache) {
 	  'title'    			=> 'Buscador',
       'path'     			=> 'buscar',
       'callback' 			=> 'empleos_buscar',
-	  'access'   			=> TRUE
+	  'access'   			=> TRUE,
+	  'weight' => 100
     );
 	
 	
@@ -33,7 +34,8 @@ function empleos_menu($may_cache) {
 	  'title'    			=> 'Rubros',
       'path'     			=> 'rubro',
       'callback' 			=> 'empleos_rubro',
-	  'access'   			=> TRUE
+	  'access'   			=> TRUE,
+	  'weight' => 100
     );
 	
 	
@@ -41,7 +43,8 @@ function empleos_menu($may_cache) {
 	  'title'    			=> 'Consultoras',
       'path'     			=> 'consultora',
       'callback' 			=> 'empleos_consultora',
-	  'access'   			=> TRUE
+	  'access'   			=> TRUE,
+	  'weight' => 100
     );
 	
 	
@@ -49,35 +52,48 @@ function empleos_menu($may_cache) {
 	  'title'    			=> 'Empresas',
       'path'     			=> 'empresa',
       'callback' 			=> 'empleos_empresa',
-	  'access'   			=> TRUE
+	  'access'   			=> TRUE,
+	  'weight' => 100
     );
 
 	$items[] = array(
 	  'title'    			=> 'Test',
       'path'     			=> 'test',
       'callback' 			=> 'empleos_test',
-	  'access'   			=> TRUE
+	  'access'   			=> TRUE,
+	  'weight' => 100
     );
 
+	$items[] = array(
+	  'title'    			=> 'Test 2',
+      'path'     			=> 'test2',
+      'callback' 			=> 'empleos_test',
+	  'access'   			=> TRUE,
+	  'weight' => 100
+    );
+	
 	$items[] = array(
 	  'title'    			=> 'Nota',
       'path'     			=> 'nota',
       'callback' 			=> 'empleos_nota',
-	  'access'   			=> TRUE
+	  'access'   			=> TRUE,
+	  'weight' => 100
     );
 	
 	$items[] = array(
 	  'title'    			=> 'Busqueda avanzada',
       'path'     			=> 'avanzada',
       'callback' 			=> 'empleos_avanzada',
-	  'access'   			=> TRUE
+	  'access'   			=> TRUE,
+	  'weight' => 100
     );
 	
 	$items[] = array(
 	  'title'    			=> 'Mapa del sitio',
       'path'     			=> 'mapadelsitio',
       'callback' 			=> 'empleos_mapadelsitio',
-	  'access'   			=> TRUE
+	  'access'   			=> TRUE,
+	  'weight' => 100
     );
 	
 	
@@ -129,7 +145,7 @@ function empleos_settings() {
     '#type' => 'textfield',
     '#title' => t('Empleos Page Limit'),
     '#default_value' => variable_get(EMPLEOS_PAGE_LIMIT, 10),
-    '#description' => t('Cuantos items se muestran por pagina.'),
+    '#description' => t('Cuantos items se muestran por pagina de resultados de busquedas.'),
   );
   
   $form[$set][EMPLEOS_VIEW_NEWS_PROFILE] = array(

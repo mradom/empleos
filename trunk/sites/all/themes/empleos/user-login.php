@@ -1,6 +1,6 @@
 
 <div class="mycv log" style="margin-right:15px;">
-  <form method="post" accept-charset="UTF-8" action="?q=user">
+  <form method="post" accept-charset="UTF-8" action="/?q=user">
     <div class="itemTitle orange" style="padding-left:10px">Ya est&aacute;s registrado?</div>
     <div class="bloque" style="margin-top:20px">
       <div class="item req"  style="width:90px;">Usuario:</div>
@@ -17,7 +17,7 @@
         <input type="hidden" value="user_login" id="edit-user-login" name="form_id">
         <input type="submit" class="button" tabindex="3" value="Ingresar" id="edit-submit" name="op">
       </div>
-      <div style="margin-top:10px; text-align:center"><strong>Olvidaste tu contrase&ntilde;a?</strong> &gt;&gt; <a href="?q=user/password">ingresa aqu&iacute;</a></div>
+      <div style="margin-top:10px; text-align:center"><strong>Olvidaste tu contrase&ntilde;a?</strong> &gt;&gt; <a href="/?q=user/password">ingresa aqu&iacute;</a></div>
     </div>
   </form>
 </div>
@@ -35,6 +35,6 @@
   </div>
   <div class="bloque puntos" style="width:300px;  margin-top:20px;"></div>
    <div class="blue" style="padding-left:11px; margin:10px 0 30px 0;"><strong>Regristrate como:</strong></div>
-  <div class="btn_gral" style="float:left; margin-left:80px;"><a href="?q=user/register/persona">Persona</a></div>
-  <div class="btn_gral" style="float:left; margin-left:30px;"><a href="?q=user/register/empleador">Empresa</a></div>
+  <div class="btn_gral" style="float:left; margin-left:80px;"><a href="/?q=user/register/persona">Persona</a></div>
+  <div class="btn_gral" style="float:left; margin-left:30px;"><a href="/?q=user/register/empleador">Empresa</a></div>
 </div>

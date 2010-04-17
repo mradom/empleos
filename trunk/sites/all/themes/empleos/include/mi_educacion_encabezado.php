@@ -1,12 +1,12 @@
-<div class="box top" style="background: url(sites/all/themes/empleos/img/bg_box_top2.jpg)">
+<div class="box top" style="background: url(/sites/all/themes/empleos/img/bg_box_top2.jpg)">
 <p>En el paso n&uacute;mero 2 podr&aacute;s ingresar los <strong>detalles de tu formaci&oacute;n educativa</strong> en los diferentes niveles formales (primarios, secundarios, terciarios, universitarios, posgrado). <br />
 Para ciertos puestos de trabajo, es imprescindible el contar con cierto nivel educativo o tener una formaci&oacute;n en cierta &aacute;rea de estudio; por ello, resulta estrat&eacute;gico ingresarlos en esta instancia. <br />
 Record&aacute; que los &iacute;tems destacados con asterisco <span class="stg orange">(*)</span> son obligatorios.
 
 </p>
 
-<div><img style="padding-left: 100px;" src="sites/all/themes/empleos/img/10pasos.png"></div>
-<div><img style="padding-left: 150px" src="sites/all/themes/empleos/img/2paso.png"></div>
+<div><img style="padding-left: 100px;" src="/sites/all/themes/empleos/img/10pasos.png"></div>
+<div><img style="padding-left: 150px" src="/sites/all/themes/empleos/img/2paso.png"></div>
 </div>
 <!-- submenu -->
 <?php include("submenu-usuarios.php");?>
@@ -71,12 +71,12 @@ if ($user->uid){
 			?>
 		<TR class="<?php if ($node->nid == $row->nid) print arg(2);?>">
 		<?php if ($node->nid == $row->nid) { print '<TD>'.$a_ini.'-'.$m_ini.' - '.$a_fin.'-'.$m_fin.'</TD>';
-		} else { print '<TD><A href="?q=node/'.$row->nid.'/edit" title="editar">'.$a_ini.'-'.$m_ini.' - '.$a_fin.'-'.$m_fin.'</A></TD>';  } ?>
+		} else { print '<TD><A href="/?q=node/'.$row->nid.'/edit" title="editar">'.$a_ini.'-'.$m_ini.' - '.$a_fin.'-'.$m_fin.'</A></TD>';  } ?>
 			<TD><?php print $instituto;?></TD>
 			<TD><?php print $row->field_ttulo_o_certificacin[0]["value"];?></TD>
 			<TD><?php print $nivel;?></TD>
 			<TD><?php print $estado;?></TD>
-			<TD><a href="?q=node/<?php print $row->nid; ?>/edit" title="editar"><div class="arrow editar" style="margin-left:5px"></div></a><a href="?q=node/<?php print $row->nid; ?>/delete" title="borrar"><div class="arrow cancel"></div></a></TD>
+			<TD><a href="/?q=node/<?php print $row->nid; ?>/edit" title="editar"><div class="arrow editar" style="margin-left:5px"></div></a><a href="/?q=node/<?php print $row->nid; ?>/delete" title="borrar"><div class="arrow cancel"></div></a></TD>
 		</TR>
 		<?php
 

@@ -1,6 +1,6 @@
       <div id="right_column">
         <div class="banner rectangle">
-          <img src="sites/all/themes/empleos/img/post_creative-genius-headphone-toy.jpg"></img>
+          <img src="/sites/all/themes/empleos/img/post_creative-genius-headphone-toy.jpg"></img>
         </div>
         
         <div class="bar_blue">
@@ -18,6 +18,6 @@
         
         <div class="box side">
            <?php include("sites/all/themes/empleos/block-block3.tpl.php"); ?>
-           <div class="arrow"><a href="?q=empresa">Ver m&aacute;s</a></div>
+           <div class="arrow"><a href="/?q=empresa">Ver m&aacute;s</a></div>
         </div>
       </div>

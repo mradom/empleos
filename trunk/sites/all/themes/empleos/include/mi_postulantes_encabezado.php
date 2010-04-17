@@ -1,5 +1,5 @@
-    <div class="box top" style="background:url(sites/all/themes/empleos/img/bg_box_top15.jpg)">
-    <div><img style=" padding-left:420px " src="sites/all/themes/empleos/img/4e-paso.png"></div>
+    <div class="box top" style="background:url(/sites/all/themes/empleos/img/bg_box_top15.jpg)">
+    <div><img style=" padding-left:420px " src="/sites/all/themes/empleos/img/4e-paso.png"></div>
       <p><strong>Acced&eacute; a los CV de los postulantes</strong> Podr&aacute;s ver la informaci&oacute;n profesional de cada uno de los intereados en tu aviso publicado.<br>
       </br> las empresas y consultoras que accedan a nuestra base de datos en busca de candidatos podr&aacute;n consultarlo.
         Al finalizar la carga de tus datos presion&aacute; el bot&oacute;n &quot;guardar&quot; al final de la p&aacute;gina antes de ir al paso siguiente.</p>
@@ -35,7 +35,7 @@
 								<td><?php echo $usuario->mail; ?></td>
 								<td></td>
 								<td></td>
-								<td><a href='?q=user/<?php echo $usuario->uid;?>'>Ver</a></td>
+								<td><a href='/?q=user/<?php echo $usuario->uid;?>'>Ver</a></td>
 							</tr>
 							<?php 
 						}
@@ -64,7 +64,7 @@
 							<td><?php $wi = workflow_get_state($aviso->_workflow); print $wi['state']?></td>
 							<td><?php echo ($aviso->status == 1) ? "Publicado" : "No publicado"?></td>
 							<td><?php echo $nodo->cantidad?></td>
-							<td><a href="?q=node/98/<?php echo $nodo->nid;?>">Ver</a></td>
+							<td><a href="/?q=node/98/<?php echo $nodo->nid;?>">Ver</a></td>
 						</tr>
 					<?php } ?>
 <?php

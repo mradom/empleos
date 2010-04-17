@@ -29,7 +29,7 @@
     </ul>
   </div>
   <div class="bloque puntos" style="width:300px"></div>
-  <div class="btn_gral" style="float:left; margin-left:60px;"><a href="?q=user/register/persona">Regristrarse como Persona</a></div>
-  <div class="btn_gral" style="float:left; margin-left:60px;"><a href="?q=user/register/empleador">Regristrarse como Empresa</a></div>
+  <div class="btn_gral" style="float:left; margin-left:60px;"><a href="/?q=user/register/persona">Regristrarse como Persona</a></div>
+  <div class="btn_gral" style="float:left; margin-left:60px;"><a href="/?q=user/register/empleador">Regristrarse como Empresa</a></div>
 </div>
 <!-- Fin RECONDAR CONTRASEÑA -->
