@@ -35,13 +35,13 @@ Si no ten&eacute;s cursos o seminarios para ingresar en los campos, deja el form
 				?>
 				        <TR class="<?php if ($node->nid == $row->nid) print arg(2);?>"> 
 				          <?php if ($node->nid == $row->nid) { print '<TD>'.$row->title.'</TD>';
-			                   } else { print '<TD><A href="?q=node/'.$row->nid.'/edit" title="editar">'.$row->title.'</A></TD>';  } ?> 
+			                   } else { print '<TD><A href="/node/'.$row->nid.'/edit" title="editar">'.$row->title.'</A></TD>';  } ?> 
 				          <TD><?php print $row->field_en_calidad_de[0]['value'];?></TD>
 				          <TD><?php print $row->field_lugar[0]['value'];?></TD>
 				          <TD><?php print $row->field_ubicacion[0]['value'];?></TD>				          
 				          <TD><?php print format_date(strtotime($row->field_desde[0]['value']),'custom','d/m/Y');?></TD> 
 				          <TD><?php print format_date(strtotime($row->field_hasta[0]['value']),'custom','d/m/Y');?></TD>
-				          <TD><a href="?q=node/<?php print $row->nid; ?>/edit" title="editar"><div class="arrow editar" style="margin-left:5px"></div></a><a href="?q=node/<?php print $row->nid; ?>/delete" title="borrar"><div class="arrow cancel"></div></a></TD>
+				          <TD><a href="/node/<?php print $row->nid; ?>/edit" title="editar"><div class="arrow editar" style="margin-left:5px"></div></a><a href="/node/<?php print $row->nid; ?>/delete" title="borrar"><div class="arrow cancel"></div></a></TD>
 				        </TR> 
 				<?php
 				

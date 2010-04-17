@@ -40,12 +40,12 @@ Si decid&iacute;s dejar esta parte del formulario en blanco pod&eacute;s continu
 				?>
 				        <TR class="<?php if ($node->nid == $row->nid) print arg(2);?>"> 
 				          <?php if ($node->nid == $row->nid) { print '<TD>'.$row->field_empresa_0[0]['value'].'</TD>';
-			                   } else { print '<TD><A href="/?q=node/'.$row->nid.'/edit" title="editar">'.$row->field_empresa_0[0]['value'].'</A></TD>';  } ?>
+			                   } else { print '<TD><A href="/node/'.$row->nid.'/edit" title="editar">'.$row->field_empresa_0[0]['value'].'</A></TD>';  } ?>
 				          <TD><?php print $row->field_titulo_o_cargo[0]['value'];?></TD> 				          
 				          <TD><?php print $node->title;?></TD>
 				          <TD><?php print $row->field_telefono[0]['value'];?></TD> 
 				          <TD><?php print $row->field_email[0]['email'];?></TD>
-				          <TD><a href="/?q=node/<?php print $row->nid; ?>/edit" title="editar"><div class="arrow editar" style="margin-left:5px"></div></a><a href="/?q=node/<?php print $row->nid; ?>/delete" title="borrar"><div class="arrow cancel"></div></a></TD>
+				          <TD><a href="/node/<?php print $row->nid; ?>/edit" title="editar"><div class="arrow editar" style="margin-left:5px"></div></a><a href="/node/<?php print $row->nid; ?>/delete" title="borrar"><div class="arrow cancel"></div></a></TD>
 				        </TR> 
 				<?php
 				

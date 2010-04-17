@@ -10,9 +10,9 @@
 				<h3 style="margin: 0pt 12%; text-align: center;">Registrate de forma f&aacute;cil y segura en s&oacute;lo 3 pasos</h3>
         		<div class="pasos">
 					<ul id="pasos">
-						<li id="b-01"><a href="/?q=user/register/persona"><span>tramites</span></a></li>
-            			<li id="b-02"><a href="/?q=estaciones"><span>estaciones</span></a></li>
-						<li id="b-03"><a href="/?q=estaciones"><span>estaciones</span></a></li>
+						<li id="b-01"><a href="/user/register/persona"><span>tramites</span></a></li>
+            			<li id="b-02"><a href="/estaciones"><span>estaciones</span></a></li>
+						<li id="b-03"><a href="/estaciones"><span>estaciones</span></a></li>
 					</ul>
 				</div>
 			</div>

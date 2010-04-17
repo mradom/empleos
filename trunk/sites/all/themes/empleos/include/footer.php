@@ -7,11 +7,11 @@
     <div class="left">
       <h2>EmpleosLaVoz </h2>
       <ul>
-        <li><a title="Registrarse" href="/?q=user/register/persona">Registrarse</a></li>
-        <li><a title="Buscar" href="/?q=buscar">Buscar</a></li>
-        <li><a title="Empresas" href="/?q=empresa">Empresas</a></li>
-        <li><a title="Consultoras" href="/?q=consultora">Consultoras</a></li>
-        <li><a title="Mapa del sitio" href="/?q=mapadelsitio">Mapa de sitio</a></li>
+        <li><a title="Registrarse" href="/user/register/persona">Registrarse</a></li>
+        <li><a title="Buscar" href="/buscar">Buscar</a></li>
+        <li><a title="Empresas" href="/empresa">Empresas</a></li>
+        <li><a title="Consultoras" href="/consultora">Consultoras</a></li>
+        <li><a title="Mapa del sitio" href="/mapadelsitio">Mapa de sitio</a></li>
       </ul>
     </div>  
     <div class="left">
@@ -33,8 +33,8 @@
     <div class="left">
       <h2>Contacto</h2>
       <ul>
-        <li><a title="Contacto comercial" href="/?q=contact/ventas">Comercial</a></li>
-        <li><a title="Contacto t&eacute;cnico" href="/?q=contact/tecnico">T&eacute;cnico</a></li>        
+        <li><a title="Contacto comercial" href="/contact/ventas">Comercial</a></li>
+        <li><a title="Contacto t&eacute;cnico" href="/contact/tecnico">T&eacute;cnico</a></li>        
         <li>&nbsp;</li>
         <li><a title="Media Kit" href="#">Media Kit</a></li>        
       </ul>
@@ -46,7 +46,7 @@
 <div class="footer">
   <div class="footer_resize">
   <a href="http://www.lavoz.com.ar/" target="_blank" title="La Voz del Interior"><img style="margin-top:7px;" src="/sites/all/themes/empleos/img/pie_lavoz.jpg" width="87" height="26" /></a>
-    <p class="leftt">&copy; 2010 Todos los derechos reservados. &nbsp;&nbsp;<a href="/?q=principal">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/?q=avisolegal">Aviso legal</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/?q=privacidad">Privacidad</a> 
+    <p class="leftt">&copy; 2010 Todos los derechos reservados. &nbsp;&nbsp;<a href="/principal">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/avisolegal">Aviso legal</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/privacidad">Privacidad</a> 
  </a></p>
 <div class="logos">
 <a title="Certifica" href="http://www.certifica.com/" target="_blank"><img src="/sites/all/themes/empleos/img/logo-certifica.jpg" width="87" height="25" /></a>

@@ -1,9 +1,5 @@
 <?php
   global $user;
-    drupal_add_js('sites/all/themes/empleos/js/jquery.innerfade.js', 'theme');
-    drupal_add_js('sites/all/themes/empleos/js/jquery.innerfade.page.js', 'theme');
-    drupal_add_css('sites/all/themes/empleos/css/fade.css', 'theme', 'all');
-
 ?>      <!-- ini -->
 		<div id="header">
 			<!-- Banner Topsite -->
@@ -12,7 +8,7 @@
     		<!-- login -->
 				<?php include("user-login.php"); ?>
                <!-- logo -->
-               <div id="logo"><a title="Home" href="/?q=principal"><img src="/sites/all/themes/empleos/img/logo.jpg"></a></div>
+               <div id="logo"><a title="Home" href="/principal"><img src="/sites/all/themes/empleos/img/logo.jpg"></a></div>
     		   <div style="clear: both;"></div>
     		   <!-- menu -->
 			   <?php include("menu.php");?>
@@ -26,7 +22,7 @@
       				<div class="white right">
                        <?php if (!$user->uid) {
                             print '<h1 style="margin-top:10px; text-align:center">&iquest;Primera vez en empleoslavoz?</h1>'; 
-        					print '<h3 style=" text-align:center; margin:0 12%">Registrate de forma f&aacute;cil y segura en s&oacute;lo 3 pasos</h3>'; 
+        					print '<h3 style="text-align:center; margin:0 12%">Registrate de forma f&aacute;cil y segura en s&oacute;lo 3 pasos</h3>'; 
         					print '<div class="pasos">';
           					print '<ul id="pasos">'; 
 							print '<li id="b-01"><a href="form.html"><span>registrate</span></a></li>'; 
@@ -35,21 +31,24 @@
 							print '</ul></div>';
 					   } else {
                            if (in_array('Empresa', array_values($user->roles))){
+							print '<div>';
                             print '<ul id="adver">'; 
-							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/04.jpg" /></a></li>';
-							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/05.jpg" /></a></li>';
+							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/04.jpg"/></a></li>';
+							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/05.jpg"/></a></li>';
 							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/06.jpg"/></a></li>';
                             print '</ul>';
+							print '</div>';							
 						} else {
+							print '<div>';
 							print '<ul id="adver">'; 
-							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/03.jpg" /></a></li>';
-							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/01.jpg" /></a></li>';
+							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/03.jpg"/></a></li>';
+							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/01.jpg"/></a></li>';
 							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/02.jpg"/></a></li>';
                             print '</ul>';
+							print '</div>';
 						}
 					   }?>
       			</div>
         <?php } ?>
    	</div>
-
 <!-- fin -->

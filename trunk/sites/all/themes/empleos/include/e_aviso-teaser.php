@@ -56,19 +56,19 @@
 		            <DIV class="brand">
 		            	<?php print theme('imagecache','logo_empresa_resultado_busqueda_86_53',$nodo->picture,$nodo->picture,$nodo->picture); ?>
 		            </div>
-		            <a href="/?q=job/apply/<?php echo $nodo->nid;?>"><div class="btn_postulate"></div></a>
+		            <a href="/job/apply/<?php echo $nodo->nid;?>"><div class="btn_postulate"></div></a>
 		            <DIV class="datos">
-		              <H2><SPAN class="orange"><a href="/?q=taxonomy/term/<?php echo $nodo->taxonomy[$area]->tid;?>"><?php echo $nodo->taxonomy[$area]->name;?></a></SPAN> | <SPAN class="upper"><?php echo $nodo->name;?></SPAN></H2>
+		              <H2><SPAN class="orange"><a href="/taxonomy/term/<?php echo $nodo->taxonomy[$area]->tid;?>"><?php echo $nodo->taxonomy[$area]->name;?></a></SPAN> | <SPAN class="upper"><?php echo $nodo->name;?></SPAN></H2>
 		              <P class="line">
-		              	<SPAN class="orange">Sector:</SPAN> <a href="/?q=taxonomy/term/<?php echo $nodo->taxonomy[$sector]->tid;?>"><?php echo $nodo->taxonomy[$sector]->name;?></a> | 
-		              <a href="/?q=taxonomy/term/<?php echo $nodo->taxonomy[$localidad]->tid?>"><?php echo $nodo->taxonomy[$localidad]->name;?></a><BR>
+		              	<SPAN class="orange">Sector:</SPAN> <a href="/taxonomy/term/<?php echo $nodo->taxonomy[$sector]->tid;?>"><?php echo $nodo->taxonomy[$sector]->name;?></a> | 
+		              <a href="/taxonomy/term/<?php echo $nodo->taxonomy[$localidad]->tid?>"><?php echo $nodo->taxonomy[$localidad]->name;?></a><BR>
 		                <?php //echo $nodo->teaser;?>
 		                <?php if (strlen($nodo->teaser) > 215){
 						  echo substr($nodo->teaser,0,215).'...';
 						}else{
 						  echo substr($nodo->teaser,0,215);
 						}?></p>
-		              <P><A class="orange right" href="/?q=node/<?php echo $nodo->nid;?>">&gt;&gt;Ver oferta de trabajo</A></P>
+		              <P><A class="orange right" href="/node/<?php echo $nodo->nid;?>">&gt;&gt;Ver oferta de trabajo</A></P>
 		              <P class="grey">Fecha de publicaci&oacute;n: <?php print date('d-m-Y',$nodo->created); ?></P>
 		            </div>
 		          </div>
@@ -78,17 +78,17 @@
 		          	?>
 						<div>
 			            <div class="datos">
-			              <H2><SPAN><a href="/?q=taxonomy/term/<?php echo $nodo->taxonomy[$area]->tid;?>"><?php echo $nodo->taxonomy[$area]->name;?></a></SPAN> | <SPAN class="upper"><?php echo $nodo->name;?></SPAN></H2>
+			              <H2><SPAN><a href="/taxonomy/term/<?php echo $nodo->taxonomy[$area]->tid;?>"><?php echo $nodo->taxonomy[$area]->name;?></a></SPAN> | <SPAN class="upper"><?php echo $nodo->name;?></SPAN></H2>
 		                  <P class="line">
-		              	  <SPAN class="orange">Sector:</SPAN> <a href="/?q=taxonomy/term/<?php echo $nodo->taxonomy[$sector]->tid;?>"><?php echo $nodo->taxonomy[$sector]->name;?></a> | 
-		                  <a href="/?q=taxonomy/term/<?php echo $nodo->taxonomy[$localidad]->tid?>"><?php echo $nodo->taxonomy[$localidad]->name;?></a><BR>
+		              	  <SPAN class="orange">Sector:</SPAN> <a href="/taxonomy/term/<?php echo $nodo->taxonomy[$sector]->tid;?>"><?php echo $nodo->taxonomy[$sector]->name;?></a> | 
+		                  <a href="/taxonomy/term/<?php echo $nodo->taxonomy[$localidad]->tid?>"><?php echo $nodo->taxonomy[$localidad]->name;?></a><BR>
 		                <?php //echo $nodo->teaser;?>
 		                <?php if (strlen($nodo->teaser) > 215){
 						  echo substr($nodo->teaser,0,215).'...';
 						}else{
 						  echo substr($nodo->teaser,0,215);
 						}?></p>
-			              <P><a class="right" href="/?q=node/<?php echo $nodo->nid;?>">&gt;&gt;Ver oferta de trabajo</A></P>
+			              <P><a class="right" href="/node/<?php echo $nodo->nid;?>">&gt;&gt;Ver oferta de trabajo</A></P>
 			              <p class="grey">Fecha de publicaci&oacute;n: <?php print date('d-m-Y',$nodo->created); ?></P>
 			            </div>
 			          </div>
@@ -99,11 +99,11 @@
 		          			?>
 							<div class="datos">
 					            <h2><strong><?php echo $nodo->title;?></strong> Importante Empresa de Servicios de Salud | <span class="grey">Sector: <?php echo $nodo->taxonomy[$sector]->name;?></span></h2>
-					            <p><a href="/?q=node/<?php echo $nodo->nid;?>" class="right">&gt;&gt;Ver oferta de trabajo</a></p>
+					            <p><a href="/node/<?php echo $nodo->nid;?>" class="right">&gt;&gt;Ver oferta de trabajo</a></p>
 					            <p class="grey">Fecha de publicaci&oacute;n: <?php print date('d-m-Y',$nodo->created); ?></P>
 					        </div>
 		          			<?php
 		          		}
 		          ?>
-		          <a href="/?q=<?php echo $node->links['job_apply']['href']?>">Ver postulantes para este aviso</a>
+		          <a href="/<?php echo $node->links['job_apply']['href']?>">Ver postulantes para este aviso</a>
 		         </div>

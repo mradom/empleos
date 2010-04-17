@@ -43,13 +43,13 @@ Si no ten&eacute;s conocimiento en idiomas, dej&aacute; el formulario en blanco 
 				?>
 				        <TR class="<?php if ($node->nid == $row->nid) print arg(2);?>"> 
 				          <?php if ($node->nid == $row->nid) { print '<TD>'.$row->title.'</TD>';
-			                   } else { print '<TD><A href="/?q=node/'.$row->nid.'/edit" title="editar">'.$row->title.'</A></TD>';  } ?> 
+			                   } else { print '<TD><A href="/node/'.$row->nid.'/edit" title="editar">'.$row->title.'</A></TD>';  } ?> 
 				          <TD><?php print $idioma;?></TD>
 				          <TD><?php print $row->field_nivel_oral[0]['value'];?></TD> 
 				          <TD><?php print $row->field_nivel_escrito[0]['value'];?></TD> 
 				          <TD><?php print $row->field_nivel_de_lectura[0]['value'];?></TD>
 				          <TD><?php print $row->field_ltima_vez_aplicado[0]['value'];?></TD>
-						  <TD><a href="/?q=node/<?php print $row->nid; ?>/edit" title="editar"><div class="arrow editar" style="margin-left:5px"></div></a><a href="/?q=node/<?php print $row->nid; ?>/delete" title="borrar"><div class="arrow cancel"></div></a></TD>				          
+						  <TD><a href="/node/<?php print $row->nid; ?>/edit" title="editar"><div class="arrow editar" style="margin-left:5px"></div></a><a href="/node/<?php print $row->nid; ?>/delete" title="borrar"><div class="arrow cancel"></div></a></TD>				          
 				        </TR> 
 				<?php
 				

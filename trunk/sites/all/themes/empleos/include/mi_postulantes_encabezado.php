@@ -35,7 +35,7 @@
 								<td><?php echo $usuario->mail; ?></td>
 								<td></td>
 								<td></td>
-								<td><a href='/?q=user/<?php echo $usuario->uid;?>'>Ver</a></td>
+								<td><a href='/user/<?php echo $usuario->uid;?>'>Ver</a></td>
 							</tr>
 							<?php 
 						}
@@ -64,7 +64,7 @@
 							<td><?php $wi = workflow_get_state($aviso->_workflow); print $wi['state']?></td>
 							<td><?php echo ($aviso->status == 1) ? "Publicado" : "No publicado"?></td>
 							<td><?php echo $nodo->cantidad?></td>
-							<td><a href="/?q=node/98/<?php echo $nodo->nid;?>">Ver</a></td>
+							<td><a href="/node/98/<?php echo $nodo->nid;?>">Ver</a></td>
 						</tr>
 					<?php } ?>
 <?php
