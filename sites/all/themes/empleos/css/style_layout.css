@@ -252,7 +252,6 @@ li.btns.sig:hover{
 	float:left;
 	padding:5px 10px;
 	padding-bottom:10px;
-	margin-bottom:10px;
 }
 #browser.inside, .line-submenu {
 	height:5px;
@@ -402,7 +401,7 @@ li#b-03 a:hover {
 	float:right;
 	color: #2D71B5;
 	font-family:arial;
- 	*width:510px;
+ 	/**width:510px;*/
 	height:22px;
 }
 ul.log li {
@@ -422,6 +421,7 @@ ul.log li.destacar {
 	padding-top:5px;
 	width:252px;
 	height:20px;
+	margin-right:0;
 }
 /*----tags----*/
 ul.tags {
@@ -841,7 +841,9 @@ p.line {
 	vertical-align:middle
 }
 /*-----FICHA------*/
-.box.central.ficha{ background:#fff;}
+.box.central.ficha{ 
+	background:#fff;
+	margin-top:10px;}
 .titleFicha{ 
 	width:300px;
 	padding:5px 0;

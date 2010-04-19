@@ -10,7 +10,7 @@ http://labs.silverorange.com/archives/2003/september/simplecsstabs
 	margin:0;
 	float:left;
 	clear:both;
-	margin:10px 0;
+	margin:0 0 10px 0;
 }
 .tab-content {
 	background:#fff;

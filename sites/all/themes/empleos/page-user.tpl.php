@@ -41,9 +41,9 @@
 				}
   ?>
   <!-- fin central -->
-  </div>
-  <!-- paso 2 -->
+ <!-- paso 2 -->
   <?php include("include/banners-central.php");?>
+  </div>
   <!-- paso 3 -->
   </div>
 <?php include("include/footer.php");?>
