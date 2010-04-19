@@ -6,6 +6,7 @@
 <link rel="stylesheet" type="text/css" href="/sites/all/themes/empleos/css/tabs.css">
 <link rel="stylesheet" type="text/css" href="/sites/all/themes/empleos/css/IN-noticias.css">
 <link rel="stylesheet" type="text/css" href="/sites/all/themes/empleos/css/ui.all.css">
+<link rel="stylesheet" type="text/css" href="/sites/all/themes/empleos/css/notas.css">
 <link rel="stylesheet" type="text/css" href="/sites/all/modules/faq/faq.css">
 <link rel="stylesheet" type="text/css" href="/sites/all/themes/empleos/css/fade.css">
 <!-- scripts  -->
