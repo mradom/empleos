@@ -30,6 +30,26 @@ foreach($nodo->taxonomy as $value){
 
 ?>
 
+<script>
+
+function AltDisplay(eldiv, elbot)
+{
+   var mydiv = document.getElementById(eldiv);
+   var mybot = document.getElementById(elbot);   
+      
+   if ( mydiv.style.display != "none" ) {
+     mydiv.style.visibility="";
+     mydiv.style.display="none";
+	 mybot.style.background="transparent";
+	 
+   } else {
+	 mydiv.style.visibility="";
+     mydiv.style.display="";
+	 mybot.style.background="#fff";
+   }
+}
+</script>
+
 <!-- Ficha  -->
 <div class="box central ficha">
 	<div class="btn_gral low" style="float: right"><a href="/job/apply/<?php echo $nodo->nid;?>">Postularse</a></div>
@@ -54,10 +74,15 @@ foreach($nodo->taxonomy as $value){
 		<li><span class="blue">Vacantes:</span> <?php echo $nodo->field_cantidad_de_vacantes[0]['value'];?></li>
 	</ul>
 	<div style="clear: both"></div>
-	<p class="rigth"><a class="orange right" href="#">&gt;&gt;Ver mas avisos de esta empresa</a></p>
+	<p class="rigth"><a class="orange right" href="#">&gt;&gt;Ver mas avisos de esta empresa</a></p><br />
+	<p class="rigth"><a class="orange right" href="javascript:AltDisplay('mydiv1','bot1');">&gt;&gt;Ver Informaci&oacute;n esta empresa</a></p>
 	<!-- Resumen end -->
 	</div>
-
+	<div style="visibility: hidden; display: none;" id="mydiv1" class="ampliar">
+		<p class="blue stg">La Empresa</p>
+			<?php $empresa = user_load(array("uid" => $node->uid));?>
+		<p><strong><?php echo $empresa->profile_empresa_razon_social;?></strong> <?php echo $empresa->profile_empresa_descripcion;?></p>
+	</div>
 	<div class="bloque puntos" style="width: 655px"></div>
 	<div style="width: 330px; float: left; margin-right: 10px;">
 	<!--  Descripcion del empleo -->
