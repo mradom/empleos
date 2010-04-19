@@ -3,4 +3,4 @@
 Bla bla bla....ste texto lo hace Cande....<br>
 Escribinos o envianos tus sugerencias a <a class="blue stg" href="#">empleoslavoz@lavozdelinterior.com.ar</a>
 </p></div>-->
-<div style="border:0; height:10px; width:960px; padding:0px; float:left;"></div>
+<div style="border:0; height:10px; width:990px; padding:0px; float:left;"></div>
