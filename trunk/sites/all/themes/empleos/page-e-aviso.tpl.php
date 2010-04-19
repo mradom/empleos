@@ -6,7 +6,7 @@
   <!-- HEADER -->
   <?php include("include/header.php");?>
   <!-- MIDDLE -->
-  <div id="browser" class="inside"> </div>  
+  <!--<div id="browser" class="inside"> </div>-->  
   <div id="midle">
 	<?php if (arg(2)<>'') include("include/mi_avisos_encabezado.php");?>  
     <!-- RIGHT -->
@@ -19,7 +19,6 @@
     $("#edit-field-fecha-desde-0-value-date").datepicker({dateFormat: "d/mm/yy", });
     $("#edit-field-fecha-hasta-0-value-date").datepicker({dateFormat: "d/mm/yy", });
   });
-
   </script>
 	<?php print $content;?>
 	  <?php if (arg(1)<>'add' and arg(2)<>'edit' and arg(2)<>'delete' and arg(2)<>'') print "<a href='/node/add/p-objetivo-laboral'>Agregar</a>";?>

@@ -29,6 +29,7 @@ foreach($nodo->taxonomy as $value){
 }
 
 ?>
+
 <!-- Ficha  -->
 <div class="box central ficha">
 	<div class="btn_gral low" style="float: right"><a href="/job/apply/<?php echo $nodo->nid;?>">Postularse</a></div>
@@ -85,7 +86,7 @@ foreach($nodo->taxonomy as $value){
 	<div class="bloque puntos" style="width:655px"></div>
 	    <ul class="tags">
           <li>Fecha de publicaci&oacute;n: <span class="dark"> <?php print date('d-m-Y',$nodo->created);?></span> l </li>
-          <li>N de aviso:<span class="dark"><?php print $nodo->vid; ?></span> l </li>
+          <li>N de aviso: <span class="dark"><?php print $nodo->vid; ?></span> l </li>
           <li>Visitas: <span class="dark">231</span></li>
         </ul>
 		<?php 

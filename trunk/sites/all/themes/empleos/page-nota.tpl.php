@@ -18,7 +18,14 @@
         $num_nota = arg(1);
 		$nodo = node_load($num_nota);
 		print "<div><h2>".$nodo->title."<h2></div>";
-		print "<div>".$nodo->body."</div>";
+		
+		print '<div><img src="'.'/'.$nodo->field_foto[0]['filepath'].'" title="">';
+		
+		print '<div style="background-color:#FF9">'.$nodo->field_resumen[0]['value'].'</div>';
+		print '<div>'.$nodo->body.'</div>';
+		//print '<pre>';
+		//print_r($nodo);
+		//print '<pre>';
         //print $content;
         ?>
       <?php include("include/banners-central.php");?>
