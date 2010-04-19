@@ -2,11 +2,11 @@ function e(a){return document.getElementById(a);}
 
 //SLIDER HORIZONTAL ESPECIALES - Ajax Puntitos
 
-var Dots=3;//Cantidad de paginas que posee el slider
+var aDots=3;//Cantidad de paginas que posee el slider
 var PosDot=1;//Variable que guarda la posicion del Dot
-var Dots2=3;//Cantidad de paginas que posee el slider2
+var aDots2=3;//Cantidad de paginas que posee el slider2
 var PosDot2=1;//Variable que guarda la posicion del Dot2
-var Dots3=2;
+var aDots3=2;
 var PosDot3=1;
 
 
@@ -22,7 +22,7 @@ function ChangeDot(div){
 			PosDot--;
 		}
 	}else if(div=='Sig'){
-		if(PosDot==3){
+		if(PosDot==Dots){
 			e('Dot'+1).className='NotAct';
 			PosDot=1;
 		}else{
@@ -42,7 +42,7 @@ function ChangeDot2(div){
 			PosDot2--;
 		}
 	}else if(div=='Sig'){
-		if(PosDot2==3){
+		if(PosDot2==Dots2){
 			e('2Dot'+1).className='NotAct';
 			PosDot2=1;
 		}else{
@@ -62,7 +62,7 @@ function ChangeDot3(div){
 			PosDot3--;
 		}
 	}else if(div=='Sig'){
-		if(PosDot3==1){
+		if(PosDot3==Dots3){
 			e('3Dot'+1).className='NotAct';
 			PosDot3=1;
 		}else{
