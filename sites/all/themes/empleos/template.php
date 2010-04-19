@@ -820,6 +820,8 @@ function phptemplate_contact_mail_page(&$form) {
     
     $form['preview']="" ;
     $form['contact_information']['#value']="" ;
+	
+    //$form['submit']['#value']="Enviar" ;
         
     $miform  = '';
     
