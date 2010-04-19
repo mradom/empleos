@@ -96,15 +96,14 @@ function AltDisplay(eldiv, elbot)
 	<div style="width: 300px; float: left;">
 			<p><span class="blue stg">Requisitos que deben cumplir los postulantes:</span></p>
             <ul class="requisitos">
-
-              <li><strong>Educaci&oacute;n: </strong><br>
-                Universitario, Graduado</li>
-              <li><strong>Area de estudio:</strong> <br>
-                Adm. de Empresas, Contabilidad / Auditor&iacute;a, Econom&iacute;a<br>
-                Finanzas, Marketing Comercializaci&oacute;n </li>
-              <li><strong>Idiomas:</strong><br>
-
-                Ingl&eacute;s</li>
+              <li><strong>Edad: </strong><br>
+                Entre <?php echo $nodo->field_edad_entre[0]['value'];?> hasta <?php echo $nodo->field_edad_hasta[0]['value']?></li>
+              <li><strong>Lugar de residencia:</strong> <br>
+                <?php echo $nodo->field_lugar_de_residencia[0]['value'];?></li>
+              <li><strong>Indicar remuneracion:</strong><br><?php echo $nodo->field_remuneracion[0]['value']?></li>
+              <li><strong>Disponibilidad:</strong><br><?php echo $nodo->field_remuneracion[0]['value']?></li>
+              <li><strong>Idiomas:</strong><br /><?php echo $nodo->taxonomy[get_vocabulary_by_name('idiomas')]['name'];?></li>
+              <li><strong>Sexo:</strong><br /><?php echo $nodo->field_sexo[0]['value'];?></li>
             </ul>
 	<!--  Requisitos end -->
 	</div>
