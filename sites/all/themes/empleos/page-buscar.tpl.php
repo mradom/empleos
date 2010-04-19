@@ -14,8 +14,8 @@
     <div id="central_column">
       <?php include("include/resultado_busqueda.php");?>
       <?php include("include/buscador-mini.php");?>
-      </div>      
       <?php include("include/banners-central.php");?>
+    </div>       
   </div>
   <?php include("include/footer.php");?>
 </div>

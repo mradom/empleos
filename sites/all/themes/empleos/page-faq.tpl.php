@@ -20,8 +20,8 @@
           <?php //if ($title): print '<h2 class="blue hTitle"'. ($tabs ? ' class="with-tab"' : '') .'>'. $title .'</h2>'; endif; ?>
           <?php print $content ?>
       </div></div></div></div>
-    </div>      
       <?php include("include/banners-central.php");?>
+    </div>        
 </div>  
 <?php include("include/footer.php");?>
 </div>

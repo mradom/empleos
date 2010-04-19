@@ -11,11 +11,11 @@
     <?php include("include/mi_estadodecuenta_encabezado.php");?> 
     <!-- RIGHT -->
     <!-- CENTRAL -->
-    <DIV id="central_column">
+    <div id="central_column">
 	  <?php //print $content;?>
-    </div>
-  <!-- banners minibox -->
-  <?php include("include/banners-central.php");?> 
+      <!-- banners minibox -->
+      <?php include("include/banners-central.php");?> 
+    </div>  
   </div>
 <?php include("include/footer.php");?>
 </div>

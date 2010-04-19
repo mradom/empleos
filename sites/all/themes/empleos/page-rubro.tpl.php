@@ -13,7 +13,7 @@
 	   if (arg(1)<>'') include("include/col_derecha.php");
 	?>
     <!-- CENTRAL -->
-    <DIV id="central_column">
+    <div id="central_column">
   	      <?php //include("include/lista_rubros.php");?>
               <?php
 			  if ( arg(1)=='') {
@@ -39,8 +39,8 @@
 			  
 
 			?>
-      </div>
       <?php include("include/banners-central.php");?>
+      </div>      
   </div>
   <?php include("include/footer.php");?>
 </div>
