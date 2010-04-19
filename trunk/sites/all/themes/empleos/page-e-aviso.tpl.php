@@ -22,9 +22,9 @@
   </script>
 	<?php print $content;?>
 	  <?php if (arg(1)<>'add' and arg(2)<>'edit' and arg(2)<>'delete' and arg(2)<>'') print "<a href='/node/add/p-objetivo-laboral'>Agregar</a>";?>
-    </div>
-  <?php include("include/banners-central.php");?>
-  </div>
+     <?php include("include/banners-central.php");?>
+     </div>
+   </div>
 <?php include("include/footer.php");?>
 </div>
 </body>
