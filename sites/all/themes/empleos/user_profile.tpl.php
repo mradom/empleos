@@ -4,10 +4,9 @@ global $user_profile;
 
 if (in_array('empresa', array_values($user->roles))) {
       print '<div class="box top" style="background: url(/sites/all/themes/empleos/img/bg_box_top-e.jpg")>';
-      print '<p >poner txt cande <strong>aca el contenido de la home </strong>permanentemente tus datos aumentando tus oportunidades
- de conseguir el empleo que buscas.<br>';
-      print 'Si lo deseas, las empresas y consultoras que accedan a nuestra base de datos<br> en busca de candidatos podran consultar tu curriculum.';
-      print '</p></div>';
+      print '<p><strong>Este es el resumen de tu cuenta.</strong> Los datos que aqu&iacute; se muestran te permitir&aacute;n tener un panorama general de las acciones que realices como usuario de empleoslavoz.com.ar. <br />
+Este resumen  puede ayudarte a planificar o perfeccionar tus futuras b&uacute;squedas y publicaciones de avisos.</p>';
+      print '</div>';
       include("include/submenu-empresa.php");
  } else {
      print '<div class="box top" style="background: url(/sites/all/themes/empleos/img/bg_box_top0.jpg)">';

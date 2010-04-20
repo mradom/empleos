@@ -64,26 +64,24 @@ ul, ol {
 	font:bold 12px Arial;
 	color:#FFF;
 	display:block;
-	height:30px;
-	line-height:20px;
-	overflow:hidden;
+	height:40px;
+	line-height:40px;
 	cursor:pointer;
 	text-align:center;
 	padding:0 10px;
-	margin:10px 0 5px 5px;
+	margin:0 0 5px 5px;
 	
 }
 .ContNyG .Sol li a:hover {
+	background:url(../img/btn_menu_hover.png) bottom repeat-x;
+	-webkit-border-radius: 3px 3px 0 0;
+	-moz-border-radius: 3px 3px 0 0;
+	float: left;
+	color:#FFF;
+	height:40px;
 	text-decoration:none;
-	color:#fff;
-	height:30px;
-	background:transparent url(../img/bg_tab_hover.png);
-	margin-top:10px;
-	line-height:20px;
-	-moz-border-radius: 5px 5px 0 0;
-	-webkit-border-radius: 5px 5px 0 0;
-	-moz-box-shadow: 0 1px 3px rgba(0,0,5,1);
-	-webkit-box-shadow: 0 1px 3px rgba(0,0,5,1);
+	margin-top:0;
+	line-height:40px;
 }
 .ContNyG .Sol li.Act {
 	background:#fff;
@@ -202,7 +200,7 @@ ul, ol {
 	width:32px;
 	position:relative;
 	top:8px;
-	left:2px;
+	left:9px;
 	font-size:0;
 }
 .ContNyG .ContInf .Box .NotPag span {
@@ -307,6 +305,7 @@ background-image: url(../img/arrow_to_right.png);
 	color: #666633;
 	padding:0 5px;
 	clear:both;
+	text-decoration:none
 }
 .ContNyG .ContInf .Box .scroller li a .Not_b {
 	height:198px;

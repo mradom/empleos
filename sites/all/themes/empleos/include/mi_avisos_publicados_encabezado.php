@@ -1,8 +1,7 @@
     <div class="box top" style="background:url(/sites/all/themes/empleos/img/bg_box_top14.jpg)">
-    <div><img style=" padding-left:420px " src="/sites/all/themes/empleos/img/3e-paso.png"></div>
-      <p><strong>Publicar tus avisos</strong> permitir&aacute; postular todas las b&uacute;squedas de empleos que se publiquen en el sitio y, si as&iacute; lo dese&aacute;s, las empresas y consultoras que accedan a nuestra base de datos en busca de candidatos podr&aacute;n consultarlo.
-        El proceso de ingreso del curr&iacute;culum est&aacute; dividido en pasos.<br>
-        Al finalizar la carga de tus datos presion&aacute; el bot&oacute;n &quot;guardar&quot; al final de la p&aacute;gina antes de ir al paso siguiente.</p>
+    <div><img style=" padding-left:460px " src="/sites/all/themes/empleos/img/3e-paso.png"></div>
+      <p>Aqu&iacute; podr&aacute;s <strong>visualizar el historial</strong> detallado de todos los avisos que hayas publicado en el sitio.<br />
+ Esto te permitir&aacute; tener un panorama general y particular de cada aviso ya que podr&aacute;s desde aqu&iacute; mismo editar la informaci&oacute;n que contienen o borrarlos si el puesto que buscabas ya fue cubierto. </p>
    
       
     </div>

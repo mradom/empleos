@@ -546,6 +546,7 @@ li.side div.brand {
 	height:34px;
 	float:left;
 	margin-top:2px;
+	margin-right:10px;
 	background:url(../img/empresas/no-name.jpg) no-repeat;	
 }
 ul.brands li {
@@ -564,8 +565,41 @@ ul.brands li.last {
 	border-bottom:none
 }
 ul.brands li a {
-	padding:0 0 0 10px;
+	padding:0 0 0 0;
 	line-height:38px;
+}
+li.side.brands.center {
+	width:625px;
+	height:auto;
+}
+.m60{
+	margin-left:62px;
+	
+}
+/*----listado empresas----*/
+
+/*----listado rubros---*/
+ul.side li a{
+	color:#3077a4;
+	line-height:18px;
+	font-weight:bold;
+	background:url(../img/bullet_blue.gif) left 5px no-repeat;
+	padding-left:10px;
+}
+ul.side li a:hover {
+	color:#FF9900;
+	font-weight:bold;
+	text-decoration:none;
+	background: url(../img/bullet_orange.gif) left 5px no-repeat;
+}
+ul.side ul ul a{
+	font-weight:normal;
+	line-height:18px;
+	background:none;
+	padding-left:0;
+}
+ul.side ul ul a:hover{
+	background:none;
 }
 /*----center--------*/
 .box.center {
@@ -573,9 +607,6 @@ ul.brands li a {
 }
 #central_column .bar_blue {
 	width:680px;
-}
-ul.brands li.center {
-	width:625px;
 }
 /*-----------tabs-box----------------*/
 ul.left {
