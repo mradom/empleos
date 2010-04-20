@@ -28,7 +28,7 @@
 					  $output .= "<li><strong></strong></li>\n"
 							  .  get_child_terms(0, $avoc->vid);
 				  }
-				  print "<div class='taxonomy_tree'><p><ul>\n". $output ."</ul></p></div>\n";
+				  print "<div class='taxonomy_tree grey'><p><ul class='side'>\n". $output ."</ul></p></div>\n";
 				  print '</div>';
 			  }
 			  if (arg(1)<>'') {

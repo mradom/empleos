@@ -22,10 +22,10 @@
       <?php
         $num_nota = arg(1);
 		$nodo = node_load($num_nota);
-		print'<div class="contentNotas">';
-		print "<div class='nota'><h2>".$nodo->title."<h2> <h3>Nota publicada por empleoslavoz</h3></div>";
+		print '<div class="contentNotas">';
+		print '<div class="nota"><h2>'.$nodo->title.'</h2> <h3>Nota publicada por empleoslavoz</h3> </div>';
 		
-		print '<div ><img class="photo" src="'.'/'.$nodo->field_foto[0]['filepath'].'" title="">';
+		print '<div ><img class="photo" src="'.'/'.$nodo->field_foto[0]['filepath'].'" title=""></img></div>';
 		
 		print '<div class="bajada">'.$nodo->field_resumen[0]['value'].'</div>';
 		print '<div class="cuerpo">'.$nodo->body.'</div>';
@@ -33,7 +33,7 @@
 		//print_r($nodo);
 		//print '<pre>';
         //print $content;
-		print'</div>';
+		print '</div>';
         ?>
         
       <?php include("include/banners-central.php");?>
