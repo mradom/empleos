@@ -1,3 +1,8 @@
-<div id="right_column">
-  <div class="banner rectangle"><img src="/sites/all/themes/empleos/img/post_creative-genius-headphone-toy.jpg"></div>
-</div>
+<?php		
+    print '<div id="right_column"><div class="banner rectangle">';
+    $conf= Array ('style' => 'block', 'override_title' => '0','override_title_text' => '', 'css_id' => '', 
+		    'css_class' => '', 'name' => 'banner_derecha1',);
+	$columna= panels_mini_content($conf, $panel_args, $contexts);
+    print ($columna->content); 	
+	print '</div></div>';
+?>
