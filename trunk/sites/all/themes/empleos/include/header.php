@@ -3,22 +3,22 @@
 ?>      <!-- ini -->
 		<div id="header">
 			<!-- Banner Topsite -->
-			<div class="banner top"> Topsite</div>
+            <?php include("sites/all/themes/empleos/include/banners-top.php");?>
 			<div class="clearfix"></div>
     		<!-- login -->
-				<?php include("user-login.php"); ?>
+				<?php include("sites/all/themes/empleos/include/user-login.php"); ?>
                <!-- logo -->
                <div id="logo"><a title="Home" href="/principal"><img src="/sites/all/themes/empleos/img/logo.jpg"></a></div>
     		   <div style="clear: both;"></div>
     		   <!-- menu -->
-			   <?php include("menu.php");?>
+			   <?php include("sites/all/themes/empleos/include/menu.php");?>
                
                <?php If ((arg(0)<>'buscar') and (arg(0)<>'principal')) { ?><div id="browser" class="inside"> </div><?php } ?>
 
                <?php If ( (arg(0)=='principal') or (arg(0)=='buscar') ) { ?>
                 <!-- browser -->
     			<div id="browser">
-                <?php include("buscador.php");?>
+                <?php include("sites/all/themes/empleos/include/buscador.php");?>
       				<div class="white right">
                        <?php if (!$user->uid) {
                             print '<h1 style="margin-top:10px; text-align:center">&iquest;Primera vez en empleoslavoz?</h1>'; 

@@ -7,14 +7,14 @@
   <?php include("include/header.php");?>
   <!-- MIDDLE -->
   <div id="midle">
-    <?php include("include/banners-boxes.php");?>
+    <?php //include("include/banners-boxes.php");?>
     <!-- RIGHT -->
-    <?php include("include/col_derecha.php");?>
+    <?php //include("include/col_derecha.php");?>
     <!-- ----CENTRAL colum------ -->
     <div id="central_column">
-      <?php include("include/resultado_busqueda.php");?>
-      <?php include("include/buscador-mini.php");?>
-      <?php include("include/banners-central.php");?>
+      <?php //include("include/resultado_busqueda.php");?>
+      <?php //include("include/buscador-mini.php");?>
+      <?php //include("include/banners-central.php");?>
     </div>       
   </div>
   <?php include("include/footer.php");?>

@@ -1,13 +1,5 @@
-      <!-- Banner Middle -->
         <!-- Tabs de Empleos destacados -->
         <div id="tab-container">
-        <!-- <div id="tab-container-header" class="tab-header">
-        	<ul class="tab-list">
-        		<li id="tab-container-tab-0">
-        			<a title="empleos destacados" href="javascript://" class="tab-item tab-active">Ofertas de empleos destacados</a>
-        		</li>
-        	</ul>
-        </div> --> 
         <div style="display: block;" class="tab-content">
             <h1 class="tab" title="empleos destacados">Ofertas de empleos destacados</h1>
             <div class="widget">
@@ -113,7 +105,12 @@
 
 
         <!-- Banner meddle -->
-        <div class="banner middle"><img src="/sites/all/themes/empleos/img/normal_banner-communicator.jpg"></img></div>
+        <div class="banner middle"> <?php
+            $conf= Array ('style' => 'block', 'override_title' => '0','override_title_text' => '', 'css_id' => '', 
+		    'css_class' => '', 'name' => 'banner_central_home',);
+			$columna= panels_mini_content($conf, $panel_args, $contexts);
+    		print ($columna->content); ?>	
+        </div>
         
 
         <!-- SLIDE NOTICIAS -->
@@ -253,3 +250,4 @@
 				</script>
           </div>          
         </div>
+                </div>
