@@ -458,7 +458,7 @@ ul.tags li.final {
 #header .banner.top {
 	width:990px;
 	height:50px;
-	background: #999;
+	background: #CCC;
 	float:left;
 	margin-bottom:10px;
 }
@@ -467,20 +467,20 @@ ul.tags li.final {
 	width:680px;
 	height:100px;
 	float:left;
-	background:#999;
+	background:#CCC;
 }
 /*box*/
 .banner.boxes {
 	width:300px;
 	height:100px;
-	background: #999;
+	background: #CCC;
 	float:left;
 }
 /*rectangle*/
 .banner.rectangle {
 	width:300px;
 	height:250px;
-	background: #999;
+	background: #CCC;
 	float:left;
 	margin-bottom:10px;
 }
@@ -489,7 +489,7 @@ ul.tags li.final {
 	width:150px;
 	height:60px;
 	float:left;
-	background: #999;
+	background: #CCC;
 	display:inline-block;
 }
 /*------------MIDDLE-----------*/

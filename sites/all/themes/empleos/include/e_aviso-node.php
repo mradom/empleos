@@ -96,14 +96,13 @@ function AltDisplay(eldiv, elbot)
 	<div style="width: 300px; float: left;">
 			<p><span class="blue stg">Requisitos que deben cumplir los postulantes:</span></p>
             <ul class="requisitos">
-              <li><strong>Edad: </strong><br>
+              <li><strong>Edad: </strong>
                 Entre <?php echo $nodo->field_edad_entre[0]['value'];?> hasta <?php echo $nodo->field_edad_hasta[0]['value']?></li>
-              <li><strong>Lugar de residencia:</strong> <br>
-                <?php echo $nodo->field_lugar_de_residencia[0]['value'];?></li>
-              <li><strong>Indicar remuneracion:</strong><br><?php echo $nodo->field_remuneracion[0]['value']?></li>
-              <li><strong>Disponibilidad:</strong><br><?php echo $nodo->field_remuneracion[0]['value']?></li>
-              <li><strong>Idiomas:</strong><br /><?php echo $nodo->taxonomy[get_vocabulary_by_name('idiomas')]['name'];?></li>
-              <li><strong>Sexo:</strong><br /><?php echo $nodo->field_sexo[0]['value'];?></li>
+              <li><strong>Lugar de residencia:</strong> <?php echo $nodo->field_lugar_de_residencia[0]['value'];?></li>
+              <li><strong>Indicar remuneracion:</strong> <?php echo $nodo->field_remuneracion[0]['value']?></li>
+              <li><strong>Disponibilidad:</strong> <?php echo $nodo->field_remuneracion[0]['value']?></li>
+              <li><strong>Idiomas:</strong> <?php //echo $nodo->taxonomy[get_vocabulary_by_name('idiomas')]['name'];?></li>
+              <li><strong>Sexo:</strong> <?php echo $nodo->field_sexo[0]['value'];?></li>
             </ul>
 	<!--  Requisitos end -->
 	</div>
@@ -121,7 +120,7 @@ function AltDisplay(eldiv, elbot)
 		<?php }
 		?>
         <div style="clear:both"></div>
-        <div class="arrow">Otras ofertas de trabajo en <a href="/taxonomy/term/<?php print $area;?>"><?php print $nodo->taxonomy[$area]->name; ?></a></div>
+        <div class="arrow">Otras ofertas de trabajo en <a href="/rubro/<?php print $area;?>"><?php print $nodo->taxonomy[$area]->name; ?></a></div>
 	
 	
     	

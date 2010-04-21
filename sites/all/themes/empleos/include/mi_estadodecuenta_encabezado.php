@@ -1,4 +1,4 @@
-    <div class="box top" style="background:url(/sites/all/themes/empleos/img/bg_box_ecuentas.jpg)">
+    <div class="box top" style="background:url(/sites/all/themes/empleos/img/bg_box_top-e.jpg)">
     <div><img style=" padding-left:420px " src="/sites/all/themes/empleos/img/5e-paso.png"></div>
       <p><strong>Publicar tus avisos</strong> permitir&aacute; postular todas las b&uacute;squedas de empleos que se publiquen en el sitio y, si as&iacute; lo dese&aacute;s, las empresas y consultoras que accedan a nuestra base de datos en busca de candidatos podr&aacute;n consultarlo.
         El proceso de ingreso del curr&iacute;culum est&aacute; dividido en pasos.<br>
