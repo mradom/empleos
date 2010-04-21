@@ -1,6 +1,6 @@
 <?php
 
-print '<div class="content_banners" style="margin-bottom:20px;">';
+print '<div class="content_banners">';
   // banner 1
   print '<div class="banner minibox" style="margin-right:26px;">'; 
     $conf= Array ('style' => 'block', 'override_title' => '0','override_title_text' => '', 'css_id' => '', 
