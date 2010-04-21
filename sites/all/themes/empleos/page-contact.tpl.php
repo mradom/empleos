@@ -1,6 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language ?>" lang="<?php print $language ?>">
 <?php include("include/head.php");?>
+<?php include("include/varios.php");?>
 <body>
 <div id="wrapper">
   <!-- HEADER -->
@@ -11,7 +12,10 @@
     <?php //include("include/banners-boxes.php");?>
     <?php include("include/contact_encabezado.php");?>
     <!-- RIGHT -->
-    <?php include("include/col_derecha-mini.php");?>
+    <div id="right_column">
+    <?php Empleos_ayuda('Tip', 'Contact');  ?>
+    <?php include("include/col_derecha-sin.php");?>
+    </div>
     <!-- CENTRAL -->
     <div id="central_column">
     <?php //if (arg(1)=='') { ?>

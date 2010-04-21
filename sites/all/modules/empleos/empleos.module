@@ -103,33 +103,33 @@ function empleos_menu($may_cache) {
 }
 
 function empleos_test() {
-   return '============================================';
+   return '';
 }
 
 function empleos_buscar() {
-   return '============================================';
+   return '';
 }
 
 function empleos_rubro() {
-   return '============================================';
+   return '';
 }
 
 function empleos_empresa() {
-   return '============================================';
+   return '';
 }
 
 function empleos_consultora() {
-   return '============================================';
+   return '';
 }
 
 function empleos_mapadelsitio() {
-   return '============================================';
+   return '';
 }
 function empleos_avanzada() {
-   return '============================================';
+   return '';
 }
 function empleos_nota() {
-   return '============================================';
+   return '';
 }
 
 
