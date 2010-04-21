@@ -5,7 +5,6 @@
 <div id="wrapper">
   <!-- HEADER -->
   <?php include("include/header.php");?>
-  <div id="browser" class="inside"> </div>
   <!-- MIDDLE -->
   <div id="midle">
     <?php include("include/mi_estadodecuenta_encabezado.php");?> 

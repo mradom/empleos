@@ -10,7 +10,7 @@
     <?php include("include/banners-boxes.php");?>
     <!-- RIGHT -->
     <?php 
-	   if (arg(1)<>'') include("include/col_derecha.php");
+	   include("include/col_derecha.php");
 	?>
     <!-- CENTRAL -->
     <div id="central_column">

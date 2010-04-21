@@ -11,7 +11,8 @@ $base_query = "SELECT * FROM node_revisions AS nr
 INNER JOIN node AS n ON n.nid = nr.nid ";
 // ojo tiene que ser select * si o si para que funcione el paginador
 
-$inner_join = " INNER JOIN workflow_node AS w ON w.nid = n.nid ";
+$inner_join = "INNER JOIN content_type_e_aviso AS w ON w.nid = n.nid ";
+// " INNER JOIN workflow_node AS w ON w.nid = n.nid ";
 
 $inner_join2 = " INNER JOIN pub_publicacion AS z ON z.nid = n.nid ";
 // en el cid esta el tipo
@@ -31,9 +32,12 @@ if($zona > 0){
 	$where = $where . "AND tn2.tid = ". $zona ." ";
 }
 
-$where = $where . " ORDER BY w.sid, n.created DESC  ";
+$where = $where . " ORDER BY w.field_tipo_de_aviso_format, n.created DESC  ";
 
 $sql = $base_query.$inner_join.$where;
+
+//Print "<pre>".$sql."<pre>";
+
     //$rs = db_query($sql);
 
 	$nodes_per_page = variable_get(EMPLEOS_PAGE_LIMIT, 20);
@@ -85,7 +89,10 @@ $sql = $base_query.$inner_join.$where;
         			foreach($nodo->taxonomy as $value){
         				if ($value->vid == 17){$localidad = $value->tid; break;}
         			}
-					switch ($nodo->_workflow) {
+						//print "<pre>";
+						//print_r($nodo);
+						//print "</pre>";
+					switch ($fila->field_tipo_de_aviso_format) {
 					    case 3:
         			        //if ( ($otro==1) and ($tipo <> 3) ) { print '</div><!-- fin tipo -->'; $otro=0; } 						
 						    if($gold == "0"){
@@ -143,7 +150,7 @@ $sql = $base_query.$inner_join.$where;
 					        break;	
 					}
 
-        			if($nodo->_workflow == 3 or $nodo->_workflow == 4){
+        			if($fila->field_tipo_de_aviso_format == 3 or $fila->field_tipo_de_aviso_format == 4){
    					    print '<!-- ini destacado -->';
 						// gold y destacado
 						  print '<div>';
@@ -187,7 +194,7 @@ $sql = $base_query.$inner_join.$where;
 						print '</div>';						
 						print '<!-- fin destacado -->';
 					    }
-		          	  if($nodo->_workflow == 5){
+		          	  if($fila->field_tipo_de_aviso_format == 5){
 		          	    // simple
 						print '<!-- ini simple -->';
 						print '<div>';
@@ -225,7 +232,7 @@ $sql = $base_query.$inner_join.$where;
 						print '</div>';						  
 						print '<!-- fin simple -->';
 		          		}
-	                  if($nodo->_workflow == 6){
+	                  if($fila->field_tipo_de_aviso_format == 6){
 						print '<!-- ini free -->';
 		          	    // free
 						print '<div>';

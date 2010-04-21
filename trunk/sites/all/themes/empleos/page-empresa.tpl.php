@@ -39,7 +39,7 @@
 					  print '</div>';
 					  //$empresa->profile_empresa_razon_social)
                       //print '<div><a href="/empresa/'.$fila->uid.'" >'.$empresa->name.'</a></div>';
-					  print '<div ><a href="#">'.$empresa->profile_empresa_razon_social.'</a></div>'; 
+					  print '<div ><a href="/empresa/'.$fila->uid.'" >'.$empresa->profile_empresa_razon_social.'</a></div>'; 
 					  print '<div  class="m60">'.$empresa->profile_empresa_calle.' '.$empresa->profile_empresa_numero.'</div>';
                       print '</li>';
                   }
@@ -75,12 +75,15 @@ function empresa_buscar() {
       $emp->{$field->name} = _profile_field_serialize($field->type) ? unserialize($field->value) : $field->value;
     }
   }
-  print '<br><br><br><br><br><br><br>';
+  print '<br>';
+  print theme('imagecache','logo_empresa_52_34',$emp->picture,$emp->picture,$emp->uid);
   print 'Nombre: '.$emp->profile_empresa_empresa_nombre.'<br>';
   
   print '<a href="/empresa/'.arg(1).'/avisos">Listado de avisos</a><br>';
 
-  print '<br><a href="/empresa">Volver</a>';
+  print '<div><a href="/empresa">Volver</a></div>';
+  
+  print "<div>&nbsp;</br>&nbsp;</br>&nbsp;</br>&nbsp;</br>&nbsp;</br></div>";
 
 }
 
@@ -335,7 +338,7 @@ $sql = $base_query.$inner_join.$where;
 	}
 		 print '<div style="float: right; ">'.theme('pager', NULL, $nodes_per_page).'</div>';	
         
-    print '</div><!--fin listado-->'; 
+    print '</div>'; 
 }
 ?>
 

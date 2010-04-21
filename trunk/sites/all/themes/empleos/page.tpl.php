@@ -36,7 +36,7 @@ switch ($node->type) {
 		include 'page-mi-objetivo-laboral.php';
 		return;		 		
 	case 'e_aviso':
-		include 'page-e-aviso.tpl.php';
+		include 'page-e_aviso.tpl.php';
 		return;
 	default:
 }
