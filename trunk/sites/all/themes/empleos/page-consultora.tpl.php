@@ -35,8 +35,8 @@
                       $empresa = user_load(array('uid' => $fila->uid));
 					  firep($empresa, 'Empresa');
                       print '<li class="center"><div class="brand">';
-                      print theme('imagecache','logo_empresa_52_34',$empresa->picture,$empresa->picture,$empresa->name);                      print '<div><a href="/empresa/'.$fila->uid.'" >'.$empresa->name.'</a></div>';
-					  print '<div>'.$empresa->mail.'</a></div>';
+                      print theme('imagecache','logo_empresa_52_34',$empresa->picture,$empresa->picture,$empresa->name); 
+					  print '<div><a href="/empresa/'.$fila->uid.'" >'.$empresa->name.'</a> <br> '.$empresa->mail.'</div>';
                       print '</li>';
                   }
                   print '</ul></div>';

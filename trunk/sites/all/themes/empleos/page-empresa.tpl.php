@@ -33,14 +33,16 @@
                   while($fila = mysql_fetch_object($rs)){
                       $empresa = user_load(array('uid' => $fila->uid));
 					  //firep($empresa, 'Empresa');	
-                      print '<li class="brands center">';
+                      print '<li class="center">';
                       print '<div class="brand">';
                       print theme('imagecache','logo_empresa_52_34',$empresa->picture,$empresa->picture,$fila->uid);
 					  print '</div>';
 					  //$empresa->profile_empresa_razon_social)
                       //print '<div><a href="/empresa/'.$fila->uid.'" >'.$empresa->name.'</a></div>';
-					  print '<div><a href="/empresa/'.$fila->uid.'" >'.$empresa->profile_empresa_razon_social.'</a></div>'; 
-					  print '<div>'.$empresa->profile_empresa_calle.'<br> '.$empresa->profile_empresa_numero.'</div>';
+					  print '<div style=" float:right"><a href"#">ver datos de la epresa</a></div>';
+					  print '<div style=" float:right"><a href"#">ver avisos de la empresa</a></div>';
+					  print '<div ><a class="brands" href="/empresa/'.$fila->uid.'" >'.$empresa->profile_empresa_razon_social.'</a></div>'; 
+					  print '<div>'.$empresa->profile_empresa_calle .'&nbsp;'.$empresa->profile_empresa_numero.'</div>';
                       print '</li>';
                   }
                   print '</ul></div>';

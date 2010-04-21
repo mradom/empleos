@@ -241,7 +241,10 @@ li.btns.sig:hover{
 	-webkit-border-radius:3px;
 	color: #828282;
 }
-
+.box.tips ul li{
+	background:url(../img/bullet_orange.gif) left 5px no-repeat;
+	padding-left:10px;
+}
 /*--------------------------FIN--NUEVAS CLASES-------------------submenu-------*/
 
 /*--browser--*/
@@ -538,16 +541,9 @@ li.side a:hover {
 li.side span {
 	color:#999999
 }
+
 ul.brands {
 	padding-top:5px;
-}
-li.side div.brand {
-	width:52px;
-	height:34px;
-	float:left;
-	margin-top:2px;
-	margin-right:10px;
-	background:url(../img/empresas/no-name.jpg) no-repeat;	
 }
 ul.brands li {
 	border-bottom-width: 1px;
@@ -564,6 +560,7 @@ ul.brands li.side {
 	display: block;
 	clear: both;
 }
+
 ul.brands li.side {
 	width:275px;
 }
@@ -573,15 +570,40 @@ ul.brands li.side a{
 ul.brands li.last {
 	border-bottom:none
 }
-li.brands.center {
-	width:625px;
+li.side div.brand {
+	width:52px;
+	height:34px;
+	float:left;
+	margin-top:2px;
+	margin-right:10px;
+	background:url(../img/empresas/no-name.jpg) no-repeat;	
+}
+/*--------*/
+li.center {
+	width:655px;
 	height:auto;
+	float:left;
+	padding:5px 0;
 }
-li.brands.center div{
-	margin-left:60px;
+li.center div{
+	float:left;
+
 }
-li.brands.center div.brand{
-	margin-left:0;
+li.center div.brand img{
+	width:52px;
+	height:34px;
+	margin-right:10px;
+	float:left;
+
+}
+li.center a.brands {
+	color:#3077a4;
+	line-height:18px;
+}
+li.center a.brands:hover {
+	color:#FF9900;
+	font-weight:bold;
+	text-decoration:none;
 }
 
 /*----listado empresas----*/
