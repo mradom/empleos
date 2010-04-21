@@ -19,7 +19,7 @@
 	   if (arg(1)<>'') include("include/col_derecha.php");
 	?>
     <!-- CENTRAL -->
-    <DIV id="central_column">
+    <div id="central_column">
     <?php 
     if ( arg(1)=='') {
 		          print '<div class="bar_blue"><div class="corner_blue _2"></div>';
@@ -33,14 +33,14 @@
                   while($fila = mysql_fetch_object($rs)){
                       $empresa = user_load(array('uid' => $fila->uid));
 					  //firep($empresa, 'Empresa');	
-                      print '<li class=" side brands center">';
+                      print '<li class="brands center">';
                       print '<div class="brand">';
                       print theme('imagecache','logo_empresa_52_34',$empresa->picture,$empresa->picture,$fila->uid);
 					  print '</div>';
 					  //$empresa->profile_empresa_razon_social)
                       //print '<div><a href="/empresa/'.$fila->uid.'" >'.$empresa->name.'</a></div>';
-					  print '<div ><a href="/empresa/'.$fila->uid.'" >'.$empresa->profile_empresa_razon_social.'</a></div>'; 
-					  print '<div  class="m60">'.$empresa->profile_empresa_calle.' '.$empresa->profile_empresa_numero.'</div>';
+					  print '<div><a href="/empresa/'.$fila->uid.'" >'.$empresa->profile_empresa_razon_social.'</a></div>'; 
+					  print '<div>'.$empresa->profile_empresa_calle.'<br> '.$empresa->profile_empresa_numero.'</div>';
                       print '</li>';
                   }
                   print '</ul></div>';
@@ -129,7 +129,7 @@ $sql = $base_query.$inner_join.$where;
 
 
 
-	print '<div style="float: left;">';
+	//print '<div style="float: left;">';-----------------------------------------------------------------------------
     //print '<UL class="tags">'; 
     //print '<li><H1><A href="/buscar">Buscar</A></H1></LI>';
     //if(isset($rubro)) print '<li><h1><a href="/buscar/'.$rubro.'">$rubro / </a></h1></li>';
@@ -138,10 +138,10 @@ $sql = $base_query.$inner_join.$where;
 	//print '<li>['.$nodes_per_page.']</li>';
 
     //print '</UL></div>'; 
-    print '<DIV class="box central" style="background:none">'; 
-	print '<DIV class="results"><DIV class="rss redes"><A href="#">Compartir</A>'; 
-    print '</div><DIV class="rss"><A href="#">RSS</A>';
-	print '</div><P><SPAN class="orange">'.$uid.'</SPAN> : '.$pager_total_items[0].' aviso/s</P>'; 
+    print '<div class="box central" style="background:none">'; 
+	print '<div class="results"><div class="rss redes"><A href="#">Compartir</A></div>'; 
+    print '<div class="rss"><A href="#">RSS</A></div>';
+	print '<P><SPAN class="orange">'.$uid.'</SPAN> : '.$pager_total_items[0].' aviso/s</P>'; 
 	print '</div>';
 
 
@@ -150,9 +150,10 @@ $sql = $base_query.$inner_join.$where;
 	$simple = "0";
 	$gratis = "0";
 	$otro = 0;
-	
+	$paso=0;
 	if(mysql_num_rows($rs) > 0){
 		while($fila = mysql_fetch_object($rs)){
+			$paso=1;
 			$nodo = node_load($fila->nid);
 
 			foreach($nodo->taxonomy as $value){
@@ -330,14 +331,15 @@ $sql = $base_query.$inner_join.$where;
 		}
 		 // aca cierro el div del tipo de aviso
 		 print '</div>';
-		 //if ($otro==1) { print '</div><!-- fin todo -->'; $otro=0;} 
+		
 	
 		
 	} else {
 		print '<div><p>No se encontraron avisos en este rubro.</p></div>';
 	}
-		 print '<div style="float: right; ">'.theme('pager', NULL, $nodes_per_page).'</div>';	
-        
+	    //if ($paso==1) { print '</div>'; $otro=0;} 
+		print '<div style="float: right; ">'.theme('pager', NULL, $nodes_per_page).'</div>';	
+     
     print '</div>'; 
 }
 ?>
