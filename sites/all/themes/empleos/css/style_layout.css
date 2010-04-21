@@ -553,6 +553,12 @@ ul.brands li {
 	border-bottom-width: 1px;
 	border-bottom-style: dotted;
 	border-bottom-color: #cccccc;
+
+}
+ul.brands li.side {
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #cccccc;
 	height: 38px;
 	float: left;
 	display: block;
@@ -561,21 +567,23 @@ ul.brands li {
 ul.brands li.side {
 	width:275px;
 }
+ul.brands li.side a{
+	line-height:38px;
+}
 ul.brands li.last {
 	border-bottom:none
 }
-ul.brands li a {
-	padding:0 0 0 0;
-	line-height:38px;
-}
-li.side.brands.center {
+li.brands.center {
 	width:625px;
 	height:auto;
 }
-.m60{
-	margin-left:62px;
-	
+li.brands.center div{
+	margin-left:60px;
 }
+li.brands.center div.brand{
+	margin-left:0;
+}
+
 /*----listado empresas----*/
 
 /*----listado rubros---*/
@@ -956,11 +964,11 @@ div.status {
 
 .pager a,
 .pager strong.pager-current {
-  padding:0.5em;
+  padding:0.2em 0.5em;
 }
 
 .pager {
-  padding:10px 0px 3px;
+  padding:0
 }
 
 .pager div {
@@ -972,7 +980,7 @@ div.status {
 .pager a,
 .pager a:link,
 .pager a:visited {
-  margin:0px 0.15em 0px 0.15em;
+  margin:0px 0.15em;
   background-color:#fff;
   border:1px solid #3077a4;
   font-weight: bold;
@@ -990,7 +998,7 @@ div#page .pager a:hover {
   color:#fff;
   font-weight: bold;
 }
-
+/*---*/
 .taxonomy_tree ul {
   list-style-type: none;
   margin: 0px 0px 0px 20px;
