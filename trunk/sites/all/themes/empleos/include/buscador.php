@@ -28,17 +28,7 @@
 			?>
 		</select>
 		<input name="buscar" class="btn_gral" style="margin-left:60px; padding:0 15px 3px 15px;" value="Buscar Ahora" alt="Buscar" type="submit" dir="ltr">
-		<div id="hide" style="display:none;">
-			<label for="fechaDesde">Fecha desde</label><input type="text" id="fechaDesde" />
-			<label for="fechaHasta">Fecha Hasta</label><input type="text" id="fechaHasta" />
-		</div>
 	  </form>
 	  <div class="btn_busquedaA"><a href="/avanzada">B&uacute;squeda avanzada</a></div>
 	</div>
 </div>
-	<script type="text/javascript">
-	$(function() {
-		$("#fechaDesde").datepicker({minDate: -10, maxDate: '+0', hideIfNoPrevNext: true});
-		$("#fechaHasta").datepicker({minDate: -10, maxDate: '+0', hideIfNoPrevNext: true});
-	});
-	</script>
