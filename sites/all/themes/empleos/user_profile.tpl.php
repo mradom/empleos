@@ -18,8 +18,8 @@ Este resumen  puede ayudarte a planificar o perfeccionar tus futuras b&uacute;sq
 
 
 
-firep($fields, 'Fields');
-firep($user, 'User');
+//firep($fields, 'Fields');
+//firep($user, 'User');
 //firep($user_profile, 'User');
 
 print '<div>';

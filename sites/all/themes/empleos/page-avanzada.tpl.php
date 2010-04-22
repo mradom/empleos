@@ -17,7 +17,7 @@
       <?php
         //}
         //if (arg(1)<>"") {
-        print $content;
+        include("include/busqueda-avanzada.php");
 		//}
         ?>
       <?php include("include/banners-central.php");?>

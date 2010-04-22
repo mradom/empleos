@@ -5,17 +5,17 @@ global $user_profile;
   		if ($user->uid){
   			Print '<div class="share"><img src="sites/all/themes/empleos/img/icoImprimir.png" width="16" height="16" border=0 alt="Imprimir" style="margin-right:7px;"> <a href="/?q=cv_print/me" target="_blanc">Imprimir</a>&nbsp;&nbsp; <img src="sites/all/themes/empleos/img/icoRecomendar.png" width="16" height="16" border=0 alt="Recomendar este aviso" style="margin-right:7px;"> <a href="#">Enviar a un amigo</a>
       </div>';
+  		  	if(arg(0) == "user"){
+  				$usuario = user_load(array('uid' => arg(1)));	
+  			}else{
+  				$usuario = user_load(array('uid' => $user->uid));
+  			}
   		  	if(arg(1) != $user->uid){
 				$link = "#";
 			}else{
 				$link = "/?q=/user/me/edit/Empleado";
 			}
   			Print '<div class="itemTitle" style="padding-left:10px; clear:both"><a class="orange" href="'.$link.'">Datos Personales</a></div>';
-  			if(arg(0) == "user"){
-  				$usuario = user_load(array('uid' => arg(1)));	
-  			}else{
-  				$usuario = user_load(array('uid' => $user->uid));
-  			}
   			
   			//print '<pre>';
   			//print_r($usuario);
@@ -46,13 +46,20 @@ global $user_profile;
  			
   			
   			// Educacion --------------------------------------------------------------------------------------------
-  			$view = views_get_view('mis_educacion');
-			$vista = views_build_view('items', $view, false, false);
-			if(arg(1) != $user->uid){
+			if(arg(0) == "user"){
 				$link = "#";
+				$argu = array("uid"=>arg(1));
 			}else{
 				$link = "/?q=/node/add/p-educacion";
+				$argu = array("0"=>$user->uid);
 			}
+  			$view = views_get_view('mis_educacion');
+  			print_r($argu);
+			$vista = views_build_view('items', $view, $argu, false);
+			echo "<pre>";
+			print_r($argu);
+			print_r($vista);
+			echo "</pre>";
 			Print '<div class="itemTitle" style="padding-left:10px; clear:both"><a class="orange" href="'.$link.'">Educacion</a></div>';
 			?>
 			<TABLE class="tablaGris" border="0" cellpadding="0" cellspacing="1">
@@ -109,7 +116,7 @@ global $user_profile;
 				?>
 			<TR>
 			<?php 
-				if ($node->nid == $row->nid or arg(1) != $user->uid){ 
+				if ($node->nid == $row->nid or arg(0) == "user"){ 
 					print '<TD>'.$a_ini.'-'.$m_ini.' - '.$a_fin.'-'.$m_fin.'</TD>';
 				}else{
 					print '<TD><A href="/?q=node/'.$row->nid.'/edit" title="editar">'.$a_ini.'-'.$m_ini.' - '.$a_fin.'-'.$m_fin.'</A></TD>';	

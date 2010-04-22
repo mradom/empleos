@@ -1,60 +1,61 @@
 <?php 
 global $pager_total_items;
-
-$key = $_POST["key"];
-$rubro = $_POST["rubro"];
-$zona = $_POST["zona"];
-
-$sql_query = "";
-
-$base_query = "SELECT * FROM node_revisions AS nr
-INNER JOIN node AS n ON n.nid = nr.nid ";
-// ojo tiene que ser select * si o si para que funcione el paginador
-
-$inner_join = "INNER JOIN content_type_e_aviso AS w ON w.nid = n.nid ";
-// " INNER JOIN workflow_node AS w ON w.nid = n.nid ";
-
-$inner_join2 = " INNER JOIN pub_publicacion AS z ON z.nid = n.nid ";
-// en el cid esta el tipo
-// abajo deberia estar ordenado por CID desc y desde ASC
-
-$where = "WHERE n.type = 'e_aviso' AND n.status = 1 ";
-
-if($key != "" and $key != 'Buscar por palabras clave'){
-	$where = $where."AND n.title LIKE '%".$key."%' or nr.body LIKE '%".$key."%' ";
+	$key = $_POST["key"];
+	$rubro = $_POST["rubro"];
+	$zona = $_POST["zona"];
+if($_REQUEST['busqueda'] == "avanzada"){
+	echo "RESULTADO DE AVANZADAS";
+}else{
+	$sql_query = "";
+	
+	$base_query = "SELECT * FROM node_revisions AS nr
+	INNER JOIN node AS n ON n.nid = nr.nid ";
+	// ojo tiene que ser select * si o si para que funcione el paginador
+	
+	$inner_join = "INNER JOIN content_type_e_aviso AS w ON w.nid = n.nid ";
+	// " INNER JOIN workflow_node AS w ON w.nid = n.nid ";
+	
+	$inner_join2 = " INNER JOIN pub_publicacion AS z ON z.nid = n.nid ";
+	// en el cid esta el tipo
+	// abajo deberia estar ordenado por CID desc y desde ASC
+	
+	$where = "WHERE n.type = 'e_aviso' AND n.status = 1 ";
+	
+	if($key != "" and $key != 'Buscar por palabras clave'){
+		$where = $where."AND n.title LIKE '%".$key."%' or nr.body LIKE '%".$key."%' ";
+	}
+	if($rubro > 0){
+		$inner_join = $inner_join . " INNER JOIN term_node AS tn1 ON tn1.nid = n.nid ";
+		$where = $where . "AND tn1.tid = ". $rubro ." ";
+	}
+	if($zona > 0){
+		$inner_join = $inner_join ." INNER JOIN term_node AS tn2 ON tn2.nid = n.nid ";
+		$where = $where . "AND tn2.tid = ". $zona ." ";
+	}
+	
+	$where = $where . " ORDER BY w.field_tipo_de_aviso_format, n.created DESC  ";
+	
+	$sql = $base_query.$inner_join.$where;
 }
-if($rubro > 0){
-	$inner_join = $inner_join . " INNER JOIN term_node AS tn1 ON tn1.nid = n.nid ";
-	$where = $where . "AND tn1.tid = ". $rubro ." ";
-}
-if($zona > 0){
-	$inner_join = $inner_join ." INNER JOIN term_node AS tn2 ON tn2.nid = n.nid ";
-	$where = $where . "AND tn2.tid = ". $zona ." ";
-}
-
-$where = $where . " ORDER BY w.field_tipo_de_aviso_format, n.created DESC  ";
-
-$sql = $base_query.$inner_join.$where;
 
 //Print "<pre>".$sql."<pre>";
 
     //$rs = db_query($sql);
+    echo $sql;
 
 	$nodes_per_page = variable_get(EMPLEOS_PAGE_LIMIT, 20);
 	$nodes_per_page = 2;
 	
 	$rs = pager_query($sql,$nodes_per_page,0);
-
-
 ?>
 <!-- Poner aca camino de links -->
 	  <div style="float: left;">
       <UL class="tags">
         <li><H1><A href="/buscar">Buscar</A></H1></LI>
-        <?php  	if(isset($rubro)) print '<li><h1><a href="/buscar/'.$rubro.'">$rubro / </a></h1></li>';
-                if(isset($zona )) print '<li><h1><a href="/buscar/'.$zona.'">$zona / </a></h1></li>';
-                if(isset($key  )) print '<li><h1><a href="/buscar/'.$key.'">$key</a></h1></li>';
-				print '<li>['.$nodes_per_page.']</li>';
+        <?php  	if(isset($rubro)) echo '<li><h1><a href="/buscar/'.$rubro.'">$rubro / </a></h1></li>';
+                if(isset($zona)) echo '<li><h1><a href="/buscar/'.$zona.'">$zona / </a></h1></li>';
+                if(isset($key)) echo '<li><h1><a href="/buscar/'.$key.'">$key</a></h1></li>';
+				echo '<li>['.$nodes_per_page.']</li>';
 			?>
       </UL>
       </div>
@@ -89,11 +90,8 @@ $sql = $base_query.$inner_join.$where;
         			foreach($nodo->taxonomy as $value){
         				if ($value->vid == 17){$localidad = $value->tid; break;}
         			}
-						//print "<pre>";
-						//print_r($nodo);
-						//print "</pre>";
-					switch ($fila->field_tipo_de_aviso_format) {
-					    case 3:
+					switch ($nodo->field_tipo_de_aviso[0]["value"]) {
+					    case 4:
         			        //if ( ($otro==1) and ($tipo <> 3) ) { print '</div><!-- fin tipo -->'; $otro=0; } 						
 						    if($gold == "0"){
 					        	echo "<div id='gold'><div id='titles_bar'><img src='sites/all/themes/empleos/img/gold.gif'>Avisos Gold</div>";
@@ -101,10 +99,10 @@ $sql = $base_query.$inner_join.$where;
 					        	$gold = 1;
 								$tipo = 3;
 				        	} else {
-							echo "<div id='gold'>"; 
+								echo "<div id='gold'>"; 
 							}
 					        break;
-					    case 4:
+					    case 3:
         			        //if ( ($otro==1) and ($tipo <> 4) ) { print '</div><!-- fin tipo -->'; $otro=0; } 												
 					        if($destacado == "0"){
 					        	echo "<div id='destacado'><div id='titles_bar'><img src='sites/all/themes/empleos/img/destacado.gif'>Avisos Destacados</div>";
@@ -112,10 +110,10 @@ $sql = $base_query.$inner_join.$where;
 					        	$otro = 1;
 								$tipo = 4;
 					        } else { 
-							echo "<div id='destacado'>"; 
+								echo "<div id='destacado'>"; 
 							}
 					        break;
-					    case 5:
+					    case 2:
         			        //if ( ($otro==1) and ($tipo <> 5) ) { print '</div><!-- fin tipo -->'; $otro=0; } 												
 					        if($simple == "0"){
 					        	echo "<div id='simple'><div id='titles_bar'><img src='sites/all/themes/empleos/img/simple.gif'>Avisos Simples</div>";
@@ -123,10 +121,10 @@ $sql = $base_query.$inner_join.$where;
 					        	$otro = 1;
 								$tipo = 5;								
 					        } else {
-					        echo "<div id='simple'>"; 
+					        	echo "<div id='simple'>"; 
 							}
 					        break;
-					    case 6:
+					    case 1:
         			        //if ( ($otro==1) and ($tipo <> 6) ) { print '</div><!-- fin tipo -->'; $otro=0; } 												
 					        if($gratis == "0"){
 					        	echo "<div id='gratis'><div id='titles_bar'>Avisos Gratuitos</div>";
@@ -134,7 +132,7 @@ $sql = $base_query.$inner_join.$where;
 					        	$otro = 1;
 								$tipo = 6;								
 					        } else {
-					        echo "<div id='gratis'>"; 
+					        	echo "<div id='gratis'>"; 
 							}
 					        break;
 						default:
@@ -145,12 +143,12 @@ $sql = $base_query.$inner_join.$where;
 					        	$otro = 1;
 								$tipo = 9;								
 							} else {
-					        echo "<div id='gratis'>" ;
+					        	echo "<div id='gratis'>" ;
 							}
 					        break;	
 					}
 
-        			if($fila->field_tipo_de_aviso_format == 3 or $fila->field_tipo_de_aviso_format == 4){
+        			if($nodo->field_tipo_de_aviso[0]["value"] == 3 or $nodo->field_tipo_de_aviso[0]["value"] == 4){
    					    print '<!-- ini destacado -->';
 						// gold y destacado
 						  print '<div>';
@@ -194,7 +192,7 @@ $sql = $base_query.$inner_join.$where;
 						print '</div>';						
 						print '<!-- fin destacado -->';
 					    }
-		          	  if($fila->field_tipo_de_aviso_format == 5){
+		          	  if($nodo->field_tipo_de_aviso[0]["value"] == 2){
 		          	    // simple
 						print '<!-- ini simple -->';
 						print '<div>';
@@ -232,7 +230,7 @@ $sql = $base_query.$inner_join.$where;
 						print '</div>';						  
 						print '<!-- fin simple -->';
 		          		}
-	                  if($fila->field_tipo_de_aviso_format == 6){
+	                  if($nodo->field_tipo_de_aviso[0]["value"] == 1){
 						print '<!-- ini free -->';
 		          	    // free
 						print '<div>';
@@ -264,6 +262,6 @@ $sql = $base_query.$inner_join.$where;
         	} else {
         		print '<div><p>No se encontraron resultados de acuerdo a su criterio de busqueda.</p><p>Por favor intente con otro criterio</p></div>';
         	}
-			     print '<div style="float: right; ">'.theme('pager', NULL, $nodes_per_page).'</div>';	
+		print '<div style="float: right; ">'.theme('pager', NULL, $nodes_per_page).'</div>';	
         ?>
 </div><!-- fin listado -->
