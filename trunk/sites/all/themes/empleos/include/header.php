@@ -20,6 +20,7 @@
     			<div id="browser">
                 <?php include("sites/all/themes/empleos/include/buscador.php");?>
       				<div class="white right">
+      					<?php if(arg(0) != "principal"){?>
                        <?php if (!$user->uid) {
                             print '<h1 style="margin-top:10px; text-align:center">&iquest;Primera vez en empleoslavoz?</h1>'; 
         					print '<h3 style="text-align:center; margin:0 12%">Registrate de forma f&aacute;cil y segura en s&oacute;lo 3 pasos</h3>'; 
@@ -47,6 +48,13 @@
                             print '</ul>';
 							print '</div>';
 						}
+					   }?>
+					   <?php }else{
+							print '<div>';
+							print '<ul id="adver">'; 
+							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/03.jpg"/></a></li>';
+                            print '</ul>';
+							print '</div>';
 					   }?>
       			</div>
         <?php } ?>
