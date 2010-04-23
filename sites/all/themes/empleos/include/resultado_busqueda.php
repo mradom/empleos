@@ -1,24 +1,21 @@
 <?php 
 global $pager_total_items;
-	$key = $_POST["key"];
-	$rubro = $_POST["rubro"];
-	$zona = $_POST["zona"];
-if($_REQUEST['busqueda'] == "avanzada"){
-	echo "RESULTADO DE AVANZADAS";
-}else{
+	$key = $_REQUEST["key"];
+	$rubro = $_REQUEST["rubro"];
+	$zona = $_REQUEST["zona"];
+	$fecha_desde = $_REQUEST["fechaDesde"];
+	$fecha_hasta = $_REQUEST["fechaHasta"];
+	$empresa = $_REQUEST["empresa"];
+	$edad_desde = $_REQUEST["edadDesde"];
+	$edad_hasta = $_REQUEST["edadHasta"];
+	$idiomas = $_REQUEST["idiomas"];
+	$sexo = $_REQUEST["sexo"];
+	$disponibilidad = $_REQUEST["disponibilidad"];
+	
 	$sql_query = "";
-	
-	$base_query = "SELECT * FROM node_revisions AS nr
-	INNER JOIN node AS n ON n.nid = nr.nid ";
-	// ojo tiene que ser select * si o si para que funcione el paginador
-	
+	$base_query = "SELECT * FROM node_revisions AS nr INNER JOIN node AS n ON n.nid = nr.nid ";
 	$inner_join = "INNER JOIN content_type_e_aviso AS w ON w.nid = n.nid ";
-	// " INNER JOIN workflow_node AS w ON w.nid = n.nid ";
-	
-	$inner_join2 = " INNER JOIN pub_publicacion AS z ON z.nid = n.nid ";
-	// en el cid esta el tipo
-	// abajo deberia estar ordenado por CID desc y desde ASC
-	
+	// ojo tiene que ser select * si o si para que funcione el paginador
 	$where = "WHERE n.type = 'e_aviso' AND n.status = 1 ";
 	
 	if($key != "" and $key != 'Buscar por palabras clave'){
@@ -33,29 +30,69 @@ if($_REQUEST['busqueda'] == "avanzada"){
 		$where = $where . "AND tn2.tid = ". $zona ." ";
 	}
 	
+if($_REQUEST['busqueda'] == "avanzada"){
+	if(isset($fecha_desde)){
+		$where .= " AND DATE(w.field_fecha_desde_value) >= DATE_FORMAT(DATE('$fecha_desde'),'%Y-%m-%d')";
+	}
+	
+	if(isset($fecha_hasta)){
+		$where .= " AND DATE(w.field_fecha_hasta_value) <= DATE_FORMAT(DATE('$fecha_hasta'),'%Y-%m-%d')";
+	}
+	
+	if(isset($empresa) and $empresa > 0){
+		$where .= " AND n.uid = 4";
+	}
+	
+	if(isset($edadDesde) and isset($edadHasta)){
+		$where .= "AND w.field_edad_entre_value >= '$edadDesde' AND w.field_edad_hasta_value <= '$edadHasta'";
+	}
+	
+	if(isset($idiomas) and $idiomas > 0){
+		$inner_join = $inner_join ." INNER JOIN term_node AS tn3 ON tn3.nid = n.nid ";
+		$where = $where . " AND tn3.tid = '$idiomas'";
+	}
+	
+	if(isset($sexo) and $sexo != 0){
+		$where .= " AND w.field_sexo_value = $sexo";
+	}
+	
+	if(isset($disponibilidad) and $disponibilidad > 0){
+		$inner_join = $inner_join ." INNER JOIN term_node AS tn4 ON tn4.nid = n.nid ";
+		$where = $where . " AND tn4.tid = '$disponibilidad'";
+	}
+}
+
 	$where = $where . " ORDER BY w.field_tipo_de_aviso_format, n.created DESC  ";
 	
 	$sql = $base_query.$inner_join.$where;
-}
+	//Print "<pre>".$sql."<pre>";
 
-//Print "<pre>".$sql."<pre>";
-
+	
     //$rs = db_query($sql);
-    echo $sql;
+    $rs = mysql_query($sql) or die(mysql_errors());
+    //echo $sql;
 
 	$nodes_per_page = variable_get(EMPLEOS_PAGE_LIMIT, 20);
 	$nodes_per_page = 2;
 	
-	$rs = pager_query($sql,$nodes_per_page,0);
+	//$rs = pager_query($sql,$nodes_per_page,0);
 ?>
 <!-- Poner aca camino de links -->
 	  <div style="float: left;">
       <UL class="tags">
         <li><H1><A href="/buscar">Buscar</A></H1></LI>
-        <?php  	if(isset($rubro)) echo '<li><h1><a href="/buscar/'.$rubro.'">$rubro / </a></h1></li>';
-                if(isset($zona)) echo '<li><h1><a href="/buscar/'.$zona.'">$zona / </a></h1></li>';
-                if(isset($key)) echo '<li><h1><a href="/buscar/'.$key.'">$key</a></h1></li>';
-				echo '<li>['.$nodes_per_page.']</li>';
+        <?php  	if(isset($rubro) and $rubro != "0"){
+        			$rs = db_query("SELECT * FROM term_data WHERE tid = $rubro");
+        			$rub = db_fetch_object($rs);
+        			echo '<li><h1><a href="/buscar/'.$rubro.'">'.$rub->name .' / </a></h1></li>';
+        		}
+                if(isset($zona) and $zona != "0"){
+        			$rs = db_query("SELECT * FROM term_data WHERE tid = $zona");
+        			$zon = db_fetch_object($rs);
+                	echo '<li><h1><a href="/buscar/'.$zona.'">'.$zon->name .' / </a></h1></li>';
+                }
+                if(isset($key) and $key != "0") echo '<li><h1><a href="/buscar/'.$key.'">'.$key.'</a></h1></li>';
+				//echo '<li>['.$nodes_per_page.']</li>';
 			?>
       </UL>
       </div>
