@@ -36,7 +36,17 @@
 			<TD><?php $wi = workflow_get_state($row->_workflow); print $wi['state']?></TD>
 			<TD><?php echo ($row->status == 1) ? "Publicado" : "No publicado"?></TD>
 			<TD><?php print_r( $row->field_empresa_1[0]['value']);?></TD>
-			<TD><a href="/node/<?php print $row->nid; ?>/edit" title="editar"><div class="arrow editar" style="margin-left:5px"></div></a><a href="/node/<?php print $row->nid; ?>/delete" title="borrar"><div class="arrow cancel"></div></a></TD>
+			<TD>
+				<!-- <a href="/node/<?php print $row->nid; ?>/edit" title="editar">
+					<div class="arrow editar" style="margin-left:5px"></div>
+				</a> -->
+				<a href="/node/<?php print $row->nid; ?>/delete" title="borrar">
+					<div class="arrow cancel"></div>
+				</a>
+				<a href="/node/add/e-aviso/copy/<?php echo $row->nid;?>" title="Copiar">
+					<div class="arrow editar"></div>
+				</a>
+			</TD>
 		</TR>
 		<?php
 
