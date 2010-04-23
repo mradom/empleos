@@ -135,7 +135,7 @@ function phptemplate_user_register_form(&$form) {
 function phptemplate_user_edit($form) {
 	global $user;
 	
-	firep($user, 'Formulario');
+	//firep($user, 'Formulario');
 	
 	$form['ini']['#prefix']  = '<div class="mycv">';
 	$form['ini']['#value']  = ' ';
@@ -353,7 +353,7 @@ function phptemplate_p_idiomas_node_form(&$form, $form_state, $form_id) {
     $form['preview']="" ;
     $form['submit']['#value']="Guardar" ;
     
-    ////firep($form['submit'], 'Formulario');
+    //////firep($form['submit'], 'Formulario');
         	
     $miform  = '';
     
@@ -408,7 +408,7 @@ function phptemplate_p_cursos_node_form(&$form) {
     unset($form['preview']);
     $form['submit']['#value']="Guardar" ;
     
-    firep($form, 'Formulario');
+    //firep($form, 'Formulario');
         
     $miform  = '';
     
@@ -469,7 +469,7 @@ function phptemplate_p_informatica_node_form(&$form) {
     $form['preview']="" ;
     $form['submit']['#value']="Guardar" ;
     
-    //firep($form['submit'], 'Formulario');
+    ////firep($form['submit'], 'Formulario');
         
     $miform  = '';
     
@@ -524,7 +524,7 @@ function phptemplate_p_otros_conocimientos_node_form(&$form) {
     $form['preview']="" ;
     //$form['submit']['#value']="Guardar" ;
     
-    //firep($form['submit'], 'Formulario');
+    ////firep($form['submit'], 'Formulario');
         
     $miform  = '';
     
@@ -545,7 +545,7 @@ function phptemplate_p_otros_conocimientos_node_form(&$form) {
 
 function phptemplate_p_experiencia_laboral_node_form(&$form) {
 
-	firep($form, 'Form');
+	//firep($form, 'Form');
 	
 	$form['ini']['#prefix']  = '<div class="mycv">';
 	$form['ini']['#value']  = ' ';
@@ -643,7 +643,7 @@ function phptemplate_p_referencia_node_form(&$form) {
     $form['preview']="" ;
     //$form['submit']['#value']="Guardar" ;
     
-    //firep($form['submit'], 'Formulario');
+    ////firep($form['submit'], 'Formulario');
         
     $miform  = '';
     
@@ -665,7 +665,7 @@ function phptemplate_p_referencia_node_form(&$form) {
 }
 
 function phptemplate_p_objetivo_laboral_node_form(&$form) {
-	firep($form['submit'], 'Formulario');
+	//firep($form['submit'], 'Formulario');
 	
 	$form['ini']['#prefix']  = '<div class="mycv">';
 	$form['ini']['#value']  = ' ';
@@ -728,7 +728,7 @@ function phptemplate_p_objetivo_laboral_node_form(&$form) {
 }
 
 function phptemplate_p_educacion_node_form(&$form) {
-	firep($form['submit'], 'Formulario');
+	//firep($form['submit'], 'Formulario');
 	
 	$form['ini']['#prefix']  = '<div class="mycv">';
 	$form['ini']['#value']  = ' ';
@@ -1046,13 +1046,13 @@ $html = '<ul style="height: 30px;" class="ui-tabs-nav">
 	$miform .= drupal_render($form['field_logo-attach-url']);
 	$miform .= drupal_render($form);
 	//echo "<pre>"; print_r($form);echo "</pre>";
-	//firep($form['field_empresa_1'], "Mi form");
+	////firep($form['field_empresa_1'], "Mi form");
 	return $miform;
 }
 
 function phptemplate_form_alter(&$form, $form_state, $form_id){
-	firep($form_id, 'Formulario id');
-	firep($form, 'Formulario');
+	//firep($form_id, 'Formulario id');
+	//firep($form, 'Formulario');
 
     switch($form_id){
         case 'p-cursos-node-form--------------------------------':
@@ -1088,7 +1088,7 @@ function phptemplate_form_alter(&$form, $form_state, $form_id){
 		    unset($form['preview']);
 		    $form['submit']['#value']="Guardar" ;
 		    
-		    firep($form, 'Formulario');
+		    //firep($form, 'Formulario');
 		        
 		    $miform  = '';
 		    
