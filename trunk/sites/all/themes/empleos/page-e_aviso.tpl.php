@@ -12,6 +12,17 @@
     <!-- RIGHT -->
     <?php include("include/col_derecha.php");?>
     <!-- CENTRAL -->
+    <?php if(arg(2) == "edit"){
+    	?>
+  <script>
+  $(document).ready(function() {
+	    $("#tabs").tabs();
+	    $("#edit-field-fecha-desde-0-value-date").datepicker({dateFormat: "d/mm/yy", });
+	    $("#edit-field-fecha-hasta-0-value-date").datepicker({dateFormat: "d/mm/yy", });
+	  });
+  </script>
+    	<?php 
+    }?>
     <div id="central_column">
 		<?php print $content;?>
     </div>

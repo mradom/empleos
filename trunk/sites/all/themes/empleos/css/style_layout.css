@@ -744,6 +744,17 @@ div.arrow.cancel {
 	margin:0;
 	padding:0;
 }
+
+
+div.arrow.copy {
+	float:left;
+	height:15px;
+	width:13px;
+	background:transparent url(../img/btn_copiar.gif) 0 0 no-repeat;
+	margin:0;
+	padding:0;
+}
+
 div.arrow.cancel:hover, div.arrow.editar:hover {
 	background-position:0px -15px;
 }
