@@ -245,6 +245,11 @@ li.btns.sig:hover{
 	background:url(../img/bullet_orange.gif) left 5px no-repeat;
 	padding-left:10px;
 }
+/*---*/
+.faq-dd-hide-answer ul li{
+	background:url(../img/bullet_blue.gif) left 5px no-repeat;
+	padding-left:10px;
+}
 /*--------------------------FIN--NUEVAS CLASES-------------------submenu-------*/
 
 /*--browser--*/
@@ -578,7 +583,7 @@ li.side div.brand {
 	margin-right:10px;
 	background:url(../img/empresas/no-name.jpg) no-repeat;	
 }
-/*--------*/
+/*----listado empresas y consultoras----*/
 li.center {
 	width:655px;
 	height:auto;
@@ -587,9 +592,11 @@ li.center {
 }
 li.center div{
 	float:left;
-
 }
-li.center div.brand img{
+li.center div.datos{
+	width:400px;
+}
+li.center div.brand{
 	width:52px;
 	height:34px;
 	margin-right:10px;
@@ -605,9 +612,11 @@ li.center a.brands:hover {
 	font-weight:bold;
 	text-decoration:none;
 }
-
-/*----listado empresas----*/
-
+ul.brands li div.lnk{
+	float:right;
+	text-align:right;
+	line-height:18px;
+}
 /*----listado rubros---*/
 ul.side li a{
 	color:#3077a4;
@@ -637,6 +646,11 @@ ul.side ul ul a:hover{
 }
 #central_column .bar_blue {
 	width:680px;
+}
+
+/*----------faq------------*/
+div.left-corner{
+	margin-bottom:10px;
 }
 /*-----------tabs-box----------------*/
 ul.left {

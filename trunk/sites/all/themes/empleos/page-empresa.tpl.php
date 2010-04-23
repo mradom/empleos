@@ -29,23 +29,28 @@
                   $sql = "SELECT u.* FROM users AS u INNER JOIN users_roles AS ur ON ur.uid = u.uid WHERE STATUS = 1 AND ur.rid = 5";
                   $rs = db_query($sql);
                     
-                  print '<ul class="brands">';
+                 print '<ul class="brands">';
                   while($fila = mysql_fetch_object($rs)){
                       $empresa = user_load(array('uid' => $fila->uid));
-					  //firep($empresa, 'Empresa');	
+					  firep($empresa, 'Empresa');
                       print '<li class="center">';
-                      print '<div class="brand">';
+					  print '<div class="brand">';
                       print theme('imagecache','logo_empresa_52_34',$empresa->picture,$empresa->picture,$fila->uid);
 					  print '</div>';
-					  //$empresa->profile_empresa_razon_social)
-                      //print '<div><a href="/empresa/'.$fila->uid.'" >'.$empresa->name.'</a></div>';
-					  print '<div style=" float:right"><a href"#">ver datos de la epresa</a></div>';
-					  print '<div style=" float:right"><a href"#">ver avisos de la empresa</a></div>';
-					  print '<div ><a class="brands" href="/empresa/'.$fila->uid.'" >'.$empresa->profile_empresa_razon_social.'</a></div>'; 
-					  print '<div>'.$empresa->profile_empresa_calle .'&nbsp;'.$empresa->profile_empresa_numero.'</div>';
+					  
+					  print '<div class="datos">';
+					  print '<a class="brands" href="/empresa/'.$fila->uid.'" >'.$empresa->profile_empresa_razon_social.'</a><br>';
+					  print $empresa->profile_empresa_calle .'&nbsp;'.$empresa->profile_empresa_numero ;
+					  print '</div>';
+					  
+					  print '<div class="lnk">';
+					  print '<a class="blue" href"#">ver datos de la epresa</a><br>';
+					  print '<a class="blue" href"#">ver avisos de la empresa</a></div>';
                       print '</li>';
                   }
                   print '</ul></div>';
+				 
+				 //lo que reemplaze esta empresas.php del ecritorio.
 			  }
 			  if (arg(1)<>'' and arg(2)=='') {
 				  empresa_buscar();
