@@ -30,10 +30,10 @@
 			</select>
 		</p>
 		<p>
-			<label for="fechaDesde">Fecha desde</label><input type="text" id="fechaDesde" />
+			<label for="fechaDesde">Fecha desde</label><input type="text" id="fechaDesde" name="fechaDesde"/>
 		</p>
 		<p>
-			<label for="fechaHasta">Fecha Hasta</label><input type="text" id="fechaHasta" />
+			<label for="fechaHasta">Fecha Hasta</label><input type="text" id="fechaHasta" name="fechaHasta"/>
 		</p>
 		<p>
 			<?php 
@@ -63,14 +63,14 @@
 				<?php $i=18;while($i<=65){echo "<option value='$i'>$i</option>"; $i++;}?>
 			</select>	
 		</p>
-		<p>
+		<!--<p>
 			<label for="residencia">Lugar de Residencia</label>
 			<select>
 				<option value="0"></option>
-				<?php $rs = db_query("SELECT * FROM term_data WHERE vid = 17");?>
-				<?php while($t = db_fetch_object($rs)){echo "<option value='".$t->tid."'>".$t->name."</option>";}?>
+				<?php //$rs = db_query("SELECT * FROM term_data WHERE vid = 17");?>
+				<?php //while($t = db_fetch_object($rs)){echo "<option value='".$t->tid."'>".$t->name."</option>";}?>
 			</select>
-		</p>
+		</p> -->
 		<p>
 			<label for="idiomas">Idiomas</label>
 			<select id="idiomas">
@@ -103,6 +103,8 @@
 	<script type="text/javascript">
 	$(function() {
 		$("#fechaDesde").datepicker({minDate: -10, maxDate: '+0', hideIfNoPrevNext: true});
+		$("#fechaDesde").datepicker( "option", "dateFormat", 'yy-mm-dd' );
 		$("#fechaHasta").datepicker({minDate: -10, maxDate: '+0', hideIfNoPrevNext: true});
+		$("#fechaHasta").datepicker( "option", "dateFormat", 'yy-mm-dd' );
 	});
 	</script>

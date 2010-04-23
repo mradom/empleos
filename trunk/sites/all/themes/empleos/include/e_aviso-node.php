@@ -9,6 +9,8 @@ $b_jerarquia=get_vocabulary_by_name('Jerarquia');
 $b_disponibilidad=get_vocabulary_by_name('Disponibilidad');
 $b_localidad=get_vocabulary_by_name('Provincias');
 $b_pretendido=get_vocabulary_by_name('Sueldo Pretendido');
+$b_idiomas = get_vocabulary_by_name('idiomas');
+$b_disponibilidad = get_vocabulary_by_name('disponibilidad');
 foreach($nodo->taxonomy as $value){
 	if ($value->vid == $b_area){$area = $value->tid; break;}
 }
@@ -26,6 +28,14 @@ foreach($nodo->taxonomy as $value){
 }
 foreach($nodo->taxonomy as $value){
 	if ($value->vid == $b_pretendido){$pretendido = $value->tid; break;}
+}
+
+foreach($nodo->taxonomy as $value){
+	if ($value->vid == $b_idiomas){$idiomas = $value->tid; break;}
+}
+
+foreach($nodo->taxonomy as $value){
+	if ($value->vid == $b_disponibilidad){$disponibilidad = $value->tid; break;}
 }
 
 ?>
@@ -66,10 +76,10 @@ function AltDisplay(eldiv, elbot)
 	<ul class="resumen">
 		<li class="stg"><span class="blue">Empleo ofrecido por:</span> <?php echo $nodo->name;?></li>
 		<li><span class="blue">Ramo o actividad:</span> <?php echo $nodo->taxonomy[$ramo]->name;?></li>
-		<li><span class="blue">Lugar de trabajo:</span> <?php echo $nodo->taxonomy[$localidad]->name;?></li>
+		<!-- <li><span class="blue">Lugar de trabajo:</span> <?php echo $nodo->taxonomy[$localidad]->name;?></li>  -->
 		<li><span class="blue">Jerarqu&iacute;a:</span> <?php echo $nodo->taxonomy[$jerarquia]->name;?></li>
 		<li><span class="blue">Area:</span> <?php echo $nodo->taxonomy[$area]->name;?></li>
-		<li><span class="blue">Disponibilidad:</span> <?php echo $nodo->taxonomy[$disponibilidad]->name;?></li>		
+		<!-- <li><span class="blue">Disponibilidad:</span> <?php echo $nodo->taxonomy[$disponibilidad]->name;?></li>  -->		
 		<li><span class="blue">Salario:</span> <?php echo $nodo->taxonomy[$pretendido]->name;?></li>
 		<li><span class="blue">Vacantes:</span> <?php echo $nodo->field_cantidad_de_vacantes[0]['value'];?></li>
 	</ul>
@@ -100,8 +110,8 @@ function AltDisplay(eldiv, elbot)
                 Entre <?php echo $nodo->field_edad_entre[0]['value'];?> hasta <?php echo $nodo->field_edad_hasta[0]['value']?></li>
               <li><strong>Lugar de residencia:</strong> <?php echo $nodo->field_lugar_de_residencia[0]['value'];?></li>
               <li><strong>Indicar remuneracion:</strong> <?php echo $nodo->field_remuneracion[0]['value']?></li>
-              <li><strong>Disponibilidad:</strong> <?php echo $nodo->field_remuneracion[0]['value']?></li>
-              <li><strong>Idiomas:</strong> <?php //echo $nodo->taxonomy[get_vocabulary_by_name('idiomas')]['name'];?></li>
+              <li><strong>Disponibilidad:</strong> <?php echo $nodo->taxonomy[$disponibilidad]->name;?></li>
+              <li><strong>Idiomas:</strong> <?php echo $nodo->taxonomy[$idiomas]->name;?></li>
               <li><strong>Sexo:</strong> <?php echo $nodo->field_sexo[0]['value'];?></li>
             </ul>
 	<!--  Requisitos end -->
