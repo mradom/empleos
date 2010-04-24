@@ -1,6 +1,6 @@
     <div class="box top" style="background:url(/sites/all/themes/empleos/img/bg_box_top13.jpg)">
     <div><img style=" padding-left:460px " src="/sites/all/themes/empleos/img/2e-paso.png"></div>
-      <p>En esta secci&oacute;n podr&aacute;s describir la <strong>descripci&oacute;n y requisitos</strong> del puesto de trabajo vacante y designar la fecha de vigencia del aviso. Una vez completado este paso, podr&aacute;s elegir el tipo de aviso que mejor se adec&uacute;e a las necesidades de b&uacute;squeda.<br />
+      <p>En esta secci&oacute;n podr&aacute;s ingresar la <strong>descripci&oacute;n y requisitos</strong> del puesto de trabajo vacante y designar la fecha de vigencia del aviso. Una vez completado este paso, podr&aacute;s elegir el tipo de aviso que mejor se adec&uacute;e a las necesidades de b&uacute;squeda.<br />
 
 Los &iacute;tems destacados con asterisco <span class="stg orange">(*)</span> son obligatorios.
 </p>

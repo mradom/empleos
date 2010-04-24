@@ -11,7 +11,7 @@
     <?php include("include/mi_objetivo_laboral_encabezado.php");?> 
     <!-- RIGHT -->
     <div id="right_colum">
-	<?php Form_ayuda('Ayuda', 'Objetivo Laboral'); ?>
+	<?php Form_ayuda('Ayuda', 'ObjetivoLaboral'); ?>
 	</div> 
     <!-- CENTRAL -->
     <div id="central_column">

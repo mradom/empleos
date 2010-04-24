@@ -14,7 +14,12 @@
 	    </p>
 	</div>
     <!-- RIGHT -->
-      <?php include("include/col_derecha-mini.php");?>
+      <?php
+        //print '<div id="right_colum">'; 
+        //Empleos_ayuda('Tip', 'Otros Conocimientos'); 
+	    //print '</div>';  
+        include("include/col_derecha-mini.php");
+	   ?>
     <!-- CENTRAL -->
     <div id="central_column">
     	<div id="center">
