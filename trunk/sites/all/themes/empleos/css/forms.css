@@ -44,6 +44,10 @@ select:hover, input:hover, textarea:hover{
 select, input{
 	padding:2px;
 }
+.mycv input.btn_gral{
+	margin:10px 10px 10px 0; 
+	padding:0 15px 3px 15px;
+}
 /*------------forms--------------*/
 
 div.mycv{
@@ -114,6 +118,7 @@ input.req, select.req{border:1px solid #3399cc;
 }
 
 /*------CAMBIOS 29/03--------*/
+
 .mycv .form-item label {/*----igual a las class .item .req---*/
 	text-align:right;
 	width:250px;
@@ -150,15 +155,15 @@ input.req, select.req{border:1px solid #3399cc;
 }
 .mycv .form-item select {
 	width:360px;
-	size:60px;	
+	size:60px;
+}
+.mycv .form-item input, .mycv textarea{
+	width:353px;
 }
 .mycv .form-item .form-checkboxes label.option input{
 	width:auto;
 	margin-right:7px;
 	}
-.mycv .form-item input, .mycv textarea{
-	width:360px;	
-}
 .mycv .form-item div.description, .mycv ul.tips, .mycv p{
 	color:#999;
 	max-width:360px;
@@ -194,6 +199,11 @@ input.form-submit:hover{
 	width:85px;
 	margin-left:273px;
 	margin-bottom:10px;
+}
+/*--*/
+div.falselabel{
+	width:250px;
+	text-align:right;
 }
 /*-----login------*/
 .mycv.log{
