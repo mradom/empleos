@@ -1,0 +1,12 @@
+; $Id: jgrowl.info,v 1.1.2.1 2008/09/29 16:37:30 stevemckenzie Exp $
+name = "jGrowl"
+description = "jGrowl is a jQuery plugin that raises unobtrusive messages within the browser, similar to the way that OS X's Growl Framework works."
+package = "User interface"
+dependencies = jquery_update
+
+
+; Information added by drupal.org packaging script on 2008-12-12
+version = "5.x-1.0"
+project = "jgrowl"
+datestamp = "1229120124"
+

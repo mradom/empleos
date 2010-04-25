@@ -1,0 +1,19 @@
+<?php
+// $Id: jgrowl.install,v 1.1.2.1 2008/09/29 16:37:30 stevemckenzie Exp $
+
+/**
+ * 
+ *  @file
+ *  Module install file.
+ * 
+ */
+
+/**
+ *  Implementation of hook_install().
+ */
+function jgrowl_install() {
+  // Always keep jgrowl last so we can grab all the messages.
+  $weight = db_result(db_query("SELECT weight FROM {system} ORDER BY weight DESC LIMIT 1"));
+  db_query("UPDATE {system} SET weight = %d WHERE name = 'jgrowl'", $weight + 100);
+}
+
