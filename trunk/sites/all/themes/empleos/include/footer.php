@@ -46,10 +46,10 @@
 <div class="footer">
   <div class="footer_resize">
   <a href="http://www.lavoz.com.ar/" target="_blank" title="La Voz del Interior"><img style="margin-top:7px;" src="/sites/all/themes/empleos/img/pie_lavoz.jpg" width="87" height="26" /></a>
-    <p class="leftt">&copy; 2010 Todos los derechos reservados. &nbsp;&nbsp;<a href="/principal">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/avisolegal">Aviso legal</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/privacidad">Privacidad</a> 
+    <p class="leftt">&copy; 2010 Todos los derechos reservados. &nbsp;&nbsp;<a href="/principal" title="Home">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/avisolegal" title="Aviso legal">Aviso legal</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/privacidad" title="Privacidad">Privacidad</a> 
  </a></p>
 <div class="logos">
-<a title="Certifica" href="http://www.certifica.com/" target="_blank"><img src="/sites/all/themes/empleos/img/logo-certifica.jpg" width="87" height="25" /></a>
+<a title="Certifica" href="http://www.certifica.com/" target="_blank" ><img src="/sites/all/themes/empleos/img/logo-certifica.jpg" width="87" height="25" /></a>
 <a title="Direcci&oacute;n Nacional de Protecci&oacute;n de Datos Personales" href="http://www.jus.gov.ar/dnpdp/" target="_blank"><img src="/sites/all/themes/empleos/img/logo-dnp.jpg" width="125" height="26" /></a>
 <a title="IAB Argentina" href="http://www.iabargentina.com.ar/" target="_blank"><img src="/sites/all/themes/empleos/img/logo-iab.jpg" width="45" height="26" /></a>
 </div> 

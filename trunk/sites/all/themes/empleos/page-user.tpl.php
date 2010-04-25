@@ -4,6 +4,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language ?>" lang="<?php print $language ?>">
 <?php include("include/head.php");?>
+<?php include("include/varios.php");?>
 <body>
 <div id="wrapper">
   <!-- HEADER -->
@@ -23,7 +24,15 @@
     If (!$user->uid and arg(1)<>'password' and arg(1) <>'register') include("include/login_encabezado.php");
     ?> 
     <!-- RIGHT -->
-    <?php include("include/col_derecha-mini.php");?>
+    <?php
+    If (arg(1)=='register') {
+	  print '<div id="right_column">';
+	  Form_ayuda('Ayuda', 'Registracion'); 
+      print '</div>';
+    } else {
+	  include("include/col_derecha-mini.php");
+	}
+    ?>
     <!-- CENTRAL -->
     <!-- ini central -->
     <div id="central_column">
@@ -31,8 +40,8 @@
 		      //print "[".arg(0)."]-[".arg(1)."]-[".arg(2)."]=[".$user->uid."]<br>";
 			  If (arg(1)=='password') print $content; 
               If (!$user->uid and arg(1)<>'password' and arg(1) <>'register') include ('user-login.php');
-			  If (arg(1)=='register' and arg(2)=='persona'  ) print '<div style="border: 1px solid #cbb ;">'.$content.'</div><br />'; 
-			  If (arg(1)=='register' and arg(2)=='empleador') print '<div style="border: 1px solid #ccc ;">'.$content.'</div><br />';
+			  If (arg(1)=='register' and arg(2)=='persona'  ) print '<div>'.$content.'</div><br />'; 
+			  If (arg(1)=='register' and arg(2)=='empleador') print '<div>'.$content.'</div><br />';
 			  if ($user->uid and arg(1)==$user->uid){
 			  	 print $content;
 			  } 

@@ -6,6 +6,7 @@
  *
  * Adds 'sidebar-left', 'sidebar-right' or 'sidebars' classes as needed.
  */
+ 
 function phptemplate_body_class($sidebar_left, $sidebar_right) {
   if ($sidebar_left != '' && $sidebar_right != '') {
     $class = 'sidebars';
@@ -121,13 +122,13 @@ function phptemplate_user_login($form) {
 /*
  * Lo mismo en este caso, aca le decimos que queremos cargar el user_register.tpl.php para hacer el formulario de registro 
  **/
-function phptemplate_user_register($form) {
-    return _phptemplate_callback('user_register', array('form' => $form));
-}
+//function phptemplate_user_register($form) {
+//    return _phptemplate_callback('user_register', array('form' => $form));
+//}
 
-function phptemplate_user_register_form(&$form) {
-	return $form;
-}
+//function phptemplate_user_register_form(&$form) {
+//	return $form;
+//}
 
 /*
  * Lo mismo en este caso, aca le decimos que queremos cargar el user_edit.tpl.php para hacer el formulario de registro 
@@ -328,8 +329,49 @@ function phptemplate_views_view_list_mi_educacion($view, $nodes, $type) {
   }
 }
 
-function phptemplate_p_idiomas_node_form(&$form, $form_state, $form_id) {  
+function phptemplate_user_register(&$form) {  
 	//function phptemplate_p_idiomas_node_form(&$form) {
+
+	$form['ini']['#prefix']  = '<div class="mycv">';
+	$form['ini']['#value']  = ' ';
+	$form['ini']['#weight']  = -99;	
+	
+	$form['fin']['#prefix']  = '</div>';
+	$form['fin']['#value']  = ' ';
+	$form['fin']['#weight']  = 99;
+	
+	
+	$form['intro']['#value']  = '<legend>Registraci&oacute;n:</legend>';
+	// Lo pongo dentro de un div para poder temearlo
+	$form['intro']['#prefix']  = '<fieldset>';
+	$form['intro']['#suffix']  = '</fieldset>';
+	// le pongo el weight bien bajo para que lo ponga primero
+	$form['intro']['#weight']  = -40;
+	
+    $form['preview']="" ;
+    //$form['submit']['#value']="Guardar" ;
+    
+    //////firep($form['submit'], 'Formulario');
+        	
+    $miform  = '';
+    
+    $miform .= drupal_render($form['ini']);
+    $miform .= drupal_render($form['intro']);
+	$miform .= drupal_render($form['title']);
+	
+	$miform .= drupal_render($form['name']);
+	$miform .= drupal_render($form['mail']);
+	$miform .= drupal_render($form['pass']);
+
+    $miform .= drupal_render($form['submit']);
+	$miform .= drupal_render($form['fin']);
+	$miform .= drupal_render($form);
+	
+    return $miform;
+}
+
+
+function phptemplate_p_idiomas_node_form(&$form) {
 
 	$form['ini']['#prefix']  = '<div class="mycv">';
 	$form['ini']['#value']  = ' ';
@@ -350,22 +392,35 @@ function phptemplate_p_idiomas_node_form(&$form, $form_state, $form_id) {
     $form['taxonomy']['#type'] = '';
     $form['body_filter'] = '';
     
+    $form['body_filter']['body']['#title'] = 'Descripcion';
+    $form['body_filter']['body']['#rows'] = 10;
+    $form['body_filter']['body']['#cols'] = 80;    
+    
+    $form['body_filter']['format']['format']['guidelines']['#value'] = '';
+    $form['body_filter']['format'][2]['#value'] = '';
+    
     $form['preview']="" ;
     $form['submit']['#value']="Guardar" ;
     
-    //////firep($form['submit'], 'Formulario');
-        	
+    firep($form['submit'], 'Formulario');
+        
+	//print '<pre>';
+	//print_r($form);
+	//print '</pre>';
     $miform  = '';
+    //$miform .= drupal_render($form);
+    
     
     $miform .= drupal_render($form['ini']);
     $miform .= drupal_render($form['intro']);
-	$miform .= drupal_render($form['title']);
+
 	$miform .= drupal_render($form['taxonomy'][get_vocabulary_by_name('Idiomas')]);
-	
-	$miform .= drupal_render($form['field_nivel_oral']);
-	$miform .= drupal_render($form['field_nivel_escrito']);
-	$miform .= drupal_render($form['field_nivel_de_lectura']);
-	$miform .= drupal_render($form['field_ltima_vez_aplicado']);
+    $miform .= drupal_render($form['title']);
+
+    $miform .= drupal_render($form['field_nivel_oral']);
+    $miform .= drupal_render($form['field_nivel_escrito']);
+    $miform .= drupal_render($form['field_nivel_de_lectura']);	
+    $miform .= drupal_render($form['field_ltima_vez_aplicado']);	
 	
 	$miform .= drupal_render($form['body_filter']);
 	
@@ -374,7 +429,11 @@ function phptemplate_p_idiomas_node_form(&$form, $form_state, $form_id) {
 	$miform .= drupal_render($form['fin']);
 	$miform .= drupal_render($form);
   return $miform;
+  
+	
 }
+
+
 
 function phptemplate_p_cursos_node_form(&$form) {
 	$form['ini']['#prefix']  = '<div class="mycv">';
@@ -428,7 +487,7 @@ function phptemplate_p_cursos_node_form(&$form) {
 	$miform .= drupal_render($form['body_filter']);
 	
 	
-	$miform .= drupal_render($form['group_omar_mmmmmm']);
+	$miform .= drupal_render($form['Otros datos']);
 	
 	$miform .= drupal_render($form['submit']);
 	$miform .= drupal_render($form['delete']);
@@ -775,7 +834,7 @@ function phptemplate_p_educacion_node_form(&$form) {
 	$miform .= drupal_render($form['field_materias_de_la_carrera']);
 	$miform .= drupal_render($form['field_materias_aprobadas']);
 		
-	$miform .= drupal_render($form['group_omar_mmmmmm']);
+	$miform .= drupal_render($form['Otros datos']);
 	
 	$miform .= drupal_render($form['taxonomy'][get_vocabulary_by_name('Mes de Inicio')]);
 	$miform .= drupal_render($form['taxonomy'][get_vocabulary_by_name('Ano de inicio')]);	
@@ -845,7 +904,7 @@ function phptemplate_contact_mail_page(&$form) {
 }
 
 
-function phptemplate_node_delete_confirm(&$form, $form_state, $form_id) {
+function phptemplate_node_delete_confirm(&$form) {
   $form['actions']['cancel']['#prefix']  = '<div class="btn_gral b">';
   $form['actions']['cancel']['#suffix']  = '</div>';
   $form['description']['#value'] = 'Si ud. borra los datos, estos no se podran recuperar.';
