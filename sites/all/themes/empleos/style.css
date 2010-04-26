@@ -331,12 +331,13 @@ li.btns.sig:hover{
     font-weight:bold;
     cursor:pointer;
     display:inline;
+	float:left
 }
 .btn_gral a  {
     color:#FFF;
     font-weight:bold;
     cursor:pointer;
-    line-height:22px;
+    line-height: auto;
     text-decoration:none;
 }
 .btn_gral:hover {

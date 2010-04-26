@@ -55,6 +55,11 @@ div.mycv{
 	float:left;
 	margin-top:10px;
 }
+div.mycv .bloque p{
+	padding:0;
+	margin:0;
+	color:#666;
+}
 div.bloque, fieldset{
 	margin-bottom:10px;
 	float:left;
@@ -128,10 +133,13 @@ input.req, select.req{border:1px solid #3399cc;
 	display:inline-block;
 	margin-bottom:10px;
 }
-.mycv .form-item .form-radios,.mycv textarea{
-    width:360px;
+.mycv .resizable-textarea .grippie{
+	margin:0 0 10px 273px;
 }
-.mycv .form-item label.option,.mycv textarea {
+.mycv .form-item .form-radios, .mycv textarea{
+    max-width:350px;
+}
+.mycv .form-item label.option, .mycv textarea {
 	margin:0 0 10px 273px;
 }
 .mycv .form-item label.option{
@@ -164,10 +172,11 @@ input.req, select.req{border:1px solid #3399cc;
 	width:auto;
 	margin-right:7px;
 	}
-.mycv .form-item div.description, .mycv ul.tips, .mycv p{
+.mycv .form-item .description, .mycv ul.tips, .mycv p{
 	color:#999;
 	max-width:360px;
 	margin:0 0 10px 275px;
+	font-size:1em;
 	}
 .mycv p a{
 	text-decoration:underline
@@ -213,6 +222,7 @@ div.falselabel{
 	margin:0 0 10px 0;
 	padding:10px;
 	border:1px solid #FFCC33;
+	color:#666;
 }
 li.bulet_o{background:url(../img/bullet_orange.gif)0 5px no-repeat; padding-left:15px;}
 
@@ -222,6 +232,7 @@ li.bulet_o{background:url(../img/bullet_orange.gif)0 5px no-repeat; padding-left
 	background-color:#c8e8f0;
 	float:left;
 	margin-bottom:10px;
+	border-collapse: inherit;
 }
 .tablaGris tr, .tablaAviso tr {
 	background-color:#fff;

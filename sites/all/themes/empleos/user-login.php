@@ -24,8 +24,8 @@
 
 
 <div class="mycv log">
-  <div class="bloque">
-    <div class="itemTitle grey" style="padding-left:10px;">A&uacute;n no te resgistraste?</div>
+  <div>
+    <div class="itemTitle" style="padding-left:10px;">A&uacute;n no te resgistraste?</div>
     <ul style="padding:0 10px;">
       <li class="blue"><strong>Registrarte en empleoslavoz te permitir&aacute;:</strong></li>
       <li class="bulet_o"> Cargar tu curr&iacute;culum y que todas las empresas que realicen b&uacute;squedas en nuestra accedan a &eacute;l</li>

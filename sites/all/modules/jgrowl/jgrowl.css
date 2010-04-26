@@ -1,6 +1,19 @@
 /* $Id: jgrowl.css,v 1.1 2008/09/21 04:34:07 stevemckenzie Exp $ */
 
 /** Custom styles for Drupal messages. **/
-#jGrowl .status { background: #F1F8EB; border: 1px solid #7AC142; color: #55872E; font-weight: bold; }
-#jGrowl .error { background: #F93; border: 1px solid #F30; color: #000; font-weight: bold; }
-
+#jGrowl .status { 
+	background: #39C; 
+	border: 1px solid  #1C77A8; 
+	color: #FFF; 
+	font: bold 11px Tahoma, Geneva, sans-serif; 
+	}
+	
+#jGrowl .error { 
+	background: #F93; 
+	border: 1px solid  #F8C03F; 
+	color: #fff; 
+	font: bold 11px Tahoma, Geneva, sans-serif; 
+	}
+#jGrowl a{
+	color:#333;
+}
