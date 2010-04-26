@@ -19,9 +19,9 @@
     if (arg(0)=='user' and arg(1)==$user->uid and arg(2)=='edit' and arg(3)=="" and (!in_array('empresa', array_values($user->roles)))) include("include/mi_datosi_encabezado.php");
     if (arg(0)=='user' and arg(1)==$user->uid and arg(2)=='edit' and arg(3)=="Empresa" and (in_array('empresa', array_values($user->roles))))  include("include/mi_datose_encabezado.php");
     if (arg(0)=='user' and arg(1)==$user->uid and arg(2)=='edit' and arg(3)=="" and (in_array('empresa', array_values($user->roles))))  include("include/mi_datosei_encabezado.php");
-
+	
 }
-    If (!$user->uid and arg(1)<>'password' and arg(1) <>'register') include("include/login_encabezado.php");
+    If (!$user->uid and arg(1) <>'register') include("include/login_encabezado.php");
     ?> 
     <!-- RIGHT -->
     <?php
