@@ -1,6 +1,6 @@
     <div class="box top" style="background:url(/sites/all/themes/empleos/img/bg_box_top15.jpg)">
     <div><img style=" padding-left:460px " src="/sites/all/themes/empleos/img/4e-paso.png"></div>
-      <p>Esta secci&oacute;n de tu cuenta funciona como una especie de bandeja de entrada ya que <strong>aqu&iacute; recibir&aacute;s las postulaciones a tus avisos</strong> publicados. Podr&aacute;s tener una descripci&oacute;n general y particular de cada uno de los postulantes interesados en la oferta laboral de tu compa&ntilde;&iacute;a de manera de poder iniciar un proceso de selecci&oacute;n serio y exhaustivo.  </p>
+      <p>Esta secci&oacute;n de tu cuenta funciona como una especie de bandeja de entrada ya que <strong>aqu&iacute; recibir&aacute;s las postulaciones a tus avisos publicados</strong>. Tambi&eacute;n podr&aacute;s tener una descripci&oacute;n general y particular de cada uno de los postulantes interesados en la oferta laboral de tu compa&ntilde;&iacute;a de manera de poder iniciar un proceso de selecci&oacute;n serio y exhaustivo.  </p>
     </div>
     <!-- submenu --> 
 	<?php include("submenu-empresa.php");?> 

@@ -14,7 +14,6 @@
 <link rel="stylesheet" type="text/css" href="/sites/all/themes/empleos/css/IN-noticias.css">
 <link rel="stylesheet" type="text/css" href="/sites/all/themes/empleos/css/ui.all.css">
 <link rel="stylesheet" type="text/css" href="/sites/all/themes/empleos/css/notas.css">
-<link rel="stylesheet" type="text/css" href="/sites/all/modules/faq/faq.css">
 <link rel="stylesheet" type="text/css" href="/sites/all/themes/empleos/css/fade.css">
 <script type="text/javascript" src="/sites/all/modules/jquery_ui/jquery.ui/ui/ui.core.js"></script>
 <script type="text/javascript" src="/sites/all/modules/jquery_ui/jquery.ui/ui/ui.tabs.js"></script>
