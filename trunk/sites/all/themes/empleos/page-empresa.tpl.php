@@ -44,8 +44,8 @@
 					  print '</div>';
 					  
 					  print '<div class="lnk">';
-					  print '<a class="blue" href"#">ver datos de la epresa</a><br>';
-					  print '<a class="blue" href"#">ver avisos de la empresa</a></div>';
+					  print '<a href"#">ver datos de la empresa</a><br>';
+					  print '<a href"#">ver avisos de la empresa</a></div>';
                       print '</li>';
                   }
                   print '</ul></div>';

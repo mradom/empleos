@@ -24,7 +24,7 @@
     <?php 
     if ( arg(1)=='') {
 		          print '<div class="bar_blue"><div class="corner_blue _2"></div>';
-    		      print '<div class="corner_blue">Listado de Empresas</div></div>';
+    		      print '<div class="corner_blue">Listado de Consultoras</div></div>';
         		  print '<div class="box center">'; 
  
                   $sql = "SELECT u.* FROM users AS u INNER JOIN users_roles AS ur ON ur.uid = u.uid WHERE STATUS = 1 AND ur.rid = 5";
@@ -45,8 +45,8 @@
 					  print '</div>';
 					  
 					  print '<div class="lnk">';
-					  print '<a class="blue" href"#">ver datos de la consultora</a><br>';
-					  print '<a class="blue" href"#">ver avisos de la consultora</a></div>';
+					  print '<a class="grey" href"#">ver datos de la consultora</a><br>';
+					  print '<a href"#">ver avisos de la consultora</a></div>';
                       print '</li>';
                   }
                   print '</ul></div>';
