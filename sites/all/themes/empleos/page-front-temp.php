@@ -6,96 +6,56 @@
               <div class="s_frame"> <a href="#" class="next"></a> <a href="#" class="previous"></a>
                 <div class="widget_style">
                   <!-- right colum -->
-                  <ul class="rigth">
-                    <li class="destacado">
-                      <div class="brand"></div>
-                      <p class="date">15-05-2010</p>
-                      <p class="name">on the fly wall</p>
-                      <p class="job">Gerente de Ventas</p>
-                    </li>
-                    <li class="destacado">
-                      <div class="brand"><img src="/sites/all/themes/empleos/img/02_002.jpg"></div>
-                      <p class="date">15-05-2010</p>
-                      <p class="name">on the fly wall</p>
-                      <p class="job">Gerente de Ventas</p>
-                    </li>
-                    <li class="destacado">
-                      <div class="brand"><img src="/sites/all/themes/empleos/img/03.jpg"></div>
-                      <p class="date">15-05-2010</p>
-                      <p class="name">on the fly wall</p>
-                      <p class="job">Gerente de Ventas</p>
-                    </li>
-                    <li class="destacado">
-                      <div class="brand"></div>
-                      <p class="date">15-05-2010</p>
-                      <p class="name">on the fly wall</p>
-                      <p class="job">Gerente de Ventas</p>
-                    </li>
-                    <li class="destacado">
-                      <div class="brand"><img src="/sites/all/themes/empleos/img/05.jpg"></div>
-                      <p class="date">15-05-2010</p>
-                      <p class="name">on the fly wall</p>
-                      <p class="job">Gerente de Ventas</p>
-                    </li>
-                    <li class="destacado">
-                      <div class="brand"><img src="/sites/all/themes/empleos/img/06.jpg"></div>
-                      <p class="date">15-05-2010</p>
-                      <p class="name">on the fly wall</p>
-                      <p class="job">Gerente de Ventas</p>
-                    </li>
-                    <li class="destacado">
-                    <div class="brand"><img src="/sites/all/themes/empleos/img/07.jpg"></div>
-                    <p class="date">15-05-2010</p>
-                    <p class="name">on the fly wall</p>
-                    <p class="job">Gerente de Ventas</p>
-                    </li>
-                  </ul>
-                  <!-- left colum -->
-                  <ul class="left">
-                    <li class="destacado">
-                      <div class="brand"><img src="/sites/all/themes/empleos/img/01_002.jpg"></div>
-                      <p class="date">15-05-2010</p>
-                      <p class="name">on the fly wall</p>
-                      <p class="job">Gerente de Ventas</p>
-                    </li>
-                    <li class="destacado">
-                      <div class="brand"><img src="/sites/all/themes/empleos/img/02_002.jpg"></div>
-                      <p class="date">15-05-2010</p>
-                      <p class="name">on the fly wall</p>
-                      <p class="job">Gerente de Ventas</p>
-                    </li>
-                    <li class="destacado">
-                      <div class="brand"><img src="/sites/all/themes/empleos/img/03.jpg"></div>
-                      <p class="date">15-05-2010</p>
-                      <p class="name">on the fly wall</p>
-                      <p class="job">Gerente de Ventas</p>
-                    </li>
-                    <li class="destacado">
-                      <div class="brand"><img src="/sites/all/themes/empleos/img/04.jpg"></div>
-                      <p class="date">15-05-2010</p>
-                      <p class="name">on the fly wall</p>
-                      <p class="job">Gerente de Ventas</p>
-                    </li>
-                    <li class="destacado">
-                      <div class="brand"><img src="/sites/all/themes/empleos/img/05.jpg"></div>
-                      <p class="date">15-05-2010</p>
-                      <p class="name">on the fly wall</p>
-                      <p class="job">Gerente de Ventas</p>
-                    </li>
-                    <li class="destacado">
-                      <div class="brand"></div>
-                      <p class="date">15-05-2010</p>
-                      <p class="name">on the fly wall</p>
-                      <p class="job">Gerente de Ventas</p>
-                    </li>
-                    <li class="destacado">
-                    <div class="brand"><img src="/sites/all/themes/empleos/img/07.jpg"></div>
-                    <p class="date">15-05-2010</p>
-                    <p class="name">on the fly wall</p>
-                    <p class="job">Gerente de Ventas</p>
-                    </li>
-                  </ul>
-                  <div class="arrow" style="clear: both;"><a href="#">Ver m&aacute;s</a></div>
+                  
+                  <?php
+				    $base_query = "SELECT * FROM node_revisions AS nr INNER JOIN node AS n ON n.nid = nr.nid ";
+					$inner_join = "INNER JOIN content_type_e_aviso AS w ON w.nid = n.nid ";
+					// ojo tiene que ser select * si o si para que funcione el paginador
+					$where = "WHERE n.type = 'e_aviso' AND n.status = 1 ";
+					$where = $where . " ORDER BY w.field_tipo_de_aviso_format, n.created DESC  ";
+	
+					$sql = $base_query.$inner_join.$where;
+					//Print "<pre>".$sql."<pre>";
+	
+				    //$rs = db_query($sql);
+				    $rs = mysql_query($sql) or die(mysql_errors());
+				    //echo $sql;
+					$tot = mysql_num_rows($rs);
+					if( $tot> 0){
+						$ini = "D";
+						$ren = 0;
+						print '<ul class="left">';
+        	    	    while($fila = mysql_fetch_object($rs)){
+        			        $nodo = node_load($fila->nid);
+							foreach($nodo->taxonomy as $value){
+								if ($value->vid == 1){$area = $value->tid; break;}
+							}
+							$ren+= 1;
+						    print '<li class="destacado">';
+							if ($nodo->field_tipo_de_aviso[0]["value"] > 2) {
+ 					  			print '<div class="brand"><img src="'.$nodo->picture.'" title="'.$nodo->name.'"></div>';
+							} else {
+								print '<div class="brand"></div>';
+							}
+					  		//print '<p class="date">'.round($tot/2).'-'.$ren.'</p>';
+							print '<p class="date">'.substr($nodo->field_fecha_hasta[0]["value"],0,10).'</p>';
+					  		print '<p class="name"><a href="/node/'.$nodo->nid.'">'.$nodo->title.'</a></p>';
+					  		print '<p class="job"><a href="/rubro/'.$area.'">'.$nodo->taxonomy[$area]->name.'</a></p>';
+					  		print '</li>';	
+							if ($ren == round($tot/2)) { print '</ul><ul class="rigth">'; }
+						}
+						print '</ul>';
+					}
+				  
+				      // aviso
+					  // print '';
+					  // print '</ul>';
+					  // print '<ul class="left">'; 
+					  // print '</ul>';
+					  
+					  
+				  ?>
+                  <div class="arrow" style="clear: both;"><a href="/buscar">Ver m&aacute;s</a></div>
                 </div>
               </div>
             </div>
