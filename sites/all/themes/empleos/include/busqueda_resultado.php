@@ -97,12 +97,12 @@ if($_REQUEST['busqueda'] == "avanzada"){
       </UL>
       </div>
 <!-- LISTA DE RESULTADOS -->
-	  <DIV class="box central" style="background:none">
-			<DIV class="results">
-          		<DIV class="rss redes">
+	  <div class="box central" style="background:none">
+			<div class="results">
+          		<div class="rss redes">
           			<A href="#">Compartir</A>
           		</div>
-          		<DIV class="rss">
+          		<div class="rss">
           			<A href="#">RSS</A>
           		</div>
           		<P>Se econtraron <SPAN class="orange"><?php echo $pager_total_items[0];?> ofertas de trabajo:</SPAN> en el &aacute;rea: <SPAN class="orange"> GERENCIA GENERAL</SPAN></P>
