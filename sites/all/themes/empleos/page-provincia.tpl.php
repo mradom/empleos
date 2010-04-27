@@ -76,16 +76,9 @@ global $pager_total_items;
 
 $sql_query = "";
 
-$base_query = "SELECT * FROM node_revisions AS nr
-INNER JOIN node AS n ON n.nid = nr.nid ";
+$base_query = "SELECT * FROM node_revisions AS nr INNER JOIN node AS n ON n.nid = nr.nid ";
+$inner_join = "INNER JOIN content_type_e_aviso AS w ON w.nid = n.nid ";
 // ojo tiene que ser select * si o si para que funcione el paginador
-
-$inner_join = " INNER JOIN workflow_node AS w ON w.nid = n.nid ";
-
-$inner_join2 = " INNER JOIN pub_publicacion AS z ON z.nid = n.nid ";
-// en el cid esta el tipo
-// abajo deberia estar ordenado por CID desc y desde ASC
-
 $where = "WHERE n.type = 'e_aviso' AND n.status = 1 ";
 
 if($term > 0){
@@ -93,7 +86,7 @@ if($term > 0){
 	$where = $where . "AND tn1.tid = ". $term ." ";
 }
 
-$where = $where . " ORDER BY w.sid, n.created DESC  ";
+$where = $where . " ORDER BY w.field_tipo_de_aviso_value DESC, n.created DESC  ";
 
 $sql = $base_query.$inner_join.$where;
     //$rs = db_query($sql);
@@ -144,11 +137,11 @@ $sql = $base_query.$inner_join.$where;
 			foreach($nodo->taxonomy as $value){
 				if ($value->vid == 17){$localidad = $value->tid; break;}
 			}
-			switch ($nodo->_workflow) {
-				case 3:
+			switch ($nodo->field_tipo_de_aviso[0]["value"]) {
+				case 4:
 					//if ( ($otro==1) and ($tipo <> 3) ) { print '</div><!-- fin tipo -->'; $otro=0; } 						
 					if($gold == "0"){
-						echo "<div id='gold'><div id='titles_bar'><img src='sites/all/themes/empleos/img/gold.gif'>Avisos Gold</div>";
+						echo "<div id='gold'><div id='titles_bar'><img src='/sites/all/themes/empleos/img/gold.gif'>Avisos Gold</div>";
 						$otro = 1;	
 						$gold = 1;
 						$tipo = 3;
@@ -156,10 +149,10 @@ $sql = $base_query.$inner_join.$where;
 					echo "<div id='gold'>"; 
 					}
 					break;
-				case 4:
+				case 3:
 					//if ( ($otro==1) and ($tipo <> 4) ) { print '</div><!-- fin tipo -->'; $otro=0; } 												
 					if($destacado == "0"){
-						echo "<div id='destacado'><div id='titles_bar'><img src='sites/all/themes/empleos/img/destacado.gif'>Avisos Destacados</div>";
+						echo "<div id='destacado'><div id='titles_bar'><img src='/sites/all/themes/empleos/img/destacado.gif'>Avisos Destacados</div>";
 						$destacado = 1;
 						$otro = 1;
 						$tipo = 4;
@@ -167,10 +160,10 @@ $sql = $base_query.$inner_join.$where;
 					echo "<div id='destacado'>"; 
 					}
 					break;
-				case 5:
+				case 2:
 					//if ( ($otro==1) and ($tipo <> 5) ) { print '</div><!-- fin tipo -->'; $otro=0; } 												
 					if($simple == "0"){
-						echo "<div id='simple'><div id='titles_bar'><img src='sites/all/themes/empleos/img/simple.gif'>Avisos Simples</div>";
+						echo "<div id='simple'><div id='titles_bar'><img src='/sites/all/themes/empleos/img/simple.gif'>Avisos Simples</div>";
 						$simple = 1;
 						$otro = 1;
 						$tipo = 5;								
@@ -178,7 +171,7 @@ $sql = $base_query.$inner_join.$where;
 					echo "<div id='simple'>"; 
 					}
 					break;
-				case 6:
+				case 1:
 					//if ( ($otro==1) and ($tipo <> 6) ) { print '</div><!-- fin tipo -->'; $otro=0; } 												
 					if($gratis == "0"){
 						echo "<div id='gratis'><div id='titles_bar'>Avisos Gratuitos</div>";
@@ -202,7 +195,7 @@ $sql = $base_query.$inner_join.$where;
 					break;	
 			}
 
-			if($nodo->_workflow == 3 or $nodo->_workflow == 4){
+			if($nodo->field_tipo_de_aviso[0]["value"] == 3 or $nodo->field_tipo_de_aviso[0]["value"] == 4){
 				print '<!-- ini destacado -->';
 				// gold y destacado
 				  print '<div>';
@@ -249,7 +242,7 @@ $sql = $base_query.$inner_join.$where;
 				print '</div>';						
 				print '<!-- fin destacado -->';
 				}
-			  if($nodo->_workflow == 5){
+			  if($nodo->field_tipo_de_aviso[0]["value"] == 2){
 				// simple
 				print '<!-- ini simple -->';
 				print '<div>';
@@ -291,7 +284,7 @@ $sql = $base_query.$inner_join.$where;
 				print '</div>';						  
 				print '<!-- fin simple -->';
 				}
-			  if($nodo->_workflow == 6){
+			  if($nodo->field_tipo_de_aviso[0]["value"] == 1){
 				print '<!-- ini free -->';
 				// free
 				print '<div>';
