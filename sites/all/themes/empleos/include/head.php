@@ -15,16 +15,16 @@
 <link rel="stylesheet" type="text/css" href="/sites/all/themes/empleos/css/ui.all.css">
 <link rel="stylesheet" type="text/css" href="/sites/all/themes/empleos/css/notas.css">
 <link rel="stylesheet" type="text/css" href="/sites/all/themes/empleos/css/fade.css">
-<script type="text/javascript" src="/sites/all/modules/jquery_ui/jquery.ui/ui/ui.core.js"></script>
-<script type="text/javascript" src="/sites/all/modules/jquery_ui/jquery.ui/ui/ui.tabs.js"></script>
-<script type="text/javascript" src="/sites/all/modules/jquery_ui/jquery.ui/ui/jquery.ui.all.js"></script>
-<script type="text/javascript" src="/sites/all/modules/jquery_ui/jquery.ui/ui/ui.datepicker.js"></script>
 <script type="text/javascript" src="/sites/all/modules/jquery_update/compat.js"></script>
 <script type="text/javascript" src="/sites/all/themes/empleos/js/jquery.innerfade.js"></script>
 <script type="text/javascript" src="/sites/all/themes/empleos/js/jquery.innerfade.page.js"></script>
 <!-- scripts  -->
 <?php print $scripts ?>
 <!-- fin auto scripts -->
+<script type="text/javascript" src="/sites/all/modules/jquery_ui/jquery.ui/ui/ui.core.js"></script>
+<script type="text/javascript" src="/sites/all/modules/jquery_ui/jquery.ui/ui/jquery.ui.all.js"></script>
+<script type="text/javascript" src="/sites/all/modules/jquery_ui/jquery.ui/ui/ui.datepicker.js"></script>
+<script type="text/javascript" src="/sites/all/modules/jquery_ui/jquery.ui/ui/ui.tabs.js"></script>
 
 <?php if (arg(0) == "principal") {?>
 <script type="text/javascript" src="/sites/all/themes/empleos/js/prototype.js" ></script>
