@@ -261,12 +261,19 @@ function job_view() {
 }
 
 function job_get_list($uid = NULL) {
+	global $user;
   $rows = array();
+  if($user->roles[5]){
+  	$nuid = " n.uid ";
+  }else{
+  	$nuid = " j.uid ";
+  }
   $sql = "SELECT n.nid, j.uid, j.resume_nid, j.timestamp
     FROM {node} n INNER JOIN {job} j USING(nid)
-    WHERE n.uid = %d
+    WHERE ".$nuid." = %d
     AND j.status = 1
     ORDER by j.timestamp ASC";
+    //echo $sql;
   $result = db_query($sql, $uid);
   while ($data = db_fetch_object($result)) {
     $resume = node_load(array('nid' => $data->resume_nid));
@@ -283,7 +290,7 @@ function job_get_list($uid = NULL) {
 
 function theme_job_view($list = array()) {
   $rows = array();
-  $header = array(t('Job'), t('Applicant'), t('Resume'), t('Date'), t('Operations'));
+  $header = array(t('Aviso'), t('Postulante'), t('Mi CV'), t('Date'), t('Operations'));
   if (count($list)) {
     foreach($list as $data) {
       $applicant = $data['applicant'];
@@ -293,7 +300,7 @@ function theme_job_view($list = array()) {
       $title     = l($job->title, "node/$job->nid");
       $resume    = l($resume->title, "node/" . $resume->nid);
       $user      = l($applicant->name, "user/$applicant->uid");
-      $ops       = l(t('Clear'), "job/clear/$job->nid/" . $applicant->uid);
+      $ops       = l(t('Borrar'), "job/clear/$job->nid/" . $applicant->uid);
       $timestamp = format_date($data['timestamp'], 'custom', 'Y-m-d H:i');
 
       $rows[] = array(

@@ -10,4 +10,3 @@ El proceso de ingreso del curr&iacute;culum est&aacute; dividido en <span class=
 
     </div>
 	<?php include("submenu-empresa.php");?> 
-  	
