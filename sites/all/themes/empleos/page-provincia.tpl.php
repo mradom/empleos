@@ -108,12 +108,12 @@ $sql = $base_query.$inner_join.$where;
     //if(isset($zona )) print '<li><h1><a href="/buscar/'.$zona.'">$zona / </a></h1></li>';
     //if(isset($key  )) print '<li><h1><a href="/buscar/'.$key.'">$key</a></h1></li>';
 	//print '<li>['.$nodes_per_page.']</li>';
-
-    //print '</UL></div>'; 
-    print '<DIV class="box central" style="background:none">'; 
-	print '<DIV class="results"><DIV class="rss redes"><A href="#">Compartir</A>'; 
-    print '</div><DIV class="rss"><A href="#">RSS</A>';
-	print '</div><P><SPAN class="orange">'.get_term_by_id($term).'</SPAN> : '.$pager_total_items[0].' aviso/s</P>'; 
+    print '</div>'; 
+	
+    print '<div class="box central" style="background:none">'; 
+	print '<div class="results"><div class="rss redes"><a href="#">Compartir</a>'; 
+    print '</div><div class="rss"><a href="#">RSS</a>';
+	print '</div><p><span class="orange">'.get_term_by_id($term).'</span> : '.$pager_total_items[0].' aviso/s</p>'; 
 	print '</div>';
 
 
