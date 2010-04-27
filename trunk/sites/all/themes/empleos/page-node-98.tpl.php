@@ -9,7 +9,7 @@
   <!-- MIDDLE -->
   <div id="browser" class="inside"> </div>  
   <div id="midle">
-    <?php include("include/mi_postulantes_encabezado.php");?> 
+    <?php include("include/encabezado_mi_postulantes.php");?> 
     <!-- RIGHT -->
     <div id="right_colum">
 	</div>    

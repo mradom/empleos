@@ -8,7 +8,7 @@
   <?php include("include/header.php");?>
   <!-- MIDDLE -->
   <div id="midle">
-    <?php include("include/mi_postulantes_encabezado.php");?> 
+    <?php include("include/encabezado_mi_postulantes.php");?> 
     <!-- RIGHT -->
     <div id="right_colum">
 	</div>    

@@ -9,7 +9,7 @@
   <div id="midle">
     <!-- banner -->
     <?php //include("include/banners-boxes.php");?>
-    <?php include("include/avanzada_encabezado.php");?>
+    <?php include("include/encabezado_avanzada.php");?>
     <!-- RIGHT -->
     <?php include("include/col_derecha-mini.php");?>
     <!-- CENTRAL -->
@@ -17,7 +17,7 @@
       <?php
         //}
         //if (arg(1)<>"") {
-        include("include/busqueda-avanzada.php");
+        include("include/busqueda_avanzada.php");
 		//}
         ?>
       <?php include("include/banners-central.php");?>

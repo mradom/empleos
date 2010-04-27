@@ -9,7 +9,7 @@
   <div id="midle">
     <!-- banner -->
     <?php //include("include/banners-boxes.php");?>
-    <?php include("include/mapadelsitio_encabezado.php");?>
+    <?php include("include/encabezado_mapadelsitio.php");?>
     <!-- RIGHT -->
     <?php include("include/col_derecha-mini.php");?>
     <!-- CENTRAL -->

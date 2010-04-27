@@ -8,7 +8,7 @@
   <?php include("include/header.php");?>
   <!-- MIDDLE -->
   <div id="midle">
-    <?php include("include/mi_idiomas_encabezado.php");?> 
+    <?php include("include/encabezado_mi_idiomas.php");?> 
     <!-- RIGHT -->
     <div id="right_column">
 	  <?php Form_ayuda('Ayuda', 'Idiomas'); ?> 

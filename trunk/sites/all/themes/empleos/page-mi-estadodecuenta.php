@@ -7,7 +7,7 @@
   <?php include("include/header.php");?>
   <!-- MIDDLE -->
   <div id="midle">
-    <?php include("include/mi_estadodecuenta_encabezado.php");?> 
+    <?php include("include/encabezado_mi_estadodecuenta.php");?> 
     <!-- RIGHT -->
     <!-- CENTRAL -->
     <div id="central_column">

@@ -10,7 +10,7 @@
   <div id="midle">
     <!-- banner -->
     <?php //include("include/banners-boxes.php");?>
-    <?php include("include/contact_encabezado.php");?>
+    <?php include("include/encabezado_contact.php");?>
     <!-- RIGHT -->
     <div id="right_column">
     <?php Empleos_ayuda('Tip', 'Contact');  ?>

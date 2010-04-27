@@ -8,7 +8,7 @@
   <?php include("include/header.php");?>
   <!-- MIDDLE -->
   <div id="midle">
-    <?php include("include/mi_experiencia_laboral_encabezado.php");?> 
+    <?php include("include/encabezado_mi_experiencia_laboral.php");?> 
     <!-- RIGHT -->
     <div id="right_colum">
 	  <?php Form_ayuda('Ayuda', 'ExperienciaLaboral'); ?>

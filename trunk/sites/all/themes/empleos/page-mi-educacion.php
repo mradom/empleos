@@ -8,7 +8,7 @@
   <?php include("include/header.php");?>
   <!-- MIDDLE --> 
   <div id="midle">
-    <?php include("include/mi_educacion_encabezado.php");?> 
+    <?php include("include/encabezado_mi_educacion.php");?> 
     <!-- RIGHT colum -->
     <div id="right_colum">
 	  <?php Form_ayuda('Ayuda', 'Educacion'); ?>

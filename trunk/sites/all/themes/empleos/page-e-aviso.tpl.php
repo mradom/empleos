@@ -8,9 +8,9 @@
   <!-- MIDDLE -->
   <!--<div id="browser" class="inside"> </div>-->  
   <div id="midle">
-	<?php if (arg(2)<>'') include("include/mi_avisos_encabezado.php");?>  
+	<?php if (arg(2)<>'') include("include/encabezado_mi_avisos.php");?>  
     <!-- RIGHT -->
-    <?php // No tiene ... include("include/mi_idiomas_encabezado.php");?> 
+    <?php // No tiene ... include("include/encabezado_mi_idiomas.php");?> 
     <!-- CENTRAL -->
     <div id="central_column">
 	<?php print $content;?>
