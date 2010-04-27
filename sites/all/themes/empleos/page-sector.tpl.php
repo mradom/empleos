@@ -18,7 +18,7 @@
               <?php
 			  if ( arg(1)=='') {
 		          print '<div class="bar_blue"><div class="corner_blue _2"></div>';
-    		      print '<div class="corner_blue">Listado de Rubros por Sector</div></div>';
+    		      print '<div class="corner_blue">Avisos por Sector</div></div>';
         		  print '<div class="box center">'; 
 			      
 				  $b_ramo=get_vocabulary_by_name('Ramo o Actividad');
