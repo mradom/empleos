@@ -18,8 +18,12 @@ global $pager_total_items;
 	// ojo tiene que ser select * si o si para que funcione el paginador
 	$where = "WHERE n.type = 'e_aviso' AND n.status = 1 ";
 	
-	if($key != "" and $key != 'Buscar por palabras clave'){
-		$where = $where."AND n.title LIKE '%".$key."%' or nr.body LIKE '%".$key."%' ";
+	if($key == 'Buscar por palabras clave'){
+		$key = "";
+	}
+	
+	if($key != ""){
+		$where .="AND n.title LIKE '%".$key."%' or nr.body LIKE '%".$key."%' ";
 	}
 	if($rubro > 0){
 		$inner_join = $inner_join . " INNER JOIN term_node AS tn1 ON tn1.nid = n.nid ";
@@ -73,7 +77,6 @@ if($_REQUEST['busqueda'] == "avanzada"){
 
 	$nodes_per_page = variable_get(EMPLEOS_PAGE_LIMIT, 20);
 	$nodes_per_page = 2;
-	
 	$rs = pager_query($sql,$nodes_per_page,0);
 ?>
 <!-- Poner aca camino de links -->
@@ -81,13 +84,13 @@ if($_REQUEST['busqueda'] == "avanzada"){
       <UL class="tags">
         <li><H1><A href="/buscar">Buscar</A></H1></LI>
         <?php  	if(isset($rubro) and $rubro != "0"){
-        			$rs = db_query("SELECT * FROM term_data WHERE tid = $rubro");
-        			$rub = db_fetch_object($rs);
+        			$rs2 = db_query("SELECT * FROM term_data WHERE tid = $rubro");
+        			$rub = db_fetch_object($rs2);
         			echo '<li><h1><a href="/buscar/'.$rubro.'">'.$rub->name .' / </a></h1></li>';
         		}
                 if(isset($zona) and $zona != "0"){
-        			$rs = db_query("SELECT * FROM term_data WHERE tid = $zona");
-        			$zon = db_fetch_object($rs);
+        			$rs2 = db_query("SELECT * FROM term_data WHERE tid = $zona");
+        			$zon = db_fetch_object($rs2);
                 	echo '<li><h1><a href="/buscar/'.$zona.'">'.$zon->name .' / </a></h1></li>';
                 }
                 if(isset($key) and $key != "0") echo '<li><h1><a href="/buscar/'.$key.'">'.$key.'</a></h1></li>';
