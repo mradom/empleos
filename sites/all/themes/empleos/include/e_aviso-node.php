@@ -75,10 +75,10 @@ function AltDisplay(eldiv, elbot)
     </div>
 	<ul class="resumen">
 		<li class="stg"><span class="blue">Empleo ofrecido por:</span> <?php echo $nodo->name;?></li>
-		<li><span class="blue">Ramo o actividad:</span> <?php echo $nodo->taxonomy[$ramo]->name;?></li>
-		<!-- <li><span class="blue">Lugar de trabajo:</span> <?php echo $nodo->taxonomy[$localidad]->name;?></li>  -->
+		<li><span class="blue">Ramo o actividad:</span> <a href="/sector/<?php echo $ramo;?>"><?php echo $nodo->taxonomy[$ramo]->name;?></a></li>
+		<li><span class="blue">Lugar de trabajo:</span> <a href="/provincia/<?php echo $localidad;?>"><?php echo $nodo->taxonomy[$localidad]->name;?></a></li> 
 		<li><span class="blue">Jerarqu&iacute;a:</span> <?php echo $nodo->taxonomy[$jerarquia]->name;?></li>
-		<li><span class="blue">Area:</span> <?php echo $nodo->taxonomy[$area]->name;?></li>
+		<li><span class="blue">Area:</span> <a href="/rubro/<?php echo $area;?>"><?php echo $nodo->taxonomy[$area]->name;?></a></li>
 		<!-- <li><span class="blue">Disponibilidad:</span> <?php echo $nodo->taxonomy[$disponibilidad]->name;?></li>  -->		
 		<li><span class="blue">Salario:</span> <?php echo $nodo->taxonomy[$pretendido]->name;?></li>
 		<li><span class="blue">Vacantes:</span> <?php echo $nodo->field_cantidad_de_vacantes[0]['value'];?></li>
