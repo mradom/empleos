@@ -7,10 +7,10 @@ global $user_profile;
 //firep($user, 'User');
 //firep($user_profile, 'User');
 
-print '<div>';
+print '<div  class="content_grl">';
 				if (in_array('empresa', array_values($user->roles))) {
 				  	 if ($user->uid) { 
- 						print '<div><a href="/user/me/edit"><img class="right" title="Cambiar logo" src="/'.$user->picture.'"></a><div>';
+ 						print '<div><a href="/user/me/edit"><img class="right" title="Cambiar logo" src="/'.$user->picture.'"></a></div>';
 						//print '<div style="border: 1px solid #ccc ;">';
 			  	 	 	print 'Empresa<br>';
 			  	 	 	print '<a href="//job/applications">Mis Aplicaciones</a><br>';
