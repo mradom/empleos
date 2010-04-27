@@ -18,7 +18,7 @@
               <?php
 			  if ( arg(1)=='') {
 		          print '<div class="bar_blue"><div class="corner_blue _2"></div>';
-    		      print '<div class="corner_blue">Listado de Rubros</div></div>';
+    		      print '<div class="corner_blue">Avisos por Rubros</div></div>';
         		  print '<div class="box center">'; 
 	
 				  $sql = "SELECT vid, name FROM {vocabulary} WHERE vid = 1";
