@@ -9,9 +9,5 @@ El proceso de ingreso del curr&iacute;culum est&aacute; dividido en <span class=
       <div><img style=" padding-left:150px " src="/sites/all/themes/empleos/img/datosp.png"></div>
 
     </div>
-
-    <!-- submenu --> 
-	<?php //include("submenu-usuarios.php");?> 
-     <!-- tabla --> 
-     <div id="browser" class="inside"> </div>  
+	<?php include("submenu-empresa.php");?> 
   	
