@@ -35,6 +35,6 @@
   </div>
   <div class="bloque puntos" style="width:300px;  margin-top:20px;"></div>
    <div class="blue" style="padding-left:11px; margin:10px 0 30px 0;"><strong>Regristrate como:</strong></div>
-  <div class="btn_gral" style="float:left; margin-left:80px;"><a href="/user/register/persona">Persona</a></div>
-  <div class="btn_gral" style="float:left; margin-left:30px;"><a href="/user/register/empleador">Empresa</a></div>
+  <div class="btn_gral b" style=" margin-left:80px;"><a href="/user/register/persona">Persona</a></div>
+  <div class="btn_gral b" style=" margin-left:30px;"><a href="/user/register/empleador">Empresa</a></div>
 </div>

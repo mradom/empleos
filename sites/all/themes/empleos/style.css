@@ -503,6 +503,11 @@ ul.tags li.final {
 }
 /*------------MIDDLE-----------*/
 /*----siderbar ---rigth--------*/
+div.content_grl{
+	float:left;
+	margin:0 0 10px 0;
+	padding:0;
+}
 .box {
 	height:auto;
 	border:1px solid #3077a4;
