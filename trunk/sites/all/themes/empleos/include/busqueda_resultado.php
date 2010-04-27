@@ -62,7 +62,7 @@ if($_REQUEST['busqueda'] == "avanzada"){
 	}
 }
 
-	$where = $where . " ORDER BY w.field_tipo_de_aviso_format, n.created DESC  ";
+	$where = $where . " ORDER BY w.field_tipo_de_aviso_value DESC, n.created DESC  ";
 	
 	$sql = $base_query.$inner_join.$where;
 	//Print "<pre>".$sql."<pre>";
