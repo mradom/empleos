@@ -57,17 +57,17 @@ function empleos_menu($may_cache) {
     );
 
 	$items[] = array(
-	  'title'    			=> 'Test',
-      'path'     			=> 'test',
-      'callback' 			=> 'empleos_test',
+	  'title'    			=> 'Sector',
+      'path'     			=> 'sector',
+      'callback' 			=> 'empleos_sector',
 	  'access'   			=> TRUE,
 	  'weight' => 100
     );
 
 	$items[] = array(
-	  'title'    			=> 'Test 2',
-      'path'     			=> 'test2',
-      'callback' 			=> 'empleos_test',
+	  'title'    			=> 'Provincia',
+      'path'     			=> 'provincia',
+      'callback' 			=> 'empleos_provincia',
 	  'access'   			=> TRUE,
 	  'weight' => 100
     );
@@ -111,6 +111,14 @@ function empleos_buscar() {
 }
 
 function empleos_rubro() {
+   return '';
+}
+
+function empleos_provincia() {
+   return '';
+}
+
+function empleos_sector() {
    return '';
 }
 

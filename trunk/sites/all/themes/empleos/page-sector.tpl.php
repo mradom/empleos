@@ -18,10 +18,12 @@
               <?php
 			  if ( arg(1)=='') {
 		          print '<div class="bar_blue"><div class="corner_blue _2"></div>';
-    		      print '<div class="corner_blue">Listado de Rubros</div></div>';
+    		      print '<div class="corner_blue">Listado de Rubros por Sector</div></div>';
         		  print '<div class="box center">'; 
-	
-				  $sql = "SELECT vid, name FROM {vocabulary} WHERE vid = 1";
+			      
+				  $b_ramo=get_vocabulary_by_name('Ramo o Actividad');
+				  
+				  $sql = "SELECT vid, name FROM {vocabulary} WHERE vid = ".$b_ramo;
 				  $vocabularies = db_query($sql);
 				  $output = "";
 				  while ($avoc = db_fetch_object($vocabularies)) {

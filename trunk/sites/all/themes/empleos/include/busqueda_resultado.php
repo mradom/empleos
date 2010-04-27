@@ -206,9 +206,9 @@ if($_REQUEST['busqueda'] == "avanzada"){
 							print '">'.$nodo->taxonomy[$area]->name.'</a> | <span class="upper">';
 							print $nodo->name.'</span></h2>';
 							print '<p class="line">'; 
-							 print '<span class="orange">Sector:</span> <a href="/taxonomy/term/';
+							 print '<span class="orange">Sector:</span> <a href="/sector/';
 							 print $nodo->taxonomy[$sector]->tid;
-							 print '">'.$nodo->taxonomy[$sector]->name.'</a> | <a href="/taxonomy/term/';
+							 print '">'.$nodo->taxonomy[$sector]->name.'</a> | <a href="/provincia/';
 							 print $nodo->taxonomy[$localidad]->tid;
 							 print '">'.$nodo->taxonomy[$localidad]->name.'</a><br>'; 
 							 print '</p>';
@@ -248,9 +248,9 @@ if($_REQUEST['busqueda'] == "avanzada"){
 							print '">'.$nodo->taxonomy[$area]->name.'</a></span> | <span class="upper">';
 							print $nodo->name.'</span></h2>';
 							print '<p class="line">'; 
-							 print '<span class="orange">Sector:</span> <a href="/taxonomy/term/';
+							 print '<span class="orange">Sector:</span> <a href="/sector/';
 							 print $nodo->taxonomy[$sector]->tid;
-							 print '">'.$nodo->taxonomy[$sector]->name.'</a> | <a href="/taxonomy/term/';
+							 print '">'.$nodo->taxonomy[$sector]->name.'</a> | <a href="/provincia/';
 							 print $nodo->taxonomy[$localidad]->tid;
 							 print '">'.$nodo->taxonomy[$localidad]->name.'</a><BR>'; 
 							 print '</p>';
