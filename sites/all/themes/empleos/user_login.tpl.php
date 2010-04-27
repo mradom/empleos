@@ -5,5 +5,5 @@
 			<input type="submit" class="form-submit" tabindex="3" value="Ingresar" id="edit-submit" name="op"><br />
 		<a href="/user/register/persona">Registrarme como persona</a> | 
 		<a href="/user/register/empresa">Registrarme como Empresa</a> | 
-		<a href="/user/password">Olvid&eacute; mi clave</a>
+		<a href="/user/password">Olvid&eacute; mi clave</a> 
 </div>

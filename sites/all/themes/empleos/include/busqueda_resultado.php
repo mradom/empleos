@@ -67,15 +67,14 @@ if($_REQUEST['busqueda'] == "avanzada"){
 	$sql = $base_query.$inner_join.$where;
 	//Print "<pre>".$sql."<pre>";
 
-	
     //$rs = db_query($sql);
-    $rs = mysql_query($sql) or die(mysql_errors());
+    //$rs = mysql_query($sql) or die(mysql_errors());
     //echo $sql;
 
 	$nodes_per_page = variable_get(EMPLEOS_PAGE_LIMIT, 20);
 	$nodes_per_page = 2;
 	
-	//$rs = pager_query($sql,$nodes_per_page,0);
+	$rs = pager_query($sql,$nodes_per_page,0);
 ?>
 <!-- Poner aca camino de links -->
 	  <div style="float: left;">

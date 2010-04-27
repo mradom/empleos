@@ -38,3 +38,8 @@
   <div class="btn_gral b" style=" margin-left:80px;"><a href="/user/register/persona">Persona</a></div>
   <div class="btn_gral b" style=" margin-left:30px;"><a href="/user/register/empleador">Empresa</a></div>
 </div>
+  <script>
+  $(document).ready(function() {
+	  $("#edit-name").focus();
+	  });
+  </script>
