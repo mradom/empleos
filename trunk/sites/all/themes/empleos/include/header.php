@@ -18,7 +18,7 @@
                <?php If ( (arg(0)=='principal') or (arg(0)=='buscar') ) { ?>
                 <!-- browser -->
     			<div id="browser">
-                <?php include("sites/all/themes/empleos/include/buscador.php");?>
+                <?php include("sites/all/themes/empleos/include/busqueda.php");?>
       				<div class="white right">
       					<?php if(arg(0) != "principal"){?>
                        <?php if (!$user->uid) {

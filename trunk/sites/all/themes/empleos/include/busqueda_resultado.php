@@ -191,13 +191,17 @@ if($_REQUEST['busqueda'] == "avanzada"){
 						  print '<div>';
 						  // logo de la empresa
 						  print '<div class="brand">';
-						  // print theme('imagecache','logo_empresa_resultado_busqueda_86_53',$nodo->picture,$nodo->picture,$nodo->picture);
+						  print theme('imagecache','logo_empresa_resultado_busqueda_86_53',$nodo->picture,$nodo->picture,$nodo->picture);
 						  print '</div>';
 						  // boton de postulacion
 					      print '<a href="/job/apply/'.$nodo->nid.'"><div class="btn_postulate"></div></a>';
 						  // encabezado
 						  print '<div class="datos">'; 
-							print '<h2><a class="orange" href="/taxonomy/term/';
+						    print '<h2><a class="orange" href="/node/';
+							print $fila->nid;
+							print '">'.$nodo->title.'</a></h2>';
+							
+							print '<h2><a class="orange" href="/rubro/';
 							print $nodo->taxonomy[$area]->tid;
 							print '">'.$nodo->taxonomy[$area]->name.'</a> | <span class="upper">';
 							print $nodo->name.'</span></h2>';
@@ -235,7 +239,11 @@ if($_REQUEST['busqueda'] == "avanzada"){
 						print '<div>';
 						  // encabezado
 						  print '<div class="datos">'; 
-							print '<h2><span><a href="/taxonomy/term/';
+						    print '<h2><a class="orange" href="/node/';
+							print $fila->nid;
+							print '">'.$nodo->title.'</a></h2>';
+
+							print '<h2><span><a href="/rubro/';
 							print $nodo->taxonomy[$area]->tid;
 							print '">'.$nodo->taxonomy[$area]->name.'</a></span> | <span class="upper">';
 							print $nodo->name.'</span></h2>';
@@ -273,7 +281,11 @@ if($_REQUEST['busqueda'] == "avanzada"){
 						print '<div>';
 						  // encabezado
 						  print '<div class="datos">'; 
-							print '<h2><strong><a href="/taxonomy/term/';
+						    print '<h2><a class="orange" href="/node/';
+							print $fila->nid;
+							print '">'.$nodo->title.'</a></h2>';
+						  
+							print '<h2><strong><a href="/rubro/';
 							print $nodo->taxonomy[$area]->tid;
 							print '">'.$nodo->taxonomy[$area]->name.'</a></strong> | <span class="upper">';
 							print $nodo->name.'</span></h2>';

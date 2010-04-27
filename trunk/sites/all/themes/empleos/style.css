@@ -688,7 +688,7 @@ li.destacado div.brand, #gold div.brand, #destacado div.brand, div.resumen div.b
 p.name {
 	font:14px/16px verdana;
 	padding-top:5px;
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 	width:160px;
 	float:left;
 }
