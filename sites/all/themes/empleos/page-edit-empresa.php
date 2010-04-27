@@ -9,7 +9,7 @@
   <!-- MIDDLE -->
   <div id="browser" class="inside"> </div>  
   <div id="midle">
-    <?php include("include/mi_empresa_encabezado.php");?> 
+    <?php include("include/encabezado_mi_empresa.php");?> 
     <!-- RIGHT -->
     <!-- CENTRAL -->
     <div id="central_column">

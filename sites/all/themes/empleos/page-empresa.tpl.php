@@ -8,7 +8,7 @@
   <?php include("include/header.php");?>
   <!-- MIDDLE -->
   <div id="midle">
-    <?php include("include/empresa_encabezado.php");?>
+    <?php include("include/encabezado_empresa.php");?>
     <?php //include("include/banners-boxes.php");?>
     <!-- RIGHT -->
     <?php 

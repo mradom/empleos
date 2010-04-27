@@ -7,9 +7,9 @@
   <?php include("include/header.php");?>
   <!-- MIDDLE -->
   <div id="midle">
-    <?php include("include/mi_avisos_encabezado.php");?> 
+    <?php include("include/encabezado_mi_avisos.php");?> 
     <!-- RIGHT -->
-    <?php // No tiene ... include("include/mi_idiomas_encabezado.php");?> 
+    <?php // No tiene ... include("include/encabezado_mi_idiomas.php");?> 
     <!-- CENTRAL -->
     <DIV id="central_column">
   <script>

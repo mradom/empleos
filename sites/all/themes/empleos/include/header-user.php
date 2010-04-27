@@ -4,7 +4,7 @@
     	<DIV id="logo"><A href=""><IMG src="./Forms_files/logo.jpg"></A></div> 
     	<DIV style="clear:both"></div> 
 		<?php include("menu.php");?>
-    	<div id="browser"><?php include("buscador.php");?>
+    	<div id="browser"><?php include("busqueda.php");?>
       		<div class="white right">
         		<h1 style="margin: 10px 10% 0pt;">&iquest;Primera vez en empleoslavoz?</h1>
 				<h3 style="margin: 0pt 12%; text-align: center;">Registrate de forma f&aacute;cil y segura en s&oacute;lo 3 pasos</h3>

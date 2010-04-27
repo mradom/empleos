@@ -9,7 +9,7 @@
   <?php include("include/header.php");?>
   <!-- MIDDLE -->
   <div id="midle">
-    <?php include("include/consultora_encabezado.php");?>
+    <?php include("include/encabezado_consultora.php");?>
     <?php //include("include/banners-boxes.php");?>
     <!-- RIGHT -->
     <?php 

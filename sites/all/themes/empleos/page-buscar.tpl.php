@@ -12,7 +12,7 @@
     <?php include("include/col_derecha.php");?>
     <!-- CENTRAL -->
     <div id="central_column">
-      <?php include("include/resultado_busqueda.php");?>
+      <?php include("include/busqueda_resultado.php");?>
       <?php include("include/buscador-mini.php");?>
       <?php include("include/banners-central.php");?>
     </div>       
