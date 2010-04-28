@@ -689,13 +689,13 @@ p.name {
 	font:14px/16px verdana;
 	padding-top:5px;
 	/*text-transform: uppercase;*/
-	width:160px;
+	width:200px;
 	float:left;
 }
 p.job {
 	font:bold 12px/14px verdana;
 	color:#0099cc;
-	width:160px;
+	width:200px;
 	float:left;
 }
 p.date {

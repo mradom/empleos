@@ -22,7 +22,6 @@
 				    //echo $sql;
 					$tot = mysql_num_rows($rs);
 					if( $tot> 0){
-						$ini = "D";
 						$ren = 0;
 						print '<ul class="left">';
         	    	    while($fila = mysql_fetch_object($rs)){
@@ -33,7 +32,10 @@
 							$ren+= 1;
 						    print '<li class="destacado">';
 							if ($nodo->field_tipo_de_aviso[0]["value"] > 2) {
- 					  			print '<div class="brand"><img src="'.$nodo->picture.'" title="'.$nodo->name.'"></div>';
+ 					  			print '<div class="brand">';
+								// <img src="'.$nodo->picture.'" title="'.$nodo->name.'">
+								print theme('imagecache','logo_empresa_resultado_busqueda_86_53',$nodo->picture,$nodo->name.' - alt',$nodo->name.' - Title'); 
+								print '</div>';
 							} else {
 								print '<div class="brand"></div>';
 							}
