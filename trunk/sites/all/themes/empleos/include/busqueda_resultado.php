@@ -23,7 +23,7 @@ global $pager_total_items;
 	}
 	
 	if($key != ""){
-		$where .="AND n.title LIKE '%".$key."%' or nr.body LIKE '%".$key."%' ";
+		$where .="AND (n.title LIKE '%".$key."%' or nr.body LIKE '%".$key."%') ";
 	}
 	if($rubro > 0){
 		$inner_join = $inner_join . " INNER JOIN term_node AS tn1 ON tn1.nid = n.nid ";
@@ -35,11 +35,11 @@ global $pager_total_items;
 	}
 	
 if($_REQUEST['busqueda'] == "avanzada"){
-	if(isset($fecha_desde)){
+	if(isset($fecha_desde) and $fecha_desde != null and $fecha_desde != ""){
 		$where .= " AND DATE(w.field_fecha_desde_value) >= DATE_FORMAT(DATE('$fecha_desde'),'%Y-%m-%d')";
 	}
 	
-	if(isset($fecha_hasta)){
+	if(isset($fecha_hasta) and $fecha_hasta != null and $fecha_hasta != ""){
 		$where .= " AND DATE(w.field_fecha_hasta_value) <= DATE_FORMAT(DATE('$fecha_hasta'),'%Y-%m-%d')";
 	}
 	
