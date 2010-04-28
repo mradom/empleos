@@ -3,8 +3,14 @@ global $user;
 global $user_profile;
         // Previsualizar --------------------------------------------------------------------------------------------
   		if ($user->uid){
-  			Print '<div class="share"><img src="sites/all/themes/empleos/img/icoImprimir.png" width="16" height="16" border=0 alt="Imprimir" style="margin-right:7px;"> <a href="/?q=cv_print/me" target="_blanc">Imprimir</a>&nbsp;&nbsp; <img src="sites/all/themes/empleos/img/icoRecomendar.png" width="16" height="16" border=0 alt="Recomendar este aviso" style="margin-right:7px;"> <a href="#">Enviar a un amigo</a>
-      </div>';
+  			?>
+  			<div class="share">
+  				<img src="/sites/all/themes/empleos/img/icoImprimir.png" width="16" height="16" border=0 alt="Imprimir" style="margin-right:7px;"> 
+  				<a href="/?q=cv_print/me" target="_blanc">Imprimir</a>&nbsp;&nbsp; 
+  				<img src="/sites/all/themes/empleos/img/icoRecomendar.png" width="16" height="16" border=0 alt="Recomendar este aviso" style="margin-right:7px;"> 
+  				<a href="#">Enviar a un amigo</a>
+  			</div>
+  			<?php
   		  	if(arg(0) == "user"){
   				$usuario = user_load(array('uid' => arg(1)));	
   			}else{
@@ -54,12 +60,7 @@ global $user_profile;
 				$argu = array("0"=>$user->uid);
 			}
   			$view = views_get_view('mis_educacion');
-  			print_r($argu);
 			$vista = views_build_view('items', $view, $argu, false);
-			echo "<pre>";
-			print_r($argu);
-			print_r($vista);
-			echo "</pre>";
 			Print '<div class="itemTitle" style="padding-left:10px; clear:both"><a class="orange" href="'.$link.'">Educacion</a></div>';
 			?>
 			<TABLE class="tablaGris" border="0" cellpadding="0" cellspacing="1">
@@ -135,7 +136,7 @@ global $user_profile;
   			// Cursos --------------------------------------------------------------------------------------------
 			$view = views_get_view('mis_cursos');
 			$vista = views_build_view('items', $view, false, false);
-  			if(arg(1) != $user->uid){
+  			if(arg(0) == "user"){
 				$link = "#";
 			}else{
 				$link = "/?q=/node/add/p-cursos";
@@ -158,7 +159,7 @@ global $user_profile;
 				?>
 				        <TR> 
 				          <?php 
-							if ($node->nid == $row->nid  or arg(1) != $user->uid){
+							if ($node->nid == $row->nid or arg(0) == "user"){
 				          		print '<TD>'.$row->title.'</TD>';
 							}else{ 
 								print '<TD><A href="/?q=node/'.$row->nid.'/edit" title="editar">'.$row->title.'</A></TD>';  
@@ -176,7 +177,7 @@ global $user_profile;
 			// Idiomas ------------------------------------------------------------------------------------------
 			$view = views_get_view('mis_idiomas');
 			$vista = views_build_view('items', $view, false, false);
-  		  	if(arg(1) != $user->uid){
+  		  	if(arg(0) == "user"){
 				$link = "#";
 			}else{
 				$link = "/?q=/node/add/p-idiomas";
@@ -205,7 +206,7 @@ global $user_profile;
 					}
 				?>
 				        <TR> 
-				          <?php if ($node->nid == $row->nid or arg(1) != $user->uid) { print '<TD>'.$row->title.'</TD>';
+				          <?php if ($node->nid == $row->nid or arg(0) == "user"){ print '<TD>'.$row->title.'</TD>';
 			                   } else { print '<TD><A href="/?q=node/'.$row->nid.'/edit" title="editar">'.$row->title.'</A></TD>';  } ?> 
 				          <TD><?php print $idioma;?></TD>
 				          <TD><?php print $row->field_nivel_oral[0]['value'];?></TD> 
@@ -221,7 +222,7 @@ global $user_profile;
 			// Informatica ------------------------------------------------------------------------------------------
 			$view = views_get_view('mis_informatica');
 			$vista = views_build_view('items', $view, false, false);
-  		  	if(arg(1) != $user->uid){
+  		  	if(arg(0) == "user"){
 				$link = "#";
 			}else{
 				$link = "/?q=/node/add/p-informatica";
@@ -247,7 +248,7 @@ global $user_profile;
 					}	
 				?>
 				        <TR> 
-				          <?php if ($node->nid == $row->nid or arg(1) != $user->uid) { print '<TD>'.$row->title.'</TD>';
+				          <?php if ($node->nid == $row->nid or arg(0) == "user"){ print '<TD>'.$row->title.'</TD>';
 			                   } else { print '<TD><A href="/?q=node/'.$row->nid.'/edit" title="editar">'.$row->title.'</A></TD>';  } ?> 
 				    	  <TD><?php print $tipo;?></TD> 
 				    	  <TD><?php print $row->field_nivel[0]['value'];?></TD>
@@ -260,7 +261,7 @@ global $user_profile;
 			// Otros Conocimientos ------------------------------------------------------------------------------------------			
 			$view = views_get_view('mis_otros_conocimientos');
 			$vista = views_build_view('items', $view, false, false);
-  		  	if(arg(1) != $user->uid){
+  		  	if(arg(0) == "user"){
 				$link = "#";
 			}else{
 				$link = "/?q=/node/add/p-otros-conocimientos";
@@ -279,7 +280,7 @@ global $user_profile;
 				$row = node_load(array('nid' => $item->nid));
 				?>
 				        <TR> 
-				          <?php if ($node->nid == $row->nid  or arg(1) != $user->uid) { print '<TD>'.$row->title.'</TD>';
+				          <?php if ($node->nid == $row->nid or arg(0) == "user"){ print '<TD>'.$row->title.'</TD>';
 			                   } else { print '<TD><A href="/?q=node/'.$row->nid.'/edit" title="editar">'.$row->title.'</A></TD>';  } ?> 
 				    	  <TD><?php print $row->field_nombre[0]['value'];?></TD> 
 				    	  <TD><?php print $row->field_descripcion[0]['value'];?></TD>
@@ -292,7 +293,7 @@ global $user_profile;
 			// Experiencia Laboral ------------------------------------------------------------------------------------------
 			$view = views_get_view('mis_experiencia_laboral');
 			$vista = views_build_view('items', $view, false, false);
-  		  	if(arg(1) != $user->uid){
+  		  	if(arg(0) == "user"){
 				$link = "#";
 			}else{
 				$link = "/?q=/node/add/p-experiencia-laboral";
@@ -339,7 +340,7 @@ global $user_profile;
 					}
 				?>
 				        <TR> 
-				          <?php if ($node->nid == $row->nid or arg(1) != $user->uid) { print '<TD>'.$a_ini.'-'.$m_ini.' - '.$a_fin.'-'.$m_fin.'</TD>';
+				          <?php if ($node->nid == $row->nid or arg(0) == "user"){ print '<TD>'.$a_ini.'-'.$m_ini.' - '.$a_fin.'-'.$m_fin.'</TD>';
 			                   } else { print '<TD><A href="/?q=node/'.$row->nid.'/edit" title="editar">'.$a_ini.'-'.$m_ini.' - '.$a_fin.'-'.$m_fin.'</A></TD>';  } ?> 
 				          <TD><?php print $row->title;?></TD>
 				          <TD><?php print $row->field_empresa[0]['value'];?></TD>				          
@@ -355,7 +356,7 @@ global $user_profile;
 			// Referencia Laboral ------------------------------------------------------------------------------------------			
 			$view = views_get_view('mis_referencia_laboral');
 			$vista = views_build_view('items', $view, false, false);
-  		  	if(arg(1) != $user->uid){
+  		  	if(arg(0) == "user"){
 				$link = "#";
 			}else{
 				$link = "/?q=/node/add/p-referencia";
@@ -377,7 +378,7 @@ global $user_profile;
 				$row = node_load(array('nid' => $item->nid));
 				?>
 				        <TR> 
-				          <?php if ($node->nid == $row->nid or arg(1) != $user->uid) { print '<TD>'.$row->field_empresa_0[0]['value'].'</TD>';
+				          <?php if ($node->nid == $row->nid or arg(0) == "user"){ print '<TD>'.$row->field_empresa_0[0]['value'].'</TD>';
 			                   } else { print '<TD><A href="/?q=node/'.$row->nid.'/edit" title="editar">'.$row->field_empresa_0[0]['value'].'</A></TD>';  } ?>
 				          <TD><?php print $row->field_titulo_o_cargo[0]['value'];?></TD> 				          
 				          <TD><?php print $node->title;?></TD>

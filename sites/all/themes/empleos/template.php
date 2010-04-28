@@ -1166,9 +1166,6 @@ function phptemplate_form_alter(&$form, $form_state, $form_id){
 			
 			$miform .= drupal_render($form['body_filter']);
 			
-			
-			$miform .= drupal_render($form['group_omar_mmmmmm']);
-			
 			$miform .= drupal_render($form['submit']);
 			$miform .= drupal_render($form['delete']);
 			$miform .= drupal_render($form['fin']);
