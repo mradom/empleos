@@ -32,7 +32,7 @@
   		drupal_goto("node/".$row->id."/edit");
   }?>
 	<?php print $content;?>
-	  <?php if (arg(1)<>'add' and arg(2)<>'edit' and arg(2)<>'delete') print "<a href='/node/add/p-objetivo-laboral'>Agregar</a>";?>
+	  <?php //if (arg(1)<>'add' and arg(2)<>'edit' and arg(2)<>'delete') print "<a href='/node/add/p-objetivo-laboral'>Agregar</a>";?>
     <?php include("include/banners-central.php");?>
     </div>
   </div>

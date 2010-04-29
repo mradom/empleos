@@ -131,19 +131,21 @@ input.req, select.req{border:1px solid #3399cc;
 	font-weight:bold;
 	color:#1C77A8;
 	display:inline-block;
-	margin-bottom:10px;
+	/*margin-bottom:10px;*/
+	font:bold 11px/14px Tahoma, Geneva, sans-serif;
 }
 .mycv .resizable-textarea .grippie{
-	margin:0 0 10px 273px;
+	margin:0 0 0 273px;
+	/*margin-bottom:10px;*/
 }
 .mycv .form-item .form-radios, .mycv textarea{
     max-width:350px;
 }
 .mycv .form-item label.option, .mycv textarea {
-	margin:0 0 10px 273px;
+	margin:0 0 0 273px;
+	/*margin-bottom:10px;*/
 }
 .mycv .form-item label.option{
-	font:11px tahoma;
 	color:#333;
 	text-align:left;
 	}
@@ -208,6 +210,17 @@ input.form-submit:hover{
 	width:85px;
 	margin-left:273px;
 	margin-bottom:10px;
+}
+.mycv fieldset.collapsible legend a, a:hover{
+	color:#FA8605;
+	text-decoration:none
+}
+
+/*--*/
+
+.mycv .container-inline-date .form-item{
+	width:340px;
+	float:left
 }
 /*--*/
 div.falselabel{

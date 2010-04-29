@@ -921,8 +921,8 @@ function phptemplate_e_aviso_node_form(&$form) {
 	
 	//echo "<pre>"; print_r($form); echo "</pre>";
 	
-$html = '<ul style="height: 30px;" class="ui-tabs-nav"> 
-        <li class="ui-tabs-selected"><a href="#fragment-1"><span>Descripcion del puesto:</span></a></li> 
+$html = '<ul class="ui-tabs-nav"> 
+        <li class="ui-tabs-selected"><a href="#fragment-1"><span>Descripcion del puesto</span></a></li> 
         <li><a href="#fragment-2"><span>Requisitos</span></a></li> 
         <li><a href="#fragment-3"><span>Datos de la Empresa</span></a></li> 
         <li><a href="#fragment-4"><span>Publicacion</span></a></li> 
