@@ -1,6 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language ?>" lang="<?php print $language ?>">
 <?php include("include/head.php");?>
+<?php include("include/varios.php");?>
 <body>
 <div id="wrapper">
   <!-- HEADER -->
@@ -9,7 +10,10 @@
   <div id="midle">
     <?php include("include/encabezado_mi_avisos.php");?> 
     <!-- RIGHT -->
-    <?php // No tiene ... include("include/encabezado_mi_idiomas.php");?> 
+    <div id="right_column">
+    <?php Empleos_ayuda('Ayuda', 'PublicarAviso');  ?>
+    <?php include("include/col_derecha-sin.php");?>
+    </div>
     <!-- CENTRAL -->
     <DIV id="central_column">
   <script>

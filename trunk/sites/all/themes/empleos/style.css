@@ -708,6 +708,7 @@ p.date {
 }
 .mycv .ui-tabs-panel {
 	border:0;
+	padding: 1.5em 0em
 	}
 .mycv .ui-tabs-nav ul{
 	width:677px;
