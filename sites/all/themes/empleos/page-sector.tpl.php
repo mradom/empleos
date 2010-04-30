@@ -108,12 +108,12 @@ $sql = $base_query.$inner_join.$where;
     //if(isset($zona )) print '<li><h1><a href="/buscar/'.$zona.'">$zona / </a></h1></li>';
     //if(isset($key  )) print '<li><h1><a href="/buscar/'.$key.'">$key</a></h1></li>';
 	//print '<li>['.$nodes_per_page.']</li>';
-    print '</div>'; 
+    //print '</div>'; 
 	
     print '<div class="box central" style="background:none">'; 
-	print '<div class="results"><div class="rss redes"><a href="#">Compartir</a>'; 
-    print '</div><div class="rss"><a href="#">RSS</a>';
-	print '</div><p><span class="orange">'.get_term_by_id($term).'</span> : '.$pager_total_items[0].' aviso/s</p>'; 
+	print '<div class="results"><div class="rss redes"><a href="#">Compartir</a></div>'; 
+    print '<div class="rss"><a href="#">RSS</a></div>';
+	print '<p><span class="orange">'.get_term_by_id($term).'</span> : '.$pager_total_items[0].' aviso/s</p>'; 
 	print '</div>';
 
 
@@ -318,9 +318,9 @@ $sql = $base_query.$inner_join.$where;
 	
 		
 	} else {
-		print '<div><p>No se encontraron avisos en este rubro.</p></div>';
+	  print '<div><p>No se encontraron avisos en este rubro.</p></div>';
 	}
-		 print '<div style="float: right; ">'.theme('pager', NULL, $nodes_per_page).'</div>';	
+    print '<div style="float: right; ">'.theme('pager', NULL, $nodes_per_page).'</div>';	
         
     print '</div><!--fin listado-->'; 
 }
