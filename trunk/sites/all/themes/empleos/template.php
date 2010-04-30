@@ -1020,8 +1020,9 @@ $html = '<ul class="ui-tabs-nav">
     
     $form['group_datos_de_la_empresa']['field_logo']['new']['field_logo_upload']['#title'] = "Seleccione el logo de su empresa";
     $form['group_datos_de_la_empresa']['field_logo']['new']['field_logo_upload']['#description'] = "Extensiones permitidas: jpg jpeg png gif";
+	$form['group_datos_de_la_empresa']['field_logo']['new']['field_logo_upload']['#size'] = "52";
     $form['group_datos_de_la_empresa']['field_logo']['#description'] = "";
-    $form['group_datos_de_la_empresa']['field_logo']['new']['upload']['#value'] = "subir";
+    $form['group_datos_de_la_empresa']['field_logo']['new']['upload']['#value'] = "Subir";
     
     //$form['group_datos_de_la_empresa']['field_empresa_1'] = $form['field_empresa_1'];
     //field_descripcion_0
