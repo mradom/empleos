@@ -94,7 +94,7 @@ $sql = $base_query.$inner_join.$where;
 //print '['.$sql.']';
 
 	$nodes_per_page = variable_get(EMPLEOS_PAGE_LIMIT, 20);
-	$nodes_per_page = 2;
+	//$nodes_per_page = 2;
 	
 	$rs = pager_query($sql,$nodes_per_page,0);
 
