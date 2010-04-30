@@ -703,12 +703,17 @@ p.date {
 	float:right;
 }
 /*-------tabs de avisos--------*/
+fielset .group-datos-de-la-empresa{
+	width:680px;
+}
 .mycv .ui-tabs-nav{
 	border:0;
 }
 .mycv .ui-tabs-panel {
 	border:0;
-	padding: 1.5em 0em
+	width:680px;
+	padding:10px 0;
+	font:11px tahoma;
 	}
 .mycv .ui-tabs-nav ul{
 	width:677px;

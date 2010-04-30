@@ -145,6 +145,9 @@ input.req, select.req{border:1px solid #3399cc;
 	margin:0 0 0 273px;
 	/*margin-bottom:10px;*/
 }
+.mycv .imagefield-edit-image-flags .form-item label.option{
+	margin:0
+}
 .mycv .form-item label.option{
 	color:#333;
 	text-align:left;
@@ -178,7 +181,7 @@ input.req, select.req{border:1px solid #3399cc;
 	color:#999;
 	max-width:360px;
 	margin:0 0 10px 275px;
-	font-size:1em;
+	font:11px Tahoma;
 	}
 .mycv p a{
 	text-decoration:underline
@@ -226,6 +229,13 @@ input.form-submit:hover{
 div.falselabel{
 	width:250px;
 	text-align:right;
+}
+div.imagefield-edit-image-row{
+	border:0;
+	padding-left:275px;
+}
+div.imagefield-edit-image-row label.option {
+	width:auto;
 }
 /*-----login------*/
 .mycv.log{

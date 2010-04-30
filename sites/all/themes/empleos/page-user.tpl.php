@@ -25,13 +25,37 @@
     ?> 
     <!-- RIGHT -->
     <?php
+	if (arg(0)=='user' and arg(1)==$user->uid and arg(2)=='' and (!in_array('empresa', array_values($user->roles)))) {
+	  print '<div id="right_column">';
+	  Form_ayuda('Tip', 'EmpleadoHome'); 
+	  include("include/col_derecha-sin.php");	  
+      print '</div>';
+	}
+	if (arg(0)=='user' and arg(1)==$user->uid and arg(2)=='' and (in_array('empresa', array_values($user->roles)))) {
+	  print '<div id="right_column">';
+	  Form_ayuda('Tip', 'EmpresaHome'); 
+	  include("include/col_derecha-sin.php");	  
+      print '</div>';
+	}
+    if (arg(0)=='user' and arg(1)==$user->uid and arg(2)=='edit' and arg(3)=="Empleado" ) {
+	  print '<div id="right_column">';
+	  Form_ayuda('Tip', 'EmpleadoEdicion'); 
+	  include("include/col_derecha-sin.php");	  
+      print '</div>';
+	}
+	if (arg(0)=='user' and arg(1)==$user->uid and arg(2)=='edit' and arg(3)=="Empresa" and (in_array('empresa', array_values($user->roles)))) {
+	  print '<div id="right_column">';
+	  Form_ayuda('Tip', 'EmpresaEdicion'); 
+  	  include("include/col_derecha-sin.php");
+      print '</div>';
+	}
+
     If (arg(1)=='register') {
 	  print '<div id="right_column">';
 	  Form_ayuda('Ayuda', 'Registracion'); 
+  	  include("include/col_derecha-sin.php");
       print '</div>';
-    } else {
-	  include("include/col_derecha-mini.php");
-	}
+    } 
     ?>
     <!-- CENTRAL -->
     <!-- ini central -->
