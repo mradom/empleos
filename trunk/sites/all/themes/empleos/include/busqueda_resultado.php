@@ -76,7 +76,7 @@ if($_REQUEST['busqueda'] == "avanzada"){
     //echo $sql;
 
 	$nodes_per_page = variable_get(EMPLEOS_PAGE_LIMIT, 20);
-	$nodes_per_page = 2;
+	//$nodes_per_page = 2;
 	$rs = pager_query($sql,$nodes_per_page,0);
 ?>
 <!-- Poner aca camino de links -->
