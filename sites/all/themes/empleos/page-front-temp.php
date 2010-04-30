@@ -23,6 +23,7 @@
 					$tot = mysql_num_rows($rs);
 					if( $tot> 0){
 						$ren = 0;
+						$colu = 0;
 						print '<ul class="left">';
         	    	    while($fila = mysql_fetch_object($rs)){
         			        $nodo = node_load($fila->nid);
@@ -41,10 +42,13 @@
 							}
 					  		//print '<p class="date">'.round($tot/2).'-'.$ren.'</p>';
 							print '<p class="date">'.substr($nodo->field_fecha_hasta[0]["value"],0,10).'</p>';
-					  		print '<p class="name"><a href="/node/'.$nodo->nid.'">'.$nodo->title.'</a></p>';
+					  		print '<p class="name"><a href="/node/'.$nodo->nid.'">'.substr($nodo->title,0,28).'</a></p>';
 					  		print '<p class="job"><a href="/rubro/'.$area.'">'.$nodo->taxonomy[$area]->name.'</a></p>';
 					  		print '</li>';	
-							if ($ren == round($tot/2)) { print '</ul><ul class="rigth">'; }
+							if (($ren == round($tot/2)) ) { 
+								 print '</ul><ul class="rigth">'; 
+								 //print "======================================================";
+						    }		 
 						}
 						print '</ul>';
 					}
