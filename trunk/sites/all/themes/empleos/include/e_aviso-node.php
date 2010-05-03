@@ -67,7 +67,7 @@ function AltDisplay(eldiv, elbot)
 		            	if($user->uid){
 		            		$link = "/job/apply/".$nodo->nid;
 		            	}else{
-		            		$link = "/user&destination=/node/".$nodo->nid;
+		            		$link = "/user&destination=node/".$nodo->nid;
 		            	}
 		            ?>
 	<div class="btn_gral low" style="float: right"><a href="<?php echo $link;?>">Postularse</a></div>
