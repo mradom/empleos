@@ -200,7 +200,7 @@ if($_REQUEST['busqueda'] == "avanzada"){
 		            	if($user->uid){
 		            		$link = "/job/apply/".$nodo->nid;
 		            	}else{
-		            		$link = "/user&destination=/node/".$nodo->nid;
+		            		$link = "/user&destination=node/".$nodo->nid;
 		            	}
 					      print '<a href="'.$link.'"><div class="btn_postulate"></div></a>';
 						  // encabezado

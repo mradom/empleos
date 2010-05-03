@@ -58,13 +58,10 @@
 		            </div>
 		            <?php 
 		            	$link = "";
-		            	echo "<pre>";
-		            	print_r($user);
-		            	echo "</pre>";
 		            	if($user->uid){
 		            		$link = "/job/apply/".$nodo->nid;
 		            	}else{
-		            		$link = "/user&destination=/node/".$nodo->nid;
+		            		$link = "/user&destination=node/".$nodo->nid;
 		            	}
 		            ?>
 		            <a href="<?php echo $link;?>"><div class="btn_postulate"></div></a>

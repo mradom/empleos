@@ -1,6 +1,12 @@
-
+<?php 
+if($_REQUEST['destination'] != ""){
+	$action = "/user&destination=".$_REQUEST['destination'];
+}else{
+	$action = "/user";
+}
+?>
 <div class="mycv log" style="margin-right:15px;">
-  <form method="post" accept-charset="UTF-8" action="/user">
+  <form method="post" accept-charset="UTF-8" action="<?php echo $action;?>">
     <div class="itemTitle orange" style="padding-left:10px">Ya est&aacute;s registrado?</div>
     <div class="bloque" style="margin-top:20px">
       <div class="item req"  style="width:90px;">Usuario:</div>
