@@ -1,4 +1,5 @@
 <?php
+global $user;
 //echo '<pre>';
 //print_r($node);
 //echo '</pre>';
@@ -131,11 +132,19 @@ function AltDisplay(eldiv, elbot)
           <li>Visitas: <span class="dark">231</span></li>
         </ul>
 		<?php 
-		if ($node->links['favorite_nodes_in']['title']<>'in favorites') { ?>
-			<div class="btn_gral low" style="float: right"><a href="/favorite_nodes/add/<?php echo $nodo->nid;?>">+ Mis Favoritos</a></div>
-		<?php }	else   { ?>
-			<div class="btn_gral low" style="float: right"><a href="/favorite_nodes/delete/<?php echo $nodo->nid;?>">- Mis Favoritos</a></div>
-		<?php }
+		$link = "";
+		if($user->uid){
+			if ($node->links['favorite_nodes_in']['title']<>'in favorites') { 
+ 			   $link = "/favorite_nodes/add/".$nodo->nid;
+			} else {
+ 			   $link = "/favorite_nodes/delete/".$nodo->nid;				
+			}
+		    if ($node->links['favorite_nodes_in']['title']<>'in favorites') { 
+			  print '<div class="btn_gral low" style="float: right"><a href="'.$link.'">+ Mis Favoritos</a></div>';
+		    }	else   { 
+			  print '<div class="btn_gral low" style="float: right"><a href="'.$link.'">- Mis Favoritos</a></div>';
+		    }	
+		}
 		?>
         <div style="clear:both"></div>
         <div class="arrow">Otras ofertas de trabajo en <a href="/rubro/<?php print $area;?>"><?php print $nodo->taxonomy[$area]->name; ?></a></div>
