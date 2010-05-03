@@ -1,6 +1,6 @@
     <div class="box top" style="background:url(/sites/all/themes/empleos/img/bg_box_top3.jpg)">
-      <p> El paso n&uacute;mero 3 habilita a ingresar aquellas <strong>instancias de formaci&oacute;n</strong> que hayas realizado y que no formen parte de los planes de estudio est&aacute;ndar de los niveles secundarios, terciarios o universitarios.<br />
- Esta parte del formulario te permitir&aacute; describir tanto el nombre del curso, seminario, taller, etc., como tambi&eacute;n del rol que ocupaste en el mismo: docente, asistente, expositor, organizador, etc.<br />
+      <p> El paso n&uacute;mero 3 habilita a ingresar aquellas <strong>instancias de formaci&oacute;n</strong> que hayas realizado y que no formen parte de los planes de estudio oficiales de los niveles secundarios, terciarios o universitarios.<br />
+ Esta parte del formulario te permitir&aacute; describir tanto el nombre del curso, seminario, taller, etc., como tambi&eacute;n del rol que ocupaste en el mismo. ( docente, asistente, expositor, organizador, etc.)<br />
 Los &iacute;tems destacados con asterisco <span class="stg orange">(*)</span> son obligatorios.<br />
 Si no ten&eacute;s cursos o seminarios para ingresar en los campos, deja el formulario en blanco y continu&aacute; con el siguiente paso.
       </p>

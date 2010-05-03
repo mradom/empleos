@@ -400,7 +400,7 @@ function phptemplate_p_idiomas_node_form(&$form) {
     $form['body_filter']['format'][2]['#value'] = '';
     
     $form['preview']="" ;
-    $form['submit']['#value']="Guardar" ;
+    //$form['submit']['#value']="Guardar" ;
     
     firep($form['submit'], 'Formulario');
         
@@ -465,7 +465,7 @@ function phptemplate_p_cursos_node_form(&$form) {
     $form['body_filter']['format'][2]['#value'] = '';
     
     unset($form['preview']);
-    $form['submit']['#value']="Guardar" ;
+    //$form['submit']['#value']="Guardar" ;
     
     //firep($form, 'Formulario');
         
@@ -514,7 +514,6 @@ function phptemplate_p_informatica_node_form(&$form) {
 	$form['intro']['#weight']  = -40;
 	
 	
-	$form['title']['#title']='Recurso';
     $form['taxonomy']['#type'] = '';
     $form['body_filter'] = '';
     
@@ -526,7 +525,7 @@ function phptemplate_p_informatica_node_form(&$form) {
     $form['body_filter']['format'][2]['#value'] = '';
     
     $form['preview']="" ;
-    $form['submit']['#value']="Guardar" ;
+    //$form['submit']['#value']="Guardar" ;
     
     ////firep($form['submit'], 'Formulario');
         
@@ -569,7 +568,7 @@ function phptemplate_p_otros_conocimientos_node_form(&$form) {
 	$form['intro']['#weight']  = -40;
 	
 	
-	$form['title']['#title']='Tipo';
+	//$form['title']['#title']='Tipo';
     $form['taxonomy']['#type'] = '';
     $form['body_filter'] = '';
     
@@ -623,7 +622,7 @@ function phptemplate_p_experiencia_laboral_node_form(&$form) {
 	$form['intro']['#weight']  = -40;
 	
 	
-	$form['title']['#title']='Tipo';
+	//$form['title']['#title']='Tipo';
     $form['taxonomy']['#type'] = 'Experiencia';
     $form['body_filter'] = '';
     
@@ -742,9 +741,10 @@ function phptemplate_p_objetivo_laboral_node_form(&$form) {
 	$form['intro']['#weight']  = -40;
 	
 	
-	$form['title']['#title']='Persona';
+	//$form['title']['#title']='Persona';
+    $form['taxonomy']['#type'] = '';
     $form['body_filter'] = '';
-    //$form['taxonomy']['#type'] = '';
+
     
     $form['body_filter']['body']['#title'] = 'Descripci&oacute;n';
     $form['body_filter']['body']['#rows'] = 10;
@@ -1146,7 +1146,7 @@ function phptemplate_form_alter(&$form, $form_state, $form_id){
 		    $form['body_filter']['format'][2]['#value'] = '';
 		    
 		    unset($form['preview']);
-		    $form['submit']['#value']="Guardar" ;
+		    //$form['submit']['#value']="Guardar" ;
 		    
 		    //firep($form, 'Formulario');
 		        
