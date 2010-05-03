@@ -195,8 +195,14 @@ if($_REQUEST['busqueda'] == "avanzada"){
 						  print '<div class="brand">';
 						  print theme('imagecache','logo_empresa_resultado_busqueda_86_53',$nodo->picture,$nodo->picture,$nodo->picture);
 						  print '</div>';
-						  // boton de postulacion
-					      print '<a href="/job/apply/'.$nodo->nid.'"><div class="btn_postulate"></div></a>';
+						  // boton de postulacion 
+		            	$link = "";
+		            	if($user->uid){
+		            		$link = "/job/apply/".$nodo->nid;
+		            	}else{
+		            		$link = "/user&destination=/node/".$nodo->nid;
+		            	}
+					      print '<a href="'.$link.'"><div class="btn_postulate"></div></a>';
 						  // encabezado
 						  print '<div class="datos">'; 
 						    print '<h2><a class="orange" href="/node/';

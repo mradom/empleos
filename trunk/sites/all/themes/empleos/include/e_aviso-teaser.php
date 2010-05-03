@@ -56,7 +56,18 @@
 		            <DIV class="brand">
 		            	<?php print theme('imagecache','logo_empresa_resultado_busqueda_86_53',$nodo->picture,$nodo->picture,$nodo->picture); ?>
 		            </div>
-		            <a href="/job/apply/<?php echo $nodo->nid;?>"><div class="btn_postulate"></div></a>
+		            <?php 
+		            	$link = "";
+		            	echo "<pre>";
+		            	print_r($user);
+		            	echo "</pre>";
+		            	if($user->uid){
+		            		$link = "/job/apply/".$nodo->nid;
+		            	}else{
+		            		$link = "/user&destination=/node/".$nodo->nid;
+		            	}
+		            ?>
+		            <a href="<?php echo $link;?>"><div class="btn_postulate"></div></a>
 		            <DIV class="datos">
 		              <H2><SPAN class="orange"><a href="/taxonomy/term/<?php echo $nodo->taxonomy[$area]->tid;?>"><?php echo $nodo->taxonomy[$area]->name;?></a></SPAN> | <SPAN class="upper"><?php echo $nodo->name;?></SPAN></H2>
 		              <P class="line">
