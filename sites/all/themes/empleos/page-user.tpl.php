@@ -65,7 +65,7 @@
 			  If (arg(1)=='password') print $content; 
               If (!$user->uid and arg(1)<>'password' and arg(1) <>'register') include ('user-login.php');
 			  If (arg(1)=='register' and arg(2)=='persona'  ) print '<div>'.$content.'</div><br />'; 
-			  If (arg(1)=='register' and arg(2)=='empleador') print '<div>'.$content.'</div><br />';
+			  If (arg(1)=='register' and arg(2)=='empresa') print '<div>'.$content.'</div><br />';
 			  if ($user->uid and arg(1)==$user->uid){
 			  	 print $content;
 			  } 

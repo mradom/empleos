@@ -62,7 +62,15 @@ function AltDisplay(eldiv, elbot)
 
 <!-- Ficha  -->
 <div class="box central ficha">
-	<div class="btn_gral low" style="float: right"><a href="/job/apply/<?php echo $nodo->nid;?>">Postularse</a></div>
+		            <?php 
+		            	$link = "";
+		            	if($user->uid){
+		            		$link = "/job/apply/".$nodo->nid;
+		            	}else{
+		            		$link = "/user&destination=/node/".$nodo->nid;
+		            	}
+		            ?>
+	<div class="btn_gral low" style="float: right"><a href="<?php echo $link;?>">Postularse</a></div>
 	<div class="titleFicha">Oferta de trabajo para:<span class="upper orange stg"> <?php echo $nodo->title;?></span></div>
 	<div class="line_dot"></div>
 	<!-- Resumen -->
