@@ -230,6 +230,7 @@ li.btns.sig:hover{
 	right:30px;
 }
 .box.tips{
+	font:11px/14px tahoma;
 	width:278px;
 	background:#fff url(/sites/all/themes/empleos/img/bg_box.gif) top repeat-x;
 	padding:10px;
@@ -462,6 +463,13 @@ ul.tags li.final {
 	width:990px;
 	margin:10px 0;
 	}
+/*resultado*/
+.banner.resultado{
+	width:660px;
+	height:60px;
+	float:left;
+	background:#CCC;
+}	
 /*top*/
 #header .banner.top {
 	width:990px;
@@ -781,6 +789,15 @@ div.arrow.lupa {
 div.arrow.back {
 	background: url(/sites/all/themes/empleos/img/arrow_back.png) 0 0 no-repeat
 }
+div.arrow.copiar {
+	float:left;
+	height:15px;
+	width:13px;
+	background:transparent url(/sites/all/themes/empleos/img/btn_copy.png) 0 0 no-repeat;
+	margin:0 25px 0 0;
+	padding:0;
+}
+
 div.arrow.editar {
 	float:left;
 	height:15px;
@@ -808,7 +825,7 @@ div.arrow.copy {
 	padding:0;
 }
 
-div.arrow.cancel:hover, div.arrow.editar:hover {
+div.arrow.cancel:hover, div.arrow.editar:hover, div.arrow.copiar:hover {
 	background-position:0px -15px;
 }
 div.arrow a {
