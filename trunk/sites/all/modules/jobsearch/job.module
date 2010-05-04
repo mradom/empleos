@@ -351,16 +351,16 @@ function theme_job_mail($job_node, $job_user, $resume_node, $resume_user) {
   global $base_url;
   
   $site = variable_get('site_name', 'drupal site');
-  $subject = t("[$site] [Job application] for [$job_node->title] by [$resume_user->name]");
-  $body  = t("The following user has applied for the above job.\n");
-  $body .= t("\nJob: @title",                          array('@title'  => $job_node->title));
-  $body .= t("\nJob URL: @url",                        array('@url'    => $base_url . url("node/$job_node->nid")));
-  $body .= t("\nApplicant name: @name",                array('@name'   => $resume_user->name));
-  $body .= t("\nApplicant email: @email",              array('@email'  => $resume_user->mail));
-  $body .= t("\nApplicant URL: @url",                  array('@url'    => $base_url . url("user/$resume_user->uid")));
-  $body .= t("\nResume: @title",                       array('@title'  => $resume_node->title));
-  $body .= t("\nResume URL: @url",                     array('@url'    => $base_url . url("node/$resume_node->nid")));
-  $body .= t("\n\nManage job applications at @manage", array('@manage' => $base_url . url("job/applications")));
+  $subject = t("[$site] [Aplacacion de Trabajo] para [$job_node->title] por [$resume_user->name]");
+  $body  = t("El siguiente usuario se ha postulado.\n");
+  $body .= t("\nEmpleo: @title",                          array('@title'  => $job_node->title));
+  $body .= t("\nPagina del Empleo: @url",                        array('@url'    => $base_url . url("node/$job_node->nid")));
+  $body .= t("\nNombre del Usuario: @name",                array('@name'   => $resume_user->name));
+  $body .= t("\nEmail del Usuario: @email",              array('@email'  => $resume_user->mail));
+  $body .= t("\nPagina del Usuario: @url",                  array('@url'    => $base_url . url("user/$resume_user->uid")));
+  $body .= t("\nCV: @title",                       array('@title'  => $resume_node->title));
+  $body .= t("\nPagina del CV: @url",                     array('@url'    => $base_url . url("node/$resume_node->nid")));
+  $body .= t("\n\nAdministrar la postulación @manage", array('@manage' => $base_url . url("job/applications")));
 
   return(array(
     'subject' => $subject,
