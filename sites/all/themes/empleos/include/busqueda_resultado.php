@@ -75,7 +75,9 @@ if($_REQUEST['busqueda'] == "avanzada"){
     //$rs = mysql_query($sql) or die(mysql_errors());
     //echo $sql;
 
-	$nodes_per_page = variable_get(EMPLEOS_PAGE_LIMIT, 20);
+	$nodes_per_page   = variable_get(EMPLEOS_PAGE_LIMIT, 20);
+	$banners_per_page = variable_get(EMPLEOS_BANNER_VIEW, 0);
+	//print '[[[[[[[[[[[[[[['.$banners_per_page.']]]]]]]]]]';
 	//$nodes_per_page = 2;
 	$rs = pager_query($sql,$nodes_per_page,0);
 ?>
@@ -116,8 +118,10 @@ if($_REQUEST['busqueda'] == "avanzada"){
         	$simple = "0";
         	$gratis = "0";
         	$otro = 0;
+			$ren = 0;
         	if(mysql_num_rows($rs) > 0){
         	    while($fila = mysql_fetch_object($rs)){
+					$ren += 1;
         			$nodo = node_load($fila->nid);
 
         			foreach($nodo->taxonomy as $value){
@@ -310,12 +314,29 @@ if($_REQUEST['busqueda'] == "avanzada"){
 						print '</div>';						  
 						print '<!-- fin free -->';
 		          		}
+				 //print '[[[['.$ren.']]]]]]';		
+				 if ((($banners_per_page == 1) and ($ren==5)) or 
+				     (($banners_per_page == 2) and (($ren == 3) or ($ren==7))) or
+					 (($banners_per_page == 3) and (($ren == 2) or ($ren==5) or ($ren==8))) or
+					 (($banners_per_page == 4) and (($ren == 2) or ($ren==4) or ($ren==6) or ($ren==8))) 	 
+					 ){ 
+					    //print '<div style="float:left; background:#666; heigh:50px width:660px;">---</div>';
+ 	 				    print '<div class="content_banners" >';
+						print '<div class="banner resultado" >';
+						$conf= Array ('style' => 'block', 'override_title' => '0','override_title_text' => '', 'css_id' => '', 				'css_class' => '', 'name' => 'banner_resultado_busqueda',);
+						$columna= panels_mini_content($conf, $panel_args, $contexts);
+						print ($columna->content); 	
+						print '</div>'; 
+						print '</div>';
+
+				 }		
+				 
 				}
                  // aca cierro el div del tipo de aviso
 		         print '</div>';
+				 
        			 //if ($otro==1) { print '</div><!-- fin todo -->'; $otro=0;} 
-            
-        		
+                 
         	} else {
         		print '<div><p>No se encontraron resultados de acuerdo a su criterio de busqueda.</p><p>Por favor intente con otro criterio</p></div>';
         	}

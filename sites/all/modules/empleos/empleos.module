@@ -5,6 +5,7 @@ define('EMPLEOS_PERM_ADMINISTER',  'administer empleos');
 define('EMPLEOS_PAGE_LIMIT',       'empleos_page_limit');
 define('EMPLEOS_PAGE_TYPE',        'empleos_page_type');
 define('EMPLEOS_VIEW_NEWS_PROFILE','empleos_view_news_profile');
+define('EMPLEOS_BANNER_VIEW',	   'empleos_banner_view');
 
 
 function empleos_menu($may_cache) {
@@ -155,7 +156,13 @@ function empleos_settings() {
     '#default_value' => variable_get(EMPLEOS_PAGE_LIMIT, 10),
     '#description' => t('Cuantos items se muestran por pagina de resultados de busquedas.'),
   );
-  
+  $form[$set][EMPLEOS_BANNER_VIEW] = array(
+    '#type' => 'textfield',
+    '#title' => t('Banners en Resultados de Busqueda'),
+    '#default_value' => variable_get(EMPLEOS_BANNER_VIEW, 10),
+    '#description' => t('Cuantos banners se muestran por pagina de resultados de busquedas.'),
+  );
+
   $form[$set][EMPLEOS_VIEW_NEWS_PROFILE] = array(
     '#type' => 'checkbox',
     '#title' => t('Ver novedades en el profile'),
