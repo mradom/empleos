@@ -222,7 +222,8 @@ input.form-submit:hover{
 /*--*/
 
 .mycv .container-inline-date .form-item{
-	width:340px;
+	/*width:340px;*/
+	margin:5px 0;
 	float:left
 }
 /*--*/
