@@ -465,7 +465,7 @@ ul.tags li.final {
 	}
 /*resultado*/
 .banner.resultado{
-	width:658px;
+	width:660px;
 	height:60px;
 	float:left;
 	background:#CCC;
@@ -868,7 +868,7 @@ div.rss a:hover {
 	background: url(/sites/all/themes/empleos/img/bg_box.gif) top repeat-x;
 	float:right;
 	margin-bottom:10px;
-	padding:10px ;
+	padding:10px 9px;
 }
 
 div.results {
@@ -896,7 +896,7 @@ div.results {
 	width:98%
 }
 #gold >div, #destacado >div, #simple >div, #gratis >div {
-	width:638px;
+	width:640px;
 	height:97px;
 	padding:10px;
 	float:left;
