@@ -15,24 +15,25 @@
     <!-- CENTRAL -->
     <div id="central_column">
 		<div class="postdate">
-        <?php
-		
+<div class="month m-<?php print date("m") ?>"><?php print date("M") ?></div>
+<div class="day d-<?php print date("d") ?>"><?php print date("d") ?></div>
+<div class="year y-<?php print date("Y") ?>"><?php print date("Y") ?></div>-->
+</div>
+      <?php
         $num_nota = arg(1);
 		$nodo = node_load($num_nota);
 		
-		$d_dia = substr($nodo->field_fecha[0]['value'],8,2);
-		$d_mes = substr($nodo->field_fecha[0]['value'],5,2);		
-		$d_ano = substr($nodo->field_fecha[0]['value'],0,4);		
+		$d_dia = substr($nodo->field_fecha_0[0]['value'],8,2);
+		$d_mes = substr($nodo->field_fecha_0[0]['value'],5,2);		
+		$d_ano = substr($nodo->field_fecha_0[0]['value'],0,4);		
 		//print '['.$d_dia.'-'.$d_mes.'-'.$d_ano.']';
         print '<div class="month m-'.$d_mes.'">'.$d_mes.'</div>';
         print '<div class="day d-'.$d_dia.'">'.$d_dia.'</div>';
         print '<div class="year y-'.$d_ano.'">'.$d_ano.'</div>';
         print '</div>';
-     
-
-
+		
 		print '<div class="contentNotas">';
-		print '<div class="nota"><h2>'.$nodo->title.'</h2> <h3>Nota publicada por empleoslavoz</h3> </div>';
+		print '<div class="nota"><h2>'.$nodo->title.'</h2> <h3>Novedad publicada por empleoslavoz</h3> </div>';
 		
 		print '<div ><img class="photo" src="'.'/'.$nodo->field_foto[0]['filepath'].'" title=""></img></div>';
 		

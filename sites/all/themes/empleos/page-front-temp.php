@@ -100,8 +100,16 @@
                 <?php 
 				$not_pagina=0;
 				$not_nota=4;
-				$sql = "SELECT * FROM node
-				WHERE status = 1 AND type='notas' LIMIT 12";
+				$sql_base   = "SELECT * FROM node_revisions AS nr INNER JOIN node AS n ON n.nid = nr.nid ";
+				$inner_join = "INNER JOIN content_type_notas AS w ON w.nid = n.nid ";
+
+				$where = "WHERE n.type = 'notas' AND w.field_tipo_value = 'noticias' AND n.status = 1 ";
+				$where = $where . " ORDER BY w.field_fecha_value DESC, w.field_orden_value DESC LIMIT 12 ";
+				
+				$sql = $sql_base.$inner_join.$where;
+				//print '['.$sql.']';
+				//$sql = "SELECT * FROM node WHERE status = 1 AND type='notas' LIMIT 12";
+				
 				$rs = db_query($sql);
 				while($fila = mysql_fetch_object($rs)){
 					$nota = node_load($fila->nid);
@@ -141,8 +149,15 @@
                 <?php 
 				$not_pagina=0;
 				$not_nota=4;
-				$sql = "SELECT * FROM node
-				WHERE status = 1 AND type='notas' ORDER BY RAND() LIMIT 12";
+			    $sql_base   = "SELECT * FROM node_revisions AS nr INNER JOIN node AS n ON n.nid = nr.nid ";
+				$inner_join = "INNER JOIN content_type_notas AS w ON w.nid = n.nid ";
+
+				$where = "WHERE n.type = 'notas' AND w.field_tipo_value = 'noticias' AND n.status = 1 ";
+				//$where = $where . " ORDER BY w.field_fecha_value DESC, w.field_orden_value DESC LIMIT 12 ";
+				$where = $where . " ORDER BY rand() DESC LIMIT 12 ";
+				
+				$sql = $sql_base.$inner_join.$where;
+
 				// OJO cambiar notas por formacion al final				
 				$rs = db_query($sql);
 				while($fila = mysql_fetch_object($rs)){
@@ -182,8 +197,12 @@
                 <?php 
 				$not_pagina=0;
 				$not_nota=4;
-				$sql = "SELECT * FROM node
-				WHERE status = 1 AND type='notas' ORDER BY RAND() LIMIT 12";
+			    $sql_base   = "SELECT * FROM node_revisions AS nr INNER JOIN node AS n ON n.nid = nr.nid ";
+				$inner_join = "INNER JOIN content_type_notas AS w ON w.nid = n.nid ";
+
+				$where = "WHERE n.type = 'notas' AND w.field_tipo_value = 'noticias' AND n.status = 1 ";
+				//$where = $where . " ORDER BY w.field_fecha_value DESC, w.field_orden_value DESC LIMIT 12 ";
+				$where = $where . " ORDER BY rand() DESC LIMIT 12 ";				
 				// OJO cambiar notas por consultoras al final
 				$rs = db_query($sql);
 				while($fila = mysql_fetch_object($rs)){
