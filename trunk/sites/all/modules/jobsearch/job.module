@@ -249,7 +249,8 @@ function job_user_applied($uid, $job_nid) {
 
 function job_clear($nid, $uid) {
   if ($nid && $uid) {
-    db_query("UPDATE {job} SET status = 0 WHERE nid = %d AND uid = %d", $nid, $uid);
+    //db_query("UPDATE {job} SET status = 0 WHERE nid = %d AND uid = %d", $nid, $uid);
+    db_query("delete from job where nid = %d and uid = %d", $nid, $uid);
     drupal_set_message(t('Job application #@nid has been cleared.', array('@nid' => $nid)));
   }
   drupal_goto('job/applications');
