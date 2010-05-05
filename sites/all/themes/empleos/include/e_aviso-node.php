@@ -78,7 +78,7 @@ if($user->roles[5] == "empresa"){
 		            	
 		            	$sql = "select * from job where uid = $user->uid and nid = $nodo->nid and status = 1";
 		            	$rs = db_query($sql);
-		            	if($user->roles[5] != "empresa" and mysql_num_row($rs) > 0){
+		            	if($user->roles[5] != "empresa" and db_num_rows($rs) == 0){
 		            	?>
 						<div class="btn_gral low" style="float: right">
 							<a href="<?php echo $link;?>">Postularse</a>
