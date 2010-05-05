@@ -6,6 +6,7 @@ define('EMPLEOS_PAGE_LIMIT',       'empleos_page_limit');
 define('EMPLEOS_PAGE_TYPE',        'empleos_page_type');
 define('EMPLEOS_VIEW_NEWS_PROFILE','empleos_view_news_profile');
 define('EMPLEOS_BANNER_VIEW',	   'empleos_banner_view');
+define('EMPLEOS_LOGO',	           'empleos_logo');
 
 
 function empleos_menu($may_cache) {
@@ -80,6 +81,14 @@ function empleos_menu($may_cache) {
 	  'access'   			=> TRUE,
 	  'weight' => 100
     );
+
+	$items[] = array(
+	  'title'    			=> 'Novedades',
+      'path'     			=> 'novedades',
+      'callback' 			=> 'empleos_novedades',
+	  'access'   			=> TRUE,
+	  'weight' => 100
+    );
 	
 	$items[] = array(
 	  'title'    			=> 'Busqueda avanzada',
@@ -141,6 +150,9 @@ function empleos_nota() {
    return '';
 }
 
+function empleos_novedades() {
+   return '';
+}
 
 function empleos_settings() {
   $set = 'page';

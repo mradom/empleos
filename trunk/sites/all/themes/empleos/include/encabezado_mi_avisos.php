@@ -14,7 +14,7 @@ Los &iacute;tems destacados con asterisco <span class="stg orange">(*)</span> so
 	<TBODY>
 		<TR>
 			<TD class="techo" width="16%">Desde - Hasta</TD>
-			<TD class="techo" width="26%">Titulo</TD>
+			<TD class="techo" width="26%">T&iacute;tulo</TD>
 			<TD class="techo" width="18%">Tipo</TD>
 			<TD class="techo" width="18%">Estado</TD>
 			<TD class="techo" width="12%">Empresa</TD>

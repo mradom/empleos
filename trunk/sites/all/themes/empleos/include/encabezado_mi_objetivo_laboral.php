@@ -23,11 +23,11 @@ Los &iacute;tems destacados con asterisco <span class="stg orange">(*)</span> so
 				      <TBODY> 
 				        <TR> 
 				          <TD class="techo" width="17%"></TD>				        
-				          <TD class="techo" width="17%">Jerarquia</TD>
-				          <TD class="techo" width="17%">Area</TD>
+				          <TD class="techo" width="17%">Jerarqu&iacute;a</TD>
+				          <TD class="techo" width="17%">&Aacute;rea</TD>
 				          <TD class="techo" width="17%">Disponibilidad</TD> 				          
 				          <TD class="techo" width="14%">Sueldo</TD>
-				          <TD class="techo" width="10%">Pais/Provincia</TD>  
+				          <TD class="techo" width="10%">Pa&iacute;s/Provincia</TD>  
 				          <TD class="techo" width="7%"></TD>
 				        </TR> 
 			<?php

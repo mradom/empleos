@@ -31,12 +31,12 @@ if($_REQUEST['destination'] != ""){
 
 <div class="mycv log">
   <div>
-    <div class="itemTitle" style="padding-left:10px;">A&uacute;n no te resgistraste?</div>
+    <div class="itemTitle" style="padding-left:10px;">A&uacute;n no te registraste?</div>
     <ul style="padding:0 10px;">
       <li class="blue"><strong>Registrarte en empleoslavoz te permitir&aacute;:</strong></li>
-      <li class="bulet_o"> Cargar tu curr&iacute;culum y que todas las empresas que realicen b&uacute;squedas en nuestra accedan a &eacute;l</li>
-      <li class="bulet_o"> Postularte a miles de ofertas de trabajo</li>
-      <li class="bulet_o"> Recibir ofertas laborales en tu e-mail</li>
+      <li class="bulet_o"> Cargar tu curr&iacute;culum y que todas las empresas que realicen b&uacute;squedas en nuestro sitio accedan a &eacute;l.</li>
+      <li class="bulet_o"> Postularte a miles de ofertas de trabajo.</li>
+      <li class="bulet_o"> Recibir ofertas laborales en tu e-mail.</li>
     </ul>
   </div>
   <div class="bloque puntos" style="width:300px;  margin-top:20px;"></div>

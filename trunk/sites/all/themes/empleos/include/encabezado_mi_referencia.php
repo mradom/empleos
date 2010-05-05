@@ -25,7 +25,7 @@ Si decid&iacute;s dejar esta parte del formulario en blanco pod&eacute;s continu
 				        <TR> 
 				          <TD class="techo" width="20%">Empresa</TD>
 				          <TD class="techo" width="20%">T&iacute;tulo/Cargo</TD> 				          
-				          <TD class="techo" width="18%">Nompre</TD>
+				          <TD class="techo" width="18%">Nombre</TD>
 				          <TD class="techo" width="15%">Tel&eacute;fono</TD>
 				          <TD class="techo" width="20%">Email</TD>
 				          <TD class="techo" width="7%"></TD>  

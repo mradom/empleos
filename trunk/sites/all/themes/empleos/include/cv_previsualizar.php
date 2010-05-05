@@ -381,7 +381,7 @@ global $user_profile;
 				          <?php if ($node->nid == $row->nid or arg(0) == "user"){ print '<TD>'.$row->field_empresa_0[0]['value'].'</TD>';
 			                   } else { print '<TD><A href="/?q=node/'.$row->nid.'/edit" title="editar">'.$row->field_empresa_0[0]['value'].'</A></TD>';  } ?>
 				          <TD><?php print $row->field_titulo_o_cargo[0]['value'];?></TD> 				          
-				          <TD><?php print $node->title;?></TD>
+				          <TD><?php print $row->title;?></TD>
 				          <TD><?php print $row->field_telefono[0]['value'];?></TD> 
 				          <TD><?php print $row->field_email[0]['email'];?></TD>
 				        </TR> 

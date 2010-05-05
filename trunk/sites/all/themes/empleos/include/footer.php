@@ -36,7 +36,7 @@
         <li><a title="Contacto comercial" href="/contact/ventas">Comercial</a></li>
         <li><a title="Contacto t&eacute;cnico" href="/contact/tecnico">T&eacute;cnico</a></li>        
         <li>&nbsp;</li>
-        <li><a title="Media Kit" href="#">Media Kit</a></li>        
+        <li><a title="Media Kit" href="/files/media-kit.pdf">Media Kit</a></li>        
       </ul>
     </div>
 
