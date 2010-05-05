@@ -338,7 +338,7 @@ if($_REQUEST['busqueda'] == "avanzada"){
        			 //if ($otro==1) { print '</div><!-- fin todo -->'; $otro=0;} 
                  
         	} else {
-        		print '<div><p>No se encontraron resultados de acuerdo a su criterio de busqueda.</p><p>Por favor intente con otro criterio</p></div>';
+        		print '<div><p>No se encontraron resultados de acuerdo a su criterio de b&uacute;squeda.</p><p>Por favor intente con otro criterio.</p></div>';
         	}
 		print '<div style="float: right; ">'.theme('pager', NULL, $nodes_per_page).'</div>';	
         ?>

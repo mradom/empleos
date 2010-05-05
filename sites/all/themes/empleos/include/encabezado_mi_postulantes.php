@@ -43,10 +43,10 @@
 			?>
 					<TR>
 						<TD class="techo" width="16%">Fecha</TD>
-						<TD class="techo" width="26%">Titulo</TD>
+						<TD class="techo" width="26%">T&iacute;tulo</TD>
 						<TD class="techo" width="18%">Tipo</TD>
 						<TD class="techo" width="18%">Estado</TD>
-						<TD class="techo" width="12%">Cantidad de posulantes</TD>
+						<TD class="techo" width="12%">Cantidad de postulados</TD>
 						<td class="techo" width="10%">Acciones</td>
 					</TR>
 					<?php

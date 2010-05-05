@@ -8,7 +8,7 @@
     		<!-- login -->
 				<?php include("sites/all/themes/empleos/include/user-login.php"); ?>
                <!-- logo -->
-               <div id="logo"><a title="Home" href="/principal"><img src="/sites/all/themes/empleos/img/logo.jpg"></a></div>
+               <div id="logo"><a title="Home" href="/principal"><img src="<?php print check_url($logo); ?>"></a></div>
     		   <div style="clear: both;"></div>
     		   <!-- menu -->
 			   <?php include("sites/all/themes/empleos/include/menu.php");?>

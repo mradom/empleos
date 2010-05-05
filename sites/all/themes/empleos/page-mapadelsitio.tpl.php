@@ -17,6 +17,12 @@
       <?php
         //}
         //if (arg(1)<>"") {
+		print '<div>';
+		print "<h2>Mapa del Sitio:</h2>";
+		print '</br>&nbsp;</br>&nbsp;</br>&nbsp;</br>&nbsp;</br>&nbsp;</br>&nbsp;';
+		print '<p>En construcción.</p>';
+		print '</br>&nbsp;</br>&nbsp;</br>&nbsp;</br>&nbsp;</br>&nbsp;</br>&nbsp;';		
+		print '</div>';
         print $content;
 		//}
         ?>

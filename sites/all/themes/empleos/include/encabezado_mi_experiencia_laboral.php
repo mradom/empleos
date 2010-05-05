@@ -24,8 +24,8 @@
 				          <TD class="techo" width="18%">Fecha</TD> 
 				          <TD class="techo" width="15%"></TD>
 				          <TD class="techo" width="15%">Empresa</TD> 
-				          <TD class="techo" width="15%">Area</TD> 
-				          <TD class="techo" width="15%">Jerarquia</TD> 
+				          <TD class="techo" width="15%">&Aacute;rea</TD> 
+				          <TD class="techo" width="15%">Jerarqu&iacute;a</TD> 
 				          <TD class="techo" width="15%">Puesto</TD>  
 				          <TD class="techo" width="7%"></TD>
 				        </TR> 

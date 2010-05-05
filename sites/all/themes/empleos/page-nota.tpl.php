@@ -22,6 +22,11 @@
       <?php
         $num_nota = arg(1);
 		$nodo = node_load($num_nota);
+		//print '<pre>';
+		//print $nodo->field_fecha_0[0]['value'];
+	    //print_r($nodo);
+		//print '</pre>';		
+
 		print '<div class="contentNotas">';
 		print '<div class="nota"><h2>'.$nodo->title.'</h2> <h3>Nota publicada por empleoslavoz</h3> </div>';
 		

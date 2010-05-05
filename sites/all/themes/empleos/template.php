@@ -917,15 +917,18 @@ function phptemplate_node_delete_confirm(&$form) {
   return $miform;
 }
 
+
+
+
 function phptemplate_e_aviso_node_form(&$form) {
 	
 	//echo "<pre>"; print_r($form); echo "</pre>";
 	
 $html = '<ul class="ui-tabs-nav"> 
-        <li class="ui-tabs-selected"><a href="#fragment-1"><span>Descripcion del puesto</span></a></li> 
+        <li class="ui-tabs-selected"><a href="#fragment-1"><span>Descripci&oacute;n del puesto</span></a></li> 
         <li><a href="#fragment-2"><span>Requisitos</span></a></li> 
         <li><a href="#fragment-3"><span>Datos de la Empresa</span></a></li> 
-        <li><a href="#fragment-4"><span>Publicacion</span></a></li> 
+        <li><a href="#fragment-4"><span>Publicaci&oacute;n</span></a></li> 
     </ul>';
 
 	$form['ini']['#prefix']  = '<div class="mycv" id="aviso"><div id="tabs">'.$html;
@@ -947,7 +950,7 @@ $html = '<ul class="ui-tabs-nav">
 	
     $form['taxonomy']['#type'] = '';
     
-    $form['body_filter']['body']['#title'] = 'Descripcion del puesto y tareas';
+    $form['body_filter']['body']['#title'] = 'Descripci&oacute;n del puesto y tareas';
     $form['body_filter']['body']['#rows'] = 10;
     $form['body_filter']['body']['#cols'] = 80;    
     
@@ -960,7 +963,7 @@ $html = '<ul class="ui-tabs-nav">
     $form['workflow'] = "";
     
     $form['taxonomy'][get_vocabulary_by_name("provincias")]['#title'] = "Lugar de residencia";
-    $form['field_remuneracion']['key']['title'] = "Indicar remuneración pretendida";
+    $form['field_remuneracion']['key']['title'] = "Indicar remuneraci&oacute;n pretendida";
     
     ######## CREACION DE TABS #######
 	
@@ -979,13 +982,13 @@ $html = '<ul class="ui-tabs-nav">
     ######## REQUISITOS #########
     
     // Paso el taxonomy al grupo que yo quiero -- Nivel de Estudio
-    $form['group_requisitos']['taxonomy'][get_vocabulary_by_name('Nivel de Estudio')] = $form['taxonomy'][get_vocabulary_by_name('Nivel de Estudio')];
-    $form['group_requisitos']['taxonomy'][get_vocabulary_by_name('Nivel de Estudio')]['#weight'] = 90;
+    $form['group_requisitos']['taxonomy'][get_vocabulary_by_name('Nivel de estudio')] = $form['taxonomy'][get_vocabulary_by_name('Nivel de Estudio')];
+    $form['group_requisitos']['taxonomy'][get_vocabulary_by_name('Nivel de estudio')]['#weight'] = 90;
     $form['taxonomy'][get_vocabulary_by_name('Nivel de Estudio')] = "";
     
     //Paso el taxonomy al grupo que yo quiero -- Area de estudios
-    $form['group_requisitos']['taxonomy'][get_vocabulary_by_name('Area de estudios')] = $form['taxonomy'][get_vocabulary_by_name('Area de estudios')];
-    $form['group_requisitos']['taxonomy'][get_vocabulary_by_name('Area de estudios')]['#weight'] = 91;
+    $form['group_requisitos']['taxonomy'][get_vocabulary_by_name('&Aacute;rea de estudios')] = $form['taxonomy'][get_vocabulary_by_name('Area de estudios')];
+    $form['group_requisitos']['taxonomy'][get_vocabulary_by_name('&aacute;rea de estudios')]['#weight'] = 91;
     $form['taxonomy'][get_vocabulary_by_name('Area de estudios')] = "";
     
     //Paso el taxonomy al grupo que yo quiero -- Idiomas
@@ -1004,8 +1007,8 @@ $html = '<ul class="ui-tabs-nav">
     ####### DATOS DE LA EMPRESA ########
     
     //Paso el taxonomy al grupo que yo quiero -- Ramo o actividad
-    $form['group_datos_de_la_empresa']['taxonomy'][get_vocabulary_by_name('Ramo o Actividad')] = $form['taxonomy'][get_vocabulary_by_name('Ramo o Actividad')];
-    $form['group_datos_de_la_empresa']['taxonomy'][get_vocabulary_by_name('Ramo o Actividad')]['#weight'] = 92;
+    $form['group_datos_de_la_empresa']['taxonomy'][get_vocabulary_by_name('Ramo o actividad')] = $form['taxonomy'][get_vocabulary_by_name('Ramo o Actividad')];
+    $form['group_datos_de_la_empresa']['taxonomy'][get_vocabulary_by_name('Ramo o actividad')]['#weight'] = 92;
     $form['taxonomy'][get_vocabulary_by_name('Ramo o Actividad')] = "";
     
     //Paso el taxonomy al grupo que yo quiero -- Provincias

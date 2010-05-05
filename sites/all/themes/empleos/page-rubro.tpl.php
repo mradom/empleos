@@ -123,9 +123,11 @@ $sql = $base_query.$inner_join.$where;
 	$simple = "0";
 	$gratis = "0";
 	$otro = 0;
+	$ren = 0;
 	
 	if(mysql_num_rows($rs) > 0){
 		while($fila = mysql_fetch_object($rs)){
+			$ren += 1;
 			$nodo = node_load($fila->nid);
 
 			foreach($nodo->taxonomy as $value){
@@ -311,6 +313,21 @@ $sql = $base_query.$inner_join.$where;
 				print '</div>';						  
 				print '<!-- fin free -->';
 				}
+					if ((($banners_per_page == 1) and ($ren==5)) or 
+				     (($banners_per_page == 2) and (($ren == 3) or ($ren==7))) or
+					 (($banners_per_page == 3) and (($ren == 2) or ($ren==5) or ($ren==8))) or
+					 (($banners_per_page == 4) and (($ren == 2) or ($ren==4) or ($ren==6) or ($ren==8))) 	 
+					 ){ 
+					    //print '<div style="float:left; background:#666; heigh:50px width:660px;">---</div>';
+ 	 				    print '<div class="content_banners" >';
+						print '<div class="banner resultado" >';
+						$conf= Array ('style' => 'block', 'override_title' => '0','override_title_text' => '', 'css_id' => '', 				'css_class' => '', 'name' => 'banner_resultado_busqueda',);
+						$columna= panels_mini_content($conf, $panel_args, $contexts);
+						print ($columna->content); 	
+						print '</div>'; 
+						print '</div>';
+
+				 }
 		}
 		 // aca cierro el div del tipo de aviso
 		 print '</div>';
@@ -318,7 +335,7 @@ $sql = $base_query.$inner_join.$where;
 	
 		
 	} else {
-		print '<div><p>No se encontraron avisos en este rubro.</p></div>';
+	  print '<div><p>No se encontraron avisos en este Rubro. Click <a href="/rubro">aquí</a> para ver todos los Rubros.</p></div>';
 	}
 		 print '<div style="float: right; ">'.theme('pager', NULL, $nodes_per_page).'</div>';	
         

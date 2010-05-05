@@ -1,3 +1,3 @@
 <div class="box top" style="background: url(/sites/all/themes/empleos/img/bg_box_top_empresas.jpg)">
-<p style="margin-top:50px;">Estas son las <strong>empresas y compa&ntilde;&iacute;as m&aacute;s importantes</strong> que anuncian en empleoslavoz.com.ar sus vacantes laborales. Si te interesa encontrar empleo entre alguna de ellas, esta es la secci&oacute;n ideal para canalizar tu b&uacute;squeda. 
+<p style="margin-top:50px;">Estas son las <strong>empresas y compa&ntilde;&iacute;as m&aacute;s importantes</strong> que anuncian en empleoslavoz sus vacantes laborales. Si te interesa encontrar empleo entre alguna de ellas, est&aacute;s es la secci&oacute;n ideal para canalizar tu b&uacute;squeda. 
 </p></div>
