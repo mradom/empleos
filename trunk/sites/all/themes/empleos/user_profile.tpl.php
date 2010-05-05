@@ -12,10 +12,10 @@ print '<div  class="content_grl">';
  						print '<div><a href="/user/me/edit"><img class="right" title="Cambiar logo" src="/'.$user->picture.'"></a></div>';
 						//print '<div style="border: 1px solid #ccc ;">';
 			  	 	 	print 'Empresa<br>';
-			  	 	 	print '<a href="/job/applications">Mis Aplicaciones</a><br>';
+			  	 	 	//print '<a href="/job/applications">Mis Aplicaciones</a><br>';
 			  	 	 	print '<br>&nbsp;<br>&nbsp;<br>&nbsp;';		  	 	 	
 			  	 	    //print '</div>';
-						$where='';
+						$busco='empresa';
 			  		 }
 			  	 } else {
 			  	 	 if ($user->uid) { 
@@ -23,21 +23,59 @@ print '<div  class="content_grl">';
 						print '<div><a href="/user/me/edit"><img class="right" title="Cambiar im&aacute;gen" src="/'.$user->picture.'"></a></div>';
 			  	 	 	print 'Persona<br>';
 			  	 	 	print 'Bienvenido '.$fields['Empleado']['profile_empl_apellido']['value'].', '.$fields['Empleado']['profile_empl_nombre']['value'].'<br>';
-			  	 	 	print '<a href="/job/applications">Mis Aplicaciones</a><br>';	  	 	 	
+			  	 	 	//print '<a href="/job/applications">Mis Aplicaciones</a><br>';	  	 	 	
 			  	 	    //print '</div>';
 			  	 	    print '<br>&nbsp;<br>&nbsp;<br>&nbsp;';
-						$where='';
+						$busco='empleado';
 			  		 } 
 			  	 }
 				 
+				// Postulaciones =================
+				
+				if (!in_array('empresa', array_values($user->roles))) {
+					$sql_base   = "SELECT * FROM job AS j INNER JOIN node AS n ON n.nid = j.nid ";
+					$inner_join = "";
+	
+					$where = "WHERE j.uid = '".$user->uid."' AND j.status=1";
+					$where = $where . " ORDER BY j.timestamp DESC LIMIT 10 ";
+					
+					$sql = $sql_base.$inner_join.$where;
+					//print '['.$sql.']';
+					$rs = db_query($sql);
+					
+					print '<div>';
+					print '<div>Postulaciones:</div>';
+					while($fila = mysql_fetch_object($rs)){
+						$nodo = node_load($fila->nid);
+						//print '<pre>';
+						//print_r($nota);					
+						//print '<pre>';					
+						print '<div>';
+						print '<a href="/node/'.$nodo->nid.'" target="_top" title="'.$nodo->title.'">';
+						print $nodo->title;
+						print '['.date('d-m-Y', $fila->timestamp).']';
+						print '</a>&nbsp;&nbsp;';
+						print '<a href="/job/clear/'.$nodo->nid.'/'.$user->uid.'&destination=/user/me" title="Borrar">Borrar</a>';
+						print '</div>';
+					}
+					print '</div>';			 
+				}
 				 
-				 
+				 print '</br>&nbsp;</br>';
 				 
 				$nov_nota=0;
-				$sql = "SELECT * FROM {node} WHERE status = 1 AND type='novedades' LIMIT 10";
+			    $sql_base   = "SELECT * FROM node_revisions AS nr INNER JOIN node AS n ON n.nid = nr.nid ";
+				$inner_join = "INNER JOIN content_type_novedades AS w ON w.nid = n.nid ";
+
+				$where = "WHERE n.type = 'novedades' AND field_tipo_0_value = '".$busco."' AND n.status = 1 ";
+				$where = $where . " ORDER BY w.field_fecha_0_value DESC, w.field_orden_0_value DESC LIMIT 10 ";
+				
+				$sql = $sql_base.$inner_join.$where;
+				//print '['.$sql.']';
 				$rs = db_query($sql);
 				
 				print '<div>';
+				print '<div>Novedades:</div>';
 				while($fila = mysql_fetch_object($rs)){
 					$nota = node_load($fila->nid);
 					//print '<pre>';
@@ -54,5 +92,39 @@ print '<div  class="content_grl">';
 					$nov_nota+= 1;
 				}
 				print '</div>';			 
+				
+				print '</br>&nbsp;</br>';
+				
+				
+				// Favoritos =================
+				
+				if (!in_array('empresa', array_values($user->roles))) {
+					$sql_base   = "SELECT * FROM favorite_nodes AS fn INNER JOIN node AS n ON n.nid = fn.nid ";
+					$inner_join = "";
+	
+					$where = "WHERE fn.uid = '".$user->uid."'";
+					$where = $where . " ORDER BY fn.last DESC LIMIT 10 ";
+					
+					$sql = $sql_base.$inner_join.$where;
+					//print '['.$sql.']';
+					$rs = db_query($sql);
+					
+					print '<div>';
+					print '<div>Favoritos:</div>';
+					while($fila = mysql_fetch_object($rs)){
+						$nodo = node_load($fila->nid);
+						//print '<pre>';
+						//print_r($nota);					
+						//print '<pre>';					
+						print '<div>';
+						print '<a href="/node/'.$nodo->nid.'" target="_top" title="'.$nodo->title.'">';
+						print $nodo->title;
+						print '</a>&nbsp;&nbsp;';
+						print '<a href="/favorite_nodes/delete/'.$nodo->nid.'" title="Borrar">Borrar</a>';
+						print '</div>';
+					}
+					print '</div>';			 
+				}
+
 print '</div>';
 ?>
