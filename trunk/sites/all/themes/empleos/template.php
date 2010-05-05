@@ -1054,6 +1054,8 @@ $html = '<ul class="ui-tabs-nav">
     
     $form["field_remuneracion"]['#weight'] = 93;
     
+    
+    
 	####### PUBLICACION ########
 	//$form['group_publicacion']['field_']
     
@@ -1092,12 +1094,21 @@ $html = '<ul class="ui-tabs-nav">
 </div>
 	';
 	$miform .= drupal_render($form['group_publicacion']['field_tipo_de_aviso']);
+	$form['group_publicacion']['submit'] = $form['submit'];
+	$form['submit'] = "";
+	
+	//echo "<pre>";
+	//print_r($form['group_publicacion']['submit']);
+	//print_r($form['submit']);
+	//echo "</pre>";
+	
+	$miform .= drupal_render($form['group_publicacion']['submit']);
 	
 	//echo "<pre>";print_r($form['group_publicacion']['field_tipo_de_aviso']); echo "</pre>";
 	
 	//$miform .= drupal_render($form['body_filter']);
 
-	$miform .= drupal_render($form['submit']);
+	//$miform .= drupal_render($form['submit']);
 	$miform .= drupal_render($form['delete']);
 	$miform .= drupal_render($form['fin']);
 	$miform .= drupal_render($form['type']);

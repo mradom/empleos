@@ -61,6 +61,11 @@ function AltDisplay(eldiv, elbot)
 }
 </script>
 
+<?php 
+if($user->roles[5] == "empresa"){
+	include("submenu-empresa.php");
+}
+?>
 <!-- Ficha  -->
 <div class="box central ficha">
 		            <?php 
@@ -70,8 +75,17 @@ function AltDisplay(eldiv, elbot)
 		            	}else{
 		            		$link = "/user&destination=node/".$nodo->nid;
 		            	}
+		            	
+		            	$sql = "select * from job where uid = $user->uid and nid = $nodo->nid and status = 1";
+		            	$rs = db_query($sql);
+		            	if($user->roles[5] != "empresa" and mysql_num_row($rs) > 0){
+		            	?>
+						<div class="btn_gral low" style="float: right">
+							<a href="<?php echo $link;?>">Postularse</a>
+						</div>
+		            	<?php	
+		            	}
 		            ?>
-	<div class="btn_gral low" style="float: right"><a href="<?php echo $link;?>">Postularse</a></div>
 	<div class="titleFicha">Oferta de trabajo para:<span class="upper orange stg"> <?php echo $nodo->title;?></span></div>
 	<div class="line_dot"></div>
 	<!-- Resumen -->
