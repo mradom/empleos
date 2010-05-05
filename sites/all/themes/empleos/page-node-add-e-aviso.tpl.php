@@ -21,6 +21,9 @@
 	    $("#tabs").tabs();
 	    $("#edit-field-fecha-desde-0-value-date").datepicker({dateFormat: "d/mm/yy", });
 	    $("#edit-field-fecha-hasta-0-value-date").datepicker({dateFormat: "d/mm/yy", });
+	    $("#edit-submit").remove()
+	    $("#fragment-4").html($("#fragment-4").html() + '<input type="submit" name="op" id="edit-submit" value="Enviar"  class="form-submit" />')
+
 	  });
   </script>
   <?php if(arg(3) == "copy"){

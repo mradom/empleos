@@ -32,14 +32,31 @@
 			print '<TD><A href="/node/'.$row->nid.'/edit" title="editar">'.$a_ini.'-'.$m_ini.' - '.$a_fin.'-'.$m_fin.'</A></TD>';  
 		}*/ ?>
 			<TD><?php print  $row->field_fecha_desde[0]['value'];?> - <?php print  $row->field_fecha_hasta[0]['value'];?></TD>
-			<TD><?php print $row->title;?></TD>
-			<TD><?php $wi = workflow_get_state($row->_workflow); print $wi['state']?></TD>
+			<TD><a href="/node/<?php echo $row->nid;?>"><?php print $row->title;?></a></TD>
+			<TD><?php
+				switch ($row->field_tipo_de_aviso[0]['value']){
+					case 1:
+						echo "Gratuito";
+						break;
+					case 2:
+						echo "Simple";
+						break;
+					case 3:
+						echo "Destacado";
+						break;
+					case 4:
+						echo "Gold";
+						break;
+					default:
+						break;
+				}
+			?></TD>
 			<TD><?php echo ($row->status == 1) ? "Publicado" : "No publicado"?></TD>
 			<TD><?php print_r( $row->field_empresa_1[0]['value']);?></TD>
 			<TD>
-				<!-- <a href="/node/<?php print $row->nid; ?>/edit" title="editar">
+				<a href="/node/<?php print $row->nid; ?>/edit" title="Editar">
 					<div class="arrow editar" style="margin-left:5px"></div>
-				</a> -->
+				</a>
 				<a href="/node/add/e-aviso/copy/<?php echo $row->nid;?>" title="Copiar">
 					<div class="arrow copiar" style="margin-left:5px"></div>
 				</a>                

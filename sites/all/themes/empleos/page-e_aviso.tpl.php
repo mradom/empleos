@@ -23,6 +23,12 @@
   </script>
     	<?php 
     }?>
+    
+    <?php 
+    if($user->roles[5] == "empresa"){
+		//include("include/submenu-empresa.php");
+	}
+    ?>
     <div id="central_column">
 		<?php print $content;?>
     </div>
