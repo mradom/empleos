@@ -9,7 +9,7 @@ global $user_profile;
 print '<div  class="content_grl">';
 				if (in_array('empresa', array_values($user->roles))) {
 				  	 if ($user->uid) { 
- 						print '<div style="	"><a href="/user/me/edit"><img class="right" title="Cambiar logo" src="/'.$user->picture.'"></a></div>';
+ 						print '<div ><a href="/user/me/edit"><img class="right" title="Cambiar logo" src="/'.$user->picture.'"></a></div>';
 						//print '<div style="border: 1px solid #ccc ;">';
 			  	 	 	print 'Empresa<br>';
 			  	 	 	//print '<a href="/job/applications">Mis Aplicaciones</a><br>';
@@ -20,13 +20,14 @@ print '<div  class="content_grl">';
 			  	 } else {
 			  	 	 if ($user->uid) { 
 			  	 	 	//print '<div style="border: 1px solid #ccc ;">';
-						print '<div><a href="/user/me/edit"><img class="right" title="Cambiar im&aacute;gen" src="/'.$user->picture.'"></a></div>';
-			  	 	 	print 'Persona<br>';
+						print '<div class="right"><a href="/user/me/edit"><img  title="Cambiar im&aacute;gen" src="/'.$user->picture.'"></a></div>';
+						print 'Persona<br>';
 			  	 	 	print 'Bienvenido '.$fields['Empleado']['profile_empl_apellido']['value'].', '.$fields['Empleado']['profile_empl_nombre']['value'].'<br>';
 			  	 	 	//print '<a href="/job/applications">Mis Aplicaciones</a><br>';	  	 	 	
 			  	 	    //print '</div>';
 			  	 	    print '<br>&nbsp;<br>&nbsp;<br>&nbsp;';
 						$busco='empleado';
+						print'<div class="clr"></div>';
 			  		 } 
 			  	 }
 				 
@@ -65,6 +66,7 @@ print '<div  class="content_grl">';
 				}
 				 
 				 print '</br>&nbsp;</br>';
+				 print'<div class="clr"></div>';
 				 
 				 // Favoritos =================
 				
@@ -79,8 +81,8 @@ print '<div  class="content_grl">';
 					//print '['.$sql.']';
 					$rs = db_query($sql);
 					
-					print '<div>';
-					print '<div>Favoritos:</div>';
+					print '<div class="right">';
+					print '<div class="postula">Favoritos:</div>';
 					print '<table class="tablaGris" border="0" cellpadding="0" cellspacing="1">';
 				    print '<tbody><tr>';
 				          print '<td class="techo" width="60%">Aviso</td>';
@@ -104,7 +106,7 @@ print '<div  class="content_grl">';
 		 
 				}
 				
-				print '</br>&nbsp;</br>';
+				print'<div class="clr"></div>';
 				 
 				$nov_nota=0;
 			    $sql_base   = "SELECT * FROM node_revisions AS nr INNER JOIN node AS n ON n.nid = nr.nid ";
@@ -117,7 +119,7 @@ print '<div  class="content_grl">';
 				//print '['.$sql.']';
 				$rs = db_query($sql);
 				 
-				print '<div>';
+				print '<div class="left">';
 				print '<div>Novedades:</div>';
 				while($fila = mysql_fetch_object($rs)){
 					$nota = node_load($fila->nid);
