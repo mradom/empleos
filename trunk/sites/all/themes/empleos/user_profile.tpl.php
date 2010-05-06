@@ -32,7 +32,7 @@ print '<div  class="content_grl">';
 			  	 }
 				 
 				// Postulaciones =================
-				
+				print '<div class="right" style="width:250px;">';
 				if (!in_array('empresa', array_values($user->roles))) {
 					$sql_base   = "SELECT * FROM job AS j INNER JOIN node AS n ON n.nid = j.nid ";
 					$inner_join = "";
@@ -44,7 +44,7 @@ print '<div  class="content_grl">';
 					//print '['.$sql.']';
 					$rs = db_query($sql);
 					
-					print '<div class="right">';
+					print '<div>';
 					print '<div class="postula">Postulaciones:</div>';
 					print '<table class="tablaGris" border="0" cellpadding="0" cellspacing="1"> ';
 				    print '<tbody><tr>';
@@ -66,7 +66,7 @@ print '<div  class="content_grl">';
 				}
 				 
 				 print '</br>&nbsp;</br>';
-				 print'<div class="clr"></div>';
+
 				 
 				 // Favoritos =================
 				
@@ -81,7 +81,7 @@ print '<div  class="content_grl">';
 					//print '['.$sql.']';
 					$rs = db_query($sql);
 					
-					print '<div class="right">';
+					print '<div>';
 					print '<div class="postula">Favoritos:</div>';
 					print '<table class="tablaGris" border="0" cellpadding="0" cellspacing="1">';
 				    print '<tbody><tr>';
@@ -105,8 +105,9 @@ print '<div  class="content_grl">';
 					print '</div>';	
 		 
 				}
+				print '</div>';
 				
-				print'<div class="clr"></div>';
+				print'<div class="left">';
 				 
 				$nov_nota=0;
 			    $sql_base   = "SELECT * FROM node_revisions AS nr INNER JOIN node AS n ON n.nid = nr.nid ";
@@ -137,7 +138,7 @@ print '<div  class="content_grl">';
 					$nov_nota+= 1;
 				}
 				print '</div>';			 
-				
+				print '</div>';							
 				print '</br>&nbsp;</br>';
 				
 				
