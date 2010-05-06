@@ -14,11 +14,8 @@
     <?php include("include/col_derecha-mini.php");?>
     <!-- CENTRAL -->
     <div id="central_column">
-		<div class="postdate">
-<div class="month m-<?php print date("m") ?>"><?php print date("M") ?></div>
-<div class="day d-<?php print date("d") ?>"><?php print date("d") ?></div>
-<div class="year y-<?php print date("Y") ?>"><?php print date("Y") ?></div>-->
-</div>
+
+
       <?php
         $num_nota = arg(1);
 		$nodo = node_load($num_nota);
@@ -27,6 +24,7 @@
 		$d_mes = substr($nodo->field_fecha_0[0]['value'],5,2);		
 		$d_ano = substr($nodo->field_fecha_0[0]['value'],0,4);		
 		//print '['.$d_dia.'-'.$d_mes.'-'.$d_ano.']';
+		print '<div class="postdate">';
         print '<div class="month m-'.$d_mes.'">'.$d_mes.'</div>';
         print '<div class="day d-'.$d_dia.'">'.$d_dia.'</div>';
         print '<div class="year y-'.$d_ano.'">'.$d_ano.'</div>';
