@@ -19,7 +19,7 @@
 		  $sql_base   = "SELECT * FROM node_revisions AS nr INNER JOIN node AS n ON n.nid = nr.nid ";
 		  $inner_join = "INNER JOIN content_type_novedades AS w ON w.nid = n.nid ";
 
-		  $where = "WHERE n.type = 'novedades' AND field_tipo_0_value = '".$busco."' AND n.nid <> '".arg(1)."'AND n.status = 1 ";
+		  $where = "WHERE n.type = 'novedades' AND field_tipo_0_value = '".$busco."' AND n.nid <> '".arg(1)."' AND n.status = 1 ";
 		  $where = $where . " ORDER BY w.field_fecha_0_value DESC, w.field_orden_0_value DESC LIMIT 30 ";
 		  
 		  $sql = $sql_base.$inner_join.$where;
