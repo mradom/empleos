@@ -9,7 +9,7 @@ global $user_profile;
 print '<div  class="content_grl">';
 				if (in_array('empresa', array_values($user->roles))) {
 				  	 if ($user->uid) { 
- 						print '<div><a href="/user/me/edit"><img class="right" title="Cambiar logo" src="/'.$user->picture.'"></a></div>';
+ 						print '<div style="	"><a href="/user/me/edit"><img class="right" title="Cambiar logo" src="/'.$user->picture.'"></a></div>';
 						//print '<div style="border: 1px solid #ccc ;">';
 			  	 	 	print 'Empresa<br>';
 			  	 	 	//print '<a href="/job/applications">Mis Aplicaciones</a><br>';
@@ -43,13 +43,13 @@ print '<div  class="content_grl">';
 					//print '['.$sql.']';
 					$rs = db_query($sql);
 					
-					print '<div>';
-					print '<div>Postulaciones:</div>';
+					print '<div class="right">';
+					print '<div class="postula">Postulaciones:</div>';
 					print '<table class="tablaGris" border="0" cellpadding="0" cellspacing="1"> ';
-				    print '<tbody><tr> ';
-				          print '<td class="techo" width="60%">Aviso</TD>';
+				    print '<tbody><tr>';
+				          print '<td class="techo" width="70%">Aviso</TD>';
 				          print '<td class="techo" width="20%">Fecha</TD>';
-				          print '<td class="techo" width="20%">&nbsp;</TD>'; 
+				          print '<td class="techo" width="10%">&nbsp;</TD>'; 
 				    print '</tr>'; 
 					while($fila = mysql_fetch_object($rs)){
 						$nodo = node_load($fila->nid);
