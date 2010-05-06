@@ -1,4 +1,5 @@
 <?php
+
 // $Id: template.php,v 1.4.2.1 2007/04/18 03:38:59 drumm Exp $
 
 /**
@@ -905,7 +906,7 @@ function phptemplate_contact_mail_page(&$form) {
 
 
 function phptemplate_node_delete_confirm(&$form) {
-  $form['actions']['cancel']['#prefix']  = '<div class="btn_gral b">';
+  $form['actions']['cancel']['#prefix']  = '<div class="btn_gral c">';
   $form['actions']['cancel']['#suffix']  = '</div>';
   $form['description']['#value'] = 'Si ud. borra los datos, estos no se podran recuperar.';
   $miform  = "";

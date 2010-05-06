@@ -10,7 +10,7 @@
 	margin:10px 20px 0 0;
 }
 select.home, input.home {
-	width:250px;
+	width:256px;
 	padding:.1em;
 	margin-bottom:5px;
 }
@@ -202,7 +202,7 @@ input.form-submit{
 	color:#FFF;
 	font-weight:bold;
 	cursor:pointer;
-	margin:10px 0 20px 0;
+	margin:10px 0 10px 0;
 	display:inline;
 	
 }
@@ -220,11 +220,17 @@ input.form-submit:hover{
 }
 
 /*--*/
-
+.mycv #edit-field-fecha-desde-0-value-wrapper .form-item, .mycv #edit-field-fecha-hasta-0-value-wrapper .form-item {
+	padding:0;
+	float:right;
+	margin:0;
+	width:auto;
+}
+.mycv #edit-field-fecha-desde-0-value-wrapper .form-item input {
+	margin:0;
+}
 .mycv .container-inline-date .form-item{
-	/*width:340px;*/
 	margin:5px 0;
-	float:left
 }
 /*--*/
 div.falselabel{

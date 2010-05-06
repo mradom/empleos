@@ -34,32 +34,22 @@
 						    print '<li class="destacado">';
 							if ($nodo->field_tipo_de_aviso[0]["value"] > 2) {
  					  			print '<div class="brand">';
-								// <img src="'.$nodo->picture.'" title="'.$nodo->name.'">
 								print theme('imagecache','logo_empresa_resultado_busqueda_86_53',$nodo->picture,$nodo->name.' - alt',$nodo->name.' - Title'); 
 								print '</div>';
 							} else {
 								print '<div class="brand"></div>';
 							}
-					  		//print '<p class="date">'.round($tot/2).'-'.$ren.'</p>';
 							print '<p class="date">'.substr($nodo->field_fecha_hasta[0]["value"],0,10).'</p>';
 					  		print '<p class="name"><a href="/node/'.$nodo->nid.'">'.substr($nodo->title,0,28).'</a></p>';
 					  		print '<p class="job"><a href="/rubro/'.$area.'">'.$nodo->taxonomy[$area]->name.'</a></p>';
 					  		print '</li>';	
 							if (($ren == round($tot/2)) ) { 
 								 print '</ul><ul class="rigth">'; 
-								 //print "======================================================";
 						    }		 
 						}
 						print '</ul>';
 					}
-				  
-				      // aviso
-					  // print '';
-					  // print '</ul>';
-					  // print '<ul class="left">'; 
-					  // print '</ul>';
-					  
-					  
+ 
 				  ?>
                   <div class="arrow" style="clear: both;"><a href="/buscar">Ver m&aacute;s</a></div>
                 </div>
@@ -68,6 +58,8 @@
           </div>
         <script type="text/javascript" src="/sites/all/themes/empleos/js/tabs.js"></script>
         </div>
+
+
 
 
         <!-- Banner meddle -->

@@ -27,7 +27,7 @@
 				}
 			?>
 		</select>
-		<input name="buscar" class="btn_gral" style="margin-left:60px; padding:0 15px 3px 15px;" value="Buscar Ahora" alt="Buscar" type="submit" dir="ltr">
+		<input name="buscar" class="btn_gral" style="margin-top:3px; padding:0 15px 3px 15px;" value="Buscar Ahora" alt="Buscar" type="submit" dir="ltr">
 	  </form>
 	  <div class="btn_busquedaA"><a href="/avanzada">B&uacute;squeda avanzada</a></div>
 	</div>

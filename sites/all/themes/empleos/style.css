@@ -246,7 +246,7 @@ li.btns.sig:hover{
 	padding-left:10px;
 }
 /*---*/
-.faq-dd-hide-answer ul li{
+ul.faq li{
 	background:url(/sites/all/themes/empleos/img/bullet_blue.gif) left 5px no-repeat;
 	padding-left:10px;
 }
@@ -340,12 +340,19 @@ li.btns.sig:hover{
     line-height: auto;
     text-decoration:none;
 }
+.btn_gral a:hover{
+	color:#fff;
+}
 .btn_gral:hover {
     background: url(/sites/all/themes/empleos/img/bg_btn_orange_hover.png) repeat-x;
 }
 
 .btn_gral.b{
     padding:4px 10px;
+}
+.btn_gral.c{
+	padding:3px 10px 4px 10px;
+	margin:10px 10px 10px 0;
 }
 /*--Btn -contacto--*/
 .btn_contactos{
@@ -659,7 +666,10 @@ ul.side ul ul a:hover{
 #central_column .bar_blue {
 	width:680px;
 }
-
+/*---------mi cuenta----------*/
+.postula{
+	width:250px;
+}
 /*----------faq------------*/
 div.left-corner{
 	margin-bottom:10px;
@@ -691,15 +701,16 @@ li.destacado div.brand, #gold div.brand, #destacado div.brand, div.resumen div.b
 	margin:4px 10px 0 0;
 	float:left;
 }
-p.name {
-	font:14px/16px verdana;
+p.name a{
+	font:12px/16px tahoma;
 	padding-top:5px;
-	/*text-transform: uppercase;*/
-	width:200px;
+	text-transform: uppercase;
 	float:left;
+	color:#333;
+	width:150px;
 }
-p.job {
-	font:bold 12px/14px verdana;
+p.job a{
+	font:bold 11px/14px tahoma;
 	color:#0099cc;
 	width:200px;
 	float:left;
@@ -707,8 +718,9 @@ p.job {
 p.date {
 	font:10px/12px verdana;
 	padding-top:5px;
-	color:#C9C9C9;
+	color: #949494;
 	float:right;
+	display:block;
 }
 /*-------tabs de avisos--------*/
 fielset .group-datos-de-la-empresa{
