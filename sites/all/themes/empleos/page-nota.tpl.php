@@ -35,7 +35,7 @@
 			  //print '<pre>';					
 			  print '<div>';
 			  print '<img src="/'.$nota->field_foto_0[0]['filepath'].'">';			  
-			  print '<div>'.substr($nota->field_fecha[0]['value'],0,10).'</div>';
+			  print '<div>'.date("d-m-Y",strtotime(substr($nota->field_fecha[0]['value'],0,10))).'</div>';
 			  print '<div><span>'.$nota->field_title.'</span></div>';
 			  print '<a href="/novedades/'.$nota->nid.'" target="_top" title="'.$nota->title.'">';
 			  print '<div><span>'.$nota->field_resumen[0]['value'].'</span></div>';
