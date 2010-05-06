@@ -1130,7 +1130,7 @@ function phptemplate_form_alter(&$form, $form_state, $form_id){
 
     switch($form_id){
         case 'p-cursos-node-form--------------------------------':
-        	print "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
+        	print "++++++++++++++++++++++++++++++++++++++++++++++++++++++";
 		    $form['ini']['#prefix']  = '<div class="mycv">';
 			$form['ini']['#value']  = ' ';
 			$form['ini']['#weight']  = -99;	
