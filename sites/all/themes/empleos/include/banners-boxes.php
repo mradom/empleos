@@ -17,7 +17,7 @@
   // banner 3	
   print '<div class="banner boxes" style="float:right">';
     $conf= Array ('style' => 'block', 'override_title' => '0','override_title_text' => '', 'css_id' => '', 
-		    'css_class' => '', 'name' => 'banner_boxes_interna3',);
+		    'css_class' => '', 'name' => 'banner_boxes_home3',);
 	$columna= panels_mini_content($conf, $panel_args, $contexts);
     print ($columna->content); 	
 	print '</div>';
