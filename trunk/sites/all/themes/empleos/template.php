@@ -905,7 +905,7 @@ function phptemplate_contact_mail_page(&$form) {
 
 
 function phptemplate_node_delete_confirm(&$form) {
-  $form['actions']['cancel']['#prefix']  = '<div class="btn_gral">';
+  $form['actions']['cancel']['#prefix']  = '<div class="btn_gral b">';
   $form['actions']['cancel']['#suffix']  = '</div>';
   $form['description']['#value'] = 'Si ud. borra los datos, estos no se podran recuperar.';
   $miform  = "";
