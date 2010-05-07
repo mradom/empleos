@@ -667,8 +667,64 @@ ul.side ul ul a:hover{
 	width:680px;
 }
 /*---------mi cuenta----------*/
-.postula{
+.rigth-side-profile{
 	width:250px;
+	float:right
+}
+.left-side-prifile{
+	float:left;
+	width:420px;
+}
+.content-profile .noticias, #right_column .noticias{
+	border-bottom:2px solid #39C
+}
+#right_column .noticias{
+	float:left;
+	margin-bottom:10px;
+	width:298px;
+}
+	div.nav{
+		-moz-border-radius:5px 5px 0 0;
+		-webkit-border-radius:5px 5px 0 0;
+		background: #9FD6DF;
+	}
+.content-profile h2, #right_column .noticias .nav h2  {
+	display:block;
+	color:#fff;
+	padding:0 10px;
+	font:bold 13px/2em tahoma;
+}
+.content-profile .title h2 a{
+	font-weight:normal;
+}
+a .merengue h2{
+	font:normal 12px tahoma;
+	color:#666;
+}
+a:hover .merengue h2{
+	text-decoration:underline
+}
+.content-profile .title h2 a:hover{
+	text-decoration:underline
+}
+.content-profile .note, #right_column .note {
+	border-top:2px solid #39C
+}
+.content-profile .note .date, #right_column .note .date{
+	float:right;
+	text-align:right;
+}
+.note .phot img {
+	float:left;
+	width:60px;
+	margin-right:10px;
+}
+.note .body-note{
+	float:left;
+	padding-bottom:7px;
+}
+#right_column .note .body-note{
+	max-width:228px;
 }
 /*----------faq------------*/
 div.left-corner{
@@ -715,7 +771,7 @@ p.job a{
 	width:200px;
 	float:left;
 }
-p.date {
+.date {
 	font:10px/12px verdana;
 	padding-top:5px;
 	color: #949494;

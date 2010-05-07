@@ -6,7 +6,7 @@ global $user_profile;
 //firep($user, 'User');
 //firep($user_profile, 'User');
 
-print '<div  class="content_grl">';
+print '<div  class="content_grl content-profile">';
 				if (in_array('empresa', array_values($user->roles))) {
 				  	 if ($user->uid) { 
  						print '<div ><a href="/user/me/edit"><img class="right" title="Cambiar logo" src="/'.$user->picture.'"></a></div>';
@@ -32,7 +32,7 @@ print '<div  class="content_grl">';
 			  	 }
 				 
 				// Postulaciones =================
-				print '<div class="right" style="width:250px;">';
+				print '<div class="rigth-side-profile">';
 				if (!in_array('empresa', array_values($user->roles))) {
 					$sql_base   = "SELECT * FROM job AS j INNER JOIN node AS n ON n.nid = j.nid ";
 					$inner_join = "";
@@ -45,7 +45,7 @@ print '<div  class="content_grl">';
 					$rs = db_query($sql);
 					
 					print '<div>';
-					print '<div class="postula">Postulaciones:</div>';
+					print '<div class="nav"><h2>Postulaciones:</></div>';
 					print '<table class="tablaGris" border="0" cellpadding="0" cellspacing="1"> ';
 				    print '<tbody><tr>';
 				          print '<td class="techo" width="70%">Aviso</TD>';
@@ -82,7 +82,7 @@ print '<div  class="content_grl">';
 					$rs = db_query($sql);
 					
 					print '<div>';
-					print '<div class="postula">Favoritos:</div>';
+					print '<div class="nav"><h2>Favoritos:</h2></div>';
 					print '<table class="tablaGris" border="0" cellpadding="0" cellspacing="1">';
 				    print '<tbody><tr>';
 				          print '<td class="techo" width="60%">Aviso</td>';
@@ -107,7 +107,8 @@ print '<div  class="content_grl">';
 				}
 				print '</div>';
 				
-				print'<div class="left">';
+				// Novedades =================
+				print'<div class="left-side-prifile">';
 				 
 				$nov_nota=0;
 			    $sql_base   = "SELECT * FROM node_revisions AS nr INNER JOIN node AS n ON n.nid = nr.nid ";
@@ -120,21 +121,24 @@ print '<div  class="content_grl">';
 				//print '['.$sql.']';
 				$rs = db_query($sql);
 				 
-				print '<div class="left">';
-				print '<div>Novedades:</div>';
+				print '<div class="noticias">';
+				print '<div class="nav"><h2>Novedades:</h2></div>';
 				while($fila = mysql_fetch_object($rs)){
 					$nota = node_load($fila->nid);
 					//print '<pre>';
 					//print_r($nota);					
 					//print '<pre>';					
-					print '<div>';
-					print '<div>'.date("d-m-Y",strtotime(substr($nota->field_fecha_0[0]['value'],0,10))).'</div>';
-                    
+					print '<div class="note">';      
 					print '<a href="/novedades/'.$nota->nid.'" target="_top" title="'.$nota->title.'">';
-					print '<div><span>'.$nota->title.'</span></div>';
+					print '<div class="date">'.date("d-m-Y",strtotime(substr($nota->field_fecha_0[0]['value'],0,10))).'</div>';
+					
+					print '<div class="phot">';
 					print '<img src="/'.$nota->field_foto_0[0]['filepath'].'">';
-                    print '<div><span>'.$nota->field_resumen_0[0]['value'].'</span></div>';
+					print '</div>';
+					print '<div class="title"><h2>'.$nota->title.'</h2></div>';
+                    print '<div class="body-note">'.$nota->field_resumen_0[0]['value'].'</div>';
                     print '</a>';
+					print '<div class="clr"></div>';
 					print '</div>';
 					$nov_nota+= 1;
 				}
