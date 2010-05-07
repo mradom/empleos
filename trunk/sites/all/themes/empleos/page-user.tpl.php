@@ -29,8 +29,8 @@
     <?php
 	if (arg(0)=='user' and arg(1)==$user->uid and arg(2)=='' and (!in_array('empresa', array_values($user->roles)))) {
 	  print '<div id="right_column">';
-	  Form_ayuda('Tip', 'EmpleadoHome'); 
-	  include("include/col_derecha-sin.php");	  
+	  Form_ayuda('Tip', 'PersonaHome'); 
+	  include("include/col_derecha-sin.php");	
       print '</div>';
 	}
 	if (arg(0)=='user' and arg(1)==$user->uid and arg(2)=='' and (in_array('empresa', array_values($user->roles)))) {
