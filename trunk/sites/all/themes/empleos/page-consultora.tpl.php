@@ -45,8 +45,8 @@
 					  print '</div>';
 					  
 					  print '<div class="lnk">';
-					  print '<a class="grey" href"#">ver datos de la consultora</a><br>';
-					  print '<a href"#">ver avisos de la consultora</a></div>';
+					  print '<a class="grey" href="/empresa/'.$fila->uid.'">ver DATOS de la consultora</a><br>';
+					  print '<a href="/empresa/'.$fila->uid.'/avisos">ver AVISOS de la consultora</a></div>';
                       print '</li>';
                   }
                   print '</ul></div>';
@@ -126,11 +126,9 @@ $sql = $base_query.$inner_join.$where;
 //print '['.$sql.']';
 
 	$nodes_per_page = variable_get(EMPLEOS_PAGE_LIMIT, 20);
-	$nodes_per_page = 2;
+	//$nodes_per_page = 2;
 	
 	$rs = pager_query($sql,$nodes_per_page,0);
-
-
 
 
 	print '<div style="float: left;">';

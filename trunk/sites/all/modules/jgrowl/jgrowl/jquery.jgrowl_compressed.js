@@ -56,7 +56,7 @@ if($.fn.corner!=undefined){
 $(_1a).corner(o.corners);
 }
 if($("div.jGrowl-notification:parent",this.element).size()>1&&$("div.jGrowl-closer",this.element).size()==0&&this.defaults.closer!=false){
-$("<div class=\"jGrowl-closer\">[ close all ]</div>").addClass(this.defaults.theme).appendTo(this.element).animate(this.defaults.animateOpen,this.defaults.speed,this.defaults.easing).bind("click.jGrowl",function(){
+$("<div class=\"jGrowl-closer\">[ cerrar todo ]</div>").addClass(this.defaults.theme).appendTo(this.element).animate(this.defaults.animateOpen,this.defaults.speed,this.defaults.easing).bind("click.jGrowl",function(){
 $(this).siblings().children("div.close").trigger("click.jGrowl");
 if($.isFunction(_19.defaults.closer)){
 _19.defaults.closer.apply($(this).parent()[0],[$(this).parent()[0]]);
