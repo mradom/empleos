@@ -110,7 +110,7 @@
 			speed: 			'normal',
 			easing: 		'swing',
 			closer: 		true,
-			closerTemplate: '<div>[ close all ]</div>',
+			closerTemplate: '<div>[ cerrar todo ]</div>',
 			log: 			function(e,m,o) {},
 			beforeOpen: 	function(e,m,o) {},
 			open: 			function(e,m,o) {},
