@@ -78,9 +78,9 @@
         <div class="clearfix">
           <div class="SolCont clearfix">
             <ul class="Sol clearfix">
-              <li class="Act clearfix" id="S_Opi1"> <a href="javascript:;" title="departamentos" onclick="SolChange('Opi1','S_Opi1','RssG','RssNot')">Noticias</a> </li>
-              <li class="clearfix" id="S_Opi2"> <a href="javascript:;" title="casas" onclick="SolChange('Opi2','S_Opi2','RssNot','RssG')">Formac&oacute;n</a> </li>
-              <li class="clearfix" id="S_Opi3"> <a href="javascript:;" title="countries" onclick="SolChange('Opi3','S_Opi3','RssNot','RssG')">Gu&iacute;a de Consultoras</a> </li>
+              <li class="Act clearfix" id="S_Opi1"> <a href="javascript:;" title="Noticias" onclick="SolChange('Opi1','S_Opi1','RssG','RssNot')">Noticias</a> </li>
+              <li class="clearfix" id="S_Opi2"> <a href="javascript:;" title="Formaci&oacute;n" onclick="SolChange('Opi2','S_Opi2','RssNot','RssG')">Formaci&oacute;n</a> </li>
+              <li class="clearfix" id="S_Opi3"> <a href="javascript:;" title="Gu&iacute;a de Consultoras" onclick="SolChange('Opi3','S_Opi3','RssNot','RssG')">Gu&iacute;a de Consultoras</a> </li>
             </ul>
           </div>
         </div>
@@ -94,10 +94,11 @@
                 <?php 
 				$not_pagina=0;
 				$not_nota=4;
+				$not_tipo='noticias';
 				$sql_base   = "SELECT * FROM node_revisions AS nr INNER JOIN node AS n ON n.nid = nr.nid ";
 				$inner_join = "INNER JOIN content_type_notas AS w ON w.nid = n.nid ";
 
-				$where = "WHERE n.type = 'notas' AND w.field_tipo_value = 'noticias' AND n.status = 1 ";
+				$where = "WHERE n.type = 'notas' AND w.field_tipo_value = '".$not_tipo."' AND n.status = 1 ";
 				$where = $where . " ORDER BY w.field_fecha_value DESC, w.field_orden_value DESC LIMIT 12 ";
 				
 				$sql = $sql_base.$inner_join.$where;
@@ -113,7 +114,7 @@
 						$not_pagina+=1;
 						$not_nota = 0;
 					}
-					print '<li class="FloR"><a target="_top" href="/nota/'.$nota->nid.'" title="'.$nota->title.'" class="LinkNot"><img src="'.$nota->field_foto[0]['filepath'].'" class="alignnone size-full wp-image-886">';
+					print '<li class="FloR"><a target="_top" href="/nota/'.$not_tipo.'/'.$nota->nid.'" title="'.$nota->title.'" class="LinkNot"><img src="'.$nota->field_foto[0]['filepath'].'" class="alignnone size-full wp-image-886">';
                     print '<div class="Not" id="Not2"> <span>'.$nota->field_resumen[0]['value'].'</span></div>';
                     print '</a></li>';
 					$not_nota+= 1;
@@ -143,10 +144,11 @@
                 <?php 
 				$not_pagina=0;
 				$not_nota=4;
+				$not_tipo='noticias';
 			    $sql_base   = "SELECT * FROM node_revisions AS nr INNER JOIN node AS n ON n.nid = nr.nid ";
 				$inner_join = "INNER JOIN content_type_notas AS w ON w.nid = n.nid ";
 
-				$where = "WHERE n.type = 'notas' AND w.field_tipo_value = 'noticias' AND n.status = 1 ";
+				$where = "WHERE n.type = 'notas' AND w.field_tipo_value = '".$not_tipo."' AND n.status = 1 ";
 				//$where = $where . " ORDER BY w.field_fecha_value DESC, w.field_orden_value DESC LIMIT 12 ";
 				$where = $where . " ORDER BY rand() DESC LIMIT 12 ";
 				
@@ -162,7 +164,7 @@
 						$not_pagina+=1;
 						$not_nota = 0;
 					}
-					print '<li class="FloR"><a target="_top" href="/nota/'.$nota->nid.'" title="'.$nota->title.'" class="LinkNot"><img src="'.$nota->field_foto[0]['filepath'].'" class="alignnone size-full wp-image-886">';
+					print '<li class="FloR"><a target="_top" href="/nota/'.$not_tipo.'/'.$nota->nid.'" title="'.$nota->title.'" class="LinkNot"><img src="'.$nota->field_foto[0]['filepath'].'" class="alignnone size-full wp-image-886">';
                     print '<div class="Not" id="Not2"> <span>'.$nota->field_resumen[0]['value'].'</span></div>';
                     print '</a></li>';
 					$not_nota+= 1;
@@ -191,10 +193,11 @@
                 <?php 
 				$not_pagina=0;
 				$not_nota=4;
+				$not_tipo='noticias';				
 			    $sql_base   = "SELECT * FROM node_revisions AS nr INNER JOIN node AS n ON n.nid = nr.nid ";
 				$inner_join = "INNER JOIN content_type_notas AS w ON w.nid = n.nid ";
 
-				$where = "WHERE n.type = 'notas' AND w.field_tipo_value = 'noticias' AND n.status = 1 ";
+				$where = "WHERE n.type = 'notas' AND w.field_tipo_value = '".$not_tipo."' AND n.status = 1 ";
 				//$where = $where . " ORDER BY w.field_fecha_value DESC, w.field_orden_value DESC LIMIT 12 ";
 				$where = $where . " ORDER BY rand() DESC LIMIT 12 ";				
 				// OJO cambiar notas por consultoras al final
@@ -207,7 +210,7 @@
 						$not_pagina+=1;
 						$not_nota = 0;
 					}
-					print '<li class="FloR"><a target="_top" href="/nota/'.$nota->nid.'" title="'.$nota->title.'" class="LinkNot"><img src="'.$nota->field_foto[0]['filepath'].'" class="alignnone size-full wp-image-886">';
+					print '<li class="FloR"><a target="_top" href="/nota/'.$not_tipo.'/'.$nota->nid.'" title="'.$nota->title.'" class="LinkNot"><img src="'.$nota->field_foto[0]['filepath'].'" class="alignnone size-full wp-image-886">';
                     print '<div class="Not" id="Not2"> <span>'.$nota->field_resumen[0]['value'].'</span></div>';
                     print '</a></li>';
 					$not_nota+= 1;

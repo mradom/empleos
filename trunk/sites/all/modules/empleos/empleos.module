@@ -9,6 +9,27 @@ define('EMPLEOS_BANNER_VIEW',	   'empleos_banner_view');
 define('EMPLEOS_LOGO',	           'empleos_logo');
 
 
+function empleos_cron() {
+	
+	// actualizo las variables de avisos y empresas para la home 
+   $base_query = "SELECT count(*) FROM {node} AS n  ";
+   $inner_join = "INNER JOIN {content_type_e_aviso} AS w ON w.nid = n.nid ";
+   $where      = "WHERE n.type = 'e_aviso' AND n.status = 1 ";
+	
+   $sql = $base_query.$inner_join.$where;
+   $avisos_count = db_result(db_query($sql));
+
+   $base_query = "SELECT count(*) FROM {users} AS u ";
+   $inner_join = "INNER JOIN {users_roles} AS ur ON ur.uid = u.uid ";
+   $where      = "WHERE STATUS = 1 AND ur.rid = 5";
+
+   $sql = $base_query.$inner_join.$where;
+   $empresas_count = db_result(db_query($sql));
+   
+   Variable_set('avisos_count',$avisos_count);
+   Variable_set('empresas_count',$empresas_count);
+}
+
 function empleos_menu($may_cache) {
   $items = array();
 
