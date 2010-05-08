@@ -1,5 +1,5 @@
 <div class="white left">
-  <h2 class="datos"><span class="underline">1668</span> empleos en <span class="underline">3542</span> empresas</h2>
+  <h2 class="datos"><span class="underline"><?php print Variable_get('avisos_count', 100); ?></span> empleos en <span class="underline"><?php print Variable_get('empresas_count', 100); ?></span> empresas</h2>
 	<div class="title">
 	  <h1>&iquest;Qu&eacute; empleo busc&aacute;s?</h1>
 	  <h3>Conoc&eacute; la manera m&aacute;s r&aacute;pida de encontrar 

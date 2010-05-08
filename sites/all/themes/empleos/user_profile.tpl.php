@@ -97,7 +97,7 @@ print '<div  class="content_grl content-profile">';
 						print '<tr>';
 						print '<td><a href="/node/'.$nodo->nid.'" target="_top" title="'.$nodo->title.'">';
 						print $nodo->title.'</td>';
-						print '<td>fecha</td>';
+						print '<td>'.date('d-m-Y',$fila->last).'</td>';
 						print '<td><a href="/favorite_nodes/delete/'.$nodo->nid.'" title="Borrar">Borrar</a></td>';
 						print '</tr>';
 					}
@@ -129,7 +129,7 @@ print '<div  class="content_grl content-profile">';
 					//print_r($nota);					
 					//print '<pre>';					
 					print '<div class="note">';      
-					print '<a href="/novedades/'.$nota->nid.'" target="_top" title="'.$nota->title.'">';
+					print '<a href="/novedades/'.$busco.'/'.$nota->nid.'" target="_top" title="'.$nota->title.'">';
 					print '<div class="date">'.date("d-m-Y",strtotime(substr($nota->field_fecha_0[0]['value'],0,10))).'</div>';
 					
 					print '<div class="phot">';

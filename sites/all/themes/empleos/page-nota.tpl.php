@@ -15,31 +15,32 @@
         <?php 
 		  include("include/col_derecha-sin.php");
 	  
-	      $busco = 'noticias';
+	      $busco = arg(1);
+		  $busco = 'noticias';
 		  $sql_base   = "SELECT * FROM node_revisions AS nr INNER JOIN node AS n ON n.nid = nr.nid ";
 		  $inner_join = "INNER JOIN content_type_notas AS w ON w.nid = n.nid ";
 
-		  $where = "WHERE n.type = 'notas' AND field_tipo_value = '".$busco."' AND n.nid <> '".arg(1)."' AND n.status = 1 ";
+		  $where = "WHERE n.type = 'notas' AND field_tipo_value = '".$busco."' AND n.nid <> '".arg(2)."' AND n.status = 1 ";
 		  $where = $where . " ORDER BY w.field_fecha_value DESC, w.field_orden_value DESC LIMIT 30 ";
 		  
 		  $sql = $sql_base.$inner_join.$where;
 		  //print '['.$sql.']';
 		  $rs = db_query($sql);
-		   
-		  print '<div>';
-		  print '<div>Novedades:</div>';
+
+		  print '<div class="noticias">';
+   		  print '<div class="nav"><h2>Noticias:</h2></div>';
 		  while($fila = mysql_fetch_object($rs)){
 			  $nota = node_load($fila->nid);
-			  //print '<pre>';
-			  //print_r($nota);					
-			  //print '<pre>';					
-			  print '<div>';
-			  print '<img src="/'.$nota->field_foto_0[0]['filepath'].'">';			  
-			  print '<div>'.date("d-m-Y",strtotime(substr($nota->field_fecha[0]['value'],0,10))).'</div>';
-			  print '<div><span>'.$nota->field_title.'</span></div>';
-			  print '<a href="/novedades/'.$nota->nid.'" target="_top" title="'.$nota->title.'">';
-			  print '<div><span>'.$nota->field_resumen[0]['value'].'</span></div>';
-			  print '</a>';
+
+			  print '<div class="note">';
+			  print '<a href="/nota/'.$busco.'/'.$nota->nid.'" target="_top" title="'.$nota->title.'">';
+			  print '<div class="date">'.date("d-m-Y",strtotime(substr($nota->field_fecha[0]['value'],0,10))).'</div>';		
+			  print '<div class="phot">';
+			  print '<img src="/'.$nota->field_foto[0]['filepath'].'">';
+			  print '</div>';
+			  print '<div class="merengue"><h2>'.$nota->title.'</h2></div>';
+              print '<div class="body-note">'.$nota->field_resumen[0]['value'].'</div>';
+              print '</a>';
 			  print '</div>';
 			  $nov_nota+= 1;
 		  }
@@ -52,7 +53,7 @@
 		<div class="postdate">
         <?php
 		
-        $num_nota = arg(1);
+        $num_nota = arg(2);
 		$nodo = node_load($num_nota);
 		
 		$d_dia = substr($nodo->field_fecha[0]['value'],8,2);
