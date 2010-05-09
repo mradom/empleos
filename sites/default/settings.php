@@ -92,7 +92,7 @@
  */
 /** $db_url = 'mysql://empleos:3mpl30s@64.191.99.172/empleos'; */
 
-$db_url = 'mysql://root@localhost/empleos';
+$db_url = 'mysql://root:n0t13n3@localhost:13306/empleos';
 $db_prefix = '';
 
 /**
