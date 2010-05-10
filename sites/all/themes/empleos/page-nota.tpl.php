@@ -27,24 +27,28 @@
 		  //print '['.$sql.']';
 		  $rs = db_query($sql);
 
-		  print '<div class="noticias">';
-   		  print '<div class="nav"><h2>Noticias:</h2></div>';
-		  while($fila = mysql_fetch_object($rs)){
-			  $nota = node_load($fila->nid);
-
-			  print '<div class="note">';
-			  print '<a href="/nota/'.$busco.'/'.$nota->nid.'" target="_top" title="'.$nota->title.'">';
-			  print '<div class="date">'.date("d-m-Y",strtotime(substr($nota->field_fecha[0]['value'],0,10))).'</div>';		
-			  print '<div class="phot">';
-			  print '<img src="/'.$nota->field_foto[0]['filepath'].'">';
-			  print '</div>';
-			  print '<div class="merengue"><h2>'.$nota->title.'</h2></div>';
-              print '<div class="body-note">'.$nota->field_resumen[0]['value'].'</div>';
-              print '</a>';
-			  print '</div>';
-			  $nov_nota+= 1;
-		  }
-		  print '</div>';			
+		   print '<div class="noticias">';
+				print '<div class="nav"><h2>Novedades:</h2></div>';
+				while($fila = mysql_fetch_object($rs)){
+					$nota = node_load($fila->nid);
+					//print '<pre>';
+					//print_r($nota);					
+					//print '<pre>';					
+					print '<div class="note">';      
+					print '<a href="/nota/'.$busco.'/'.$nota->nid.'" target="_top" title="'.$nota->title.'">';
+					print '<div class="date">'.date("d-m-Y",strtotime(substr($nota->field_fecha[0]['value'],0,10))).'</div>';
+					
+					print '<div class="phot">';
+					print '<img src="/'.$nota->field_foto[0]['filepath'].'">';
+					print '</div>';
+					print '<div class="title">'.substr($nota->title,0,55).'</div>';
+                    print '<div class="body-note">'.substr($nota->field_resumen[0]['value'],0,180).'</div>';
+                    print '</a>';
+					print '<div class="clr"></div>';
+					print '</div>';
+					$nov_nota+= 1;
+				}
+				print '</div>';			
 	  ?> 
     </div>    
     

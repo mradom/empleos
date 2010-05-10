@@ -47,8 +47,8 @@ print '<div  class="content_grl content-profile">';
 					print '<table class="tablaGris" border="0" cellpadding="0" cellspacing="1"> ';
 				    print '<tbody><tr>';
 				          print '<td class="techo" width="70%">Aviso</TD>';
-				          print '<td class="techo" width="20%">Fecha</TD>';
-				          print '<td class="techo" width="10%">&nbsp;</TD>'; 
+				          print '<td class="techo" width="23%">Fecha</TD>';
+				          print '<td class="techo" width="7%">&nbsp;</TD>'; 
 				    print '</tr>'; 
 					while($fila = mysql_fetch_object($rs)){
 						$nodo = node_load($fila->nid);
@@ -56,7 +56,7 @@ print '<div  class="content_grl content-profile">';
 						print '<td><a href="/node/'.$nodo->nid.'" target="_top" title="'.$nodo->title.'">';
 						print $nodo->title.'</td>';
 						print '<td>'.date('d-m-Y', $fila->timestamp).'</td>';
-						print '<td><a href="/job/clear/'.$nodo->nid.'/'.$user->uid.'&destination=/user/me" title="Borrar">Borrar</a></td>';
+						print '<td><a href="/job/clear/'.$nodo->nid.'/'.$user->uid.'&destination=/user/me" title="Borrar"><div class="arrow cancel"></div></a></td>';
 						print '</tr>';
 					}
 					print  '</tbody></table>';
@@ -83,9 +83,9 @@ print '<div  class="content_grl content-profile">';
 					print '<div class="nav"><h2>Favoritos:</h2></div>';
 					print '<table class="tablaGris" border="0" cellpadding="0" cellspacing="1">';
 				    print '<tbody><tr>';
-				          print '<td class="techo" width="60%">Aviso</td>';
-				          print '<td class="techo" width="20%">Fecha</td>';
-				          print '<td class="techo" width="20%">&nbsp;</td>'; 
+				          print '<td class="techo" width="70%">Aviso</td>';
+				          print '<td class="techo" width="23%">Fecha</td>';
+				          print '<td class="techo" width="7%">&nbsp;</td>'; 
 				    print '</tr>'; 
 					while($fila = mysql_fetch_object($rs)){
 						$nodo = node_load($fila->nid);
@@ -96,7 +96,7 @@ print '<div  class="content_grl content-profile">';
 						print '<td><a href="/node/'.$nodo->nid.'" target="_top" title="'.$nodo->title.'">';
 						print $nodo->title.'</td>';
 						print '<td>'.date('d-m-Y',$fila->last).'</td>';
-						print '<td><a href="/favorite_nodes/delete/'.$nodo->nid.'" title="Borrar">Borrar</a></td>';
+						print '<td><a href="/favorite_nodes/delete/'.$nodo->nid.'" title="Borrar"><div class="arrow cancel"></div></a></td>';
 						print '</tr>';
 					}
 					print '</tbody></table>';
@@ -129,7 +129,7 @@ print '<div  class="content_grl content-profile">';
 						print '<td><a href="/node/'.$nodo->nid.'" target="_top" title="'.$nodo->title.'">';
 						print $nodo->title.'</td>';
 						print '<td>'.date('d-m-Y', $fila->timestamp).'</td>';
-						print '<td><a href="/job/clear/'.$nodo->nid.'/'.$user->uid.'&destination=/user/me" title="Borrar">Borrar</a></td>';
+						print '<td><a href="/job/clear/'.$nodo->nid.'/'.$user->uid.'&destination=/user/me" title="Borrar"><div class="arrow cancel"></div></a></td>';
 						print '</tr>';
 					}
 					print  '</tbody></table>';
@@ -167,7 +167,7 @@ if (in_array('empresa', array_values($user->roles))) {
 						print '<td><a href="/node/'.$nodo->nid.'" target="_top" title="'.$nodo->title.'">';
 						print $nodo->title.'</td>';
 						print '<td>'.date('d-m-Y',$fila->last).'</td>';
-						print '<td><a href="/favorite_nodes/delete/'.$nodo->nid.'" title="Borrar">Borrar</a></td>';
+						print '<td><a href="/favorite_nodes/delete/'.$nodo->nid.'" title="Borrar"><div class="arrow cancel"></div></a></td>';
 						print '</tr>';
 					}
 					print '</tbody></table>';
