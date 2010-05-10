@@ -138,6 +138,44 @@ print '<div  class="content_grl content-profile">';
 				 
 				 print '</br>&nbsp;</br>';
 
+//=====
+if (in_array('empresa', array_values($user->roles))) {
+					$sql_base   = "SELECT * FROM favorite_nodes AS fn INNER JOIN node AS n ON n.nid = fn.nid ";
+					$inner_join = "";
+	
+					$where = "WHERE fn.uid = '".$user->uid."'";
+					$where = $where . " ORDER BY fn.last DESC LIMIT 10 ";
+					
+					$sql = $sql_base.$inner_join.$where;
+					//print '['.$sql.']';
+					$rs = db_query($sql);
+					
+					print '<div>';
+					print '<div class="nav"><h2>Favoritos:</h2></div>';
+					print '<table class="tablaGris" border="0" cellpadding="0" cellspacing="1">';
+				    print '<tbody><tr>';
+				          print '<td class="techo" width="60%">Aviso</td>';
+				          print '<td class="techo" width="20%">Fecha</td>';
+				          print '<td class="techo" width="20%">&nbsp;</td>'; 
+				    print '</tr>'; 
+					while($fila = mysql_fetch_object($rs)){
+						$nodo = node_load($fila->nid);
+						//print '<pre>';
+						//print_r($nota);					
+						//print '<pre>';					
+						print '<tr>';
+						print '<td><a href="/node/'.$nodo->nid.'" target="_top" title="'.$nodo->title.'">';
+						print $nodo->title.'</td>';
+						print '<td>'.date('d-m-Y',$fila->last).'</td>';
+						print '<td><a href="/favorite_nodes/delete/'.$nodo->nid.'" title="Borrar">Borrar</a></td>';
+						print '</tr>';
+					}
+					print '</tbody></table>';
+					print '</div>';	
+		 
+				}
+//=====
+
 
 				// cierro el rigth-side-profile ============
 				print '</div>';
