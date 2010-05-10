@@ -2,10 +2,6 @@
 global $user;
 global $user_profile;
 
-//firep($fields, 'Fields');
-//firep($user, 'User');
-//firep($user_profile, 'User');
-
 print '<div  class="content_grl content-profile">';
 				if (in_array('empresa', array_values($user->roles))) {
 				  	 if ($user->uid) { 
@@ -105,6 +101,7 @@ print '<div  class="content_grl content-profile">';
 					print '</div>';	
 		 
 				}
+				// cierro el rigth-side-profile ============
 				print '</div>';
 				
 				// Novedades =================
@@ -142,12 +139,7 @@ print '<div  class="content_grl content-profile">';
 					print '</div>';
 					$nov_nota+= 1;
 				}
-				print '</div>';			 
-				print '</div>';							
-				print '</br>&nbsp;</br>';
-				
-				
-				
-
+				print '</div>';			 				
+				print '</br>&nbsp;</br>';				
 print '</div>';
 ?>
