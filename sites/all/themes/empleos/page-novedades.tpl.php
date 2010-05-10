@@ -9,7 +9,7 @@
   <div id="midle">
     <!-- banner -->
     <?php //include("include/banners-boxes.php");?>
-    <?php include("include/encabezado_nota.php");?>
+    <?php include("include/encabezado_novedades.php");?>
     <!-- RIGHT -->
     <div id="right_column">
         <?php 
