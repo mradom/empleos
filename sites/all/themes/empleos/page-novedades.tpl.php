@@ -48,7 +48,6 @@
     <!-- CENTRAL -->
     <div id="central_column">
 
-
       <?php
         $num_nota = arg(2);
 		$nodo = node_load($num_nota);
@@ -82,4 +81,3 @@
    </div>
    <?php include("include/footer.php");?>
  </div>
-<?php include("include/header.php");?>

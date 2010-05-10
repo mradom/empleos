@@ -687,11 +687,11 @@ ul.side ul ul a:hover{
 		-moz-border-radius:5px 5px 0 0;
 		-webkit-border-radius:5px 5px 0 0;
 		background: #9FD6DF;
+		padding:0 10px;
 	}
 .content-profile h2, #right_column .noticias .nav h2  {
 	display:block;
 	color:#fff;
-	padding:0 10px;
 	font:bold 13px/2em tahoma;
 }
 .content-profile .title h2 a{
@@ -713,8 +713,10 @@ a:hover .merengue h2{
 .content-profile .note .date, #right_column .note .date{
 	float:right;
 	text-align:right;
+	line-height:14px;
+	padding:0;
 }
-.note .phot img {
+.note .phot img, #right_column .note .phot img {
 	float:left;
 	width:60px;
 	margin-right:10px;
