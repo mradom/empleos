@@ -25,24 +25,28 @@
 		  $sql = $sql_base.$inner_join.$where;
 		  //print '['.$sql.']';
 		  $rs = db_query($sql);
-		        print '<div class="noticias">';
+		       print '<div class="noticias">';
 				print '<div class="nav"><h2>Novedades:</h2></div>';
 				while($fila = mysql_fetch_object($rs)){
 					$nota = node_load($fila->nid);
-					print '<div class="note">';
+					//print '<pre>';
+					//print_r($nota);					
+					//print '<pre>';					
+					print '<div class="note">';      
 					print '<a href="/novedades/'.$busco.'/'.$nota->nid.'" target="_top" title="'.$nota->title.'">';
-					print '<div class="date">'.date("d-m-Y",strtotime(substr($nota->field_fecha_0[0]['value'],0,10))).'</div>';		
+					print '<div class="date">'.date("d-m-Y",strtotime(substr($nota->field_fecha_0[0]['value'],0,10))).'</div>';
+					
 					print '<div class="phot">';
 					print '<img src="/'.$nota->field_foto_0[0]['filepath'].'">';
 					print '</div>';
-					print '<div class="merengue"><h2>'.$nota->title.'</h2></div>';
+					print '<div class="title">'.$nota->title.'</div>';
                     print '<div class="body-note">'.$nota->field_resumen_0[0]['value'].'</div>';
                     print '</a>';
+					print '<div class="clr"></div>';
 					print '</div>';
 					$nov_nota+= 1;
 				}
-				//print '</div>';			 
-				print '</div>';								
+				print '</div>';							
 	  ?> 
     </div>
     <!-- CENTRAL -->
