@@ -669,14 +669,17 @@ ul.side ul ul a:hover{
 /*---------mi cuenta----------*/
 .rigth-side-profile{
 	width:250px;
-	float:right
+	float:right;
+	padding:0;
+	background:#9C0 /*-----------para ver los margenes*/
 }
-.left-side-prifile{
+.left-side-profile{
 	float:left;
 	width:420px;
 }
 .content-profile .noticias, #right_column .noticias{
-	border-bottom:2px solid #39C
+	border-bottom:2px solid #39C;
+	margin-bottom:10px;
 }
 #right_column .noticias{
 	float:left;
@@ -689,31 +692,26 @@ ul.side ul ul a:hover{
 		background: #9FD6DF;
 		padding:0 10px;
 	}
-.content-profile h2, #right_column .noticias .nav h2  {
-	display:block;
+.content-profile .nav h2, #right_column .noticias .nav h2  {
 	color:#fff;
 	font:bold 13px/2em tahoma;
 }
-.content-profile .title h2 a{
-	font-weight:normal;
+.content-profile .title, .content-profile .title a,
+#right_column .noticias .title, #right_column .noticias .title a {
+	font:bold 12px/1em tahoma;
+	color:#666
 }
-a .merengue h2{
-	font:normal 12px tahoma;
-	color:#666;
-}
-a:hover .merengue h2{
-	text-decoration:underline
-}
-.content-profile .title h2 a:hover{
+.content-profile .title:hover,
+#right_column .noticias .title:hover{
 	text-decoration:underline
 }
 .content-profile .note, #right_column .note {
-	border-top:2px solid #39C
+	border-top:2px solid #39C;
+	padding:5px 0;
 }
 .content-profile .note .date, #right_column .note .date{
 	float:right;
 	text-align:right;
-	line-height:14px;
 	padding:0;
 }
 .note .phot img, #right_column .note .phot img {
@@ -721,12 +719,15 @@ a:hover .merengue h2{
 	width:60px;
 	margin-right:10px;
 }
-.note .body-note{
+.content-profile .note .body-note, .body-note a{
 	float:left;
 	padding-bottom:7px;
+	max-width:340px;
+	font:normal 11px/14px tahoma;
 }
 #right_column .note .body-note{
 	max-width:228px;
+	float:left;
 }
 /*----------faq------------*/
 div.left-corner{
@@ -1203,6 +1204,7 @@ div#page .pager a:hover {
 	padding:0 0 2px 7px;
 	text-decoration:none;
 	display:block;
+	font:normal 11px tahoma;
 
 }
 #Footer li a:hover {
