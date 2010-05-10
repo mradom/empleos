@@ -101,6 +101,42 @@ print '<div  class="content_grl content-profile">';
 					print '</div>';	
 		 
 				}
+
+				if (in_array('empresa', array_values($user->roles))) {
+					$sql_base   = "SELECT * FROM job AS j INNER JOIN node AS n ON n.nid = j.nid ";
+					$inner_join = "";
+	
+					$where = "WHERE j.uid = '".$user->uid."' AND j.status=1";
+					$where = $where . " ORDER BY j.timestamp DESC LIMIT 10 ";
+					
+					$sql = $sql_base.$inner_join.$where;
+					//print '['.$sql.']';
+					$rs = db_query($sql);
+					
+					print '<div>';
+					print '<div class="nav"><h2>Postulantes:</></div>';
+					print '<table class="tablaGris" border="0" cellpadding="0" cellspacing="1"> ';
+				    print '<tbody><tr>';
+				          print '<td class="techo" width="70%">Aviso</TD>';
+				          print '<td class="techo" width="20%">Fecha</TD>';
+				          print '<td class="techo" width="10%">&nbsp;</TD>'; 
+				    print '</tr>'; 
+					while($fila = mysql_fetch_object($rs)){
+						$nodo = node_load($fila->nid);
+						print '<tr>';
+						print '<td><a href="/node/'.$nodo->nid.'" target="_top" title="'.$nodo->title.'">';
+						print $nodo->title.'</td>';
+						print '<td>'.date('d-m-Y', $fila->timestamp).'</td>';
+						print '<td><a href="/job/clear/'.$nodo->nid.'/'.$user->uid.'&destination=/user/me" title="Borrar">Borrar</a></td>';
+						print '</tr>';
+					}
+					print  '</tbody></table>';
+					print '</div>';			 
+				}
+				 
+				 print '</br>&nbsp;</br>';
+
+
 				// cierro el rigth-side-profile ============
 				print '</div>';
 				
