@@ -5,13 +5,14 @@ global $user_profile;
 print '<div  class="content_grl content-profile">';
 				if (in_array('empresa', array_values($user->roles))) {
 				  	 if ($user->uid) { 
- 						print '<div ><a href="/user/me/edit"><img class="right" title="Cambiar logo" src="/'.$user->picture.'"></a></div>';
+ 						print '<div class="right"><a href="/user/me/edit"><img title="Cambiar logo" src="/'.$user->picture.'"></a></div>';
 						//print '<div style="border: 1px solid #ccc ;">';
 			  	 	 	print 'Empresa<br>';
 			  	 	 	//print '<a href="/job/applications">Mis Aplicaciones</a><br>';
 			  	 	 	print '<br>&nbsp;<br>&nbsp;<br>&nbsp;';		  	 	 	
 			  	 	    //print '</div>';
 						$busco='empresa';
+						print'<div class="clr"></div>';
 			  		 }
 			  	 } else {
 			  	 	 if ($user->uid) { 
@@ -41,7 +42,7 @@ print '<div  class="content_grl content-profile">';
 					$rs = db_query($sql);
 					
 					print '<div>';
-					print '<div class="nav"><h2>Postulaciones:</></div>';
+					print '<div class="nav"><h2>Postulaciones:</h2></div>';
 					print '<table class="tablaGris" border="0" cellpadding="0" cellspacing="1"> ';
 				    print '<tbody><tr>';
 				          print '<td class="techo" width="70%">Aviso</TD>';
@@ -114,7 +115,7 @@ print '<div  class="content_grl content-profile">';
 					$rs = db_query($sql);
 					
 					print '<div>';
-					print '<div class="nav"><h2>Postulantes:</></div>';
+					print '<div class="nav"><h2>Postulantes:</h2></div>';
 					print '<table class="tablaGris" border="0" cellpadding="0" cellspacing="1"> ';
 				    print '<tbody><tr>';
 				          print '<td class="techo" width="70%">Aviso</TD>';
