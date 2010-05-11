@@ -127,17 +127,33 @@ function empleos_menu($may_cache) {
 	  'weight' => 100
     );
 	
+   $items[] = array(
+      'path' => 'empleos/stat',
+      'access' => TRUE,
+      'type' => MENU_CALLBACK,
+      'callback' => 'empleos_getstat'
+     );
 	
 	}
 	
   return $items;
 }
 
+
+
+function empleos_getstat() {
+	// actualizar las estadisticas
+	db_query('INSERT INTO {empleos_stat} (uid, what, oid, created) VALUES (%d, "%s", %d, %d)', arg(3),arg(2), arg(4), time() );
+	// habilitar las dos lineas de abajo para debuguear	
+	$output = '[?='.arg(2).'][q='.arg(3).'][a='.arg(4).']';
+	echo $output;
+}
+
 function empleos_test() {
    return '';
 }
 
-function empleos_buscar() {
+function empleos_buscar() { 
    return '';
 }
 
