@@ -50,7 +50,7 @@
 <div class="footer">
   <div class="footer_resize">
   <a href="http://www.lavoz.com.ar/" target="_blank" title="La Voz del Interior"><img style="margin-top:7px;" src="/sites/all/themes/empleos/img/pie_lavoz.jpg" width="87" height="26" /></a>
-    <p class="leftt">&copy; 2010 Todos los derechos reservados. &nbsp;&nbsp;<a href="/principal" title="Home">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/avisolegal" title="Aviso legal">Aviso legal</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/privacidad" title="Privacidad">Privacidad</a> 
+    <p class="leftt">&copy; 2010 Todos los derechos reservados. &nbsp;&nbsp;<a href="/principal" title="Home">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:;" onclick="agregar();" title="Agregar EmpleosLaVoz como Favorito.">Favorito</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/avisolegal" title="Aviso legal">Aviso legal</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/privacidad" title="Privacidad">Privacidad</a> 
  </a></p>
 <div class="logos">
 <a title="Certifica" href="http://www.certifica.com/" target="_blank" ><img src="/sites/all/themes/empleos/img/logo-certifica.jpg" width="87" height="25" /></a>
@@ -61,8 +61,8 @@
   </div>
   <div class="clr"></div>
 </div>
-
-<!--function agregar(){
+<script type="text/javascript">
+function agregar(){
 if ((navigator.appName=="Microsoft Internet Explorer") && (parseInt(navigator.appVersion)>=4)) {
 var url="http://www.empleoslavoz.com.ar/";
 var titulo="EmpleosLaVoz.com.ar - Empleos - La Voz del Interior";
@@ -70,5 +70,5 @@ window.external.AddFavorite(url,titulo);
 }else {if(navigator.appName == "Netscape")
 alert ("Presione Crtl+D para agregar www.empleoslavoz.com.ar a sus Favoritos");
 }}
--->
+</script>
 <?php print $closure; ?>

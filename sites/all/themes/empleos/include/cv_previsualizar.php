@@ -70,6 +70,18 @@ global $user_profile;
 			print '});';
 			print '});';
 			print '</script>';
+            print '</li>';		
+			//=======
+			print ' <li><span class="blue">E-mail: </span>';
+			print '<img src="/sites/all/themes/empleos/img/ico_tel.gif" width="13" height="10" alt="Ver email" style="margin:0px 2px 0px 5px;" /><span id="mail"><a rel="nofollow" id="ver_mail" href="javascript:;" style="font-weight:bold;">Ver email</a></span>'; 
+			print '<script type="text/javascript">';
+			print '$(document).ready(function () {';
+			print '$("#ver_mail").click(function(){';
+			print '$("#mail").text("'.$usuario->mail.'");';
+			print '$.get("/empleos/stat/cv_mail/'.$usuario->uid.'/'.$user->uid.'", function(x) { });';
+			print '});';
+			print '});';
+			print '</script>';
             print '</li>';			
             print ' </ul>';
             print ' </div>';
