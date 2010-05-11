@@ -1,10 +1,14 @@
+<link href="../style.css" rel="stylesheet" type="text/css" />
 <div id="Footer">
+	<div class="right" style=" width:200px;">
 	<div class="logos right">
     <a title="Rss" href="#" target="_blank"><img src="/sites/all/themes/empleos/img/rss-ico.gif" width="23" height="22" /></a>
     <a title="Facebook" target="_blank" href="#"><img src="/sites/all/themes/empleos/img/face-ico.gif" width="23" height="22" /></a>
     <a title="Tweeter" target="_blank" href="#"><img src="/sites/all/themes/empleos/img/tweet-ico.gif" width="23" height="22" /></a>
     </div>
-    <div class="left">
+    <div class="btn"></div>
+    </div>
+<div class="left">
       <h2>EmpleosLaVoz </h2>
       <ul>
         <li><a title="Registrarse" href="/user/register/persona">Registrarse</a></li>
