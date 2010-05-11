@@ -108,14 +108,13 @@ div.cuerpo{
 	line-height:20px;
 	text-align:justify;
 }
-/*
-div.bajada.ampliada{
-	width:auto;
+
+div.bajada.extended{
+	width:590px;
 }
-div.cuerpo.ampliado{
-	float:left
+div.cuerpo.left{
+	float:left;
 }
-------------------para cuando la nota no tiene foto--------*/
 div.nota h3{
 	color:#999;
 	font-weight:bold;
