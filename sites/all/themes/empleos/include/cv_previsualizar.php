@@ -30,7 +30,11 @@ global $user_profile;
   			print '<div class="resumen prev" style="position:relative">';
             print ' <p class="date">15-03-2010</p>';
             print ' <div class="foto">';
-            print theme('imagecache','avatar_120_120',$usuario->picture,$usuario->picture,$usuario->name);
+			if ($usuario->picture) {
+				print theme('imagecache','avatar_120_120',$usuario->picture,$usuario->picture,$usuario->name);
+			} else {
+				print theme('imagecache','avatar_120_120',"/sites/all/themes/empleos/img/foto.jpg","/sites/all/themes/empleos/img/foto.jpg",$usuario->name);
+			}
             print '</div>';
             print '<ul class="resumen">';
             print ' <li class="stg"><span class="blue">Apellido: </span>'.$usuario->profile_empl_apellido.'</li>';
@@ -73,7 +77,7 @@ global $user_profile;
             print '</li>';		
 			//=======
 			print ' <li><span class="blue">E-mail: </span>';
-			print '<img src="/sites/all/themes/empleos/img/ico_tel.gif" width="13" height="10" alt="Ver email" style="margin:0px 2px 0px 5px;" /><span id="mail"><a rel="nofollow" id="ver_mail" href="javascript:;" style="font-weight:bold;">Ver email</a></span>'; 
+			print '<img src="/sites/all/themes/empleos/img/ico_mail.gif" width="13" height="10" alt="Ver email" style="margin:0px 2px 0px 5px;" /><span id="mail"><a rel="nofollow" id="ver_mail" href="javascript:;" style="font-weight:bold;">Ver email</a></span>'; 
 			print '<script type="text/javascript">';
 			print '$(document).ready(function () {';
 			print '$("#ver_mail").click(function(){';

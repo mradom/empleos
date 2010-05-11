@@ -73,9 +73,9 @@
 
 		print '<div class="contentNotas">';
 		print '<div class="nota"><h2>'.$nodo->title.'</h2> <h3>Nota publicada por empleoslavoz</h3> </div>';
-		
-		print '<div ><img class="photo" src="'.'/'.$nodo->field_foto[0]['filepath'].'" title=""></img></div>';
-		
+		if ($nodo->field_foto[0]['filepath'])
+		   print '<div ><img class="photo" src="'.'/'.$nodo->field_foto[0]['filepath'].'" title=""></img></div>';
+		}
 		print '<div class="bajada">'.$nodo->field_resumen[0]['value'].'</div>';
 		print '<div class="cuerpo">'.$nodo->body.'</div>';
 		//print '<pre>';
