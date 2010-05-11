@@ -69,8 +69,12 @@
 		print '<div class="contentNotas">';
 		print '<div class="nota"><h2>'.$nodo->title.'</h2> <h3>Novedad publicada por empleoslavoz</h3> </div>';
 		
-		If (strlen($field_foto_0[0]['filepath'])>0) {
-		  print '<div ><img class="photo" src="'.'/'.$nodo->field_foto_0[0]['filepath'].'" title=""></img></div>';
+		If (strlen($nodo->field_foto_0[0]['filepath'])>0) {
+	      // tiene imagen
+		  print '<div><img class="photo" src="'.'/'.$nodo->field_foto_0[0]['filepath'].'" title=""></img></div>';
+		} else {
+		  // NO tiene imagen
+		  print '<div></div>';
 		}
 		print '<div class="bajada">'.$nodo->field_resumen_0[0]['value'].'</div>';
 		print '<div class="cuerpo">'.$nodo->body.'</div>';
