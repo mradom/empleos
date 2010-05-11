@@ -1253,6 +1253,7 @@ div#page .pager a:hover {
 	float:right;
 	background:#FC6;
 	background:url(/sites/all/themes/empleos/img/btn-registrarse.png) 2px -58px  no-repeat;
+	margin-top:10px;
 }
 #Footer div.btn:hover{
 	background-position:2px top ;
