@@ -48,6 +48,7 @@ function empleos_menu($may_cache) {
 	  'title'    			=> 'Buscador',
       'path'     			=> 'buscar',
       'callback' 			=> 'empleos_buscar',
+      'type' 				=> MENU_CALLBACK,	  
 	  'access'   			=> TRUE,
 	  'weight' => 100
     );
@@ -57,6 +58,7 @@ function empleos_menu($may_cache) {
 	  'title'    			=> 'Rubros',
       'path'     			=> 'rubro',
       'callback' 			=> 'empleos_rubro',
+      'type' 				=> MENU_CALLBACK,	  
 	  'access'   			=> TRUE,
 	  'weight' => 100
     );
@@ -66,6 +68,7 @@ function empleos_menu($may_cache) {
 	  'title'    			=> 'Consultoras',
       'path'     			=> 'consultora',
       'callback' 			=> 'empleos_consultora',
+      'type' 				=> MENU_CALLBACK,	  
 	  'access'   			=> TRUE,
 	  'weight' => 100
     );
@@ -75,6 +78,7 @@ function empleos_menu($may_cache) {
 	  'title'    			=> 'Empresas',
       'path'     			=> 'empresa',
       'callback' 			=> 'empleos_empresa',
+      'type' 				=> MENU_CALLBACK,	  
 	  'access'   			=> TRUE,
 	  'weight' => 100
     );
@@ -83,6 +87,7 @@ function empleos_menu($may_cache) {
 	  'title'    			=> 'Sector',
       'path'     			=> 'sector',
       'callback' 			=> 'empleos_sector',
+      'type' 				=> MENU_CALLBACK,	  
 	  'access'   			=> TRUE,
 	  'weight' => 100
     );
@@ -91,6 +96,7 @@ function empleos_menu($may_cache) {
 	  'title'    			=> 'Provincia',
       'path'     			=> 'provincia',
       'callback' 			=> 'empleos_provincia',
+      'type' 				=> MENU_CALLBACK,	  
 	  'access'   			=> TRUE,
 	  'weight' => 100
     );
@@ -99,6 +105,7 @@ function empleos_menu($may_cache) {
 	  'title'    			=> 'Nota',
       'path'     			=> 'nota',
       'callback' 			=> 'empleos_nota',
+      'type' 				=> MENU_CALLBACK,	  
 	  'access'   			=> TRUE,
 	  'weight' => 100
     );
@@ -107,6 +114,7 @@ function empleos_menu($may_cache) {
 	  'title'    			=> 'Novedades',
       'path'     			=> 'novedades',
       'callback' 			=> 'empleos_novedades',
+      'type' 				=> MENU_CALLBACK,	  
 	  'access'   			=> TRUE,
 	  'weight' => 100
     );
@@ -115,6 +123,7 @@ function empleos_menu($may_cache) {
 	  'title'    			=> 'Busqueda avanzada',
       'path'     			=> 'avanzada',
       'callback' 			=> 'empleos_avanzada',
+      'type' 				=> MENU_CALLBACK,	  
 	  'access'   			=> TRUE,
 	  'weight' => 100
     );
@@ -124,14 +133,15 @@ function empleos_menu($may_cache) {
       'path'     			=> 'mapadelsitio',
       'callback' 			=> 'empleos_mapadelsitio',
 	  'access'   			=> TRUE,
-	  'weight' => 100
+	  'type' 				=> MENU_CALLBACK,
+	  'weight' 				=> 100
     );
 	
    $items[] = array(
-      'path' => 'empleos/stat',
-      'access' => TRUE,
-      'type' => MENU_CALLBACK,
-      'callback' => 'empleos_getstat'
+      'path' 				=> 'empleos/stat',
+      'access' 				=> TRUE,
+      'type' 				=> MENU_CALLBACK,
+      'callback' 			=> 'empleos_getstat'
      );
 	
 	}
