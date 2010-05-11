@@ -68,7 +68,8 @@
 		
 		print '<div class="contentNotas">';
 		print '<div class="nota"><h2>'.$nodo->title.'</h2> <h3>Novedad publicada por empleoslavoz</h3> </div>';
-		if (field_foto_0[0]['filepath']) {
+		
+		If ($field_foto_0[0]['filepath']) {
 		  print '<div ><img class="photo" src="'.'/'.$nodo->field_foto_0[0]['filepath'].'" title=""></img></div>';
 		}
 		print '<div class="bajada">'.$nodo->field_resumen[0]['value'].'</div>';
