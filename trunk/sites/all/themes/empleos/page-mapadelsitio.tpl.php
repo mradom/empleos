@@ -18,10 +18,22 @@
         //}
         //if (arg(1)<>"") {
 		print '<div>';
-		print "<h2>Mapa del Sitio:</h2>";
-		print '</br>&nbsp;</br>&nbsp;</br>&nbsp;</br>&nbsp;</br>&nbsp;</br>&nbsp;';
-		print '<p>En construcción.</p>';
-		print '</br>&nbsp;</br>&nbsp;</br>&nbsp;</br>&nbsp;</br>&nbsp;</br>&nbsp;';		
+		print '<ul class="sitemap"><a href="#">Home</a>
+					<li><a href="#">Buscar</a></li>
+					<li><a href="#">Empresa</a>
+                    <ul class="n1">
+                     <li><a href="ficha.html">Mi cuenta</a></li>
+					 <li><a href="ficha.html">bla</a></li>
+                    </ul>
+					</li>
+                    <li><a href="#">Persona</a>
+                    <ul class="n1">
+                    <li><a href="registrarse.html">Registrarse</a></li>
+                    <li><a href="tarifas.html">Tarifas</a></li>
+                    </ul>
+                    <li> <a href="comprar.html">Gu&iacute;a del comprador</a></li>
+                    <li> <a href="contacto.html">Contacto</a></li>
+                 </ul>';	
 		print '</div>';
         print $content;
 		//}
