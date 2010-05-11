@@ -45,8 +45,32 @@ global $user_profile;
             print ' <li><span class="blue">C&oacute;digo Postal: </span>'.$usuario->profile_empl_cp.'</li>';
             print '&nbsp;<br>';
             print ' <li><span class="blue">Provincia: </span>'.$usuario->profile_empl_provincia.'</li>';
-            print ' <li><span class="blue">Telelefo: </span> '.$usuario->profile_empl_telefono.'</li>';
-            print ' <li><span class="blue">Telefono Alternativo: </span>'.$usuario->profile_empl_tel_alternativo.'</li>';
+            print ' <li><span class="blue">Telelefo: </span>';
+			
+			//=======
+			print '<img src="/sites/all/themes/empleos/img/ico_tel.gif" width="13" height="10" alt="Ver tel&eacute;fono" style="margin:0px 2px 0px 5px;" /><span id="tel"><a rel="nofollow" id="ver_tel" href="javascript:;" style="font-weight:bold;">Ver tel&eacute;fono</a></span>'; 
+			print '<script type="text/javascript">';
+			print '$(document).ready(function () {';
+			print '$("#ver_tel").click(function(){';
+			print '$("#tel").text("'.$usuario->profile_empl_telefono.'");';
+			print '$.get("/empleos/stat/cv_tel_pri/'.$usuario->uid.'/'.$user->uid.'", function(x) { });';
+			//print '$.get("/empleos/stat/ver_tel_pri/'.$usuario->uid.'/'.$user->uid.'", function(x) {alert(x); });';
+			print '});';
+			print '});';
+			print '</script>';
+            print '</li>';
+			//======
+            print ' <li><span class="blue">Telefono Alternativo: </span>';
+			print '<img src="/sites/all/themes/empleos/img/ico_tel.gif" width="13" height="10" alt="Ver tel&eacute;fono" style="margin:0px 2px 0px 5px;" /><span id="tel2"><a rel="nofollow" id="ver_tel2" href="javascript:;" style="font-weight:bold;">Ver tel&eacute;fono</a></span>'; 
+			print '<script type="text/javascript">';
+			print '$(document).ready(function () {';
+			print '$("#ver_tel2").click(function(){';
+			print '$("#tel2").text("'.$usuario->profile_empl_tel_alternativo.'");';
+			print '$.get("/empleos/stat/cv_tel_alt/'.$usuario->uid.'/'.$user->uid.'", function(x) { });';
+			print '});';
+			print '});';
+			print '</script>';
+            print '</li>';			
             print ' </ul>';
             print ' </div>';
  			
@@ -393,5 +417,12 @@ global $user_profile;
 			
 			
 			<?php				
-  		}  ?>				
+  		}  
+		    // genero estadisticas en ajax
+			print '<script type="text/javascript">';
+			print '$(document).ready( function(){';
+			print '$.get("/empleos/stat/cv/'.$usuario->uid.'/'.$user->uid.'", function(x) { });';
+			print '});</script>';
+		?>				
 			<br>&nbsp;<br>&nbsp;<br>&nbsp;
+            

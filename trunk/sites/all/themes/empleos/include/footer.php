@@ -57,4 +57,14 @@
   </div>
   <div class="clr"></div>
 </div>
+
+<!--function agregar(){
+if ((navigator.appName=="Microsoft Internet Explorer") && (parseInt(navigator.appVersion)>=4)) {
+var url="http://www.empleoslavoz.com.ar/";
+var titulo="EmpleosLaVoz.com.ar - Empleos - La Voz del Interior";
+window.external.AddFavorite(url,titulo);
+}else {if(navigator.appName == "Netscape")
+alert ("Presione Crtl+D para agregar www.empleoslavoz.com.ar a sus Favoritos");
+}}
+-->
 <?php print $closure; ?>

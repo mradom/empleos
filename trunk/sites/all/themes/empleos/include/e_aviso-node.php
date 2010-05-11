@@ -169,5 +169,11 @@ if($user->roles[5] == "empresa"){
 </div>
 
 <pre>
-<?php //print_r($nodo); ?>
+<?php 
+		    // genero estadisticas en ajax
+			print '<script type="text/javascript">';
+			print '$(document).ready( function(){';
+			print '$.get("/empleos/stat/aviso/'.$user->uid.'/'.$node->nid.'", function(x) { });';
+			print '});</script>';
+			//print_r($nodo); ?>
 </pre>
