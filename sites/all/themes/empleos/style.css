@@ -1087,7 +1087,7 @@ div.resumen.prev{
 }
 .foto{
 	width:120px;
-	background:#deF url(/sites/all/themes/empleos/img/foto.jpg);
+	/*background:#deF url(/sites/all/themes/empleos/img/foto.jpg);*/
 	padding:2px;
 	border:1px solid #bde;
 	height:120px;
