@@ -6,7 +6,7 @@
     <a title="Facebook" target="_blank" href="#"><img src="/sites/all/themes/empleos/img/face-ico.gif" width="23" height="22" /></a>
     <a title="Tweeter" target="_blank" href="#"><img src="/sites/all/themes/empleos/img/tweet-ico.gif" width="23" height="22" /></a>
     </div>
-    <div class="btn"></div>
+    <a href="/user/register/persona"><div class="btn"></div></a>
     </div>
 <div class="left">
       <h2>EmpleosLaVoz </h2>
