@@ -1247,6 +1247,16 @@ div#page .pager a:hover {
 	filter: alpha(opacity=100); 
 	opacity:10	
 }
+#Footer div.btn{
+	height:58px;
+	width:196px;
+	float:right;
+	background:#FC6;
+	background:url(/sites/all/themes/empleos/img/btn-registrarse.png) 2px -58px  no-repeat;
+}
+#Footer div.btn:hover{
+	background-position:2px top ;
+}
 .footer {
 	padding:0;
 	margin:0;
@@ -1263,6 +1273,7 @@ div#page .pager a:hover {
 	float:right;
 	margin:7px 10px 0 0 ;
 }
+
 .footer img:hover { /*----ver como hacer para validar-----*/
 	filter: alpha(opacity=70); 
 	opacity: .7
