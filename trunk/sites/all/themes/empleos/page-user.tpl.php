@@ -53,16 +53,14 @@
       print '</div>';
 	}
 	} else {
-	  print '<div id="right_column">';
-	  include("include/col_derecha-sin.php");
-      print '</div>';
-	}
-    If (arg(1)=='register') {
+	  If (arg(1)=='register') {
 	  print '<div id="right_column">';
 	  Form_ayuda('Ayuda', 'Registracion'); 
   	  include("include/col_derecha-sin.php");
       print '</div>';
     } 
+	}
+
     ?>
     <!-- CENTRAL -->
     <!-- ini central -->
