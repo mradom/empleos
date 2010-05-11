@@ -1,5 +1,3 @@
 <div class="box top" style="background: url(/sites/all/themes/empleos/img/bg_box_top_notas.jpg)">
-<p style="margin-top:50px;">Estas son las <strong>las v&iacute;as de contacto</strong> mas frecuentes</br>
-Bla bla bla....ste texto lo hace Cande....<br>
-Escribinos o envianos tus sugerencias a <a class="blue stg" href="#">empleoslavoz@lavozdelinterior.com.ar</a>
+<p style="margin-top:50px">En esta secci&oacute;n podr&aacute;s encontrar<strong> noticias y art&iacute;culos sobre muchos temas que pueden interesarte </strong>al momento de realizar b&uacute;squedas laborales. Adem&aacute;s, pueden ayudarte a conocer m&aacute;s la realidad de los mercados y las estrategias actuales de empresas y personas. 
 </p></div>
