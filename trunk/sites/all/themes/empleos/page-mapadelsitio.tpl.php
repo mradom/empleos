@@ -17,7 +17,7 @@
       <?php
         //}
         //if (arg(1)<>"") {
-		print '<div>';
+		print '<div style="margin-bottom:10px">';
 		print '<ul class="sitemap"><a href="#">Home</a>
 					<li><a href="#">Buscar</a></li>
 					<li><a href="#">Empresa</a>
@@ -28,11 +28,13 @@
 					</li>
                     <li><a href="#">Persona</a>
                     <ul class="n1">
-                    <li><a href="registrarse.html">Registrarse</a></li>
-                    <li><a href="tarifas.html">Tarifas</a></li>
+                    <li><a href="#">Mi cuenta</a></li>
+                    <li><a href="#">blablab</a></li>
                     </ul>
-                    <li> <a href="comprar.html">Gu&iacute;a del comprador</a></li>
-                    <li> <a href="contacto.html">Contacto</a></li>
+                    <li><a href="#">Empresas</a></li>
+                    <li><a href="#">Consultoras</a></li>
+					<li><a href="#">Noticias</a></li>
+					<li><a href="#">Contacto</a></li>
                  </ul>';	
 		print '</div>';
         print $content;
