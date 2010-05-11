@@ -1087,7 +1087,6 @@ div.resumen.prev{
 }
 .foto{
 	width:120px;
-	/*background:#deF url(/sites/all/themes/empleos/img/foto.jpg);*/
 	padding:2px;
 	border:1px solid #bde;
 	height:120px;
@@ -1177,6 +1176,12 @@ div#page .pager a:hover {
   margin: 0px 0px 0px 20px;
   padding: 0px;
 }
+/*------sitemap-----*/
+ul.sitemap{
+}
+ul.sitemap ul.n1{
+}
+
 /*---FOOTER---*/
 #Footer {
 	float:left;

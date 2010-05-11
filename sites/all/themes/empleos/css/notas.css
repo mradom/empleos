@@ -78,6 +78,10 @@ div.contentNotas{
 	width:550px;
 	margin-left:70px;
 }
+.head-nota{
+	float:left;
+	width:660px;
+}
 div.nota h2, div.nota h2 a{
 	font:normal 26px verdana;
 	text-decoration: none;
@@ -88,23 +92,32 @@ div.nota h2, div.nota h2 a{
 img.photo{
 	width:250px;
 	display:inline;
-	float:left;
 	margin:0 10px 10px 0;
+	float:left
+}
+div.bajada {
+	width:270px;
+	padding:10px;
+	font: bold 11px/20px tahoma;
+	float:left;
+	background:#F4F4F4;
 }
 div.cuerpo{
 	margin-bottom:15px;
 	color:#474747;
 	line-height:20px;
-	}
-div.bajada {
-	width:280px;
-	font: 11px/20px tahoma;
-	font-style:italic;
-	color:#1C77A8;
-	float:left;
+	text-align:justify;
 }
+/*
+div.bajada.ampliada{
+	width:auto;
+}
+div.cuerpo.ampliado{
+	float:left
+}
+------------------para cuando la nota no tiene foto--------*/
 div.nota h3{
-	color:#F90;
+	color:#999;
 	font-weight:bold;
 	font:bold 12px/20px Verdana;
 	padding-bottom:5px;
