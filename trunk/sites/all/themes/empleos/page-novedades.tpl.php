@@ -72,7 +72,7 @@
 		If ($field_foto_0[0]['filepath']) {
 		  print '<div ><img class="photo" src="'.'/'.$nodo->field_foto_0[0]['filepath'].'" title=""></img></div>';
 		}
-		print '<div class="bajada">'.$nodo->field_resumen[0]['value'].'</div>';
+		print '<div class="bajada">'.$nodo->field_resumen_0[0]['value'].'</div>';
 		print '<div class="cuerpo">'.$nodo->body.'</div>';
 		//print '<pre>';
 		//print_r($nodo);
