@@ -18,21 +18,27 @@
         //}
         //if (arg(1)<>"") {
 		print '<div style="margin-bottom:10px">';
-		print '<ul class="sitemap"><a href="#">Home</a>
+		print '<ul class="sitemap">
+					<li class="destacado stg"><a class="blue" href="/principal">Home</a></li>
+					<li><a href="#">Registrarse</a></li>
 					<li><a href="#">Buscar</a></li>
-					<li><a href="#">Empresa</a>
+					<li><a href="#">Avisos publicados</a></li>
+					<li><a href="#">Personas</a>
                     <ul class="n1">
-                     <li><a href="ficha.html">Mi cuenta</a></li>
-					 <li><a href="ficha.html">bla</a></li>
+                    <li><a href="#">Mi cuenta</a></li>	
                     </ul>
 					</li>
-                    <li><a href="#">Persona</a>
+					<li><a href="#">Empresas</a>
                     <ul class="n1">
-                    <li><a href="#">Mi cuenta</a></li>
-                    <li><a href="#">blablab</a></li>
+                    <li><a href="#">Mi cuenta</a></li>					 
                     </ul>
-                    <li><a href="#">Empresas</a></li>
-                    <li><a href="#">Consultoras</a></li>
+					</li>                  
+                    <li><a href="#">Consultoras</a>
+					<ul class="n1">
+                    <li><a href="#">Mi cuenta</a></li>					 
+                    </ul>
+					</li>
+					<li><a href="#">Preguntas frecuentes</a></li>
 					<li><a href="#">Noticias</a></li>
 					<li><a href="#">Contacto</a></li>
                  </ul>';	
