@@ -3,22 +3,60 @@
 <?php include("include/head.php");?>
 <?php include("sites/all/themes/mpleos/include/varios.php");?>
 <body>
-<div id="wrapper">e
+<div id="wrapper">
   <!-- HEADER -->
   <?php include("include/header.php");?>
   <!-- MIDDLE -->
   <div id="browser" class="inside"> </div>  
   <div id="midle">
-    <?php include("include/encabezado_mi_postulantes.php");?> 
-    <!-- RIGHT -->
-    <div id="right_colum">
-	</div>    
-    <!-- CENTRAL -->
-    <div id="central_column">
-	  <?php print $content;?>
-	  <?php //if (arg(1)<>'add' and arg(2)<>'edit' and arg(2)<>'delete') print "<div class='btn_gral b'><a href='/node/add/p-cursos'>Agregar</a></div><br>";?>
-      <?php include("include/banners-central.php");?>
-    </div>      
+       <div class="content_grl left">
+       <!-- Gold -->
+       <div class="aviso left" style="background:url(/sites/all/themes/empleos/img/a-gold.png)top no-repeat;">
+       		<ul class="left" style="margin-left:22px; margin-top:50px;">
+            <li ><a class="orange" href="#">lalala</a></li>
+            <li ><a class="orange" href="#">lalala</a></li>
+            <li ><a class="orange" href="#">lalala</a></li>
+            <li ><a class="orange" href="#">lalala</a></li>
+            </ul>
+       		<div class="price" style="background:url(/sites/all/themes/empleos/img/price-gold.png)top no-repeat;"></div>
+            <a href="#"><div class="btn" style="background:url(/sites/all/themes/empleos/img/btn-a-gold.gif) top  no-repeat;"></div></a>
+       </div>
+       <!-- Destacado -->
+       <div class="aviso left" style="background:url(/sites/all/themes/empleos/img/a-destacado.gif)top no-repeat;">
+       		<ul class="left" style="margin-left:22px; margin-top:50px;">
+            <li ><a class="blue" href="#">lalala</a></li>
+            <li ><a class="blue" href="#">lalala</a></li>
+            <li ><a class="blue" href="#">lalala</a></li>
+            <li ><a class="blue" href="#">lalala</a></li>
+            </ul>
+       		<div class="price" style="background:url(/sites/all/themes/empleos/img/price-destacado.png)top no-repeat;"></div>
+            <a href="#"><div class="btn" style="background:url(/sites/all/themes/empleos/img/btn-a-destacado.png) top  no-repeat;"></div></a>
+       </div>
+       <!-- Simple -->
+       <div class="aviso left" style="background:url(/sites/all/themes/empleos/img/a-simple.gif)top no-repeat;">
+       		<ul class="left" style="margin-left:22px; margin-top:50px;">
+            <li ><a style=" color:#fff" href="#">lalala</a></li>
+            <li ><a style=" color:#fff" href="#">lalala</a></li>
+            <li ><a style=" color:#fff" href="#">lalala</a></li>
+            <li ><a style=" color:#fff" href="#">lalala</a></li>
+            </ul>
+       		<div class="price" style="background:url(/sites/all/themes/empleos/img/price-simple.png)top no-repeat;"></div>
+            <a href="#"><div class="btn" style="background:url(/sites/all/themes/empleos/img/btn-a-simple.png) top  no-repeat;"></div></a>
+       </div>
+       <!-- Gratis -->
+       <div class="aviso left" style="background:url(/sites/all/themes/empleos/img/a-simple.gif)top no-repeat;">
+       		<ul class="left" style="margin-left:22px; margin-top:50px;">
+            <li ><a style=" color:#fff" href="#">lalala</a></li>
+            <li ><a style=" color:#fff" href="#">lalala</a></li>
+            <li ><a style=" color:#fff" href="#">lalala</a></li>
+            <li ><a style=" color:#fff" href="#">lalala</a></li>
+            </ul>
+       		<div class="price" style="background:url(/sites/all/themes/empleos/img/price-simple.png)top no-repeat;"></div>
+            <a href="#"><div class="btn" style="background:url(/sites/all/themes/empleos/img/btn-a-simple.png) top  no-repeat;"></div></a>
+       </div>
+       </div>
+      
+   
   </div>
   <?php include("include/footer.php");?>
 </div>
