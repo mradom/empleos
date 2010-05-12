@@ -30,7 +30,9 @@
 	}
     ?>
     <div id="central_column">
-		<?php print $content;?>
+		<?php print $content;
+        // aca deberiamos ver de agregarle de nuevo el buscador cuando solo es visualizacion
+		?>
     </div>
   <?php include("include/banners-central.php");?>
   </div>

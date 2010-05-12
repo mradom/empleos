@@ -16,6 +16,7 @@
 		  include("include/col_derecha-sin.php");
 	  
 	      $busco = arg(1);
+		  // cuando este en produccion sacar la lnea de abajo
 		  $busco = 'noticias';
 		  $sql_base   = "SELECT * FROM node_revisions AS nr INNER JOIN node AS n ON n.nid = nr.nid ";
 		  $inner_join = "INNER JOIN content_type_notas AS w ON w.nid = n.nid ";

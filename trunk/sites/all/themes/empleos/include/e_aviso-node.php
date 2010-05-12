@@ -143,7 +143,7 @@ if($user->roles[5] == "empresa"){
 	    <ul class="tags">
           <li>Fecha de publicaci&oacute;n: <span class="dark"> <?php print date('d-m-Y',$nodo->created);?></span> l </li>
           <li>N de aviso: <span class="dark"><?php print $nodo->vid; ?></span> l </li>
-          <li>Visitas: <span class="dark">231</span></li>
+          <li>Visitas: <span class="dark"><?php print $nodo->field_visitas[0]['value']; ?></span></li>
         </ul>
 		<?php 
 		$link = "";
@@ -173,6 +173,7 @@ if($user->roles[5] == "empresa"){
 		    // genero estadisticas en ajax
 			print '<script type="text/javascript">';
 			print '$(document).ready( function(){';
+			// print '$.get("/empleos/stat/aviso/'.$user->uid.'/'.$node->nid.'", function(x) { alert(x) });';
 			print '$.get("/empleos/stat/aviso/'.$user->uid.'/'.$node->nid.'", function(x) { });';
 			print '});</script>';
 			//print_r($nodo); ?>
