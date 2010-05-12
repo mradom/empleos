@@ -18,6 +18,14 @@ function empleos_cron() {
 	
    $sql = $base_query.$inner_join.$where;
    $avisos_count = db_result(db_query($sql));
+   
+   //$base_query = "SELECT count(*) FROM {node} AS n  ";
+   //$inner_join = "INNER JOIN {content_type_e_aviso} AS w ON w.nid = n.nid ";
+   //$where      = "WHERE n.type = 'e_aviso' AND w.field_fecha_desde_value >= now() - 30";
+
+   //$sql = $base_query.$inner_join.$where;
+   //$avisos_recientes = db_result(db_query($sql));
+   $avisos_recientes = 123;
 
    $base_query = "SELECT count(*) FROM {users} AS u ";
    $inner_join = "INNER JOIN {users_roles} AS ur ON ur.uid = u.uid ";
@@ -28,6 +36,7 @@ function empleos_cron() {
    
    Variable_set('avisos_count',$avisos_count);
    Variable_set('empresas_count',$empresas_count);
+   Variable_set('empresas_recientes',$empresas_count);   
 }
 
 function empleos_menu($may_cache) {
@@ -154,6 +163,12 @@ function empleos_menu($may_cache) {
 function empleos_getstat() {
 	// actualizar las estadisticas
 	db_query('INSERT INTO {empleos_stat} (uid, what, oid, created) VALUES (%d, "%s", %d, %d)', arg(3),arg(2), arg(4), time() );
+	switch (arg(2)) {
+		case 'aviso':
+		   // actualizo la cantidad de veces que lo vieron
+		   	db_query('UPDATE {content_type_e_aviso} SET field_visitas_value = field_visitas_value + 1 WHERE nid=%d', arg(4));
+			print '[UPDATE {content_type_e_aviso} SET field_visitas_value = field_visitas_value + 1 WHERE nid='.arg(4).']';
+	}
 	// habilitar las dos lineas de abajo para debuguear	
 	$output = '[?='.arg(2).'][q='.arg(3).'][a='.arg(4).']';
 	echo $output;
