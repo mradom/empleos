@@ -13,12 +13,11 @@
     <?php //include("include/banners-boxes.php");?>
     <!-- RIGHT -->
     <?php 
-	    print '<div id="right_colum">'; 
-	      Empleos_ayuda('Tip', 'Consultoras'); 
-	    print '</div>'; 
- 	    //if (arg(1)<>'') include("include/col_derecha.php");
-	   
-	?>
+	  print '<div id="right_column">';
+      Empleos_ayuda('Tip', 'Consultoras');  
+      include("include/col_derecha-sin.php");
+      print '</div>';  
+	?>  
     <!-- CENTRAL -->
     <DIV id="central_column">
     <?php 
