@@ -34,17 +34,17 @@
                            if (in_array('Empresa', array_values($user->roles))){
 							print '<div>';
                             print '<ul id="adver">'; 
-							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/04.jpg"/></a></li>';
-							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/05.jpg"/></a></li>';
-							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/06.jpg"/></a></li>';
+							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/04.jpg"></a></li>';
+							//print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/05.jpg"></a></li>';
+							//print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/06.jpg"></a></li>';
                             print '</ul>';
 							print '</div>';							
 						} else {
 							print '<div>';
 							print '<ul id="adver">'; 
-							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/03.jpg"/></a></li>';
-							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/01.jpg"/></a></li>';
-							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/02.jpg"/></a></li>';
+							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/03.jpg"></a></li>';
+							//print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/01.jpg"></a></li>';
+							//print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/02.jpg"></a></li>';
                             print '</ul>';
 							print '</div>';
 						}
@@ -52,10 +52,13 @@
 					   <?php }else{
 							print '<div>';
 							print '<ul id="adver">'; 
-							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/03.jpg"/></a></li>';
+							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/03.jpg"></a></li>';
+							//print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/01.jpg"></a></li>';
+							//print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/02.jpg"></a></li>';
                             print '</ul>';
 							print '</div>';
 					   }?>
+
       			</div>
         <?php } ?>
    	</div>
