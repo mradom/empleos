@@ -59,6 +59,12 @@
   	  include("include/col_derecha-sin.php");
       print '</div>';
     } 
+	 If (arg(1)=='') {
+	  print '<div id="right_column">';
+	  Form_ayuda('Ayuda', 'Login'); 
+  	  include("include/col_derecha-sin.php");
+      print '</div>';
+    } 
 	}
 
     ?>

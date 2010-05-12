@@ -7,6 +7,7 @@ ul#adver{
 ul#adver li img{
 	width:380px;
 	height:220px;
+	overflow:hidden
 }
 
 .fade{
