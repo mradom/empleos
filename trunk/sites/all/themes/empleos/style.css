@@ -34,7 +34,13 @@ p {
 .orange, a.orange {
 	color:#F90
 }
+a.orange:hover{
+	color:#F90
+}
 .blue, a.blue {
+	color:#1C77A8
+}
+a.blue:hover{
 	color:#1C77A8
 }
 p.grey, span.grey, .grey {
@@ -43,7 +49,7 @@ p.grey, span.grey, .grey {
 span.upper {
 	text-transform:uppercase
 }
-p.coment {
+.coment {
 	font:11px/14px tahoma;
 	color:#999;
 }
@@ -461,6 +467,7 @@ ul.tags li.final {
 .tags li h1 a {
 	font:normal 11px verdana;
 }
+
 /*----------BANNERS------------*/
 .content_banners {
 	float:left;
@@ -671,6 +678,7 @@ ul.side ul ul a:hover{
 	width:250px;
 	float:right;
 	padding:0;
+	margin:0
 }
 .left-side-profile{
 	float:left;
@@ -957,6 +965,13 @@ div.results {
 .results p span.orange {
 	font-weight:bold
 }
+
+.pub15{
+	padding-top:15px;
+	max-width:600px;
+	display:inline;
+	float:left
+}
 /*------modul results-------------*/
 #gold #destacado, #simple, #gratis {
 	float: left;
@@ -1053,7 +1068,39 @@ p.line {
 	margin-right:10px;
 	vertical-align:middle
 }
-
+div.aviso{
+	width:970px;
+	margin-top:10px;
+	padding:0 10px;
+	height:146px;
+	position:relative;
+}
+div.aviso .price{
+	position:absolute;
+	right:45px;
+	top:40px;
+	width:110px;
+	height:60px;
+}
+div.aviso .btn{
+	height:28px;
+	width:138px;
+	position:absolute;
+	right:32px;
+	top:105px;
+	margin-top:10px;
+}
+div.aviso .btn:hover{
+	filter: alpha(opacity=70); 
+	opacity: .7
+}
+div.aviso ul li a{
+	font-weight:bold;
+	line-height:16px;
+}
+div.aviso ul li a:hover{
+	text-decoration:underline
+}
 /*-----FICHA------*/
 .box.central.ficha{ 
 	background:#fff;

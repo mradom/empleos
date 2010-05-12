@@ -15,7 +15,7 @@
     <?php include("include/col_derecha-sin.php");?>
     </div>
     <!-- CENTRAL -->
-    <DIV id="central_column">
+    <div id="central_column">
   <script>
   $(document).ready(function() {
 	    $("#edit-submit").remove()
@@ -39,6 +39,12 @@
   }?>
 	<?php print $content;?>
 	  <?php //if (arg(1)<>'add' and arg(2)<>'edit' and arg(2)<>'delete') print "<a href='/node/add/p-objetivo-laboral'>Agregar</a>";?>
+      <?php
+	  //-------------------TIPOS DE AVISOS
+     
+      
+      //-------------------
+      ?>
     <?php include("include/banners-central.php");?>
     </div>
   </div>
