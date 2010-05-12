@@ -1179,11 +1179,24 @@ div#page .pager a:hover {
 }
 /*------sitemap-----*/
 ul.sitemap{
+	font:11px/18px tahoma;
+}
+ul.sitemap li.destacado{
+	background:url(/sites/all/themes/empleos/img/hand.gif) top left no-repeat;
+	list-style:none;
+	height:auto;
+	padding:10px 0 10px 40px;
+	border-bottom-color:#39C;
+	margin-bottom:5px;
 }
 ul.sitemap li{
-	list-style: inside disc;
+	list-style: inside url(/sites/all/themes/empleos/img/min-arrow.gif);
 }
 ul.sitemap ul.n1{
+	padding-left:20px;
+}
+ul.sitemap ul.n1 li{
+	list-style: inside  url(/sites/all/themes/empleos/img/bullet_blue.gif);
 }
 
 /*---FOOTER---*/
