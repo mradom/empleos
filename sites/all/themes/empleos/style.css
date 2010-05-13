@@ -868,41 +868,43 @@ div.arrow.lupa {
 div.arrow.back {
 	background: url(/sites/all/themes/empleos/img/arrow_back.png) 0 0 no-repeat
 }
+.icos-form{
+	height:30px;
+	margin:0 auto;
+}
 div.arrow.copiar {
 	float:left;
 	height:15px;
 	width:13px;
 	background:transparent url(/sites/all/themes/empleos/img/btn_copy.png) 0 0 no-repeat;
-	margin:0 25px 0 0;
+	margin:0 7px 0 0;
 	padding:0;
 }
-
 div.arrow.editar {
 	float:left;
 	height:15px;
 	width:13px;
 	background:transparent url(/sites/all/themes/empleos/img/btn_editar.png) 0 0 no-repeat;
 	padding-left:0;
-	margin:0 25px 0 0;
+	margin:0 7px 0 0;
+	padding:0;
 }
 div.arrow.cancel {
-	float:left;
+	float: left;
 	height:15px;
 	width:13px;
 	background:transparent url(/sites/all/themes/empleos/img/btn_cancel.png) 0 0 no-repeat;
 	margin:0;
 	padding:0;
 }
-
-
-div.arrow.copy {
+/*div.arrow.copy {
 	float:left;
 	height:15px;
 	width:13px;
 	background:transparent url(/sites/all/themes/empleos/img/btn_copiar.gif) 0 0 no-repeat;
 	margin:0;
 	padding:0;
-}
+}*/
 
 div.arrow.cancel:hover, div.arrow.editar:hover, div.arrow.copiar:hover {
 	background-position:0px -15px;
@@ -1070,17 +1072,25 @@ p.line {
 }
 div.aviso{
 	width:970px;
+	height:146px;
 	margin-top:10px;
 	padding:0 10px;
-	height:146px;
 	position:relative;
 }
+	div.aviso.w660{
+	width:660px;
+	height:200px;
+	}
 div.aviso .price{
 	position:absolute;
 	right:45px;
 	top:40px;
 	width:110px;
 	height:60px;
+}
+div.aviso.w660 .price{
+	right:40px;
+	top:90px;
 }
 div.aviso .btn{
 	height:28px;
@@ -1094,12 +1104,28 @@ div.aviso .btn:hover{
 	filter: alpha(opacity=70); 
 	opacity: .7
 }
-div.aviso ul li a{
+div.aviso.w660 .btn{
+	right:24px;
+	top:152px;
+}
+div.aviso ul li {
 	font-weight:bold;
 	line-height:16px;
 }
+div.aviso ul li.orange{
+	list-style:inside url(/sites/all/themes/empleos/img/bullet_orange.gif);
+}
+div.aviso ul li.blue{
+	list-style:inside url(/sites/all/themes/empleos/img/bullet_blue.gif);
+}
+div.aviso ul li.grey{
+	list-style:inside url(/sites/all/themes/empleos/img/bullet_grey.gif);
+}
 div.aviso ul li a:hover{
 	text-decoration:underline
+}
+div.aviso.w660 ul{
+	padding-top:5px;
 }
 /*-----FICHA------*/
 .box.central.ficha{ 

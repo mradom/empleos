@@ -41,8 +41,55 @@
 	  <?php //if (arg(1)<>'add' and arg(2)<>'edit' and arg(2)<>'delete') print "<a href='/node/add/p-objetivo-laboral'>Agregar</a>";?>
       <?php
 	  //-------------------TIPOS DE AVISOS
-     
-      
+  	 print'<div class="content_grl left">';
+     //----------- Gold --------
+     print'<div class="aviso w660 left" style="background:url(/sites/all/themes/empleos/img/a-gold-2.png)top no-repeat;">';
+	 print'<ul class="right" style=" margin-left:15px">';
+     print'<li class="orange" ><a class="orange" href="#">Sin restricciones</a></li>';
+     print'</ul>';
+     print'<ul class="right" style=" margin-left:15px">';
+     print'<li class="orange" ><a class="orange" href="#">Publicaci&oacute;n en Home</a></li>';
+     print'<li class="orange" ><a class="orange" href="#">Publicaci&oacute;n en Home de &aacute;rea</a></li>';
+     print'</ul>';
+	 print'<ul class="right" style=" margin-left:15px">';
+     print'<li class="orange" ><a class="orange" href="#">1&deg; en listado</a></li>';
+     print'<li class="orange" ><a class="orange" href="#">Publicaci&oacute;n con logo</a></li>';
+     print'</ul>';
+     print'<div class="price" style="background:url(/sites/all/themes/empleos/img/price-gold.png)top no-repeat;"></div>';
+     print'<a href="#"><div class="btn" style="background:url(/sites/all/themes/empleos/img/btn-a-gold.gif) top  no-repeat;"></div></a>';
+     print'</div>';
+	 //----------- Destacado--------
+	 print'<div class="aviso w660 left" style="background:url(/sites/all/themes/empleos/img/a-destacado-2.gif)top no-repeat;">';
+     print'<ul class="right" style=" margin-left:15px">';
+     print'<li class="blue" ><a class="blue" href="#">Publicaci&oacute;n en Home</a></li>';
+     print'<li class="blue" ><a class="blue" href="#">Publicaci&oacute;n en Home de &aacute;rea</a></li>';
+     print'</ul>';
+	 print'<ul class="right" style=" margin-left:15px">';
+     print'<li class="blue"><a class="blue" href="#">2&deg; en listado</a></li>';
+     print'<li class="blue"><a class="blue" href="#">Publicaci&oacute;n con logo</a></li>';
+     print'</ul>';
+     print'<div class="price" style="background:url(/sites/all/themes/empleos/img/price-destacado.png)top no-repeat;"></div>';
+     print'<a href="#"><div class="btn" style="background:url(/sites/all/themes/empleos/img/btn-a-destacado.png) top  no-repeat;"></div></a>';
+     print'</div>';
+	 //----------- Simple --------
+	 print'<div class="aviso w660 left" style="background:url(/sites/all/themes/empleos/img/a-simple-2.gif)top no-repeat;">';
+     print'<ul class="right" style=" margin-left:15px">';
+     print'<li class="grey"><a href="#">3&deg; en listado</a></li>';
+     print'</ul>';
+	 print'<ul class="right" style=" margin-left:15px">';
+	 print'<li class="grey"><a href="#">Publicaci&oacute;n en Home</a></li>';
+     print'<li class="grey"><a href="#">Publicaci&oacute;n con logo</a></li>';
+     print'</ul>';
+     print'<div class="price" style="background:url(/sites/all/themes/empleos/img/price-simple.png)top no-repeat;"></div>';
+     print'<a href="#"><div class="btn" style="background:url(/sites/all/themes/empleos/img/btn-a-simple.png) top  no-repeat;"></div></a>';
+     print'</div>';
+	 //----------- Gratis --------
+	 print'<div class="aviso w660 left" style="background:url(/sites/all/themes/empleos/img/a-gratis-2.gif)top no-repeat;">';
+     print'<div class="price" style="background:url(/sites/all/themes/empleos/img/price-gratis.png)top no-repeat;"></div>';
+     print'<a href="#"><div class="btn" style="background:url(/sites/all/themes/empleos/img/btn-a-gratis.png) no-repeat; top:110px"></div></a>';
+     print'</div>';
+	 print'</div>';
+
       //-------------------
       ?>
     <?php include("include/banners-central.php");?>

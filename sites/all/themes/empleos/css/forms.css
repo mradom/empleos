@@ -214,7 +214,7 @@ input.form-submit:hover{
 	margin-left:273px;
 	margin-bottom:10px;
 }
-.mycv fieldset.collapsible legend a, a:hover{
+.mycv fieldset.collapsible legend a, .mycv fieldset.collapsible legend a:hover{
 	color:#FA8605;
 	text-decoration:none
 }
