@@ -8,7 +8,6 @@
   <!-- MIDDLE -->
   <div id="midle">
     <?php include("include/encabezado_mi_avisos_publicados.php");?> 
-    <!-- RIGHT -->
     <!-- CENTRAL -->
     <div id="central_column">
 	  <?php //print $content;?>

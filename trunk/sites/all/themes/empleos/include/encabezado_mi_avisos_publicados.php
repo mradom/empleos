@@ -14,8 +14,8 @@
 			<TD class="techo" width="16%">Desde - Hasta</TD>
 			<TD class="techo" width="26%">Titulo</TD>
 			<TD class="techo" width="18%">Tipo</TD>
-			<TD class="techo" width="18%">Estado</TD>
-			<TD class="techo" width="12%">Empresa</TD>
+			<TD class="techo" width="13%">Estado</TD>
+			<TD class="techo" width="20%">Empresa</TD>
 			<TD class="techo" width="7%">&nbsp;</TD>
 		</TR>
 		<?php
@@ -54,15 +54,17 @@
 			<TD><?php echo ($row->status == 1) ? "Publicado" : "No publicado"?></TD>
 			<TD><?php print_r( $row->field_empresa_1[0]['value']);?></TD>
 			<TD>
+                <div class="iscos-fomr">
 				<a href="/node/<?php print $row->nid; ?>/edit" title="Editar">
-					<div class="arrow editar" style="margin-left:5px"></div>
+					<div class="arrow editar"></div>
 				</a>
 				<a href="/node/add/e-aviso/copy/<?php echo $row->nid;?>" title="Copiar">
-					<div class="arrow copiar" style="margin-left:5px"></div>
+					<div class="arrow copiar"></div>
 				</a>                
 				<a href="/node/<?php print $row->nid; ?>/delete" title="borrar">
 					<div class="arrow cancel"></div>
-				</a>
+                </a>
+                </div>
 			</TD>
 		</TR>
 		<?php
@@ -88,15 +90,17 @@
 			<TD><?php echo ($row->status == 1) ? "Publicado" : "No publicado"?></TD>
 			<TD><?php print_r( $row->field_empresa_1[0]['value']);?></TD>
 			<TD>
-				<!-- <a href="/node/<?php print $row->nid; ?>/edit" title="editar">
+				 <div class="icos-form">
+                 <a href="/node/<?php print $row->nid; ?>/edit" title="editar">
 					<div class="arrow editar" style="margin-left:5px"></div>
-				</a> -->
+				</a> 
 				<a href="/node/<?php print $row->nid; ?>/delete" title="borrar">
 					<div class="arrow cancel"></div>
 				</a>
 				<a href="/node/add/e-aviso/copy/<?php echo $row->nid;?>" title="Copiar">
-					<div class="arrow editar"></div>
+					<div class="arrow copiar"></div>
 				</a>
+                </div>
 			</TD>
 		</TR>
 		<?php
