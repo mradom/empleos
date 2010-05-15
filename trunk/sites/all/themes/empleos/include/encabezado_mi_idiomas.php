@@ -28,7 +28,7 @@ Si no ten&eacute;s conocimiento en idiomas, dej&aacute; el formulario en blanco 
 				          <TD class="techo" width="15%">Nivel Escrito</TD> 
 				          <TD class="techo" width="15%">Nivel de Lectura</TD> 
 				          <TD class="techo" width="18%">&Uacute;ltima Vez&nbsp;</TD> 
-				          <TD class="techo" width="7%">&nbsp;</TD>
+				          <TD class="techo" width="5%">&nbsp;</TD>
 				        </TR> 
 			<?php
 			foreach($vista["items"] as $item){
@@ -49,7 +49,7 @@ Si no ten&eacute;s conocimiento en idiomas, dej&aacute; el formulario en blanco 
 				          <TD><?php print $row->field_nivel_escrito[0]['value'];?></TD> 
 				          <TD><?php print $row->field_nivel_de_lectura[0]['value'];?></TD>
 				          <TD><?php print $row->field_ltima_vez_aplicado[0]['value'];?></TD>
-						  <TD><a href="/node/<?php print $row->nid; ?>/edit" title="editar"><div class="arrow editar" style="margin-left:5px"></div></a><a href="/node/<?php print $row->nid; ?>/delete" title="borrar"><div class="arrow cancel"></div></a></TD>				          
+						  <TD><div class="icos-form" style="padding-left:3px;"><a href="/node/<?php print $row->nid; ?>/edit" title="editar"><div class="arrow editar"></div></a><a href="/node/<?php print $row->nid; ?>/delete" title="borrar"><div class="arrow cancel"></div></a></div></TD>				          
 				        </TR> 
 				<?php
 				

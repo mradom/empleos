@@ -326,7 +326,7 @@ ul.faq li{
 	padding-bottom:0px;
 }
 .btn_gral {
-    max-width:100px;
+    max-width:120px;
     background:url(/sites/all/themes/empleos/img/bg_btn_orange.png) repeat-x;
     padding:0 10px;
     border:1px solid #FF9900;
@@ -869,8 +869,9 @@ div.arrow.back {
 	background: url(/sites/all/themes/empleos/img/arrow_back.png) 0 0 no-repeat
 }
 .icos-form{
-	height:30px;
-	margin:0 auto;
+	height:15px;
+	padding:0;
+	margin:0
 }
 div.arrow.copiar {
 	float:left;
@@ -890,7 +891,7 @@ div.arrow.editar {
 	padding:0;
 }
 div.arrow.cancel {
-	float: left;
+	float:left;
 	height:15px;
 	width:13px;
 	background:transparent url(/sites/all/themes/empleos/img/btn_cancel.png) 0 0 no-repeat;
