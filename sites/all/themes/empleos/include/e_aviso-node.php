@@ -86,7 +86,10 @@ if($user->roles[5] == "empresa"){
 		            	<?php	
 		            	}
 		            ?>
-	<div class="titleFicha">Oferta de trabajo para:<span class="upper orange stg"> <?php echo $nodo->title;?></span></div>
+	<div class="titleFicha">
+		Oferta de trabajo para:
+		<span class="upper orange stg"> <?php echo $nodo->title;?></span>
+	</div>
 	<div class="line_dot"></div>
 	<!-- Resumen -->
 	<div class="resumen">
@@ -143,7 +146,15 @@ if($user->roles[5] == "empresa"){
 	    <ul class="tags">
           <li>Fecha de publicaci&oacute;n: <span class="dark"> <?php print date('d-m-Y',$nodo->created);?></span> l </li>
           <li>N de aviso: <span class="dark"><?php print $nodo->vid; ?></span> l </li>
-          <li>Visitas: <span class="dark"><?php print $nodo->field_visitas[0]['value']; ?></span></li>
+          <?php 
+			###################################################
+			// No lo actualiza porque trae los datos de la cache, entonces no se actualiza cada vez que se da un F5.
+			###################################################
+          	$sql = "SELECT field_visitas_value FROM content_type_e_aviso WHERE nid = $nodo->nid";
+          	$rs_visitas = db_query($sql);
+          	$visitas = db_fetch_object($rs_visitas);
+          ?>
+          <li>Visitas: <span class="dark"><?php print $visitas->field_visitas_value; ?></span></li>
         </ul>
 		<?php 
 		$link = "";
@@ -163,18 +174,55 @@ if($user->roles[5] == "empresa"){
         <div style="clear:both"></div>
         <div class="arrow">Otras ofertas de trabajo en <a href="/rubro/<?php print $area;?>"><?php print $nodo->taxonomy[$area]->name; ?></a></div>
 	
-	
     	
 <!-- Ficha end  -->
 </div>
 
-<pre>
 <?php 
-		    // genero estadisticas en ajax
-			print '<script type="text/javascript">';
-			print '$(document).ready( function(){';
-			// print '$.get("/empleos/stat/aviso/'.$user->uid.'/'.$node->nid.'", function(x) { alert(x) });';
-			print '$.get("/empleos/stat/aviso/'.$user->uid.'/'.$node->nid.'", function(x) { });';
-			print '});</script>';
-			//print_r($nodo); ?>
-</pre>
+    // genero estadisticas en ajax
+print '<script type="text/javascript">';
+print '$(document).ready( function(){';
+// print '$.get("/empleos/stat/aviso/'.$user->uid.'/'.$node->nid.'", function(x) { alert(x) });';
+print '$.get("/empleos/stat/aviso/'.$user->uid.'/'.$node->nid.'", function(x) { });';
+print '});</script>';
+//print_r($nodo); ?>
+
+<div id="flotante166884top" class="flotante-top">
+	<input id="nodo_url166884top" type="hidden" />
+	<input id="nodo_titulo166884top" type="hidden" />
+
+    <div class="compartir">
+        <div class="compartir_cnt_iconos">            
+            <a id="delicious<?php echo $nodo->nid;?>top" href="http://del.icio.us/post?url=http://empleos.lavoz.com.ar/node/<?php echo $nodo->nid;?>&title=<?php echo $nodo->title;?>" Title="Agregar a Del.icio el aviso: " target="_blank">
+                <img src="/sites/all/themes/empleos/img/ico_compartir_1.jpg" alt="Delicious" width="16" height="16" border="0" />
+
+            </a>
+            <a id="facebook<?php echo $nodo->nid;?>top" href="http://www.facebook.com/share.php?u=http://empleos.lavoz.com.ar/node/<?php echo $nodo->nid;?>" target="_blank">
+                <img src="/sites/all/themes/empleos/img/ico_compartir_2.jpg" alt="Facebook" width="16" height="16" border="0" />
+            </a>
+            <a id="digg<?php echo $nodo->nid;?>top" href="http://www.digg.com/submit?url=http://empleos.lavoz.com.ar/node/<?php echo $nodo->nid;?>" Title="Agregar a Digg el aviso: " target="_blank">
+                <img src="/sites/all/themes/empleos/img/ico_compartir_3.jpg" width="16" height="16" border="0" />
+            </a>
+            <a id="reddit<?php echo $nodo->nid;?>top" href="http://reddit.com/submit?url=http://empleos.lavoz.com.ar/node/<?php echo $nodo->nid;?>" Title="Agregar a Reddit el aviso: " target="_blank">
+                <img src="/sites/all/themes/empleos/img/ico_compartir_4.jpg" width="16" height="16" border="0" />
+
+            </a>
+            <a id="google<?php echo $nodo->nid;?>top" href="http://www.google.com/bookmarks/mark?op=edit&bkmk=http://empleos.lavoz.com.ar/node/<?php echo $nodo->nid;?>&title=<?php echo $nodo->title;?>" Title="Agregar a Google la nota: " target="_blank">
+                <img src="/sites/all/themes/empleos/img/ico_compartir_5.jpg" alt="Google" width="16" height="16" border="0" />
+            </a>            
+            <a id="twitter<?php echo $nodo->nid;?>top" href="http://twitter.com/home?status=Leyendo http://empleos.lavoz.com.ar/node/<?php echo $nodo->nid;?> en empleos.lavoz.com.ar" target="_blank">
+                <img src="/sites/all/themes/empleos/img/ico_compartir_6.jpg" alt="Twiter" width="16" height="16" border="0" />
+            </a>
+            <a id="meneame<?php echo $nodo->nid;?>top" href="http://meneame.net/login.php?url=http://empleos.lavoz.com.ar/node/<?php echo $nodo->nid;?>&title=<?php echo $nodo->title;?>" Title="Agregar a Meneame el aviso: " target="_blank">
+                <img src="/sites/all/themes/empleos/img/ico_compartir_7.jpg" width="16" height="16" border="0" />
+
+            </a>
+            <a id="wikio<?php echo $nodo->nid;?>top" href="http://www.wikio.es/vote?url=http://empleos.lavoz.com.ar/node/<?php echo $nodo->nid;?>" Title="Agregar a Wikio el aviso: " target="_blank">
+                <img src="/sites/all/themes/empleos/img/ico_compartir_8.jpg" alt="RSS" width="16" height="16" border="0" />
+            </a>
+            <a id="misterWong166884top" href="http://www.mister-wong.es/index.php?action=addurl&bm_url=http://empleos.lavoz.com.ar/node/<?php echo $nodo->nid;?>&bm_description=<?php echo $nodo->title;?>" Title="Agregar a Mister Wong la nota: " target="_blank">
+                <img src="/sites/all/themes/empleos/img/ico_compartir_9.jpg" width="16" height="16" border="0" />
+            </a>
+        </div>
+    </div>
+</div>

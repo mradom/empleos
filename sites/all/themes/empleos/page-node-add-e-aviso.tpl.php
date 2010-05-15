@@ -19,11 +19,22 @@
   <script>
   $(document).ready(function() {
 	    $("#edit-submit").remove()
-	    $("#fragment-4").html($("#fragment-4").html() + '<input type="submit" name="op" id="edit-submit" value="Enviar"  class="form-submit" />')
+	    //<div id='fragment-5' class='ui-tabs-panel'>
+	    $("#tabs").html($("#tabs").html()+"<div id='fragment-5' class='ui-tabs-panel'>"+aviso_preview()+"</div>");
+	    $("#fragment-5").html($("#fragment-5").html() + '<input type="submit" name="op" id="edit-submit" value="Enviar"  class="form-submit" />')
 	    $("#tabs").tabs();
 	    $("#edit-field-fecha-desde-0-value-date").datepicker({dateFormat: "d/mm/yy", });
 	    $("#edit-field-fecha-hasta-0-value-date").datepicker({dateFormat: "d/mm/yy", });
+	    $("#edit-field-visitas-0-value-wrapper").remove();
 	  });
+
+  function aviso_preview(){
+	  var a;
+		a = '<div class="boxcentralficha">'
+		a = a + '<div class="titleFicha">Ofertadetrabajopara:<spanclass="upperorangestg">Abogado</span></div>';
+		a = a + "</div>";
+		return a;
+  }
   </script>
   <?php if(arg(3) == "copy"){
   		$node = node_load(array("nid"=> arg(4)));
