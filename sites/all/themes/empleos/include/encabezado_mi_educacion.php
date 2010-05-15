@@ -25,7 +25,7 @@ if ($user->uid){
 			<TD class="techo" width="18%">Carrera</TD>
 			<TD class="techo" width="18%">Nivel</TD>
 			<TD class="techo" width="12%">Estado</TD>
-			<TD class="techo" width="7%">&nbsp;</TD>
+			<TD class="techo" width="5%">&nbsp;</TD>
 		</TR>
 		<?php
 		foreach($vista["items"] as $item){
@@ -76,7 +76,7 @@ if ($user->uid){
 			<TD><?php print $row->field_ttulo_o_certificacin[0]["value"];?></TD>
 			<TD><?php print $nivel;?></TD>
 			<TD><?php print $estado;?></TD>
-			<TD><a href="/node/<?php print $row->nid; ?>/edit" title="editar"><div class="arrow editar" style="margin-left:5px"></div></a><a href="/node/<?php print $row->nid; ?>/delete" title="borrar"><div class="arrow cancel"></div></a></TD>
+			<TD><div class="icos-form" style="margin-left:5px"><a href="/node/<?php print $row->nid; ?>/edit" title="editar"><div class="arrow editar"></div></a><a href="/node/<?php print $row->nid; ?>/delete" title="borrar"><div class="arrow cancel"></div></a></div></TD>
 		</TR>
 		<?php
 

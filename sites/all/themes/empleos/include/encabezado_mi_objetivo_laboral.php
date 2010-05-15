@@ -28,7 +28,7 @@ Los &iacute;tems destacados con asterisco <span class="stg orange">(*)</span> so
 				          <TD class="techo" width="17%">Disponibilidad</TD> 				          
 				          <TD class="techo" width="14%">Sueldo</TD>
 				          <TD class="techo" width="10%">Pa&iacute;s/Provincia</TD>  
-				          <TD class="techo" width="7%"></TD>
+				          <TD class="techo" width="5%"></TD>
 				        </TR> 
 			<?php
 			foreach($vista["items"] as $item){
@@ -54,7 +54,7 @@ Los &iacute;tems destacados con asterisco <span class="stg orange">(*)</span> so
 				          <TD><?php print $disponibilidad;?></TD> 
 				          <TD><?php print $sueldo;?></TD>
 				          <TD><?php print $row->field_dispuesto_a_ubicarme_en_o[0]['value'].' / '.$row->field_dispuesto_a_ubicarme_en_0[0]['value'];?></TD>
-				          <TD><a href="/node/<?php print $row->nid; ?>/edit" title="editar"><div class="arrow editar" style="margin-left:5px"></div></a><a href="/node/<?php print $row->nid; ?>/delete" title="borrar"><div class="arrow cancel"></div></a></TD>
+				          <TD><div class="icos-form" style="padding-left:4px;"><a href="/node/<?php print $row->nid; ?>/edit" title="editar"><div class="arrow editar"></div></a><a href="/node/<?php print $row->nid; ?>/delete" title="borrar"><div class="arrow cancel"></div></a></div></TD>
 				        </TR> 
 				<?php
 				

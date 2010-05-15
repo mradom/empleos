@@ -26,7 +26,7 @@ Si no ten&eacute;s cursos o seminarios para ingresar en los campos, deja el form
 				          <TD class="techo" width="16%">Ubicaci&oacute;n</TD> 				           
 				          <TD class="techo" width="8%">Fecha</TD> 
 				          <TD class="techo" width="8%">Hasta</TD> 
-				          <TD class="techo" width="7%">&nbsp;</TD>
+				          <TD class="techo" width="5%" >&nbsp;</TD>
 				        </TR> 
 			<?php
 			foreach($vista["items"] as $item){
@@ -41,7 +41,7 @@ Si no ten&eacute;s cursos o seminarios para ingresar en los campos, deja el form
 				          <TD><?php print $row->field_ubicacion[0]['value'];?></TD>				          
 				          <TD><?php print format_date(strtotime($row->field_desde[0]['value']),'custom','d/m/Y');?></TD> 
 				          <TD><?php print format_date(strtotime($row->field_hasta[0]['value']),'custom','d/m/Y');?></TD>
-				          <TD><a href="/node/<?php print $row->nid; ?>/edit" title="editar"><div class="arrow editar" style="margin-left:5px"></div></a><a href="/node/<?php print $row->nid; ?>/delete" title="borrar"><div class="arrow cancel"></div></a></TD>
+				          <TD><div class="icos-form" style="padding-left:4px;"><a href="/node/<?php print $row->nid; ?>/edit" title="editar"><div class="arrow editar"></div></a><a href="/node/<?php print $row->nid; ?>/delete" title="borrar"><div class="arrow cancel"></div></a></div></TD>
 				        </TR> 
 				<?php
 				

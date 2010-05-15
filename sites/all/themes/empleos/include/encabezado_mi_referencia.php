@@ -28,7 +28,7 @@ Si decid&iacute;s dejar esta parte del formulario en blanco pod&eacute;s continu
 				          <TD class="techo" width="18%">Nombre</TD>
 				          <TD class="techo" width="15%">Tel&eacute;fono</TD>
 				          <TD class="techo" width="20%">Email</TD>
-				          <TD class="techo" width="7%"></TD>  
+				          <TD class="techo" width="5%"></TD>  
 				        </TR> 
 			<?php
 			foreach($vista["items"] as $item){
@@ -45,7 +45,7 @@ Si decid&iacute;s dejar esta parte del formulario en blanco pod&eacute;s continu
 				          <TD><?php print $node->title;?></TD>
 				          <TD><?php print $row->field_telefono[0]['value'];?></TD> 
 				          <TD><?php print $row->field_email[0]['email'];?></TD>
-				          <TD><a href="/node/<?php print $row->nid; ?>/edit" title="editar"><div class="arrow editar" style="margin-left:5px"></div></a><a href="/node/<?php print $row->nid; ?>/delete" title="borrar"><div class="arrow cancel"></div></a></TD>
+				          <TD><div class="icos-form" style="padding-left:4px;"><a href="/node/<?php print $row->nid; ?>/edit" title="editar"><div class="arrow editar"></div></a><a href="/node/<?php print $row->nid; ?>/delete" title="borrar"><div class="arrow cancel"></div></a></div></TD>
 				        </TR> 
 				<?php
 				

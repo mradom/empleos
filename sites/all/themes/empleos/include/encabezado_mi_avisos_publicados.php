@@ -12,10 +12,10 @@
 	<TBODY>
 		<TR>
 			<TD class="techo" width="16%">Desde - Hasta</TD>
-			<TD class="techo" width="26%">Titulo</TD>
+			<TD class="techo" width="23%">Titulo</TD>
 			<TD class="techo" width="18%">Tipo</TD>
 			<TD class="techo" width="13%">Estado</TD>
-			<TD class="techo" width="20%">Empresa</TD>
+			<TD class="techo" width="19%">Empresa</TD>
 			<TD class="techo" width="7%">&nbsp;</TD>
 		</TR>
 		<?php
@@ -54,7 +54,7 @@
 			<TD><?php echo ($row->status == 1) ? "Publicado" : "No publicado"?></TD>
 			<TD><?php print_r( $row->field_empresa_1[0]['value']);?></TD>
 			<TD>
-                <div class="iscos-fomr">
+                <div class="iscos-form" style="padding-left:4px">
 				<a href="/node/<?php print $row->nid; ?>/edit" title="Editar">
 					<div class="arrow editar"></div>
 				</a>
