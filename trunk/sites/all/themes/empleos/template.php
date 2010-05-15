@@ -930,6 +930,7 @@ $html = '<ul class="ui-tabs-nav">
         <li><a href="#fragment-2"><span>Requisitos</span></a></li> 
         <li><a href="#fragment-3"><span>Datos de la Empresa</span></a></li> 
         <li><a href="#fragment-4"><span>Publicaci&oacute;n</span></a></li> 
+        <li><a href="#fragment-5"><span>Previsualizar</span></a></li> 
     </ul>';
 
 	$form['ini']['#prefix']  = '<div class="mycv" id="aviso"><div id="tabs">'.$html;
@@ -979,6 +980,9 @@ $html = '<ul class="ui-tabs-nav">
 	
 	$form['group_publicacion']['#prefix'] = "<div id='fragment-4' class='ui-tabs-panel'>";
 	$form['group_publicacion']['#suffix'] = "</div>";
+
+	//$form['group_previsualizar']['#prefix'] = "<div id='fragment-5' class='ui-tabs-panel'>";
+	//$form['group_previsualizar']['#suffix'] = "</div>";
     
     ######## REQUISITOS #########
     
@@ -1096,14 +1100,18 @@ $html = '<ul class="ui-tabs-nav">
 	';
 	$miform .= drupal_render($form['group_publicacion']['field_tipo_de_aviso']);
 	$form['group_publicacion']['submit'] = $form['submit'];
+	
 	$form['submit'] = "";
 	
-	//echo "<pre>";
-	//print_r($form['group_publicacion']['submit']);
-	//print_r($form['submit']);
-	//echo "</pre>";
-	
 	$miform .= drupal_render($form['group_publicacion']['submit']);
+	
+	//$form["group_previsualizar"]['preview'] = "sdakjsdkjasldjalskjldñjaksjda";
+	//$miform .= drupal_render($form['group_previsualizar']);	
+	//$miform .= drupal_render($form['group_previsualizar']['preview']);
+	
+	//echo "<pre>";
+	//print_r($form['group_previsualizar']);
+	//echo "</pre>";
 	
 	//echo "<pre>";print_r($form['group_publicacion']['field_tipo_de_aviso']); echo "</pre>";
 	

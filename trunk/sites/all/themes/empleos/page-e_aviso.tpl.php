@@ -16,19 +16,17 @@
     	?>
   <script>
   $(document).ready(function() {
+	    $("#edit-submit").remove()
+	    $("#fragment-5").html($("#fragment-5").html() + '<input type="submit" name="op" id="edit-submit" value="Enviar"  class="form-submit" />')
 	    $("#tabs").tabs();
 	    $("#edit-field-fecha-desde-0-value-date").datepicker({dateFormat: "d/mm/yy", });
 	    $("#edit-field-fecha-hasta-0-value-date").datepicker({dateFormat: "d/mm/yy", });
+	    $("#edit-field-visitas-0-value-wrapper").remove();
 	  });
   </script>
     	<?php 
     }?>
     
-    <?php 
-    if($user->roles[5] == "empresa"){
-		//include("include/submenu-empresa.php");
-	}
-    ?>
     <div id="central_column">
 		<?php print $content;
         // aca deberiamos ver de agregarle de nuevo el buscador cuando solo es visualizacion
