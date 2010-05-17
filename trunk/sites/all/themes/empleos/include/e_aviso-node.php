@@ -165,6 +165,7 @@ if($user->roles[5] == "empresa" and $node->uid == $user->uid){
 	<div class="line_dot"></div>
 	<!-- Resumen -->
 	<div class="resumen">
+    <!-- OJO aca dice node->created y deberia ser el dia desde la publicacion -->
 	<p class="date"><?php print date('d-m-Y',$nodo->created); ?></p>
 	<div class="brand">
 	<?php print theme('imagecache','logo_empresa_resultado_busqueda_86_53',$nodo->field_logo[0]['filename'],$nodo->picture.' - alt',$nodo->picture.' - Title'); ?>
