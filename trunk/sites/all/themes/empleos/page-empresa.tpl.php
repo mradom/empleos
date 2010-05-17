@@ -81,15 +81,35 @@ function empresa_buscar() {
       $emp->{$field->name} = _profile_field_serialize($field->type) ? unserialize($field->value) : $field->value;
     }
   }
-  print '<br>';
-  print theme('imagecache','logo_empresa_52_34',$emp->picture,$emp->picture,$emp->uid);
-  print 'Nombre: '.$emp->profile_empresa_empresa_nombre.'<br>';
-  
-  print '<a href="/empresa/'.arg(1).'/avisos">Listado de avisos</a><br>';
-
-  print '<div><a href="/empresa">Volver</a></div>';
-  
-  print "<div>&nbsp;</br>&nbsp;</br>&nbsp;</br>&nbsp;</br>&nbsp;</br></div>";
+  print'<div>';
+  ?>
+  <div class="resumen">
+	<div class="brand">
+	<?php print theme('imagecache','logo_empresa_52_34',$emp->picture,$emp->picture,$emp->uid); ?>
+    </div>
+	<ul class="resumen mb10">
+		<li class="stg"><span class="blue">Empresa:</span> <?php echo $emp->profile_empresa_empresa_nombre;?></li>
+        <li><span class="blue">Actividad:</span> <?php print l($nodo->taxonomy[$ramo]->name, 'taxonomy/term/'.$ramo); ?></li>
+        <li><span class="blue">Direcci&oacute;n:</span> <?php echo $nodo->taxonomy[$pretendido]->name;?></li>
+		<li><span class="blue">Tel&eacute;fono:</span> <?php echo $nodo->taxonomy[$jerarquia]->name;?></li>
+		<li><span class="blue">Fax:</span> <a href="/rubro/<?php echo $area;?>"><?php echo $nodo->taxonomy[$area]->name;?></a></li>
+		<li><span class="blue">E-mail:</span> <?php print l($nodo->taxonomy[$localidad]->name,'taxonomy/term/'.$localidad,''); ?></li> 
+		<li><span class="blue">URL:</span> <?php echo $nodo->taxonomy[$pretendido]->name;?></li>
+	</ul>
+    <div class="clr"></div>
+    <div class="btn_gral low" style="float:right"><a href="/empresa/<?php print $emp->uid; ?>/avisos">Ver listado de avisos</a></div>
+    <div class="bloque puntos" style="width:660px"></div>
+    <div class="ampliar">Ac&aacute; va un resumen descriptivo de la empresa, su actividad, misi&oacute;n-visi&oacute;n, proyecci&oacute;n, etc</div>
+    <div class="clr"></div>
+    <div class="arrow"><a href="/empresa">Volver</a></div>
+    </div>
+    
+  <?php
+  print'</div>';
+  //print theme('imagecache','logo_empresa_52_34',$emp->picture,$emp->picture,$emp->uid);
+  //print 'Nombre: '.$emp->profile_empresa_empresa_nombre.'<br>';  
+  //print '<a href="/empresa/'.arg(1).'/avisos">Listado de avisos</a><br>';
+  //print '<div><a href="/empresa">Volver</a></div>';
 
 }
 

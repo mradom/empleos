@@ -368,8 +368,8 @@ body .ui-resizable-autohide .ui-resizable-handle { display: none; } /* use 'body
 	font-weight: normal;
 	text-decoration: none;
 	padding: .5em 1.7em;
-	color: #555555;
-	background: #e6e6e6 url(/sites/all/modules/jquery_ui/jquery.ui/themes/default/images/e6e6e6_40x100_textures_02_glass_75.png) 0 50% repeat-x;
+	  background: #e6e6e6 url(/sites/all/modules/jquery_ui/jquery.ui/themes/default/images/e6e6e6_40x100_textures_02_glass_75.png) 0 50% repeat-x;
+	/*color: #555555;*/
 }
 .ui-tabs-nav li a:hover {
 	background: #dadada url(/sites/all/modules/jquery_ui/jquery.ui/themes/default/images/dadada_40x100_textures_02_glass_75.png) 0 50% repeat-x;
