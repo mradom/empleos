@@ -1212,3 +1212,45 @@ function phptemplate_search_form($form) {
 	return drupal_render($form);
   //return _phptemplate_callback('search_theme_form', array('form' => $form), array('search-theme-form'));
 }
+
+
+
+
+function phptemplate_taxonomy  ($op, $type, $object) {
+	print '[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]';
+  switch($op) {
+    case 'view':
+      if (($type == 'e_aviso') && is_array($object) && (count($object) == 1)) {
+        $count = taxonomy_term_count_nodes($object[0]);
+        switch ($count) {
+          case 0:
+            $message = t('Sorry, there are no postings yet in this category.');
+            break;
+          case 1:
+            $message = t('There is one posting in this category.');
+            break;
+          default:
+            $message = t('There are %count postings in this category.', array('%count' => $count));
+            break;
+        }
+        return '<p>' . $message . '</p>';
+      }
+      break;
+  }
+}
+
+function sacar_phptemplate_variables($hook, $vars = array()) {
+
+    switch ($hook) {
+        case 'node':
+            if (arg(0)== 'taxonomy') {
+                $vars['template_files'] = array(
+                    'node-taxonomy',
+                    'node-'.$vars['node']->type.'-taxonomy'
+                );
+            }
+        break;
+    }
+
+    return $vars;
+}
