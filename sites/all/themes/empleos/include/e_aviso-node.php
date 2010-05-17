@@ -62,7 +62,7 @@ function AltDisplay(eldiv, elbot)
 </script>
 
 <?php 
-if($user->roles[5] == "empresa"){
+if($user->roles[5] == "empresa" and $node->uid == $user->uid){
 	include("submenu-empresa.php");
 }
 ?>
@@ -86,6 +86,78 @@ if($user->roles[5] == "empresa"){
 		            	<?php	
 		            	}
 		            ?>
+		            	<div class="btn_gral low" style="float: right">
+							<!-- <a href="#" id="enviar-amigo">Enviar a un amigo</a> -->
+							<button id="create-user">Enviar a un amigo</button>
+						</div>
+						
+<style type="text/css">
+		body { font-size: 62.5%; }
+		label, input { display:block; }
+		input.text { margin-bottom:12px; width:95%; padding: .4em; }
+		fieldset { padding:0; border:0; margin-top:25px; }
+		h1 { font-size: 1.2em; margin: .6em 0; }
+		div#users-contain { width: 350px; margin: 20px 0; }
+		div#users-contain table { margin: 1em 0; border-collapse: collapse; width: 100%; }
+		div#users-contain table td, div#users-contain table th { border: 1px solid #eee; padding: .6em 10px; text-align: left; }
+		.ui-dialog .ui-state-error { padding: .3em; }
+		.validateTips { border: 1px solid transparent; padding: 0.3em; }
+		
+	</style>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		// a workaround for a flaw in the demo system (http://dev.jqueryui.com/ticket/4375), ignore!
+		$("#dialog").dialog("destroy");
+		var from = $("#from"), to = $("#to"),msg = $("#msg"),	allFields = $([]).add(from).add(to).add(msg);
+		$("#dialog-form").dialog({
+			autoOpen: false,
+			height: 300,
+			width: 350,
+			modal: true,
+			buttons: {
+				'Enviar': function() {
+		       		$.post("/enviaramigo.php", "post=" + from.val() + "|" +  to.val() + "|" + msg.val(), function(data){alert(data);});	
+		       		to.val("");
+		       		msg.val("");				
+					$(this).dialog('close');
+				},
+				'Cancelar': function() {
+					$(this).dialog('close');
+				}
+			},
+			close: function() {
+				//allFields.val('');//.removeClass('ui-state-error');
+			}
+		});
+		$('#create-user')
+			//.button()
+			.click(function() {
+				$('#dialog-form').dialog('open');
+			});
+
+	});
+	</script>
+
+
+
+<div class="demo">
+	<div id="dialog-form" title="Enviar Aviso <?php echo $nodo->title;?>">
+		<p class="validateTips">Enviar este aviso a un amigo.</p>
+	
+		<form>
+		<fieldset>
+			<label for="from">De: </label>
+			<input type="text" name="from" id="from" class="text ui-widget-content ui-corner-all" />
+			<label for="to">Para:</label>
+			<input type="text" name="to" id="to" value="" class="text ui-widget-content ui-corner-all" />
+			<label for="msg">Mensaje: </label>
+			<textarea name="msg" rows="2" class="text ui-widget-content ui-corner-all" id="msg"></textarea>
+		</fieldset>
+		</form>
+	</div>
+</div><!-- End demo -->
+
+
 	<div class="titleFicha">
 		Oferta de trabajo para:
 		<span class="upper orange stg"> <?php echo $nodo->title;?></span>
@@ -93,7 +165,6 @@ if($user->roles[5] == "empresa"){
 	<div class="line_dot"></div>
 	<!-- Resumen -->
 	<div class="resumen">
-	<!-- OJO aca dice node->created y deberia ser el dia desde la publicacion -->
 	<p class="date"><?php print date('d-m-Y',$nodo->created); ?></p>
 	<div class="brand">
 	<?php print theme('imagecache','logo_empresa_resultado_busqueda_86_53',$nodo->field_logo[0]['filename'],$nodo->picture.' - alt',$nodo->picture.' - Title'); ?>
@@ -184,9 +255,9 @@ print '$.get("/empleos/stat/aviso/'.$user->uid.'/'.$node->nid.'", function(x) { 
 print '});</script>';
 //print_r($nodo); ?>
 
-<div id="flotante166884top" class="flotante-top">
-	<input id="nodo_url166884top" type="hidden" />
-	<input id="nodo_titulo166884top" type="hidden" />
+<div id="flotante<?php echo $nodo->nid;?>top" class="flotante-top">
+	<input id="nodo_url<?php echo $nodo->nid;?>top" type="hidden" />
+	<input id="nodo_titulo<?php echo $nodo->nid;?>top" type="hidden" />
 
     <div class="compartir">
         <div class="compartir_cnt_iconos">            

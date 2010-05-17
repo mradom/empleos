@@ -20,7 +20,8 @@
   $(document).ready(function() {
 	    $("#edit-submit").remove()
 	    //<div id='fragment-5' class='ui-tabs-panel'>
-	    $("#tabs").html($("#tabs").html()+"<div id='fragment-5' class='ui-tabs-panel'>"+aviso_preview()+"</div>");
+	    $("#tabs").html($("#tabs").html()+"<div id='fragment-5' class='ui-tabs-panel'>"+ $("#content_preview").html()+"</div>");
+	    $("#content_preview").remove();
 	    $("#fragment-5").html($("#fragment-5").html() + '<input type="submit" name="op" id="edit-submit" value="Enviar"  class="form-submit" />')
 	    $("#tabs").tabs();
 	    $("#edit-field-fecha-desde-0-value-date").datepicker({dateFormat: "d/mm/yy", });
@@ -29,12 +30,46 @@
 	  });
 
   function aviso_preview(){
-	  var a;
-		a = '<div class="boxcentralficha">'
-		a = a + '<div class="titleFicha">Ofertadetrabajopara:<spanclass="upperorangestg">Abogado</span></div>';
-		a = a + "</div>";
-		return a;
+		return true;
   }
+
+  function actualizarPreview(){
+  		//$("#fragment-5").empty();
+		//$("#fragment-5").html(aviso_preview() + $("#fragment-5").html());
+		return true;
+	  }
+
+  function get_now(){
+	  var fecha=new Date();
+	  var diames=fecha.getDate();
+	  var diasemana=fecha.getDay();
+	  var mes=fecha.getMonth() +1 ;
+	  var ano=fecha.getFullYear();
+
+	  var textosemana = new Array (7);
+	    textosemana[0]="Domingo";
+	    textosemana[1]="Lunes";
+	    textosemana[2]="Martes";
+	    textosemana[3]="Miércoles";
+	    textosemana[4]="Jueves";
+	    textosemana[5]="Viernes";
+	    textosemana[6]="Sábado";
+
+	  var textomes = new Array (12);
+	    textomes[1]="Enero";
+	    textomes[2]="Febrero";
+	    textomes[3]="Marzo";
+	    textomes[4]="Abril";
+	    textomes[5]="Mayo";
+	    textomes[6]="Junio";
+	    textomes[7]="Julio";
+	    textomes[7]="Agosto";
+	    textomes[9]="Septiembre";
+	    textomes[10]="Octubre";
+	    textomes[11]="Noviembre";
+	    textomes[12]="Diciembre";
+	  return diames + "/" + mes + "/" + ano;
+	  }
   </script>
   <?php if(arg(3) == "copy"){
   		$node = node_load(array("nid"=> arg(4)));
@@ -52,7 +87,7 @@
 	  <?php //if (arg(1)<>'add' and arg(2)<>'edit' and arg(2)<>'delete') print "<a href='/node/add/p-objetivo-laboral'>Agregar</a>";?>
       <?php
 	  //-------------------TIPOS DE AVISOS
-  	 print'<div class="content_grl left">';
+  	 print'<div class="content_grl left" id="content_preview">';
      //----------- Gold --------
      print'<div class="aviso w660 left" style="background:url(/sites/all/themes/empleos/img/a-gold-2.png)top no-repeat;">';
 	 print'<ul class="right" style=" margin-left:15px">';
