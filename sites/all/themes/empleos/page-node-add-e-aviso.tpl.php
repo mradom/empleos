@@ -93,7 +93,7 @@
 	 print'<ul class="right" style=" margin-left:15px">';
      print'<li class="orange" ><a class="orange" href="#">Sin restricciones</a></li>';
      print'</ul>';
-     print'<ul class="right" style=" margin-left:15px">';
+     print'<ul class="right" style="margin-left:15px">';
      print'<li class="orange" ><a class="orange" href="#">Publicaci&oacute;n en Home</a></li>';
      print'<li class="orange" ><a class="orange" href="#">Publicaci&oacute;n en Home de &aacute;rea</a></li>';
      print'</ul>';

@@ -105,6 +105,9 @@ span.underline {
 .left{
 	float:left;
 }
+.mb10{
+	margin-bottom:10px;
+}
 /*------------HEADER-----------*/
 /*--menu--*/
 .menu {
@@ -326,7 +329,7 @@ ul.faq li{
 	padding-bottom:0px;
 }
 .btn_gral {
-    max-width:120px;
+    max-width:160px;
     background:url(/sites/all/themes/empleos/img/bg_btn_orange.png) repeat-x;
     padding:0 10px;
     border:1px solid #FF9900;
@@ -801,15 +804,15 @@ fielset .group-datos-de-la-empresa{
 	padding:10px 0;
 	font:11px tahoma;
 	}
-.mycv .ui-tabs-nav ul{
+.mycv ul.ui-tabs-nav{
 	width:677px;
 	border-bottom:5px solid #1c77a8;
 }
-.mycv .ui-tabs-nav li{
+.mycv ul.ui-tabs-nav li{
 	border:0;
 	font:11px/16px Tahoma, Geneva, sans-serif;
 }
-.mycv .ui-tabs-nav li a{
+.mycv ul.ui-tabs-nav li a{
 	background:#f5ffff;
 	border:1px solid #1C77A8;
 	border-bottom:0;
@@ -817,8 +820,13 @@ fielset .group-datos-de-la-empresa{
 	-webkit-border-radius:5px 5px 0 0 ;
 	margin:0;
 	margin-right:2px;
+	color:#333
 }
-.mycv .ui-tabs-nav li.ui-tabs-selected a, .mycv .ui-tabs-nav li.ui-tabs-selected a:hover{
+.mycv ul.ui-tabs-nav li a:hover{
+	background:#E9E9E9
+}
+
+.mycv ul.ui-tabs-nav li.ui-tabs-selected a, .mycv ul.ui-tabs-nav li.ui-tabs-selected a:hover{
 	border-bottom-color: #1C77A8;
 	background:#1c77a8;
 	color:#FFF;
@@ -898,15 +906,6 @@ div.arrow.cancel {
 	margin:0;
 	padding:0;
 }
-/*div.arrow.copy {
-	float:left;
-	height:15px;
-	width:13px;
-	background:transparent url(/sites/all/themes/empleos/img/btn_copiar.gif) 0 0 no-repeat;
-	margin:0;
-	padding:0;
-}*/
-
 div.arrow.cancel:hover, div.arrow.editar:hover, div.arrow.copiar:hover {
 	background-position:0px -15px;
 }
@@ -1109,10 +1108,19 @@ div.aviso.w660 .btn{
 	right:24px;
 	top:152px;
 }
-div.aviso ul li {
+/* cambios*/
+div.aviso.w660 ul li, div.aviso.w660 ul li a, div.aviso.w660 ul li a:hover {
 	font-weight:bold;
 	line-height:16px;
+	background:none;
+	border:none;
+	padding:0;
 }
+div.aviso.w660 ul li a{
+	display: list-item;
+}
+/* finde cambios*/
+
 div.aviso ul li.orange{
 	list-style:inside url(/sites/all/themes/empleos/img/bullet_orange.gif);
 }
@@ -1146,7 +1154,8 @@ div.resumen{
 	background:url(/sites/all/themes/empleos/img/bg_destacado.gif) repeat-x;
 	padding:10px;
 	float:left;
-	width:638px;
+	width:97%
+	/*width:638px;*/
 }
 ul.resumen{
 	line-height:18px;
