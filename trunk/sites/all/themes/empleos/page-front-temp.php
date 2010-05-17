@@ -34,16 +34,14 @@
 						    print '<li class="destacado">';
 							if ($nodo->field_tipo_de_aviso[0]["value"] > 2) {
  					  			print '<div class="brand">';
-								print '<a href="/node/'.$nodo->nid.'">'; 
-								print theme('imagecache','logo_empresa_resultado_busqueda_86_53',$nodo->picture,$nodo->name.'',$nodo->name.''); 
-								print '</a>';
+								print l(theme('imagecache','logo_empresa_resultado_busqueda_86_53',$nodo->picture,$nodo->name.'',$nodo->name.''),'node/'.$nodo->nid, NULL , NULL,  NULL,  FALSE, TRUE);
 								print '</div>';
 							} else {
 								print '<div class="brand"></div>';
 							}
 							print '<p class="date">'.date("d-m-Y",strtotime(substr($nodo->field_fecha_hasta[0]["value"],0,10))).'</p>';
-					  		print '<p class="name"><a href="/node/'.$nodo->nid.'">'.substr($nodo->title,0,40).'</a></p>';
-					  		print '<p class="job"><a href="/rubro/'.$area.'">'.$nodo->taxonomy[$area]->name.'</a></p>';
+					  		print '<p class="name">'.l(substr($nodo->title,0,40),'node/'.$nodo->nid ).'</p>';
+					  		print '<p class="job">'.l($nodo->taxonomy[$area]->name,'taxonomy/term/'.$area ).'</p>';
 					  		print '</li>';	
 							if (($ren == round($tot/2)) ) { 
 								 print '</ul><ul class="rigth">'; 

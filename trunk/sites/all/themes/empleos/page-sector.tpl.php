@@ -62,7 +62,7 @@ function get_child_terms($parent, $vid) {
     while ($aterm = db_fetch_object($terms)) {
         $output .= "<li>";
 		// theme('feed_icon', url("taxonomy/term/$aterm->tid/all/feed"))
-        $output .= l("$aterm->name", "sector/$aterm->tid") . " ("
+        $output .= l("$aterm->name", "taxonomy/term/$aterm->tid") . " ("
                 .  taxonomy_term_count_nodes($aterm->tid) . ")</li>\n"
                 .  get_child_terms($aterm->tid, $vid);
     }

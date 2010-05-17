@@ -209,20 +209,21 @@ if($_REQUEST['busqueda'] == "avanzada"){
 					      print '<a href="'.$link.'"><div class="btn_postulate"></div></a>';
 						  // encabezado
 						  print '<div class="datos">'; 
-						    print '<h2><a class="orange" href="/node/';
-							print $fila->nid;
-							print '">'.$nodo->title.'</a></h2>';
+						    print '<h2>';
+							$attributes = array( 'class' => 'orange' );
+							print l($nodo->title, 'node/'.$nodo->nid);
+							print '</h2>';
 							
 							print '<h2><a class="orange" href="/rubro/';
 							print $nodo->taxonomy[$area]->tid;
 							print '">'.$nodo->taxonomy[$area]->name.'</a> | <span class="upper">';
 							print $nodo->name.'</span></h2>';
 							print '<p class="line">'; 
-							 print '<span class="orange">Sector:</span> <a href="/sector/';
-							 print $nodo->taxonomy[$sector]->tid;
-							 print '">'.$nodo->taxonomy[$sector]->name.'</a> | <a href="/provincia/';
-							 print $nodo->taxonomy[$localidad]->tid;
-							 print '">'.$nodo->taxonomy[$localidad]->name.'</a><br>'; 
+							 print '<span class="orange">Sector:</span> ';
+							 print l($nodo->taxonomy[$sector]->name, 'taxonomy/term/'.$nodo->taxonomy[$sector]->tid);
+							 print ' | ';
+							 print l($nodo->taxonomy[$localidad]->name,'taxonomy/term/'.$nodo->taxonomy[$localidad]->tid);
+							 print '<br>'; 
 							 print '</p>';
 							// texto hasta 215 caracteres
 							print '<p>';
@@ -233,9 +234,13 @@ if($_REQUEST['busqueda'] == "avanzada"){
 							 }
 							print '</p>';
 							// ver oferta de trabajo
-							print '<p><a class="orange right" href="/node/';
-							 print $nodo->nid;
-							 print '">&gt;&gt;Ver oferta de trabajo</a></p>';
+						    $attributes = array( 'class' => 'orange right' );
+                            print '<p>';
+							print l("Ver oferta de trabajo", 'node/'.$nodo->nid, $attributes);
+							//print '<p><a class="orange right" href="/node/';
+							 //print $nodo->nid;
+							 //print '">&gt;&gt;Ver oferta de trabajo</a></p>';
+							print '</p>';
 							// fecha de creacion
 							print '<p class="grey">Fecha de publicaci&oacute;n: ';
 							 print date('d-m-Y',$nodo->created);
@@ -251,10 +256,10 @@ if($_REQUEST['busqueda'] == "avanzada"){
 						print '<div>';
 						  // encabezado
 						  print '<div class="datos">'; 
-						    print '<h2><a class="orange" href="/node/';
-							print $fila->nid;
-							print '">'.$nodo->title.'</a></h2>';
-
+						    print '<h2>';
+							$attributes = array( 'class' => 'orange' );
+							print l($nodo->title, 'node/'.$nodo->nid);
+							print '</h2>';
 							print '<h2><span><a href="/rubro/';
 							print $nodo->taxonomy[$area]->tid;
 							print '">'.$nodo->taxonomy[$area]->name.'</a></span> | <span class="upper">';
@@ -274,10 +279,14 @@ if($_REQUEST['busqueda'] == "avanzada"){
 							  print substr($nodo->teaser,0,215);
 							 }
 							print '</p>';
+							print '<p>';
 							// ver oferta de trabajo
-							print '<p><a class="orange right" href="/node/';
-							 print $nodo->nid;
-							 print '">&gt;&gt;Ver oferta de trabajo</a></p>';
+							 $attributes = array( 'class' => 'orange right' );
+                             print l("Ver oferta de trabajo", 'node/'.$nodo->nid, $attributes);
+							//print '<p><a class="orange right" href="/node/';
+							// print $nodo->nid;
+							// print '">&gt;&gt;Ver oferta de trabajo</a></p>';
+							print '</p>';
 							// fecha de creacion
 							print '<p class="grey">Fecha de publicaci&oacute;n: ';
 							 print date('d-m-Y',$nodo->created);
@@ -293,18 +302,22 @@ if($_REQUEST['busqueda'] == "avanzada"){
 						print '<div>';
 						  // encabezado
 						  print '<div class="datos">'; 
-						    print '<h2><a class="orange" href="/node/';
-							print $fila->nid;
-							print '">'.$nodo->title.'</a></h2>';
-						  
+						    print '<h2>';
+							$attributes = array( 'class' => 'orange' );
+							print l($nodo->title, 'node/'.$nodo->nid);
+							print '</h2>';
 							print '<h2><strong><a href="/rubro/';
 							print $nodo->taxonomy[$area]->tid;
 							print '">'.$nodo->taxonomy[$area]->name.'</a></strong> | <span class="upper">';
 							print $nodo->name.'</span></h2>';
 							// ver oferta de trabajo
-							print '<p><a class="orange right" href="/node/';
-							 print $nodo->nid;
-							 print '">&gt;&gt;Ver oferta de trabajo</a></p>';
+							$attributes = array( 'class' => 'orange right' );
+                            print '<p>';
+							print l("Ver oferta de trabajo", 'node/'.$nodo->nid, $attributes);
+							print '</p>';
+							//print '<p><a class="orange right" href="/node/';
+							// print $nodo->nid;
+							// print '">&gt;&gt;Ver oferta de trabajo</a></p>';
 							// fecha de creacion
 							print '<p class="grey">Fecha de publicaci&oacute;n: ';
 							 print date('d-m-Y',$nodo->created);

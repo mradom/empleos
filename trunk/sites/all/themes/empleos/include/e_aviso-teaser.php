@@ -68,8 +68,8 @@
 		            <DIV class="datos">
 		              <H2><SPAN class="orange"><a href="/taxonomy/term/<?php echo $nodo->taxonomy[$area]->tid;?>"><?php echo $nodo->taxonomy[$area]->name;?></a></SPAN> | <SPAN class="upper"><?php echo $nodo->name;?></SPAN></H2>
 		              <P class="line">
-		              	<SPAN class="orange">Sector:</SPAN> <a href="/taxonomy/term/<?php echo $nodo->taxonomy[$sector]->tid;?>"><?php echo $nodo->taxonomy[$sector]->name;?></a> | 
-		              <a href="/taxonomy/term/<?php echo $nodo->taxonomy[$localidad]->tid?>"><?php echo $nodo->taxonomy[$localidad]->name;?></a><BR>
+		              	<SPAN class="orange">Sector:</SPAN> <?php print l($nodo->taxonomy[$sector]->name,"taxonomy/term/".$nodo->taxonomy[$sector]->tid) ?> | <?php print l($nodo->taxonomy[$localidad]->name,"taxonomy/term/".$nodo->taxonomy[$localidad]->tid) ?>
+		                <BR>
 		                <?php //echo $nodo->teaser;?>
 		                <?php if (strlen($nodo->teaser) > 215){
 						  echo substr($nodo->teaser,0,215).'...';
@@ -88,8 +88,8 @@
 			            <div class="datos">
 			              <H2><SPAN><a href="/taxonomy/term/<?php echo $nodo->taxonomy[$area]->tid;?>"><?php echo $nodo->taxonomy[$area]->name;?></a></SPAN> | <SPAN class="upper"><?php echo $nodo->name;?></SPAN></H2>
 		                  <P class="line">
-		              	  <SPAN class="orange">Sector:</SPAN> <a href="/taxonomy/term/<?php echo $nodo->taxonomy[$sector]->tid;?>"><?php echo $nodo->taxonomy[$sector]->name;?></a> | 
-		                  <a href="/taxonomy/term/<?php echo $nodo->taxonomy[$localidad]->tid?>"><?php echo $nodo->taxonomy[$localidad]->name;?></a><BR>
+		              	<SPAN class="orange">Sector:</SPAN> <?php print l($nodo->taxonomy[$sector]->name,"taxonomy/term/".$nodo->taxonomy[$sector]->tid) ?> | <?php print l($nodo->taxonomy[$localidad]->name,"taxonomy/term/".$nodo->taxonomy[$localidad]->tid) ?>
+		                <BR>
 		                <?php //echo $nodo->teaser;?>
 		                <?php if (strlen($nodo->teaser) > 215){
 						  echo substr($nodo->teaser,0,215).'...';

@@ -24,3 +24,15 @@
 </div>
 </body>
 </html>
+
+
+
+while($fila = mysql_fetch_object($rs)){
+						$nodo = node_load($fila->nid);
+						$usuario = user_load(array('uid' => $nodo->uid));
+						print '<tr>';
+						print '<td><a href="/user/'.$nodo->uid.'" target="_top" title="'.$usuario->name.'">';
+						print $usuario->name.'</td>';
+						print '<td>'.date('d-m-Y', $fila->timestamp).'</td>';
+						print '<td><a href="/job/clear/'.$nodo->nid.'/'.$user->uid.'&destination=/user/me" title="Borrar"><div class="arrow cancel"></div></a></td>';
+						print '</tr>';
