@@ -19,7 +19,6 @@
   <script>
   $(document).ready(function() {
 	    $("#edit-submit").remove()
-	    //<div id='fragment-5' class='ui-tabs-panel'>
 	    $("#tabs").html($("#tabs").html()+"<div id='fragment-5' class='ui-tabs-panel'>"+ $("#content_preview").html()+"</div>");
 	    $("#content_preview").remove();
 	    $("#fragment-5").html($("#fragment-5").html() + '<input type="submit" name="op" id="edit-submit" value="Enviar"  class="form-submit" />')
@@ -83,49 +82,58 @@
   		$row = db_fetch_object($rs);
   		drupal_goto("node/".$row->id."/edit");
   }?>
+  	
 	<?php print $content;?>
+    
 	  <?php //if (arg(1)<>'add' and arg(2)<>'edit' and arg(2)<>'delete') print "<a href='/node/add/p-objetivo-laboral'>Agregar</a>";?>
       <?php
 	  //-------------------TIPOS DE AVISOS
-  	 print'<div class="content_grl left" id="content_preview">';
+  	 print'<div class="left" id="content_preview">';
      //----------- Gold --------
      print'<div class="aviso w660 left" style="background:url(/sites/all/themes/empleos/img/a-gold-2.png)top no-repeat;">';
-	 print'<ul class="right" style=" margin-left:15px">';
-     print'<li class="orange" ><a class="orange" href="#">Sin restricciones</a></li>';
+	 print'<div style="padding:5px 0 0 185px">';
+	 print'<ul class="a-links">';
+     print'<li class="orange"><a href="#">Publicaci&oacute;n en Home</a></li>';
+     print'<li class="orange"><a href="#">Publicaci&oacute;n con logo</a></li>';
      print'</ul>';
-     print'<ul class="right" style="margin-left:15px">';
-     print'<li class="orange" ><a class="orange" href="#">Publicaci&oacute;n en Home</a></li>';
-     print'<li class="orange" ><a class="orange" href="#">Publicaci&oacute;n en Home de &aacute;rea</a></li>';
+	 print'<ul class="a-links">';
+     print'<li class="orange"><a href="#">Primero en listado</a></li>';
+     print'<li class="orange"><a href="#">M&aacute;ximos resultados</a></li>';
      print'</ul>';
-	 print'<ul class="right" style=" margin-left:15px">';
-     print'<li class="orange" ><a class="orange" href="#">1&deg; en listado</a></li>';
-     print'<li class="orange" ><a class="orange" href="#">Publicaci&oacute;n con logo</a></li>';
+	 print'<ul class="a-links">';
+     print'<li class="orange"><a href="#">Sin Restricciones</a></li>';
      print'</ul>';
+	 print'</div>';
      print'<div class="price" style="background:url(/sites/all/themes/empleos/img/price-gold.png)top no-repeat;"></div>';
      print'<a href="#"><div class="btn" style="background:url(/sites/all/themes/empleos/img/btn-a-gold.gif) top  no-repeat;"></div></a>';
      print'</div>';
 	 //----------- Destacado--------
 	 print'<div class="aviso w660 left" style="background:url(/sites/all/themes/empleos/img/a-destacado-2.gif)top no-repeat;">';
-     print'<ul class="right" style=" margin-left:15px">';
-     print'<li class="blue" ><a class="blue" href="#">Publicaci&oacute;n en Home</a></li>';
-     print'<li class="blue" ><a class="blue" href="#">Publicaci&oacute;n en Home de &aacute;rea</a></li>';
+	 print'<div style="padding:5px 0 0 245px">';
+	 print'<ul class="a-links">';
+     print'<li class="blue"><a href="#">Publicaci&oacute;n en Home</a></li>';
+	 print'<li class="blue"><a href="#">Segundo en listado</a></li>';
      print'</ul>';
-	 print'<ul class="right" style=" margin-left:15px">';
-     print'<li class="blue"><a class="blue" href="#">2&deg; en listado</a></li>';
-     print'<li class="blue"><a class="blue" href="#">Publicaci&oacute;n con logo</a></li>';
+	 print'<ul class="a-links">';
+     print'<li class="blue"><a href="#">2 veces mas postulciones</a></li>';
+     print'<li class="blue"><a href="#">Visibilidad privilegiada</a></li>';
      print'</ul>';
+	 print'</div>';
      print'<div class="price" style="background:url(/sites/all/themes/empleos/img/price-destacado.png)top no-repeat;"></div>';
      print'<a href="#"><div class="btn" style="background:url(/sites/all/themes/empleos/img/btn-a-destacado.png) top  no-repeat;"></div></a>';
      print'</div>';
 	 //----------- Simple --------
 	 print'<div class="aviso w660 left" style="background:url(/sites/all/themes/empleos/img/a-simple-2.gif)top no-repeat;">';
-     print'<ul class="right" style=" margin-left:15px">';
-     print'<li class="grey"><a href="#">3&deg; en listado</a></li>';
-     print'</ul>';
-	 print'<ul class="right" style=" margin-left:15px">';
+     print'<div style="padding:5px 0 0 215px">';
+	 print'<ul class="a-links">';
+     print'<li class="grey"><a href="#">Publicaci&oacute;n destacada</a></li>';
 	 print'<li class="grey"><a href="#">Publicaci&oacute;n en Home</a></li>';
-     print'<li class="grey"><a href="#">Publicaci&oacute;n con logo</a></li>';
      print'</ul>';
+	 print'<ul class="a-links">';
+     print'<li class="grey"><a href="#">Tercero en listado</a></li>';
+     print'<li class="grey"><a href="#">Visibilidad garantizada</a></li>';
+     print'</ul>';
+	 print'</div>';
      print'<div class="price" style="background:url(/sites/all/themes/empleos/img/price-simple.png)top no-repeat;"></div>';
      print'<a href="#"><div class="btn" style="background:url(/sites/all/themes/empleos/img/btn-a-simple.png) top  no-repeat;"></div></a>';
      print'</div>';

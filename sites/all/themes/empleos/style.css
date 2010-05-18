@@ -1109,26 +1109,38 @@ div.aviso.w660 .btn{
 	top:152px;
 }
 /* cambios*/
-div.aviso.w660 ul li, div.aviso.w660 ul li a, div.aviso.w660 ul li a:hover {
-	font-weight:bold;
-	line-height:16px;
+ul.a-links {
 	background:none;
-	border:none;
+	border:0;
 	padding:0;
+	display:inline-block;
+	float:left;
+	max-width:140px;
+	margin-left:20px;
 }
-div.aviso.w660 ul li a{
-	display: list-item;
+ul.a-links li a, ul.a-links li a:hover{
+	display:block;
+	background:none;
+	border:0;
+	padding:0;
+	text-align:left;
 }
 /* finde cambios*/
 
 div.aviso ul li.orange{
-	list-style:inside url(/sites/all/themes/empleos/img/bullet_orange.gif);
+	list-style: url(/sites/all/themes/empleos/img/bullet_orange.gif);
+	border:0;
+	padding:0;
 }
 div.aviso ul li.blue{
-	list-style:inside url(/sites/all/themes/empleos/img/bullet_blue.gif);
+	list-style: url(/sites/all/themes/empleos/img/bullet_blue.gif);
+	border:0;
+	padding:0;
 }
 div.aviso ul li.grey{
-	list-style:inside url(/sites/all/themes/empleos/img/bullet_grey.gif);
+	list-style:url(/sites/all/themes/empleos/img/bullet_grey.gif);
+	border:0;
+	padding:0;
 }
 div.aviso ul li a:hover{
 	text-decoration:underline

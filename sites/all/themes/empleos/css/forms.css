@@ -183,10 +183,10 @@ input.req, select.req{border:1px solid #3399cc;
 	margin:0 0 10px 275px;
 	font:11px Tahoma;
 	}
-
 .mycv p a{
 	text-decoration:underline
 }
+
 label span.form-required{
 	color:#F96;	
 }
@@ -220,6 +220,11 @@ input.form-submit:hover{
 	text-decoration:none
 }
 
+.mycv fieldset.group-publicacion .date-clear-block{
+	display: inline-block;
+	padding:0;
+	margin:0
+}
 /*--*/
 .mycv #edit-field-fecha-desde-0-value-wrapper .form-item, .mycv #edit-field-fecha-hasta-0-value-wrapper .form-item {
 	padding:0;
@@ -227,12 +232,11 @@ input.form-submit:hover{
 	margin:0;
 	width:auto;
 }
-.mycv #edit-field-fecha-desde-0-value-wrapper .form-item input {
-	margin:0;
+.mycv #edit-field-fecha-desde-0-value-wrapper .form-item input,
+.mycv #edit-field-fecha-hasta-0-value-wrapper .form-item input{
+	margin:0 0 0 275px;
 }
-.mycv .container-inline-date .form-item{
-	margin:5px 0;
-}
+
 /*--*/
 div.falselabel{
 	width:250px;
