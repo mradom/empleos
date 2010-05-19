@@ -54,9 +54,9 @@ print '<div  class="content_grl content-profile">';
 					print '<div class="nav"><h2>Postulaciones:</h2></div>';
 					print '<table class="tablaGris" border="0" cellpadding="0" cellspacing="1"> ';
 				    print '<tbody><tr>';
-				          print '<td class="techo" width="70%">Aviso</TD>';
-				          print '<td class="techo" width="23%">Fecha</TD>';
-				          print '<td class="techo" width="7%">&nbsp;</TD>'; 
+				          print '<td class="techo" width="58%">Aviso</TD>';
+				          print '<td class="techo" width="32%">Fecha</TD>';
+				          print '<td class="techo" width="10%">&nbsp;</TD>'; 
 				    print '</tr>'; 
 					while($fila = mysql_fetch_object($rs)){
 						$nodo = node_load($fila->nid);
@@ -89,9 +89,9 @@ print '<div  class="content_grl content-profile">';
 					print '<div class="nav"><h2>Favoritos:</h2></div>';
 					print '<table class="tablaGris" border="0" cellpadding="0" cellspacing="1">';
 				    print '<tbody><tr>';
-				          print '<td class="techo" width="70%">Aviso</td>';
-				          print '<td class="techo" width="23%">Fecha</td>';
-				          print '<td class="techo" width="7%">&nbsp;</td>'; 
+				          print '<td class="techo" width="58%">Aviso</td>';
+				          print '<td class="techo" width="32%">Fecha</td>';
+				          print '<td class="techo" width="10%">&nbsp;</td>'; 
 				    print '</tr>'; 
 					while($fila = mysql_fetch_object($rs)){
 						$nodo = node_load($fila->nid);
@@ -127,8 +127,8 @@ print '<div  class="content_grl content-profile">';
 					print '<div class="nav"><h2>&Uacute;ltimos postulados:</h2></div>';
 					print '<table class="tablaGris" border="0" cellpadding="0" cellspacing="1"> ';
 				    print '<tbody><tr>';
-				          print '<td class="techo" width="70%">Persona</TD>';
-				          print '<td class="techo" width="20%">Fecha</TD>';
+				          print '<td class="techo" width="58%">Persona</TD>';
+				          print '<td class="techo" width="32%">Fecha</TD>';
 				          print '<td class="techo" width="10%">&nbsp;</TD>'; 
 				    print '</tr>'; 
 					while($fila = mysql_fetch_object($rs)){
