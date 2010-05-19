@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language ?>" lang="<?php print $language ?>">
 <?php include("include/head.php");?>
 <?php include("include/varios.php");?>
@@ -23,8 +23,8 @@
 	    $("#content_preview").remove();
 	    $("#fragment-5").html($("#fragment-5").html() + '<input type="submit" name="op" id="edit-submit" value="Enviar"  class="form-submit" />')
 	    $("#tabs").tabs();
-	    $("#edit-field-fecha-desde-0-value-date").datepicker({dateFormat: "d/mm/yy", });
-	    $("#edit-field-fecha-hasta-0-value-date").datepicker({dateFormat: "d/mm/yy", });
+	    $("#edit-field-fecha-desde-0-value-date").datepicker({dateFormat: "d/mm/yy"});
+	    $("#edit-field-fecha-hasta-0-value-date").datepicker({dateFormat: "d/mm/yy"});
 	    $("#edit-field-visitas-0-value-wrapper").remove();
 	  });
 
