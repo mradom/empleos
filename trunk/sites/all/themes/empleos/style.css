@@ -599,7 +599,7 @@ ul.brands li.side {
 	width:275px;
 }
 ul.brands li.side a{
-	line-height:38px;
+	line-height:18px;
 }
 ul.brands li.last {
 	border-bottom:none
@@ -1077,7 +1077,7 @@ div.aviso{
 	padding:0 10px;
 	position:relative;
 }
-	div.aviso.w660{
+div.aviso.w660{
 	width:660px;
 	height:200px;
 	}
@@ -1236,12 +1236,13 @@ div.status {
 }
 
 .pager {
-  padding:0
+  padding:0;
 }
 
 .pager div {
   padding:0em;
   display:inline;
+  
 }
 
 .pager strong,
@@ -1252,6 +1253,7 @@ div.status {
   background-color:#fff;
   border:1px solid #3077a4;
   font-weight: bold;
+  
 }
 
 div#page .pager a:hover {

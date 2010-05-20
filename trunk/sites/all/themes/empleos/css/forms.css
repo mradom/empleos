@@ -1,7 +1,6 @@
 @charset "utf-8";
 /* CSS Document */ 
 
-
 /*---------------forms------------------*/
 #browser .content_form {
 	width:250px;
@@ -46,9 +45,9 @@ select, input{
 }
 .mycv input.btn_gral{
 	margin:10px 10px 10px 0; 
-	padding:0 15px 3px 15px;
+	padding:0 15px 3px 15px;	
 }
-/*------------forms--------------*/
+/*-------------forms--------------*/
 
 div.mycv{
 	width:680px;
@@ -127,23 +126,22 @@ input.req, select.req{border:1px solid #3399cc;
 .mycv .form-item label {/*----igual a las class .item .req---*/
 	text-align:right;
 	width:250px;
-	margin-right:20px;
+	margin-right:15px;
 	font-weight:bold;
 	color:#1C77A8;
 	display:inline-block;
-	/*margin-bottom:10px;*/
 	font:bold 11px/14px Tahoma, Geneva, sans-serif;
 }
 .mycv .resizable-textarea .grippie{
-	margin:0 0 0 273px;
-	/*margin-bottom:10px;*/
+	margin:0 0 0 268px;
+	*margin:0 0 0 265px;
 }
 .mycv .form-item .form-radios, .mycv textarea{
-    max-width:350px;
+    max-width:348px;
 }
 .mycv .form-item label.option, .mycv textarea {
-	margin:0 0 0 273px;
-	/*margin-bottom:10px;*/
+	margin:0 0 0 268px;
+	*margin:0 0 0 265px;
 }
 .mycv .imagefield-edit-image-flags .form-item label.option{
 	margin:0
@@ -159,13 +157,15 @@ input.req, select.req{border:1px solid #3399cc;
 .mycv .form-item .container-inline{
 	color:#CCAAAA;
     width:360px;
-    margin-left:273px;
+	margin-left:273px;
+    *margin-left:270px;
 	margin-bottom:10px;
 }
 .mycv .form-item .container-inline .form-select{
-    width:360px;
+    width:auto;
     margin-bottom:5px;
 }
+
 .mycv .form-item select {
 	width:360px;
 	size:60px;
@@ -180,7 +180,8 @@ input.req, select.req{border:1px solid #3399cc;
 .mycv .form-item .description, .mycv ul.tips, .mycv p{
 	color:#999;
 	max-width:360px;
-	margin:0 0 10px 275px;
+	margin:0 0 10px 268px;
+	*margin:0 0 10px 265px;
 	font:11px Tahoma;
 	}
 .mycv p a{
@@ -188,7 +189,7 @@ input.req, select.req{border:1px solid #3399cc;
 }
 
 label span.form-required{
-	color:#F96;	
+	color:#F96;
 }
 .mycv fieldset legend{
 	width:600px;
@@ -204,8 +205,7 @@ input.form-submit{
 	font-weight:bold;
 	cursor:pointer;
 	margin:10px 0 10px 0;
-	display:inline;
-	
+	display:inline;	
 }
 input.form-submit:hover{
 	background: url(../img/bg_btn_orange_hover.png) repeat-x;
@@ -234,7 +234,8 @@ input.form-submit:hover{
 }
 .mycv #edit-field-fecha-desde-0-value-wrapper .form-item input,
 .mycv #edit-field-fecha-hasta-0-value-wrapper .form-item input{
-	margin:0 0 0 275px;
+	margin:0 0 0 268px;
+	*margin:0 0 0 265px;
 }
 
 /*--*/

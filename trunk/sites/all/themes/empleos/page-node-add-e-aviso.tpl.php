@@ -89,8 +89,9 @@
       <?php
 	  //-------------------TIPOS DE AVISOS
   	 print'<div class="left" id="content_preview">';
+ 
      //----------- Gold --------
-     print'<div class="aviso w660 left" style="background:url(/sites/all/themes/empleos/img/a-gold-2.png)top no-repeat;">';
+     print'<div class="aviso w660 left" style="background: url(/sites/all/themes/empleos/img/a-gold-2.png)top no-repeat;">';
 	 print'<div style="padding:5px 0 0 185px">';
 	 print'<ul class="a-links">';
      print'<li class="orange"><a href="#">Publicaci&oacute;n en Home</a></li>';
@@ -138,7 +139,7 @@
      print'<a href="#"><div class="btn" style="background:url(/sites/all/themes/empleos/img/btn-a-simple.png) top  no-repeat;"></div></a>';
      print'</div>';
 	 //----------- Gratis --------
-	 print'<div class="aviso w660 left" style="background:url(/sites/all/themes/empleos/img/a-gratis-2.gif)top no-repeat;">';
+	 print'<div class="aviso w660 left" style="background:url(/sites/all/themes/empleos/img/a-gratis-2.gif)top no-repeat; height:160px">';
      print'<div class="price" style="background:url(/sites/all/themes/empleos/img/price-gratis.png)top no-repeat;"></div>';
      print'<a href="#"><div class="btn" style="background:url(/sites/all/themes/empleos/img/btn-a-gratis.png) no-repeat; top:110px"></div></a>';
      print'</div>';

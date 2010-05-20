@@ -83,8 +83,8 @@ if($_REQUEST['busqueda'] == "avanzada"){
 ?>
 <!-- Poner aca camino de links -->
 	  <div style="float: left;">
-      <UL class="tags">
-        <li><H1><A href="/buscar">Buscar</A></H1></LI>
+      <ul class="tags">
+        <li><h1><A href="/buscar">Buscar</A></h1></li>
         <?php  	if(isset($rubro) and $rubro != "0"){
         			$rs2 = db_query("SELECT * FROM term_data WHERE tid = $rubro");
         			$rub = db_fetch_object($rs2);
@@ -98,7 +98,7 @@ if($_REQUEST['busqueda'] == "avanzada"){
                 if(isset($key) and $key != "0") echo '<li><h1><a href="/buscar/'.$key.'">'.$key.'</a></h1></li>';
 				//echo '<li>['.$nodes_per_page.']</li>';
 			?>
-      </UL>
+      </ul>
       </div>
 <!-- LISTA DE RESULTADOS -->
 	  <div class="box central" style="background:none">
@@ -109,7 +109,7 @@ if($_REQUEST['busqueda'] == "avanzada"){
           		<div class="rss">
           			<A href="#">RSS</A>
           		</div>
-          		<P>Se econtraron <SPAN class="orange"><?php echo $pager_total_items[0];?> ofertas de trabajo:</SPAN> en el &aacute;rea: <SPAN class="orange"> GERENCIA GENERAL</SPAN></P>
+          		<P>Se econtraron <span class="orange"><?php echo $pager_total_items[0];?> ofertas de trabajo:</span> en el &aacute;rea: <span class="orange"> GERENCIA GENERAL</span></p>
 			</div>
        <!-- Gold results -->
        <?php 
@@ -378,7 +378,7 @@ if($_REQUEST['busqueda'] == "avanzada"){
 						  print '</div>';
 						  print '</div>';
 						print '</div>';						  
-						print '<!-- fin free -->';
+						//print '<!-- fin free -->';
 		          		}
 				 //print '[[[['.$ren.']]]]]]';		
 				 if ((($banners_per_page == 1) and ($ren==5)) or 
@@ -406,6 +406,6 @@ if($_REQUEST['busqueda'] == "avanzada"){
         	} else {
         		print '<div><p>No se encontraron resultados de acuerdo a su criterio de b&uacute;squeda.</p><p>Por favor intente con otro criterio.</p></div>';
         	}
-		print '<div style="float: right; ">'.theme('pager', NULL, $nodes_per_page).'</div>';	
+		print '<div style="float: right;">'.theme('pager', NULL, $nodes_per_page).'</div>';
+		print '<div class="clr">&nbsp;</div>';	
         ?>
-</div><!-- fin listado -->
