@@ -2,9 +2,9 @@
 <div id="Footer">
 	<div class="right" style=" width:200px;">
 	<div class="logos right">
-    <a title="Rss" href="#" target="_blank"><img src="/sites/all/themes/empleos/img/rss-ico.gif" width="23" height="22" /></a>
-    <a title="Facebook" target="_blank" href="#"><img src="/sites/all/themes/empleos/img/face-ico.gif" width="23" height="22" /></a>
-    <a title="Tweeter" target="_blank" href="#"><img src="/sites/all/themes/empleos/img/tweet-ico.gif" width="23" height="22" /></a>
+    <!--<a title="Rss" href="#" target="_blank"><img src="/sites/all/themes/empleos/img/rss-ico.gif" width="23" height="22" /></a>-->
+    <a title="Facebook" target="_blank" href="http://www.facebook.com/share.php?u=http://empleos.lavoz.com.ar"><img src="/sites/all/themes/empleos/img/face-ico.gif" width="23" height="22" /></a>
+    <a title="Tweeter" target="_blank" href="http://twitter.com/home?status=Leyendo%20http://empleos.lavoz.com.ar"><img src="/sites/all/themes/empleos/img/tweet-ico.gif" width="23" height="22" /></a>
     </div>
     <a href="/user/register/persona"><div class="btn"></div></a>
     </div>

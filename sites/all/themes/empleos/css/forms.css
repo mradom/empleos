@@ -225,7 +225,15 @@ input.form-submit:hover{
 	padding:0;
 	margin:0
 }
-/*--*/
+/*-date-*/
+.mycv div.form-item #edit-field-fecha-desde-0-value-date-wrapper,
+.mycv div.form-item #edit-field-fecha-hasta-0-value-date-wrapper{
+	float:left;
+}
+.mycv div.form-item #edit-field-fecha-desde-0-value-date-wrapper .description,
+.mycv div.form-item #edit-field-fecha-hasta-0-value-date-wrapper .description{
+	margin:0 0 0 268px;
+}
 .mycv #edit-field-fecha-desde-0-value-wrapper .form-item, .mycv #edit-field-fecha-hasta-0-value-wrapper .form-item {
 	padding:0;
 	float:right;
@@ -235,7 +243,6 @@ input.form-submit:hover{
 .mycv #edit-field-fecha-desde-0-value-wrapper .form-item input,
 .mycv #edit-field-fecha-hasta-0-value-wrapper .form-item input{
 	margin:0 0 0 268px;
-	*margin:0 0 0 265px;
 }
 
 /*--*/
