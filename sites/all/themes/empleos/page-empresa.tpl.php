@@ -357,16 +357,15 @@ $sql = $base_query.$inner_join.$where;
 		}
 		 // aca cierro el div del tipo de aviso
 		 print '</div>';
-		
-	
-		
+				
 	} else {
 		print '<div><p>No se encontraron avisos en este rubro.</p></div>';
 	}
 	    //if ($paso==1) { print '</div>'; $otro=0;} 
-		print '<div style="float: right; ">'.theme('pager', NULL, $nodes_per_page).'</div>';	
+		print '<div class="right">'.theme('pager', NULL, $nodes_per_page).'</div>';	
+		print '<div class="clr">&nbsp;</div>';	
      
-    print '</div>'; 
+   // print '</div>'; 
 }
 ?>
 

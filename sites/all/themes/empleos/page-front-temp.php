@@ -51,7 +51,7 @@
 					}
  
 				  ?>
-                  <div class="arrow" style="clear: both;"><a href="/buscar">Ver m&aacute;s</a></div>
+                  <div class="arrow"><a href="/buscar">Ver m&aacute;s</a></div>
                   <div class="pub15 coment " style="width:auto;	float:left;"><?php print Variable_get('empresas_recientes',1);?>  avisos publicados en los ultimos 15 dias.</div>
                 </div>
               </div>
@@ -59,8 +59,6 @@
           </div>
         <script type="text/javascript" src="/sites/all/themes/empleos/js/tabs.js"></script>
         </div>
-
-
 
 
         <!-- Banner meddle -->
