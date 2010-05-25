@@ -78,7 +78,7 @@
     <!-- ini central -->
     <div id="central_column">
           <?php
-		      //print "[".arg(0)."]-[".arg(1)."]-[".arg(2)."]=[".$user->uid."]<br>";
+		      //print "[".arg(0)."]-[".arg(1)."]-[".arg(2)."]=[".$user->uid."]<br />";
 			  If (arg(1)=='password') print $content; 
               If (!$user->uid and arg(1)<>'password' and arg(1) <>'register') include ('user-login.php');
 			  If (arg(1)=='register' and arg(2)=='persona'  ) print '<div>'.$content.'</div><br />'; 

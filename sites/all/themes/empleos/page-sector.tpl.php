@@ -221,7 +221,7 @@ $sql = $base_query.$inner_join.$where;
 					 print $nodo->taxonomy[$sector]->tid;
 					 print '">'.$nodo->taxonomy[$sector]->name.'</a> | <a href="/provincia/';
 					 print $nodo->taxonomy[$localidad]->tid;
-					 print '">'.$nodo->taxonomy[$localidad]->name.'</a><br>'; 
+					 print '">'.$nodo->taxonomy[$localidad]->name.'</a><br />'; 
 					 print '</p>';
 					// texto hasta 215 caracteres
 					print '<p>';
@@ -263,7 +263,7 @@ $sql = $base_query.$inner_join.$where;
 					 print $nodo->taxonomy[$sector]->tid;
 					 print '">'.$nodo->taxonomy[$sector]->name.'</a> | <a href="/provincia/';
 					 print $nodo->taxonomy[$localidad]->tid;
-					 print '">'.$nodo->taxonomy[$localidad]->name.'</a><BR>'; 
+					 print '">'.$nodo->taxonomy[$localidad]->name.'</a><br />'; 
 					 print '</p>';
 					// texto hasta 215 caracteres
 					print '<p>';

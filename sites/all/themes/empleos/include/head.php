@@ -9,12 +9,12 @@
 <!-- styles  --> 	
 <?php print $styles ?>
 <!-- fin auto styles -->
-<link rel="stylesheet" type="text/css" href="/sites/all/themes/empleos/css/forms.css">
-<link rel="stylesheet" type="text/css" href="/sites/all/themes/empleos/css/tabs.css">
-<link rel="stylesheet" type="text/css" href="/sites/all/themes/empleos/css/IN-noticias.css">
-<link rel="stylesheet" type="text/css" href="/sites/all/themes/empleos/css/ui.all.css">
-<link rel="stylesheet" type="text/css" href="/sites/all/themes/empleos/css/notas.css">
-<link rel="stylesheet" type="text/css" href="/sites/all/themes/empleos/css/fade.css">
+<link rel="stylesheet" type="text/css" href="/sites/all/themes/empleos/css/forms.css" />
+<link rel="stylesheet" type="text/css" href="/sites/all/themes/empleos/css/tabs.css" />
+<link rel="stylesheet" type="text/css" href="/sites/all/themes/empleos/css/IN-noticias.css" />
+<link rel="stylesheet" type="text/css" href="/sites/all/themes/empleos/css/ui.all.css" />
+<link rel="stylesheet" type="text/css" href="/sites/all/themes/empleos/css/notas.css" />
+<link rel="stylesheet" type="text/css" href="/sites/all/themes/empleos/css/fade.css" />
 <script type="text/javascript" src="/sites/all/modules/jquery_update/compat.js"></script>
 <script type="text/javascript" src="/sites/all/themes/empleos/js/jquery.innerfade.js"></script>
 <script type="text/javascript" src="/sites/all/themes/empleos/js/jquery.innerfade.page.js"></script>

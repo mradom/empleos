@@ -7,8 +7,8 @@
 	</div>
 	<div style="clear: both;"></div>
 	<div class="content_form">
-	  <form action="/buscar" method="POST" id="buscador">
-		<input class="home" style="padding: 0.2em; width: 250px;" name="key" value="Buscar por palabras clave" type="text" onFocus="if(this.value=='Buscar por palabras clave')this.value='';">
+	  <form action="/buscar" method="post" id="buscador">
+		<input class="home" style="padding: 0.2em; width: 250px;" name="key" value="Buscar por palabras clave" type="text" onfocus="if(this.value=='Buscar por palabras clave')this.value='';" />
 		<select name="rubro" class="home">
 		<option value="0" selected="selected">&Aacute;rea / Rubro</option>
 			<?php 
@@ -27,7 +27,7 @@
 				}
 			?>
 		</select>
-		<input name="buscar" class="btn_gral" style="margin-top:3px; padding:3px 15px 3px 15px;" value="Buscar Ahora" alt="Buscar" type="submit" dir="ltr">
+		<input name="buscar" class="btn_gral" style="margin-top:3px; padding:3px 15px 3px 15px;" value="Buscar Ahora" alt="Buscar" type="submit" dir="ltr" />
 	  </form>
 	  <div class="btn_busquedaA"><a href="/avanzada">B&uacute;squeda avanzada</a></div>
 	</div>

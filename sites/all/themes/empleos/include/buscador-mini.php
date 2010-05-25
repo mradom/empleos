@@ -6,7 +6,7 @@
         <div class="widget">
           <div class="widget_style">
             <div class="content_form">
-              <form class="nueva_busqueda" action="/buscar" method="POST" id="buscador">
+              <form class="nueva_busqueda" action="/buscar" method="post" id="buscador">
                 <input style=" padding:.2em; margin-left:15px" name="key" type="text" value="Buscar por palabras clave" onFocus="if(this.value=='Buscar por palabras clave')this.value='';" >
                 <select  name="rubro" class="select" >
 

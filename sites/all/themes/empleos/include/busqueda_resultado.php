@@ -137,7 +137,7 @@ if($_REQUEST['busqueda'] == "avanzada"){
 					    case 4:
         			        //if ( ($otro==1) and ($tipo <> 3) ) { print '</div><!-- fin tipo -->'; $otro=0; } 						
 						    if($gold == "0"){
-					        	echo "<div id='gold'><div id='titles_bar'><img src='sites/all/themes/empleos/img/gold.gif'>Avisos Gold</div>";
+					        	echo "<div id='gold'><div id='titles_bar'><img src='sites/all/themes/empleos/img/gold.gif' />Avisos Gold</div>";
 					        	$otro = 1;	
 					        	$gold = 1;
 								$tipo = 3;
@@ -148,7 +148,7 @@ if($_REQUEST['busqueda'] == "avanzada"){
 					    case 3:
         			        //if ( ($otro==1) and ($tipo <> 4) ) { print '</div><!-- fin tipo -->'; $otro=0; } 												
 					        if($destacado == "0"){
-					        	echo "<div id='destacado'><div id='titles_bar'><img src='sites/all/themes/empleos/img/destacado.gif'>Avisos Destacados</div>";
+					        	echo "<div id='destacado'><div id='titles_bar'><img src='sites/all/themes/empleos/img/destacado.gif' />Avisos Destacados</div>";
 					        	$destacado = 1;
 					        	$otro = 1;
 								$tipo = 4;
@@ -159,7 +159,7 @@ if($_REQUEST['busqueda'] == "avanzada"){
 					    case 2:
         			        //if ( ($otro==1) and ($tipo <> 5) ) { print '</div><!-- fin tipo -->'; $otro=0; } 												
 					        if($simple == "0"){
-					        	echo "<div id='simple'><div id='titles_bar'><img src='sites/all/themes/empleos/img/simple.gif'>Avisos Simples</div>";
+					        	echo "<div id='simple'><div id='titles_bar'><img src='sites/all/themes/empleos/img/simple.gif' />Avisos Simples</div>";
 					        	$simple = 1;
 					        	$otro = 1;
 								$tipo = 5;								
@@ -222,7 +222,7 @@ if($_REQUEST['busqueda'] == "avanzada"){
 							print l($nodo->taxonomy[$sector]->name, 'taxonomy/term/'.$nodo->taxonomy[$sector]->tid);
 							print ' | ';
 							print l($nodo->taxonomy[$localidad]->name,'taxonomy/term/'.$nodo->taxonomy[$localidad]->tid);
-							print '<br>'; 
+							print '<br />'; 
 							print '</p>';
 							// texto hasta 215 caracteres
 							print '<p>';
@@ -278,7 +278,7 @@ if($_REQUEST['busqueda'] == "avanzada"){
 							print l($nodo->taxonomy[$sector]->name, 'taxonomy/term/'.$nodo->taxonomy[$sector]->tid);
 							print ' | ';
 							print l($nodo->taxonomy[$localidad]->name,'taxonomy/term/'.$nodo->taxonomy[$localidad]->tid);
-							print '<br>'; 
+							print '<br />'; 
 							print '</p>';
 							// texto hasta 215 caracteres
 							print '<p>';
@@ -322,7 +322,7 @@ if($_REQUEST['busqueda'] == "avanzada"){
 							 print $nodo->taxonomy[$sector]->tid;
 							 print '">'.$nodo->taxonomy[$sector]->name.'</a> | <a href="/provincia/';
 							 print $nodo->taxonomy[$localidad]->tid;
-							 print '">'.$nodo->taxonomy[$localidad]->name.'</a><BR>'; 
+							 print '">'.$nodo->taxonomy[$localidad]->name.'</a><br />'; 
 							 print '</p>';
 							// texto hasta 215 caracteres
 							print '<p>';

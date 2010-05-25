@@ -39,12 +39,12 @@
 					  print '</div>';
 					  
 					  print '<div class="datos">';
-					  print '<a class="brands" href="/empresa/'.$fila->uid.'" >'.$empresa->name.'</a><br>';
+					  print '<a class="brands" href="/empresa/'.$fila->uid.'" >'.$empresa->name.'</a><br />';
 					  print $empresa->mail;
 					  print '</div>';
 					  
 					  print '<div class="lnk">';
-					  print '<a class="grey" href="/empresa/'.$fila->uid.'">ver DATOS de la consultora</a><br>';
+					  print '<a class="grey" href="/empresa/'.$fila->uid.'">ver DATOS de la consultora</a><br />';
 					  print '<a href="/empresa/'.$fila->uid.'/avisos">ver AVISOS de la consultora</a></div>';
                       print '</li>';
                   }
@@ -76,17 +76,17 @@ function empresa_buscar() {
   
   $result = db_query('SELECT f.name, f.type, v.value FROM {profile_fields} f INNER JOIN {profile_values} v ON f.fid = v.fid WHERE uid = %d', arg(1));
   while ($field = db_fetch_object($result)) {
-	//print '['.$field->name.']='.$field->value.'<br>';
+	//print '['.$field->name.']='.$field->value.'<br />';
     if (empty($emp->{$field->name})) {
       $emp->{$field->name} = _profile_field_serialize($field->type) ? unserialize($field->value) : $field->value;
     }
   }
-  print '<br><br><br><br><br><br><br>';
-  print 'Nombre: '.$emp->profile_empresa_empresa_nombre.'<br>';
+  print '<br /><br /><br /><br /><br /><br /><br />';
+  print 'Nombre: '.$emp->profile_empresa_empresa_nombre.'<br />';
   
-  print '<a href="/empresa/'.arg(1).'/avisos">Listado de avisos</a><br>';
+  print '<a href="/empresa/'.arg(1).'/avisos">Listado de avisos</a><br />';
 
-  print '<br><a href="/empresa">Volver</a>';
+  print '<br /><a href="/empresa">Volver</a>';
 
 }
 
@@ -244,7 +244,7 @@ $sql = $base_query.$inner_join.$where;
 					 print $nodo->taxonomy[$sector]->tid;
 					 print '">'.$nodo->taxonomy[$sector]->name.'</a> | <a href="/taxonomy/term/';
 					 print $nodo->taxonomy[$localidad]->tid;
-					 print '">'.$nodo->taxonomy[$localidad]->name.'</a><br>'; 
+					 print '">'.$nodo->taxonomy[$localidad]->name.'</a><br />'; 
 					 print '</p>';
 					// texto hasta 215 caracteres
 					print '<p>';
@@ -282,7 +282,7 @@ $sql = $base_query.$inner_join.$where;
 					 print $nodo->taxonomy[$sector]->tid;
 					 print '">'.$nodo->taxonomy[$sector]->name.'</a> | <a href="/taxonomy/term/';
 					 print $nodo->taxonomy[$localidad]->tid;
-					 print '">'.$nodo->taxonomy[$localidad]->name.'</a><BR>'; 
+					 print '">'.$nodo->taxonomy[$localidad]->name.'</a><br />'; 
 					 print '</p>';
 					// texto hasta 215 caracteres
 					print '<p>';

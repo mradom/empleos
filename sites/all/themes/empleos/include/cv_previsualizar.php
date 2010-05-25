@@ -42,12 +42,12 @@ global $user_profile;
             print ' <li><span class="blue">Sexo: </span>'.$usuario->profile_empl_sexo.'</li>';
             print ' <li><span class="blue">Fecha de Nacimiento: </span>'.$usuario->profile_empl_fecha_nacimiento['day'].'/'.$usuario->profile_empl_fecha_nacimiento['month'].'/'.$usuario->profile_empl_fecha_nacimiento['year'].'</li>';
             print ' <li><span class="blue">Estado Civil: </span>'.$usuario->profile_empl_estado_civil.'</li>';
-            print '&nbsp;<br>';
+            print '&nbsp;<br />';
             print ' <li><span class="blue">Tipo de Documento: </span> '.$usuario->profile_tipo_doc.'</li>';
             print ' <li><span class="blue">N&uacute;mero de Documento: </span>'.$usuario->profile_empl_num_doc.'</li>';
             print ' <li><span class="blue">Direci&oacute;n: </span>'.$usuario->profile_empl_calle.' '.$usuario->profile_empl_dir_numero.', '.$usuario->profile_empl_dir_piso.' '.$usuario->profile_empl_dir_dpto.'</li>';
             print ' <li><span class="blue">C&oacute;digo Postal: </span>'.$usuario->profile_empl_cp.'</li>';
-            print '&nbsp;<br>';
+            print '&nbsp;<br />';
             print ' <li><span class="blue">Provincia: </span>'.$usuario->profile_empl_provincia.'</li>';
             print ' <li><span class="blue">Telelefo: </span>';
 			
@@ -440,5 +440,5 @@ global $user_profile;
 			print '$.get("/empleos/stat/cv/'.$usuario->uid.'/'.$user->uid.'", function(x) { });';
 			print '});</script>';
 		?>				
-			<br>&nbsp;<br>&nbsp;<br>&nbsp;
+			<br />&nbsp;<br />&nbsp;<br />&nbsp;
             

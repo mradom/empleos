@@ -16,23 +16,23 @@ global $user_profile;
   			//print_r($usuario);
   			//print '</pre>';
 
-  			Print '&nbsp;<br>&nbsp;<br><h3><a href="/user/me/edit/Empleado">Datos Personales</a></h3><br>';
+  			Print '&nbsp;<br />&nbsp;<br /><h3><a href="/user/me/edit/Empleado">Datos Personales</a></h3><br />';
   			
-  			print 'Apellido: '.$usuario->profile_empl_apellido.'<br>';
-  			print 'Nombre  : '.$usuario->profile_empl_nombre  .'<br>';
-  			print 'Sexo    : '.$usuario->profile_empl_sexo    .'<br>';
-  			print 'Fecha de Nacimiento: '.$usuario->profile_empl_fecha_nacimiento['day'].'/'.$usuario->profile_empl_fecha_nacimiento['month'].'/'.$usuario->profile_empl_fecha_nacimiento['year'].'<br>';
-  			print 'Estado Civil: '.$usuario->profile_empl_estado_civil.'<br>';
+  			print 'Apellido: '.$usuario->profile_empl_apellido.'<br />';
+  			print 'Nombre  : '.$usuario->profile_empl_nombre  .'<br />';
+  			print 'Sexo    : '.$usuario->profile_empl_sexo    .'<br />';
+  			print 'Fecha de Nacimiento: '.$usuario->profile_empl_fecha_nacimiento['day'].'/'.$usuario->profile_empl_fecha_nacimiento['month'].'/'.$usuario->profile_empl_fecha_nacimiento['year'].'<br />';
+  			print 'Estado Civil: '.$usuario->profile_empl_estado_civil.'<br />';
   			
-  			print '&nbsp;<br>';
+  			print '&nbsp;<br />';
   			
-  			print 'Tipo de Documento: '.$usuario->profile_tipo_doc.'<br>';
-  			print 'N&uacute;mero de Documento: '.$usuario->profile_empl_num_doc.'<br>';
-  			print 'Direci&oacute;n: '.$usuario->profile_empl_calle.' '.$usuario->profile_empl_dir_numero.', '.$usuario->profile_empl_dir_piso.' '.$usuario->profile_empl_dir_dpto.'<br>';
-  			print 'C&oacute;digo Postal: '.$usuario->profile_empl_cp.'<br>';
-  			print 'Provincia: '.$usuario->profile_empl_provincia.'<br>';
-  			print 'Telefono: '.$usuario->profile_empl_telefono.'<br>';
-  			print 'Telefono Alternativo: '.$usuario->profile_empl_tel_alternativo.'<br>';
+  			print 'Tipo de Documento: '.$usuario->profile_tipo_doc.'<br />';
+  			print 'N&uacute;mero de Documento: '.$usuario->profile_empl_num_doc.'<br />';
+  			print 'Direci&oacute;n: '.$usuario->profile_empl_calle.' '.$usuario->profile_empl_dir_numero.', '.$usuario->profile_empl_dir_piso.' '.$usuario->profile_empl_dir_dpto.'<br />';
+  			print 'C&oacute;digo Postal: '.$usuario->profile_empl_cp.'<br />';
+  			print 'Provincia: '.$usuario->profile_empl_provincia.'<br />';
+  			print 'Telefono: '.$usuario->profile_empl_telefono.'<br />';
+  			print 'Telefono Alternativo: '.$usuario->profile_empl_tel_alternativo.'<br />';
   			
  
   			
@@ -42,7 +42,7 @@ global $user_profile;
   			// Educacion --------------------------------------------------------------------------------------------
   			$view = views_get_view('mis_educacion');
 			$vista = views_build_view('items', $view, false, false);
-			Print '&nbsp;<br>&nbsp;<br><h3><a href="//node/add/p-educacion">Educacion</a></h3><br>';
+			Print '&nbsp;<br />&nbsp;<br /><h3><a href="//node/add/p-educacion">Educacion</a></h3><br />';
 			?>
 			<TABLE class="tablaGris" border="0" cellpadding="0" cellspacing="1">
 				<TBODY>
@@ -112,7 +112,7 @@ global $user_profile;
   			// Cursos --------------------------------------------------------------------------------------------
 			$view = views_get_view('mis_cursos');
 			$vista = views_build_view('items', $view, false, false);
-			Print '&nbsp;<br>&nbsp;<br><h3><a href="//node/add/p-cursos">Cursos</a></h3><br>';
+			Print '&nbsp;<br />&nbsp;<br /><h3><a href="//node/add/p-cursos">Cursos</a></h3><br />';
 			?>
 				<TABLE class="tablaGris" border="0" cellpadding="0" cellspacing="1"> 
 				      <TBODY> 
@@ -144,7 +144,7 @@ global $user_profile;
 			// Idiomas ------------------------------------------------------------------------------------------
 			$view = views_get_view('mis_idiomas');
 			$vista = views_build_view('items', $view, false, false);
-			Print '&nbsp;<br>&nbsp;<br><h3><a href="//node/add/p-idiomas">idiomas</a></h3><br>';
+			Print '&nbsp;<br />&nbsp;<br /><h3><a href="//node/add/p-idiomas">idiomas</a></h3><br />';
 			?>
 				<TABLE class="tablaGris" border="0" cellpadding="0" cellspacing="1"> 
 				      <TBODY> 
@@ -184,7 +184,7 @@ global $user_profile;
 			// Informatica ------------------------------------------------------------------------------------------
 			$view = views_get_view('mis_informatica');
 			$vista = views_build_view('items', $view, false, false);
-			Print '&nbsp;<br>&nbsp;<br><h3><a href="//node/add/p-informatica">Informatica</a></h3><br>';
+			Print '&nbsp;<br />&nbsp;<br /><h3><a href="//node/add/p-informatica">Informatica</a></h3><br />';
 			?>
 				<TABLE class="tablaGris" border="0" cellpadding="0" cellspacing="1"> 
 				      <TBODY> 
@@ -218,7 +218,7 @@ global $user_profile;
 			// Otros Conocimientos ------------------------------------------------------------------------------------------			
 			$view = views_get_view('mis_otros_conocimientos');
 			$vista = views_build_view('items', $view, false, false);
-			Print '&nbsp;<br>&nbsp;<br><h3><a href="//node/add/p-otros-conocimientos">Otros Conocimientos</a></h3><br>';
+			Print '&nbsp;<br />&nbsp;<br /><h3><a href="//node/add/p-otros-conocimientos">Otros Conocimientos</a></h3><br />';
 			?>
 				<TABLE class="tablaGris" border="0" cellpadding="0" cellspacing="1"> 
 				      <TBODY> 
@@ -245,7 +245,7 @@ global $user_profile;
 			// Experiencia Laboral ------------------------------------------------------------------------------------------
 			$view = views_get_view('mis_experiencia_laboral');
 			$vista = views_build_view('items', $view, false, false);
-			Print '&nbsp;<br>&nbsp;<br><h3><a href="//node/add/p-experiencia-laboral">Experiencia Laboral</a></h3><br>';
+			Print '&nbsp;<br />&nbsp;<br /><h3><a href="//node/add/p-experiencia-laboral">Experiencia Laboral</a></h3><br />';
 			?>
 				<TABLE class="tablaGris" border="0" cellpadding="0" cellspacing="1"> 
 				      <TBODY> 
@@ -302,7 +302,7 @@ global $user_profile;
 			// Referencia Laboral ------------------------------------------------------------------------------------------			
 			$view = views_get_view('mis_referencia_laboral');
 			$vista = views_build_view('items', $view, false, false);
-			Print '&nbsp;<br>&nbsp;<br><h3><a href="//node/add/p-referencia">Referencia Laboral</a></h3><br>';
+			Print '&nbsp;<br />&nbsp;<br /><h3><a href="//node/add/p-referencia">Referencia Laboral</a></h3><br />';
 			?>
 				<TABLE class="tablaGris" border="0" cellpadding="0" cellspacing="1"> 
 				      <TBODY> 
@@ -338,7 +338,7 @@ global $user_profile;
   		// poner un pie de pagina... algo asi como ...este CV fue generado automaticamente con el portal 
   		// .... bla bla bla
   		?>				
-			<br>&nbsp;<br>&nbsp;<br>&nbsp;
+			<br />&nbsp;<br />&nbsp;<br />&nbsp;
 			
 		<div>	
 	</body>

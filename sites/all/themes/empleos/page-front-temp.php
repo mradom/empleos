@@ -111,9 +111,9 @@
 						$not_pagina+=1;
 						$not_nota = 0;
 					}
-					print '<li class="FloR"><a target="_top" href="/nota/'.$not_tipo.'/'.$nota->nid.'" title="'.$nota->title.'" class="LinkNot"><img src="'.$nota->field_foto[0]['filepath'].'" class="alignnone size-full wp-image-886">';
-                    print '<div class="Not" id="Not2"> <span>'.$nota->field_resumen[0]['value'].'</span></div>';
-                    print '</a></li>';
+					print '<li class="FloR"><a href="/nota/'.$not_tipo.'/'.$nota->nid.'" title="'.htmlspecialchars($nota->title).'" class="LinkNot"><img src="'.$nota->field_foto[0]['filepath'].'" class="alignnone size-full wp-image-886" alt="'.htmlspecialchars($nota->title).'" /></a>';
+                    print '<div class="Not"> <a href="/nota/'.$not_tipo.'/'.$nota->nid.'" title="'.htmlspecialchars($nota->title).'" class="LinkNot"><span>'.htmlspecialchars($nota->field_resumen[0]['value']).'</span></a></div>';
+                    print '</li>';
 					$not_nota+= 1;
 				}
 				if ($not_pagina >0 ) print '</ul></div>';
@@ -161,9 +161,9 @@
 						$not_pagina+=1;
 						$not_nota = 0;
 					}
-					print '<li class="FloR"><a target="_top" href="/nota/'.$not_tipo.'/'.$nota->nid.'" title="'.$nota->title.'" class="LinkNot"><img src="'.$nota->field_foto[0]['filepath'].'" class="alignnone size-full wp-image-886">';
-                    print '<div class="Not" id="Not2"> <span>'.$nota->field_resumen[0]['value'].'</span></div>';
-                    print '</a></li>';
+					print '<li class="FloR"><a href="/nota/'.$not_tipo.'/'.$nota->nid.'" title="'.htmlspecialchars($nota->title).'" class="LinkNot"><img src="'.$nota->field_foto[0]['filepath'].'" class="alignnone size-full wp-image-886" alt="'.htmlspecialchars($nota->title).'" /></a>';
+                    print '<div class="Not"> <a href="/nota/'.$not_tipo.'/'.$nota->nid.'" title="'.htmlspecialchars($nota->title).'" class="LinkNot"><span>'.htmlspecialchars($nota->field_resumen[0]['value']).'</span></a></div>';
+                    print '</li>';
 					$not_nota+= 1;
 				}
 				if ($not_pagina >0 ) print '</ul></div>';
@@ -171,9 +171,9 @@
                 </div>
               </div>
               <?php 
-			  if ($not_pagina > 0) print '<div class="NotPag"><span class="NotAct" id="2Dot1"></span>';
-			  if ($not_pagina > 1) print '<span class="" id="2Dot2"></span>';			  
-			  if ($not_pagina > 2) print '<span class="" id="2Dot3"></span>';			  
+			  if ($not_pagina > 0) print '<div class="NotPag"><span class="NotAct" id="bDot1"></span>';
+			  if ($not_pagina > 1) print '<span class="" id="bDot2"></span>';			  
+			  if ($not_pagina > 2) print '<span class="" id="bDot3"></span>';			  
 			  if ($not_pagina > 0) print '</div>';			  
 			  ?>
             </div>
@@ -207,9 +207,10 @@
 						$not_pagina+=1;
 						$not_nota = 0;
 					}
-					print '<li class="FloR"><a target="_top" href="/nota/'.$not_tipo.'/'.$nota->nid.'" title="'.$nota->title.'" class="LinkNot"><img src="'.$nota->field_foto[0]['filepath'].'" class="alignnone size-full wp-image-886">';
-                    print '<div class="Not" id="Not2"> <span>'.$nota->field_resumen[0]['value'].'</span></div>';
-                    print '</a></li>';
+					print '<li class="FloR"><a href="/nota/'.$not_tipo.'/'.$nota->nid.'" title="'.htmlspecialchars($nota->title).'" class="LinkNot"><img src="'.$nota->field_foto[0]['filepath'].'" class="alignnone size-full wp-image-886" alt="'.htmlspecialchars($nota->title).'" /></a>';
+                    print '<div class="Not"> <a href="/nota/'.$not_tipo.'/'.$nota->nid.'" title="'.htmlspecialchars($nota->title).'" class="LinkNot"><span>'.htmlspecialchars($nota->field_resumen[0]['value']).'</span></a></div>';
+
+                    print '</li>';
 					$not_nota+= 1;
 				}
 				if ($not_pagina >0 ) print '</ul></div>';
@@ -217,9 +218,9 @@
                 </div>
               </div>
               <?php 
-			  if ($not_pagina > 0) print '<div class="NotPag"><span class="NotAct" id="3Dot1"></span>';
-			  if ($not_pagina > 1) print '<span class="" id="3Dot2"></span>';			  
-			  if ($not_pagina > 2) print '<span class="" id="3Dot3"></span>';			  
+			  if ($not_pagina > 0) print '<div class="NotPag"><span class="NotAct" id="cDot1"></span>';
+			  if ($not_pagina > 1) print '<span class="" id="cDot2"></span>';			  
+			  if ($not_pagina > 2) print '<span class="" id="Dot3"></span>';			  
 			  if ($not_pagina > 0) print '</div>';			  
 			  ?>
             </div>
