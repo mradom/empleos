@@ -5,7 +5,7 @@
  Si no posees experiencia laboral dej&aacute;, el formulario en blanco y contin&aacute; con el siguiente paso.
 
 
-      </p><br> 
+      </p><br /> 
       <div><img style=" padding-left:100px;" src="/sites/all/themes/empleos/img/10pasos.png"></div>
       <div><img style=" padding-left:150px " src="/sites/all/themes/empleos/img/7paso.png"></div>
     </div>

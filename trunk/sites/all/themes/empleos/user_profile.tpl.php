@@ -11,10 +11,10 @@ print '<div  class="content_grl content-profile">';
 							print '<div class="right"><a href="/user/me/edit"><img title="Cambiar logo" src="/sites/all/themes/empleos/img/foto.jpg"></a></div>';
 						}
 						//print '<div style="border: 1px solid #ccc ;">';
-			  	 	 	print 'Empresa<br>';
-						print 'Bienvenido '.'<br>';
-			  	 	 	//print '<a href="/job/applications">Mis Aplicaciones</a><br>';
-			  	 	 	print '<br>&nbsp;<br>&nbsp;<br>&nbsp;';
+			  	 	 	print 'Empresa<br />';
+						print 'Bienvenido '.'<br />';
+			  	 	 	//print '<a href="/job/applications">Mis Aplicaciones</a><br />';
+			  	 	 	print '<br />&nbsp;<br />&nbsp;<br />&nbsp;';
 			  	 	    //print '</div>';
 						$busco='empresa';
 						print'<div class="clr"></div>';
@@ -27,11 +27,11 @@ print '<div  class="content_grl content-profile">';
 						} else {
 							print '<div class="right"><a href="/user/me/edit"><img title="Cambiar logo" src="/sites/all/themes/empleos/img/foto.jpg"></a></div>';
 						}
-						print 'Persona<br>';
-			  	 	 	print 'Bienvenido '.$fields['Empleado']['profile_empl_apellido']['value'].', '.$fields['Empleado']['profile_empl_nombre']['value'].'<br>';
-			  	 	 	//print '<a href="/job/applications">Mis Aplicaciones</a><br>';	  	 	 	
+						print 'Persona<br />';
+			  	 	 	print 'Bienvenido '.$fields['Empleado']['profile_empl_apellido']['value'].', '.$fields['Empleado']['profile_empl_nombre']['value'].'<br />';
+			  	 	 	//print '<a href="/job/applications">Mis Aplicaciones</a><br />';	  	 	 	
 			  	 	    //print '</div>';
-			  	 	    print '<br>&nbsp;<br>&nbsp;<br>&nbsp;';
+			  	 	    print '<br />&nbsp;<br />&nbsp;<br />&nbsp;';
 						$busco='empleado';
 						print'<div class="clr"></div>';
 			  		 } 
@@ -68,7 +68,7 @@ print '<div  class="content_grl content-profile">';
 						print '</tr>';
 					}
 					print  '</tbody></table>';
-					print '</br>&nbsp;</br>';
+					print '<br />&nbsp;<br />';
 					print '</div>';			 
 				}
 				 
@@ -145,7 +145,7 @@ print '<div  class="content_grl content-profile">';
 					print '</div>';	
 				}
 				 
-				print '</br>&nbsp;</br>';
+				print '<br />&nbsp;<br />';
 			   
 //=====
 

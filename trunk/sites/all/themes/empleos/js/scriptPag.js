@@ -32,41 +32,41 @@ function ChangeDot(div){
 	}
 }
 function ChangeDot2(div){
-	for(i=1;i<=Dots2;i++){e('2Dot'+i).className='';}
+	for(i=1;i<=Dots2;i++){e('bDot'+i).className='';}
 	if(div=='Ant'){
 		if(PosDot2==1){
-			e('2Dot'+Dots2).className='NotAct';
+			e('bDot'+Dots2).className='NotAct';
 			PosDot2=Dots2;
 		}else{
-			e('2Dot'+(PosDot2-1)).className='NotAct';
+			e('bDot'+(PosDot2-1)).className='NotAct';
 			PosDot2--;
 		}
 	}else if(div=='Sig'){
 		if(PosDot2==Dots2){
-			e('2Dot'+1).className='NotAct';
+			e('bDot'+1).className='NotAct';
 			PosDot2=1;
 		}else{
-			e('2Dot'+(PosDot2+1)).className='NotAct';
+			e('bDot'+(PosDot2+1)).className='NotAct';
 			PosDot2++;
 		}
 	}
 }
 function ChangeDot3(div){
-	for(i=1;i<=Dots3;i++){e('3Dot'+i).className='';}
+	for(i=1;i<=Dots3;i++){e('cDot'+i).className='';}
 	if(div=='Ant'){
 		if(PosDot3==1){
-			e('3Dot'+Dots3).className='NotAct';
+			e('cDot'+Dots3).className='NotAct';
 			PosDot3=Dots3;
 		}else{
-			e('3Dot'+(PosDot3-1)).className='NotAct';
+			e('cDot'+(PosDot3-1)).className='NotAct';
 			PosDot3--;
 		}
 	}else if(div=='Sig'){
 		if(PosDot3==Dots3){
-			e('3Dot'+1).className='NotAct';
+			e('cDot'+1).className='NotAct';
 			PosDot3=1;
 		}else{
-			e('3Dot'+(PosDot3+1)).className='NotAct';
+			e('cDot'+(PosDot3+1)).className='NotAct';
 			PosDot3++;
 		}
 	}

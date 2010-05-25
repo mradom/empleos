@@ -194,9 +194,9 @@ if($user->roles[5] == "empresa" and $node->uid == $user->uid){
 	<div class="bloque puntos" style="width: 655px"></div>
 	<div style="width: 330px; float: left; margin-right: 10px;">
 	<!--  Descripcion del empleo -->
-	<p><span class="blue stg">Descripci&oacute;n del empleo:</span><br>
+	<p><span class="blue stg">Descripci&oacute;n del empleo:</span><br />
 	<?php echo $nodo->body;?>
-	<br>&nbsp;<br>
+	<br />&nbsp;<br />
 	</p>
 	<!--  Descripcion del empleo end -->
 	</div>

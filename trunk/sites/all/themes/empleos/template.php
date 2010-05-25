@@ -105,6 +105,12 @@ function get_term_by_id($tid) {
  return $vname;
 }
 
+function get_category_by_term($tid) {
+ $result = db_query("SELECT v.name FROM {term_data} AS T INNER JOIN {vocabulary} AS v ON v.vid =t.vid  WHERE t.tid = '%s'", $tid);
+ $vname = db_fetch_object($result)->name;
+ return $vname;
+}
+
 function get_page_by_id($nid) {
  $result = db_query("SELECT title FROM {node} WHERE type = 'page' and nid = '%s'", $nid);
  $vname = db_fetch_object($result)->title;

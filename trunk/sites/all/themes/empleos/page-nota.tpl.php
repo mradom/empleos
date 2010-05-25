@@ -36,15 +36,15 @@
 					//print_r($nota);					
 					//print '<pre>';					
 					print '<div class="note">';      
-					print '<a href="/nota/'.$busco.'/'.$nota->nid.'" target="_top" title="'.$nota->title.'">';
+					print '<a href="/nota/'.$busco.'/'.$nota->nid.'" target="_top" title="'.htmlspecialchars($nota->title).'"></a>';
 					print '<div class="date">'.date("d-m-Y",strtotime(substr($nota->field_fecha[0]['value'],0,10))).'</div>';
 					
 					print '<div class="phot">';
-					print '<img src="/'.$nota->field_foto[0]['filepath'].'">';
+					print '<a href="/nota/'.$busco.'/'.$nota->nid.'" target="_top" title="'.htmlspecialchars($nota->title).'"><img src="/'.$nota->field_foto[0]['filepath'].'" alt="'.htmlspecialchars($nota->title).'" /></a>';
 					print '</div>';
-					print '<div class="title">'.substr($nota->title,0,55).'</div>';
-                    print '<div class="body-note">'.substr($nota->field_resumen[0]['value'],0,180).'</div>';
-                    print '</a>';
+					print '<div class="title"><a href="/nota/'.$busco.'/'.$nota->nid.'" target="_top" title="'.htmlspecialchars($nota->title).'">'.htmlspecialchars(substr($nota->title,0,55)).'</a></div>';
+                    print '<div class="body-note"><a href="/nota/'.$busco.'/'.$nota->nid.'" target="_top" title="'.htmlspecialchars($nota->title).'">'.htmlspecialchars(substr($nota->field_resumen[0]['value'],0,180)).'</a></div>';
+                    print '';
 					print '<div class="clr"></div>';
 					print '</div>';
 					$nov_nota+= 1;
@@ -71,16 +71,16 @@
         print '</div>';
 
 		print '<div class="contentNotas">';
-		print '<div class="nota"><h2>'.$nodo->title.'</h2> <h3>Nota publicada por empleoslavoz</h3> </div>';
+		print '<div class="nota"><h2>'.htmlspecialchars($nodo->title).'</h2> <h3>Nota publicada por empleoslavoz</h3> </div>';
 		If (strlen($nodo->field_foto[0]['filepath'])>0) {
 	      // tiene imagen
-		  print '<div ><img class="photo" src="'.'/'.$nodo->field_foto[0]['filepath'].'" title=""></img></div>';
+		  print '<div ><img class="photo" src="'.'/'.$nodo->field_foto[0]['filepath'].'" title="" alt=""/></div>';
 		} else {
 		  // NO tiene imagen
 		  print '<div></div>';
 		}
-		print '<div class="bajada">'.$nodo->field_resumen[0]['value'].'</div>';
-		print '<div class="cuerpo">'.$nodo->body.'</div>';
+		print '<div class="bajada">'.htmlspecialchars($nodo->field_resumen[0]['value']).'</div>';
+		print '<div class="cuerpo">'.htmlspecialchars($nodo->body).'</div>';
 		print '</div>';
 
 		

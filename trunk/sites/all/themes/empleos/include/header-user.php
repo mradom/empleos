@@ -1,7 +1,7 @@
-<DIV id="header"> 	
-	<DIV class="banner top"> Topsite</div> 
+<div id="header"> 	
+	<div class="banner top"> Topsite</div> 
     	<?php include("user-login.php"); ?>
-    	<DIV id="logo"><A href=""><IMG src="./Forms_files/logo.jpg"></A></div> 
+    	<DIV id="logo"><a href=""><IMG src="./Forms_files/logo.jpg" /></a></div> 
     	<DIV style="clear:both"></div> 
 		<?php include("menu.php");?>
     	<div id="browser"><?php include("busqueda.php");?>
