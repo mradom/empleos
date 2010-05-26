@@ -5,7 +5,7 @@
     <a title="Facebook" target="_blank" href="http://www.facebook.com/share.php?u=http://empleos.lavoz.com.ar"><img src="/sites/all/themes/empleos/img/face-ico.gif" width="23" height="22" alt="Facebook" /></a>
     <a title="Tweeter" target="_blank" href="http://twitter.com/home?status=Leyendo%20http://empleos.lavoz.com.ar"><img src="/sites/all/themes/empleos/img/tweet-ico.gif" width="23" height="22" alt="Twitter" /></a>
     </div>
-    <div class="btn"><a href="/user/register/persona"></a></div>
+     <div ><a class="btn" href="/user/register/persona"></a></div>
     </div>
 <div class="left">
       <h2>EmpleosLaVoz </h2>

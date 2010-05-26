@@ -38,4 +38,4 @@ AND n.type = 'e_aviso'";
 }
 ?>
 </ul>
-<div class="arrow"><a href="/rubro">Ver m&aacute;s</a></div>
+<div class="arrow"><a class="arrow" href="/rubro">Ver m&aacute;s</a></div>

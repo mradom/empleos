@@ -1,4 +1,4 @@
-<div class="white left" style="background:#FFF url(/sites/all/themes/empleos/img/bg_buscador<?php echo rand(1,4);?>.jpg) no-repeat top;">
+<div class="white left" style="background:#FFF url(/sites/all/themes/empleos/img/bg_buscador<?php echo rand(5,6);?>.jpg) no-repeat top;">
   <h2 class="datos"><span class="underline"><?php print Variable_get('avisos_count', 100); ?></span> empleos en <span class="underline"><?php print Variable_get('empresas_count', 100); ?></span> empresas</h2>
 	<div class="title">
 	  <h1>&iquest;Qu&eacute; empleo busc&aacute;s?</h1>

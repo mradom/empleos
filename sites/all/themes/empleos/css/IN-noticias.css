@@ -180,15 +180,29 @@ ul, ol {
 	/*dispaly:block;*/
 }
 
-.ContNyG .ContInf #Opi2 .scroller li a .Not,
-.ContNyG .ContInf #Opi3 .scroller li a .Not{ 
+.ContNyG .ContInf #Opi1 .scroller li .Not,
+.ContNyG .ContInf #Opi2 .scroller li .Not,
+.ContNyG .ContInf #Opi3 .scroller li .Not{ 
 	background:#eef9fb;
-	color:#333
+	height:200px;
+	padding:0 5px;
 }
-.ContNyG .ContInf #Opi2 .scroller li a:hover .Not,
-.ContNyG .ContInf #Opi3 .scroller li a:hover .Not{ 
+.ContNyG .ContInf #Opi1 .scroller li .Not:hover,
+.ContNyG .ContInf #Opi2 .scroller li .Not:hover,
+.ContNyG .ContInf #Opi3 .scroller li .Not:hover{ 
 	background:#b9e1f9;
 }
+.ContNyG .ContInf #Opi1 .scroller li .Not a,
+.ContNyG .ContInf #Opi2 .scroller li .Not a,
+.ContNyG .ContInf #Opi3 .scroller li .Not a { 
+	color:#333
+}
+.ContNyG .ContInf #Opi1 .scroller li .Not a:hover,
+.ContNyG .ContInf #Opi2 .scroller li .Not a:hover,
+.ContNyG .ContInf #Opi3 .scroller li .Not a:hover {
+	text-decoration:none
+}
+
 
 /* SliderFotos */
 .ContNyG .ContInf .Box .SliderFotos {

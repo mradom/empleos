@@ -23,6 +23,6 @@
         
         <div class="box side">
            <?php include("sites/all/themes/empleos/block-block3.tpl.php"); ?>
-           <div class="arrow"><a href="/empresa">Ver m&aacute;s</a></div>
+           <div class="arrow"><a class="arrow" href="/empresa">Ver m&aacute;s</a></div>
         </div>
       </div>

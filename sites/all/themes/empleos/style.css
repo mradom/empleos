@@ -857,17 +857,24 @@ fielset .group-datos-de-la-empresa{
 }
 /*-----------Arrows-btn & rss----------------*/
 
-div.arrow {
+a.arrow{
+	width:auto;
+	overflow:hidden;
+	padding-left:25px;
+}
+a.arrow:hover {
+	background-position:1px -20px;
+}
+div.arrow a{
 	width:auto;
 	height:20px;
 	float:right;
-	background: url(/sites/all/themes/empleos/img/arrow.png) 0 0 no-repeat;
 	overflow:hidden;
 	margin-top:10px;
-	padding:0 0 0 25px;
 	color: #2D71B5;
 	font:11px/22px tahoma;
 	vertical-align:middle;
+	background: url(/sites/all/themes/empleos/img/arrow.png) 0 0 no-repeat;
 }
 div.arrow.lupa {
 	background:url(/sites/all/themes/empleos/img/lupa.png) 0 0 no-repeat
@@ -1365,7 +1372,7 @@ ul.sitemap ul.n1 li{
 	filter: alpha(opacity=100); 
 	opacity:10	
 }
-#Footer div.btn{
+#Footer a.btn{
 	height:58px;
 	width:196px;
 	float:right;
@@ -1373,9 +1380,10 @@ ul.sitemap ul.n1 li{
 	background:url(/sites/all/themes/empleos/img/btn-registrarse.png) 2px -58px  no-repeat;
 	margin-top:10px;
 }
-#Footer div.btn:hover{
+#Footer a.btn:hover{
 	background-position:2px top ;
 }
+
 .footer {
 	padding:0;
 	margin:0;
