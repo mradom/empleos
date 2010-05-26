@@ -30,7 +30,7 @@
                 <input style="margin:10px 0 0 260px" name="buscar" type="submit" class="btn_gral" value="Buscar" alt="Buscar" />
               </form>
             </div>
-           <div class="arrow lupa"><a href="/avanzada">B&uacute;squeda avanzada</a></div> 
+           <div class="arrow lupa"><a class="arrow" href="/avanzada">B&uacute;squeda avanzada</a></div>
           </div>
         </div>
       </div>
