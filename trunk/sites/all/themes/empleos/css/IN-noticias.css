@@ -186,6 +186,7 @@ ul, ol {
 	background:#eef9fb;
 	height:200px;
 	padding:0 5px;
+	*max-height:100px;
 }
 .ContNyG .ContInf #Opi1 .scroller li .Not:hover,
 .ContNyG .ContInf #Opi2 .scroller li .Not:hover,
@@ -241,30 +242,28 @@ ul, ol {
 	float:left;
 	background: url(../img/arrow_to_left.png)top no-repeat;
 	height:21px;
-	width:23px;
+	width:22px;
 }
 .ContNyG .ContInf .Box .Ant:hover {
-	background-position: 1px -21px;
+	background-position: 0 -21px;
 }
 .ContNyG .ContInf .Box .Sig {
 	float:right;
 	background: url(../img/arrow_to_right.png)top no-repeat;
 	height:21px;
-	width:23px;
+	width:22px;
 }
 .ContNyG .ContInf .Box .Sig:hover { 
-	background-position: 1px -21px ;
+	background-position: 0 -21px ;
 }
+.ContNyG .ContInf #Opi1 .Ant,
 .ContNyG .ContInf #Opi2 .Ant,
-.ContNyG .ContInf #Opi3 .Ant,
-.ContNyG .ContInf #Opi4 .Ant,
-.ContNyG .ContInf #Opi5 .Ant{
+.ContNyG .ContInf #Opi3 .Ant{
 	background-image: url(../img/arrow_to_left.png);
 }
+.ContNyG .ContInf #Opi1 .Sig,
 .ContNyG .ContInf #Opi2 .Sig,
-.ContNyG .ContInf #Opi3 .Sig,
-.ContNyG .ContInf #Opi4 .Sig,
-.ContNyG .ContInf #Opi5 .Sig{
+.ContNyG .ContInf #Opi3 .Sig{
 background-image: url(../img/arrow_to_right.png);
 }
 .ContNyG .ContInf .Box {
