@@ -75,9 +75,9 @@ div.bloque, fieldset{
 	margin-bottom:8px;
 }
 
-.mycv .datos.button{
+input.button.log{
 	margin-top:15px;
-	padding-left:300px;
+	margin-left:120px;
 }
 
 .mycv .required{
@@ -93,7 +93,8 @@ div.bloque, fieldset{
 	height:23px;
 	background:url(../img/bg_btn_orange.png) repeat-x;
 	padding:0 5px 2px 5px;
-	border:1px solid #FF9900;
+	border:1px solid #d19902;
+	*border:0;
 	color:#FFF;
 	font-weight:bold;
 	float:left;
@@ -267,8 +268,9 @@ div.imagefield-edit-image-row label.option {
 	border:1px solid #FFCC33;
 	color:#666;
 }
-li.bulet_o{background:url(../img/bullet_orange.gif)0 5px no-repeat; padding-left:15px;}
-
+li.bulet_o{
+	list-style-image:url(../img/bullet_orange.gif);
+}
 /*------------TABLA gris-------------------*/
 .tablaGris {
 	width:100%;

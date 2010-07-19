@@ -71,16 +71,16 @@
         
 
         <!-- SLIDE NOTICIAS -->
-        <div class="ContNyG clearfix">
-        <div class="clearfix">
+        <div class="ContNyG ">
           <div class="SolCont clearfix">
             <ul class="Sol clearfix">
               <li class="Act clearfix" id="S_Opi1"> <a href="javascript:;" title="Noticias" onclick="SolChange('Opi1','S_Opi1','RssG','RssNot')">Noticias</a> </li>
               <li class="clearfix" id="S_Opi2"> <a href="javascript:;" title="Formaci&oacute;n" onclick="SolChange('Opi2','S_Opi2','RssNot','RssG')">Formaci&oacute;n</a> </li>
               <li class="clearfix" id="S_Opi3"> <a href="javascript:;" title="Gu&iacute;a de Consultoras" onclick="SolChange('Opi3','S_Opi3','RssNot','RssG')">Gu&iacute;a de Consultoras</a> </li>
+              <li class="clearfix" id="S_Opi4"> <a href="javascript:;" title="Cursos" onclick="SolChange('Opi4','S_Opi4','RssNot','RssG')">Cursos</a> </li>
             </ul>
           </div>
-        </div>
+
         <div class="ContInf">
           <!-- CONTENIDO NOTICIAS -->
           <div style="display: block;" class="Box" id="Opi1">
@@ -220,7 +220,7 @@
               <?php 
 			  if ($not_pagina > 0) print '<div class="NotPag"><span class="NotAct" id="cDot1"></span>';
 			  if ($not_pagina > 1) print '<span class="" id="cDot2"></span>';			  
-			  if ($not_pagina > 2) print '<span class="" id="Dot3"></span>';			  
+			  if ($not_pagina > 2) print '<span class="" id="cDot3"></span>';			  
 			  if ($not_pagina > 0) print '</div>';			  
 			  ?>
             </div>
@@ -228,6 +228,54 @@
 			        var Dots3 = <?php print $not_pagina; ?>;
 					var SliderImagenes3 = new Glider('CajaImagenes3', {duration:0.5});
 				</script>
-          </div>          
+          </div> 
+          
+          <!-- CONTENIDO CURSOS -->
+          <div class="Box" id="Opi4" style="display: none;"> 
+          <div class="SliderFotos clearfix" id="CajaImagenes4"> <a href="javascript:;" title="Anterior" class="Ant" onclick="ChangeDot4('Ant');SliderImagenes4.previous();return false;"></a> <a href="javascript:;" title="Siguiente" class="Sig" onclick="ChangeDot4('Sig');SliderImagenes4.next();return false;"></a>
+              <div class="scroller">
+                <div class="content">
+                <?php 
+				$not_pagina=0;
+				$not_nota=4;
+				$not_tipo='noticias';				
+			    $sql_base   = "SELECT * FROM node_revisions AS nr INNER JOIN node AS n ON n.nid = nr.nid ";
+				$inner_join = "INNER JOIN content_type_notas AS w ON w.nid = n.nid ";
+
+				$where = "WHERE n.type = 'notas' AND w.field_tipo_value = '".$not_tipo."' AND n.status = 1 ";
+				//$where = $where . " ORDER BY w.field_fecha_value DESC, w.field_orden_value DESC LIMIT 12 ";
+				$where = $where . " ORDER BY rand() DESC LIMIT 12 ";				
+				// OJO cambiar notas por consultoras al final
+				$rs = db_query($sql);
+				while($fila = mysql_fetch_object($rs)){
+					$nota = node_load($fila->nid);
+					if ($not_nota==4) {
+						if ($not_pagina > 0) print '</ul></div>';
+						print '<div class="section"><ul class="clearfix">';
+						$not_pagina+=1;
+						$not_nota = 0;
+					}
+					print '<li class="FloR"><a href="/nota/'.$not_tipo.'/'.$nota->nid.'" title="'.htmlspecialchars($nota->title).'" class="LinkNot"><img src="'.$nota->field_foto[0]['filepath'].'" class="alignnone size-full wp-image-886" alt="'.htmlspecialchars($nota->title).'" /></a>';
+                    print '<div class="Not"> <a href="/nota/'.$not_tipo.'/'.$nota->nid.'" title="'.htmlspecialchars($nota->title).'" class="LinkNot"><span>'.htmlspecialchars($nota->field_resumen[0]['value']).'</span></a></div>';
+
+                    print '</li>';
+					$not_nota+= 1;
+				}
+				if ($not_pagina >0 ) print '</ul></div>';
+				?>
+                </div>
+              </div>
+              <?php 
+			  if ($not_pagina > 0) print '<div class="NotPag"><span class="NotAct" id="dDot1"></span>';
+			  if ($not_pagina > 1) print '<span class="" id="dDot2"></span>';			  
+			  if ($not_pagina > 2) print '<span class="" id="dDot3"></span>';			  
+			  if ($not_pagina > 0) print '</div>';			  
+			  ?>
+            </div>
+            <script type="text/javascript" charset="utf-8">
+			        var Dots4 = <?php print $not_pagina; ?>;
+					var SliderImagenes4 = new Glider('CajaImagenes4', {duration:0.5});
+				</script>
+          </div>                   
         </div>
                 </div>

@@ -33,7 +33,7 @@ ul, ol {
 /*CAJA OPINION*/
 .ContNyG {
 	position:relative;
-	width:658px;
+	width:680px;
 	margin-bottom:10px;
 	float:left;
 }
@@ -42,21 +42,29 @@ ul, ol {
 .ContNyG .SolCont {
 	position:relative;
 	z-index:400;
+	overflow:hidden;
+	height:40px;
+	width:680px;
+	float:left;
+	top:1px;
+	margin-top:10px;
+}
+.ContNyG .Sol{
 	background: url(../img/bg_tab.gif) bottom repeat-x;
 	overflow:hidden;
 	height:40px;
-	float:left;
-	width:auto;
-	top:1px;
-	margin-top:10px;
+	float:left;	
 	padding-right:5px;
+	width:675px;
 }
 
 .ContNyG .Sol li {
 	float:left;
 	height:40px;
 	overflow:hidden;
-	display:block
+	display:block;
+	padding:0;
+	margin:0
 
 }
 .ContNyG .Sol li a {
@@ -69,7 +77,8 @@ ul, ol {
 	cursor:pointer;
 	text-align:center;
 	padding:0 10px;
-	margin:0 0 5px 5px;
+	margin:0 0 5px 0px;
+	border:1px solid transparent;
 	
 }
 .ContNyG .Sol li a:hover {
@@ -80,7 +89,6 @@ ul, ol {
 	color:#FFF;
 	height:40px;
 	text-decoration:none;
-	margin-top:0;
 	line-height:40px;
 }
 .ContNyG .Sol li.Act {
@@ -103,27 +111,22 @@ ul, ol {
 	-moz-box-shadow:none;
 	-webkit-box-shadow:none;
 }
+
+
+.ContNyG .Sol li#S_Opi4 {
+	float:right;
+	-webkit-border-radius: 3px 3px 0 0;
+	-moz-border-radius: 3px 3px 0 0;
+}
+
+.ContNyG .Sol li#S_Opi1.Act a,
 .ContNyG .Sol li#S_Opi2.Act a, 
 .ContNyG .Sol li#S_Opi3.Act a, 
-.ContNyG .Sol li#S_Opi4.Act a, 
-.ContNyG .Sol li#S_Opi5.Act a {
+.ContNyG .Sol li#S_Opi4.Act a{
 	color:#333;
 }
 .ContNyG .Sol li a, .ContNyG .Sol li.Act a {
 	width:auto;
-}
-.ContNyG .Sol li#S_Opi1, 
-.ContNyG .Sol li#S_Opi2, 
-.ContNyG .Sol li#S_Opi3 
-{
-	padding-right:2px;
-}
-
-.ContNyG .Sol li#S_Opi1.Act, 
-.ContNyG .Sol li#S_Opi2.Act, 
-.ContNyG .Sol li#S_Opi3.Act 
-{
-	padding-right:2px;
 }
 
 .ContNyG .Sol li#S_Opi1 a, .ContNyG .Sol li#S_Opi1.Act a {
@@ -169,38 +172,47 @@ ul, ol {
 
 /* GUIAS */
 .ContNyG .ContInf #Opi2 .scroller li a.Cat, 
-.ContNyG .ContInf #Opi3 .scroller li a.Cat{
+.ContNyG .ContInf #Opi3 .scroller li a.Cat,
+.ContNyG .ContInf #Opi4 .scroller li a.Cat{
 	display:block;
 	float:left;
 	height:15px;
 }
 .ContNyG .ContInf #Opi2 .scroller li a.Cat span,
-.ContNyG .ContInf #Opi3 .scroller li a.Cat span{
+.ContNyG .ContInf #Opi3 .scroller li a.Cat span,
+.ContNyG .ContInf #Opi4 .scroller li a.Cat span{
 	float:left;
 	/*dispaly:block;*/
 }
 
 .ContNyG .ContInf #Opi1 .scroller li .Not,
 .ContNyG .ContInf #Opi2 .scroller li .Not,
-.ContNyG .ContInf #Opi3 .scroller li .Not{ 
+.ContNyG .ContInf #Opi3 .scroller li .Not,
+.ContNyG .ContInf #Opi4 .scroller li .Not{ 
 	background:#eef9fb;
 	height:200px;
 	padding:0 5px;
 	*max-height:100px;
 }
+
 .ContNyG .ContInf #Opi1 .scroller li .Not:hover,
 .ContNyG .ContInf #Opi2 .scroller li .Not:hover,
-.ContNyG .ContInf #Opi3 .scroller li .Not:hover{ 
+.ContNyG .ContInf #Opi3 .scroller li .Not:hover,
+.ContNyG .ContInf #Opi4 .scroller li .Not:hover{ 
 	background:#b9e1f9;
 }
+
 .ContNyG .ContInf #Opi1 .scroller li .Not a,
 .ContNyG .ContInf #Opi2 .scroller li .Not a,
-.ContNyG .ContInf #Opi3 .scroller li .Not a { 
+.ContNyG .ContInf #Opi3 .scroller li .Not a,
+.ContNyG .ContInf #Opi4 .scroller li .Not a{ 
 	color:#333
 }
+
 .ContNyG .ContInf #Opi1 .scroller li .Not a:hover,
 .ContNyG .ContInf #Opi2 .scroller li .Not a:hover,
-.ContNyG .ContInf #Opi3 .scroller li .Not a:hover {
+.ContNyG .ContInf #Opi3 .scroller li .Not a:hover,
+.ContNyG .ContInf #Opi4 .scroller li .Not a:hover{
 	text-decoration:none
 }
 
@@ -256,14 +268,16 @@ ul, ol {
 .ContNyG .ContInf .Box .Sig:hover { 
 	background-position: 0 -21px ;
 }
-.ContNyG .ContInf #Opi1 .Ant,
+
 .ContNyG .ContInf #Opi2 .Ant,
-.ContNyG .ContInf #Opi3 .Ant{
+.ContNyG .ContInf #Opi3 .Ant,
+.ContNyG .ContInf #Opi4 .Ant{
 	background-image: url(../img/arrow_to_left.png);
 }
-.ContNyG .ContInf #Opi1 .Sig,
+
 .ContNyG .ContInf #Opi2 .Sig,
-.ContNyG .ContInf #Opi3 .Sig{
+.ContNyG .ContInf #Opi3 .Sig,
+.ContNyG .ContInf #Opi4 .Sig{
 background-image: url(../img/arrow_to_right.png);
 }
 .ContNyG .ContInf .Box {

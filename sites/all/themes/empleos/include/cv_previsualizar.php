@@ -4,6 +4,7 @@ global $user_profile;
         // Previsualizar --------------------------------------------------------------------------------------------
   		if ($user->uid){
   			?>
+            <div class="clr">&nbsp;</div>
   			<div class="share">
   				<img src="/sites/all/themes/empleos/img/icoImprimir.png" width="16" height="16" border=0 alt="Imprimir" style="margin-right:7px;"> 
   				<a href="/?q=cv_print/me" target="_blanc">Imprimir</a>&nbsp;&nbsp; 

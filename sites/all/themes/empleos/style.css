@@ -37,7 +37,7 @@ p {
 a.orange:hover{
 	color:#F90
 }
-.blue, a.blue {
+.blue, a.blue, p.blue {
 	color:#1C77A8
 }
 a.blue:hover{
@@ -162,10 +162,12 @@ span.underline {
 	height:30px;
 	width:990px;
 	margin-bottom:10px;
+	margin-top:10px;
 }
 .menu ul.submenu li {
-	height:27px;
+	height:26px;
 	margin-right:2px;
+	float:left
 }
 .menu ul.submenu li a {
 	padding:0 10px;
@@ -177,10 +179,12 @@ span.underline {
 	border: solid 1px #c8e8f0;
 	-moz-border-radius:7px 7px 0 0;
 	-moz-border-radius:7px 7px 0 0;
+	border-bottom:0
 }
 	.menu ul.submenu.e li a{
 		background:#ffefb1;
 		border:1px solid #ffd085;
+		border-bottom:0
 		} 
 .menu ul.submenu li a:hover {
 	background:#ffefb1;
@@ -188,23 +192,27 @@ span.underline {
 	color:#666;
 	height:25px;
 	border:1px solid #ffd085;
+	border-bottom:0
 }
 	.menu ul.submenu.e li a:hover{
 		background:#eafbff;
 		border: solid 1px #c8e8f0;
+		border-bottom:0
 		}
 .menu.submenu ul.submenu li a.active, .menu.submenu ul.submenu li a:hover.active {
 	background: #FFC02F;
 	color:#666;
 	height:25px;
-	border:1px solid #ffd085;
+	border:1px solid #FEEC83;
+	border-bottom:0
 }
 	.menu.submenu ul.submenu.e li a.active, .menu.submenu ul.submenu.e li a:hover.active{
 		background:#1C77A8;
 		border: solid 1px #3077a4;
+		border-bottom:0;
 		color:#fff;
 		}
-/*----------------------------NUEVAS CLASES----------------------submenu-------*/
+
 ul.submenu li.btns{	
 	padding:0;
 	height:20px;
@@ -227,6 +235,21 @@ li.btns.sig {
 li.btns.sig:hover{ 
 	background:url(/sites/all/themes/empleos/img/arrow.png) no-repeat 1px -20px; text-decoration:underline;
 }
+/*---*/
+ul.faq li{
+	background:url(/sites/all/themes/empleos/img/bullet_blue.gif) left 5px no-repeat;
+	padding-left:10px;
+}
+/*--*/
+.menu ul.submenu li.tensteps{
+	background:#e7e9e9; 
+	-moz-border-radius:7px 7px 0 0; 
+	-moz-border-radius:7px 7px 0 0; 
+	padding:10px 3px 0 5px;
+	float:right
+
+}
+
 /*--*/
 .contentBoxTips{
 	width:300px;
@@ -254,12 +277,6 @@ li.btns.sig:hover{
 	background:url(/sites/all/themes/empleos/img/bullet_orange.gif) left 5px no-repeat;
 	padding-left:10px;
 }
-/*---*/
-ul.faq li{
-	background:url(/sites/all/themes/empleos/img/bullet_blue.gif) left 5px no-repeat;
-	padding-left:10px;
-}
-/*--------------------------FIN--NUEVAS CLASES-------------------submenu-------*/
 
 /*--browser--*/
 #browser {
@@ -357,6 +374,11 @@ ul.faq li{
 
 .btn_gral.b{
     padding:4px 10px;
+}
+.btn_gral.r{
+    padding:4px 10px;
+	float:left;
+	margin-left:10px;
 }
 .btn_gral.c{
 	padding:3px 10px 4px 10px;
@@ -842,7 +864,7 @@ fielset .group-datos-de-la-empresa{
 }
 .box.top {
 	border:0;
-	height:125px;
+	height:100px;
 	width:960px;
 	padding:10px;
 	padding-right:20px;
@@ -1114,7 +1136,6 @@ div.aviso.w660 .btn{
 	right:24px;
 	top:152px;
 }
-/* cambios*/
 ul.a-links {
 	background:none;
 	border:0;
@@ -1131,7 +1152,6 @@ ul.a-links li a, ul.a-links li a:hover{
 	padding:0;
 	text-align:left;
 }
-/* finde cambios*/
 
 div.aviso ul li.orange{
 	list-style: url(/sites/all/themes/empleos/img/bullet_orange.gif);
@@ -1154,6 +1174,31 @@ div.aviso ul li a:hover{
 div.aviso.w660 ul{
 	padding-top:5px;
 }
+/*----lista univ------*/
+div.item{
+	padding:5px 0;
+	margin-bottom:1px;
+	position:relative
+}
+div.item.border{
+	border-bottom:1px dotted #9cc8dc
+}
+div.item div.logo{
+	width:86px;
+	height:53px;
+	margin-right:10px;
+	float:left;
+}
+div.item div.datos{
+	float:left;
+	padding-bottom:2px;
+	display:inline-block;
+}
+div.item a.btn{
+	position:absolute;
+	bottom:8px;
+	right:0
+}
 /*-----FICHA------*/
 .box.central.ficha{ 
 	background:#fff;
@@ -1173,7 +1218,6 @@ div.resumen{
 	padding:10px;
 	float:left;
 	width:97%
-	/*width:638px;*/
 }
 ul.resumen{
 	line-height:18px;

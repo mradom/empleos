@@ -17,7 +17,7 @@
     <div id="central_column">
 	  <?php include("include/cv_previsualizar.php");?>
       <?php include("include/banners-central.php");?>
-    </div>    
+    </div>     
   </div>
 <?php include("include/footer.php");?>
 </div>

@@ -109,7 +109,7 @@ if($_REQUEST['busqueda'] == "avanzada"){
           		<div class="rss">
           			<A href="#">RSS</A>
           		</div>
-          		<P>Se econtraron <span class="orange"><?php echo $pager_total_items[0];?> ofertas de trabajo:</span> en el &aacute;rea: <span class="orange"> GERENCIA GENERAL</span></p>
+          		<P>Se econtraron <span class="orange"><?php echo $pager_total_items[0];?> ofertas de trabajo:</span> en el &aacute;rea: <span class="orange"> Rubro</span></p>
 			</div>
        <!-- Gold results -->
        <?php 

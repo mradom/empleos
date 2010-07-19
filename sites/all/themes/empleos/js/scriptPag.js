@@ -2,12 +2,14 @@ function e(a){return document.getElementById(a);}
 
 //SLIDER HORIZONTAL ESPECIALES - Ajax Puntitos
 
-var aDots=3;//Cantidad de paginas que posee el slider
+var aDots=2;//Cantidad de paginas que posee el slider
 var PosDot=1;//Variable que guarda la posicion del Dot
-var aDots2=3;//Cantidad de paginas que posee el slider2
+var aDots2=2;//Cantidad de paginas que posee el slider2
 var PosDot2=1;//Variable que guarda la posicion del Dot2
 var aDots3=2;
 var PosDot3=1;
+var aDots4=2;
+var PosDot4=1;
 
 
 
@@ -71,12 +73,32 @@ function ChangeDot3(div){
 		}
 	}
 }
+function ChangeDot4(div){
+	for(i=1;i<=Dots4;i++){e('cDot'+i).className='';}
+	if(div=='Ant'){
+		if(PosDot4==1){
+			e('dDot'+Dots4).className='NotAct';
+			PosDot4=Dots4;
+		}else{
+			e('dDot'+(PosDot4-1)).className='NotAct';
+			PosDot4--;
+		}
+	}else if(div=='Sig'){
+		if(PosDot4==Dots4){
+			e('dDot'+1).className='NotAct';
+			PosDot4=1;
+		}else{
+			e('dDot'+(PosDot4+1)).className='NotAct';
+			PosDot4++;
+		}
+	}
+}
 
 /*SOLAPAS*/
-function SolChange(div,div2,div3){
-	for(i=1;i<=3;i++){e('S_Opi'+i).className='clearfix';}
+function SolChange(div,div2,div3,div4){
+	for(i=1;i<=4;i++){e('S_Opi'+i).className='clearfix';}
 	e(div2).className='Act clearfix';
-	for(i=1;i<=3;i++){e('Opi'+i).style.display='none';}
+	for(i=1;i<=4;i++){e('Opi'+i).style.display='none';}
 	e(div).style.display='block';
 }
 

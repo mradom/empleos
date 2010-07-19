@@ -9,14 +9,15 @@
   <!-- MIDDLE --> 
   <div id="midle">
     <?php include("include/encabezado_mi_educacion.php");?> 
-    <!-- RIGHT colum -->
-    <div id="right_colum">
 	  <?php Form_ayuda('Ayuda', 'Educacion'); ?>
-	</div> 
+      <?php print $content;?>
+	  	  <?php if (arg(1)<>'add' and arg(2)<>'edit' and arg(2)<>'delete') {
+			  print "<div class='btn_gral b'><a href='/node/add/p-educacion'>Agregar</a></div>";
+	          print "<div class='btn_gral r'><a href='/micursos/me'>Paso siguiente</a></div>";
+		  }?>
+ 	<div class="clr"></div>
     <!-- CENTRAL colum -->
     <div id="central_column">
-	  <?php print $content;?>
-	  	  <?php if (arg(1)<>'add' and arg(2)<>'edit' and arg(2)<>'delete') print "<div class='btn_gral b'><a href='/node/add/p-educacion'>Agregar</a></div>";?>
     <?php include("include/banners-central.php");?> 
     </div>     
   </div>

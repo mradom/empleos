@@ -82,6 +82,15 @@ function empleos_menu($may_cache) {
 	  'weight' => 100
     );
 	
+	$items[] = array(
+	  'title'    			=> 'Universidades',
+      'path'     			=> 'universidad',
+      'callback' 			=> 'empleos_universidad',
+      'type' 				=> MENU_CALLBACK,	  
+	  'access'   			=> TRUE,
+	  'weight' => 100
+    );
+		
 	
 	$items[] = array(
 	  'title'    			=> 'Empresas',
@@ -201,7 +210,9 @@ function empleos_empresa() {
 function empleos_consultora() {
    return '';
 }
-
+function empleos_universidad() {
+   return '';
+}
 function empleos_mapadelsitio() {
    return '';
 }

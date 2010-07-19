@@ -23,8 +23,9 @@ Los &iacute;tems destacados con asterisco <span class="stg orange">(*)</span> so
 				      <TBODY> 
 				        <TR> 
 				          <TD class="techo" width="25%"></TD>
-				          <TD class="techo" width="25%">Nombre</TD> 
-				          <TD class="techo" width="40%">Descripci&oacute;n</TD>
+				          <TD class="techo" width="20%">Nombre</TD> 
+				          <TD class="techo" width="35%">Descripci&oacute;n</TD>
+                          <TD class="techo" width="10%">Experiencia</TD>
 				          <TD class="techo" width="5%"></TD> 
 				        </TR> 
 			<?php
@@ -43,6 +44,7 @@ Los &iacute;tems destacados con asterisco <span class="stg orange">(*)</span> so
 			                   } else { print '<TD><A href="/node/'.$row->nid.'/edit" title="editar">'.$row->title.'</A></TD>';  } ?> 
 				    	  <TD><?php print $row->field_nombre[0]['value'];?></TD> 
 				    	  <TD><?php print $row->field_descripcion[0]['value'];?></TD>
+                          <TD><?php print $row->field_experiencia[0]['value'];?></TD>
 				    	  <TD><div class="icos-form" style="padding-left:4px;"><a href="/node/<?php print $row->nid; ?>/edit" title="editar"><div class="arrow editar"></div></a><a href="/node/<?php print $row->nid; ?>/delete" title="borrar"><div class="arrow cancel"></div></a></div></TD>
 				        </TR> 
 				<?php

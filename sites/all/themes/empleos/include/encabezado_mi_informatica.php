@@ -20,9 +20,10 @@ Si no manejas ninguna herramienta o programa inform&aacute;tico, dej&aacute; el 
 				<TABLE class="tablaGris" border="0" cellpadding="0" cellspacing="1"> 
 				      <TBODY> 
 				        <TR> 
-				          <TD class="techo" width="40%">Programa</TD> 
-				          <TD class="techo" width="30%">Tipo</TD>
+				          <TD class="techo" width="35%">Programa</TD> 
+				          <TD class="techo" width="25%">Tipo</TD>
 				          <TD class="techo" width="16%">Nivel</TD>  
+                          <TD class="techo" width="10%">Experiencia</TD>  
 				          <TD class="techo" width="5%"></TD>
 				        </TR> 
 			<?php
@@ -41,6 +42,7 @@ Si no manejas ninguna herramienta o programa inform&aacute;tico, dej&aacute; el 
 			                   } else { print '<TD><A href="/node/'.$row->nid.'/edit" title="editar">'.$row->title.'</A></TD>';  } ?> 
 				    	  <TD><?php print $tipo;?></TD> 
 				    	  <TD><?php print $row->field_nivel[0]['value'];?></TD>
+                          <TD><?php print $row->field_experiencia_0[0]['value'];?></TD>
 				    	  <TD><div class="icos-form" style="padding-left:5px;"><a href="/node/<?php print $row->nid; ?>/edit" title="editar"><div class="arrow editar"></div></a><a href="/node/<?php print $row->nid; ?>/delete" title="borrar"><div class="arrow cancel"></div></a></div></TD>
 				        </TR> 
 				<?php
