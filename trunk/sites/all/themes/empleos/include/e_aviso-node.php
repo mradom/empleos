@@ -86,64 +86,29 @@ if($user->roles[5] == "empresa" and $node->uid == $user->uid){
 		            	<?php	
 		            	}
 		            ?>
-		            	<div class="btn_gral low" style="float: right">
-							<!-- <a href="#" id="enviar-amigo">Enviar a un amigo</a> -->
+		            <!--	<div class="btn_gral low" style="float: right">
 							<button id="create-user">Enviar a un amigo</button>
-						</div>
+						</div>-->
 						
-<style type="text/css">
-		body { font-size: 62.5%; }
-		label, input { display:block; }
-		input.text { margin-bottom:12px; width:95%; padding: .4em; }
-		fieldset { padding:0; border:0; margin-top:25px; }
-		h1 { font-size: 1.2em; margin: .6em 0; }
+<!--<style type="text/css">
+		.demo label, input { display:block; }
+		.demo >input.text { margin-bottom:12px; width:95%; padding: .4em; }
+		.demo fieldset { padding:0; border:0; margin-top:25px; }
+		.demo h1 { font-size: 1.2em; margin: .6em 0; }
 		div#users-contain { width: 350px; margin: 20px 0; }
 		div#users-contain table { margin: 1em 0; border-collapse: collapse; width: 100%; }
 		div#users-contain table td, div#users-contain table th { border: 1px solid #eee; padding: .6em 10px; text-align: left; }
-		.ui-dialog .ui-state-error { padding: .3em; }
+		.demo .ui-dialog .ui-state-error { padding: .3em; }
 		.validateTips { border: 1px solid transparent; padding: 0.3em; }
 		
 	</style>
-	<script type="text/javascript">
-	$(document).ready(function() {
-		// a workaround for a flaw in the demo system (http://dev.jqueryui.com/ticket/4375), ignore!
-		$("#dialog").dialog("destroy");
-		var from = $("#from"), to = $("#to"),msg = $("#msg"),	allFields = $([]).add(from).add(to).add(msg);
-		$("#dialog-form").dialog({
-			autoOpen: false,
-			height: 300,
-			width: 350,
-			modal: true,
-			buttons: {
-				'Enviar': function() {
-		       		$.post("/enviaramigo.php", "post=" + from.val() + "|" +  to.val() + "|" + msg.val(), function(data){alert(data);});	
-		       		to.val("");
-		       		msg.val("");				
-					$(this).dialog('close');
-				},
-				'Cancelar': function() {
-					$(this).dialog('close');
-				}
-			},
-			close: function() {
-				//allFields.val('');//.removeClass('ui-state-error');
-			}
-		});
-		$('#create-user')
-			//.button()
-			.click(function() {
-				$('#dialog-form').dialog('open');
-			});
-
-	});
-	</script>
+	
 
 
 
 <div class="demo">
-	<div id="dialog-form" title="Enviar Aviso <?php echo $nodo->title;?>">
-		<p class="validateTips">Enviar este aviso a un amigo.</p>
-	
+	<div id="dialog-form" title="Enviar Aviso <?php //echo $nodo->title;?>">
+		<p class="validateTips">Enviar a un amigo.</p>
 		<form>
 		<fieldset>
 			<label for="from">De: </label>
@@ -182,8 +147,8 @@ if($user->roles[5] == "empresa" and $node->uid == $user->uid){
 		<li><span class="blue">Vacantes:</span> <?php echo $nodo->field_cantidad_de_vacantes[0]['value'];?></li>
 	</ul>
 	<div style="clear: both"></div>
-	<p class="rigth"><a class="orange right" href="#">&gt;&gt;Ver mas avisos de esta empresa</a></p><br />
-	<p class="rigth"><a class="orange right" href="javascript:AltDisplay('mydiv1','bot1');">&gt;&gt;Ver Informaci&oacute;n esta empresa</a></p>
+	<p class="rigth"><a class="orange right" href="#">&gt;Ver mas avisos de esta empresa</a></p><br />
+	<p class="rigth"><a class="orange right" href="javascript:AltDisplay('mydiv1','bot1');">&gt;Ver Informaci&oacute;n esta empresa</a></p>
 	<!-- Resumen end -->
 	</div>
 	<div style="visibility: hidden; display: none;" id="mydiv1" class="ampliar">
@@ -194,9 +159,9 @@ if($user->roles[5] == "empresa" and $node->uid == $user->uid){
 	<div class="bloque puntos" style="width: 655px"></div>
 	<div style="width: 330px; float: left; margin-right: 10px;">
 	<!--  Descripcion del empleo -->
-	<p><span class="blue stg">Descripci&oacute;n del empleo:</span><br />
+	<p><span class="blue stg">Descripci&oacute;n del empleo:</span><br>
 	<?php echo $nodo->body;?>
-	<br />&nbsp;<br />
+	<br>&nbsp;<br>
 	</p>
 	<!--  Descripcion del empleo end -->
 	</div>
@@ -255,6 +220,40 @@ print '$(document).ready( function(){';
 print '$.get("/empleos/stat/aviso/'.$user->uid.'/'.$node->nid.'", function(x) { });';
 print '});</script>';
 //print_r($nodo); ?>
+
+<!--<script type="text/javascript">
+	$(document).ready(function() {
+		// a workaround for a flaw in the demo system (http://dev.jqueryui.com/ticket/4375), ignore!
+		$("#dialog").dialog("destroy");
+		var from = $("#from"), to = $("#to"),msg = $("#msg"),	allFields = $([]).add(from).add(to).add(msg);
+		$("#dialog-form").dialog({
+			autoOpen: false,
+			height: 300,
+			width: 350,
+			modal: true,
+			buttons: {
+				'Enviar': function() {
+		       		$.post("/enviaramigo.php", "post=" + from.val() + "|" +  to.val() + "|" + msg.val(), function(data){alert(data);});	
+		       		to.val("");
+		       		msg.val("");				
+					$(this).dialog('close');
+				},
+				'Cancelar': function() {
+					$(this).dialog('close');
+				}
+			},
+			close: function() {
+				//allFields.val('');//.removeClass('ui-state-error');
+			}
+		});
+		$('#create-user')
+			//.button()
+			.click(function() {
+				$('#dialog-form').dialog('open');
+			});
+
+	});
+	</script>-->
 
 <div id="flotante<?php echo $nodo->nid;?>top" class="flotante-top">
 	<input id="nodo_url<?php echo $nodo->nid;?>top" type="hidden" />

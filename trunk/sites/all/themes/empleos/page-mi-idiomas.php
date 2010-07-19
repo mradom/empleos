@@ -9,14 +9,14 @@
   <!-- MIDDLE -->
   <div id="midle">
     <?php include("include/encabezado_mi_idiomas.php");?> 
-    <!-- RIGHT -->
-    <div id="right_column">
-	  <?php Form_ayuda('Ayuda', 'Idiomas'); ?> 
-    </div>
+	<?php print $content;?>
+	  <?php if (arg(1)<>'add' and arg(2)<>'edit' and arg(2)<>'delete') {
+		  print "<div class='btn_gral b'><a href='/node/add/p-idiomas'>Agregar</a></div>";
+	      print "<div class='btn_gral r'><a href='/miinformatica/me'>Paso siguiente</a></div>";
+		  }?>
+    <div class="clr"></div>
     <!-- CENTRAL -->
     <div id="central_column">
-	  <?php print $content;?>
-	  <?php if (arg(1)<>'add' and arg(2)<>'edit' and arg(2)<>'delete') print "<div class='btn_gral b'><a href='/node/add/p-idiomas'>Agregar</a></div><br />";?>
       <?php include("include/banners-central.php");?>
     </div>    
   </div>

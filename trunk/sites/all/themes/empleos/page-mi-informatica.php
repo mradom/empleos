@@ -9,14 +9,14 @@
   <!-- MIDDLE -->
   <div id="midle">
     <?php include("include/encabezado_mi_informatica.php");?> 
-    <!-- RIGHT -->
-    <div id="right_colum">
-	<?php Form_ayuda('Ayuda', 'Informatica'); ?>
-	</div> 
+  	<?php print $content;?>
+	  <?php if (arg(1)<>'add' and arg(2)<>'edit' and arg(2)<>'delete') {
+		  print "<div class='btn_gral b'><a href='/node/add/p-informatica'>Agregar</a></div>";
+	      print "<div class='btn_gral r'><a href='/miotrosconocimientos/me'>Paso siguiente</a></div>";
+		  }?>
+    <div class="clr"></div>
     <!-- CENTRAL -->
     <div id="central_column">
-	  <?php print $content;?>
-	  <?php if (arg(1)<>'add' and arg(2)<>'edit' and arg(2)<>'delete') print "<div class='btn_gral b'><a href='/node/add/p-informatica'>Agregar</a></div><br />";?>
       <?php include("include/banners-central.php");?>
     </div>    
   </div>

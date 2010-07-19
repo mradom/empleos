@@ -544,6 +544,7 @@ function phptemplate_p_informatica_node_form(&$form) {
 	$miform .= drupal_render($form['taxonomy'][get_vocabulary_by_name('Tipo de Software')]);
 	$miform .= drupal_render($form['field_detalle']);
 	$miform .= drupal_render($form['field_nivel']);
+	$miform .= drupal_render($form['field_experiencia_0']);
 	
 	$miform .= drupal_render($form['body_filter']);
 	
@@ -600,6 +601,7 @@ function phptemplate_p_otros_conocimientos_node_form(&$form) {
 	$miform .= drupal_render($form['field_nombre']);
 	
 	$miform .= drupal_render($form['field_descripcion']);
+	$miform .= drupal_render($form['field_experiencia']);
 	
 	$miform .= drupal_render($form['submit']);
 	$miform .= drupal_render($form['delete']);

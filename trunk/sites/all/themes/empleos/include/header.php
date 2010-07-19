@@ -22,19 +22,16 @@
       				<div class="white right">
       					<?php if(arg(0) != "principal"){?>
                        <?php if (!$user->uid) {
-                            print '<h1 style="margin-top:10px; text-align:center">&iquest;Primera vez en empleoslavoz?</h1>'; 
-        					print '<h3 style="text-align:center; margin:0 12%">Registrate de forma f&aacute;cil y segura en s&oacute;lo 3 pasos</h3>'; 
-        					print '<div class="pasos">';
-          					print '<ul id="pasos">'; 
-							print '<li id="b-01"><a href="form.html"><span>registrate</span></a></li>'; 
-							print '<li id="b-02"><a href=”#”><span>carga tu cv</span></a></li>';
-							print '<li id="b-03"><a href=”#”><span>postulate</span></a></li>';
-							print '</ul></div>';
+                            print '<div>';
+                            print '<ul id="adver">'; 
+							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/05.jpg" alt="" /></a></li>';
+                            print '</ul>';
+							print '</div>';		
 					   } else {
                            if (in_array('Empresa', array_values($user->roles))){
 							print '<div>';
                             print '<ul id="adver">'; 
-							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/04.jpg" alt="" /></a></li>';
+							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/03.jpg" alt="" /></a></li>';
 							//print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/05.jpg" alt="" /></a></li>';
 							//print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/06.jpg" alt="" /></a></li>';
                             print '</ul>';
@@ -42,7 +39,7 @@
 						} else {
 							print '<div>';
 							print '<ul id="adver">'; 
-							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/03.jpg" alt="" /></a></li>';
+							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/05.jpg" alt="" /></a></li>';
 							//print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/01.jpg" alt="" /></a></li>';
 							//print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/02.jpg" alt="" /></a></li>';
                             print '</ul>';
@@ -50,6 +47,7 @@
 						}
 					   }?>
 					   <?php }else{
+						   if (in_array('Empresa', array_values($user->roles))){
 							print '<div>';
 							print '<ul id="adver">'; 
 							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/03.jpg"  alt="" /></a></li>';
@@ -57,6 +55,15 @@
 							//print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/02.jpg" alt="" /></a></li>';
                             print '</ul>';
 							print '</div>';
+						} else {
+							print '<div>';
+							print '<ul id="adver">'; 
+							print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/05.jpg" alt="" /></a></li>';
+							//print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/01.jpg" alt="" /></a></li>';
+							//print '<li><a href="#"><img src="/sites/all/themes/empleos/img/banners-empleos/02.jpg" alt="" /></a></li>';
+                            print '</ul>';
+							print '</div>';
+						}
 					   }?>
 
       			</div>

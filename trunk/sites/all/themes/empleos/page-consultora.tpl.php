@@ -59,7 +59,6 @@
 			  }
 			?>
     <?php include("include/banners-central.php");?>
-    </div>
   </div>
   <?php include("include/footer.php");?>
 </div>

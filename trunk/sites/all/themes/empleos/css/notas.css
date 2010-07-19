@@ -15,7 +15,7 @@
 .month, .day, .year {
     position: absolute;
     text-indent: -1000em;
-    background-image: url(/sites/all/themes/empleos/img/date_img.png);
+    background-image: url(/sites/all/themes/empleos/img/date_img.gif);
     background-repeat: no-repeat;
 }
 .month { top: 0; left: 0; width: 33px; height: 30px;}

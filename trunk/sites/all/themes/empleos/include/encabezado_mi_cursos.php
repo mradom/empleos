@@ -4,8 +4,8 @@
 Los &iacute;tems destacados con asterisco <span class="stg orange">(*)</span> son obligatorios.<br />
 Si no ten&eacute;s cursos o seminarios para ingresar en los campos, deja el formulario en blanco y continu&aacute; con el siguiente paso.
       </p>
-      <div><img style=" padding-left:100px;" src="/sites/all/themes/empleos/img/10pasos.png"></div>
-      <div><img style=" padding-left:150px " src="/sites/all/themes/empleos/img/3paso.png"></div>
+      <div><img style=" padding-left:100px;" src="/sites/all/themes/empleos/img/10pasos.png"/></div>
+      <div><img style=" padding-left:150px " src="/sites/all/themes/empleos/img/3paso.png"/></div>
     </div>
 
     <!-- submenu --> 
@@ -35,7 +35,7 @@ Si no ten&eacute;s cursos o seminarios para ingresar en los campos, deja el form
 				?>
 				        <TR class="<?php if ($node->nid == $row->nid) print arg(2);?>"> 
 				          <?php if ($node->nid == $row->nid) { print '<TD>'.$row->title.'</TD>';
-			                   } else { print '<TD><A href="/node/'.$row->nid.'/edit" title="editar">'.$row->title.'</A></TD>';  } ?> 
+			                   } else { print '<TD><a href="/node/'.$row->nid.'/edit" title="editar">'.$row->title.'</a></TD>';  } ?> 
 				          <TD><?php print $row->field_en_calidad_de[0]['value'];?></TD>
 				          <TD><?php print $row->field_lugar[0]['value'];?></TD>
 				          <TD><?php print $row->field_ubicacion[0]['value'];?></TD>				          

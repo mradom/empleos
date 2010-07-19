@@ -7,18 +7,20 @@
   <!-- HEADER -->
   <?php include("include/header.php");?>
   <!-- MIDDLE -->
-  <div id="midle">
+   <div id="midle">
     <?php include("include/encabezado_mi_cursos.php");?> 
-    <!-- RIGHT -->
-    <div id="right_colum">
-	  <?php Form_ayuda('Ayuda', 'Cursos'); ?>
-	</div>    
-    <!-- CENTRAL -->
-    <div id="central_column">
+       <?php Form_ayuda('Ayuda', 'Cursos'); ?> 
+     <div class="left">
 	  <?php print $content;?>
-	  <?php if (arg(1)<>'add' and arg(2)<>'edit' and arg(2)<>'delete') print "<div class='btn_gral b'><a href='/node/add/p-cursos'>Agregar</a></div><br />";?>
+	  <?php if (arg(1)<>'add' and arg(2)<>'edit' and arg(2)<>'delete') {
+		  print "<div class='btn_gral b'><a href='/node/add/p-cursos'>Agregar</a></div>";
+	      print "<div class='btn_gral r'><a href='/miidiomas/me'>Paso siguiente</a></div>";
+		  }?>
+       </div>
+    <!-- CENTRAL -->
+     <div id="central_column" class="clr">
   	  <?php include("include/banners-central.php");?>
-      </div>      
+      </div>        
   </div>
 <?php include("include/footer.php");?>
 </div>
